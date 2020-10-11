@@ -1,0 +1,1502 @@
+[
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 106 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 160 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 89 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 114 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 44 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 13 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 125 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 105 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 120 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 155 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 38 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 103 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 139 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 174 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 105 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 109 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 157 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 61 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 117 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 107 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 43 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 122 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 121 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 48 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 6 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 11 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 123 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 193 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 56 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 71 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 62 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 198 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 74 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 43 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 41 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 115 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 54 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 179 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 27 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 185 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 188 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 120 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 77 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 43 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 100 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 81 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 125 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 138 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 160 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 60 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 149 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 119 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 148 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 182 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 136 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 74 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 105 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 191 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 114 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 5 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 67 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 92 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 147 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 20 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 168 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 60 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 53 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 28 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 122 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 138 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 100 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 3 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 156 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 68 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 186 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 157 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 190 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 112 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 59 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 91 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 166 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 10 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 21 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 46 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 169 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 21 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 86 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 84 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 118 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 36 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 74 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 101 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 97 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 1 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 193 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 177 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 139 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 24 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 25 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 138 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 149 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 199 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 165 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 8 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 8 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 167 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 38 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 175 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 46 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 121 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 34 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 94 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 55 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 170 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 97 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 122 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 25 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 126 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 89 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 186 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 188 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 116 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 43 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 197 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 182 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 144 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 142 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 137 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 81 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 138 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 125 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 74 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 88 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 124 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 6 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 178 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 40 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 8 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 106 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 85 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 142 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 16 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 102 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 76 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 46 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 83 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 122 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 180 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 32 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 135 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 5 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 113 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 165 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 192 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 144 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 168 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 10 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 140 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 111 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 99 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 65 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 43 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 52 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 168 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 97 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 20 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 56 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 43 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 99 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 100 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 100 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 152 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 136 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 85 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 24 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 178 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 164 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 192 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 176 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 24 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 153 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 43 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 130 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 147 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 178 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 77 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 30 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 71 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 181 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 31 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 6 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 161 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 12 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 61 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 3 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 44 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 28 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 68 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 65 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 182 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 11 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 128 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 106 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 36 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 162 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 32 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 130 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 88 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 174 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 149 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 153 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 112 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 155 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 100 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 29 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 51 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 36 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 132 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 188 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 52 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 194 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 132 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 55 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 73 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 13 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 190 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 183 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-by-email-enabled",
+    "SettingFor": { "Id": 94 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 160 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 66 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 160 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 192 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 16 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 19 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 4 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 12 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 151 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 154 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 99 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 120 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 42 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 172 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-sound-enabled",
+    "SettingFor": { "Id": 12 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 126 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 61 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 133 },
+    "Value": "true"
+  },
+  {
+    "UnitName": "notifications",
+    "Name": "notification-enabled",
+    "SettingFor": { "Id": 36 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 16 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 11 },
+    "Value": "false"
+  },
+  {
+    "UnitName": "general",
+    "Name": "display-balance-enabled",
+    "SettingFor": { "Id": 113 },
+    "Value": "false"
+  }
+]

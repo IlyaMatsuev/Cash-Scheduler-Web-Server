@@ -1,0 +1,6699 @@
+[
+  {
+    "Title": "sapien cum",
+    "Amount": 172200.4,
+    "CreatedBy": { "Id": 188 },
+    "TransactionCategory": { "Id": 120 },
+    "Date": "11/7/2020"
+  },
+  {
+    "Title": "nulla ac",
+    "Amount": 894943.5,
+    "CreatedBy": { "Id": 140 },
+    "TransactionCategory": { "Id": 225 },
+    "Date": "8/3/2020"
+  },
+  {
+    "Title": "curae donec pharetra",
+    "Amount": 85233.7,
+    "CreatedBy": { "Id": 81 },
+    "TransactionCategory": { "Id": 8 },
+    "Date": "12/27/2020"
+  },
+  {
+    "Title": "risus semper porta",
+    "Amount": 78843.1,
+    "CreatedBy": { "Id": 27 },
+    "TransactionCategory": { "Id": 530 },
+    "Date": "12/7/2020"
+  },
+  {
+    "Title": "sed interdum venenatis",
+    "Amount": 4623.5,
+    "CreatedBy": { "Id": 168 },
+    "TransactionCategory": { "Id": 745 },
+    "Date": "8/24/2020"
+  },
+  {
+    "Title": "pellentesque",
+    "Amount": 491522.5,
+    "CreatedBy": { "Id": 24 },
+    "TransactionCategory": { "Id": 544 },
+    "Date": "9/11/2020"
+  },
+  {
+    "Title": "natoque penatibus",
+    "Amount": 307012.9,
+    "CreatedBy": { "Id": 152 },
+    "TransactionCategory": { "Id": 526 },
+    "Date": "9/4/2020"
+  },
+  {
+    "Title": "faucibus orci",
+    "Amount": 575508.0,
+    "CreatedBy": { "Id": 107 },
+    "TransactionCategory": { "Id": 357 },
+    "Date": "8/14/2020"
+  },
+  {
+    "Title": "quis orci",
+    "Amount": 189914.1,
+    "CreatedBy": { "Id": 188 },
+    "TransactionCategory": { "Id": 512 },
+    "Date": "9/10/2020"
+  },
+  {
+    "Title": "magnis",
+    "Amount": 210202.2,
+    "CreatedBy": { "Id": 41 },
+    "TransactionCategory": { "Id": 171 },
+    "Date": "9/9/2020"
+  },
+  {
+    "Title": "diam id",
+    "Amount": 105556.8,
+    "CreatedBy": { "Id": 92 },
+    "TransactionCategory": { "Id": 222 },
+    "Date": "12/12/2020"
+  },
+  {
+    "Title": "vel ipsum",
+    "Amount": 50051.2,
+    "CreatedBy": { "Id": 158 },
+    "TransactionCategory": { "Id": 669 },
+    "Date": "12/1/2020"
+  },
+  {
+    "Title": "eleifend luctus",
+    "Amount": 467594.8,
+    "CreatedBy": { "Id": 140 },
+    "TransactionCategory": { "Id": 523 },
+    "Date": "8/13/2020"
+  },
+  {
+    "Title": "dolor",
+    "Amount": 984515.4,
+    "CreatedBy": { "Id": 78 },
+    "TransactionCategory": { "Id": 89 },
+    "Date": "11/5/2020"
+  },
+  {
+    "Title": "vel est donec",
+    "Amount": 915222.6,
+    "CreatedBy": { "Id": 60 },
+    "TransactionCategory": { "Id": 668 },
+    "Date": "11/12/2020"
+  },
+  {
+    "Title": "dis parturient montes",
+    "Amount": 747979.0,
+    "CreatedBy": { "Id": 173 },
+    "TransactionCategory": { "Id": 674 },
+    "Date": "12/31/2020"
+  },
+  {
+    "Amount": 146811.7,
+    "CreatedBy": { "Id": 75 },
+    "TransactionCategory": { "Id": 30 },
+    "Date": "9/3/2020"
+  },
+  {
+    "Title": "eget",
+    "Amount": 284736.2,
+    "CreatedBy": { "Id": 60 },
+    "TransactionCategory": { "Id": 312 },
+    "Date": "9/23/2020"
+  },
+  {
+    "Title": "sed justo",
+    "Amount": 996132.7,
+    "CreatedBy": { "Id": 166 },
+    "TransactionCategory": { "Id": 743 },
+    "Date": "11/28/2020"
+  },
+  {
+    "Amount": 409473.0,
+    "CreatedBy": { "Id": 49 },
+    "TransactionCategory": { "Id": 447 },
+    "Date": "9/24/2020"
+  },
+  {
+    "Title": "mattis odio",
+    "Amount": 29342.4,
+    "CreatedBy": { "Id": 80 },
+    "TransactionCategory": { "Id": 689 },
+    "Date": "9/12/2020"
+  },
+  {
+    "Title": "luctus",
+    "Amount": 44739.2,
+    "CreatedBy": { "Id": 4 },
+    "TransactionCategory": { "Id": 746 },
+    "Date": "10/6/2020"
+  },
+  {
+    "Title": "sagittis sapien",
+    "Amount": 244069.6,
+    "CreatedBy": { "Id": 81 },
+    "TransactionCategory": { "Id": 539 },
+    "Date": "11/8/2020"
+  },
+  {
+    "Title": "fusce lacus",
+    "Amount": 880494.6,
+    "CreatedBy": { "Id": 115 },
+    "TransactionCategory": { "Id": 538 },
+    "Date": "10/25/2020"
+  },
+  {
+    "Title": "nulla",
+    "Amount": 15052.0,
+    "CreatedBy": { "Id": 174 },
+    "TransactionCategory": { "Id": 667 },
+    "Date": "12/31/2020"
+  },
+  {
+    "Title": "nunc rhoncus",
+    "Amount": 355562.6,
+    "CreatedBy": { "Id": 186 },
+    "TransactionCategory": { "Id": 495 },
+    "Date": "12/30/2020"
+  },
+  {
+    "Title": "pede lobortis",
+    "Amount": 384038.2,
+    "CreatedBy": { "Id": 104 },
+    "TransactionCategory": { "Id": 108 },
+    "Date": "9/13/2020"
+  },
+  {
+    "Title": "erat",
+    "Amount": 856306.6,
+    "CreatedBy": { "Id": 185 },
+    "TransactionCategory": { "Id": 396 },
+    "Date": "12/15/2020"
+  },
+  {
+    "Amount": 220078.6,
+    "CreatedBy": { "Id": 155 },
+    "TransactionCategory": { "Id": 9 },
+    "Date": "9/26/2020"
+  },
+  {
+    "Title": "at",
+    "Amount": 946411.9,
+    "CreatedBy": { "Id": 120 },
+    "TransactionCategory": { "Id": 290 },
+    "Date": "8/6/2020"
+  },
+  {
+    "Title": "eros vestibulum",
+    "Amount": 264338.3,
+    "CreatedBy": { "Id": 62 },
+    "TransactionCategory": { "Id": 85 },
+    "Date": "12/11/2020"
+  },
+  {
+    "Title": "consequat dui nec",
+    "Amount": 582669.4,
+    "CreatedBy": { "Id": 131 },
+    "TransactionCategory": { "Id": 55 },
+    "Date": "12/23/2020"
+  },
+  {
+    "Amount": 143777.0,
+    "CreatedBy": { "Id": 65 },
+    "TransactionCategory": { "Id": 528 },
+    "Date": "12/11/2020"
+  },
+  {
+    "Title": "nam congue risus",
+    "Amount": 529834.6,
+    "CreatedBy": { "Id": 46 },
+    "TransactionCategory": { "Id": 620 },
+    "Date": "11/21/2020"
+  },
+  {
+    "Title": "pede lobortis ligula",
+    "Amount": 791325.7,
+    "CreatedBy": { "Id": 69 },
+    "TransactionCategory": { "Id": 773 },
+    "Date": "10/2/2020"
+  },
+  {
+    "Amount": 739269.9,
+    "CreatedBy": { "Id": 114 },
+    "TransactionCategory": { "Id": 403 },
+    "Date": "12/12/2020"
+  },
+  {
+    "Title": "magnis dis",
+    "Amount": 801874.9,
+    "CreatedBy": { "Id": 138 },
+    "TransactionCategory": { "Id": 467 },
+    "Date": "11/12/2020"
+  },
+  {
+    "Title": "ullamcorper augue",
+    "Amount": 69910.7,
+    "CreatedBy": { "Id": 110 },
+    "TransactionCategory": { "Id": 15 },
+    "Date": "9/15/2020"
+  },
+  {
+    "Title": "nibh in",
+    "Amount": 271903.4,
+    "CreatedBy": { "Id": 171 },
+    "TransactionCategory": { "Id": 175 },
+    "Date": "8/18/2020"
+  },
+  {
+    "Title": "fusce",
+    "Amount": 647025.8,
+    "CreatedBy": { "Id": 193 },
+    "TransactionCategory": { "Id": 413 },
+    "Date": "10/15/2020"
+  },
+  {
+    "Title": "libero",
+    "Amount": 767167.2,
+    "CreatedBy": { "Id": 13 },
+    "TransactionCategory": { "Id": 288 },
+    "Date": "10/23/2020"
+  },
+  {
+    "Title": "et",
+    "Amount": 301920.5,
+    "CreatedBy": { "Id": 1 },
+    "TransactionCategory": { "Id": 200 },
+    "Date": "9/20/2020"
+  },
+  {
+    "Title": "metus sapien ut",
+    "Amount": 861245.2,
+    "CreatedBy": { "Id": 158 },
+    "TransactionCategory": { "Id": 523 },
+    "Date": "10/16/2020"
+  },
+  {
+    "Amount": 72569.7,
+    "CreatedBy": { "Id": 95 },
+    "TransactionCategory": { "Id": 501 },
+    "Date": "9/22/2020"
+  },
+  {
+    "Title": "sit",
+    "Amount": 745436.6,
+    "CreatedBy": { "Id": 175 },
+    "TransactionCategory": { "Id": 143 },
+    "Date": "8/27/2020"
+  },
+  {
+    "Title": "ultrices phasellus",
+    "Amount": 153824.0,
+    "CreatedBy": { "Id": 180 },
+    "TransactionCategory": { "Id": 254 },
+    "Date": "8/4/2020"
+  },
+  {
+    "Title": "posuere cubilia",
+    "Amount": 147724.6,
+    "CreatedBy": { "Id": 29 },
+    "TransactionCategory": { "Id": 732 },
+    "Date": "12/17/2020"
+  },
+  {
+    "Amount": 167693.7,
+    "CreatedBy": { "Id": 131 },
+    "TransactionCategory": { "Id": 497 },
+    "Date": "11/9/2020"
+  },
+  {
+    "Title": "imperdiet sapien urna",
+    "Amount": 409022.5,
+    "CreatedBy": { "Id": 112 },
+    "TransactionCategory": { "Id": 679 },
+    "Date": "12/13/2020"
+  },
+  {
+    "Title": "odio cras",
+    "Amount": 978028.5,
+    "CreatedBy": { "Id": 72 },
+    "TransactionCategory": { "Id": 743 },
+    "Date": "12/22/2020"
+  },
+  {
+    "Amount": 267276.1,
+    "CreatedBy": { "Id": 39 },
+    "TransactionCategory": { "Id": 34 },
+    "Date": "12/26/2020"
+  },
+  {
+    "Title": "morbi odio",
+    "Amount": 151181.7,
+    "CreatedBy": { "Id": 117 },
+    "TransactionCategory": { "Id": 108 },
+    "Date": "12/5/2020"
+  },
+  {
+    "Title": "nulla ultrices",
+    "Amount": 213202.1,
+    "CreatedBy": { "Id": 37 },
+    "TransactionCategory": { "Id": 81 },
+    "Date": "9/20/2020"
+  },
+  {
+    "Amount": 762856.3,
+    "CreatedBy": { "Id": 84 },
+    "TransactionCategory": { "Id": 17 },
+    "Date": "8/27/2020"
+  },
+  {
+    "Title": "nec",
+    "Amount": 213105.9,
+    "CreatedBy": { "Id": 138 },
+    "TransactionCategory": { "Id": 679 },
+    "Date": "9/3/2020"
+  },
+  {
+    "Title": "tristique tortor",
+    "Amount": 582433.5,
+    "CreatedBy": { "Id": 163 },
+    "TransactionCategory": { "Id": 356 },
+    "Date": "11/4/2020"
+  },
+  {
+    "Amount": 544615.6,
+    "CreatedBy": { "Id": 188 },
+    "TransactionCategory": { "Id": 309 },
+    "Date": "10/4/2020"
+  },
+  {
+    "Title": "felis ut",
+    "Amount": 727703.3,
+    "CreatedBy": { "Id": 80 },
+    "TransactionCategory": { "Id": 282 },
+    "Date": "11/2/2020"
+  },
+  {
+    "Title": "metus",
+    "Amount": 601458.2,
+    "CreatedBy": { "Id": 142 },
+    "TransactionCategory": { "Id": 562 },
+    "Date": "11/1/2020"
+  },
+  {
+    "Title": "sed lacus",
+    "Amount": 996471.2,
+    "CreatedBy": { "Id": 33 },
+    "TransactionCategory": { "Id": 347 },
+    "Date": "11/14/2020"
+  },
+  {
+    "Title": "bibendum morbi",
+    "Amount": 138095.9,
+    "CreatedBy": { "Id": 10 },
+    "TransactionCategory": { "Id": 688 },
+    "Date": "9/27/2020"
+  },
+  {
+    "Title": "integer",
+    "Amount": 243580.0,
+    "CreatedBy": { "Id": 162 },
+    "TransactionCategory": { "Id": 749 },
+    "Date": "8/24/2020"
+  },
+  {
+    "Title": "turpis integer aliquet",
+    "Amount": 131599.5,
+    "CreatedBy": { "Id": 145 },
+    "TransactionCategory": { "Id": 478 },
+    "Date": "8/8/2020"
+  },
+  {
+    "Title": "cum sociis",
+    "Amount": 975267.1,
+    "CreatedBy": { "Id": 108 },
+    "TransactionCategory": { "Id": 210 },
+    "Date": "9/14/2020"
+  },
+  {
+    "Amount": 725793.2,
+    "CreatedBy": { "Id": 155 },
+    "TransactionCategory": { "Id": 316 },
+    "Date": "8/15/2020"
+  },
+  {
+    "Title": "praesent blandit",
+    "Amount": 428705.9,
+    "CreatedBy": { "Id": 17 },
+    "TransactionCategory": { "Id": 289 },
+    "Date": "12/31/2020"
+  },
+  {
+    "Amount": 292527.0,
+    "CreatedBy": { "Id": 107 },
+    "TransactionCategory": { "Id": 474 },
+    "Date": "10/8/2020"
+  },
+  {
+    "Title": "blandit mi in",
+    "Amount": 575461.1,
+    "CreatedBy": { "Id": 111 },
+    "TransactionCategory": { "Id": 11 },
+    "Date": "12/6/2020"
+  },
+  {
+    "Title": "neque libero",
+    "Amount": 778637.2,
+    "CreatedBy": { "Id": 125 },
+    "TransactionCategory": { "Id": 567 },
+    "Date": "12/15/2020"
+  },
+  {
+    "Amount": 738576.2,
+    "CreatedBy": { "Id": 92 },
+    "TransactionCategory": { "Id": 640 },
+    "Date": "11/5/2020"
+  },
+  {
+    "Title": "eu orci",
+    "Amount": 783689.5,
+    "CreatedBy": { "Id": 159 },
+    "TransactionCategory": { "Id": 54 },
+    "Date": "8/3/2020"
+  },
+  {
+    "Amount": 75481.4,
+    "CreatedBy": { "Id": 44 },
+    "TransactionCategory": { "Id": 435 },
+    "Date": "11/4/2020"
+  },
+  {
+    "Amount": 718804.6,
+    "CreatedBy": { "Id": 10 },
+    "TransactionCategory": { "Id": 372 },
+    "Date": "12/4/2020"
+  },
+  {
+    "Title": "sem fusce",
+    "Amount": 212524.8,
+    "CreatedBy": { "Id": 31 },
+    "TransactionCategory": { "Id": 133 },
+    "Date": "8/2/2020"
+  },
+  {
+    "Title": "venenatis turpis enim",
+    "Amount": 319086.9,
+    "CreatedBy": { "Id": 28 },
+    "TransactionCategory": { "Id": 703 },
+    "Date": "9/21/2020"
+  },
+  {
+    "Amount": 626163.0,
+    "CreatedBy": { "Id": 98 },
+    "TransactionCategory": { "Id": 384 },
+    "Date": "9/6/2020"
+  },
+  {
+    "Amount": 95877.6,
+    "CreatedBy": { "Id": 174 },
+    "TransactionCategory": { "Id": 721 },
+    "Date": "8/19/2020"
+  },
+  {
+    "Title": "neque",
+    "Amount": 999072.6,
+    "CreatedBy": { "Id": 85 },
+    "TransactionCategory": { "Id": 619 },
+    "Date": "12/1/2020"
+  },
+  {
+    "Amount": 205862.5,
+    "CreatedBy": { "Id": 120 },
+    "TransactionCategory": { "Id": 399 },
+    "Date": "10/11/2020"
+  },
+  {
+    "Title": "sapien placerat",
+    "Amount": 267245.1,
+    "CreatedBy": { "Id": 154 },
+    "TransactionCategory": { "Id": 244 },
+    "Date": "10/1/2020"
+  },
+  {
+    "Title": "interdum in",
+    "Amount": 531159.3,
+    "CreatedBy": { "Id": 7 },
+    "TransactionCategory": { "Id": 520 },
+    "Date": "10/3/2020"
+  },
+  {
+    "Title": "felis sed interdum",
+    "Amount": 712021.5,
+    "CreatedBy": { "Id": 59 },
+    "TransactionCategory": { "Id": 790 },
+    "Date": "10/29/2020"
+  },
+  {
+    "Amount": 540876.2,
+    "CreatedBy": { "Id": 182 },
+    "TransactionCategory": { "Id": 789 },
+    "Date": "9/11/2020"
+  },
+  {
+    "Amount": 344097.3,
+    "CreatedBy": { "Id": 174 },
+    "TransactionCategory": { "Id": 678 },
+    "Date": "8/21/2020"
+  },
+  {
+    "Title": "elementum",
+    "Amount": 740219.4,
+    "CreatedBy": { "Id": 148 },
+    "TransactionCategory": { "Id": 777 },
+    "Date": "10/4/2020"
+  },
+  {
+    "Amount": 983853.8,
+    "CreatedBy": { "Id": 198 },
+    "TransactionCategory": { "Id": 150 },
+    "Date": "9/14/2020"
+  },
+  {
+    "Title": "tincidunt eget tempus",
+    "Amount": 496576.9,
+    "CreatedBy": { "Id": 119 },
+    "TransactionCategory": { "Id": 598 },
+    "Date": "12/4/2020"
+  },
+  {
+    "Amount": 861006.8,
+    "CreatedBy": { "Id": 65 },
+    "TransactionCategory": { "Id": 592 },
+    "Date": "8/7/2020"
+  },
+  {
+    "Amount": 449608.1,
+    "CreatedBy": { "Id": 99 },
+    "TransactionCategory": { "Id": 158 },
+    "Date": "9/23/2020"
+  },
+  {
+    "Title": "turpis",
+    "Amount": 988658.8,
+    "CreatedBy": { "Id": 172 },
+    "TransactionCategory": { "Id": 488 },
+    "Date": "12/15/2020"
+  },
+  {
+    "Amount": 207786.1,
+    "CreatedBy": { "Id": 40 },
+    "TransactionCategory": { "Id": 459 },
+    "Date": "11/17/2020"
+  },
+  {
+    "Title": "varius integer",
+    "Amount": 405297.9,
+    "CreatedBy": { "Id": 19 },
+    "TransactionCategory": { "Id": 185 },
+    "Date": "12/15/2020"
+  },
+  {
+    "Title": "duis mattis",
+    "Amount": 545132.5,
+    "CreatedBy": { "Id": 180 },
+    "TransactionCategory": { "Id": 594 },
+    "Date": "10/28/2020"
+  },
+  {
+    "Title": "augue",
+    "Amount": 361354.3,
+    "CreatedBy": { "Id": 152 },
+    "TransactionCategory": { "Id": 222 },
+    "Date": "10/25/2020"
+  },
+  {
+    "Title": "purus",
+    "Amount": 478439.1,
+    "CreatedBy": { "Id": 131 },
+    "TransactionCategory": { "Id": 319 },
+    "Date": "10/2/2020"
+  },
+  {
+    "Title": "morbi vestibulum velit",
+    "Amount": 341064.9,
+    "CreatedBy": { "Id": 186 },
+    "TransactionCategory": { "Id": 483 },
+    "Date": "8/8/2020"
+  },
+  {
+    "Amount": 304261.8,
+    "CreatedBy": { "Id": 24 },
+    "TransactionCategory": { "Id": 525 },
+    "Date": "10/6/2020"
+  },
+  {
+    "Amount": 906023.0,
+    "CreatedBy": { "Id": 113 },
+    "TransactionCategory": { "Id": 487 },
+    "Date": "8/23/2020"
+  },
+  {
+    "Amount": 859689.3,
+    "CreatedBy": { "Id": 105 },
+    "TransactionCategory": { "Id": 304 },
+    "Date": "12/29/2020"
+  },
+  {
+    "Title": "ut tellus",
+    "Amount": 418434.5,
+    "CreatedBy": { "Id": 31 },
+    "TransactionCategory": { "Id": 653 },
+    "Date": "12/28/2020"
+  },
+  {
+    "Title": "maecenas tincidunt",
+    "Amount": 502391.0,
+    "CreatedBy": { "Id": 80 },
+    "TransactionCategory": { "Id": 60 },
+    "Date": "11/26/2020"
+  },
+  {
+    "Amount": 918753.1,
+    "CreatedBy": { "Id": 37 },
+    "TransactionCategory": { "Id": 193 },
+    "Date": "10/13/2020"
+  },
+  {
+    "Title": "odio",
+    "Amount": 249961.5,
+    "CreatedBy": { "Id": 67 },
+    "TransactionCategory": { "Id": 322 },
+    "Date": "10/1/2020"
+  },
+  {
+    "Title": "ligula vehicula",
+    "Amount": 782168.1,
+    "CreatedBy": { "Id": 15 },
+    "TransactionCategory": { "Id": 566 },
+    "Date": "11/23/2020"
+  },
+  {
+    "Title": "vulputate vitae",
+    "Amount": 995102.2,
+    "CreatedBy": { "Id": 171 },
+    "TransactionCategory": { "Id": 719 },
+    "Date": "8/30/2020"
+  },
+  {
+    "Title": "sollicitudin vitae",
+    "Amount": 755900.3,
+    "CreatedBy": { "Id": 106 },
+    "TransactionCategory": { "Id": 542 },
+    "Date": "12/20/2020"
+  },
+  {
+    "Amount": 827884.9,
+    "CreatedBy": { "Id": 168 },
+    "TransactionCategory": { "Id": 87 },
+    "Date": "8/3/2020"
+  },
+  {
+    "Amount": 624558.7,
+    "CreatedBy": { "Id": 30 },
+    "TransactionCategory": { "Id": 359 },
+    "Date": "10/25/2020"
+  },
+  {
+    "Title": "porttitor lacus at",
+    "Amount": 935089.6,
+    "CreatedBy": { "Id": 33 },
+    "TransactionCategory": { "Id": 417 },
+    "Date": "11/1/2020"
+  },
+  {
+    "Title": "morbi porttitor lorem",
+    "Amount": 61610.2,
+    "CreatedBy": { "Id": 197 },
+    "TransactionCategory": { "Id": 251 },
+    "Date": "10/1/2020"
+  },
+  {
+    "Title": "duis consequat",
+    "Amount": 411262.2,
+    "CreatedBy": { "Id": 118 },
+    "TransactionCategory": { "Id": 399 },
+    "Date": "8/7/2020"
+  },
+  {
+    "Title": "pellentesque",
+    "Amount": 480233.2,
+    "CreatedBy": { "Id": 127 },
+    "TransactionCategory": { "Id": 557 },
+    "Date": "10/24/2020"
+  },
+  {
+    "Title": "nam",
+    "Amount": 848314.0,
+    "CreatedBy": { "Id": 196 },
+    "TransactionCategory": { "Id": 70 },
+    "Date": "12/19/2020"
+  },
+  {
+    "Title": "interdum mauris non",
+    "Amount": 755665.9,
+    "CreatedBy": { "Id": 8 },
+    "TransactionCategory": { "Id": 362 },
+    "Date": "10/6/2020"
+  },
+  {
+    "Amount": 646490.2,
+    "CreatedBy": { "Id": 99 },
+    "TransactionCategory": { "Id": 38 },
+    "Date": "12/24/2020"
+  },
+  {
+    "Title": "tortor",
+    "Amount": 581325.4,
+    "CreatedBy": { "Id": 191 },
+    "TransactionCategory": { "Id": 79 },
+    "Date": "12/22/2020"
+  },
+  {
+    "Title": "felis donec",
+    "Amount": 259825.6,
+    "CreatedBy": { "Id": 8 },
+    "TransactionCategory": { "Id": 231 },
+    "Date": "9/17/2020"
+  },
+  {
+    "Amount": 742422.1,
+    "CreatedBy": { "Id": 41 },
+    "TransactionCategory": { "Id": 341 },
+    "Date": "9/8/2020"
+  },
+  {
+    "Title": "libero",
+    "Amount": 835544.6,
+    "CreatedBy": { "Id": 162 },
+    "TransactionCategory": { "Id": 36 },
+    "Date": "8/28/2020"
+  },
+  {
+    "Amount": 539834.1,
+    "CreatedBy": { "Id": 169 },
+    "TransactionCategory": { "Id": 703 },
+    "Date": "9/10/2020"
+  },
+  {
+    "Title": "imperdiet",
+    "Amount": 969809.9,
+    "CreatedBy": { "Id": 164 },
+    "TransactionCategory": { "Id": 118 },
+    "Date": "10/17/2020"
+  },
+  {
+    "Title": "lobortis ligula sit",
+    "Amount": 534001.7,
+    "CreatedBy": { "Id": 160 },
+    "TransactionCategory": { "Id": 705 },
+    "Date": "11/8/2020"
+  },
+  {
+    "Amount": 857844.5,
+    "CreatedBy": { "Id": 105 },
+    "TransactionCategory": { "Id": 433 },
+    "Date": "10/12/2020"
+  },
+  {
+    "Title": "mattis pulvinar nulla",
+    "Amount": 750510.7,
+    "CreatedBy": { "Id": 45 },
+    "TransactionCategory": { "Id": 450 },
+    "Date": "11/24/2020"
+  },
+  {
+    "Amount": 950205.8,
+    "CreatedBy": { "Id": 21 },
+    "TransactionCategory": { "Id": 651 },
+    "Date": "12/16/2020"
+  },
+  {
+    "Title": "id justo sit",
+    "Amount": 498812.7,
+    "CreatedBy": { "Id": 96 },
+    "TransactionCategory": { "Id": 390 },
+    "Date": "11/21/2020"
+  },
+  {
+    "Title": "curae",
+    "Amount": 824629.9,
+    "CreatedBy": { "Id": 16 },
+    "TransactionCategory": { "Id": 408 },
+    "Date": "12/21/2020"
+  },
+  {
+    "Title": "vulputate elementum",
+    "Amount": 977552.1,
+    "CreatedBy": { "Id": 42 },
+    "TransactionCategory": { "Id": 383 },
+    "Date": "11/3/2020"
+  },
+  {
+    "Title": "nec sem",
+    "Amount": 409323.1,
+    "CreatedBy": { "Id": 29 },
+    "TransactionCategory": { "Id": 40 },
+    "Date": "10/4/2020"
+  },
+  {
+    "Title": "tortor risus dapibus",
+    "Amount": 153479.4,
+    "CreatedBy": { "Id": 14 },
+    "TransactionCategory": { "Id": 394 },
+    "Date": "9/14/2020"
+  },
+  {
+    "Amount": 116861.9,
+    "CreatedBy": { "Id": 122 },
+    "TransactionCategory": { "Id": 50 },
+    "Date": "10/23/2020"
+  },
+  {
+    "Title": "gravida sem",
+    "Amount": 562079.0,
+    "CreatedBy": { "Id": 53 },
+    "TransactionCategory": { "Id": 96 },
+    "Date": "8/31/2020"
+  },
+  {
+    "Title": "augue",
+    "Amount": 387550.0,
+    "CreatedBy": { "Id": 192 },
+    "TransactionCategory": { "Id": 94 },
+    "Date": "11/1/2020"
+  },
+  {
+    "Title": "ac est",
+    "Amount": 790875.2,
+    "CreatedBy": { "Id": 52 },
+    "TransactionCategory": { "Id": 698 },
+    "Date": "9/23/2020"
+  },
+  {
+    "Amount": 700943.7,
+    "CreatedBy": { "Id": 183 },
+    "TransactionCategory": { "Id": 680 },
+    "Date": "11/17/2020"
+  },
+  {
+    "Title": "quam a",
+    "Amount": 591430.1,
+    "CreatedBy": { "Id": 191 },
+    "TransactionCategory": { "Id": 99 },
+    "Date": "8/15/2020"
+  },
+  {
+    "Title": "elementum",
+    "Amount": 328665.6,
+    "CreatedBy": { "Id": 24 },
+    "TransactionCategory": { "Id": 372 },
+    "Date": "11/2/2020"
+  },
+  {
+    "Amount": 76353.4,
+    "CreatedBy": { "Id": 150 },
+    "TransactionCategory": { "Id": 646 },
+    "Date": "10/19/2020"
+  },
+  {
+    "Amount": 450578.4,
+    "CreatedBy": { "Id": 29 },
+    "TransactionCategory": { "Id": 240 },
+    "Date": "8/30/2020"
+  },
+  {
+    "Title": "enim",
+    "Amount": 803162.3,
+    "CreatedBy": { "Id": 175 },
+    "TransactionCategory": { "Id": 602 },
+    "Date": "9/22/2020"
+  },
+  {
+    "Amount": 554985.0,
+    "CreatedBy": { "Id": 110 },
+    "TransactionCategory": { "Id": 345 },
+    "Date": "9/27/2020"
+  },
+  {
+    "Title": "aenean fermentum donec",
+    "Amount": 658664.3,
+    "CreatedBy": { "Id": 98 },
+    "TransactionCategory": { "Id": 149 },
+    "Date": "12/22/2020"
+  },
+  {
+    "Amount": 65390.1,
+    "CreatedBy": { "Id": 184 },
+    "TransactionCategory": { "Id": 478 },
+    "Date": "8/6/2020"
+  },
+  {
+    "Title": "lobortis vel dapibus",
+    "Amount": 372296.1,
+    "CreatedBy": { "Id": 35 },
+    "TransactionCategory": { "Id": 593 },
+    "Date": "8/29/2020"
+  },
+  {
+    "Title": "elementum",
+    "Amount": 226011.4,
+    "CreatedBy": { "Id": 21 },
+    "TransactionCategory": { "Id": 384 },
+    "Date": "10/24/2020"
+  },
+  {
+    "Title": "felis ut",
+    "Amount": 300469.6,
+    "CreatedBy": { "Id": 127 },
+    "TransactionCategory": { "Id": 637 },
+    "Date": "9/25/2020"
+  },
+  {
+    "Title": "nulla pede ullamcorper",
+    "Amount": 86628.1,
+    "CreatedBy": { "Id": 42 },
+    "TransactionCategory": { "Id": 65 },
+    "Date": "12/28/2020"
+  },
+  {
+    "Title": "donec ut",
+    "Amount": 733561.1,
+    "CreatedBy": { "Id": 193 },
+    "TransactionCategory": { "Id": 334 },
+    "Date": "10/23/2020"
+  },
+  {
+    "Title": "nulla facilisi cras",
+    "Amount": 344110.0,
+    "CreatedBy": { "Id": 102 },
+    "TransactionCategory": { "Id": 195 },
+    "Date": "8/24/2020"
+  },
+  {
+    "Title": "cursus",
+    "Amount": 170986.9,
+    "CreatedBy": { "Id": 99 },
+    "TransactionCategory": { "Id": 731 },
+    "Date": "10/8/2020"
+  },
+  {
+    "Amount": 479300.4,
+    "CreatedBy": { "Id": 71 },
+    "TransactionCategory": { "Id": 673 },
+    "Date": "9/2/2020"
+  },
+  {
+    "Amount": 622429.4,
+    "CreatedBy": { "Id": 110 },
+    "TransactionCategory": { "Id": 524 },
+    "Date": "11/12/2020"
+  },
+  {
+    "Title": "duis mattis",
+    "Amount": 722777.2,
+    "CreatedBy": { "Id": 100 },
+    "TransactionCategory": { "Id": 583 },
+    "Date": "10/7/2020"
+  },
+  {
+    "Title": "nam",
+    "Amount": 904340.3,
+    "CreatedBy": { "Id": 2 },
+    "TransactionCategory": { "Id": 491 },
+    "Date": "12/19/2020"
+  },
+  {
+    "Amount": 964818.5,
+    "CreatedBy": { "Id": 160 },
+    "TransactionCategory": { "Id": 169 },
+    "Date": "11/20/2020"
+  },
+  {
+    "Amount": 858197.1,
+    "CreatedBy": { "Id": 3 },
+    "TransactionCategory": { "Id": 85 },
+    "Date": "9/12/2020"
+  },
+  {
+    "Title": "in",
+    "Amount": 912698.5,
+    "CreatedBy": { "Id": 94 },
+    "TransactionCategory": { "Id": 675 },
+    "Date": "12/31/2020"
+  },
+  {
+    "Title": "semper est",
+    "Amount": 381040.2,
+    "CreatedBy": { "Id": 22 },
+    "TransactionCategory": { "Id": 657 },
+    "Date": "12/19/2020"
+  },
+  {
+    "Amount": 15070.6,
+    "CreatedBy": { "Id": 197 },
+    "TransactionCategory": { "Id": 499 },
+    "Date": "10/18/2020"
+  },
+  {
+    "Title": "id",
+    "Amount": 311756.7,
+    "CreatedBy": { "Id": 139 },
+    "TransactionCategory": { "Id": 664 },
+    "Date": "12/23/2020"
+  },
+  {
+    "Title": "vitae",
+    "Amount": 323740.4,
+    "CreatedBy": { "Id": 69 },
+    "TransactionCategory": { "Id": 512 },
+    "Date": "10/12/2020"
+  },
+  {
+    "Title": "etiam",
+    "Amount": 916704.9,
+    "CreatedBy": { "Id": 136 },
+    "TransactionCategory": { "Id": 162 },
+    "Date": "8/7/2020"
+  },
+  {
+    "Title": "odio curabitur",
+    "Amount": 620417.7,
+    "CreatedBy": { "Id": 183 },
+    "TransactionCategory": { "Id": 254 },
+    "Date": "12/16/2020"
+  },
+  {
+    "Title": "leo",
+    "Amount": 214537.0,
+    "CreatedBy": { "Id": 52 },
+    "TransactionCategory": { "Id": 404 },
+    "Date": "12/14/2020"
+  },
+  {
+    "Amount": 988588.4,
+    "CreatedBy": { "Id": 82 },
+    "TransactionCategory": { "Id": 662 },
+    "Date": "11/24/2020"
+  },
+  {
+    "Amount": 212265.5,
+    "CreatedBy": { "Id": 86 },
+    "TransactionCategory": { "Id": 624 },
+    "Date": "8/19/2020"
+  },
+  {
+    "Title": "vestibulum",
+    "Amount": 747886.5,
+    "CreatedBy": { "Id": 29 },
+    "TransactionCategory": { "Id": 151 },
+    "Date": "11/10/2020"
+  },
+  {
+    "Title": "erat curabitur",
+    "Amount": 315505.4,
+    "CreatedBy": { "Id": 149 },
+    "TransactionCategory": { "Id": 535 },
+    "Date": "10/31/2020"
+  },
+  {
+    "Title": "morbi porttitor",
+    "Amount": 173205.1,
+    "CreatedBy": { "Id": 197 },
+    "TransactionCategory": { "Id": 683 },
+    "Date": "9/10/2020"
+  },
+  {
+    "Amount": 134501.4,
+    "CreatedBy": { "Id": 20 },
+    "TransactionCategory": { "Id": 737 },
+    "Date": "11/7/2020"
+  },
+  {
+    "Title": "lorem ipsum dolor",
+    "Amount": 319542.4,
+    "CreatedBy": { "Id": 120 },
+    "TransactionCategory": { "Id": 481 },
+    "Date": "12/10/2020"
+  },
+  {
+    "Amount": 686827.5,
+    "CreatedBy": { "Id": 64 },
+    "TransactionCategory": { "Id": 423 },
+    "Date": "11/16/2020"
+  },
+  {
+    "Title": "eros viverra",
+    "Amount": 198700.3,
+    "CreatedBy": { "Id": 149 },
+    "TransactionCategory": { "Id": 64 },
+    "Date": "11/27/2020"
+  },
+  {
+    "Title": "duis",
+    "Amount": 757576.2,
+    "CreatedBy": { "Id": 153 },
+    "TransactionCategory": { "Id": 624 },
+    "Date": "10/16/2020"
+  },
+  {
+    "Title": "risus",
+    "Amount": 891203.1,
+    "CreatedBy": { "Id": 80 },
+    "TransactionCategory": { "Id": 15 },
+    "Date": "8/22/2020"
+  },
+  {
+    "Amount": 969357.5,
+    "CreatedBy": { "Id": 198 },
+    "TransactionCategory": { "Id": 544 },
+    "Date": "8/24/2020"
+  },
+  {
+    "Title": "imperdiet et commodo",
+    "Amount": 91432.8,
+    "CreatedBy": { "Id": 159 },
+    "TransactionCategory": { "Id": 229 },
+    "Date": "10/8/2020"
+  },
+  {
+    "Amount": 385791.4,
+    "CreatedBy": { "Id": 63 },
+    "TransactionCategory": { "Id": 252 },
+    "Date": "12/6/2020"
+  },
+  {
+    "Title": "non velit donec",
+    "Amount": 573850.8,
+    "CreatedBy": { "Id": 122 },
+    "TransactionCategory": { "Id": 389 },
+    "Date": "10/8/2020"
+  },
+  {
+    "Title": "mauris",
+    "Amount": 290130.5,
+    "CreatedBy": { "Id": 32 },
+    "TransactionCategory": { "Id": 358 },
+    "Date": "10/8/2020"
+  },
+  {
+    "Amount": 387834.9,
+    "CreatedBy": { "Id": 199 },
+    "TransactionCategory": { "Id": 343 },
+    "Date": "11/14/2020"
+  },
+  {
+    "Title": "dapibus dolor vel",
+    "Amount": 771943.8,
+    "CreatedBy": { "Id": 147 },
+    "TransactionCategory": { "Id": 177 },
+    "Date": "9/8/2020"
+  },
+  {
+    "Title": "bibendum felis",
+    "Amount": 907503.2,
+    "CreatedBy": { "Id": 121 },
+    "TransactionCategory": { "Id": 745 },
+    "Date": "12/29/2020"
+  },
+  {
+    "Amount": 691247.0,
+    "CreatedBy": { "Id": 23 },
+    "TransactionCategory": { "Id": 711 },
+    "Date": "11/4/2020"
+  },
+  {
+    "Title": "amet",
+    "Amount": 856522.1,
+    "CreatedBy": { "Id": 71 },
+    "TransactionCategory": { "Id": 535 },
+    "Date": "11/20/2020"
+  },
+  {
+    "Title": "odio curabitur",
+    "Amount": 293593.4,
+    "CreatedBy": { "Id": 17 },
+    "TransactionCategory": { "Id": 468 },
+    "Date": "11/25/2020"
+  },
+  {
+    "Amount": 892909.0,
+    "CreatedBy": { "Id": 127 },
+    "TransactionCategory": { "Id": 664 },
+    "Date": "9/7/2020"
+  },
+  {
+    "Amount": 636166.6,
+    "CreatedBy": { "Id": 38 },
+    "TransactionCategory": { "Id": 431 },
+    "Date": "12/10/2020"
+  },
+  {
+    "Amount": 559368.2,
+    "CreatedBy": { "Id": 94 },
+    "TransactionCategory": { "Id": 148 },
+    "Date": "12/22/2020"
+  },
+  {
+    "Title": "vel",
+    "Amount": 35859.1,
+    "CreatedBy": { "Id": 131 },
+    "TransactionCategory": { "Id": 221 },
+    "Date": "10/2/2020"
+  },
+  {
+    "Amount": 200655.9,
+    "CreatedBy": { "Id": 176 },
+    "TransactionCategory": { "Id": 791 },
+    "Date": "10/17/2020"
+  },
+  {
+    "Title": "enim",
+    "Amount": 962040.8,
+    "CreatedBy": { "Id": 194 },
+    "TransactionCategory": { "Id": 438 },
+    "Date": "12/11/2020"
+  },
+  {
+    "Title": "id",
+    "Amount": 619158.0,
+    "CreatedBy": { "Id": 42 },
+    "TransactionCategory": { "Id": 17 },
+    "Date": "9/18/2020"
+  },
+  {
+    "Title": "nam dui",
+    "Amount": 205600.1,
+    "CreatedBy": { "Id": 71 },
+    "TransactionCategory": { "Id": 255 },
+    "Date": "11/27/2020"
+  },
+  {
+    "Title": "sociis natoque",
+    "Amount": 132180.5,
+    "CreatedBy": { "Id": 8 },
+    "TransactionCategory": { "Id": 542 },
+    "Date": "12/20/2020"
+  },
+  {
+    "Title": "nisl aenean",
+    "Amount": 630267.2,
+    "CreatedBy": { "Id": 5 },
+    "TransactionCategory": { "Id": 777 },
+    "Date": "8/8/2020"
+  },
+  {
+    "Amount": 414492.0,
+    "CreatedBy": { "Id": 6 },
+    "TransactionCategory": { "Id": 53 },
+    "Date": "12/31/2020"
+  },
+  {
+    "Title": "magnis dis",
+    "Amount": 86789.2,
+    "CreatedBy": { "Id": 151 },
+    "TransactionCategory": { "Id": 335 },
+    "Date": "10/19/2020"
+  },
+  {
+    "Title": "arcu adipiscing molestie",
+    "Amount": 714666.9,
+    "CreatedBy": { "Id": 68 },
+    "TransactionCategory": { "Id": 312 },
+    "Date": "11/5/2020"
+  },
+  {
+    "Title": "scelerisque quam",
+    "Amount": 152556.4,
+    "CreatedBy": { "Id": 59 },
+    "TransactionCategory": { "Id": 404 },
+    "Date": "12/30/2020"
+  },
+  {
+    "Title": "at nibh",
+    "Amount": 457111.3,
+    "CreatedBy": { "Id": 35 },
+    "TransactionCategory": { "Id": 19 },
+    "Date": "10/7/2020"
+  },
+  {
+    "Amount": 544568.6,
+    "CreatedBy": { "Id": 115 },
+    "TransactionCategory": { "Id": 180 },
+    "Date": "9/12/2020"
+  },
+  {
+    "Amount": 637654.9,
+    "CreatedBy": { "Id": 74 },
+    "TransactionCategory": { "Id": 365 },
+    "Date": "11/19/2020"
+  },
+  {
+    "Title": "volutpat dui",
+    "Amount": 601774.5,
+    "CreatedBy": { "Id": 41 },
+    "TransactionCategory": { "Id": 63 },
+    "Date": "11/29/2020"
+  },
+  {
+    "Title": "at ipsum",
+    "Amount": 324589.4,
+    "CreatedBy": { "Id": 30 },
+    "TransactionCategory": { "Id": 484 },
+    "Date": "9/17/2020"
+  },
+  {
+    "Title": "a nibh",
+    "Amount": 928672.5,
+    "CreatedBy": { "Id": 112 },
+    "TransactionCategory": { "Id": 691 },
+    "Date": "8/7/2020"
+  },
+  {
+    "Amount": 380583.6,
+    "CreatedBy": { "Id": 114 },
+    "TransactionCategory": { "Id": 153 },
+    "Date": "9/18/2020"
+  },
+  {
+    "Title": "convallis",
+    "Amount": 251612.5,
+    "CreatedBy": { "Id": 78 },
+    "TransactionCategory": { "Id": 180 },
+    "Date": "11/1/2020"
+  },
+  {
+    "Amount": 931992.3,
+    "CreatedBy": { "Id": 13 },
+    "TransactionCategory": { "Id": 475 },
+    "Date": "12/28/2020"
+  },
+  {
+    "Title": "nibh in",
+    "Amount": 616076.6,
+    "CreatedBy": { "Id": 117 },
+    "TransactionCategory": { "Id": 127 },
+    "Date": "8/24/2020"
+  },
+  {
+    "Amount": 869080.4,
+    "CreatedBy": { "Id": 63 },
+    "TransactionCategory": { "Id": 167 },
+    "Date": "9/20/2020"
+  },
+  {
+    "Title": "vitae nisi nam",
+    "Amount": 67820.3,
+    "CreatedBy": { "Id": 22 },
+    "TransactionCategory": { "Id": 463 },
+    "Date": "10/13/2020"
+  },
+  {
+    "Title": "cras pellentesque",
+    "Amount": 962632.5,
+    "CreatedBy": { "Id": 3 },
+    "TransactionCategory": { "Id": 60 },
+    "Date": "11/20/2020"
+  },
+  {
+    "Title": "sapien quis",
+    "Amount": 938191.6,
+    "CreatedBy": { "Id": 31 },
+    "TransactionCategory": { "Id": 247 },
+    "Date": "10/2/2020"
+  },
+  {
+    "Title": "nunc nisl duis",
+    "Amount": 623801.1,
+    "CreatedBy": { "Id": 3 },
+    "TransactionCategory": { "Id": 401 },
+    "Date": "12/30/2020"
+  },
+  {
+    "Title": "arcu",
+    "Amount": 617298.3,
+    "CreatedBy": { "Id": 51 },
+    "TransactionCategory": { "Id": 566 },
+    "Date": "9/2/2020"
+  },
+  {
+    "Title": "mi pede",
+    "Amount": 672826.1,
+    "CreatedBy": { "Id": 73 },
+    "TransactionCategory": { "Id": 502 },
+    "Date": "9/4/2020"
+  },
+  {
+    "Title": "rutrum",
+    "Amount": 745275.0,
+    "CreatedBy": { "Id": 195 },
+    "TransactionCategory": { "Id": 198 },
+    "Date": "11/1/2020"
+  },
+  {
+    "Amount": 722104.8,
+    "CreatedBy": { "Id": 118 },
+    "TransactionCategory": { "Id": 193 },
+    "Date": "10/6/2020"
+  },
+  {
+    "Title": "praesent blandit lacinia",
+    "Amount": 279839.9,
+    "CreatedBy": { "Id": 65 },
+    "TransactionCategory": { "Id": 449 },
+    "Date": "12/14/2020"
+  },
+  {
+    "Title": "aliquam lacus morbi",
+    "Amount": 684898.5,
+    "CreatedBy": { "Id": 22 },
+    "TransactionCategory": { "Id": 470 },
+    "Date": "8/17/2020"
+  },
+  {
+    "Amount": 990834.4,
+    "CreatedBy": { "Id": 62 },
+    "TransactionCategory": { "Id": 704 },
+    "Date": "8/6/2020"
+  },
+  {
+    "Title": "vel",
+    "Amount": 167872.3,
+    "CreatedBy": { "Id": 106 },
+    "TransactionCategory": { "Id": 451 },
+    "Date": "11/28/2020"
+  },
+  {
+    "Title": "metus aenean",
+    "Amount": 75057.0,
+    "CreatedBy": { "Id": 45 },
+    "TransactionCategory": { "Id": 556 },
+    "Date": "12/3/2020"
+  },
+  {
+    "Title": "quam fringilla rhoncus",
+    "Amount": 963934.5,
+    "CreatedBy": { "Id": 194 },
+    "TransactionCategory": { "Id": 159 },
+    "Date": "11/6/2020"
+  },
+  {
+    "Title": "in",
+    "Amount": 262047.9,
+    "CreatedBy": { "Id": 122 },
+    "TransactionCategory": { "Id": 363 },
+    "Date": "9/12/2020"
+  },
+  {
+    "Title": "faucibus",
+    "Amount": 974532.9,
+    "CreatedBy": { "Id": 68 },
+    "TransactionCategory": { "Id": 437 },
+    "Date": "10/1/2020"
+  },
+  {
+    "Title": "vestibulum",
+    "Amount": 471917.7,
+    "CreatedBy": { "Id": 124 },
+    "TransactionCategory": { "Id": 210 },
+    "Date": "10/29/2020"
+  },
+  {
+    "Amount": 768796.5,
+    "CreatedBy": { "Id": 27 },
+    "TransactionCategory": { "Id": 49 },
+    "Date": "9/28/2020"
+  },
+  {
+    "Amount": 287591.4,
+    "CreatedBy": { "Id": 22 },
+    "TransactionCategory": { "Id": 625 },
+    "Date": "11/30/2020"
+  },
+  {
+    "Amount": 849910.7,
+    "CreatedBy": { "Id": 121 },
+    "TransactionCategory": { "Id": 141 },
+    "Date": "9/22/2020"
+  },
+  {
+    "Title": "consectetuer adipiscing elit",
+    "Amount": 825400.8,
+    "CreatedBy": { "Id": 27 },
+    "TransactionCategory": { "Id": 587 },
+    "Date": "11/13/2020"
+  },
+  {
+    "Title": "in sagittis dui",
+    "Amount": 537596.6,
+    "CreatedBy": { "Id": 162 },
+    "TransactionCategory": { "Id": 464 },
+    "Date": "9/12/2020"
+  },
+  {
+    "Title": "duis",
+    "Amount": 985729.7,
+    "CreatedBy": { "Id": 87 },
+    "TransactionCategory": { "Id": 523 },
+    "Date": "10/3/2020"
+  },
+  {
+    "Title": "eget vulputate",
+    "Amount": 165882.7,
+    "CreatedBy": { "Id": 136 },
+    "TransactionCategory": { "Id": 528 },
+    "Date": "10/22/2020"
+  },
+  {
+    "Title": "justo morbi ut",
+    "Amount": 191797.9,
+    "CreatedBy": { "Id": 181 },
+    "TransactionCategory": { "Id": 325 },
+    "Date": "9/4/2020"
+  },
+  {
+    "Amount": 733389.5,
+    "CreatedBy": { "Id": 140 },
+    "TransactionCategory": { "Id": 457 },
+    "Date": "10/4/2020"
+  },
+  {
+    "Title": "diam erat",
+    "Amount": 351298.7,
+    "CreatedBy": { "Id": 59 },
+    "TransactionCategory": { "Id": 734 },
+    "Date": "10/6/2020"
+  },
+  {
+    "Amount": 199215.8,
+    "CreatedBy": { "Id": 79 },
+    "TransactionCategory": { "Id": 593 },
+    "Date": "11/24/2020"
+  },
+  {
+    "Title": "mauris morbi non",
+    "Amount": 781205.0,
+    "CreatedBy": { "Id": 29 },
+    "TransactionCategory": { "Id": 86 },
+    "Date": "12/3/2020"
+  },
+  {
+    "Title": "elit",
+    "Amount": 894297.7,
+    "CreatedBy": { "Id": 41 },
+    "TransactionCategory": { "Id": 731 },
+    "Date": "11/14/2020"
+  },
+  {
+    "Title": "volutpat",
+    "Amount": 991415.3,
+    "CreatedBy": { "Id": 154 },
+    "TransactionCategory": { "Id": 17 },
+    "Date": "11/10/2020"
+  },
+  {
+    "Title": "consectetuer adipiscing elit",
+    "Amount": 582560.8,
+    "CreatedBy": { "Id": 160 },
+    "TransactionCategory": { "Id": 521 },
+    "Date": "12/23/2020"
+  },
+  {
+    "Title": "tristique tortor",
+    "Amount": 827090.8,
+    "CreatedBy": { "Id": 169 },
+    "TransactionCategory": { "Id": 530 },
+    "Date": "11/14/2020"
+  },
+  {
+    "Title": "vestibulum sed magna",
+    "Amount": 96863.4,
+    "CreatedBy": { "Id": 199 },
+    "TransactionCategory": { "Id": 799 },
+    "Date": "11/30/2020"
+  },
+  {
+    "Title": "dolor sit",
+    "Amount": 993245.4,
+    "CreatedBy": { "Id": 108 },
+    "TransactionCategory": { "Id": 428 },
+    "Date": "12/14/2020"
+  },
+  {
+    "Title": "tellus",
+    "Amount": 148996.4,
+    "CreatedBy": { "Id": 20 },
+    "TransactionCategory": { "Id": 622 },
+    "Date": "11/28/2020"
+  },
+  {
+    "Amount": 916304.7,
+    "CreatedBy": { "Id": 2 },
+    "TransactionCategory": { "Id": 91 },
+    "Date": "12/19/2020"
+  },
+  {
+    "Amount": 179631.5,
+    "CreatedBy": { "Id": 51 },
+    "TransactionCategory": { "Id": 58 },
+    "Date": "8/6/2020"
+  },
+  {
+    "Title": "volutpat",
+    "Amount": 442967.7,
+    "CreatedBy": { "Id": 45 },
+    "TransactionCategory": { "Id": 272 },
+    "Date": "8/11/2020"
+  },
+  {
+    "Amount": 357869.2,
+    "CreatedBy": { "Id": 120 },
+    "TransactionCategory": { "Id": 776 },
+    "Date": "8/25/2020"
+  },
+  {
+    "Amount": 605412.7,
+    "CreatedBy": { "Id": 164 },
+    "TransactionCategory": { "Id": 47 },
+    "Date": "8/9/2020"
+  },
+  {
+    "Title": "pellentesque",
+    "Amount": 944727.1,
+    "CreatedBy": { "Id": 67 },
+    "TransactionCategory": { "Id": 490 },
+    "Date": "12/7/2020"
+  },
+  {
+    "Title": "lectus",
+    "Amount": 605836.8,
+    "CreatedBy": { "Id": 94 },
+    "TransactionCategory": { "Id": 449 },
+    "Date": "12/13/2020"
+  },
+  {
+    "Title": "diam neque vestibulum",
+    "Amount": 610178.2,
+    "CreatedBy": { "Id": 122 },
+    "TransactionCategory": { "Id": 683 },
+    "Date": "12/9/2020"
+  },
+  {
+    "Title": "est phasellus sit",
+    "Amount": 295829.4,
+    "CreatedBy": { "Id": 150 },
+    "TransactionCategory": { "Id": 688 },
+    "Date": "8/26/2020"
+  },
+  {
+    "Title": "elementum",
+    "Amount": 264364.8,
+    "CreatedBy": { "Id": 126 },
+    "TransactionCategory": { "Id": 763 },
+    "Date": "9/14/2020"
+  },
+  {
+    "Title": "turpis",
+    "Amount": 700417.5,
+    "CreatedBy": { "Id": 78 },
+    "TransactionCategory": { "Id": 246 },
+    "Date": "10/26/2020"
+  },
+  {
+    "Title": "rhoncus aliquet pulvinar",
+    "Amount": 370140.9,
+    "CreatedBy": { "Id": 135 },
+    "TransactionCategory": { "Id": 280 },
+    "Date": "11/1/2020"
+  },
+  {
+    "Title": "sagittis nam",
+    "Amount": 320443.2,
+    "CreatedBy": { "Id": 83 },
+    "TransactionCategory": { "Id": 454 },
+    "Date": "11/18/2020"
+  },
+  {
+    "Title": "sollicitudin",
+    "Amount": 73738.3,
+    "CreatedBy": { "Id": 155 },
+    "TransactionCategory": { "Id": 355 },
+    "Date": "8/4/2020"
+  },
+  {
+    "Amount": 16215.3,
+    "CreatedBy": { "Id": 53 },
+    "TransactionCategory": { "Id": 420 },
+    "Date": "10/29/2020"
+  },
+  {
+    "Title": "sit",
+    "Amount": 35091.2,
+    "CreatedBy": { "Id": 170 },
+    "TransactionCategory": { "Id": 125 },
+    "Date": "10/31/2020"
+  },
+  {
+    "Amount": 731559.9,
+    "CreatedBy": { "Id": 168 },
+    "TransactionCategory": { "Id": 135 },
+    "Date": "8/12/2020"
+  },
+  {
+    "Title": "lorem ipsum",
+    "Amount": 792245.8,
+    "CreatedBy": { "Id": 96 },
+    "TransactionCategory": { "Id": 74 },
+    "Date": "8/20/2020"
+  },
+  {
+    "Amount": 718995.1,
+    "CreatedBy": { "Id": 89 },
+    "TransactionCategory": { "Id": 548 },
+    "Date": "11/25/2020"
+  },
+  {
+    "Title": "amet eros",
+    "Amount": 552611.9,
+    "CreatedBy": { "Id": 69 },
+    "TransactionCategory": { "Id": 705 },
+    "Date": "8/16/2020"
+  },
+  {
+    "Title": "sit amet turpis",
+    "Amount": 217174.6,
+    "CreatedBy": { "Id": 158 },
+    "TransactionCategory": { "Id": 109 },
+    "Date": "9/4/2020"
+  },
+  {
+    "Amount": 13238.2,
+    "CreatedBy": { "Id": 113 },
+    "TransactionCategory": { "Id": 428 },
+    "Date": "9/2/2020"
+  },
+  {
+    "Title": "felis ut at",
+    "Amount": 495491.6,
+    "CreatedBy": { "Id": 159 },
+    "TransactionCategory": { "Id": 580 },
+    "Date": "12/8/2020"
+  },
+  {
+    "Title": "at diam",
+    "Amount": 205075.5,
+    "CreatedBy": { "Id": 99 },
+    "TransactionCategory": { "Id": 402 },
+    "Date": "12/21/2020"
+  },
+  {
+    "Amount": 915799.0,
+    "CreatedBy": { "Id": 86 },
+    "TransactionCategory": { "Id": 433 },
+    "Date": "8/1/2020"
+  },
+  {
+    "Title": "congue diam id",
+    "Amount": 648974.3,
+    "CreatedBy": { "Id": 82 },
+    "TransactionCategory": { "Id": 36 },
+    "Date": "8/1/2020"
+  },
+  {
+    "Amount": 955422.3,
+    "CreatedBy": { "Id": 158 },
+    "TransactionCategory": { "Id": 284 },
+    "Date": "10/21/2020"
+  },
+  {
+    "Title": "amet sapien dignissim",
+    "Amount": 734707.5,
+    "CreatedBy": { "Id": 90 },
+    "TransactionCategory": { "Id": 103 },
+    "Date": "10/17/2020"
+  },
+  {
+    "Amount": 347960.7,
+    "CreatedBy": { "Id": 94 },
+    "TransactionCategory": { "Id": 99 },
+    "Date": "8/31/2020"
+  },
+  {
+    "Title": "in sagittis",
+    "Amount": 398744.3,
+    "CreatedBy": { "Id": 85 },
+    "TransactionCategory": { "Id": 253 },
+    "Date": "10/19/2020"
+  },
+  {
+    "Title": "in",
+    "Amount": 536007.0,
+    "CreatedBy": { "Id": 128 },
+    "TransactionCategory": { "Id": 337 },
+    "Date": "10/30/2020"
+  },
+  {
+    "Amount": 157612.7,
+    "CreatedBy": { "Id": 181 },
+    "TransactionCategory": { "Id": 352 },
+    "Date": "9/1/2020"
+  },
+  {
+    "Title": "orci",
+    "Amount": 798281.6,
+    "CreatedBy": { "Id": 156 },
+    "TransactionCategory": { "Id": 112 },
+    "Date": "12/28/2020"
+  },
+  {
+    "Amount": 52745.9,
+    "CreatedBy": { "Id": 180 },
+    "TransactionCategory": { "Id": 37 },
+    "Date": "12/25/2020"
+  },
+  {
+    "Title": "venenatis non sodales",
+    "Amount": 372932.9,
+    "CreatedBy": { "Id": 120 },
+    "TransactionCategory": { "Id": 54 },
+    "Date": "12/10/2020"
+  },
+  {
+    "Amount": 664622.0,
+    "CreatedBy": { "Id": 51 },
+    "TransactionCategory": { "Id": 327 },
+    "Date": "9/8/2020"
+  },
+  {
+    "Amount": 117582.6,
+    "CreatedBy": { "Id": 120 },
+    "TransactionCategory": { "Id": 531 },
+    "Date": "12/2/2020"
+  },
+  {
+    "Title": "pellentesque",
+    "Amount": 43901.8,
+    "CreatedBy": { "Id": 62 },
+    "TransactionCategory": { "Id": 258 },
+    "Date": "11/5/2020"
+  },
+  {
+    "Title": "ornare consequat lectus",
+    "Amount": 813222.3,
+    "CreatedBy": { "Id": 106 },
+    "TransactionCategory": { "Id": 653 },
+    "Date": "11/18/2020"
+  },
+  {
+    "Amount": 232641.9,
+    "CreatedBy": { "Id": 97 },
+    "TransactionCategory": { "Id": 476 },
+    "Date": "9/24/2020"
+  },
+  {
+    "Amount": 154476.0,
+    "CreatedBy": { "Id": 185 },
+    "TransactionCategory": { "Id": 62 },
+    "Date": "12/7/2020"
+  },
+  {
+    "Title": "nulla dapibus dolor",
+    "Amount": 531993.9,
+    "CreatedBy": { "Id": 121 },
+    "TransactionCategory": { "Id": 712 },
+    "Date": "11/13/2020"
+  },
+  {
+    "Amount": 691979.5,
+    "CreatedBy": { "Id": 89 },
+    "TransactionCategory": { "Id": 614 },
+    "Date": "8/5/2020"
+  },
+  {
+    "Title": "diam",
+    "Amount": 217431.1,
+    "CreatedBy": { "Id": 168 },
+    "TransactionCategory": { "Id": 542 },
+    "Date": "10/9/2020"
+  },
+  {
+    "Title": "dictumst maecenas ut",
+    "Amount": 560975.8,
+    "CreatedBy": { "Id": 33 },
+    "TransactionCategory": { "Id": 430 },
+    "Date": "8/3/2020"
+  },
+  {
+    "Title": "id massa",
+    "Amount": 140343.0,
+    "CreatedBy": { "Id": 200 },
+    "TransactionCategory": { "Id": 62 },
+    "Date": "10/16/2020"
+  },
+  {
+    "Amount": 971131.5,
+    "CreatedBy": { "Id": 63 },
+    "TransactionCategory": { "Id": 458 },
+    "Date": "10/4/2020"
+  },
+  {
+    "Title": "consectetuer",
+    "Amount": 654857.8,
+    "CreatedBy": { "Id": 43 },
+    "TransactionCategory": { "Id": 360 },
+    "Date": "11/24/2020"
+  },
+  {
+    "Amount": 332834.8,
+    "CreatedBy": { "Id": 107 },
+    "TransactionCategory": { "Id": 88 },
+    "Date": "9/16/2020"
+  },
+  {
+    "Title": "vel accumsan tellus",
+    "Amount": 160449.9,
+    "CreatedBy": { "Id": 158 },
+    "TransactionCategory": { "Id": 613 },
+    "Date": "12/3/2020"
+  },
+  {
+    "Title": "dui luctus",
+    "Amount": 851441.8,
+    "CreatedBy": { "Id": 33 },
+    "TransactionCategory": { "Id": 703 },
+    "Date": "12/14/2020"
+  },
+  {
+    "Amount": 834038.1,
+    "CreatedBy": { "Id": 165 },
+    "TransactionCategory": { "Id": 525 },
+    "Date": "11/23/2020"
+  },
+  {
+    "Title": "aliquam non mauris",
+    "Amount": 411262.0,
+    "CreatedBy": { "Id": 167 },
+    "TransactionCategory": { "Id": 738 },
+    "Date": "12/1/2020"
+  },
+  {
+    "Title": "egestas metus",
+    "Amount": 966790.7,
+    "CreatedBy": { "Id": 200 },
+    "TransactionCategory": { "Id": 484 },
+    "Date": "10/22/2020"
+  },
+  {
+    "Amount": 987807.1,
+    "CreatedBy": { "Id": 77 },
+    "TransactionCategory": { "Id": 341 },
+    "Date": "11/1/2020"
+  },
+  {
+    "Amount": 991179.6,
+    "CreatedBy": { "Id": 180 },
+    "TransactionCategory": { "Id": 462 },
+    "Date": "9/8/2020"
+  },
+  {
+    "Title": "adipiscing elit proin",
+    "Amount": 171959.4,
+    "CreatedBy": { "Id": 125 },
+    "TransactionCategory": { "Id": 228 },
+    "Date": "11/26/2020"
+  },
+  {
+    "Title": "mauris morbi",
+    "Amount": 62004.8,
+    "CreatedBy": { "Id": 90 },
+    "TransactionCategory": { "Id": 252 },
+    "Date": "11/22/2020"
+  },
+  {
+    "Title": "adipiscing",
+    "Amount": 655489.4,
+    "CreatedBy": { "Id": 136 },
+    "TransactionCategory": { "Id": 604 },
+    "Date": "12/24/2020"
+  },
+  {
+    "Title": "massa",
+    "Amount": 262718.8,
+    "CreatedBy": { "Id": 133 },
+    "TransactionCategory": { "Id": 249 },
+    "Date": "12/24/2020"
+  },
+  {
+    "Title": "velit eu est",
+    "Amount": 589772.4,
+    "CreatedBy": { "Id": 139 },
+    "TransactionCategory": { "Id": 561 },
+    "Date": "11/2/2020"
+  },
+  {
+    "Title": "tristique",
+    "Amount": 926589.7,
+    "CreatedBy": { "Id": 189 },
+    "TransactionCategory": { "Id": 42 },
+    "Date": "9/20/2020"
+  },
+  {
+    "Title": "in purus",
+    "Amount": 382247.4,
+    "CreatedBy": { "Id": 21 },
+    "TransactionCategory": { "Id": 439 },
+    "Date": "10/6/2020"
+  },
+  {
+    "Title": "vulputate",
+    "Amount": 906901.1,
+    "CreatedBy": { "Id": 146 },
+    "TransactionCategory": { "Id": 738 },
+    "Date": "8/6/2020"
+  },
+  {
+    "Amount": 284012.5,
+    "CreatedBy": { "Id": 69 },
+    "TransactionCategory": { "Id": 63 },
+    "Date": "11/16/2020"
+  },
+  {
+    "Title": "feugiat et eros",
+    "Amount": 656575.7,
+    "CreatedBy": { "Id": 159 },
+    "TransactionCategory": { "Id": 600 },
+    "Date": "10/27/2020"
+  },
+  {
+    "Title": "eget elit",
+    "Amount": 7749.1,
+    "CreatedBy": { "Id": 144 },
+    "TransactionCategory": { "Id": 316 },
+    "Date": "8/27/2020"
+  },
+  {
+    "Title": "ligula in",
+    "Amount": 118980.7,
+    "CreatedBy": { "Id": 62 },
+    "TransactionCategory": { "Id": 434 },
+    "Date": "12/14/2020"
+  },
+  {
+    "Title": "suspendisse ornare consequat",
+    "Amount": 243029.8,
+    "CreatedBy": { "Id": 140 },
+    "TransactionCategory": { "Id": 366 },
+    "Date": "10/27/2020"
+  },
+  {
+    "Title": "suspendisse",
+    "Amount": 461315.1,
+    "CreatedBy": { "Id": 99 },
+    "TransactionCategory": { "Id": 734 },
+    "Date": "8/11/2020"
+  },
+  {
+    "Title": "orci",
+    "Amount": 889530.9,
+    "CreatedBy": { "Id": 53 },
+    "TransactionCategory": { "Id": 190 },
+    "Date": "9/6/2020"
+  },
+  {
+    "Amount": 899855.4,
+    "CreatedBy": { "Id": 88 },
+    "TransactionCategory": { "Id": 213 },
+    "Date": "8/11/2020"
+  },
+  {
+    "Title": "aliquam quis turpis",
+    "Amount": 481343.2,
+    "CreatedBy": { "Id": 109 },
+    "TransactionCategory": { "Id": 261 },
+    "Date": "11/8/2020"
+  },
+  {
+    "Title": "lorem",
+    "Amount": 856368.0,
+    "CreatedBy": { "Id": 131 },
+    "TransactionCategory": { "Id": 709 },
+    "Date": "11/6/2020"
+  },
+  {
+    "Title": "risus dapibus augue",
+    "Amount": 99243.9,
+    "CreatedBy": { "Id": 31 },
+    "TransactionCategory": { "Id": 684 },
+    "Date": "12/23/2020"
+  },
+  {
+    "Title": "rutrum rutrum neque",
+    "Amount": 26661.4,
+    "CreatedBy": { "Id": 78 },
+    "TransactionCategory": { "Id": 591 },
+    "Date": "10/4/2020"
+  },
+  {
+    "Title": "sollicitudin vitae",
+    "Amount": 476436.9,
+    "CreatedBy": { "Id": 33 },
+    "TransactionCategory": { "Id": 123 },
+    "Date": "11/6/2020"
+  },
+  {
+    "Amount": 126733.1,
+    "CreatedBy": { "Id": 154 },
+    "TransactionCategory": { "Id": 284 },
+    "Date": "11/24/2020"
+  },
+  {
+    "Title": "nisi venenatis",
+    "Amount": 719703.8,
+    "CreatedBy": { "Id": 137 },
+    "TransactionCategory": { "Id": 551 },
+    "Date": "9/3/2020"
+  },
+  {
+    "Title": "integer tincidunt",
+    "Amount": 789664.1,
+    "CreatedBy": { "Id": 38 },
+    "TransactionCategory": { "Id": 3 },
+    "Date": "8/27/2020"
+  },
+  {
+    "Title": "lacinia sapien",
+    "Amount": 158371.2,
+    "CreatedBy": { "Id": 28 },
+    "TransactionCategory": { "Id": 438 },
+    "Date": "11/17/2020"
+  },
+  {
+    "Title": "primis in faucibus",
+    "Amount": 21194.4,
+    "CreatedBy": { "Id": 85 },
+    "TransactionCategory": { "Id": 562 },
+    "Date": "10/19/2020"
+  },
+  {
+    "Title": "sit amet eros",
+    "Amount": 746459.8,
+    "CreatedBy": { "Id": 190 },
+    "TransactionCategory": { "Id": 788 },
+    "Date": "8/31/2020"
+  },
+  {
+    "Title": "ipsum primis in",
+    "Amount": 569758.5,
+    "CreatedBy": { "Id": 122 },
+    "TransactionCategory": { "Id": 73 },
+    "Date": "9/9/2020"
+  },
+  {
+    "Title": "nulla tellus in",
+    "Amount": 264111.6,
+    "CreatedBy": { "Id": 67 },
+    "TransactionCategory": { "Id": 473 },
+    "Date": "12/5/2020"
+  },
+  {
+    "Title": "eget orci",
+    "Amount": 887359.8,
+    "CreatedBy": { "Id": 199 },
+    "TransactionCategory": { "Id": 343 },
+    "Date": "9/18/2020"
+  },
+  {
+    "Amount": 839451.2,
+    "CreatedBy": { "Id": 114 },
+    "TransactionCategory": { "Id": 266 },
+    "Date": "9/4/2020"
+  },
+  {
+    "Amount": 135098.6,
+    "CreatedBy": { "Id": 70 },
+    "TransactionCategory": { "Id": 748 },
+    "Date": "11/21/2020"
+  },
+  {
+    "Title": "in",
+    "Amount": 473250.9,
+    "CreatedBy": { "Id": 129 },
+    "TransactionCategory": { "Id": 648 },
+    "Date": "9/23/2020"
+  },
+  {
+    "Amount": 525612.3,
+    "CreatedBy": { "Id": 90 },
+    "TransactionCategory": { "Id": 743 },
+    "Date": "12/31/2020"
+  },
+  {
+    "Amount": 853429.7,
+    "CreatedBy": { "Id": 90 },
+    "TransactionCategory": { "Id": 720 },
+    "Date": "12/21/2020"
+  },
+  {
+    "Title": "sit",
+    "Amount": 456161.8,
+    "CreatedBy": { "Id": 155 },
+    "TransactionCategory": { "Id": 195 },
+    "Date": "9/29/2020"
+  },
+  {
+    "Title": "aliquam augue",
+    "Amount": 640099.3,
+    "CreatedBy": { "Id": 13 },
+    "TransactionCategory": { "Id": 660 },
+    "Date": "11/5/2020"
+  },
+  {
+    "Amount": 301931.3,
+    "CreatedBy": { "Id": 23 },
+    "TransactionCategory": { "Id": 432 },
+    "Date": "11/29/2020"
+  },
+  {
+    "Title": "et magnis dis",
+    "Amount": 766034.2,
+    "CreatedBy": { "Id": 176 },
+    "TransactionCategory": { "Id": 200 },
+    "Date": "10/2/2020"
+  },
+  {
+    "Amount": 737499.9,
+    "CreatedBy": { "Id": 97 },
+    "TransactionCategory": { "Id": 485 },
+    "Date": "9/29/2020"
+  },
+  {
+    "Title": "quam",
+    "Amount": 981412.0,
+    "CreatedBy": { "Id": 73 },
+    "TransactionCategory": { "Id": 31 },
+    "Date": "8/7/2020"
+  },
+  {
+    "Title": "iaculis justo in",
+    "Amount": 729097.7,
+    "CreatedBy": { "Id": 41 },
+    "TransactionCategory": { "Id": 154 },
+    "Date": "9/25/2020"
+  },
+  {
+    "Title": "nam dui proin",
+    "Amount": 156109.7,
+    "CreatedBy": { "Id": 39 },
+    "TransactionCategory": { "Id": 462 },
+    "Date": "10/19/2020"
+  },
+  {
+    "Title": "neque",
+    "Amount": 989084.9,
+    "CreatedBy": { "Id": 16 },
+    "TransactionCategory": { "Id": 500 },
+    "Date": "12/17/2020"
+  },
+  {
+    "Title": "dui",
+    "Amount": 353119.2,
+    "CreatedBy": { "Id": 14 },
+    "TransactionCategory": { "Id": 719 },
+    "Date": "12/21/2020"
+  },
+  {
+    "Amount": 734597.1,
+    "CreatedBy": { "Id": 132 },
+    "TransactionCategory": { "Id": 248 },
+    "Date": "8/28/2020"
+  },
+  {
+    "Title": "varius integer ac",
+    "Amount": 964239.4,
+    "CreatedBy": { "Id": 45 },
+    "TransactionCategory": { "Id": 591 },
+    "Date": "10/7/2020"
+  },
+  {
+    "Amount": 149421.4,
+    "CreatedBy": { "Id": 92 },
+    "TransactionCategory": { "Id": 518 },
+    "Date": "10/8/2020"
+  },
+  {
+    "Amount": 565942.3,
+    "CreatedBy": { "Id": 54 },
+    "TransactionCategory": { "Id": 161 },
+    "Date": "8/11/2020"
+  },
+  {
+    "Title": "ultricies eu nibh",
+    "Amount": 22932.2,
+    "CreatedBy": { "Id": 15 },
+    "TransactionCategory": { "Id": 279 },
+    "Date": "11/12/2020"
+  },
+  {
+    "Title": "suspendisse potenti",
+    "Amount": 956439.8,
+    "CreatedBy": { "Id": 116 },
+    "TransactionCategory": { "Id": 519 },
+    "Date": "12/23/2020"
+  },
+  {
+    "Title": "fusce consequat",
+    "Amount": 794121.2,
+    "CreatedBy": { "Id": 119 },
+    "TransactionCategory": { "Id": 128 },
+    "Date": "9/3/2020"
+  },
+  {
+    "Amount": 444855.7,
+    "CreatedBy": { "Id": 27 },
+    "TransactionCategory": { "Id": 718 },
+    "Date": "9/3/2020"
+  },
+  {
+    "Amount": 682325.4,
+    "CreatedBy": { "Id": 63 },
+    "TransactionCategory": { "Id": 133 },
+    "Date": "12/19/2020"
+  },
+  {
+    "Amount": 842306.3,
+    "CreatedBy": { "Id": 199 },
+    "TransactionCategory": { "Id": 662 },
+    "Date": "10/28/2020"
+  },
+  {
+    "Title": "sed",
+    "Amount": 432159.3,
+    "CreatedBy": { "Id": 44 },
+    "TransactionCategory": { "Id": 375 },
+    "Date": "11/10/2020"
+  },
+  {
+    "Amount": 275916.4,
+    "CreatedBy": { "Id": 48 },
+    "TransactionCategory": { "Id": 363 },
+    "Date": "8/24/2020"
+  },
+  {
+    "Title": "vehicula",
+    "Amount": 314647.7,
+    "CreatedBy": { "Id": 126 },
+    "TransactionCategory": { "Id": 742 },
+    "Date": "10/30/2020"
+  },
+  {
+    "Title": "auctor",
+    "Amount": 469195.8,
+    "CreatedBy": { "Id": 84 },
+    "TransactionCategory": { "Id": 658 },
+    "Date": "10/14/2020"
+  },
+  {
+    "Title": "pede malesuada in",
+    "Amount": 430635.9,
+    "CreatedBy": { "Id": 174 },
+    "TransactionCategory": { "Id": 584 },
+    "Date": "12/13/2020"
+  },
+  {
+    "Title": "facilisi cras non",
+    "Amount": 496076.2,
+    "CreatedBy": { "Id": 64 },
+    "TransactionCategory": { "Id": 483 },
+    "Date": "12/16/2020"
+  },
+  {
+    "Title": "magna at nunc",
+    "Amount": 947283.1,
+    "CreatedBy": { "Id": 128 },
+    "TransactionCategory": { "Id": 73 },
+    "Date": "9/7/2020"
+  },
+  {
+    "Amount": 723196.6,
+    "CreatedBy": { "Id": 200 },
+    "TransactionCategory": { "Id": 47 },
+    "Date": "10/19/2020"
+  },
+  {
+    "Amount": 926377.9,
+    "CreatedBy": { "Id": 165 },
+    "TransactionCategory": { "Id": 723 },
+    "Date": "12/4/2020"
+  },
+  {
+    "Title": "ac neque",
+    "Amount": 933562.7,
+    "CreatedBy": { "Id": 69 },
+    "TransactionCategory": { "Id": 642 },
+    "Date": "12/13/2020"
+  },
+  {
+    "Amount": 639014.9,
+    "CreatedBy": { "Id": 8 },
+    "TransactionCategory": { "Id": 445 },
+    "Date": "9/22/2020"
+  },
+  {
+    "Amount": 712989.0,
+    "CreatedBy": { "Id": 55 },
+    "TransactionCategory": { "Id": 15 },
+    "Date": "11/2/2020"
+  },
+  {
+    "Title": "condimentum curabitur",
+    "Amount": 576554.7,
+    "CreatedBy": { "Id": 199 },
+    "TransactionCategory": { "Id": 440 },
+    "Date": "12/26/2020"
+  },
+  {
+    "Amount": 318773.4,
+    "CreatedBy": { "Id": 99 },
+    "TransactionCategory": { "Id": 489 },
+    "Date": "9/12/2020"
+  },
+  {
+    "Title": "ultrices posuere",
+    "Amount": 695768.1,
+    "CreatedBy": { "Id": 93 },
+    "TransactionCategory": { "Id": 586 },
+    "Date": "10/15/2020"
+  },
+  {
+    "Amount": 467762.7,
+    "CreatedBy": { "Id": 118 },
+    "TransactionCategory": { "Id": 454 },
+    "Date": "9/4/2020"
+  },
+  {
+    "Title": "duis",
+    "Amount": 198228.5,
+    "CreatedBy": { "Id": 90 },
+    "TransactionCategory": { "Id": 347 },
+    "Date": "11/15/2020"
+  },
+  {
+    "Title": "donec vitae",
+    "Amount": 602254.3,
+    "CreatedBy": { "Id": 100 },
+    "TransactionCategory": { "Id": 109 },
+    "Date": "10/3/2020"
+  },
+  {
+    "Amount": 359400.3,
+    "CreatedBy": { "Id": 175 },
+    "TransactionCategory": { "Id": 290 },
+    "Date": "11/15/2020"
+  },
+  {
+    "Title": "quis",
+    "Amount": 715852.9,
+    "CreatedBy": { "Id": 6 },
+    "TransactionCategory": { "Id": 414 },
+    "Date": "12/29/2020"
+  },
+  {
+    "Title": "aliquam convallis",
+    "Amount": 471772.5,
+    "CreatedBy": { "Id": 73 },
+    "TransactionCategory": { "Id": 696 },
+    "Date": "12/20/2020"
+  },
+  {
+    "Amount": 78398.0,
+    "CreatedBy": { "Id": 186 },
+    "TransactionCategory": { "Id": 456 },
+    "Date": "12/1/2020"
+  },
+  {
+    "Amount": 457799.9,
+    "CreatedBy": { "Id": 8 },
+    "TransactionCategory": { "Id": 707 },
+    "Date": "10/11/2020"
+  },
+  {
+    "Title": "nunc rhoncus",
+    "Amount": 29402.7,
+    "CreatedBy": { "Id": 180 },
+    "TransactionCategory": { "Id": 355 },
+    "Date": "9/29/2020"
+  },
+  {
+    "Title": "urna pretium",
+    "Amount": 602827.4,
+    "CreatedBy": { "Id": 78 },
+    "TransactionCategory": { "Id": 709 },
+    "Date": "9/10/2020"
+  },
+  {
+    "Title": "nec",
+    "Amount": 477154.9,
+    "CreatedBy": { "Id": 107 },
+    "TransactionCategory": { "Id": 720 },
+    "Date": "12/30/2020"
+  },
+  {
+    "Title": "rhoncus",
+    "Amount": 462240.1,
+    "CreatedBy": { "Id": 65 },
+    "TransactionCategory": { "Id": 398 },
+    "Date": "12/8/2020"
+  },
+  {
+    "Amount": 320520.4,
+    "CreatedBy": { "Id": 130 },
+    "TransactionCategory": { "Id": 134 },
+    "Date": "9/19/2020"
+  },
+  {
+    "Title": "quisque arcu libero",
+    "Amount": 724954.2,
+    "CreatedBy": { "Id": 90 },
+    "TransactionCategory": { "Id": 176 },
+    "Date": "10/16/2020"
+  },
+  {
+    "Title": "libero nullam sit",
+    "Amount": 984480.5,
+    "CreatedBy": { "Id": 55 },
+    "TransactionCategory": { "Id": 461 },
+    "Date": "10/6/2020"
+  },
+  {
+    "Amount": 442090.0,
+    "CreatedBy": { "Id": 75 },
+    "TransactionCategory": { "Id": 227 },
+    "Date": "9/16/2020"
+  },
+  {
+    "Title": "bibendum morbi",
+    "Amount": 273036.0,
+    "CreatedBy": { "Id": 22 },
+    "TransactionCategory": { "Id": 375 },
+    "Date": "9/20/2020"
+  },
+  {
+    "Title": "mauris",
+    "Amount": 101424.2,
+    "CreatedBy": { "Id": 116 },
+    "TransactionCategory": { "Id": 581 },
+    "Date": "12/26/2020"
+  },
+  {
+    "Title": "molestie hendrerit at",
+    "Amount": 642707.2,
+    "CreatedBy": { "Id": 9 },
+    "TransactionCategory": { "Id": 737 },
+    "Date": "9/2/2020"
+  },
+  {
+    "Title": "rhoncus dui vel",
+    "Amount": 932543.7,
+    "CreatedBy": { "Id": 157 },
+    "TransactionCategory": { "Id": 407 },
+    "Date": "11/16/2020"
+  },
+  {
+    "Amount": 95607.4,
+    "CreatedBy": { "Id": 165 },
+    "TransactionCategory": { "Id": 237 },
+    "Date": "9/25/2020"
+  },
+  {
+    "Title": "tortor sollicitudin",
+    "Amount": 972803.0,
+    "CreatedBy": { "Id": 170 },
+    "TransactionCategory": { "Id": 415 },
+    "Date": "9/2/2020"
+  },
+  {
+    "Title": "molestie sed",
+    "Amount": 288082.0,
+    "CreatedBy": { "Id": 195 },
+    "TransactionCategory": { "Id": 343 },
+    "Date": "9/12/2020"
+  },
+  {
+    "Title": "pellentesque ultrices",
+    "Amount": 7756.6,
+    "CreatedBy": { "Id": 45 },
+    "TransactionCategory": { "Id": 487 },
+    "Date": "10/31/2020"
+  },
+  {
+    "Amount": 198195.5,
+    "CreatedBy": { "Id": 20 },
+    "TransactionCategory": { "Id": 138 },
+    "Date": "8/12/2020"
+  },
+  {
+    "Title": "nulla",
+    "Amount": 993107.1,
+    "CreatedBy": { "Id": 190 },
+    "TransactionCategory": { "Id": 571 },
+    "Date": "9/25/2020"
+  },
+  {
+    "Title": "posuere cubilia curae",
+    "Amount": 553175.1,
+    "CreatedBy": { "Id": 109 },
+    "TransactionCategory": { "Id": 261 },
+    "Date": "10/21/2020"
+  },
+  {
+    "Title": "eros elementum pellentesque",
+    "Amount": 685247.6,
+    "CreatedBy": { "Id": 74 },
+    "TransactionCategory": { "Id": 498 },
+    "Date": "8/26/2020"
+  },
+  {
+    "Amount": 345884.1,
+    "CreatedBy": { "Id": 157 },
+    "TransactionCategory": { "Id": 152 },
+    "Date": "12/3/2020"
+  },
+  {
+    "Title": "scelerisque quam turpis",
+    "Amount": 746770.3,
+    "CreatedBy": { "Id": 152 },
+    "TransactionCategory": { "Id": 479 },
+    "Date": "10/1/2020"
+  },
+  {
+    "Title": "mi sit",
+    "Amount": 869575.4,
+    "CreatedBy": { "Id": 43 },
+    "TransactionCategory": { "Id": 595 },
+    "Date": "12/30/2020"
+  },
+  {
+    "Amount": 989331.0,
+    "CreatedBy": { "Id": 151 },
+    "TransactionCategory": { "Id": 115 },
+    "Date": "8/27/2020"
+  },
+  {
+    "Title": "elementum",
+    "Amount": 119720.1,
+    "CreatedBy": { "Id": 176 },
+    "TransactionCategory": { "Id": 781 },
+    "Date": "8/26/2020"
+  },
+  {
+    "Title": "eros viverra eget",
+    "Amount": 922606.4,
+    "CreatedBy": { "Id": 199 },
+    "TransactionCategory": { "Id": 199 },
+    "Date": "10/22/2020"
+  },
+  {
+    "Amount": 14274.7,
+    "CreatedBy": { "Id": 149 },
+    "TransactionCategory": { "Id": 9 },
+    "Date": "12/6/2020"
+  },
+  {
+    "Title": "nisl nunc nisl",
+    "Amount": 718437.1,
+    "CreatedBy": { "Id": 122 },
+    "TransactionCategory": { "Id": 527 },
+    "Date": "9/22/2020"
+  },
+  {
+    "Title": "pede ac",
+    "Amount": 881282.8,
+    "CreatedBy": { "Id": 82 },
+    "TransactionCategory": { "Id": 620 },
+    "Date": "11/8/2020"
+  },
+  {
+    "Title": "odio",
+    "Amount": 105292.7,
+    "CreatedBy": { "Id": 183 },
+    "TransactionCategory": { "Id": 279 },
+    "Date": "9/22/2020"
+  },
+  {
+    "Title": "semper sapien",
+    "Amount": 228668.2,
+    "CreatedBy": { "Id": 108 },
+    "TransactionCategory": { "Id": 347 },
+    "Date": "8/28/2020"
+  },
+  {
+    "Title": "lectus",
+    "Amount": 88937.8,
+    "CreatedBy": { "Id": 100 },
+    "TransactionCategory": { "Id": 633 },
+    "Date": "8/20/2020"
+  },
+  {
+    "Title": "dui nec",
+    "Amount": 833576.1,
+    "CreatedBy": { "Id": 92 },
+    "TransactionCategory": { "Id": 574 },
+    "Date": "9/23/2020"
+  },
+  {
+    "Title": "sed",
+    "Amount": 82238.0,
+    "CreatedBy": { "Id": 188 },
+    "TransactionCategory": { "Id": 560 },
+    "Date": "10/30/2020"
+  },
+  {
+    "Title": "curae nulla",
+    "Amount": 695579.8,
+    "CreatedBy": { "Id": 29 },
+    "TransactionCategory": { "Id": 148 },
+    "Date": "12/10/2020"
+  },
+  {
+    "Title": "eu tincidunt",
+    "Amount": 385196.8,
+    "CreatedBy": { "Id": 173 },
+    "TransactionCategory": { "Id": 471 },
+    "Date": "12/2/2020"
+  },
+  {
+    "Title": "rhoncus aliquam lacus",
+    "Amount": 964883.7,
+    "CreatedBy": { "Id": 47 },
+    "TransactionCategory": { "Id": 144 },
+    "Date": "11/11/2020"
+  },
+  {
+    "Amount": 886910.7,
+    "CreatedBy": { "Id": 143 },
+    "TransactionCategory": { "Id": 8 },
+    "Date": "8/6/2020"
+  },
+  {
+    "Amount": 667136.3,
+    "CreatedBy": { "Id": 191 },
+    "TransactionCategory": { "Id": 93 },
+    "Date": "9/23/2020"
+  },
+  {
+    "Amount": 556722.3,
+    "CreatedBy": { "Id": 2 },
+    "TransactionCategory": { "Id": 95 },
+    "Date": "8/2/2020"
+  },
+  {
+    "Title": "leo",
+    "Amount": 834443.6,
+    "CreatedBy": { "Id": 4 },
+    "TransactionCategory": { "Id": 201 },
+    "Date": "12/24/2020"
+  },
+  {
+    "Amount": 766903.2,
+    "CreatedBy": { "Id": 169 },
+    "TransactionCategory": { "Id": 181 },
+    "Date": "10/25/2020"
+  },
+  {
+    "Title": "faucibus",
+    "Amount": 786697.8,
+    "CreatedBy": { "Id": 115 },
+    "TransactionCategory": { "Id": 51 },
+    "Date": "8/31/2020"
+  },
+  {
+    "Amount": 629730.7,
+    "CreatedBy": { "Id": 26 },
+    "TransactionCategory": { "Id": 438 },
+    "Date": "11/14/2020"
+  },
+  {
+    "Title": "donec diam",
+    "Amount": 839384.9,
+    "CreatedBy": { "Id": 103 },
+    "TransactionCategory": { "Id": 289 },
+    "Date": "12/5/2020"
+  },
+  {
+    "Amount": 959614.5,
+    "CreatedBy": { "Id": 65 },
+    "TransactionCategory": { "Id": 548 },
+    "Date": "9/1/2020"
+  },
+  {
+    "Amount": 108718.5,
+    "CreatedBy": { "Id": 2 },
+    "TransactionCategory": { "Id": 223 },
+    "Date": "9/1/2020"
+  },
+  {
+    "Title": "eget",
+    "Amount": 74696.5,
+    "CreatedBy": { "Id": 198 },
+    "TransactionCategory": { "Id": 511 },
+    "Date": "11/4/2020"
+  },
+  {
+    "Title": "nunc nisl duis",
+    "Amount": 807357.4,
+    "CreatedBy": { "Id": 190 },
+    "TransactionCategory": { "Id": 799 },
+    "Date": "10/31/2020"
+  },
+  {
+    "Title": "in",
+    "Amount": 195182.0,
+    "CreatedBy": { "Id": 69 },
+    "TransactionCategory": { "Id": 239 },
+    "Date": "12/25/2020"
+  },
+  {
+    "Amount": 963426.6,
+    "CreatedBy": { "Id": 114 },
+    "TransactionCategory": { "Id": 365 },
+    "Date": "12/14/2020"
+  },
+  {
+    "Amount": 499207.0,
+    "CreatedBy": { "Id": 67 },
+    "TransactionCategory": { "Id": 794 },
+    "Date": "9/26/2020"
+  },
+  {
+    "Title": "sapien iaculis",
+    "Amount": 643030.0,
+    "CreatedBy": { "Id": 68 },
+    "TransactionCategory": { "Id": 455 },
+    "Date": "12/18/2020"
+  },
+  {
+    "Title": "lacus",
+    "Amount": 246823.0,
+    "CreatedBy": { "Id": 123 },
+    "TransactionCategory": { "Id": 74 },
+    "Date": "10/15/2020"
+  },
+  {
+    "Title": "sodales",
+    "Amount": 674003.4,
+    "CreatedBy": { "Id": 99 },
+    "TransactionCategory": { "Id": 626 },
+    "Date": "11/12/2020"
+  },
+  {
+    "Title": "nullam varius",
+    "Amount": 615465.6,
+    "CreatedBy": { "Id": 161 },
+    "TransactionCategory": { "Id": 674 },
+    "Date": "10/12/2020"
+  },
+  {
+    "Amount": 330548.2,
+    "CreatedBy": { "Id": 10 },
+    "TransactionCategory": { "Id": 700 },
+    "Date": "9/12/2020"
+  },
+  {
+    "Title": "convallis tortor",
+    "Amount": 471184.1,
+    "CreatedBy": { "Id": 90 },
+    "TransactionCategory": { "Id": 43 },
+    "Date": "12/21/2020"
+  },
+  {
+    "Amount": 42575.8,
+    "CreatedBy": { "Id": 25 },
+    "TransactionCategory": { "Id": 159 },
+    "Date": "11/27/2020"
+  },
+  {
+    "Title": "orci eget orci",
+    "Amount": 228503.9,
+    "CreatedBy": { "Id": 72 },
+    "TransactionCategory": { "Id": 429 },
+    "Date": "12/8/2020"
+  },
+  {
+    "Title": "porttitor pede",
+    "Amount": 8208.8,
+    "CreatedBy": { "Id": 12 },
+    "TransactionCategory": { "Id": 221 },
+    "Date": "11/16/2020"
+  },
+  {
+    "Title": "ac est",
+    "Amount": 541496.4,
+    "CreatedBy": { "Id": 116 },
+    "TransactionCategory": { "Id": 242 },
+    "Date": "8/29/2020"
+  },
+  {
+    "Amount": 669713.5,
+    "CreatedBy": { "Id": 137 },
+    "TransactionCategory": { "Id": 539 },
+    "Date": "11/23/2020"
+  },
+  {
+    "Amount": 450943.0,
+    "CreatedBy": { "Id": 14 },
+    "TransactionCategory": { "Id": 195 },
+    "Date": "10/10/2020"
+  },
+  {
+    "Title": "ultrices posuere cubilia",
+    "Amount": 856040.0,
+    "CreatedBy": { "Id": 149 },
+    "TransactionCategory": { "Id": 373 },
+    "Date": "12/21/2020"
+  },
+  {
+    "Title": "mus etiam",
+    "Amount": 89874.2,
+    "CreatedBy": { "Id": 45 },
+    "TransactionCategory": { "Id": 646 },
+    "Date": "10/26/2020"
+  },
+  {
+    "Title": "volutpat",
+    "Amount": 56300.6,
+    "CreatedBy": { "Id": 119 },
+    "TransactionCategory": { "Id": 425 },
+    "Date": "11/8/2020"
+  },
+  {
+    "Amount": 95295.7,
+    "CreatedBy": { "Id": 12 },
+    "TransactionCategory": { "Id": 342 },
+    "Date": "9/13/2020"
+  },
+  {
+    "Title": "donec",
+    "Amount": 727236.7,
+    "CreatedBy": { "Id": 134 },
+    "TransactionCategory": { "Id": 779 },
+    "Date": "11/19/2020"
+  },
+  {
+    "Title": "sit amet",
+    "Amount": 10779.7,
+    "CreatedBy": { "Id": 139 },
+    "TransactionCategory": { "Id": 277 },
+    "Date": "10/28/2020"
+  },
+  {
+    "Title": "nisi vulputate",
+    "Amount": 569215.5,
+    "CreatedBy": { "Id": 189 },
+    "TransactionCategory": { "Id": 567 },
+    "Date": "10/31/2020"
+  },
+  {
+    "Title": "placerat",
+    "Amount": 746773.6,
+    "CreatedBy": { "Id": 148 },
+    "TransactionCategory": { "Id": 609 },
+    "Date": "10/2/2020"
+  },
+  {
+    "Title": "morbi sem mauris",
+    "Amount": 396144.9,
+    "CreatedBy": { "Id": 181 },
+    "TransactionCategory": { "Id": 282 },
+    "Date": "12/10/2020"
+  },
+  {
+    "Title": "venenatis",
+    "Amount": 743574.0,
+    "CreatedBy": { "Id": 65 },
+    "TransactionCategory": { "Id": 458 },
+    "Date": "8/6/2020"
+  },
+  {
+    "Title": "augue a",
+    "Amount": 896216.3,
+    "CreatedBy": { "Id": 137 },
+    "TransactionCategory": { "Id": 338 },
+    "Date": "9/24/2020"
+  },
+  {
+    "Title": "eu sapien cursus",
+    "Amount": 919745.0,
+    "CreatedBy": { "Id": 68 },
+    "TransactionCategory": { "Id": 316 },
+    "Date": "11/20/2020"
+  },
+  {
+    "Title": "cubilia curae",
+    "Amount": 617088.8,
+    "CreatedBy": { "Id": 77 },
+    "TransactionCategory": { "Id": 258 },
+    "Date": "8/19/2020"
+  },
+  {
+    "Title": "curabitur convallis",
+    "Amount": 123215.2,
+    "CreatedBy": { "Id": 2 },
+    "TransactionCategory": { "Id": 265 },
+    "Date": "10/1/2020"
+  },
+  {
+    "Title": "semper",
+    "Amount": 601602.0,
+    "CreatedBy": { "Id": 10 },
+    "TransactionCategory": { "Id": 597 },
+    "Date": "12/31/2020"
+  },
+  {
+    "Title": "sed nisl nunc",
+    "Amount": 123249.7,
+    "CreatedBy": { "Id": 66 },
+    "TransactionCategory": { "Id": 779 },
+    "Date": "9/13/2020"
+  },
+  {
+    "Title": "mauris",
+    "Amount": 55286.4,
+    "CreatedBy": { "Id": 91 },
+    "TransactionCategory": { "Id": 394 },
+    "Date": "12/1/2020"
+  },
+  {
+    "Title": "at dolor quis",
+    "Amount": 268585.6,
+    "CreatedBy": { "Id": 115 },
+    "TransactionCategory": { "Id": 617 },
+    "Date": "9/21/2020"
+  },
+  {
+    "Title": "pellentesque",
+    "Amount": 79836.4,
+    "CreatedBy": { "Id": 134 },
+    "TransactionCategory": { "Id": 446 },
+    "Date": "11/2/2020"
+  },
+  {
+    "Title": "placerat",
+    "Amount": 422465.0,
+    "CreatedBy": { "Id": 178 },
+    "TransactionCategory": { "Id": 338 },
+    "Date": "11/20/2020"
+  },
+  {
+    "Title": "sit amet consectetuer",
+    "Amount": 51762.9,
+    "CreatedBy": { "Id": 84 },
+    "TransactionCategory": { "Id": 364 },
+    "Date": "11/13/2020"
+  },
+  {
+    "Title": "elit ac nulla",
+    "Amount": 88731.1,
+    "CreatedBy": { "Id": 14 },
+    "TransactionCategory": { "Id": 135 },
+    "Date": "10/11/2020"
+  },
+  {
+    "Amount": 435442.0,
+    "CreatedBy": { "Id": 13 },
+    "TransactionCategory": { "Id": 296 },
+    "Date": "8/8/2020"
+  },
+  {
+    "Amount": 987961.8,
+    "CreatedBy": { "Id": 196 },
+    "TransactionCategory": { "Id": 722 },
+    "Date": "8/22/2020"
+  },
+  {
+    "Title": "in",
+    "Amount": 427243.2,
+    "CreatedBy": { "Id": 64 },
+    "TransactionCategory": { "Id": 1 },
+    "Date": "12/31/2020"
+  },
+  {
+    "Title": "nullam",
+    "Amount": 490649.0,
+    "CreatedBy": { "Id": 88 },
+    "TransactionCategory": { "Id": 790 },
+    "Date": "11/25/2020"
+  },
+  {
+    "Title": "cursus vestibulum proin",
+    "Amount": 394840.1,
+    "CreatedBy": { "Id": 72 },
+    "TransactionCategory": { "Id": 226 },
+    "Date": "10/25/2020"
+  },
+  {
+    "Title": "morbi",
+    "Amount": 845843.7,
+    "CreatedBy": { "Id": 62 },
+    "TransactionCategory": { "Id": 415 },
+    "Date": "8/12/2020"
+  },
+  {
+    "Amount": 604534.0,
+    "CreatedBy": { "Id": 101 },
+    "TransactionCategory": { "Id": 386 },
+    "Date": "8/9/2020"
+  },
+  {
+    "Title": "ipsum",
+    "Amount": 387299.8,
+    "CreatedBy": { "Id": 172 },
+    "TransactionCategory": { "Id": 301 },
+    "Date": "11/2/2020"
+  },
+  {
+    "Title": "dapibus duis",
+    "Amount": 139185.4,
+    "CreatedBy": { "Id": 24 },
+    "TransactionCategory": { "Id": 651 },
+    "Date": "11/23/2020"
+  },
+  {
+    "Title": "neque libero",
+    "Amount": 176924.5,
+    "CreatedBy": { "Id": 26 },
+    "TransactionCategory": { "Id": 627 },
+    "Date": "12/20/2020"
+  },
+  {
+    "Amount": 333457.8,
+    "CreatedBy": { "Id": 94 },
+    "TransactionCategory": { "Id": 102 },
+    "Date": "12/9/2020"
+  },
+  {
+    "Title": "vel pede morbi",
+    "Amount": 739540.3,
+    "CreatedBy": { "Id": 32 },
+    "TransactionCategory": { "Id": 676 },
+    "Date": "11/27/2020"
+  },
+  {
+    "Title": "elit",
+    "Amount": 513393.1,
+    "CreatedBy": { "Id": 63 },
+    "TransactionCategory": { "Id": 258 },
+    "Date": "10/22/2020"
+  },
+  {
+    "Amount": 490478.5,
+    "CreatedBy": { "Id": 33 },
+    "TransactionCategory": { "Id": 516 },
+    "Date": "8/22/2020"
+  },
+  {
+    "Amount": 578507.9,
+    "CreatedBy": { "Id": 52 },
+    "TransactionCategory": { "Id": 310 },
+    "Date": "11/22/2020"
+  },
+  {
+    "Amount": 443369.3,
+    "CreatedBy": { "Id": 130 },
+    "TransactionCategory": { "Id": 68 },
+    "Date": "10/12/2020"
+  },
+  {
+    "Title": "lobortis",
+    "Amount": 847353.5,
+    "CreatedBy": { "Id": 193 },
+    "TransactionCategory": { "Id": 335 },
+    "Date": "9/17/2020"
+  },
+  {
+    "Amount": 240959.0,
+    "CreatedBy": { "Id": 174 },
+    "TransactionCategory": { "Id": 249 },
+    "Date": "11/24/2020"
+  },
+  {
+    "Title": "elementum ligula",
+    "Amount": 189155.8,
+    "CreatedBy": { "Id": 139 },
+    "TransactionCategory": { "Id": 789 },
+    "Date": "10/23/2020"
+  },
+  {
+    "Amount": 260401.8,
+    "CreatedBy": { "Id": 62 },
+    "TransactionCategory": { "Id": 19 },
+    "Date": "11/9/2020"
+  },
+  {
+    "Title": "quisque arcu",
+    "Amount": 163191.8,
+    "CreatedBy": { "Id": 194 },
+    "TransactionCategory": { "Id": 365 },
+    "Date": "11/4/2020"
+  },
+  {
+    "Amount": 930742.9,
+    "CreatedBy": { "Id": 173 },
+    "TransactionCategory": { "Id": 630 },
+    "Date": "12/28/2020"
+  },
+  {
+    "Title": "elementum nullam varius",
+    "Amount": 311176.2,
+    "CreatedBy": { "Id": 42 },
+    "TransactionCategory": { "Id": 490 },
+    "Date": "9/23/2020"
+  },
+  {
+    "Amount": 456417.8,
+    "CreatedBy": { "Id": 36 },
+    "TransactionCategory": { "Id": 783 },
+    "Date": "10/22/2020"
+  },
+  {
+    "Title": "pretium",
+    "Amount": 769239.1,
+    "CreatedBy": { "Id": 108 },
+    "TransactionCategory": { "Id": 800 },
+    "Date": "8/5/2020"
+  },
+  {
+    "Title": "massa id",
+    "Amount": 36839.8,
+    "CreatedBy": { "Id": 100 },
+    "TransactionCategory": { "Id": 662 },
+    "Date": "11/5/2020"
+  },
+  {
+    "Title": "dui luctus rutrum",
+    "Amount": 291105.0,
+    "CreatedBy": { "Id": 32 },
+    "TransactionCategory": { "Id": 19 },
+    "Date": "10/26/2020"
+  },
+  {
+    "Title": "nec molestie",
+    "Amount": 108844.1,
+    "CreatedBy": { "Id": 200 },
+    "TransactionCategory": { "Id": 45 },
+    "Date": "11/21/2020"
+  },
+  {
+    "Title": "in ante",
+    "Amount": 572147.1,
+    "CreatedBy": { "Id": 18 },
+    "TransactionCategory": { "Id": 601 },
+    "Date": "10/18/2020"
+  },
+  {
+    "Title": "ut erat",
+    "Amount": 821040.2,
+    "CreatedBy": { "Id": 80 },
+    "TransactionCategory": { "Id": 274 },
+    "Date": "11/9/2020"
+  },
+  {
+    "Title": "lacus",
+    "Amount": 14765.1,
+    "CreatedBy": { "Id": 89 },
+    "TransactionCategory": { "Id": 43 },
+    "Date": "10/15/2020"
+  },
+  {
+    "Title": "ipsum primis",
+    "Amount": 878446.1,
+    "CreatedBy": { "Id": 165 },
+    "TransactionCategory": { "Id": 257 },
+    "Date": "12/18/2020"
+  },
+  {
+    "Title": "sodales",
+    "Amount": 993654.8,
+    "CreatedBy": { "Id": 35 },
+    "TransactionCategory": { "Id": 640 },
+    "Date": "11/21/2020"
+  },
+  {
+    "Title": "nunc vestibulum ante",
+    "Amount": 959298.9,
+    "CreatedBy": { "Id": 64 },
+    "TransactionCategory": { "Id": 376 },
+    "Date": "11/6/2020"
+  },
+  {
+    "Title": "tempus sit",
+    "Amount": 848577.0,
+    "CreatedBy": { "Id": 146 },
+    "TransactionCategory": { "Id": 253 },
+    "Date": "11/11/2020"
+  },
+  {
+    "Title": "at nulla",
+    "Amount": 211151.3,
+    "CreatedBy": { "Id": 134 },
+    "TransactionCategory": { "Id": 293 },
+    "Date": "12/1/2020"
+  },
+  {
+    "Title": "lacinia",
+    "Amount": 390539.9,
+    "CreatedBy": { "Id": 131 },
+    "TransactionCategory": { "Id": 789 },
+    "Date": "8/18/2020"
+  },
+  {
+    "Title": "quis",
+    "Amount": 730264.7,
+    "CreatedBy": { "Id": 44 },
+    "TransactionCategory": { "Id": 633 },
+    "Date": "11/15/2020"
+  },
+  {
+    "Amount": 582835.9,
+    "CreatedBy": { "Id": 140 },
+    "TransactionCategory": { "Id": 54 },
+    "Date": "9/14/2020"
+  },
+  {
+    "Amount": 315486.1,
+    "CreatedBy": { "Id": 10 },
+    "TransactionCategory": { "Id": 67 },
+    "Date": "11/17/2020"
+  },
+  {
+    "Title": "in",
+    "Amount": 19720.1,
+    "CreatedBy": { "Id": 30 },
+    "TransactionCategory": { "Id": 62 },
+    "Date": "11/19/2020"
+  },
+  {
+    "Amount": 175446.3,
+    "CreatedBy": { "Id": 93 },
+    "TransactionCategory": { "Id": 653 },
+    "Date": "9/3/2020"
+  },
+  {
+    "Title": "donec",
+    "Amount": 458245.0,
+    "CreatedBy": { "Id": 152 },
+    "TransactionCategory": { "Id": 366 },
+    "Date": "11/2/2020"
+  },
+  {
+    "Title": "quis orci eget",
+    "Amount": 49874.3,
+    "CreatedBy": { "Id": 86 },
+    "TransactionCategory": { "Id": 612 },
+    "Date": "8/23/2020"
+  },
+  {
+    "Amount": 188544.0,
+    "CreatedBy": { "Id": 13 },
+    "TransactionCategory": { "Id": 170 },
+    "Date": "12/11/2020"
+  },
+  {
+    "Title": "massa id",
+    "Amount": 903793.0,
+    "CreatedBy": { "Id": 179 },
+    "TransactionCategory": { "Id": 273 },
+    "Date": "10/1/2020"
+  },
+  {
+    "Title": "ante vivamus",
+    "Amount": 705518.9,
+    "CreatedBy": { "Id": 79 },
+    "TransactionCategory": { "Id": 6 },
+    "Date": "10/5/2020"
+  },
+  {
+    "Amount": 645038.6,
+    "CreatedBy": { "Id": 75 },
+    "TransactionCategory": { "Id": 687 },
+    "Date": "10/6/2020"
+  },
+  {
+    "Amount": 667942.6,
+    "CreatedBy": { "Id": 19 },
+    "TransactionCategory": { "Id": 474 },
+    "Date": "10/17/2020"
+  },
+  {
+    "Title": "erat",
+    "Amount": 629049.4,
+    "CreatedBy": { "Id": 142 },
+    "TransactionCategory": { "Id": 612 },
+    "Date": "12/18/2020"
+  },
+  {
+    "Title": "in lacus curabitur",
+    "Amount": 493181.4,
+    "CreatedBy": { "Id": 187 },
+    "TransactionCategory": { "Id": 85 },
+    "Date": "8/11/2020"
+  },
+  {
+    "Title": "curae duis",
+    "Amount": 145983.7,
+    "CreatedBy": { "Id": 80 },
+    "TransactionCategory": { "Id": 240 },
+    "Date": "8/22/2020"
+  },
+  {
+    "Title": "interdum",
+    "Amount": 886725.3,
+    "CreatedBy": { "Id": 186 },
+    "TransactionCategory": { "Id": 73 },
+    "Date": "12/30/2020"
+  },
+  {
+    "Amount": 209265.4,
+    "CreatedBy": { "Id": 158 },
+    "TransactionCategory": { "Id": 38 },
+    "Date": "10/14/2020"
+  },
+  {
+    "Amount": 403161.7,
+    "CreatedBy": { "Id": 161 },
+    "TransactionCategory": { "Id": 692 },
+    "Date": "10/15/2020"
+  },
+  {
+    "Title": "tempor turpis nec",
+    "Amount": 673869.7,
+    "CreatedBy": { "Id": 174 },
+    "TransactionCategory": { "Id": 92 },
+    "Date": "11/16/2020"
+  },
+  {
+    "Amount": 688402.9,
+    "CreatedBy": { "Id": 104 },
+    "TransactionCategory": { "Id": 320 },
+    "Date": "8/4/2020"
+  },
+  {
+    "Title": "maecenas",
+    "Amount": 130770.1,
+    "CreatedBy": { "Id": 53 },
+    "TransactionCategory": { "Id": 72 },
+    "Date": "11/3/2020"
+  },
+  {
+    "Title": "dui luctus rutrum",
+    "Amount": 415430.0,
+    "CreatedBy": { "Id": 191 },
+    "TransactionCategory": { "Id": 697 },
+    "Date": "12/16/2020"
+  },
+  {
+    "Title": "blandit non interdum",
+    "Amount": 211400.8,
+    "CreatedBy": { "Id": 146 },
+    "TransactionCategory": { "Id": 353 },
+    "Date": "8/2/2020"
+  },
+  {
+    "Amount": 5135.9,
+    "CreatedBy": { "Id": 139 },
+    "TransactionCategory": { "Id": 719 },
+    "Date": "10/5/2020"
+  },
+  {
+    "Title": "maecenas leo odio",
+    "Amount": 893899.5,
+    "CreatedBy": { "Id": 151 },
+    "TransactionCategory": { "Id": 114 },
+    "Date": "12/18/2020"
+  },
+  {
+    "Title": "non quam",
+    "Amount": 417605.2,
+    "CreatedBy": { "Id": 150 },
+    "TransactionCategory": { "Id": 255 },
+    "Date": "8/20/2020"
+  },
+  {
+    "Title": "nulla",
+    "Amount": 273884.0,
+    "CreatedBy": { "Id": 90 },
+    "TransactionCategory": { "Id": 540 },
+    "Date": "8/29/2020"
+  },
+  {
+    "Title": "erat",
+    "Amount": 89353.6,
+    "CreatedBy": { "Id": 114 },
+    "TransactionCategory": { "Id": 680 },
+    "Date": "10/29/2020"
+  },
+  {
+    "Title": "posuere cubilia",
+    "Amount": 370685.2,
+    "CreatedBy": { "Id": 149 },
+    "TransactionCategory": { "Id": 677 },
+    "Date": "12/8/2020"
+  },
+  {
+    "Title": "pharetra magna",
+    "Amount": 874561.6,
+    "CreatedBy": { "Id": 98 },
+    "TransactionCategory": { "Id": 618 },
+    "Date": "9/29/2020"
+  },
+  {
+    "Amount": 77634.6,
+    "CreatedBy": { "Id": 154 },
+    "TransactionCategory": { "Id": 362 },
+    "Date": "11/16/2020"
+  },
+  {
+    "Title": "arcu",
+    "Amount": 46877.9,
+    "CreatedBy": { "Id": 128 },
+    "TransactionCategory": { "Id": 723 },
+    "Date": "9/7/2020"
+  },
+  {
+    "Amount": 298509.6,
+    "CreatedBy": { "Id": 149 },
+    "TransactionCategory": { "Id": 167 },
+    "Date": "11/16/2020"
+  },
+  {
+    "Title": "maecenas",
+    "Amount": 962789.0,
+    "CreatedBy": { "Id": 128 },
+    "TransactionCategory": { "Id": 105 },
+    "Date": "11/19/2020"
+  },
+  {
+    "Amount": 877467.7,
+    "CreatedBy": { "Id": 24 },
+    "TransactionCategory": { "Id": 155 },
+    "Date": "9/5/2020"
+  },
+  {
+    "Title": "mauris sit",
+    "Amount": 403403.2,
+    "CreatedBy": { "Id": 143 },
+    "TransactionCategory": { "Id": 143 },
+    "Date": "9/12/2020"
+  },
+  {
+    "Title": "pellentesque",
+    "Amount": 438912.6,
+    "CreatedBy": { "Id": 134 },
+    "TransactionCategory": { "Id": 356 },
+    "Date": "12/2/2020"
+  },
+  {
+    "Title": "libero",
+    "Amount": 449219.5,
+    "CreatedBy": { "Id": 119 },
+    "TransactionCategory": { "Id": 607 },
+    "Date": "9/3/2020"
+  },
+  {
+    "Amount": 39719.0,
+    "CreatedBy": { "Id": 165 },
+    "TransactionCategory": { "Id": 433 },
+    "Date": "11/22/2020"
+  },
+  {
+    "Amount": 901619.8,
+    "CreatedBy": { "Id": 77 },
+    "TransactionCategory": { "Id": 316 },
+    "Date": "10/19/2020"
+  },
+  {
+    "Amount": 610564.5,
+    "CreatedBy": { "Id": 191 },
+    "TransactionCategory": { "Id": 514 },
+    "Date": "8/20/2020"
+  },
+  {
+    "Title": "in",
+    "Amount": 895082.9,
+    "CreatedBy": { "Id": 130 },
+    "TransactionCategory": { "Id": 380 },
+    "Date": "11/13/2020"
+  },
+  {
+    "Amount": 283168.6,
+    "CreatedBy": { "Id": 92 },
+    "TransactionCategory": { "Id": 347 },
+    "Date": "9/23/2020"
+  },
+  {
+    "Amount": 224228.0,
+    "CreatedBy": { "Id": 197 },
+    "TransactionCategory": { "Id": 660 },
+    "Date": "8/1/2020"
+  },
+  {
+    "Amount": 761820.0,
+    "CreatedBy": { "Id": 199 },
+    "TransactionCategory": { "Id": 563 },
+    "Date": "9/5/2020"
+  },
+  {
+    "Title": "curabitur convallis duis",
+    "Amount": 81428.8,
+    "CreatedBy": { "Id": 57 },
+    "TransactionCategory": { "Id": 732 },
+    "Date": "8/27/2020"
+  },
+  {
+    "Amount": 85869.2,
+    "CreatedBy": { "Id": 160 },
+    "TransactionCategory": { "Id": 401 },
+    "Date": "11/30/2020"
+  },
+  {
+    "Title": "nascetur ridiculus",
+    "Amount": 951995.0,
+    "CreatedBy": { "Id": 150 },
+    "TransactionCategory": { "Id": 706 },
+    "Date": "10/18/2020"
+  },
+  {
+    "Title": "proin",
+    "Amount": 746544.8,
+    "CreatedBy": { "Id": 173 },
+    "TransactionCategory": { "Id": 109 },
+    "Date": "10/17/2020"
+  },
+  {
+    "Title": "varius ut blandit",
+    "Amount": 421355.0,
+    "CreatedBy": { "Id": 67 },
+    "TransactionCategory": { "Id": 501 },
+    "Date": "12/13/2020"
+  },
+  {
+    "Title": "consequat morbi a",
+    "Amount": 513928.4,
+    "CreatedBy": { "Id": 176 },
+    "TransactionCategory": { "Id": 466 },
+    "Date": "12/6/2020"
+  },
+  {
+    "Amount": 754607.7,
+    "CreatedBy": { "Id": 137 },
+    "TransactionCategory": { "Id": 284 },
+    "Date": "12/25/2020"
+  },
+  {
+    "Amount": 268208.9,
+    "CreatedBy": { "Id": 8 },
+    "TransactionCategory": { "Id": 290 },
+    "Date": "12/25/2020"
+  },
+  {
+    "Amount": 885140.4,
+    "CreatedBy": { "Id": 75 },
+    "TransactionCategory": { "Id": 162 },
+    "Date": "10/4/2020"
+  },
+  {
+    "Amount": 819804.1,
+    "CreatedBy": { "Id": 123 },
+    "TransactionCategory": { "Id": 667 },
+    "Date": "12/24/2020"
+  },
+  {
+    "Title": "quisque id",
+    "Amount": 123762.0,
+    "CreatedBy": { "Id": 97 },
+    "TransactionCategory": { "Id": 761 },
+    "Date": "9/17/2020"
+  },
+  {
+    "Title": "tortor",
+    "Amount": 801125.5,
+    "CreatedBy": { "Id": 168 },
+    "TransactionCategory": { "Id": 733 },
+    "Date": "12/16/2020"
+  },
+  {
+    "Title": "ante ipsum primis",
+    "Amount": 111421.8,
+    "CreatedBy": { "Id": 11 },
+    "TransactionCategory": { "Id": 483 },
+    "Date": "12/26/2020"
+  },
+  {
+    "Title": "enim",
+    "Amount": 947319.7,
+    "CreatedBy": { "Id": 91 },
+    "TransactionCategory": { "Id": 302 },
+    "Date": "9/3/2020"
+  },
+  {
+    "Amount": 893493.1,
+    "CreatedBy": { "Id": 16 },
+    "TransactionCategory": { "Id": 103 },
+    "Date": "8/20/2020"
+  },
+  {
+    "Title": "duis",
+    "Amount": 751004.0,
+    "CreatedBy": { "Id": 38 },
+    "TransactionCategory": { "Id": 518 },
+    "Date": "9/3/2020"
+  },
+  {
+    "Amount": 874971.0,
+    "CreatedBy": { "Id": 128 },
+    "TransactionCategory": { "Id": 103 },
+    "Date": "11/27/2020"
+  },
+  {
+    "Amount": 36865.9,
+    "CreatedBy": { "Id": 199 },
+    "TransactionCategory": { "Id": 545 },
+    "Date": "8/16/2020"
+  },
+  {
+    "Title": "aliquet pulvinar",
+    "Amount": 395251.5,
+    "CreatedBy": { "Id": 63 },
+    "TransactionCategory": { "Id": 721 },
+    "Date": "11/13/2020"
+  },
+  {
+    "Title": "nunc proin at",
+    "Amount": 406554.5,
+    "CreatedBy": { "Id": 25 },
+    "TransactionCategory": { "Id": 533 },
+    "Date": "10/21/2020"
+  },
+  {
+    "Title": "primis in faucibus",
+    "Amount": 826163.9,
+    "CreatedBy": { "Id": 82 },
+    "TransactionCategory": { "Id": 21 },
+    "Date": "12/4/2020"
+  },
+  {
+    "Title": "maecenas tincidunt",
+    "Amount": 98020.1,
+    "CreatedBy": { "Id": 142 },
+    "TransactionCategory": { "Id": 60 },
+    "Date": "12/4/2020"
+  },
+  {
+    "Title": "penatibus et",
+    "Amount": 434135.2,
+    "CreatedBy": { "Id": 66 },
+    "TransactionCategory": { "Id": 407 },
+    "Date": "11/29/2020"
+  },
+  {
+    "Title": "ipsum dolor",
+    "Amount": 827116.1,
+    "CreatedBy": { "Id": 100 },
+    "TransactionCategory": { "Id": 613 },
+    "Date": "9/14/2020"
+  },
+  {
+    "Amount": 492033.5,
+    "CreatedBy": { "Id": 81 },
+    "TransactionCategory": { "Id": 236 },
+    "Date": "12/13/2020"
+  },
+  {
+    "Title": "morbi quis",
+    "Amount": 552154.2,
+    "CreatedBy": { "Id": 61 },
+    "TransactionCategory": { "Id": 321 },
+    "Date": "10/18/2020"
+  },
+  {
+    "Title": "justo sollicitudin",
+    "Amount": 205155.5,
+    "CreatedBy": { "Id": 173 },
+    "TransactionCategory": { "Id": 501 },
+    "Date": "11/23/2020"
+  },
+  {
+    "Title": "semper sapien a",
+    "Amount": 336377.4,
+    "CreatedBy": { "Id": 171 },
+    "TransactionCategory": { "Id": 613 },
+    "Date": "9/14/2020"
+  },
+  {
+    "Amount": 800816.9,
+    "CreatedBy": { "Id": 108 },
+    "TransactionCategory": { "Id": 612 },
+    "Date": "10/5/2020"
+  },
+  {
+    "Title": "nulla facilisi cras",
+    "Amount": 251080.7,
+    "CreatedBy": { "Id": 76 },
+    "TransactionCategory": { "Id": 438 },
+    "Date": "8/4/2020"
+  },
+  {
+    "Amount": 258179.8,
+    "CreatedBy": { "Id": 118 },
+    "TransactionCategory": { "Id": 618 },
+    "Date": "11/13/2020"
+  },
+  {
+    "Title": "metus arcu adipiscing",
+    "Amount": 944800.7,
+    "CreatedBy": { "Id": 92 },
+    "TransactionCategory": { "Id": 401 },
+    "Date": "11/24/2020"
+  },
+  {
+    "Title": "in purus eu",
+    "Amount": 513994.1,
+    "CreatedBy": { "Id": 95 },
+    "TransactionCategory": { "Id": 572 },
+    "Date": "11/6/2020"
+  },
+  {
+    "Title": "purus",
+    "Amount": 555028.9,
+    "CreatedBy": { "Id": 153 },
+    "TransactionCategory": { "Id": 296 },
+    "Date": "12/24/2020"
+  },
+  {
+    "Amount": 438595.8,
+    "CreatedBy": { "Id": 150 },
+    "TransactionCategory": { "Id": 493 },
+    "Date": "8/25/2020"
+  },
+  {
+    "Title": "hendrerit at",
+    "Amount": 664895.4,
+    "CreatedBy": { "Id": 148 },
+    "TransactionCategory": { "Id": 614 },
+    "Date": "12/30/2020"
+  },
+  {
+    "Amount": 691278.5,
+    "CreatedBy": { "Id": 175 },
+    "TransactionCategory": { "Id": 269 },
+    "Date": "11/13/2020"
+  },
+  {
+    "Amount": 120190.3,
+    "CreatedBy": { "Id": 197 },
+    "TransactionCategory": { "Id": 218 },
+    "Date": "8/31/2020"
+  },
+  {
+    "Title": "metus",
+    "Amount": 857891.3,
+    "CreatedBy": { "Id": 131 },
+    "TransactionCategory": { "Id": 116 },
+    "Date": "12/15/2020"
+  },
+  {
+    "Title": "nulla neque",
+    "Amount": 487919.8,
+    "CreatedBy": { "Id": 65 },
+    "TransactionCategory": { "Id": 298 },
+    "Date": "11/9/2020"
+  },
+  {
+    "Title": "rhoncus mauris enim",
+    "Amount": 695074.5,
+    "CreatedBy": { "Id": 144 },
+    "TransactionCategory": { "Id": 654 },
+    "Date": "10/12/2020"
+  },
+  {
+    "Title": "vel",
+    "Amount": 660802.2,
+    "CreatedBy": { "Id": 41 },
+    "TransactionCategory": { "Id": 490 },
+    "Date": "10/20/2020"
+  },
+  {
+    "Amount": 452983.5,
+    "CreatedBy": { "Id": 121 },
+    "TransactionCategory": { "Id": 208 },
+    "Date": "12/19/2020"
+  },
+  {
+    "Title": "viverra diam",
+    "Amount": 771007.3,
+    "CreatedBy": { "Id": 47 },
+    "TransactionCategory": { "Id": 623 },
+    "Date": "12/26/2020"
+  },
+  {
+    "Title": "eget rutrum at",
+    "Amount": 527468.1,
+    "CreatedBy": { "Id": 134 },
+    "TransactionCategory": { "Id": 445 },
+    "Date": "11/14/2020"
+  },
+  {
+    "Title": "feugiat",
+    "Amount": 366321.8,
+    "CreatedBy": { "Id": 104 },
+    "TransactionCategory": { "Id": 287 },
+    "Date": "8/13/2020"
+  },
+  {
+    "Title": "nunc donec quis",
+    "Amount": 655045.5,
+    "CreatedBy": { "Id": 6 },
+    "TransactionCategory": { "Id": 243 },
+    "Date": "8/18/2020"
+  },
+  {
+    "Title": "ipsum dolor",
+    "Amount": 457753.7,
+    "CreatedBy": { "Id": 120 },
+    "TransactionCategory": { "Id": 289 },
+    "Date": "9/21/2020"
+  },
+  {
+    "Title": "natoque",
+    "Amount": 588815.3,
+    "CreatedBy": { "Id": 10 },
+    "TransactionCategory": { "Id": 544 },
+    "Date": "9/15/2020"
+  },
+  {
+    "Amount": 94463.2,
+    "CreatedBy": { "Id": 195 },
+    "TransactionCategory": { "Id": 160 },
+    "Date": "11/3/2020"
+  },
+  {
+    "Title": "odio consequat varius",
+    "Amount": 447214.8,
+    "CreatedBy": { "Id": 71 },
+    "TransactionCategory": { "Id": 445 },
+    "Date": "8/4/2020"
+  },
+  {
+    "Amount": 614341.4,
+    "CreatedBy": { "Id": 8 },
+    "TransactionCategory": { "Id": 182 },
+    "Date": "9/2/2020"
+  },
+  {
+    "Title": "at vulputate",
+    "Amount": 256918.2,
+    "CreatedBy": { "Id": 158 },
+    "TransactionCategory": { "Id": 59 },
+    "Date": "11/3/2020"
+  },
+  {
+    "Title": "proin",
+    "Amount": 576973.5,
+    "CreatedBy": { "Id": 156 },
+    "TransactionCategory": { "Id": 761 },
+    "Date": "11/23/2020"
+  },
+  {
+    "Title": "erat volutpat in",
+    "Amount": 407668.8,
+    "CreatedBy": { "Id": 97 },
+    "TransactionCategory": { "Id": 323 },
+    "Date": "12/12/2020"
+  },
+  {
+    "Title": "vestibulum",
+    "Amount": 224776.6,
+    "CreatedBy": { "Id": 3 },
+    "TransactionCategory": { "Id": 5 },
+    "Date": "12/19/2020"
+  },
+  {
+    "Amount": 886414.9,
+    "CreatedBy": { "Id": 96 },
+    "TransactionCategory": { "Id": 59 },
+    "Date": "11/15/2020"
+  },
+  {
+    "Title": "odio consequat varius",
+    "Amount": 384849.1,
+    "CreatedBy": { "Id": 44 },
+    "TransactionCategory": { "Id": 185 },
+    "Date": "11/14/2020"
+  },
+  {
+    "Title": "lectus pellentesque",
+    "Amount": 179702.4,
+    "CreatedBy": { "Id": 91 },
+    "TransactionCategory": { "Id": 411 },
+    "Date": "10/12/2020"
+  },
+  {
+    "Amount": 17026.6,
+    "CreatedBy": { "Id": 139 },
+    "TransactionCategory": { "Id": 59 },
+    "Date": "12/30/2020"
+  },
+  {
+    "Title": "duis",
+    "Amount": 882455.7,
+    "CreatedBy": { "Id": 118 },
+    "TransactionCategory": { "Id": 670 },
+    "Date": "12/27/2020"
+  },
+  {
+    "Title": "lacus morbi",
+    "Amount": 155749.5,
+    "CreatedBy": { "Id": 12 },
+    "TransactionCategory": { "Id": 421 },
+    "Date": "12/29/2020"
+  },
+  {
+    "Title": "aliquam augue",
+    "Amount": 292636.7,
+    "CreatedBy": { "Id": 116 },
+    "TransactionCategory": { "Id": 730 },
+    "Date": "8/26/2020"
+  },
+  {
+    "Title": "massa volutpat",
+    "Amount": 575394.9,
+    "CreatedBy": { "Id": 22 },
+    "TransactionCategory": { "Id": 599 },
+    "Date": "12/22/2020"
+  },
+  {
+    "Title": "nisi at nibh",
+    "Amount": 505777.2,
+    "CreatedBy": { "Id": 176 },
+    "TransactionCategory": { "Id": 513 },
+    "Date": "10/20/2020"
+  },
+  {
+    "Title": "proin",
+    "Amount": 243816.3,
+    "CreatedBy": { "Id": 117 },
+    "TransactionCategory": { "Id": 23 },
+    "Date": "11/30/2020"
+  },
+  {
+    "Amount": 844006.3,
+    "CreatedBy": { "Id": 33 },
+    "TransactionCategory": { "Id": 618 },
+    "Date": "8/7/2020"
+  },
+  {
+    "Title": "erat",
+    "Amount": 44082.8,
+    "CreatedBy": { "Id": 38 },
+    "TransactionCategory": { "Id": 170 },
+    "Date": "8/20/2020"
+  },
+  {
+    "Amount": 226233.8,
+    "CreatedBy": { "Id": 158 },
+    "TransactionCategory": { "Id": 679 },
+    "Date": "9/21/2020"
+  },
+  {
+    "Title": "purus sit amet",
+    "Amount": 440196.5,
+    "CreatedBy": { "Id": 4 },
+    "TransactionCategory": { "Id": 92 },
+    "Date": "12/2/2020"
+  },
+  {
+    "Title": "dui",
+    "Amount": 579402.4,
+    "CreatedBy": { "Id": 173 },
+    "TransactionCategory": { "Id": 523 },
+    "Date": "8/15/2020"
+  },
+  {
+    "Title": "eget massa tempor",
+    "Amount": 367663.3,
+    "CreatedBy": { "Id": 21 },
+    "TransactionCategory": { "Id": 581 },
+    "Date": "12/11/2020"
+  },
+  {
+    "Title": "faucibus",
+    "Amount": 928062.1,
+    "CreatedBy": { "Id": 1 },
+    "TransactionCategory": { "Id": 405 },
+    "Date": "12/17/2020"
+  },
+  {
+    "Amount": 43347.7,
+    "CreatedBy": { "Id": 160 },
+    "TransactionCategory": { "Id": 239 },
+    "Date": "10/15/2020"
+  },
+  {
+    "Amount": 369663.3,
+    "CreatedBy": { "Id": 85 },
+    "TransactionCategory": { "Id": 437 },
+    "Date": "8/20/2020"
+  },
+  {
+    "Title": "imperdiet",
+    "Amount": 622724.0,
+    "CreatedBy": { "Id": 152 },
+    "TransactionCategory": { "Id": 129 },
+    "Date": "8/27/2020"
+  },
+  {
+    "Title": "vel nulla eget",
+    "Amount": 15443.6,
+    "CreatedBy": { "Id": 21 },
+    "TransactionCategory": { "Id": 666 },
+    "Date": "11/30/2020"
+  },
+  {
+    "Title": "a",
+    "Amount": 845606.0,
+    "CreatedBy": { "Id": 119 },
+    "TransactionCategory": { "Id": 314 },
+    "Date": "11/20/2020"
+  },
+  {
+    "Title": "quis",
+    "Amount": 61390.0,
+    "CreatedBy": { "Id": 69 },
+    "TransactionCategory": { "Id": 28 },
+    "Date": "9/2/2020"
+  },
+  {
+    "Amount": 703368.3,
+    "CreatedBy": { "Id": 126 },
+    "TransactionCategory": { "Id": 789 },
+    "Date": "8/28/2020"
+  },
+  {
+    "Amount": 205805.3,
+    "CreatedBy": { "Id": 67 },
+    "TransactionCategory": { "Id": 613 },
+    "Date": "12/22/2020"
+  },
+  {
+    "Title": "placerat praesent blandit",
+    "Amount": 583627.5,
+    "CreatedBy": { "Id": 45 },
+    "TransactionCategory": { "Id": 163 },
+    "Date": "11/27/2020"
+  },
+  {
+    "Title": "augue quam",
+    "Amount": 411755.9,
+    "CreatedBy": { "Id": 126 },
+    "TransactionCategory": { "Id": 164 },
+    "Date": "11/2/2020"
+  },
+  {
+    "Title": "neque duis bibendum",
+    "Amount": 334486.4,
+    "CreatedBy": { "Id": 196 },
+    "TransactionCategory": { "Id": 302 },
+    "Date": "12/1/2020"
+  },
+  {
+    "Title": "eu tincidunt",
+    "Amount": 716771.3,
+    "CreatedBy": { "Id": 141 },
+    "TransactionCategory": { "Id": 83 },
+    "Date": "8/4/2020"
+  },
+  {
+    "Amount": 60215.3,
+    "CreatedBy": { "Id": 144 },
+    "TransactionCategory": { "Id": 494 },
+    "Date": "10/21/2020"
+  },
+  {
+    "Title": "neque sapien placerat",
+    "Amount": 639110.5,
+    "CreatedBy": { "Id": 82 },
+    "TransactionCategory": { "Id": 296 },
+    "Date": "10/31/2020"
+  },
+  {
+    "Title": "ut",
+    "Amount": 424539.2,
+    "CreatedBy": { "Id": 112 },
+    "TransactionCategory": { "Id": 289 },
+    "Date": "9/16/2020"
+  },
+  {
+    "Title": "nunc viverra",
+    "Amount": 251926.6,
+    "CreatedBy": { "Id": 84 },
+    "TransactionCategory": { "Id": 119 },
+    "Date": "10/20/2020"
+  },
+  {
+    "Title": "risus",
+    "Amount": 701474.4,
+    "CreatedBy": { "Id": 130 },
+    "TransactionCategory": { "Id": 579 },
+    "Date": "12/28/2020"
+  },
+  {
+    "Title": "varius",
+    "Amount": 146864.6,
+    "CreatedBy": { "Id": 167 },
+    "TransactionCategory": { "Id": 117 },
+    "Date": "11/24/2020"
+  },
+  {
+    "Title": "integer tincidunt",
+    "Amount": 626324.9,
+    "CreatedBy": { "Id": 101 },
+    "TransactionCategory": { "Id": 393 },
+    "Date": "12/13/2020"
+  },
+  {
+    "Title": "odio donec vitae",
+    "Amount": 860502.7,
+    "CreatedBy": { "Id": 114 },
+    "TransactionCategory": { "Id": 111 },
+    "Date": "11/29/2020"
+  },
+  {
+    "Title": "tortor",
+    "Amount": 162115.8,
+    "CreatedBy": { "Id": 169 },
+    "TransactionCategory": { "Id": 484 },
+    "Date": "10/14/2020"
+  },
+  {
+    "Title": "tristique",
+    "Amount": 491009.2,
+    "CreatedBy": { "Id": 111 },
+    "TransactionCategory": { "Id": 560 },
+    "Date": "12/8/2020"
+  },
+  {
+    "Title": "interdum eu",
+    "Amount": 472528.1,
+    "CreatedBy": { "Id": 9 },
+    "TransactionCategory": { "Id": 351 },
+    "Date": "9/2/2020"
+  },
+  {
+    "Title": "natoque penatibus et",
+    "Amount": 67717.5,
+    "CreatedBy": { "Id": 15 },
+    "TransactionCategory": { "Id": 378 },
+    "Date": "8/17/2020"
+  },
+  {
+    "Title": "nulla",
+    "Amount": 409323.0,
+    "CreatedBy": { "Id": 140 },
+    "TransactionCategory": { "Id": 279 },
+    "Date": "8/6/2020"
+  },
+  {
+    "Title": "feugiat et",
+    "Amount": 311365.3,
+    "CreatedBy": { "Id": 128 },
+    "TransactionCategory": { "Id": 648 },
+    "Date": "10/1/2020"
+  },
+  {
+    "Title": "pede ac",
+    "Amount": 564669.4,
+    "CreatedBy": { "Id": 63 },
+    "TransactionCategory": { "Id": 206 },
+    "Date": "10/8/2020"
+  },
+  {
+    "Title": "pede justo lacinia",
+    "Amount": 466342.1,
+    "CreatedBy": { "Id": 118 },
+    "TransactionCategory": { "Id": 326 },
+    "Date": "12/24/2020"
+  },
+  {
+    "Title": "dapibus augue",
+    "Amount": 377559.5,
+    "CreatedBy": { "Id": 45 },
+    "TransactionCategory": { "Id": 34 },
+    "Date": "12/28/2020"
+  },
+  {
+    "Title": "massa tempor",
+    "Amount": 657957.0,
+    "CreatedBy": { "Id": 179 },
+    "TransactionCategory": { "Id": 427 },
+    "Date": "12/31/2020"
+  },
+  {
+    "Title": "sem praesent id",
+    "Amount": 89165.3,
+    "CreatedBy": { "Id": 72 },
+    "TransactionCategory": { "Id": 784 },
+    "Date": "9/19/2020"
+  },
+  {
+    "Amount": 995041.3,
+    "CreatedBy": { "Id": 190 },
+    "TransactionCategory": { "Id": 736 },
+    "Date": "12/3/2020"
+  },
+  {
+    "Title": "sit",
+    "Amount": 347324.4,
+    "CreatedBy": { "Id": 118 },
+    "TransactionCategory": { "Id": 158 },
+    "Date": "8/17/2020"
+  },
+  {
+    "Title": "lectus aliquam sit",
+    "Amount": 771407.1,
+    "CreatedBy": { "Id": 26 },
+    "TransactionCategory": { "Id": 549 },
+    "Date": "9/18/2020"
+  },
+  {
+    "Title": "sed ante",
+    "Amount": 787983.6,
+    "CreatedBy": { "Id": 74 },
+    "TransactionCategory": { "Id": 73 },
+    "Date": "8/21/2020"
+  },
+  {
+    "Title": "consequat ut nulla",
+    "Amount": 671733.6,
+    "CreatedBy": { "Id": 30 },
+    "TransactionCategory": { "Id": 714 },
+    "Date": "9/12/2020"
+  },
+  {
+    "Title": "primis in",
+    "Amount": 911308.6,
+    "CreatedBy": { "Id": 44 },
+    "TransactionCategory": { "Id": 624 },
+    "Date": "10/8/2020"
+  },
+  {
+    "Amount": 925441.3,
+    "CreatedBy": { "Id": 177 },
+    "TransactionCategory": { "Id": 242 },
+    "Date": "11/6/2020"
+  },
+  {
+    "Title": "magna at nunc",
+    "Amount": 784478.5,
+    "CreatedBy": { "Id": 101 },
+    "TransactionCategory": { "Id": 170 },
+    "Date": "10/19/2020"
+  },
+  {
+    "Amount": 629761.7,
+    "CreatedBy": { "Id": 66 },
+    "TransactionCategory": { "Id": 194 },
+    "Date": "11/26/2020"
+  },
+  {
+    "Title": "ligula nec sem",
+    "Amount": 303700.7,
+    "CreatedBy": { "Id": 129 },
+    "TransactionCategory": { "Id": 46 },
+    "Date": "9/7/2020"
+  },
+  {
+    "Amount": 675991.0,
+    "CreatedBy": { "Id": 91 },
+    "TransactionCategory": { "Id": 205 },
+    "Date": "10/9/2020"
+  },
+  {
+    "Amount": 118467.8,
+    "CreatedBy": { "Id": 34 },
+    "TransactionCategory": { "Id": 586 },
+    "Date": "11/17/2020"
+  },
+  {
+    "Title": "nullam varius nulla",
+    "Amount": 502751.2,
+    "CreatedBy": { "Id": 168 },
+    "TransactionCategory": { "Id": 578 },
+    "Date": "8/2/2020"
+  },
+  {
+    "Title": "massa donec dapibus",
+    "Amount": 965389.1,
+    "CreatedBy": { "Id": 172 },
+    "TransactionCategory": { "Id": 778 },
+    "Date": "9/3/2020"
+  },
+  {
+    "Title": "tristique in tempus",
+    "Amount": 812284.1,
+    "CreatedBy": { "Id": 91 },
+    "TransactionCategory": { "Id": 143 },
+    "Date": "12/6/2020"
+  },
+  {
+    "Amount": 777866.2,
+    "CreatedBy": { "Id": 11 },
+    "TransactionCategory": { "Id": 438 },
+    "Date": "12/21/2020"
+  },
+  {
+    "Title": "imperdiet nullam",
+    "Amount": 532147.4,
+    "CreatedBy": { "Id": 130 },
+    "TransactionCategory": { "Id": 40 },
+    "Date": "10/8/2020"
+  },
+  {
+    "Amount": 826691.7,
+    "CreatedBy": { "Id": 180 },
+    "TransactionCategory": { "Id": 291 },
+    "Date": "11/7/2020"
+  },
+  {
+    "Title": "elementum nullam",
+    "Amount": 523428.6,
+    "CreatedBy": { "Id": 178 },
+    "TransactionCategory": { "Id": 278 },
+    "Date": "10/24/2020"
+  },
+  {
+    "Title": "in",
+    "Amount": 407392.0,
+    "CreatedBy": { "Id": 171 },
+    "TransactionCategory": { "Id": 32 },
+    "Date": "8/22/2020"
+  },
+  {
+    "Amount": 779497.6,
+    "CreatedBy": { "Id": 186 },
+    "TransactionCategory": { "Id": 303 },
+    "Date": "9/17/2020"
+  },
+  {
+    "Title": "ut nunc vestibulum",
+    "Amount": 789333.4,
+    "CreatedBy": { "Id": 160 },
+    "TransactionCategory": { "Id": 626 },
+    "Date": "11/20/2020"
+  },
+  {
+    "Amount": 561355.9,
+    "CreatedBy": { "Id": 11 },
+    "TransactionCategory": { "Id": 329 },
+    "Date": "9/8/2020"
+  },
+  {
+    "Title": "quis",
+    "Amount": 223083.7,
+    "CreatedBy": { "Id": 165 },
+    "TransactionCategory": { "Id": 329 },
+    "Date": "9/16/2020"
+  },
+  {
+    "Amount": 883919.7,
+    "CreatedBy": { "Id": 134 },
+    "TransactionCategory": { "Id": 597 },
+    "Date": "11/17/2020"
+  },
+  {
+    "Title": "praesent blandit lacinia",
+    "Amount": 536282.1,
+    "CreatedBy": { "Id": 86 },
+    "TransactionCategory": { "Id": 461 },
+    "Date": "12/7/2020"
+  },
+  {
+    "Title": "justo",
+    "Amount": 228974.3,
+    "CreatedBy": { "Id": 130 },
+    "TransactionCategory": { "Id": 621 },
+    "Date": "11/19/2020"
+  },
+  {
+    "Amount": 485563.9,
+    "CreatedBy": { "Id": 144 },
+    "TransactionCategory": { "Id": 494 },
+    "Date": "12/7/2020"
+  },
+  {
+    "Title": "nunc commodo",
+    "Amount": 608095.0,
+    "CreatedBy": { "Id": 129 },
+    "TransactionCategory": { "Id": 666 },
+    "Date": "9/6/2020"
+  },
+  {
+    "Title": "lorem id",
+    "Amount": 760438.1,
+    "CreatedBy": { "Id": 150 },
+    "TransactionCategory": { "Id": 367 },
+    "Date": "11/20/2020"
+  },
+  {
+    "Amount": 712718.2,
+    "CreatedBy": { "Id": 108 },
+    "TransactionCategory": { "Id": 336 },
+    "Date": "12/6/2020"
+  },
+  {
+    "Title": "tempus sit amet",
+    "Amount": 241738.8,
+    "CreatedBy": { "Id": 12 },
+    "TransactionCategory": { "Id": 36 },
+    "Date": "8/24/2020"
+  },
+  {
+    "Title": "donec diam neque",
+    "Amount": 949624.9,
+    "CreatedBy": { "Id": 181 },
+    "TransactionCategory": { "Id": 354 },
+    "Date": "12/17/2020"
+  },
+  {
+    "Title": "vel augue",
+    "Amount": 655571.5,
+    "CreatedBy": { "Id": 68 },
+    "TransactionCategory": { "Id": 787 },
+    "Date": "12/23/2020"
+  },
+  {
+    "Amount": 875553.6,
+    "CreatedBy": { "Id": 35 },
+    "TransactionCategory": { "Id": 572 },
+    "Date": "10/3/2020"
+  },
+  {
+    "Amount": 411348.6,
+    "CreatedBy": { "Id": 30 },
+    "TransactionCategory": { "Id": 671 },
+    "Date": "8/4/2020"
+  },
+  {
+    "Title": "sit amet",
+    "Amount": 262774.5,
+    "CreatedBy": { "Id": 140 },
+    "TransactionCategory": { "Id": 478 },
+    "Date": "12/28/2020"
+  },
+  {
+    "Amount": 991766.4,
+    "CreatedBy": { "Id": 138 },
+    "TransactionCategory": { "Id": 762 },
+    "Date": "9/13/2020"
+  },
+  {
+    "Title": "mi in porttitor",
+    "Amount": 945262.0,
+    "CreatedBy": { "Id": 106 },
+    "TransactionCategory": { "Id": 470 },
+    "Date": "11/2/2020"
+  },
+  {
+    "Title": "vitae mattis nibh",
+    "Amount": 350342.2,
+    "CreatedBy": { "Id": 22 },
+    "TransactionCategory": { "Id": 183 },
+    "Date": "12/26/2020"
+  },
+  {
+    "Amount": 209066.3,
+    "CreatedBy": { "Id": 162 },
+    "TransactionCategory": { "Id": 300 },
+    "Date": "10/15/2020"
+  },
+  {
+    "Title": "ultrices",
+    "Amount": 414760.1,
+    "CreatedBy": { "Id": 62 },
+    "TransactionCategory": { "Id": 470 },
+    "Date": "11/25/2020"
+  },
+  {
+    "Amount": 555675.0,
+    "CreatedBy": { "Id": 22 },
+    "TransactionCategory": { "Id": 272 },
+    "Date": "10/27/2020"
+  },
+  {
+    "Title": "sed justo pellentesque",
+    "Amount": 99288.0,
+    "CreatedBy": { "Id": 95 },
+    "TransactionCategory": { "Id": 234 },
+    "Date": "10/16/2020"
+  },
+  {
+    "Title": "sed tristique in",
+    "Amount": 632320.6,
+    "CreatedBy": { "Id": 197 },
+    "TransactionCategory": { "Id": 48 },
+    "Date": "9/3/2020"
+  },
+  {
+    "Title": "molestie hendrerit at",
+    "Amount": 951757.3,
+    "CreatedBy": { "Id": 39 },
+    "TransactionCategory": { "Id": 381 },
+    "Date": "12/9/2020"
+  },
+  {
+    "Amount": 637197.9,
+    "CreatedBy": { "Id": 148 },
+    "TransactionCategory": { "Id": 161 },
+    "Date": "11/9/2020"
+  },
+  {
+    "Amount": 16754.3,
+    "CreatedBy": { "Id": 58 },
+    "TransactionCategory": { "Id": 265 },
+    "Date": "11/10/2020"
+  },
+  {
+    "Title": "urna pretium nisl",
+    "Amount": 206271.5,
+    "CreatedBy": { "Id": 156 },
+    "TransactionCategory": { "Id": 538 },
+    "Date": "11/4/2020"
+  },
+  {
+    "Title": "nisi",
+    "Amount": 923881.9,
+    "CreatedBy": { "Id": 109 },
+    "TransactionCategory": { "Id": 761 },
+    "Date": "8/16/2020"
+  },
+  {
+    "Amount": 743893.0,
+    "CreatedBy": { "Id": 8 },
+    "TransactionCategory": { "Id": 303 },
+    "Date": "11/19/2020"
+  },
+  {
+    "Title": "in hac",
+    "Amount": 245945.9,
+    "CreatedBy": { "Id": 192 },
+    "TransactionCategory": { "Id": 362 },
+    "Date": "9/2/2020"
+  },
+  {
+    "Title": "aenean fermentum donec",
+    "Amount": 291039.0,
+    "CreatedBy": { "Id": 194 },
+    "TransactionCategory": { "Id": 655 },
+    "Date": "8/26/2020"
+  },
+  {
+    "Title": "nonummy integer non",
+    "Amount": 200819.5,
+    "CreatedBy": { "Id": 24 },
+    "TransactionCategory": { "Id": 722 },
+    "Date": "11/8/2020"
+  },
+  {
+    "Amount": 309574.3,
+    "CreatedBy": { "Id": 178 },
+    "TransactionCategory": { "Id": 776 },
+    "Date": "12/1/2020"
+  },
+  {
+    "Title": "fermentum justo",
+    "Amount": 589808.5,
+    "CreatedBy": { "Id": 34 },
+    "TransactionCategory": { "Id": 589 },
+    "Date": "9/7/2020"
+  },
+  {
+    "Amount": 948665.3,
+    "CreatedBy": { "Id": 98 },
+    "TransactionCategory": { "Id": 274 },
+    "Date": "11/12/2020"
+  },
+  {
+    "Amount": 706077.6,
+    "CreatedBy": { "Id": 193 },
+    "TransactionCategory": { "Id": 717 },
+    "Date": "8/9/2020"
+  },
+  {
+    "Title": "eu",
+    "Amount": 748747.1,
+    "CreatedBy": { "Id": 75 },
+    "TransactionCategory": { "Id": 548 },
+    "Date": "8/19/2020"
+  },
+  {
+    "Amount": 768355.7,
+    "CreatedBy": { "Id": 175 },
+    "TransactionCategory": { "Id": 51 },
+    "Date": "8/1/2020"
+  },
+  {
+    "Title": "mattis egestas",
+    "Amount": 204007.6,
+    "CreatedBy": { "Id": 189 },
+    "TransactionCategory": { "Id": 389 },
+    "Date": "8/2/2020"
+  },
+  {
+    "Title": "fusce consequat",
+    "Amount": 553659.4,
+    "CreatedBy": { "Id": 190 },
+    "TransactionCategory": { "Id": 600 },
+    "Date": "9/25/2020"
+  },
+  {
+    "Title": "nec",
+    "Amount": 784651.7,
+    "CreatedBy": { "Id": 93 },
+    "TransactionCategory": { "Id": 204 },
+    "Date": "10/10/2020"
+  },
+  {
+    "Title": "at turpis donec",
+    "Amount": 38949.2,
+    "CreatedBy": { "Id": 96 },
+    "TransactionCategory": { "Id": 130 },
+    "Date": "11/9/2020"
+  },
+  {
+    "Title": "odio condimentum id",
+    "Amount": 440335.9,
+    "CreatedBy": { "Id": 157 },
+    "TransactionCategory": { "Id": 346 },
+    "Date": "9/6/2020"
+  },
+  {
+    "Title": "risus",
+    "Amount": 186045.0,
+    "CreatedBy": { "Id": 24 },
+    "TransactionCategory": { "Id": 453 },
+    "Date": "11/23/2020"
+  },
+  {
+    "Title": "pharetra",
+    "Amount": 763145.4,
+    "CreatedBy": { "Id": 144 },
+    "TransactionCategory": { "Id": 139 },
+    "Date": "12/28/2020"
+  },
+  {
+    "Title": "magna vulputate luctus",
+    "Amount": 245099.8,
+    "CreatedBy": { "Id": 57 },
+    "TransactionCategory": { "Id": 64 },
+    "Date": "8/7/2020"
+  },
+  {
+    "Amount": 836328.2,
+    "CreatedBy": { "Id": 60 },
+    "TransactionCategory": { "Id": 57 },
+    "Date": "12/12/2020"
+  },
+  {
+    "Title": "morbi quis",
+    "Amount": 210969.1,
+    "CreatedBy": { "Id": 118 },
+    "TransactionCategory": { "Id": 283 },
+    "Date": "11/18/2020"
+  },
+  {
+    "Amount": 820998.2,
+    "CreatedBy": { "Id": 10 },
+    "TransactionCategory": { "Id": 135 },
+    "Date": "8/31/2020"
+  },
+  {
+    "Title": "parturient montes",
+    "Amount": 184652.1,
+    "CreatedBy": { "Id": 157 },
+    "TransactionCategory": { "Id": 13 },
+    "Date": "11/2/2020"
+  },
+  {
+    "Title": "aliquam",
+    "Amount": 760007.0,
+    "CreatedBy": { "Id": 168 },
+    "TransactionCategory": { "Id": 789 },
+    "Date": "8/31/2020"
+  },
+  {
+    "Amount": 42978.5,
+    "CreatedBy": { "Id": 166 },
+    "TransactionCategory": { "Id": 131 },
+    "Date": "9/16/2020"
+  },
+  {
+    "Title": "lobortis ligula sit",
+    "Amount": 233299.9,
+    "CreatedBy": { "Id": 142 },
+    "TransactionCategory": { "Id": 41 },
+    "Date": "12/15/2020"
+  },
+  {
+    "Title": "nec sem",
+    "Amount": 525455.8,
+    "CreatedBy": { "Id": 118 },
+    "TransactionCategory": { "Id": 518 },
+    "Date": "8/31/2020"
+  },
+  {
+    "Title": "metus",
+    "Amount": 641400.9,
+    "CreatedBy": { "Id": 107 },
+    "TransactionCategory": { "Id": 576 },
+    "Date": "8/29/2020"
+  },
+  {
+    "Title": "ipsum ac tellus",
+    "Amount": 856390.5,
+    "CreatedBy": { "Id": 94 },
+    "TransactionCategory": { "Id": 101 },
+    "Date": "8/29/2020"
+  },
+  {
+    "Title": "vestibulum rutrum",
+    "Amount": 350118.4,
+    "CreatedBy": { "Id": 165 },
+    "TransactionCategory": { "Id": 52 },
+    "Date": "11/15/2020"
+  },
+  {
+    "Title": "leo",
+    "Amount": 507036.5,
+    "CreatedBy": { "Id": 187 },
+    "TransactionCategory": { "Id": 711 },
+    "Date": "12/28/2020"
+  },
+  {
+    "Amount": 461577.6,
+    "CreatedBy": { "Id": 67 },
+    "TransactionCategory": { "Id": 745 },
+    "Date": "8/22/2020"
+  },
+  {
+    "Amount": 323061.9,
+    "CreatedBy": { "Id": 118 },
+    "TransactionCategory": { "Id": 397 },
+    "Date": "10/20/2020"
+  },
+  {
+    "Amount": 391523.4,
+    "CreatedBy": { "Id": 108 },
+    "TransactionCategory": { "Id": 274 },
+    "Date": "10/8/2020"
+  },
+  {
+    "Title": "odio",
+    "Amount": 571633.2,
+    "CreatedBy": { "Id": 10 },
+    "TransactionCategory": { "Id": 363 },
+    "Date": "9/17/2020"
+  },
+  {
+    "Title": "in hac habitasse",
+    "Amount": 732749.0,
+    "CreatedBy": { "Id": 160 },
+    "TransactionCategory": { "Id": 141 },
+    "Date": "12/9/2020"
+  },
+  {
+    "Title": "adipiscing lorem vitae",
+    "Amount": 59694.3,
+    "CreatedBy": { "Id": 82 },
+    "TransactionCategory": { "Id": 274 },
+    "Date": "10/7/2020"
+  },
+  {
+    "Title": "a",
+    "Amount": 164438.5,
+    "CreatedBy": { "Id": 199 },
+    "TransactionCategory": { "Id": 581 },
+    "Date": "9/4/2020"
+  },
+  {
+    "Title": "nisi",
+    "Amount": 391526.6,
+    "CreatedBy": { "Id": 112 },
+    "TransactionCategory": { "Id": 650 },
+    "Date": "9/17/2020"
+  },
+  {
+    "Title": "amet justo morbi",
+    "Amount": 434359.2,
+    "CreatedBy": { "Id": 110 },
+    "TransactionCategory": { "Id": 253 },
+    "Date": "10/25/2020"
+  },
+  {
+    "Title": "proin risus",
+    "Amount": 967361.2,
+    "CreatedBy": { "Id": 190 },
+    "TransactionCategory": { "Id": 440 },
+    "Date": "12/20/2020"
+  },
+  {
+    "Title": "augue vestibulum ante",
+    "Amount": 914926.7,
+    "CreatedBy": { "Id": 131 },
+    "TransactionCategory": { "Id": 507 },
+    "Date": "11/16/2020"
+  },
+  {
+    "Title": "nibh quisque",
+    "Amount": 690135.4,
+    "CreatedBy": { "Id": 162 },
+    "TransactionCategory": { "Id": 618 },
+    "Date": "11/22/2020"
+  },
+  {
+    "Amount": 133741.3,
+    "CreatedBy": { "Id": 178 },
+    "TransactionCategory": { "Id": 47 },
+    "Date": "10/29/2020"
+  },
+  {
+    "Title": "pede posuere",
+    "Amount": 970577.3,
+    "CreatedBy": { "Id": 1 },
+    "TransactionCategory": { "Id": 501 },
+    "Date": "12/30/2020"
+  },
+  {
+    "Title": "nullam molestie",
+    "Amount": 560685.7,
+    "CreatedBy": { "Id": 147 },
+    "TransactionCategory": { "Id": 45 },
+    "Date": "12/18/2020"
+  },
+  {
+    "Amount": 120544.2,
+    "CreatedBy": { "Id": 106 },
+    "TransactionCategory": { "Id": 486 },
+    "Date": "12/18/2020"
+  },
+  {
+    "Title": "lacinia eget",
+    "Amount": 643576.8,
+    "CreatedBy": { "Id": 5 },
+    "TransactionCategory": { "Id": 464 },
+    "Date": "10/7/2020"
+  },
+  {
+    "Amount": 50702.9,
+    "CreatedBy": { "Id": 163 },
+    "TransactionCategory": { "Id": 643 },
+    "Date": "11/1/2020"
+  },
+  {
+    "Title": "nisl nunc nisl",
+    "Amount": 310876.9,
+    "CreatedBy": { "Id": 184 },
+    "TransactionCategory": { "Id": 650 },
+    "Date": "11/10/2020"
+  },
+  {
+    "Title": "eu interdum eu",
+    "Amount": 259324.0,
+    "CreatedBy": { "Id": 101 },
+    "TransactionCategory": { "Id": 719 },
+    "Date": "11/6/2020"
+  },
+  {
+    "Title": "et ultrices posuere",
+    "Amount": 84840.5,
+    "CreatedBy": { "Id": 133 },
+    "TransactionCategory": { "Id": 85 },
+    "Date": "11/3/2020"
+  },
+  {
+    "Title": "duis consequat dui",
+    "Amount": 14129.8,
+    "CreatedBy": { "Id": 140 },
+    "TransactionCategory": { "Id": 95 },
+    "Date": "11/28/2020"
+  },
+  {
+    "Title": "donec",
+    "Amount": 119765.2,
+    "CreatedBy": { "Id": 45 },
+    "TransactionCategory": { "Id": 321 },
+    "Date": "11/22/2020"
+  },
+  {
+    "Amount": 952403.3,
+    "CreatedBy": { "Id": 15 },
+    "TransactionCategory": { "Id": 688 },
+    "Date": "9/13/2020"
+  },
+  {
+    "Title": "sodales sed",
+    "Amount": 578341.0,
+    "CreatedBy": { "Id": 64 },
+    "TransactionCategory": { "Id": 651 },
+    "Date": "12/27/2020"
+  },
+  {
+    "Title": "lacinia",
+    "Amount": 853523.3,
+    "CreatedBy": { "Id": 127 },
+    "TransactionCategory": { "Id": 111 },
+    "Date": "8/9/2020"
+  },
+  {
+    "Title": "tempus sit",
+    "Amount": 248677.9,
+    "CreatedBy": { "Id": 51 },
+    "TransactionCategory": { "Id": 543 },
+    "Date": "10/16/2020"
+  },
+  {
+    "Title": "faucibus orci luctus",
+    "Amount": 896293.0,
+    "CreatedBy": { "Id": 139 },
+    "TransactionCategory": { "Id": 438 },
+    "Date": "10/12/2020"
+  },
+  {
+    "Amount": 820839.4,
+    "CreatedBy": { "Id": 36 },
+    "TransactionCategory": { "Id": 715 },
+    "Date": "12/25/2020"
+  },
+  {
+    "Title": "orci pede",
+    "Amount": 564545.0,
+    "CreatedBy": { "Id": 15 },
+    "TransactionCategory": { "Id": 263 },
+    "Date": "11/2/2020"
+  },
+  {
+    "Title": "id pretium iaculis",
+    "Amount": 231713.9,
+    "CreatedBy": { "Id": 97 },
+    "TransactionCategory": { "Id": 580 },
+    "Date": "11/15/2020"
+  },
+  {
+    "Title": "sem mauris",
+    "Amount": 958061.1,
+    "CreatedBy": { "Id": 159 },
+    "TransactionCategory": { "Id": 641 },
+    "Date": "9/18/2020"
+  },
+  {
+    "Title": "posuere",
+    "Amount": 93689.7,
+    "CreatedBy": { "Id": 183 },
+    "TransactionCategory": { "Id": 519 },
+    "Date": "12/26/2020"
+  },
+  {
+    "Title": "non",
+    "Amount": 993804.1,
+    "CreatedBy": { "Id": 8 },
+    "TransactionCategory": { "Id": 780 },
+    "Date": "9/14/2020"
+  },
+  {
+    "Title": "convallis duis",
+    "Amount": 263242.6,
+    "CreatedBy": { "Id": 181 },
+    "TransactionCategory": { "Id": 78 },
+    "Date": "12/8/2020"
+  },
+  {
+    "Title": "lacinia",
+    "Amount": 824417.1,
+    "CreatedBy": { "Id": 128 },
+    "TransactionCategory": { "Id": 159 },
+    "Date": "9/6/2020"
+  },
+  {
+    "Title": "eu sapien cursus",
+    "Amount": 643759.5,
+    "CreatedBy": { "Id": 177 },
+    "TransactionCategory": { "Id": 43 },
+    "Date": "10/12/2020"
+  },
+  {
+    "Title": "ac",
+    "Amount": 434314.6,
+    "CreatedBy": { "Id": 9 },
+    "TransactionCategory": { "Id": 543 },
+    "Date": "11/18/2020"
+  },
+  {
+    "Amount": 203960.1,
+    "CreatedBy": { "Id": 122 },
+    "TransactionCategory": { "Id": 256 },
+    "Date": "9/10/2020"
+  },
+  {
+    "Title": "pellentesque quisque porta",
+    "Amount": 806262.5,
+    "CreatedBy": { "Id": 130 },
+    "TransactionCategory": { "Id": 581 },
+    "Date": "11/10/2020"
+  },
+  {
+    "Title": "ultrices libero",
+    "Amount": 30060.0,
+    "CreatedBy": { "Id": 144 },
+    "TransactionCategory": { "Id": 599 },
+    "Date": "12/29/2020"
+  },
+  {
+    "Title": "consequat",
+    "Amount": 582173.2,
+    "CreatedBy": { "Id": 83 },
+    "TransactionCategory": { "Id": 279 },
+    "Date": "9/1/2020"
+  },
+  {
+    "Title": "est",
+    "Amount": 148599.9,
+    "CreatedBy": { "Id": 194 },
+    "TransactionCategory": { "Id": 774 },
+    "Date": "12/1/2020"
+  },
+  {
+    "Title": "at",
+    "Amount": 376303.1,
+    "CreatedBy": { "Id": 150 },
+    "TransactionCategory": { "Id": 559 },
+    "Date": "8/17/2020"
+  },
+  {
+    "Title": "lacinia erat vestibulum",
+    "Amount": 229046.6,
+    "CreatedBy": { "Id": 73 },
+    "TransactionCategory": { "Id": 442 },
+    "Date": "10/5/2020"
+  },
+  {
+    "Title": "arcu adipiscing molestie",
+    "Amount": 552374.5,
+    "CreatedBy": { "Id": 195 },
+    "TransactionCategory": { "Id": 51 },
+    "Date": "8/23/2020"
+  },
+  {
+    "Title": "ullamcorper purus",
+    "Amount": 174706.5,
+    "CreatedBy": { "Id": 2 },
+    "TransactionCategory": { "Id": 507 },
+    "Date": "10/10/2020"
+  },
+  {
+    "Title": "interdum venenatis",
+    "Amount": 555179.1,
+    "CreatedBy": { "Id": 67 },
+    "TransactionCategory": { "Id": 771 },
+    "Date": "10/22/2020"
+  },
+  {
+    "Title": "viverra eget",
+    "Amount": 539664.6,
+    "CreatedBy": { "Id": 73 },
+    "TransactionCategory": { "Id": 2 },
+    "Date": "9/1/2020"
+  },
+  {
+    "Amount": 134400.0,
+    "CreatedBy": { "Id": 91 },
+    "TransactionCategory": { "Id": 721 },
+    "Date": "8/8/2020"
+  },
+  {
+    "Amount": 769466.0,
+    "CreatedBy": { "Id": 32 },
+    "TransactionCategory": { "Id": 168 },
+    "Date": "9/20/2020"
+  },
+  {
+    "Title": "nullam sit",
+    "Amount": 865330.3,
+    "CreatedBy": { "Id": 28 },
+    "TransactionCategory": { "Id": 611 },
+    "Date": "11/14/2020"
+  },
+  {
+    "Title": "convallis nulla",
+    "Amount": 385312.8,
+    "CreatedBy": { "Id": 187 },
+    "TransactionCategory": { "Id": 181 },
+    "Date": "12/13/2020"
+  },
+  {
+    "Amount": 699108.3,
+    "CreatedBy": { "Id": 79 },
+    "TransactionCategory": { "Id": 54 },
+    "Date": "10/10/2020"
+  },
+  {
+    "Amount": 840173.2,
+    "CreatedBy": { "Id": 135 },
+    "TransactionCategory": { "Id": 703 },
+    "Date": "12/8/2020"
+  },
+  {
+    "Amount": 40226.5,
+    "CreatedBy": { "Id": 197 },
+    "TransactionCategory": { "Id": 683 },
+    "Date": "12/17/2020"
+  },
+  {
+    "Amount": 618369.9,
+    "CreatedBy": { "Id": 31 },
+    "TransactionCategory": { "Id": 452 },
+    "Date": "12/1/2020"
+  },
+  {
+    "Title": "libero rutrum",
+    "Amount": 649308.5,
+    "CreatedBy": { "Id": 174 },
+    "TransactionCategory": { "Id": 132 },
+    "Date": "9/19/2020"
+  },
+  {
+    "Title": "at turpis a",
+    "Amount": 3418.9,
+    "CreatedBy": { "Id": 150 },
+    "TransactionCategory": { "Id": 358 },
+    "Date": "10/15/2020"
+  },
+  {
+    "Title": "venenatis",
+    "Amount": 926455.4,
+    "CreatedBy": { "Id": 192 },
+    "TransactionCategory": { "Id": 246 },
+    "Date": "12/23/2020"
+  },
+  {
+    "Amount": 188801.0,
+    "CreatedBy": { "Id": 146 },
+    "TransactionCategory": { "Id": 431 },
+    "Date": "12/30/2020"
+  },
+  {
+    "Title": "in faucibus orci",
+    "Amount": 95624.4,
+    "CreatedBy": { "Id": 54 },
+    "TransactionCategory": { "Id": 473 },
+    "Date": "9/10/2020"
+  },
+  {
+    "Title": "nulla nunc purus",
+    "Amount": 143847.7,
+    "CreatedBy": { "Id": 105 },
+    "TransactionCategory": { "Id": 84 },
+    "Date": "12/23/2020"
+  },
+  {
+    "Amount": 66372.6,
+    "CreatedBy": { "Id": 64 },
+    "TransactionCategory": { "Id": 515 },
+    "Date": "10/29/2020"
+  },
+  {
+    "Title": "at turpis donec",
+    "Amount": 754210.8,
+    "CreatedBy": { "Id": 45 },
+    "TransactionCategory": { "Id": 39 },
+    "Date": "8/25/2020"
+  },
+  {
+    "Title": "nibh ligula",
+    "Amount": 754625.2,
+    "CreatedBy": { "Id": 116 },
+    "TransactionCategory": { "Id": 327 },
+    "Date": "8/10/2020"
+  },
+  {
+    "Amount": 586174.3,
+    "CreatedBy": { "Id": 74 },
+    "TransactionCategory": { "Id": 534 },
+    "Date": "12/6/2020"
+  },
+  {
+    "Title": "lorem",
+    "Amount": 661719.6,
+    "CreatedBy": { "Id": 9 },
+    "TransactionCategory": { "Id": 485 },
+    "Date": "10/26/2020"
+  },
+  {
+    "Amount": 286880.1,
+    "CreatedBy": { "Id": 130 },
+    "TransactionCategory": { "Id": 267 },
+    "Date": "11/11/2020"
+  },
+  {
+    "Title": "integer",
+    "Amount": 423445.2,
+    "CreatedBy": { "Id": 47 },
+    "TransactionCategory": { "Id": 469 },
+    "Date": "12/18/2020"
+  },
+  {
+    "Title": "ut nunc",
+    "Amount": 52768.3,
+    "CreatedBy": { "Id": 128 },
+    "TransactionCategory": { "Id": 669 },
+    "Date": "11/26/2020"
+  },
+  {
+    "Title": "nullam sit",
+    "Amount": 145748.4,
+    "CreatedBy": { "Id": 13 },
+    "TransactionCategory": { "Id": 573 },
+    "Date": "10/8/2020"
+  },
+  {
+    "Title": "ac est",
+    "Amount": 959574.4,
+    "CreatedBy": { "Id": 178 },
+    "TransactionCategory": { "Id": 241 },
+    "Date": "8/9/2020"
+  },
+  {
+    "Amount": 325242.5,
+    "CreatedBy": { "Id": 63 },
+    "TransactionCategory": { "Id": 608 },
+    "Date": "8/8/2020"
+  },
+  {
+    "Title": "ridiculus mus",
+    "Amount": 60899.8,
+    "CreatedBy": { "Id": 196 },
+    "TransactionCategory": { "Id": 614 },
+    "Date": "8/28/2020"
+  },
+  {
+    "Amount": 63849.3,
+    "CreatedBy": { "Id": 171 },
+    "TransactionCategory": { "Id": 777 },
+    "Date": "8/26/2020"
+  },
+  {
+    "Amount": 362892.5,
+    "CreatedBy": { "Id": 136 },
+    "TransactionCategory": { "Id": 504 },
+    "Date": "8/19/2020"
+  },
+  {
+    "Title": "nisi eu orci",
+    "Amount": 925567.7,
+    "CreatedBy": { "Id": 166 },
+    "TransactionCategory": { "Id": 244 },
+    "Date": "10/28/2020"
+  },
+  {
+    "Amount": 97580.3,
+    "CreatedBy": { "Id": 66 },
+    "TransactionCategory": { "Id": 388 },
+    "Date": "11/13/2020"
+  },
+  {
+    "Amount": 434928.5,
+    "CreatedBy": { "Id": 95 },
+    "TransactionCategory": { "Id": 695 },
+    "Date": "10/27/2020"
+  },
+  {
+    "Title": "in",
+    "Amount": 665480.7,
+    "CreatedBy": { "Id": 82 },
+    "TransactionCategory": { "Id": 108 },
+    "Date": "9/20/2020"
+  },
+  {
+    "Title": "libero",
+    "Amount": 927337.6,
+    "CreatedBy": { "Id": 134 },
+    "TransactionCategory": { "Id": 231 },
+    "Date": "11/29/2020"
+  },
+  {
+    "Title": "tortor sollicitudin mi",
+    "Amount": 410011.4,
+    "CreatedBy": { "Id": 183 },
+    "TransactionCategory": { "Id": 85 },
+    "Date": "9/30/2020"
+  },
+  {
+    "Amount": 536797.6,
+    "CreatedBy": { "Id": 92 },
+    "TransactionCategory": { "Id": 374 },
+    "Date": "12/2/2020"
+  },
+  {
+    "Title": "dapibus nulla suscipit",
+    "Amount": 871851.5,
+    "CreatedBy": { "Id": 21 },
+    "TransactionCategory": { "Id": 99 },
+    "Date": "9/20/2020"
+  },
+  {
+    "Title": "donec ut mauris",
+    "Amount": 467262.9,
+    "CreatedBy": { "Id": 54 },
+    "TransactionCategory": { "Id": 761 },
+    "Date": "10/30/2020"
+  },
+  {
+    "Amount": 434266.9,
+    "CreatedBy": { "Id": 198 },
+    "TransactionCategory": { "Id": 132 },
+    "Date": "9/21/2020"
+  },
+  {
+    "Title": "quam",
+    "Amount": 805746.0,
+    "CreatedBy": { "Id": 132 },
+    "TransactionCategory": { "Id": 274 },
+    "Date": "8/6/2020"
+  },
+  {
+    "Amount": 882938.3,
+    "CreatedBy": { "Id": 64 },
+    "TransactionCategory": { "Id": 762 },
+    "Date": "10/24/2020"
+  },
+  {
+    "Title": "ac",
+    "Amount": 535284.6,
+    "CreatedBy": { "Id": 43 },
+    "TransactionCategory": { "Id": 350 },
+    "Date": "10/15/2020"
+  },
+  {
+    "Title": "ante vivamus",
+    "Amount": 579043.4,
+    "CreatedBy": { "Id": 164 },
+    "TransactionCategory": { "Id": 668 },
+    "Date": "8/1/2020"
+  },
+  {
+    "Amount": 994050.2,
+    "CreatedBy": { "Id": 56 },
+    "TransactionCategory": { "Id": 583 },
+    "Date": "12/17/2020"
+  },
+  {
+    "Amount": 405650.1,
+    "CreatedBy": { "Id": 34 },
+    "TransactionCategory": { "Id": 381 },
+    "Date": "8/17/2020"
+  },
+  {
+    "Title": "ante",
+    "Amount": 144125.4,
+    "CreatedBy": { "Id": 122 },
+    "TransactionCategory": { "Id": 396 },
+    "Date": "9/29/2020"
+  },
+  {
+    "Title": "ultrices",
+    "Amount": 459244.7,
+    "CreatedBy": { "Id": 32 },
+    "TransactionCategory": { "Id": 447 },
+    "Date": "9/13/2020"
+  },
+  {
+    "Title": "ac nibh",
+    "Amount": 901589.7,
+    "CreatedBy": { "Id": 110 },
+    "TransactionCategory": { "Id": 264 },
+    "Date": "9/11/2020"
+  },
+  {
+    "Amount": 513391.7,
+    "CreatedBy": { "Id": 51 },
+    "TransactionCategory": { "Id": 364 },
+    "Date": "11/7/2020"
+  },
+  {
+    "Amount": 543034.1,
+    "CreatedBy": { "Id": 99 },
+    "TransactionCategory": { "Id": 279 },
+    "Date": "8/29/2020"
+  },
+  {
+    "Title": "luctus et ultrices",
+    "Amount": 62309.1,
+    "CreatedBy": { "Id": 191 },
+    "TransactionCategory": { "Id": 294 },
+    "Date": "10/17/2020"
+  },
+  {
+    "Title": "pharetra",
+    "Amount": 604240.0,
+    "CreatedBy": { "Id": 33 },
+    "TransactionCategory": { "Id": 522 },
+    "Date": "9/23/2020"
+  },
+  {
+    "Title": "varius integer",
+    "Amount": 882975.4,
+    "CreatedBy": { "Id": 78 },
+    "TransactionCategory": { "Id": 737 },
+    "Date": "8/29/2020"
+  },
+  {
+    "Title": "est quam",
+    "Amount": 196800.3,
+    "CreatedBy": { "Id": 139 },
+    "TransactionCategory": { "Id": 265 },
+    "Date": "9/24/2020"
+  },
+  {
+    "Title": "primis in faucibus",
+    "Amount": 248872.1,
+    "CreatedBy": { "Id": 11 },
+    "TransactionCategory": { "Id": 366 },
+    "Date": "12/11/2020"
+  },
+  {
+    "Amount": 653460.5,
+    "CreatedBy": { "Id": 161 },
+    "TransactionCategory": { "Id": 176 },
+    "Date": "12/16/2020"
+  },
+  {
+    "Title": "at velit",
+    "Amount": 321384.8,
+    "CreatedBy": { "Id": 117 },
+    "TransactionCategory": { "Id": 148 },
+    "Date": "11/13/2020"
+  },
+  {
+    "Title": "consequat lectus",
+    "Amount": 908058.0,
+    "CreatedBy": { "Id": 38 },
+    "TransactionCategory": { "Id": 784 },
+    "Date": "9/25/2020"
+  },
+  {
+    "Title": "nam ultrices",
+    "Amount": 45293.4,
+    "CreatedBy": { "Id": 189 },
+    "TransactionCategory": { "Id": 5 },
+    "Date": "8/4/2020"
+  },
+  {
+    "Title": "lacus",
+    "Amount": 821950.7,
+    "CreatedBy": { "Id": 18 },
+    "TransactionCategory": { "Id": 332 },
+    "Date": "11/5/2020"
+  },
+  {
+    "Title": "sit amet diam",
+    "Amount": 861862.1,
+    "CreatedBy": { "Id": 5 },
+    "TransactionCategory": { "Id": 65 },
+    "Date": "11/17/2020"
+  },
+  {
+    "Title": "morbi a ipsum",
+    "Amount": 637388.0,
+    "CreatedBy": { "Id": 192 },
+    "TransactionCategory": { "Id": 576 },
+    "Date": "10/9/2020"
+  },
+  {
+    "Title": "volutpat convallis morbi",
+    "Amount": 917422.7,
+    "CreatedBy": { "Id": 182 },
+    "TransactionCategory": { "Id": 423 },
+    "Date": "10/4/2020"
+  },
+  {
+    "Title": "in sapien iaculis",
+    "Amount": 987514.0,
+    "CreatedBy": { "Id": 172 },
+    "TransactionCategory": { "Id": 160 },
+    "Date": "9/30/2020"
+  },
+  {
+    "Amount": 884623.0,
+    "CreatedBy": { "Id": 65 },
+    "TransactionCategory": { "Id": 732 },
+    "Date": "12/14/2020"
+  },
+  {
+    "Amount": 889884.0,
+    "CreatedBy": { "Id": 35 },
+    "TransactionCategory": { "Id": 383 },
+    "Date": "9/3/2020"
+  },
+  {
+    "Amount": 579204.5,
+    "CreatedBy": { "Id": 88 },
+    "TransactionCategory": { "Id": 563 },
+    "Date": "9/10/2020"
+  },
+  {
+    "Amount": 904816.3,
+    "CreatedBy": { "Id": 2 },
+    "TransactionCategory": { "Id": 52 },
+    "Date": "10/31/2020"
+  },
+  {
+    "Title": "tortor",
+    "Amount": 738592.3,
+    "CreatedBy": { "Id": 25 },
+    "TransactionCategory": { "Id": 311 },
+    "Date": "9/25/2020"
+  },
+  {
+    "Title": "ut tellus",
+    "Amount": 796006.3,
+    "CreatedBy": { "Id": 59 },
+    "TransactionCategory": { "Id": 140 },
+    "Date": "12/29/2020"
+  },
+  {
+    "Amount": 959263.1,
+    "CreatedBy": { "Id": 54 },
+    "TransactionCategory": { "Id": 281 },
+    "Date": "8/18/2020"
+  },
+  {
+    "Title": "a nibh",
+    "Amount": 320904.2,
+    "CreatedBy": { "Id": 179 },
+    "TransactionCategory": { "Id": 310 },
+    "Date": "11/29/2020"
+  },
+  {
+    "Title": "consequat morbi a",
+    "Amount": 57493.5,
+    "CreatedBy": { "Id": 178 },
+    "TransactionCategory": { "Id": 203 },
+    "Date": "11/4/2020"
+  },
+  {
+    "Title": "tincidunt",
+    "Amount": 920084.7,
+    "CreatedBy": { "Id": 177 },
+    "TransactionCategory": { "Id": 629 },
+    "Date": "9/13/2020"
+  },
+  {
+    "Title": "vitae mattis nibh",
+    "Amount": 975013.0,
+    "CreatedBy": { "Id": 18 },
+    "TransactionCategory": { "Id": 645 },
+    "Date": "12/29/2020"
+  },
+  {
+    "Title": "odio justo sollicitudin",
+    "Amount": 183353.7,
+    "CreatedBy": { "Id": 99 },
+    "TransactionCategory": { "Id": 368 },
+    "Date": "12/11/2020"
+  },
+  {
+    "Title": "ut erat id",
+    "Amount": 8896.9,
+    "CreatedBy": { "Id": 136 },
+    "TransactionCategory": { "Id": 497 },
+    "Date": "9/21/2020"
+  },
+  {
+    "Title": "nunc",
+    "Amount": 947092.4,
+    "CreatedBy": { "Id": 76 },
+    "TransactionCategory": { "Id": 248 },
+    "Date": "10/15/2020"
+  },
+  {
+    "Title": "felis ut at",
+    "Amount": 598934.6,
+    "CreatedBy": { "Id": 54 },
+    "TransactionCategory": { "Id": 445 },
+    "Date": "9/24/2020"
+  },
+  {
+    "Title": "ipsum praesent blandit",
+    "Amount": 302742.1,
+    "CreatedBy": { "Id": 175 },
+    "TransactionCategory": { "Id": 246 },
+    "Date": "10/22/2020"
+  },
+  {
+    "Amount": 14642.6,
+    "CreatedBy": { "Id": 14 },
+    "TransactionCategory": { "Id": 182 },
+    "Date": "9/11/2020"
+  },
+  {
+    "Amount": 779790.2,
+    "CreatedBy": { "Id": 96 },
+    "TransactionCategory": { "Id": 248 },
+    "Date": "11/28/2020"
+  },
+  {
+    "Title": "rhoncus",
+    "Amount": 925985.3,
+    "CreatedBy": { "Id": 17 },
+    "TransactionCategory": { "Id": 182 },
+    "Date": "12/7/2020"
+  },
+  {
+    "Amount": 752803.5,
+    "CreatedBy": { "Id": 73 },
+    "TransactionCategory": { "Id": 166 },
+    "Date": "8/27/2020"
+  },
+  {
+    "Title": "urna pretium",
+    "Amount": 556497.6,
+    "CreatedBy": { "Id": 179 },
+    "TransactionCategory": { "Id": 763 },
+    "Date": "9/13/2020"
+  },
+  {
+    "Title": "lacus purus aliquet",
+    "Amount": 270771.0,
+    "CreatedBy": { "Id": 144 },
+    "TransactionCategory": { "Id": 164 },
+    "Date": "12/3/2020"
+  },
+  {
+    "Title": "et",
+    "Amount": 925917.2,
+    "CreatedBy": { "Id": 118 },
+    "TransactionCategory": { "Id": 235 },
+    "Date": "9/19/2020"
+  },
+  {
+    "Title": "tristique in tempus",
+    "Amount": 104245.1,
+    "CreatedBy": { "Id": 138 },
+    "TransactionCategory": { "Id": 482 },
+    "Date": "10/14/2020"
+  },
+  {
+    "Amount": 51481.1,
+    "CreatedBy": { "Id": 158 },
+    "TransactionCategory": { "Id": 337 },
+    "Date": "12/29/2020"
+  },
+  {
+    "Title": "natoque penatibus et",
+    "Amount": 741831.1,
+    "CreatedBy": { "Id": 13 },
+    "TransactionCategory": { "Id": 197 },
+    "Date": "10/8/2020"
+  },
+  {
+    "Title": "ultrices enim",
+    "Amount": 221001.8,
+    "CreatedBy": { "Id": 5 },
+    "TransactionCategory": { "Id": 294 },
+    "Date": "12/10/2020"
+  },
+  {
+    "Title": "lectus in",
+    "Amount": 231013.5,
+    "CreatedBy": { "Id": 116 },
+    "TransactionCategory": { "Id": 95 },
+    "Date": "10/5/2020"
+  },
+  {
+    "Title": "interdum",
+    "Amount": 993516.0,
+    "CreatedBy": { "Id": 8 },
+    "TransactionCategory": { "Id": 267 },
+    "Date": "10/21/2020"
+  },
+  {
+    "Amount": 348526.2,
+    "CreatedBy": { "Id": 95 },
+    "TransactionCategory": { "Id": 75 },
+    "Date": "12/6/2020"
+  },
+  {
+    "Title": "duis bibendum",
+    "Amount": 948248.1,
+    "CreatedBy": { "Id": 141 },
+    "TransactionCategory": { "Id": 112 },
+    "Date": "9/11/2020"
+  },
+  {
+    "Title": "sodales sed",
+    "Amount": 31435.6,
+    "CreatedBy": { "Id": 65 },
+    "TransactionCategory": { "Id": 626 },
+    "Date": "10/11/2020"
+  },
+  {
+    "Title": "ligula pellentesque",
+    "Amount": 452256.8,
+    "CreatedBy": { "Id": 2 },
+    "TransactionCategory": { "Id": 136 },
+    "Date": "8/21/2020"
+  },
+  {
+    "Title": "ante ipsum primis",
+    "Amount": 182218.9,
+    "CreatedBy": { "Id": 127 },
+    "TransactionCategory": { "Id": 604 },
+    "Date": "11/3/2020"
+  },
+  {
+    "Title": "elit",
+    "Amount": 993264.9,
+    "CreatedBy": { "Id": 144 },
+    "TransactionCategory": { "Id": 315 },
+    "Date": "10/20/2020"
+  },
+  {
+    "Title": "velit donec",
+    "Amount": 713878.0,
+    "CreatedBy": { "Id": 4 },
+    "TransactionCategory": { "Id": 22 },
+    "Date": "11/20/2020"
+  },
+  {
+    "Amount": 966579.4,
+    "CreatedBy": { "Id": 159 },
+    "TransactionCategory": { "Id": 596 },
+    "Date": "10/20/2020"
+  },
+  {
+    "Title": "id",
+    "Amount": 378001.0,
+    "CreatedBy": { "Id": 196 },
+    "TransactionCategory": { "Id": 487 },
+    "Date": "9/7/2020"
+  },
+  {
+    "Amount": 950166.8,
+    "CreatedBy": { "Id": 104 },
+    "TransactionCategory": { "Id": 332 },
+    "Date": "8/27/2020"
+  },
+  {
+    "Title": "consectetuer adipiscing elit",
+    "Amount": 786893.2,
+    "CreatedBy": { "Id": 82 },
+    "TransactionCategory": { "Id": 50 },
+    "Date": "9/12/2020"
+  },
+  {
+    "Title": "in quis justo",
+    "Amount": 512932.0,
+    "CreatedBy": { "Id": 67 },
+    "TransactionCategory": { "Id": 432 },
+    "Date": "10/1/2020"
+  },
+  {
+    "Amount": 249595.4,
+    "CreatedBy": { "Id": 128 },
+    "TransactionCategory": { "Id": 325 },
+    "Date": "11/18/2020"
+  },
+  {
+    "Title": "amet nulla",
+    "Amount": 923824.3,
+    "CreatedBy": { "Id": 52 },
+    "TransactionCategory": { "Id": 355 },
+    "Date": "9/18/2020"
+  },
+  {
+    "Title": "pharetra magna",
+    "Amount": 824615.1,
+    "CreatedBy": { "Id": 61 },
+    "TransactionCategory": { "Id": 604 },
+    "Date": "12/31/2020"
+  },
+  {
+    "Title": "lacinia aenean sit",
+    "Amount": 425817.6,
+    "CreatedBy": { "Id": 171 },
+    "TransactionCategory": { "Id": 123 },
+    "Date": "9/27/2020"
+  },
+  {
+    "Amount": 942289.0,
+    "CreatedBy": { "Id": 167 },
+    "TransactionCategory": { "Id": 559 },
+    "Date": "9/23/2020"
+  },
+  {
+    "Title": "ut suscipit",
+    "Amount": 343254.9,
+    "CreatedBy": { "Id": 15 },
+    "TransactionCategory": { "Id": 473 },
+    "Date": "9/3/2020"
+  },
+  {
+    "Title": "elementum pellentesque",
+    "Amount": 671642.0,
+    "CreatedBy": { "Id": 2 },
+    "TransactionCategory": { "Id": 795 },
+    "Date": "12/19/2020"
+  },
+  {
+    "Title": "augue a suscipit",
+    "Amount": 638957.6,
+    "CreatedBy": { "Id": 97 },
+    "TransactionCategory": { "Id": 445 },
+    "Date": "10/12/2020"
+  },
+  {
+    "Title": "suspendisse",
+    "Amount": 634678.8,
+    "CreatedBy": { "Id": 195 },
+    "TransactionCategory": { "Id": 173 },
+    "Date": "10/2/2020"
+  },
+  {
+    "Title": "semper",
+    "Amount": 521028.7,
+    "CreatedBy": { "Id": 173 },
+    "TransactionCategory": { "Id": 744 },
+    "Date": "11/16/2020"
+  },
+  {
+    "Title": "porttitor lorem",
+    "Amount": 819964.2,
+    "CreatedBy": { "Id": 4 },
+    "TransactionCategory": { "Id": 169 },
+    "Date": "11/4/2020"
+  },
+  {
+    "Amount": 407877.1,
+    "CreatedBy": { "Id": 50 },
+    "TransactionCategory": { "Id": 193 },
+    "Date": "9/7/2020"
+  },
+  {
+    "Amount": 344179.0,
+    "CreatedBy": { "Id": 172 },
+    "TransactionCategory": { "Id": 205 },
+    "Date": "8/1/2020"
+  },
+  {
+    "Title": "nibh in",
+    "Amount": 917251.0,
+    "CreatedBy": { "Id": 40 },
+    "TransactionCategory": { "Id": 520 },
+    "Date": "9/22/2020"
+  },
+  {
+    "Amount": 451012.4,
+    "CreatedBy": { "Id": 169 },
+    "TransactionCategory": { "Id": 678 },
+    "Date": "9/30/2020"
+  },
+  {
+    "Title": "maecenas ut",
+    "Amount": 96240.9,
+    "CreatedBy": { "Id": 72 },
+    "TransactionCategory": { "Id": 605 },
+    "Date": "9/11/2020"
+  },
+  {
+    "Title": "nunc rhoncus",
+    "Amount": 733770.0,
+    "CreatedBy": { "Id": 68 },
+    "TransactionCategory": { "Id": 211 },
+    "Date": "8/3/2020"
+  },
+  {
+    "Amount": 925468.7,
+    "CreatedBy": { "Id": 69 },
+    "TransactionCategory": { "Id": 473 },
+    "Date": "12/27/2020"
+  },
+  {
+    "Title": "sit",
+    "Amount": 925298.8,
+    "CreatedBy": { "Id": 162 },
+    "TransactionCategory": { "Id": 440 },
+    "Date": "9/15/2020"
+  },
+  {
+    "Title": "duis at",
+    "Amount": 26521.3,
+    "CreatedBy": { "Id": 116 },
+    "TransactionCategory": { "Id": 118 },
+    "Date": "9/14/2020"
+  },
+  {
+    "Amount": 107294.5,
+    "CreatedBy": { "Id": 176 },
+    "TransactionCategory": { "Id": 510 },
+    "Date": "11/18/2020"
+  },
+  {
+    "Title": "rutrum at",
+    "Amount": 920101.9,
+    "CreatedBy": { "Id": 108 },
+    "TransactionCategory": { "Id": 477 },
+    "Date": "8/26/2020"
+  },
+  {
+    "Title": "id turpis integer",
+    "Amount": 74578.9,
+    "CreatedBy": { "Id": 185 },
+    "TransactionCategory": { "Id": 70 },
+    "Date": "12/4/2020"
+  },
+  {
+    "Title": "sagittis dui",
+    "Amount": 836547.9,
+    "CreatedBy": { "Id": 20 },
+    "TransactionCategory": { "Id": 402 },
+    "Date": "8/1/2020"
+  },
+  {
+    "Title": "dictumst maecenas ut",
+    "Amount": 51173.7,
+    "CreatedBy": { "Id": 111 },
+    "TransactionCategory": { "Id": 184 },
+    "Date": "8/4/2020"
+  },
+  {
+    "Amount": 987980.1,
+    "CreatedBy": { "Id": 119 },
+    "TransactionCategory": { "Id": 503 },
+    "Date": "11/3/2020"
+  },
+  {
+    "Title": "orci",
+    "Amount": 935328.0,
+    "CreatedBy": { "Id": 94 },
+    "TransactionCategory": { "Id": 329 },
+    "Date": "10/9/2020"
+  },
+  {
+    "Title": "quis justo maecenas",
+    "Amount": 988118.4,
+    "CreatedBy": { "Id": 157 },
+    "TransactionCategory": { "Id": 725 },
+    "Date": "9/8/2020"
+  },
+  {
+    "Title": "vel nulla",
+    "Amount": 376643.9,
+    "CreatedBy": { "Id": 162 },
+    "TransactionCategory": { "Id": 474 },
+    "Date": "9/22/2020"
+  },
+  {
+    "Title": "sapien",
+    "Amount": 134454.3,
+    "CreatedBy": { "Id": 78 },
+    "TransactionCategory": { "Id": 543 },
+    "Date": "12/9/2020"
+  },
+  {
+    "Title": "tincidunt in",
+    "Amount": 192184.7,
+    "CreatedBy": { "Id": 15 },
+    "TransactionCategory": { "Id": 259 },
+    "Date": "9/13/2020"
+  },
+  {
+    "Amount": 389236.1,
+    "CreatedBy": { "Id": 80 },
+    "TransactionCategory": { "Id": 130 },
+    "Date": "9/7/2020"
+  },
+  {
+    "Amount": 594647.0,
+    "CreatedBy": { "Id": 175 },
+    "TransactionCategory": { "Id": 636 },
+    "Date": "8/5/2020"
+  },
+  {
+    "Title": "at turpis",
+    "Amount": 53813.8,
+    "CreatedBy": { "Id": 175 },
+    "TransactionCategory": { "Id": 202 },
+    "Date": "9/29/2020"
+  },
+  {
+    "Amount": 238541.2,
+    "CreatedBy": { "Id": 137 },
+    "TransactionCategory": { "Id": 175 },
+    "Date": "10/24/2020"
+  },
+  {
+    "Title": "leo rhoncus sed",
+    "Amount": 306050.4,
+    "CreatedBy": { "Id": 64 },
+    "TransactionCategory": { "Id": 646 },
+    "Date": "10/27/2020"
+  },
+  {
+    "Amount": 1094.3,
+    "CreatedBy": { "Id": 9 },
+    "TransactionCategory": { "Id": 251 },
+    "Date": "9/21/2020"
+  },
+  {
+    "Amount": 236210.6,
+    "CreatedBy": { "Id": 19 },
+    "TransactionCategory": { "Id": 388 },
+    "Date": "9/12/2020"
+  },
+  {
+    "Title": "lacinia aenean",
+    "Amount": 76043.4,
+    "CreatedBy": { "Id": 98 },
+    "TransactionCategory": { "Id": 211 },
+    "Date": "8/13/2020"
+  },
+  {
+    "Title": "platea dictumst",
+    "Amount": 668583.3,
+    "CreatedBy": { "Id": 136 },
+    "TransactionCategory": { "Id": 663 },
+    "Date": "10/7/2020"
+  },
+  {
+    "Amount": 196765.2,
+    "CreatedBy": { "Id": 80 },
+    "TransactionCategory": { "Id": 560 },
+    "Date": "11/20/2020"
+  },
+  {
+    "Amount": 410374.8,
+    "CreatedBy": { "Id": 146 },
+    "TransactionCategory": { "Id": 50 },
+    "Date": "9/9/2020"
+  },
+  {
+    "Amount": 623096.5,
+    "CreatedBy": { "Id": 174 },
+    "TransactionCategory": { "Id": 579 },
+    "Date": "9/2/2020"
+  },
+  {
+    "Title": "consectetuer adipiscing",
+    "Amount": 579270.0,
+    "CreatedBy": { "Id": 154 },
+    "TransactionCategory": { "Id": 10 },
+    "Date": "10/18/2020"
+  },
+  {
+    "Amount": 561012.2,
+    "CreatedBy": { "Id": 130 },
+    "TransactionCategory": { "Id": 282 },
+    "Date": "8/17/2020"
+  },
+  {
+    "Title": "congue vivamus metus",
+    "Amount": 512482.7,
+    "CreatedBy": { "Id": 181 },
+    "TransactionCategory": { "Id": 506 },
+    "Date": "11/1/2020"
+  },
+  {
+    "Title": "tristique fusce congue",
+    "Amount": 404058.0,
+    "CreatedBy": { "Id": 4 },
+    "TransactionCategory": { "Id": 480 },
+    "Date": "9/21/2020"
+  },
+  {
+    "Title": "nisl",
+    "Amount": 592529.6,
+    "CreatedBy": { "Id": 153 },
+    "TransactionCategory": { "Id": 617 },
+    "Date": "12/28/2020"
+  },
+  {
+    "Title": "sed",
+    "Amount": 498483.3,
+    "CreatedBy": { "Id": 166 },
+    "TransactionCategory": { "Id": 613 },
+    "Date": "12/2/2020"
+  },
+  {
+    "Title": "non",
+    "Amount": 914646.1,
+    "CreatedBy": { "Id": 139 },
+    "TransactionCategory": { "Id": 126 },
+    "Date": "11/11/2020"
+  },
+  {
+    "Title": "nulla ultrices",
+    "Amount": 562453.5,
+    "CreatedBy": { "Id": 195 },
+    "TransactionCategory": { "Id": 48 },
+    "Date": "10/20/2020"
+  },
+  {
+    "Title": "integer ac neque",
+    "Amount": 190398.0,
+    "CreatedBy": { "Id": 87 },
+    "TransactionCategory": { "Id": 245 },
+    "Date": "9/13/2020"
+  },
+  {
+    "Amount": 34576.8,
+    "CreatedBy": { "Id": 129 },
+    "TransactionCategory": { "Id": 274 },
+    "Date": "8/2/2020"
+  },
+  {
+    "Title": "molestie",
+    "Amount": 120582.9,
+    "CreatedBy": { "Id": 120 },
+    "TransactionCategory": { "Id": 765 },
+    "Date": "11/12/2020"
+  },
+  {
+    "Title": "elementum",
+    "Amount": 391168.5,
+    "CreatedBy": { "Id": 138 },
+    "TransactionCategory": { "Id": 695 },
+    "Date": "8/30/2020"
+  },
+  {
+    "Amount": 956192.8,
+    "CreatedBy": { "Id": 70 },
+    "TransactionCategory": { "Id": 36 },
+    "Date": "10/18/2020"
+  },
+  {
+    "Title": "odio consequat",
+    "Amount": 290242.2,
+    "CreatedBy": { "Id": 94 },
+    "TransactionCategory": { "Id": 452 },
+    "Date": "8/4/2020"
+  },
+  {
+    "Amount": 302297.7,
+    "CreatedBy": { "Id": 72 },
+    "TransactionCategory": { "Id": 317 },
+    "Date": "10/13/2020"
+  },
+  {
+    "Amount": 66590.2,
+    "CreatedBy": { "Id": 199 },
+    "TransactionCategory": { "Id": 340 },
+    "Date": "10/1/2020"
+  },
+  {
+    "Title": "in",
+    "Amount": 494153.9,
+    "CreatedBy": { "Id": 140 },
+    "TransactionCategory": { "Id": 305 },
+    "Date": "9/20/2020"
+  },
+  {
+    "Title": "odio cras mi",
+    "Amount": 304988.7,
+    "CreatedBy": { "Id": 61 },
+    "TransactionCategory": { "Id": 523 },
+    "Date": "10/29/2020"
+  },
+  {
+    "Title": "posuere",
+    "Amount": 662578.7,
+    "CreatedBy": { "Id": 105 },
+    "TransactionCategory": { "Id": 619 },
+    "Date": "12/22/2020"
+  },
+  {
+    "Title": "a pede posuere",
+    "Amount": 170601.9,
+    "CreatedBy": { "Id": 23 },
+    "TransactionCategory": { "Id": 604 },
+    "Date": "11/14/2020"
+  },
+  {
+    "Title": "mi nulla",
+    "Amount": 529676.0,
+    "CreatedBy": { "Id": 74 },
+    "TransactionCategory": { "Id": 584 },
+    "Date": "12/6/2020"
+  },
+  {
+    "Title": "sapien in sapien",
+    "Amount": 325544.6,
+    "CreatedBy": { "Id": 31 },
+    "TransactionCategory": { "Id": 427 },
+    "Date": "8/8/2020"
+  },
+  {
+    "Title": "luctus et",
+    "Amount": 122045.0,
+    "CreatedBy": { "Id": 126 },
+    "TransactionCategory": { "Id": 704 },
+    "Date": "8/23/2020"
+  },
+  {
+    "Title": "tincidunt eget tempus",
+    "Amount": 672937.4,
+    "CreatedBy": { "Id": 110 },
+    "TransactionCategory": { "Id": 143 },
+    "Date": "11/27/2020"
+  },
+  {
+    "Title": "in quis justo",
+    "Amount": 801840.3,
+    "CreatedBy": { "Id": 141 },
+    "TransactionCategory": { "Id": 491 },
+    "Date": "9/23/2020"
+  },
+  {
+    "Title": "platea dictumst",
+    "Amount": 167610.1,
+    "CreatedBy": { "Id": 27 },
+    "TransactionCategory": { "Id": 759 },
+    "Date": "11/25/2020"
+  },
+  {
+    "Amount": 530142.8,
+    "CreatedBy": { "Id": 120 },
+    "TransactionCategory": { "Id": 701 },
+    "Date": "8/13/2020"
+  },
+  {
+    "Title": "erat id mauris",
+    "Amount": 561748.7,
+    "CreatedBy": { "Id": 135 },
+    "TransactionCategory": { "Id": 176 },
+    "Date": "9/27/2020"
+  },
+  {
+    "Title": "et",
+    "Amount": 436082.9,
+    "CreatedBy": { "Id": 78 },
+    "TransactionCategory": { "Id": 775 },
+    "Date": "8/17/2020"
+  },
+  {
+    "Title": "non",
+    "Amount": 364804.0,
+    "CreatedBy": { "Id": 136 },
+    "TransactionCategory": { "Id": 376 },
+    "Date": "10/29/2020"
+  },
+  {
+    "Title": "et ultrices",
+    "Amount": 710715.1,
+    "CreatedBy": { "Id": 114 },
+    "TransactionCategory": { "Id": 434 },
+    "Date": "10/22/2020"
+  },
+  {
+    "Title": "lectus in est",
+    "Amount": 371499.0,
+    "CreatedBy": { "Id": 167 },
+    "TransactionCategory": { "Id": 775 },
+    "Date": "11/15/2020"
+  },
+  {
+    "Title": "sed",
+    "Amount": 351986.0,
+    "CreatedBy": { "Id": 25 },
+    "TransactionCategory": { "Id": 3 },
+    "Date": "9/17/2020"
+  },
+  {
+    "Title": "mauris eget massa",
+    "Amount": 324959.0,
+    "CreatedBy": { "Id": 74 },
+    "TransactionCategory": { "Id": 103 },
+    "Date": "10/23/2020"
+  },
+  {
+    "Title": "id",
+    "Amount": 428576.9,
+    "CreatedBy": { "Id": 7 },
+    "TransactionCategory": { "Id": 571 },
+    "Date": "10/31/2020"
+  },
+  {
+    "Title": "lorem",
+    "Amount": 31195.4,
+    "CreatedBy": { "Id": 65 },
+    "TransactionCategory": { "Id": 778 },
+    "Date": "8/9/2020"
+  },
+  {
+    "Amount": 759516.2,
+    "CreatedBy": { "Id": 33 },
+    "TransactionCategory": { "Id": 303 },
+    "Date": "9/10/2020"
+  },
+  {
+    "Title": "venenatis",
+    "Amount": 72402.7,
+    "CreatedBy": { "Id": 133 },
+    "TransactionCategory": { "Id": 124 },
+    "Date": "9/18/2020"
+  },
+  {
+    "Amount": 837492.7,
+    "CreatedBy": { "Id": 151 },
+    "TransactionCategory": { "Id": 717 },
+    "Date": "12/30/2020"
+  },
+  {
+    "Amount": 367511.8,
+    "CreatedBy": { "Id": 51 },
+    "TransactionCategory": { "Id": 56 },
+    "Date": "12/16/2020"
+  },
+  {
+    "Amount": 872417.3,
+    "CreatedBy": { "Id": 83 },
+    "TransactionCategory": { "Id": 270 },
+    "Date": "8/17/2020"
+  },
+  {
+    "Title": "nunc vestibulum",
+    "Amount": 195105.0,
+    "CreatedBy": { "Id": 156 },
+    "TransactionCategory": { "Id": 269 },
+    "Date": "10/27/2020"
+  },
+  {
+    "Amount": 190135.0,
+    "CreatedBy": { "Id": 101 },
+    "TransactionCategory": { "Id": 26 },
+    "Date": "9/22/2020"
+  },
+  {
+    "Title": "quis turpis",
+    "Amount": 339133.1,
+    "CreatedBy": { "Id": 135 },
+    "TransactionCategory": { "Id": 552 },
+    "Date": "8/26/2020"
+  },
+  {
+    "Title": "tellus in sagittis",
+    "Amount": 285832.0,
+    "CreatedBy": { "Id": 69 },
+    "TransactionCategory": { "Id": 129 },
+    "Date": "11/29/2020"
+  },
+  {
+    "Title": "dapibus at diam",
+    "Amount": 939985.2,
+    "CreatedBy": { "Id": 33 },
+    "TransactionCategory": { "Id": 167 },
+    "Date": "9/14/2020"
+  },
+  {
+    "Title": "nunc commodo",
+    "Amount": 402050.5,
+    "CreatedBy": { "Id": 177 },
+    "TransactionCategory": { "Id": 500 },
+    "Date": "9/9/2020"
+  },
+  {
+    "Title": "fusce congue diam",
+    "Amount": 82962.2,
+    "CreatedBy": { "Id": 79 },
+    "TransactionCategory": { "Id": 103 },
+    "Date": "9/13/2020"
+  },
+  {
+    "Title": "justo",
+    "Amount": 389761.2,
+    "CreatedBy": { "Id": 91 },
+    "TransactionCategory": { "Id": 453 },
+    "Date": "9/29/2020"
+  },
+  {
+    "Amount": 784717.3,
+    "CreatedBy": { "Id": 47 },
+    "TransactionCategory": { "Id": 1 },
+    "Date": "9/6/2020"
+  },
+  {
+    "Amount": 356119.8,
+    "CreatedBy": { "Id": 194 },
+    "TransactionCategory": { "Id": 626 },
+    "Date": "12/23/2020"
+  },
+  {
+    "Title": "lacus purus",
+    "Amount": 935274.9,
+    "CreatedBy": { "Id": 137 },
+    "TransactionCategory": { "Id": 635 },
+    "Date": "9/11/2020"
+  },
+  {
+    "Title": "tincidunt lacus at",
+    "Amount": 389497.5,
+    "CreatedBy": { "Id": 180 },
+    "TransactionCategory": { "Id": 443 },
+    "Date": "9/27/2020"
+  },
+  {
+    "Amount": 565359.9,
+    "CreatedBy": { "Id": 110 },
+    "TransactionCategory": { "Id": 388 },
+    "Date": "11/1/2020"
+  },
+  {
+    "Title": "enim",
+    "Amount": 520422.4,
+    "CreatedBy": { "Id": 122 },
+    "TransactionCategory": { "Id": 633 },
+    "Date": "9/21/2020"
+  },
+  {
+    "Title": "suspendisse",
+    "Amount": 771614.0,
+    "CreatedBy": { "Id": 47 },
+    "TransactionCategory": { "Id": 621 },
+    "Date": "11/10/2020"
+  },
+  {
+    "Title": "bibendum morbi",
+    "Amount": 229130.9,
+    "CreatedBy": { "Id": 141 },
+    "TransactionCategory": { "Id": 577 },
+    "Date": "11/7/2020"
+  },
+  {
+    "Title": "in consequat",
+    "Amount": 660812.4,
+    "CreatedBy": { "Id": 96 },
+    "TransactionCategory": { "Id": 575 },
+    "Date": "10/2/2020"
+  },
+  {
+    "Amount": 613218.7,
+    "CreatedBy": { "Id": 49 },
+    "TransactionCategory": { "Id": 726 },
+    "Date": "10/20/2020"
+  },
+  {
+    "Title": "euismod scelerisque",
+    "Amount": 372470.0,
+    "CreatedBy": { "Id": 46 },
+    "TransactionCategory": { "Id": 359 },
+    "Date": "9/6/2020"
+  },
+  {
+    "Amount": 346271.3,
+    "CreatedBy": { "Id": 97 },
+    "TransactionCategory": { "Id": 281 },
+    "Date": "10/22/2020"
+  },
+  {
+    "Title": "orci nullam",
+    "Amount": 806563.4,
+    "CreatedBy": { "Id": 107 },
+    "TransactionCategory": { "Id": 793 },
+    "Date": "9/30/2020"
+  },
+  {
+    "Amount": 643188.2,
+    "CreatedBy": { "Id": 189 },
+    "TransactionCategory": { "Id": 585 },
+    "Date": "12/12/2020"
+  },
+  {
+    "Title": "tincidunt",
+    "Amount": 78224.1,
+    "CreatedBy": { "Id": 40 },
+    "TransactionCategory": { "Id": 271 },
+    "Date": "10/13/2020"
+  },
+  {
+    "Amount": 113169.1,
+    "CreatedBy": { "Id": 116 },
+    "TransactionCategory": { "Id": 266 },
+    "Date": "10/16/2020"
+  },
+  {
+    "Title": "mollis molestie lorem",
+    "Amount": 36395.6,
+    "CreatedBy": { "Id": 26 },
+    "TransactionCategory": { "Id": 120 },
+    "Date": "8/22/2020"
+  },
+  {
+    "Title": "congue risus semper",
+    "Amount": 209657.4,
+    "CreatedBy": { "Id": 66 },
+    "TransactionCategory": { "Id": 694 },
+    "Date": "8/29/2020"
+  },
+  {
+    "Amount": 917823.3,
+    "CreatedBy": { "Id": 125 },
+    "TransactionCategory": { "Id": 494 },
+    "Date": "9/22/2020"
+  },
+  {
+    "Title": "odio curabitur",
+    "Amount": 168382.2,
+    "CreatedBy": { "Id": 65 },
+    "TransactionCategory": { "Id": 715 },
+    "Date": "10/16/2020"
+  },
+  {
+    "Title": "maecenas tincidunt lacus",
+    "Amount": 979979.1,
+    "CreatedBy": { "Id": 193 },
+    "TransactionCategory": { "Id": 195 },
+    "Date": "12/10/2020"
+  },
+  {
+    "Amount": 454634.5,
+    "CreatedBy": { "Id": 81 },
+    "TransactionCategory": { "Id": 667 },
+    "Date": "8/17/2020"
+  }
+]

@@ -1,0 +1,168 @@
+type User {
+    id: Int!
+    first_name: String
+    last_name: String
+    email: String!
+    password: String!
+    balance: Float!
+}
+
+type AuthTokensType {
+    access_token: String!
+    refresh_token: String!
+}
+
+type TransactionType {
+    type_name: String!
+    image_url: String!
+}
+
+type Category {
+    id: Int!
+    name: String!
+    transaction_type: TransactionType!
+    transaction_type_name: String!
+    user: User
+    is_custom: Boolean!
+    image_url: String!
+}
+
+type Transaction {
+    id: Int!
+    title: String
+    user: User!
+    category: Category!
+    amount: Float!
+    date: String
+}
+
+type RegularTransaction {
+    id: Int!
+    title: String
+    user: User!
+    category: Category!
+    amount: Float!
+    date: String
+    next_transaction_date: String!
+    interval: String!
+}
+
+type UserNotification {
+    id: Int!
+    title: String!
+    content: String!
+    user: User
+    read: Boolean!
+}
+
+type UserSetting {
+    id: Int!
+    name: String!
+    value: String
+    unit_name: String!
+    user: User!
+}
+
+
+type Query {
+    getUser: User!
+
+    getTransactionTypes: [TransactionType!]
+
+    getAllCategories(transactionType: String): [Category!]
+    getStandardCategories: [Category!]
+    getCustomCategories: [Category!]
+
+    getAllTransactions(size: Int): [Transaction!]
+    getTransactionsForLastDays(days: Int): [Transaction!]
+    getTransactionsByMonth(month: Int!, year: Int!): [Transaction!]
+
+    getAllRegularTransactions(size: Int): [RegularTransaction!]
+
+    getAllCurrencies: [Currency!]
+
+    getAllNotifications: [Notification!]
+    getUnreadNotifications: [Notification!]
+
+    getUserSettings(unitName: String): [UserSetting!]
+}
+
+
+input NewUserInput {
+    firstName: String
+    lastName: String
+    email: String!
+    password: String!
+    balance: Float
+}
+
+input NewCategoryInput {
+    name: String!
+    transactionTypeName: String!
+    iconUrl: String
+}
+
+input UpdateCategoryInput {
+    id: Int!
+    name: String
+    iconUrl: String
+}
+
+input NewTransactionInput {
+    title: String
+    category_id: Int!
+    amount: Float!
+    date: DateTime
+}
+
+input UpdateTransactionInput {
+    id: Int!
+    title: String
+    amount: Float
+    date: String
+}
+
+input NewRegularTransactionInput {
+    title: String
+    category_id: Int!
+    amount: Float!
+    date: String
+    next_transaction_date: String!
+    interval: String!
+}
+
+input UpdateRegularTransactionInput {
+    id: Int!
+    title: String
+    amount: Float
+}
+
+input UpdateUserSettingInput {
+    name: String!
+    value: String
+    unitName: String
+}
+
+
+type Mutation {
+    login(email: String!, password: String!): AuthTokensType!
+    logout: User!
+    register(user: NewUserInput!): User!
+    token(email: String!, refreshToken: String!): AuthTokensType!
+
+    createCategory(category: NewCategoryInput!): Category!
+    updateCategory(category: UpdateCategoryInput!): Category!
+    deleteCategory(id: Int!): Category!
+
+    createTransaction(transaction: NewTransactionInput!): Transaction!
+    updateTransaction(transaction: UpdateTransactionInput!): Transaction!
+    deleteTransaction(id: Int!): Transaction!
+
+    createRegularTransaction(transaction: NewRegularTransactionInput!): RegularTransaction!
+    updateRegularTransaction(transaction: UpdateRegularTransactionInput!): RegularTransaction!
+    deleteRegularTransaction(id: Int!): RegularTransaction!
+
+    readNotification(id: Int!): Notification!
+
+    updateUserSetting(setting: UpdateUserSettingInput!): UserSetting!
+}
