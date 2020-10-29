@@ -1,4 +1,4 @@
-﻿using GraphQL;
+﻿using CashSchedulerWebServer.Exceptions;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -12,7 +12,8 @@ namespace CashSchedulerWebServer.Utils
             var validationErrors = new List<ValidationResult>();
             if (!Validator.TryValidateObject(model, new ValidationContext(model), validationErrors, true))
             {
-                throw new ExecutionError(validationErrors.First().ErrorMessage);
+                var error = validationErrors.First();
+                throw new CashSchedulerException(error.ErrorMessage, error.MemberNames.Select(field => field.Substring(0, 1).ToLower() + field.Substring(1)).ToArray());
             }
         }
     }

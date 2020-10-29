@@ -12,7 +12,7 @@ namespace CashSchedulerWebServer.Authentication
         public static (string token, DateTime expiresIn) GenerateToken(this User user, AuthOptions.TokenType tokenType)
         {
             var now = DateTime.UtcNow;
-            var expiresIn = now.Add(TimeSpan.FromMinutes(AuthOptions.GetTokenLifetime(tokenType)));
+            var expiresIn = now.AddMinutes(AuthOptions.GetTokenLifetime(tokenType));
             IEnumerable<Claim> claims = new List<Claim>
             {
                 new Claim("ExpirationDateTime", expiresIn.ToString()),

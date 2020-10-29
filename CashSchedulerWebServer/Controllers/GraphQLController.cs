@@ -10,6 +10,7 @@ using GraphQL.Validation;
 using Microsoft.AspNetCore.Mvc;
 using CashSchedulerWebServer.Exceptions;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Cors;
 
 namespace CashSchedulerWebServer.Controllers
 {
@@ -33,6 +34,7 @@ namespace CashSchedulerWebServer.Controllers
 
 
         [HttpPost]
+        [EnableCors("ReactClient")]
         public async Task<IActionResult> Post([FromBody] GraphQLQuery query, [FromServices] UserContextManager jwtManager, [FromServices] IHttpContextAccessor httpAccessor)
         {
             var userContext = jwtManager.GetUserContext();
@@ -56,9 +58,6 @@ namespace CashSchedulerWebServer.Controllers
                 {
                     case "authorization":
                         response = Unauthorized(result);
-                        break;
-                    case "redirect_login":
-                        response = Redirect("/login");
                         break;
                     default:
                         response = BadRequest(result);

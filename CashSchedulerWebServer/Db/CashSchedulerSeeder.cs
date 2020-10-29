@@ -74,6 +74,7 @@ namespace CashSchedulerWebServer.Db
                 context.UserSettings.Add(setting);
             });
 
+            context.SaveChanges();
 
             userNotifications.ForEach(notification =>
             {
@@ -81,6 +82,7 @@ namespace CashSchedulerWebServer.Db
                 context.UserNotifications.Add(notification);
             });
 
+            context.SaveChanges();
 
             transactions.ForEach(transaction =>
             {

@@ -8,8 +8,8 @@ type User {
 }
 
 type AuthTokensType {
-    access_token: String!
-    refresh_token: String!
+    accessToken: String!
+    refreshToken: String!
 }
 
 type TransactionType {
@@ -66,6 +66,8 @@ type UserSetting {
 
 type Query {
     getUser: User!
+    checkEmail(email: String!): String!
+    checkCode(email: String!, code: String!): String!
 
     getTransactionTypes: [TransactionType!]
 
@@ -149,6 +151,7 @@ type Mutation {
     logout: User!
     register(user: NewUserInput!): User!
     token(email: String!, refreshToken: String!): AuthTokensType!
+    resetPassword(email: String!, code: String!, password: String!): User!
 
     createCategory(category: NewCategoryInput!): Category!
     updateCategory(category: UpdateCategoryInput!): Category!

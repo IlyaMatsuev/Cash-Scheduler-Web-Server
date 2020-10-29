@@ -1,4 +1,5 @@
 ﻿using CashSchedulerWebServer.Models;
+using System.Threading.Tasks;
 
 namespace CashSchedulerWebServer.Db.Contracts
 {
@@ -9,5 +10,6 @@ namespace CashSchedulerWebServer.Db.Contracts
         bool HasUserWithEmail(string email);
         User GetUserByEmailAndPassword(string email, string passwordHash);
         bool HasUserWithEmailAndPassword(string email, string passwordHash);
+        Task<User> UpdatePassword(string email, string password);
     }
 }

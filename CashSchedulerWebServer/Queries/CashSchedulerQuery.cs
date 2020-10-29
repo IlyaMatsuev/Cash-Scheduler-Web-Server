@@ -1,4 +1,5 @@
-﻿using CashSchedulerWebServer.Db.Contracts;
+﻿using CashSchedulerWebServer.Authentication.Contracts;
+using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Types;
 using GraphQL.Authorization;
 using GraphQL.Types;
@@ -9,12 +10,25 @@ namespace CashSchedulerWebServer.Queries
 {
     public class CashSchedulerQuery : ObjectGraphType
     {
-        public CashSchedulerQuery(IContextProvider contextProvider, IConfiguration configuration)
+        public CashSchedulerQuery(IContextProvider contextProvider, IAuthenticator authenticator, IConfiguration configuration)
         {
             string policy = configuration["App:Auth:UserPolicy"];
 
             // Users
             Field<UserType>("getUser", resolve: context => contextProvider.GetRepository<IUserRepository>().GetById()).AuthorizeWith(policy);
+            Field<StringGraphType>(
+                "checkEmail",
+                arguments: new QueryArguments(new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "email" }),
+                resolve: context => authenticator.CheckEmail(context.GetArgument<string>("email"))
+            );
+            Field<StringGraphType>(
+                "checkCode",
+                arguments: new QueryArguments(
+                    new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "email" },
+                    new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "code" }
+                ),
+                resolve: context => authenticator.CheckCode(context.GetArgument<string>("email"), context.GetArgument<string>("code"))
+            );
 
             // TransactionTypes
             Field<ListGraphType<TransactionTypeType>>("getTransactionTypes", resolve: context => contextProvider.GetRepository<ITransactionTypeRepository>().GetAll());

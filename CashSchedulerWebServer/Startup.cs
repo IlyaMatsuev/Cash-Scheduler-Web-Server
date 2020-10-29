@@ -37,6 +37,15 @@ namespace CashSchedulerWebServer
             // JSON request settings
             services.AddControllers().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
 
+            // CORS
+            services.AddCors(options =>
+            {
+                options.AddPolicy(
+                    "ReactClient", 
+                    builder => builder.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader()
+                );
+            });
+
             // Authorization & Authentication section
             services.AddTransient<UserContextManager>();
             services.AddTransient<IAuthenticator, Authenticator>();
@@ -97,10 +106,11 @@ namespace CashSchedulerWebServer
 
             app.UseGraphiQl();
             app.UseRouting();
+            app.UseCors();
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseHttpsRedirection();
-            app.UseEndpoints(endpoints => endpoints.MapControllers());   
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
         }
     }
 }

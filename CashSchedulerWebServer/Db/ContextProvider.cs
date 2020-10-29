@@ -1,5 +1,6 @@
 ﻿using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Db.Repositories;
+using CashSchedulerWebServer.Exceptions;
 using GraphQL;
 using Microsoft.AspNetCore.Http;
 using System;
@@ -22,7 +23,8 @@ namespace CashSchedulerWebServer.Db
             { typeof(IRegularTransactionRepository), typeof(RegularTransactionRepository) },
             { typeof(IUserNotificationRepository), typeof(UserNotificationRepository) },
             { typeof(IUserSettingRepository), typeof(UserSettingRepository) },
-            { typeof(IUserRefreshTokenRepository), typeof(UserRefreshTokenRepository) }
+            { typeof(IUserRefreshTokenRepository), typeof(UserRefreshTokenRepository) },
+            { typeof(IUserEmailVerificationCodeRepository), typeof(UserEmailVerificationCodeRepository) }
 
         };
 
@@ -43,7 +45,7 @@ namespace CashSchedulerWebServer.Db
 
             if (repository == null)
             {
-                throw new ExecutionError("No mapping provided for the requested repository interface");
+                throw new CashSchedulerException("No mapping provided for the requested repository interface");
             }
             return repository;
         }

@@ -39,6 +39,14 @@ namespace CashSchedulerWebServer.Mutations
                     new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "refreshToken" }),
                 resolve: context => authenticator.Token(context.GetArgument<string>("email"), context.GetArgument<string>("refreshToken")));
 
+            Field<UserType>(
+                "resetPassword",
+                arguments: new QueryArguments(
+                    new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "email" },
+                    new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "code" },
+                    new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "password" }),
+                resolve: context => authenticator.ResetPassword(context.GetArgument<string>("email"), context.GetArgument<string>("code"), context.GetArgument<string>("password")));
+
             // Categories
             Field<CategoryType>(
                 "createCategory",

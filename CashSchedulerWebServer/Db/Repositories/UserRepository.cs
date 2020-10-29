@@ -1,4 +1,5 @@
 ﻿using CashSchedulerWebServer.Db.Contracts;
+using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Utils;
 using Microsoft.AspNetCore.Http;
@@ -58,17 +59,38 @@ namespace CashSchedulerWebServer.Db.Repositories
             return Context.Users.Any(user => user.Email == email && user.Password == passwordHash);
         }
 
-        public async Task<User> Create(User newUser)
+        public async Task<User> Create(User user)
         {
-            ModelValidator.ValidateModelAttributes(newUser);
+            ModelValidator.ValidateModelAttributes(user);
 
-            newUser.Password = newUser.Password.Hash();
-            Context.Users.Add(newUser);
+            user.Password = user.Password.Hash();
+            Context.Users.Add(user);
             await Context.SaveChangesAsync();
-            return GetUserByEmail(newUser.Email);
+            return GetUserByEmail(user.Email);
         }
 
-        public Task<User> Update(User entity) => throw new NotImplementedException();
+        public async Task<User> UpdatePassword(string email, string password)
+        {
+            var user = GetUserByEmail(email);
+            if (user == null)
+            {
+                throw new CashSchedulerException("There is no such user", new[] { nameof(email) });
+            }
+
+            user.Password = password;
+
+            ModelValidator.ValidateModelAttributes(user);
+
+            user.Password = password.Hash();
+
+            Context.Users.Update(user);
+            await Context.SaveChangesAsync();
+
+            return user;
+        }
+
+        public Task<User> Update(User user) => throw new NotImplementedException();
+
         public Task<User> Delete(int entityId) => throw new NotImplementedException();
     }
 }

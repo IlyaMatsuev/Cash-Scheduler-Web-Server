@@ -9,8 +9,8 @@ namespace CashSchedulerWebServer.Types
 
         public AuthTokensType()
         {
-            Field("access_token", x => x.AccessToken, nullable: false);
-            Field("refresh_token", x => x.RefreshToken, nullable: false);
+            Field(x => x.AccessToken, nullable: false);
+            Field(x => x.RefreshToken, nullable: false);
         }
 
         public AuthTokensType(string accessToken, string refreshToken)

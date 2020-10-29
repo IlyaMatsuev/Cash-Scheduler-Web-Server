@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CashSchedulerWebServer.Utils
 {
@@ -13,6 +10,18 @@ namespace CashSchedulerWebServer.Utils
         {
             using SHA256 sha = SHA256.Create();
             return Encoding.ASCII.GetString(sha.ComputeHash(Encoding.ASCII.GetBytes(input)));
+        }
+
+        public static string Code(this string input)
+        {
+            // TODO: implement a better code generation
+            string code = string.Empty;
+            var random = new Random();
+            for (int i = 0; i < 7; i++)
+            {
+                code += random.Next(0, 9);
+            }
+            return code;
         }
     }
 }

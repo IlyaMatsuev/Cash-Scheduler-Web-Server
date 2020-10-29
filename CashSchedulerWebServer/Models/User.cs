@@ -15,7 +15,6 @@ namespace CashSchedulerWebServer.Models
         [Required(ErrorMessage = "Email is a required field"), RegularExpression(AuthOptions.EMAIL_REGEX, ErrorMessage = "Your email address is in invalid format")]
         public string Email { get; set; }
         [Required(ErrorMessage = "Password is a required field"),
-            StringLength(15, MinimumLength = 8, ErrorMessage = "Password must have at least 8 and no more than 15 characters"),
             RegularExpression(AuthOptions.PASSWORD_REGEX, ErrorMessage = "Your password is too week. Consider to choose something with upper and lower case, digits and special characters with min and max length of 8 and 15")]
         public string Password { get; set; }
         [DefaultValue(0)]

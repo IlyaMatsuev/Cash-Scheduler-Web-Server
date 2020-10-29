@@ -1,17 +1,18 @@
 ﻿using CashSchedulerWebServer.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace CashSchedulerWebServer.Db
 {
     public class CashSchedulerContext : DbContext
     {
-        public CashSchedulerContext(DbContextOptions<CashSchedulerContext> options) : base(options) 
+        public CashSchedulerContext(DbContextOptions<CashSchedulerContext> options, IConfiguration configuration) : base(options) 
         {
-            Database.EnsureCreated();
         }
 
         public DbSet<User> Users { get; set; }
         public DbSet<UserRefreshToken> UserRefreshTokens { get; set; }
+        public DbSet<UserEmailVerificationCode> UserEmailVerificationCodes { get; set; }
         public DbSet<UserNotification> UserNotifications { get; set; }
         public DbSet<UserSetting> UserSettings { get; set; }
         public DbSet<TransactionType> TransactionTypes { get; set; }

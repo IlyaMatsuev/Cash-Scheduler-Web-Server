@@ -12,6 +12,7 @@ namespace CashSchedulerWebServer.Authentication
         // TODO: move these parameters to secret file
         public const int ACCESS_TOKEN_LIFETIME = 60;
         public const int REFRESH_TOKEN_LIFETIME = 10080;
+        public const int EMAIL_VERIFICATION_CODE_LIFETIME = 5;
 
         private const string ACCESS_TOKEN_SECRET = "sexdfcghjbkmllmknbhvgcftxdrzswsrxdcfvghbjklokpjihuigyftrxcfvg";
         private const string REFRESH_TOKEN_SECRET = "iwbjqwdqhbwdbqhwdbqwiqojfowejiuwejfoiwqjdlqndkanslfjpjoiqruih3ru";
