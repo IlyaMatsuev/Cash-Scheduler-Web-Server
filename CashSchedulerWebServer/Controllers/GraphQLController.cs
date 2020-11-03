@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CashSchedulerWebServer.Types;
@@ -8,9 +7,9 @@ using GraphQL;
 using GraphQL.Types;
 using GraphQL.Validation;
 using Microsoft.AspNetCore.Mvc;
-using CashSchedulerWebServer.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Cors;
+using System;
 
 namespace CashSchedulerWebServer.Controllers
 {
@@ -54,6 +53,7 @@ namespace CashSchedulerWebServer.Controllers
 
             if (result.Errors != null && result.Errors.Any())
             {
+                Console.WriteLine("Error: " + result.Errors[0].Message);
                 switch (result.Errors.First().Code)
                 {
                     case "authorization":

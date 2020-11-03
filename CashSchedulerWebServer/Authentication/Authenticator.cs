@@ -2,10 +2,12 @@
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
+using CashSchedulerWebServer.Notifications;
+using CashSchedulerWebServer.Notifications.Contracts;
 using CashSchedulerWebServer.Types;
 using CashSchedulerWebServer.Utils;
 using System;
-using System.Linq;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace CashSchedulerWebServer.Authentication
@@ -13,10 +15,12 @@ namespace CashSchedulerWebServer.Authentication
     public class Authenticator : IAuthenticator
     {
         private IContextProvider ContextProvider { get; set; }
+        private INotificator Notificator { get; set; }
 
-        public Authenticator(IContextProvider contextProvider)
+        public Authenticator(IContextProvider contextProvider, INotificator notificator)
         {
             ContextProvider = contextProvider;
+            Notificator = notificator;
         }
 
 
@@ -80,6 +84,7 @@ namespace CashSchedulerWebServer.Authentication
 
         public async Task<AuthTokensType> Token(string email, string refreshToken)
         {
+            Console.WriteLine("Try to get token");
             var user = ContextProvider.GetRepository<IUserRepository>().GetUserByEmail(email);
             if (user == null)
             {
@@ -102,28 +107,6 @@ namespace CashSchedulerWebServer.Authentication
             return new AuthTokensType(newAccessToken.token, newRefreshToken.token);
         }
 
-        public bool HasAccess(string accessToken)
-        {
-            var tokenClaims = accessToken.EvaluateToken();
-
-            string expiresIn = tokenClaims.FirstOrDefault(claim => claim.Type == "ExpirationDateTime")?.Value ?? string.Empty;
-            string userId = tokenClaims.FirstOrDefault(claim => claim.Type == "Id")?.Value ?? string.Empty;
-
-            bool userValid = !string.IsNullOrEmpty(userId) && ContextProvider.GetRepository<IUserRepository>().GetById(Convert.ToInt32(userId)) != null;
-            bool expired = string.IsNullOrEmpty(expiresIn) || DateTime.Parse(expiresIn) < DateTime.UtcNow;
-
-            if (!userValid)
-            {
-                throw new CashSchedulerException("Access token is invalid");
-            }
-            if (expired)
-            {
-                throw new CashSchedulerException("Access token is expired", "authorization");
-            }
-
-            return true;
-        }
-
         public async Task<string> CheckEmail(string email)
         {
             var user = ContextProvider.GetRepository<IUserRepository>().GetUserByEmail(email);
@@ -136,10 +119,12 @@ namespace CashSchedulerWebServer.Authentication
             var verificationCode = await ContextProvider.GetRepository<IUserEmailVerificationCodeRepository>().Update(
                 new UserEmailVerificationCode(code, DateTime.Now.AddMinutes(AuthOptions.EMAIL_VERIFICATION_CODE_LIFETIME), user)
             );
-            Console.WriteLine("Code Id: " + verificationCode.Id);
-            Console.WriteLine("Code: " + verificationCode.Code);
 
-            // TODO: send email
+            await Notificator.SendEmail(
+                user.Email, 
+                NotificationTemplateType.VerificationCode, 
+                new Dictionary<string, string> { { "code", verificationCode.Code } }
+            );
 
             return email;
         }
@@ -168,7 +153,7 @@ namespace CashSchedulerWebServer.Authentication
                 throw new CashSchedulerException("The code is not valid", new[] { nameof(code) });
             }
 
-            return email;
+            return await Task.FromResult(email);
         }
 
         public async Task<User> ResetPassword(string email, string code, string password)

@@ -20,6 +20,8 @@ using CashSchedulerWebServer.Authentication;
 using CashSchedulerWebServer.Mutations;
 using CashSchedulerWebServer.Types.Inputs;
 using CashSchedulerWebServer.Authentication.Contracts;
+using CashSchedulerWebServer.Notifications.Contracts;
+using CashSchedulerWebServer.Notifications;
 
 namespace CashSchedulerWebServer
 {
@@ -65,6 +67,9 @@ namespace CashSchedulerWebServer
             // DataBase section
             services.AddTransient<IContextProvider, ContextProvider>();
             services.AddDbContext<CashSchedulerContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
+
+            // Utils section
+            services.AddSingleton<INotificator, Notificator>();
 
             // GraphQL configuration section
             services.AddTransient<IDependencyResolver>(resolver => new FuncDependencyResolver(resolver.GetRequiredService));
