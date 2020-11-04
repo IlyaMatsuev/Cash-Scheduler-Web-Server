@@ -53,7 +53,6 @@ namespace CashSchedulerWebServer.Controllers
 
             if (result.Errors != null && result.Errors.Any())
             {
-                Console.WriteLine("Error: " + result.Errors[0].Message);
                 switch (result.Errors.First().Code)
                 {
                     case "authorization":

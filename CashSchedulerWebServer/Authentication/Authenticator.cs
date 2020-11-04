@@ -84,7 +84,6 @@ namespace CashSchedulerWebServer.Authentication
 
         public async Task<AuthTokensType> Token(string email, string refreshToken)
         {
-            Console.WriteLine("Try to get token");
             var user = ContextProvider.GetRepository<IUserRepository>().GetUserByEmail(email);
             if (user == null)
             {
