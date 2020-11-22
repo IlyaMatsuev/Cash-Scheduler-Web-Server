@@ -9,7 +9,6 @@ using GraphQL.Validation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Cors;
-using System;
 
 namespace CashSchedulerWebServer.Controllers
 {
@@ -44,7 +43,7 @@ namespace CashSchedulerWebServer.Controllers
             {
                 Schema = Schema,
                 Query = query.Query,
-                Inputs = query.Variables?.ToObject<Inputs>(),
+                Inputs = query.Variables?.ToInputs(),
                 ValidationRules = DocumentValidator.CoreRules().Concat(ValidationRules),
                 UserContext = userContext
             });

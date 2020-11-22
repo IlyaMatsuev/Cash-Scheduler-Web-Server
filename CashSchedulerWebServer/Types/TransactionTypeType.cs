@@ -6,8 +6,8 @@ namespace CashSchedulerWebServer.Types
     {
         public TransactionTypeType()
         {
-            Field(x => x.Name, nullable: false).Name("type_name");
-            Field(x => x.IconUrl, nullable: true).Name("image_url");
+            Field(x => x.Name, nullable: false).Name("typeName");
+            Field(x => x.IconUrl, nullable: true);
         }
     }
 }

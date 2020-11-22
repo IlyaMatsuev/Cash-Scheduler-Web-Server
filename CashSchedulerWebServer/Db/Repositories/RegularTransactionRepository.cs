@@ -1,7 +1,7 @@
 ﻿using CashSchedulerWebServer.Db.Contracts;
+using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Utils;
-using GraphQL;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -63,7 +63,7 @@ namespace CashSchedulerWebServer.Db.Repositories
             transaction.TransactionCategory = ContextProvider.GetRepository<ICategoryRepository>().GetById(transaction.CategoryId);
             if (transaction.TransactionCategory == null)
             {
-                throw new ExecutionError("There is no such category");
+                throw new CashSchedulerException("There is no such category", new string[] { "categoryId" });
             }
             Context.RegularTransactions.Add(transaction);
             await Context.SaveChangesAsync();
@@ -76,7 +76,7 @@ namespace CashSchedulerWebServer.Db.Repositories
             var targetTransaction = GetById(transaction.Id);
             if (targetTransaction == null)
             {
-                throw new ExecutionError("There is no such transaction");
+                throw new CashSchedulerException("There is no such transaction");
             }
 
             targetTransaction.Title = transaction.Title;
@@ -98,7 +98,7 @@ namespace CashSchedulerWebServer.Db.Repositories
             var targetTransaction = GetById(transactionId);
             if (targetTransaction == null)
             {
-                throw new ExecutionError("There is no such transaction");
+                throw new CashSchedulerException("There is no such transaction");
             }
 
             Context.RegularTransactions.Remove(targetTransaction);

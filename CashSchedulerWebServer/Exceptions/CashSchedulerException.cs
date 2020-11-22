@@ -18,5 +18,10 @@ namespace CashSchedulerWebServer.Exceptions
             : base(message, new Dictionary<string, object> { { "fields", fields } })
         {
         }
+
+        public CashSchedulerException(string message, List<string> fields)
+            : base(message, new Dictionary<string, object> { { "fields", fields } })
+        {
+        }
     }
 }

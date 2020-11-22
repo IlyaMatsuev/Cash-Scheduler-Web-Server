@@ -1,6 +1,6 @@
 ﻿using CashSchedulerWebServer.Db.Contracts;
+using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
-using GraphQL;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,7 +24,7 @@ namespace CashSchedulerWebServer.Db.Repositories
 
         public TransactionType GetById(int id)
         {
-            throw new ExecutionError("Transaction Types don't have an Id field, use GetByName() instead");
+            throw new CashSchedulerException("Transaction Types don't have an Id field, use GetByName() instead");
         }
 
         public TransactionType GetByName(string name)
@@ -42,12 +42,12 @@ namespace CashSchedulerWebServer.Db.Repositories
 
         public Task<TransactionType> Update(TransactionType transactionType)
         {
-            throw new ExecutionError("It's forbidden to update the existing transaction types");
+            throw new CashSchedulerException("It's forbidden to update the existing transaction types");
         }
 
         public Task<TransactionType> Delete(int transactionTypeId)
         {
-            throw new ExecutionError("It's forbidden to delete existing transaction types");
+            throw new CashSchedulerException("It's forbidden to delete existing transaction types");
         }
     }
 }

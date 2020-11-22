@@ -13,9 +13,8 @@ namespace CashSchedulerWebServer.Types
             Field(x => x.Date, nullable: false);
             Field<NonNullGraphType<UserType>>("user", resolve: context => context.Source.CreatedBy);
             Field<NonNullGraphType<CategoryType>>("category", resolve: context => context.Source.TransactionCategory);
-            Field("next_transaction_date", x => x.NextTransactionDate, nullable: false);
-            Field("interval", x => x.Interval, nullable: false);
-
+            Field(x => x.NextTransactionDate, nullable: false);
+            Field(x => x.Interval, nullable: false);
         }
     }
 }

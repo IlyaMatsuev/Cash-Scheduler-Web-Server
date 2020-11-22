@@ -15,6 +15,7 @@ namespace CashSchedulerWebServer.Mutations
         {
             string policy = configuration["App:Auth:UserPolicy"];
 
+            #region Authorization
             // Authentication/Authorization
             Field<UserType>(
                 "register",
@@ -46,7 +47,9 @@ namespace CashSchedulerWebServer.Mutations
                     new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "code" },
                     new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "password" }),
                 resolve: context => authenticator.ResetPassword(context.GetArgument<string>("email"), context.GetArgument<string>("code"), context.GetArgument<string>("password")));
+            #endregion
 
+            #region Categories
             // Categories
             Field<CategoryType>(
                 "createCategory",
@@ -65,7 +68,9 @@ namespace CashSchedulerWebServer.Mutations
                 arguments: new QueryArguments(new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "id" }),
                 resolve: context => contextProvider.GetRepository<ICategoryRepository>().Delete(context.GetArgument<int>("id"))
             ).AuthorizeWith(policy);
+            #endregion
 
+            #region Transactions
             // Transactions
             Field<Types.TransactionType>(
                 "createTransaction",
@@ -84,7 +89,9 @@ namespace CashSchedulerWebServer.Mutations
                 arguments: new QueryArguments(new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "id" }),
                 resolve: context => contextProvider.GetRepository<ITransactionRepository>().Delete(context.GetArgument<int>("id"))
             ).AuthorizeWith(policy);
+            #endregion
 
+            #region Regular Transactions
             // Regular Transactions
             Field<RegularTransactionType>(
                 "createRegularTransaction",
@@ -103,20 +110,25 @@ namespace CashSchedulerWebServer.Mutations
                 arguments: new QueryArguments(new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "id" }),
                 resolve: context => contextProvider.GetRepository<IRegularTransactionRepository>().Delete(context.GetArgument<int>("id"))
             ).AuthorizeWith(policy);
+            #endregion
 
+            #region Notifications
             // Notifications
             Field<UserNotificationType>(
                 "readNotification",
                 arguments: new QueryArguments(new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "id" }),
                 resolve: context => contextProvider.GetRepository<IUserNotificationRepository>().Read(context.GetArgument<int>("id"))
             ).AuthorizeWith(policy);
+            #endregion
 
+            #region Settings
             // Settings
             Field<UserSettingType>(
                 "updateUserSetting",
                 arguments: new QueryArguments(new QueryArgument<NonNullGraphType<UpdateUserSettingInputType>> { Name = "setting" }),
                 resolve: context => contextProvider.GetRepository<IUserSettingRepository>().Update(context.GetArgument<UserSetting>("setting"))
             ).AuthorizeWith(policy);
+            #endregion
         }
     }
 }
