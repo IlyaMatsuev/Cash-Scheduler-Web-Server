@@ -59,7 +59,7 @@ type UserSetting {
     id: Int!
     name: String!
     value: String
-    unit_name: String!
+    unitName: String!
     user: User!
 }
 
@@ -142,7 +142,7 @@ input UpdateRegularTransactionInput {
 input UpdateUserSettingInput {
     name: String!
     value: String
-    unitName: String
+    unitName: String!
 }
 
 
@@ -168,4 +168,5 @@ type Mutation {
     readNotification(id: Int!): Notification!
 
     updateUserSetting(setting: UpdateUserSettingInput!): UserSetting!
+    updateUserSettings(settings: [UpdateUserSettingInput!]): UserSetting!
 }

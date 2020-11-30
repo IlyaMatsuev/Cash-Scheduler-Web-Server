@@ -1,4 +1,5 @@
 ﻿using CashSchedulerWebServer.Db.Contracts;
+using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Utils;
 using Microsoft.AspNetCore.Http;
@@ -89,6 +90,47 @@ namespace CashSchedulerWebServer.Db.Repositories
             return targetSetting;
         }
 
-        public Task<UserSetting> Delete(int entityId) => throw new NotImplementedException();
+        public async Task<IEnumerable<UserSetting>> Update(List<UserSetting> settings)
+        {
+            List<UserSetting> newSettings = new List<UserSetting>();
+            List<UserSetting> updateSettings = new List<UserSetting>();
+
+            settings.ForEach(setting =>
+            {
+                var targetSetting = Context.UserSettings.FirstOrDefault(s => s.Name == setting.Name && s.SettingFor.Id == UserId);
+                if (targetSetting == null)
+                {
+                    ModelValidator.ValidateModelAttributes(setting);
+                    setting.SettingFor = ContextProvider.GetRepository<IUserRepository>().GetById((int)UserId);
+                    newSettings.Add(setting);
+                }
+                else
+                {
+                    targetSetting.Value = setting.Value;
+                    updateSettings.Add(targetSetting);
+                }
+            });
+
+            Context.UserSettings.AddRange(newSettings);
+            Context.UserSettings.UpdateRange(updateSettings);
+
+            await Context.SaveChangesAsync();
+
+            return newSettings.Concat(updateSettings);
+        }
+
+        public async Task<UserSetting> Delete(int settingId)
+        {
+            var setting = GetById(settingId);
+            if (setting == null)
+            {
+                throw new CashSchedulerException("There is no such setting");
+            }
+
+            Context.UserSettings.Remove(setting);
+            await Context.SaveChangesAsync();
+
+            return setting;
+        }
     }
 }

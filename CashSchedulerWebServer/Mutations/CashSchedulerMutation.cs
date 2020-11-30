@@ -6,6 +6,7 @@ using CashSchedulerWebServer.Types.Inputs;
 using GraphQL.Authorization;
 using GraphQL.Types;
 using Microsoft.Extensions.Configuration;
+using System.Collections.Generic;
 
 namespace CashSchedulerWebServer.Mutations
 {
@@ -127,6 +128,12 @@ namespace CashSchedulerWebServer.Mutations
                 "updateUserSetting",
                 arguments: new QueryArguments(new QueryArgument<NonNullGraphType<UpdateUserSettingInputType>> { Name = "setting" }),
                 resolve: context => contextProvider.GetRepository<IUserSettingRepository>().Update(context.GetArgument<UserSetting>("setting"))
+            ).AuthorizeWith(policy);
+
+            Field<ListGraphType<UserSettingType>>(
+                "updateUserSettings",
+                arguments: new QueryArguments(new QueryArgument<ListGraphType<NonNullGraphType<UpdateUserSettingInputType>>> { Name = "settings" }),
+                resolve: context => contextProvider.GetRepository<IUserSettingRepository>().Update(context.GetArgument<List<UserSetting>>("settings"))
             ).AuthorizeWith(policy);
             #endregion
         }

@@ -8,8 +8,8 @@ namespace CashSchedulerWebServer.Types
         public UserType()
         {
             Field(f => f.Id, nullable: false);
-            Field("first_name", f => f.FirstName, nullable: true);
-            Field("last_name", f => f.LastName, nullable: true);
+            Field(f => f.FirstName, nullable: true);
+            Field(f => f.LastName, nullable: true);
             Field(f => f.Email, nullable: false);
             Field(f => f.Balance, nullable: true);
         }

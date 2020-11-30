@@ -9,7 +9,7 @@ namespace CashSchedulerWebServer.Types.Inputs
             Name = "UpdateUserSettingInput";
             Field<NonNullGraphType<StringGraphType>>("name");
             Field<StringGraphType>("value");
-            Field<StringGraphType>("unitName");
+            Field<NonNullGraphType<StringGraphType>>("unitName");
         }
     }
 }
