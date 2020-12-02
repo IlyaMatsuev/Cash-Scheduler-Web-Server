@@ -6,6 +6,9 @@ namespace CashSchedulerWebServer.Models
 {
     public class Category
     {
+        [NotMapped]
+        public const string DEFAULT_ICON_URL = "https://img.icons8.com/plasticine/100/000000/cheap.png";
+
         [Key]
         public int Id { get; set; }
         [Required(ErrorMessage = "Category name cannot be empty"), StringLength(30, MinimumLength = 2, ErrorMessage = "Category name must have at least 2 and no more than 30 characters")]
@@ -17,6 +20,26 @@ namespace CashSchedulerWebServer.Models
         public User CreatedBy { get; set; }
         [DefaultValue(false)]
         public bool IsCustom { get; set; }
-        public string IconUrl { get; set; }
+        [NotMapped]
+        private string iconUrl;
+        [Required(ErrorMessage = "Category Icon cannot be empty")]
+        public string IconUrl
+        {
+            get => iconUrl;
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    iconUrl = value;
+                }
+            }
+        }
+
+
+        public Category()
+        {
+            iconUrl = DEFAULT_ICON_URL;
+            IsCustom = true;
+        }
     }
 }

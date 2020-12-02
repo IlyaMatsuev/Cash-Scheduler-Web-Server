@@ -27,5 +27,10 @@ namespace CashSchedulerWebServer.Models
         public DateTime NextTransactionDate { get; set; }
         [Required(ErrorMessage = "Regular transaction interval cannot be empty"), RegularExpression(@"^(day)|(week)|(month)|(year)$", ErrorMessage = "Interval must be one of the following: day, week, month, year")]
         public string Interval { get; set; }
+
+        public RegularTransaction()
+        {
+            Date = DateTime.UtcNow;
+        }
     }
 }

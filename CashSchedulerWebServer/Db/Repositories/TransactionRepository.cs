@@ -41,6 +41,11 @@ namespace CashSchedulerWebServer.Db.Repositories
             return transactions.Take(size);
         }
 
+        public IEnumerable<Transaction> GetByCategoryId(int categoryId)
+        {
+            return Context.Transactions.Where(t => t.TransactionCategory.Id == categoryId);
+        }
+
         public IEnumerable<Transaction> GetTransactionsForLastDays(int days)
         {
             DateTime daysAgo = DateTime.Today.AddDays(-days);
@@ -76,7 +81,6 @@ namespace CashSchedulerWebServer.Db.Repositories
         {
             ModelValidator.ValidateModelAttributes(transaction);
             transaction.CreatedBy = ContextProvider.GetRepository<IUserRepository>().GetById((int)UserId);
-            transaction.Date = transaction.Date == default ? DateTime.UtcNow : transaction.Date;
             transaction.TransactionCategory = ContextProvider.GetRepository<ICategoryRepository>().GetById(transaction.CategoryId);
             if (transaction.TransactionCategory == null)
             {

@@ -24,5 +24,10 @@ namespace CashSchedulerWebServer.Models
         public double Amount { get; set; }
         [Required(ErrorMessage = "Transaction date cannot be empty")]
         public DateTime Date { get; set; }
+
+        public Transaction()
+        {
+            Date = DateTime.UtcNow;
+        }
     }
 }

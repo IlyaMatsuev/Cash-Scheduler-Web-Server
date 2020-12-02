@@ -55,11 +55,15 @@ namespace CashSchedulerWebServer.Db.Repositories
                 .FirstOrDefault();
         }
 
+        public IEnumerable<RegularTransaction> GetByCategoryId(int categoryId)
+        {
+            return Context.RegularTransactions.Where(t => t.TransactionCategory.Id == categoryId);
+        }
+
         public async Task<RegularTransaction> Create(RegularTransaction transaction)
         {
             ModelValidator.ValidateModelAttributes(transaction);
             transaction.CreatedBy = ContextProvider.GetRepository<IUserRepository>().GetById((int)UserId);
-            transaction.Date = transaction.Date == default ? DateTime.UtcNow : transaction.Date;
             transaction.TransactionCategory = ContextProvider.GetRepository<ICategoryRepository>().GetById(transaction.CategoryId);
             if (transaction.TransactionCategory == null)
             {

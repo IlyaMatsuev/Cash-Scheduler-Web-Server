@@ -1,4 +1,5 @@
 ﻿using CashSchedulerWebServer.Db.Contracts;
+using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Utils;
 using GraphQL;
@@ -74,15 +75,14 @@ namespace CashSchedulerWebServer.Db.Repositories
             category.Type = ContextProvider.GetRepository<ITransactionTypeRepository>().GetByName(category.TransactionTypeName);
             if (category.Type == null)
             {
-                throw new ExecutionError("There is no such transaction type");
+                throw new CashSchedulerException("There is no such transaction type", new string[] { "transactionTypeName" });
             }
             category.CreatedBy = ContextProvider.GetRepository<IUserRepository>().GetById((int)UserId);
-            category.IsCustom = true;
 
             Context.Categories.Add(category);
             await Context.SaveChangesAsync();
 
-            return GetById(category.Id);
+            return category;
         }
 
         public async Task<Category> Update(Category category)
@@ -90,7 +90,7 @@ namespace CashSchedulerWebServer.Db.Repositories
             var targetCategory = GetById(category.Id);
             if (targetCategory == null)
             {
-                throw new ExecutionError("There is no such category");
+                throw new CashSchedulerException("There is no such category");
             }
 
             if (!string.IsNullOrEmpty(category.Name))
@@ -101,6 +101,8 @@ namespace CashSchedulerWebServer.Db.Repositories
             {
                 targetCategory.IconUrl = category.IconUrl;
             }
+
+            targetCategory.TransactionTypeName = targetCategory.Type.Name;
 
             ModelValidator.ValidateModelAttributes(targetCategory);
 
@@ -115,9 +117,14 @@ namespace CashSchedulerWebServer.Db.Repositories
             var targetCategory = GetById(categoryId);
             if (targetCategory == null)
             {
-                throw new ExecutionError("There is no such category");
+                throw new CashSchedulerException("There is no such category");
             }
 
+            var relatedTransactions = ContextProvider.GetRepository<ITransactionRepository>().GetByCategoryId(categoryId);
+            var realtedRegularTransactions = ContextProvider.GetRepository<IRegularTransactionRepository>().GetByCategoryId(categoryId);
+
+            Context.Transactions.RemoveRange(relatedTransactions);
+            Context.RegularTransactions.RemoveRange(realtedRegularTransactions);
             Context.Categories.Remove(targetCategory);
             await Context.SaveChangesAsync();
 
