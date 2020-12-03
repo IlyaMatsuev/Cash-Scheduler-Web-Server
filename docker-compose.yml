@@ -1,0 +1,15 @@
+version: 3
+services:
+  ms-sql-server:
+    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "admin111"
+      MSSQL_PID: "Express"
+    ports:
+      - "1434:1433"
+  ilyamatsuev/cash-scheduler-server:
+    build: .
+    file: ./CashSchedulerWebServer/Dockerfile
+    ports:
+      - "8001:80"
