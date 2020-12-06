@@ -1,15 +1,35 @@
-version: 3
+version: "3"
 services:
   ms-sql-server:
     image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    container_name: ms-sql-server
     environment:
       ACCEPT_EULA: "Y"
-      SA_PASSWORD: "admin111"
+      SA_PASSWORD: "admin11@"
       MSSQL_PID: "Express"
     ports:
       - "1434:1433"
-  ilyamatsuev/cash-scheduler-server:
-    build: .
-    file: ./CashSchedulerWebServer/Dockerfile
+  cash-scheduler-server:
+    image: ilyamatsuev/cash-scheduler-server
+    build:
+      context: .
+      dockerfile: ./CashSchedulerWebServer/Dockerfile
+    container_name: cash-scheduler-server
+    depends_on:
+      - ms-sql-server
     ports:
-      - "8001:80"
+      - "8000:80"
+      - "8001:443"
+    environment:
+      DbServer: "ms-sql-server"
+      DbPort: "1434"
+      DbUsername: "SA"
+      DbPassword: "admin11@"
+      DbName: "cash_scheduler"
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_URLS: "https://+;http://+"
+      ASPNETCORE_HTTPS_PORT: "8001"
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /https/CashSchedulerWebServer.pfx
+      ASPNETCORE_Kestrel__Certificates__Default__Password: "password"
+    volumes:
+      - C:/Users/ASUS/.aspnet/https:/https/

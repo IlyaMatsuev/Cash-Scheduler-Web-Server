@@ -8,12 +8,8 @@ namespace CashSchedulerWebServer.Db
     {
         public CashSchedulerContext(DbContextOptions<CashSchedulerContext> options, IConfiguration configuration) : base(options) 
         {
-            if (bool.Parse(configuration["Data:RefreshDataOnLaunch"]))
-            {
-                Database.Migrate();
-                this.InitializeDb();
-            }
         }
+
 
         public DbSet<User> Users { get; set; }
         public DbSet<UserRefreshToken> UserRefreshTokens { get; set; }

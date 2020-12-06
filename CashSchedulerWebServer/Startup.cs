@@ -22,6 +22,7 @@ using CashSchedulerWebServer.Types.Inputs;
 using CashSchedulerWebServer.Authentication.Contracts;
 using CashSchedulerWebServer.Notifications.Contracts;
 using CashSchedulerWebServer.Notifications;
+using System;
 
 namespace CashSchedulerWebServer
 {
@@ -110,6 +111,11 @@ namespace CashSchedulerWebServer
                 app.UseDeveloperExceptionPage();
             }
 
+            if (bool.Parse(Configuration["Data:RefreshDataOnLaunch"]))
+            {
+                CashSchedulerSeeder.InitializeDb(app);
+            }
+
             app.UseGraphiQl();
             app.UseRouting();
             app.UseCors();
@@ -127,6 +133,10 @@ namespace CashSchedulerWebServer
             string username = configuration["DbUsername"];
             string password = configuration["DbPassword"];
             string database = configuration["DbName"] ?? "cash_scheduler";
+
+            Console.WriteLine("Choice: " + bool.Parse(configuration["App:Db:ConnectionStringFromSecrets"]));
+            Console.WriteLine("Connection string 1: " + configuration.GetConnectionString("Default"));
+            Console.WriteLine("Connection string 2: " + $"Server={server},{port};Initial Catalog={database};User ID = {username};Password={password}");
 
             return bool.Parse(configuration["App:Db:ConnectionStringFromSecrets"])
                 ? configuration.GetConnectionString("Default")
