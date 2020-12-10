@@ -9,7 +9,9 @@ services:
       MSSQL_PID: "Express"
     ports:
       - "1434:1433"
-  cash-scheduler-server:
+      
+  # I placed z as a first letter since docker compose runs services in alphabetical order (Нахуя, а главное зачем)
+  z-cash-scheduler-server:
     image: ilyamatsuev/cash-scheduler-server
     build:
       context: .
@@ -22,7 +24,7 @@ services:
       - "8001:443"
     environment:
       DbServer: "ms-sql-server"
-      DbPort: "1434"
+      DbPort: "1433"
       DbUsername: "SA"
       DbPassword: "admin11@"
       DbName: "cash_scheduler"
