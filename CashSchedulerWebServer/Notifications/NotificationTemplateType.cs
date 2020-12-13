@@ -2,6 +2,7 @@
 {
     public enum NotificationTemplateType
     {
-        VerificationCode
+        VerificationCode,
+        MostSpentCategoryForWeek
     }
 }

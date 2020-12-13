@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 
 namespace CashSchedulerWebServer.Notifications
@@ -10,7 +9,8 @@ namespace CashSchedulerWebServer.Notifications
 
         private readonly Dictionary<NotificationTemplateType, (string, string)> TemplatesMap = new Dictionary<NotificationTemplateType, (string, string)>
         {
-            { NotificationTemplateType.VerificationCode, ("Verify It's You", "VerificationCode.html") }
+            { NotificationTemplateType.VerificationCode, ("Verify It's You", "VerificationCode.html") },
+            { NotificationTemplateType.MostSpentCategoryForWeek, ("Your most expensive category for the last week", "WeeklyCategoryReport.html") },
         };
 
 

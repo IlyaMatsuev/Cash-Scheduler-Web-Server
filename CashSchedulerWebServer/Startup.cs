@@ -22,6 +22,14 @@ using CashSchedulerWebServer.Types.Inputs;
 using CashSchedulerWebServer.Authentication.Contracts;
 using CashSchedulerWebServer.Notifications.Contracts;
 using CashSchedulerWebServer.Notifications;
+using Quartz.Impl;
+using CashSchedulerWebServer.Jobs.Transactions;
+using Quartz.Spi;
+using Quartz;
+using CashSchedulerWebServer.Jobs;
+using System;
+using System.Collections.Generic;
+using CashSchedulerWebServer.Jobs.Reporting;
 
 namespace CashSchedulerWebServer
 {
@@ -70,6 +78,21 @@ namespace CashSchedulerWebServer
 
             // Utils section
             services.AddSingleton<INotificator, Notificator>();
+
+            // Schedulers section
+            services.AddSingleton<IJobFactory, JobFactory>();
+            services.AddSingleton<ISchedulerFactory, StdSchedulerFactory>();
+            services.AddTransient<TransactionsJob>();
+            services.AddTransient<RecurringTransactionsJob>();
+            services.AddTransient<RecurringTransactionsJob>();
+            services.AddSingleton(new List<JobMetadata>
+            {
+                new JobMetadata(typeof(TransactionsJob), Configuration["App:Jobs:Transactions:Name"], Configuration["App:Jobs:Transactions:Cron"]),
+                new JobMetadata(typeof(RecurringTransactionsJob), Configuration["App:Jobs:RecurringTransactions:Name"], Configuration["App:Jobs:RecurringTransactions:Cron"]),
+                new JobMetadata(typeof(ReportingJob), Configuration["App:Jobs:Reporting:Name"], Configuration["App:Jobs:Reporting:Cron"])
+            });
+            services.AddHostedService<TransactionsHostedService>();
+
 
             // GraphQL configuration section
             services.AddTransient<IDependencyResolver>(resolver => new FuncDependencyResolver(resolver.GetRequiredService));

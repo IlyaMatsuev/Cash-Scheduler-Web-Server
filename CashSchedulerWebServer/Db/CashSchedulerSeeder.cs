@@ -1,12 +1,10 @@
 ﻿using CashSchedulerWebServer.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace CashSchedulerWebServer.Db
 {
@@ -17,20 +15,18 @@ namespace CashSchedulerWebServer.Db
 
         public static void InitializeDb(this CashSchedulerContext context)
         {
-            using (var dmlTransaction = context.Database.BeginTransaction())
+            using var dmlTransaction = context.Database.BeginTransaction();
+            try
             {
-                try
-                {
-                    context
-                        .EmptyDb()
-                        .ResetIdentitiesSeed()
-                        .SeedDb()
-                        .CompleteTransaction();
-                }
-                catch (Exception error)
-                {
-                    context.PreventTransaction(error);
-                }
+                context
+                    .EmptyDb()
+                    .ResetIdentitiesSeed()
+                    .SeedDb()
+                    .CompleteTransaction();
+            }
+            catch (Exception error)
+            {
+                context.PreventTransaction(error);
             }
         }
 

@@ -8,6 +8,7 @@ using CashSchedulerWebServer.Types;
 using CashSchedulerWebServer.Utils;
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace CashSchedulerWebServer.Authentication
@@ -77,6 +78,19 @@ namespace CashSchedulerWebServer.Authentication
             if (ContextProvider.GetRepository<IUserRepository>().HasUserWithEmail(newUser.Email))
             {
                 throw new CashSchedulerException("User with the same email has been already registered", new string[] { "email" });
+            }
+
+            if (string.IsNullOrEmpty(newUser.Password))
+            {
+                throw new CashSchedulerException("Password is a required field", new string[] { "password" });
+            }
+
+            if (!Regex.IsMatch(newUser.Password, AuthOptions.PASSWORD_REGEX))
+            {
+                throw new CashSchedulerException(
+                    "Your password is too week. Consider to choose something with upper and lower case, digits and special characters with min and max length of 8 and 15", 
+                    new string[] { "password" }
+                );
             }
 
             return await ContextProvider.GetRepository<IUserRepository>().Create(newUser);
@@ -158,6 +172,20 @@ namespace CashSchedulerWebServer.Authentication
         public async Task<User> ResetPassword(string email, string code, string password)
         {
             await CheckCode(email, code);
+
+            if (string.IsNullOrEmpty(password))
+            {
+                throw new CashSchedulerException("Password is a required field", new string[] { nameof(password) });
+            }
+
+            if (!Regex.IsMatch(password, AuthOptions.PASSWORD_REGEX))
+            {
+                throw new CashSchedulerException(
+                    "Your password is too week. Consider to choose something with upper and lower case, digits and special characters with min and max length of 8 and 15",
+                    new string[] { nameof(password) }
+                );
+            }
+
             var user = await ContextProvider.GetRepository<IUserRepository>().UpdatePassword(email, password);
             var verificationCode = ContextProvider.GetRepository<IUserEmailVerificationCodeRepository>().GetByUserId(user.Id);
             await ContextProvider.GetRepository<IUserEmailVerificationCodeRepository>().Delete(verificationCode.Id);

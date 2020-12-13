@@ -88,6 +88,7 @@ namespace CashSchedulerWebServer.Db.Repositories
             }
             Context.Transactions.Add(transaction);
             await Context.SaveChangesAsync();
+            await ContextProvider.GetRepository<IUserRepository>().UpdateBalance(transaction, null, isCreate: true);
 
             return GetById(transaction.Id);
         }
@@ -100,7 +101,16 @@ namespace CashSchedulerWebServer.Db.Repositories
                 throw new CashSchedulerException("There is no such transaction");
             }
 
+            var oldTransaction = new Transaction
+            {
+                Title = targetTransaction.Title,
+                Amount = targetTransaction.Amount,
+                Date = targetTransaction.Date,
+                TransactionCategory = targetTransaction.TransactionCategory
+            };
+
             targetTransaction.Title = transaction.Title;
+
             if (transaction.Amount != default)
             {
                 targetTransaction.Amount = transaction.Amount;
@@ -114,6 +124,7 @@ namespace CashSchedulerWebServer.Db.Repositories
 
             Context.Transactions.Update(targetTransaction);
             await Context.SaveChangesAsync();
+            await ContextProvider.GetRepository<IUserRepository>().UpdateBalance(targetTransaction, oldTransaction, isUpdate: true);
 
             return targetTransaction;
         }
@@ -128,6 +139,7 @@ namespace CashSchedulerWebServer.Db.Repositories
 
             Context.Transactions.Remove(targetTransaction);
             await Context.SaveChangesAsync();
+            await ContextProvider.GetRepository<IUserRepository>().UpdateBalance(targetTransaction, targetTransaction, isDelete: true);
 
             return targetTransaction;
         }

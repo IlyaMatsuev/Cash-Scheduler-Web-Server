@@ -74,8 +74,16 @@ namespace CashSchedulerWebServer.Queries
             // RegularTransactions
             Field<ListGraphType<RegularTransactionType>>(
                 "getAllRegularTransactions",
-                arguments: new QueryArguments(new QueryArgument<IntGraphType> { Name = "size", DefaultValue = 0 }),
-                resolve: context => contextProvider.GetRepository<IRegularTransactionRepository>().GetAll(context.GetArgument<int>("size"))
+                arguments: new QueryArguments(
+                    new QueryArgument<IntGraphType> { Name = "size", DefaultValue = 0 },
+                    new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "month", DefaultValue = DateTime.Today.Month },
+                    new QueryArgument<IntGraphType> { Name = "year", DefaultValue = DateTime.Today.Year }
+                ),
+                resolve: context => contextProvider.GetRepository<IRegularTransactionRepository>().GetAll(
+                    context.GetArgument<int>("size"), 
+                    context.GetArgument<int>("month"), 
+                    context.GetArgument<int>("year")
+                )
             ).AuthorizeWith(policy);
             #endregion
 

@@ -8,6 +8,7 @@ namespace CashSchedulerWebServer.Utils
     {
         public static string Hash(this string input)
         {
+            // TODO: add salt
             using SHA256 sha = SHA256.Create();
             return Encoding.ASCII.GetString(sha.ComputeHash(Encoding.ASCII.GetBytes(input)));
         }

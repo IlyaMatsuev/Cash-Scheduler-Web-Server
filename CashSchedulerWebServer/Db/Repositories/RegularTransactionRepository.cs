@@ -27,9 +27,10 @@ namespace CashSchedulerWebServer.Db.Repositories
         }
 
 
-        public IEnumerable<RegularTransaction> GetAll(int size)
+        public IEnumerable<RegularTransaction> GetAll(int size, int month, int year)
         {
-            IEnumerable<RegularTransaction> transactions = Context.RegularTransactions.Where(t => t.CreatedBy.Id == UserId)
+            IEnumerable<RegularTransaction> transactions = Context.RegularTransactions
+                .Where(t => t.NextTransactionDate.Month == month && t.NextTransactionDate.Year == year && t.CreatedBy.Id == UserId)
                 .Include(t => t.CreatedBy)
                 .Include(t => t.TransactionCategory)
                 .Include(t => t.TransactionCategory.Type);
@@ -43,7 +44,7 @@ namespace CashSchedulerWebServer.Db.Repositories
 
         public IEnumerable<RegularTransaction> GetAll()
         {
-            return GetAll(0);
+            return GetAll(0, DateTime.Now.Month, DateTime.Now.Year);
         }
 
         public RegularTransaction GetById(int id)
