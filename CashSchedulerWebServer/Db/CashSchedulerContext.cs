@@ -9,6 +9,7 @@ namespace CashSchedulerWebServer.Db
         {
         }
 
+
         public DbSet<User> Users { get; set; }
         public DbSet<UserRefreshToken> UserRefreshTokens { get; set; }
         public DbSet<UserEmailVerificationCode> UserEmailVerificationCodes { get; set; }

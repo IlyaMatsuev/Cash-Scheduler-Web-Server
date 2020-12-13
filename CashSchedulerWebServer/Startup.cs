@@ -27,7 +27,6 @@ using CashSchedulerWebServer.Jobs.Transactions;
 using Quartz.Spi;
 using Quartz;
 using CashSchedulerWebServer.Jobs;
-using System;
 using System.Collections.Generic;
 using CashSchedulerWebServer.Jobs.Reporting;
 
@@ -44,10 +43,11 @@ namespace CashSchedulerWebServer
 
         public void ConfigureServices(IServiceCollection services)
         {
-            // JSON request settings
+            #region JSON parser settings
             services.AddControllers().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
+            #endregion
 
-            // CORS
+            #region CORS
             services.AddCors(options =>
             {
                 options.AddPolicy(
@@ -55,8 +55,9 @@ namespace CashSchedulerWebServer
                     builder => builder.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader()
                 );
             });
+            #endregion
 
-            // Authorization & Authentication section
+            #region Authorization & Authentication
             services.AddTransient<UserContextManager>();
             services.AddTransient<IAuthenticator, Authenticator>();
             services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
@@ -71,15 +72,18 @@ namespace CashSchedulerWebServer
                 });
                 return authSettings;
             });
+            #endregion
 
-            // DataBase section
+            #region Database
             services.AddTransient<IContextProvider, ContextProvider>();
-            services.AddDbContext<CashSchedulerContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
+            services.AddDbContext<CashSchedulerContext>(options => options.UseSqlServer(GetConnectionString(Configuration)));
+            #endregion
 
-            // Utils section
+            #region Utils configurations
             services.AddSingleton<INotificator, Notificator>();
+            #endregion
 
-            // Schedulers section
+            #region Scheduling Jobs
             services.AddSingleton<IJobFactory, JobFactory>();
             services.AddSingleton<ISchedulerFactory, StdSchedulerFactory>();
             services.AddTransient<TransactionsJob>();
@@ -92,9 +96,9 @@ namespace CashSchedulerWebServer
                 new JobMetadata(typeof(ReportingJob), Configuration["App:Jobs:Reporting:Name"], Configuration["App:Jobs:Reporting:Cron"])
             });
             services.AddHostedService<TransactionsHostedService>();
+            #endregion
 
-
-            // GraphQL configuration section
+            #region GraphQL
             services.AddTransient<IDependencyResolver>(resolver => new FuncDependencyResolver(resolver.GetRequiredService));
             services.AddTransient<CashSchedulerQuery>();
             services.AddTransient<CashSchedulerMutation>();
@@ -118,18 +122,19 @@ namespace CashSchedulerWebServer
 
             services.AddTransient<IDocumentExecuter, DocumentExecuter>();
             services.AddTransient<ISchema, CashSchedulerSchema>();
+            #endregion
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, CashSchedulerContext db)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            }
 
-                if (bool.Parse(Configuration["Data:RefreshDataOnLaunch"]))
-                {
-                    db.InitializeDb();
-                }
+            if (bool.Parse(Configuration["Data:RefreshDataOnLaunch"]))
+            {
+                CashSchedulerSeeder.InitializeDb(app);
             }
 
             app.UseGraphiQl();
@@ -139,6 +144,20 @@ namespace CashSchedulerWebServer
             app.UseAuthorization();
             app.UseHttpsRedirection();
             app.UseEndpoints(endpoints => endpoints.MapControllers());
+        }
+
+
+        private string GetConnectionString(IConfiguration configuration)
+        {
+            string server = configuration["DbServer"] ?? ".\\SQLEXPRESS";
+            string port = configuration["DbPort"] ?? "1433";
+            string username = configuration["DbUsername"];
+            string password = configuration["DbPassword"];
+            string database = configuration["DbName"] ?? "cash_scheduler";
+
+            return bool.Parse(configuration["App:Db:ConnectionStringFromSecrets"])
+                ? configuration.GetConnectionString("Default")
+                : $"Server={server},{port};Initial Catalog={database};User ID = {username};Password={password}";
         }
     }
 }

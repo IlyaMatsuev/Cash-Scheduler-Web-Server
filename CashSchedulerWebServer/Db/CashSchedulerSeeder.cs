@@ -1,5 +1,7 @@
 ﻿using CashSchedulerWebServer.Models;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -13,8 +15,13 @@ namespace CashSchedulerWebServer.Db
         private static readonly string MOCK_DATA_FOLDER_PATH = AppDomain.CurrentDomain.BaseDirectory + "/../../../Db/MockData/";
 
 
-        public static void InitializeDb(this CashSchedulerContext context)
+        public static void InitializeDb(IApplicationBuilder app)
         {
+            using var serviceScope = app.ApplicationServices.CreateScope();
+            var context = serviceScope.ServiceProvider.GetService<CashSchedulerContext>();
+
+            context.Database.Migrate();
+
             using var dmlTransaction = context.Database.BeginTransaction();
             try
             {
@@ -51,14 +58,18 @@ namespace CashSchedulerWebServer.Db
             var regularTransactions = JsonConvert.DeserializeObject<List<RegularTransaction>>(regularTransactionsJson);
 
             context.Users.AddRange(users);
+            context.SaveChanges();
             context.TransactionTypes.AddRange(transactionTypes);
             context.SaveChanges();
 
             categories.ForEach(category =>
             {
-                category.CreatedBy = users.First(user => user.Id == category.CreatedBy.Id);
-                category.Type = transactionTypes.First(type => type.Name == category.Type.Name);
-                context.Categories.Add(category);
+                category.CreatedBy = users.FirstOrDefault(user => user.Id == category.CreatedBy.Id);
+                category.Type = transactionTypes.FirstOrDefault(type => type.Name == category.Type.Name);
+                if (category.CreatedBy != null && category.Type != null)
+                {
+                    context.Categories.Add(category);
+                }
             });
 
             context.SaveChanges();
@@ -66,34 +77,46 @@ namespace CashSchedulerWebServer.Db
 
             userSettings.ForEach(setting =>
             {
-                setting.SettingFor = users.First(user => user.Id == setting.SettingFor.Id);
-                context.UserSettings.Add(setting);
+                setting.SettingFor = users.FirstOrDefault(user => user.Id == setting.SettingFor.Id);
+                if (setting.SettingFor != null)
+                {
+                    context.UserSettings.Add(setting);
+                }
             });
 
             context.SaveChanges();
 
             userNotifications.ForEach(notification =>
             {
-                notification.CreatedFor = users.First(user => user.Id == notification.CreatedFor.Id);
-                context.UserNotifications.Add(notification);
+                notification.CreatedFor = users.FirstOrDefault(user => user.Id == notification.CreatedFor.Id);
+                if (notification.CreatedFor != null)
+                {
+                    context.UserNotifications.Add(notification);
+                }
             });
 
             context.SaveChanges();
 
             transactions.ForEach(transaction =>
             {
-                transaction.CreatedBy = users.First(user => user.Id == transaction.CreatedBy.Id);
-                transaction.TransactionCategory = categories.First(category => category.Id == transaction.TransactionCategory.Id);
-                context.Transactions.Add(transaction);
+                transaction.CreatedBy = users.FirstOrDefault(user => user.Id == transaction.CreatedBy.Id);
+                transaction.TransactionCategory = categories.FirstOrDefault(category => category.Id == transaction.TransactionCategory.Id);
+                if (transaction.CreatedBy != null && transaction.TransactionCategory != null)
+                {
+                    context.Transactions.Add(transaction);
+                }
             });
 
             context.SaveChanges();
 
             regularTransactions.ForEach(transaction =>
             {
-                transaction.CreatedBy = users.First(user => user.Id == transaction.CreatedBy.Id);
-                transaction.TransactionCategory = categories.First(category => category.Id == transaction.TransactionCategory.Id);
-                context.RegularTransactions.Add(transaction);
+                transaction.CreatedBy = users.FirstOrDefault(user => user.Id == transaction.CreatedBy.Id);
+                transaction.TransactionCategory = categories.FirstOrDefault(category => category.Id == transaction.TransactionCategory.Id);
+                if (transaction.CreatedBy != null && transaction.TransactionCategory != null)
+                {
+                    context.RegularTransactions.Add(transaction);
+                }
             });
 
             context.SaveChanges();
