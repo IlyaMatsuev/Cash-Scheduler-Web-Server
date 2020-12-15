@@ -1,29 +1,35 @@
 version: "3"
 services:
-  ms-sql-server:
+  cash-scheduler-db:
     image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
-    container_name: ms-sql-server
+    container_name: cash-scheduler-db
     environment:
       ACCEPT_EULA: "Y"
       SA_PASSWORD: "admin11@"
       MSSQL_PID: "Express"
     ports:
       - "1434:1433"
+
+  cash-scheduler-client:
+    image: ilyamatsuev/cash-scheduler-client
+    container_name: cash-scheduler-client
+    stdin_open: true
+    ports:
+      - "3000:3000"
       
-  # I placed z as a first letter since docker compose runs services in alphabetical order (Нахуя, а главное зачем)
-  z-cash-scheduler-server:
+  cash-scheduler-server:
     image: ilyamatsuev/cash-scheduler-server
     build:
       context: .
       dockerfile: ./CashSchedulerWebServer/Dockerfile
     container_name: cash-scheduler-server
     depends_on:
-      - ms-sql-server
+      - cash-scheduler-db
     ports:
       - "8000:80"
       - "8001:443"
     environment:
-      DbServer: "ms-sql-server"
+      DbServer: "cash-scheduler-db"
       DbPort: "1433"
       DbUsername: "SA"
       DbPassword: "admin11@"
