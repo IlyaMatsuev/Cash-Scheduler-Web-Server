@@ -4,24 +4,32 @@
     "LastName": "Mc Gee",
     "Email": "smcgee0@hibu.com",
     "Balance": 93970.5,
-    "Password": "9MTLGe",
-    "Password_Hash": "3e20548857259fed79d9b00e55af2c1899fc98709451f9b95a7eefc3277142a6"
+    "Password": "3e20548857259fed79d9b00e55af2c1899fc98709451f9b95a7eefc3277142a6",
+    "Password_Unhashed": "9MTLGe"
+  },
+  {
+    "FirstName": "Ilya",
+    "LastName": "Matsuev",
+    "Email": "mirotvorec542546@gmail.com",
+    "Balance": 93970.5,
+    "Password": "d9cc2fbe6e42be077f1c98e92fd5e9f9a62d10f33a14e4632caa194417094a2d",
+    "Password_Unhashed": "adminQ1@"
   },
   {
     "FirstName": "Michelle",
     "LastName": "Slucock",
     "Email": "mslucock1@digg.com",
     "Balance": 52315.3,
-    "Password": "UvLVW9JMUHtk",
-    "Password_Hash": "36d9edc6d131fa6fe04f850b2c6a74939d90ceeb3a84e1d162226bdebf1e7682"
+    "Password": "36d9edc6d131fa6fe04f850b2c6a74939d90ceeb3a84e1d162226bdebf1e7682",
+    "Password_Unhashed": "UvLVW9JMUHtk"
   },
   {
     "FirstName": "Tabitha",
     "LastName": "Haryngton",
     "Email": "tharyngton2@godaddy.com",
     "Balance": 7721.9,
-    "Password": "WIkl7y9gJ",
-    "Password_Hash": "d5d1d856c4bf41dbf8552b44361cf64edc7812de024cf886383a7effc4ce18e5"
+    "Password": "d5d1d856c4bf41dbf8552b44361cf64edc7812de024cf886383a7effc4ce18e5",
+    "Password_Unhashed": "WIkl7y9gJ"
   },
   {
     "FirstName": "Cherey",

@@ -108,29 +108,29 @@ namespace CashSchedulerWebServer.Db.Repositories
 
             if (isCreate)
             {
-                if (transaction.Date <= DateTime.UtcNow)
+                if (transaction.Date <= DateTime.Today)
                 {
                     user.Balance += transaction.Amount * delta;
                 }
             }
             else if (isUpdate)
             {
-                if (transaction.Date <= DateTime.UtcNow && oldTransaction.Date <= DateTime.UtcNow)
+                if (transaction.Date <= DateTime.Today && oldTransaction.Date <= DateTime.Today)
                 {
                     user.Balance += (transaction.Amount - oldTransaction.Amount) * delta;
                 }
-                else if (transaction.Date <= DateTime.UtcNow && oldTransaction.Date > DateTime.UtcNow)
+                else if (transaction.Date <= DateTime.Today && oldTransaction.Date > DateTime.Today)
                 {
                     user.Balance += transaction.Amount * delta;
                 }
-                else if (transaction.Date > DateTime.UtcNow && oldTransaction.Date <= DateTime.UtcNow)
+                else if (transaction.Date > DateTime.Today && oldTransaction.Date <= DateTime.Today)
                 {
                     user.Balance -= oldTransaction.Amount * delta;
                 }
             }
             else if (isDelete)
             {
-                if (oldTransaction.Date <= DateTime.UtcNow)
+                if (oldTransaction.Date <= DateTime.Today)
                 {
                     user.Balance -= oldTransaction.Amount * delta;
                 }

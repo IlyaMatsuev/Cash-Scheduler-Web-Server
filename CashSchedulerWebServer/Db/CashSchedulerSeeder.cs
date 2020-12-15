@@ -64,11 +64,21 @@ namespace CashSchedulerWebServer.Db
 
             categories.ForEach(category =>
             {
-                category.CreatedBy = users.FirstOrDefault(user => user.Id == category.CreatedBy.Id);
                 category.Type = transactionTypes.FirstOrDefault(type => type.Name == category.Type.Name);
-                if (category.CreatedBy != null && category.Type != null)
+                if (category.IsCustom)
                 {
-                    context.Categories.Add(category);
+                    category.CreatedBy = users.FirstOrDefault(user => user.Id == category.CreatedBy.Id);   
+                    if (category.CreatedBy != null && category.Type != null)
+                    {
+                        context.Categories.Add(category);
+                    }
+                }
+                else
+                {
+                    if (category.Type != null)
+                    {
+                        context.Categories.Add(category);
+                    }
                 }
             });
 

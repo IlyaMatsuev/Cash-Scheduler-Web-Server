@@ -10,7 +10,6 @@ RUN dotnet restore "CashSchedulerWebServer/CashSchedulerWebServer.csproj"
 COPY . .
 WORKDIR "/src/CashSchedulerWebServer"
 RUN dotnet build "CashSchedulerWebServer.csproj" -c Release -o /app/build
-#COPY ["Db/MockData/", "app/Db/MockData/"]
 
 FROM build AS publish
 RUN dotnet publish "CashSchedulerWebServer.csproj" -c Release -o /app/publish
