@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CashSchedulerWebServer.Models.Validations;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -24,6 +25,7 @@ namespace CashSchedulerWebServer.Models
         public double Amount { get; set; }
         [Required(ErrorMessage = "Transaction date cannot be empty")]
         public DateTime Date { get; set; }
+        [GreaterThanToday(ErrorMessage = "Next transaction date must be greater than today")]
         public DateTime NextTransactionDate { get; set; }
         [Required(ErrorMessage = "Regular transaction interval cannot be empty"), RegularExpression(@"^(day)|(week)|(month)|(year)$", ErrorMessage = "Interval must be one of the following: day, week, month, year")]
         public string Interval { get; set; }

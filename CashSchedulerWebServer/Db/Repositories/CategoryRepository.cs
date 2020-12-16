@@ -63,7 +63,7 @@ namespace CashSchedulerWebServer.Db.Repositories
 
         public Category GetById(int id)
         {
-            return Context.Categories.Where(c => c.Id == id && c.CreatedBy.Id == UserId)
+            return Context.Categories.Where(c => c.Id == id && ((c.CreatedBy.Id == UserId && c.IsCustom) || !c.IsCustom))
                 .Include(c => c.Type)
                 .Include(c => c.CreatedBy)
                 .FirstOrDefault();

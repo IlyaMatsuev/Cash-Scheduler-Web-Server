@@ -1,5 +1,41 @@
 [
   {
+    "Name": "Pets",
+    "Type": { "Name": "Expense" },
+    "IsCustom": "false",
+    "IconUrl": "http://dummyimage.com/164x249.jpg/cc0000/ffffff"
+  },
+  {
+    "Name": "Salary",
+    "Type": { "Name": "Income" },
+    "IsCustom": "false",
+    "IconUrl": "http://dummyimage.com/156x174.jpg/ff4444/ffffff"
+  },
+  {
+    "Name": "Gift",
+    "Type": { "Name": "Income" },
+    "IsCustom": "false",
+    "IconUrl": "http://dummyimage.com/226x219.jpg/5fa2dd/ffffff"
+  },
+  {
+    "Name": "Transport",
+    "Type": { "Name": "Expense" },
+    "IsCustom": "false",
+    "IconUrl": "http://dummyimage.com/123x205.jpg/dddddd/000000"
+  },
+  {
+    "Name": "Sport",
+    "Type": { "Name": "Expense" },
+    "IsCustom": "false",
+    "IconUrl": "http://dummyimage.com/247x125.bmp/cc0000/ffffff"
+  },
+  {
+    "Name": "Luck",
+    "Type": { "Name": "Income" },
+    "IsCustom": "false",
+    "IconUrl": "http://dummyimage.com/112x150.bmp/cc0000/ffffff"
+  },
+  {
     "Name": "Kids",
     "Type": { "Name": "Expense" },
     "CreatedBy": { "Id": 199 },

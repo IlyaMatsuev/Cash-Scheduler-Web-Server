@@ -77,8 +77,6 @@ namespace CashSchedulerWebServer.Db.Repositories
                 throw new CashSchedulerException("There is no such user", new[] { nameof(email) });
             }
 
-            user.Password = password;
-
             ModelValidator.ValidateModelAttributes(user);
 
             user.Password = password.Hash();
@@ -89,8 +87,58 @@ namespace CashSchedulerWebServer.Db.Repositories
             return user;
         }
 
-        public Task<User> Update(User user) => throw new NotImplementedException();
+        public async Task<User> Update(User user)
+        {
+            ModelValidator.ValidateModelAttributes(user);
+            Context.Users.Update(user);
+            await Context.SaveChangesAsync();
+            return user;
+        }
 
-        public Task<User> Delete(int entityId) => throw new NotImplementedException();
+        public async Task<User> UpdateBalance(Transaction transaction, Transaction oldTransaction, bool isCreate = false, bool isUpdate = false, bool isDelete = false)
+        {
+            // TODO: we don't want to use exact names from db records
+            int delta = 1;
+            User user = transaction.CreatedBy;
+
+            if (transaction.TransactionCategory.Type.Name == "Expense")
+            {
+                delta = -1;
+            }
+
+            if (isCreate)
+            {
+                if (transaction.Date <= DateTime.Today)
+                {
+                    user.Balance += transaction.Amount * delta;
+                }
+            }
+            else if (isUpdate)
+            {
+                if (transaction.Date <= DateTime.Today && oldTransaction.Date <= DateTime.Today)
+                {
+                    user.Balance += (transaction.Amount - oldTransaction.Amount) * delta;
+                }
+                else if (transaction.Date <= DateTime.Today && oldTransaction.Date > DateTime.Today)
+                {
+                    user.Balance += transaction.Amount * delta;
+                }
+                else if (transaction.Date > DateTime.Today && oldTransaction.Date <= DateTime.Today)
+                {
+                    user.Balance -= oldTransaction.Amount * delta;
+                }
+            }
+            else if (isDelete)
+            {
+                if (oldTransaction.Date <= DateTime.Today)
+                {
+                    user.Balance -= oldTransaction.Amount * delta;
+                }
+            }
+
+            return await Update(user);
+        }
+
+        public Task<User> Delete(int id) => throw new NotImplementedException();
     }
 }

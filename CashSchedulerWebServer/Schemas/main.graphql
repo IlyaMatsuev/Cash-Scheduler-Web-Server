@@ -3,7 +3,6 @@ type User {
     firstName: String
     lastName: String
     email: String!
-    password: String!
     balance: Float!
 }
 
@@ -21,7 +20,7 @@ type Category {
     id: Int!
     name: String!
     transactionType: TransactionType!
-    transactionType_name: String!
+    transactionTypeName: String!
     user: User
     isCustom: Boolean!
     iconUrl: String!
@@ -79,7 +78,7 @@ type Query {
     getTransactionsForLastDays(days: Int): [Transaction!]
     getTransactionsByMonth(month: Int!, year: Int!): [Transaction!]
 
-    getAllRegularTransactions(size: Int): [RegularTransaction!]
+    getAllRegularTransactions(size: Int, month: Int, year: Int): [RegularTransaction!]
 
     getAllCurrencies: [Currency!]
 
