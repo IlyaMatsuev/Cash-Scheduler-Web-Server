@@ -123,6 +123,12 @@ namespace CashSchedulerWebServer.Mutations
                 arguments: new QueryArguments(new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "id" }),
                 resolve: context => contextProvider.GetRepository<IUserNotificationRepository>().Read(context.GetArgument<int>("id"))
             ).AuthorizeWith(policy);
+
+            Field<UserNotificationType>(
+                "unreadNotification",
+                arguments: new QueryArguments(new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "id" }),
+                resolve: context => contextProvider.GetRepository<IUserNotificationRepository>().Unread(context.GetArgument<int>("id"))
+            ).AuthorizeWith(policy);
             #endregion
 
             #region Settings

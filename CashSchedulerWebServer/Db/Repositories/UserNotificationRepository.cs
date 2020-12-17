@@ -2,7 +2,6 @@
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Utils;
 using GraphQL;
-using Microsoft.AspNetCore.DataProtection.XmlEncryption;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -51,7 +50,10 @@ namespace CashSchedulerWebServer.Db.Repositories
         {
             ModelValidator.ValidateModelAttributes(notification);
 
-            notification.CreatedFor = ContextProvider.GetRepository<IUserRepository>().GetById((int)UserId);
+            if (notification.CreatedFor == null)
+            {
+                notification.CreatedFor = ContextProvider.GetRepository<IUserRepository>().GetById((int)UserId);
+            }
 
             Context.UserNotifications.Add(notification);
             await Context.SaveChangesAsync();
@@ -91,6 +93,15 @@ namespace CashSchedulerWebServer.Db.Repositories
             {
                 Id = id,
                 IsRead = true
+            });
+        }
+
+        public Task<UserNotification> Unread(int id)
+        {
+            return Update(new UserNotification
+            {
+                Id = id,
+                IsRead = false
             });
         }
 

@@ -172,6 +172,7 @@ type Mutation {
     deleteRegularTransaction(id: Int!): RegularTransaction!
 
     readNotification(id: Int!): Notification!
+    unreadNotification(id: Int!): Notification!
 
     updateUserSetting(setting: UpdateUserSettingInput!): UserSetting!
     updateUserSettings(settings: [UpdateUserSettingInput!]): UserSetting!

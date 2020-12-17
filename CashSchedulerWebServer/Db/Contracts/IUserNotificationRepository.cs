@@ -8,5 +8,6 @@ namespace CashSchedulerWebServer.Db.Contracts
     {
         IEnumerable<UserNotification> GetAllUnread();
         Task<UserNotification> Read(int id);
+        Task<UserNotification> Unread(int id);
     }
 }
