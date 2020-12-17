@@ -1,7 +1,6 @@
 ﻿using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Db.Repositories;
 using CashSchedulerWebServer.Exceptions;
-using GraphQL;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;

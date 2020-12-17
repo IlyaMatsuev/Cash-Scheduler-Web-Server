@@ -38,7 +38,6 @@ namespace CashSchedulerWebServer.Authentication
 
             User user = ContextProvider.GetRepository<IUserRepository>().GetUserByEmail(email);
             if (user == null || user.Password != password.Hash())
-            //if (user == null || user.Password != password)
             {
                 throw new CashSchedulerException("Invalid email or password", new string[] { nameof(email), nameof(password) });
             }
@@ -133,11 +132,18 @@ namespace CashSchedulerWebServer.Authentication
                 new UserEmailVerificationCode(code, DateTime.Now.AddMinutes(AuthOptions.EMAIL_VERIFICATION_CODE_LIFETIME), user)
             );
 
-            await Notificator.SendEmail(
-                user.Email, 
-                NotificationTemplateType.VerificationCode, 
+            var notificationDelegator = new NotificationDelegator();
+            var template = notificationDelegator.GetTemplate(
+                NotificationTemplateType.VerificationCode,
                 new Dictionary<string, string> { { "code", verificationCode.Code } }
             );
+            await Notificator.SendEmail(user.Email, template);
+            await ContextProvider.GetRepository<IUserNotificationRepository>().Create(new UserNotification
+            {
+                Title = template.Subject,
+                Content = template.Body,
+                CreatedFor = user
+            });
 
             return email;
         }

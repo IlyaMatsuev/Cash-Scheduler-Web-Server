@@ -14,5 +14,10 @@ namespace CashSchedulerWebServer.Models
         public User CreatedFor { get; set; }
         [Required(ErrorMessage = "You need to specify if the notification is read or not")]
         public bool IsRead { get; set; }
+
+        public UserNotification()
+        {
+            IsRead = false;
+        }
     }
 }
