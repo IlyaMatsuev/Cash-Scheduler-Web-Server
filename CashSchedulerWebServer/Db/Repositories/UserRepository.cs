@@ -89,8 +89,22 @@ namespace CashSchedulerWebServer.Db.Repositories
 
         public async Task<User> Update(User user)
         {
-            ModelValidator.ValidateModelAttributes(user);
-            Context.Users.Update(user);
+            User targetUser = GetById(user.Id);
+            if (targetUser == null)
+            {
+                throw new CashSchedulerException("There is no such user");
+            }
+
+            if (user.Balance != default)
+            {
+                targetUser.Balance = user.Balance;
+            }
+
+            targetUser.FirstName = user.FirstName;
+            targetUser.LastName = user.LastName;
+
+            ModelValidator.ValidateModelAttributes(targetUser);
+            Context.Users.Update(targetUser);
             await Context.SaveChangesAsync();
             return user;
         }

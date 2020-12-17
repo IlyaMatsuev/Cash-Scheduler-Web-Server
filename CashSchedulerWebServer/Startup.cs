@@ -112,6 +112,7 @@ namespace CashSchedulerWebServer
             services.AddTransient<RegularTransactionType>();
 
             services.AddTransient<NewUserInputType>();
+            services.AddTransient<UpdateUserInputType>();
             services.AddTransient<NewCategoryInputType>();
             services.AddTransient<UpdateCategoryInputType>();
             services.AddTransient<NewTransactionInputType>();

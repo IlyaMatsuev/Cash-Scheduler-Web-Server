@@ -97,6 +97,13 @@ input NewUserInput {
     balance: Float
 }
 
+input UpdateUserInput {
+    id: Int!
+    firstName: String
+    lastName: String
+    balance: Float
+}
+
 input NewCategoryInput {
     name: String!
     transactionTypeName: String!
@@ -168,4 +175,6 @@ type Mutation {
 
     updateUserSetting(setting: UpdateUserSettingInput!): UserSetting!
     updateUserSettings(settings: [UpdateUserSettingInput!]): UserSetting!
+
+    updateUser(user: UpdateUserInput!): User!
 }

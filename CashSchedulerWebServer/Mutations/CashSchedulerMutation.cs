@@ -17,7 +17,6 @@ namespace CashSchedulerWebServer.Mutations
             string policy = configuration["App:Auth:UserPolicy"];
 
             #region Authorization
-            // Authentication/Authorization
             Field<UserType>(
                 "register",
                 arguments: new QueryArguments(new QueryArgument<NonNullGraphType<NewUserInputType>> { Name = "user" }),
@@ -50,8 +49,15 @@ namespace CashSchedulerWebServer.Mutations
                 resolve: context => authenticator.ResetPassword(context.GetArgument<string>("email"), context.GetArgument<string>("code"), context.GetArgument<string>("password")));
             #endregion
 
+            #region Users
+            Field<UserType>(
+                "updateUser",
+                arguments: new QueryArguments(new QueryArgument<NonNullGraphType<UpdateUserInputType>> { Name = "user" }),
+                resolve: context => contextProvider.GetRepository<IUserRepository>().Update(context.GetArgument<User>("user"))
+            ).AuthorizeWith(policy);
+            #endregion
+
             #region Categories
-            // Categories
             Field<CategoryType>(
                 "createCategory",
                 arguments: new QueryArguments(new QueryArgument<NonNullGraphType<NewCategoryInputType>> { Name = "category" }),
@@ -72,7 +78,6 @@ namespace CashSchedulerWebServer.Mutations
             #endregion
 
             #region Transactions
-            // Transactions
             Field<Types.TransactionType>(
                 "createTransaction",
                 arguments: new QueryArguments(new QueryArgument<NonNullGraphType<NewTransactionInputType>> { Name = "transaction" }),
@@ -93,7 +98,6 @@ namespace CashSchedulerWebServer.Mutations
             #endregion
 
             #region Regular Transactions
-            // Regular Transactions
             Field<RegularTransactionType>(
                 "createRegularTransaction",
                 arguments: new QueryArguments(new QueryArgument<NonNullGraphType<NewRegularTransactionInputType>> { Name = "transaction" }),
@@ -114,7 +118,6 @@ namespace CashSchedulerWebServer.Mutations
             #endregion
 
             #region Notifications
-            // Notifications
             Field<UserNotificationType>(
                 "readNotification",
                 arguments: new QueryArguments(new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "id" }),
@@ -123,7 +126,6 @@ namespace CashSchedulerWebServer.Mutations
             #endregion
 
             #region Settings
-            // Settings
             Field<UserSettingType>(
                 "updateUserSetting",
                 arguments: new QueryArguments(new QueryArgument<NonNullGraphType<UpdateUserSettingInputType>> { Name = "setting" }),
