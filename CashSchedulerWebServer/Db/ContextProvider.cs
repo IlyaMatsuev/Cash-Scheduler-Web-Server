@@ -13,6 +13,7 @@ namespace CashSchedulerWebServer.Db
         private CashSchedulerContext Context { get; set; }
         private IHttpContextAccessor HttpAccessor { get; set; }
 
+        // TODO: Get dependencies from the DependencyResolver
         private static readonly Dictionary<Type, Type> RepositoryTypesMap = new Dictionary<Type, Type>
         {
             { typeof(IUserRepository), typeof(UserRepository) },

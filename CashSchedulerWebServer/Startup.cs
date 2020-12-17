@@ -29,6 +29,7 @@ using Quartz;
 using CashSchedulerWebServer.Jobs;
 using System.Collections.Generic;
 using CashSchedulerWebServer.Jobs.Reporting;
+using GraphQL.Server;
 
 namespace CashSchedulerWebServer
 {
@@ -123,6 +124,8 @@ namespace CashSchedulerWebServer
 
             services.AddTransient<IDocumentExecuter, DocumentExecuter>();
             services.AddTransient<ISchema, CashSchedulerSchema>();
+
+            services.AddGraphQL().AddWebSockets();
             #endregion
         }
 
@@ -138,6 +141,8 @@ namespace CashSchedulerWebServer
                 CashSchedulerSeeder.InitializeDb(app);
             }
 
+            app.UseWebSockets();
+            app.UseGraphQLWebSockets<CashSchedulerSchema>();
             app.UseGraphiQl();
             app.UseRouting();
             app.UseCors();
