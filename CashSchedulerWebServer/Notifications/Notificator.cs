@@ -17,37 +17,17 @@ namespace CashSchedulerWebServer.Notifications
         }
 
 
-        // TODO: call the 2 overload of this method inside to reduce number of repeating lines
-        public async Task SendEmail(string address, NotificationTemplateType type, Dictionary<string, string> parameters)
+        public Task SendEmail(string address, NotificationTemplateType type, Dictionary<string, string> parameters)
         {
-            // TODO: these parameters should be stored as env variables
-            var from = new MailAddress(Configuration["AppEmail:Address"], Configuration["AppEmail:Name"]);
-            var to = new MailAddress(address);
-
             var templateDelegator = new NotificationDelegator();
             var template = templateDelegator.GetTemplate(type, parameters);
-            
-            var email = new MailMessage(from, to)
-            {
-                Subject = template.Subject,
-                Body = template.Body,
-                IsBodyHtml = true
-            };
 
-            // TODO: these parameters should be stored as env variables
-            var smtp = new SmtpClient(Configuration["AppEmail:SmtpClient:Host"], int.Parse(Configuration["AppEmail:SmtpClient:Port"]))
-            {
-                Credentials = new NetworkCredential(Configuration["AppEmail:Address"], Configuration["AppEmail:Password"]),
-                EnableSsl = true
-            };
-
-            await smtp.SendMailAsync(email);
+            return SendEmail(address, template);
         }
 
         public async Task SendEmail(string address, NotificationTemplate template)
         {
-            // TODO: these parameters should be stored as env variables
-            var from = new MailAddress(Configuration["AppEmail:Address"], Configuration["AppEmail:Name"]);
+            var from = new MailAddress(Configuration["App:Email:Address"], Configuration["App:Email:Name"]);
             var to = new MailAddress(address);
 
             var email = new MailMessage(from, to)
@@ -57,10 +37,9 @@ namespace CashSchedulerWebServer.Notifications
                 IsBodyHtml = true
             };
 
-            // TODO: these parameters should be stored as env variables
-            var smtp = new SmtpClient(Configuration["AppEmail:SmtpClient:Host"], int.Parse(Configuration["AppEmail:SmtpClient:Port"]))
+            var smtp = new SmtpClient(Configuration["App:Email:SMTP:Host"], int.Parse(Configuration["App:Email:SMTP:Port"]))
             {
-                Credentials = new NetworkCredential(Configuration["AppEmail:Address"], Configuration["AppEmail:Password"]),
+                Credentials = new NetworkCredential(Configuration["App:Email:Address"], Configuration["App:Email:Password"]),
                 EnableSsl = true
             };
 
