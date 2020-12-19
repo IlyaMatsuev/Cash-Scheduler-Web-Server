@@ -1,5 +1,4 @@
-﻿using CashSchedulerWebServer.Authentication.Contracts;
-using CashSchedulerWebServer.Db.Contracts;
+﻿using CashSchedulerWebServer.Db.Contracts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -14,7 +13,7 @@ namespace CashSchedulerWebServer.Authentication
         private const string TYPE_TOKEN_SEPARATOR = " ";
 
         private HttpContext HttpContext { get; set; }
-        private IContextProvider DbProvider { get; set; }
+        private IContextProvider ContextProvider { get; set; }
         private IConfiguration Configuration { get; set; }
 
         public UserContextManager(
@@ -23,7 +22,7 @@ namespace CashSchedulerWebServer.Authentication
             IConfiguration configuration)
         {
             HttpContext = httpAccessor.HttpContext;
-            DbProvider = contextProvider;
+            ContextProvider = contextProvider;
             Configuration = configuration;
         }
 
@@ -43,7 +42,7 @@ namespace CashSchedulerWebServer.Authentication
             {
                 claims.AddRange(tokenClaims);
             }
-            else if (bool.Parse(Configuration["IsDevelopment"]) && bool.Parse(Configuration["App:Auth:SkipAuth"]))
+            else if (bool.Parse(Configuration["App:Auth:SkipAuth"]))
             {
                 claims.AddRange(GetDevUserClaims());
             }
@@ -77,7 +76,7 @@ namespace CashSchedulerWebServer.Authentication
 
             return !string.IsNullOrEmpty(expiresIn) && !string.IsNullOrEmpty(id)
                 && DateTime.Parse(expiresIn) > DateTime.UtcNow
-                && DbProvider.GetRepository<IUserRepository>().GetById(Convert.ToInt32(id)) != null;
+                && ContextProvider.GetRepository<IUserRepository>().GetById(Convert.ToInt32(id)) != null;
         }
 
         private List<Claim> GetDevUserClaims()

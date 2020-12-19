@@ -1,6 +1,7 @@
 ﻿using CashSchedulerWebServer.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using System;
@@ -12,10 +13,7 @@ namespace CashSchedulerWebServer.Db
 {
     public static class CashSchedulerSeeder
     {
-        private static readonly string MOCK_DATA_FOLDER_PATH = AppDomain.CurrentDomain.BaseDirectory + "/../../../Db/MockData/";
-
-
-        public static void InitializeDb(IApplicationBuilder app)
+        public static void InitializeDb(IApplicationBuilder app, IConfiguration configuration)
         {
             using var serviceScope = app.ApplicationServices.CreateScope();
             var context = serviceScope.ServiceProvider.GetService<CashSchedulerContext>();
@@ -28,7 +26,7 @@ namespace CashSchedulerWebServer.Db
                 context
                     .EmptyDb()
                     .ResetIdentitiesSeed()
-                    .SeedDb()
+                    .SeedDb(configuration)
                     .CompleteTransaction();
             }
             catch (Exception error)
@@ -37,17 +35,19 @@ namespace CashSchedulerWebServer.Db
             }
         }
 
-        private static CashSchedulerContext SeedDb(this CashSchedulerContext context)
+        private static CashSchedulerContext SeedDb(this CashSchedulerContext context, IConfiguration configuration)
         {
             Console.WriteLine("Loading data...");
 
-            string usersJson = File.ReadAllText(MOCK_DATA_FOLDER_PATH + @"Users.json");
-            string transactionTypesJson = File.ReadAllText(MOCK_DATA_FOLDER_PATH + @"TransactionTypes.json");
-            string userSettingsJson = File.ReadAllText(MOCK_DATA_FOLDER_PATH + @"UserSettings.json");
-            string userNotificationsJson = File.ReadAllText(MOCK_DATA_FOLDER_PATH + @"UserNotifications.json");
-            string categoriesJson = File.ReadAllText(MOCK_DATA_FOLDER_PATH + @"Categories.json");
-            string transactionsJson = File.ReadAllText(MOCK_DATA_FOLDER_PATH + @"Transactions.json");
-            string regularTransactionsJson = File.ReadAllText(MOCK_DATA_FOLDER_PATH + @"RegularTransactions.json");
+            string mockDataFolderPath = GetMockDataFolderPath(configuration);
+
+            string usersJson = File.ReadAllText(mockDataFolderPath + @"Users.json");
+            string transactionTypesJson = File.ReadAllText(mockDataFolderPath + @"TransactionTypes.json");
+            string userSettingsJson = File.ReadAllText(mockDataFolderPath + @"UserSettings.json");
+            string userNotificationsJson = File.ReadAllText(mockDataFolderPath + @"UserNotifications.json");
+            string categoriesJson = File.ReadAllText(mockDataFolderPath + @"Categories.json");
+            string transactionsJson = File.ReadAllText(mockDataFolderPath + @"Transactions.json");
+            string regularTransactionsJson = File.ReadAllText(mockDataFolderPath + @"RegularTransactions.json");
 
             var users = JsonConvert.DeserializeObject<List<User>>(usersJson);
             var transactionTypes = JsonConvert.DeserializeObject<List<TransactionType>>(transactionTypesJson);
@@ -187,6 +187,12 @@ namespace CashSchedulerWebServer.Db
                 transaction.Rollback();
                 Console.WriteLine($"The error occured while loading the mock data: {error.Message}: \n{error.StackTrace}");
             }
+        }
+
+
+        private static string GetMockDataFolderPath(IConfiguration configuration)
+        {
+            return AppDomain.CurrentDomain.BaseDirectory + configuration["App:Db:MockDataRelativeFolderPath"];
         }
     }
 }

@@ -52,7 +52,7 @@ namespace CashSchedulerWebServer
             {
                 options.AddPolicy(
                     "ReactClient", 
-                    builder => builder.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader()
+                    builder => builder.WithOrigins(GetClientEndpoint(Configuration)).AllowAnyMethod().AllowAnyHeader()
                 );
             });
             #endregion
@@ -133,9 +133,9 @@ namespace CashSchedulerWebServer
                 app.UseDeveloperExceptionPage();
             }
 
-            if (bool.Parse(Configuration["Data:RefreshDataOnLaunch"]))
+            if (bool.Parse(Configuration["App:Db:Refresh"]))
             {
-                CashSchedulerSeeder.InitializeDb(app);
+                CashSchedulerSeeder.InitializeDb(app, Configuration);
             }
 
             app.UseGraphiQl();
@@ -148,17 +148,29 @@ namespace CashSchedulerWebServer
         }
 
 
+
+        private string GetClientEndpoint(IConfiguration configuration)
+        {
+            string protocol = configuration["App:Client:Protocol"];
+            string host = configuration["App:Client:Host"];
+            string port = configuration["App:Client:Port"];
+
+            return $"{protocol}://{host}:{port}";
+        }
+
         private string GetConnectionString(IConfiguration configuration)
         {
-            string server = configuration["DbServer"] ?? ".\\SQLEXPRESS";
-            string port = configuration["DbPort"] ?? "1433";
-            string username = configuration["DbUsername"];
-            string password = configuration["DbPassword"];
-            string database = configuration["DbName"] ?? "cash_scheduler";
+            string host = configuration["App:Db:Host"];
+            string port = configuration["App:Db:Port"];
+            string database = configuration["App:Db:Name"];
+            string username = configuration["App:Db:Username"];
+            string password = configuration["App:Db:Password"];
 
-            return bool.Parse(configuration["App:Db:ConnectionStringFromSecrets"])
-                ? configuration.GetConnectionString("Default")
-                : $"Server={server},{port};Initial Catalog={database};User ID = {username};Password={password}";
+            string connectionFromSecrets = configuration.GetConnectionString("Default");
+
+            return string.IsNullOrEmpty(connectionFromSecrets)
+                ? $"Server={host},{port};Initial Catalog={database};User ID = {username};Password={password}"
+                : connectionFromSecrets;
         }
     }
 }
