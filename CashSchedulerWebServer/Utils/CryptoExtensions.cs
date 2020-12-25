@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -6,23 +8,18 @@ namespace CashSchedulerWebServer.Utils
 {
     public static class CryptoExtensions
     {
-        public static string Hash(this string input)
+        public static string Hash(this string input, IConfiguration configuration)
         {
-            // TODO: add salt
             using SHA256 sha = SHA256.Create();
-            return Encoding.ASCII.GetString(sha.ComputeHash(Encoding.ASCII.GetBytes(input)));
+            return Encoding.ASCII.GetString(sha.ComputeHash(Encoding.ASCII.GetBytes(input + configuration["App:Auth:PasswordSalt"])));
         }
 
-        public static string Code(this string input)
+        public static string Code(this string input, IConfiguration configuration)
         {
-            // TODO: implement a better code generation
-            string code = string.Empty;
             var random = new Random();
-            for (int i = 0; i < 7; i++)
-            {
-                code += random.Next(0, 9);
-            }
-            return code;
+            return string.Concat(
+                Enumerable.Range(0, Convert.ToInt32(configuration["App:Auth:EmailVerificationCodeLength"])).Select(i => random.Next(0, 9).ToString())
+            );
         }
     }
 }

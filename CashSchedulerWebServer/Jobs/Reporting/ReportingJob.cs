@@ -27,8 +27,7 @@ namespace CashSchedulerWebServer.Jobs.Reporting
         {
             var now = DateTime.UtcNow;
             Console.WriteLine($"Running the {context.JobDetail.Description}");
-            // TODO: fetch only users with turned notifications setting
-            var transactionsByUsers = cashSchedulerContext.Transactions.Where(t => t.Date >= now.AddDays(-7).Date && t.TransactionCategory.Type.Name == "Expense")
+            var transactionsByUsers = cashSchedulerContext.Transactions.Where(t => t.Date >= now.AddDays(-7).Date && t.TransactionCategory.Type.Name == TransactionType.Options.Expense.ToString())
                 .Include(t => t.TransactionCategory)
                 .Include(t => t.TransactionCategory.Type)
                 .Include(t => t.CreatedBy).ToList()
@@ -87,8 +86,8 @@ namespace CashSchedulerWebServer.Jobs.Reporting
                 List<UserSetting> settings = settingsByUsers.FirstOrDefault(s => s.Key == user)?.ToList();
                 if (settings != null)
                 {
-                    UserSetting notificationsEnabledSetting = settings.FirstOrDefault(s => s.Name == "turnNotificationsOn");
-                    UserSetting duplicateToEmailSetting = settings.FirstOrDefault(s => s.Name == "duplicateToEmail");
+                    UserSetting notificationsEnabledSetting = settings.FirstOrDefault(s => s.Name == UserSetting.SettingOptions.TurnNotificationsOn.ToString());
+                    UserSetting duplicateToEmailSetting = settings.FirstOrDefault(s => s.Name == UserSetting.SettingOptions.DuplicateToEmail.ToString());
 
                     if (notificationsEnabledSetting?.Value == "true")
                     {
@@ -120,7 +119,7 @@ namespace CashSchedulerWebServer.Jobs.Reporting
         private List<IGrouping<User, UserSetting>> GetSettingsByUsers(List<int> usersIds)
         {
             return cashSchedulerContext.UserSettings
-                .Where(s => usersIds.Contains(s.SettingFor.Id) && s.UnitName == "notifications").AsEnumerable()
+                .Where(s => usersIds.Contains(s.SettingFor.Id) && s.UnitName == UserSetting.UnitOptions.Notifications.ToString()).AsEnumerable()
                 .GroupBy(s => s.SettingFor).ToList();
         }
     }

@@ -6,6 +6,7 @@ using CashSchedulerWebServer.Notifications;
 using CashSchedulerWebServer.Notifications.Contracts;
 using CashSchedulerWebServer.Types;
 using CashSchedulerWebServer.Utils;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -17,11 +18,13 @@ namespace CashSchedulerWebServer.Authentication
     {
         private IContextProvider ContextProvider { get; set; }
         private INotificator Notificator { get; set; }
+        private IConfiguration Configuration { get; set; }
 
-        public Authenticator(IContextProvider contextProvider, INotificator notificator)
+        public Authenticator(IContextProvider contextProvider, INotificator notificator, IConfiguration configuration)
         {
             ContextProvider = contextProvider;
             Notificator = notificator;
+            Configuration = configuration;
         }
 
 
@@ -37,13 +40,13 @@ namespace CashSchedulerWebServer.Authentication
             }
 
             User user = ContextProvider.GetRepository<IUserRepository>().GetUserByEmail(email);
-            if (user == null || user.Password != password.Hash())
+            if (user == null || user.Password != password.Hash(Configuration))
             {
                 throw new CashSchedulerException("Invalid email or password", new string[] { nameof(email), nameof(password) });
             }
 
-            var accessToken = user.GenerateToken(AuthOptions.TokenType.ACCESS);
-            var refreshToken = user.GenerateToken(AuthOptions.TokenType.REFRESH);
+            var accessToken = user.GenerateToken(AuthOptions.TokenType.ACCESS, Configuration);
+            var refreshToken = user.GenerateToken(AuthOptions.TokenType.REFRESH, Configuration);
 
             await ContextProvider.GetRepository<IUserRefreshTokenRepository>().Update(new UserRefreshToken(refreshToken.token, refreshToken.expiresIn, user));
 
@@ -59,14 +62,15 @@ namespace CashSchedulerWebServer.Authentication
             }
             else
             {
-                var refreshToken = ContextProvider.GetRepository<IUserRefreshTokenRepository>().GetByUserId(user.Id);
+                var refreshTokenRepository = ContextProvider.GetRepository<IUserRefreshTokenRepository>();
+                var refreshToken = refreshTokenRepository.GetByUserId(user.Id);
                 if (refreshToken == null)
                 {
                     throw new CashSchedulerException("You are already logged out");
                 }
                 else
                 {
-                    await ContextProvider.GetRepository<IUserRefreshTokenRepository>().Delete(refreshToken.Id);
+                    await refreshTokenRepository.Delete(refreshToken.Id);
                 }
             }
             return user;
@@ -74,7 +78,9 @@ namespace CashSchedulerWebServer.Authentication
 
         public async Task<User> Register(User newUser)
         {
-            if (ContextProvider.GetRepository<IUserRepository>().HasUserWithEmail(newUser.Email))
+            var userRepository = ContextProvider.GetRepository<IUserRepository>();
+
+            if (userRepository.HasUserWithEmail(newUser.Email))
             {
                 throw new CashSchedulerException("User with the same email has been already registered", new string[] { "email" });
             }
@@ -87,12 +93,12 @@ namespace CashSchedulerWebServer.Authentication
             if (!Regex.IsMatch(newUser.Password, AuthOptions.PASSWORD_REGEX))
             {
                 throw new CashSchedulerException(
-                    "Your password is too week. Consider to choose something with upper and lower case, digits and special characters with min and max length of 8 and 15", 
+                    "Your password is too week. Consider to choose something with upper and lower case, digits and special characters with min and max length of 8 and 15",
                     new string[] { "password" }
                 );
             }
 
-            return await ContextProvider.GetRepository<IUserRepository>().Create(newUser);
+            return await userRepository.Create(newUser);
         }
 
         public async Task<AuthTokensType> Token(string email, string refreshToken)
@@ -103,18 +109,19 @@ namespace CashSchedulerWebServer.Authentication
                 throw new CashSchedulerException("There is no such user", new string[] { nameof(email) });
             }
 
-            var userRefreshToken = ContextProvider.GetRepository<IUserRefreshTokenRepository>().GetByUserId(user.Id);
+            var refreshTokenRepository = ContextProvider.GetRepository<IUserRefreshTokenRepository>();
+            var userRefreshToken = refreshTokenRepository.GetByUserId(user.Id);
             if (userRefreshToken == null || userRefreshToken.Token != refreshToken)
             {
                 throw new CashSchedulerException("Invalid refresh token", new string[] { nameof(refreshToken) });
             }
 
-            var newAccessToken = user.GenerateToken(AuthOptions.TokenType.ACCESS);
-            var newRefreshToken = user.GenerateToken(AuthOptions.TokenType.REFRESH);
+            var newAccessToken = user.GenerateToken(AuthOptions.TokenType.ACCESS, Configuration);
+            var newRefreshToken = user.GenerateToken(AuthOptions.TokenType.REFRESH, Configuration);
 
             userRefreshToken.Token = newRefreshToken.token;
 
-            await ContextProvider.GetRepository<IUserRefreshTokenRepository>().Update(userRefreshToken);
+            await refreshTokenRepository.Update(userRefreshToken);
 
             return new AuthTokensType(newAccessToken.token, newRefreshToken.token);
         }
@@ -127,9 +134,27 @@ namespace CashSchedulerWebServer.Authentication
                 throw new CashSchedulerException("There is no such user", new[] { nameof(email) });
             }
 
-            string code = email.Code();
-            var verificationCode = await ContextProvider.GetRepository<IUserEmailVerificationCodeRepository>().Update(
-                new UserEmailVerificationCode(code, DateTime.Now.AddMinutes(AuthOptions.EMAIL_VERIFICATION_CODE_LIFETIME), user)
+            int allowedVerificationInterval = Convert.ToInt32(Configuration["App:Auth:EmailVerificationTokenLifetime"]);
+            var verificationCodeRepository = ContextProvider.GetRepository<IUserEmailVerificationCodeRepository>();
+
+            var existingVerificationCode = verificationCodeRepository.GetByUserId(user.Id);
+
+            if (existingVerificationCode != null)
+            {
+                TimeSpan difference = DateTime.UtcNow.Subtract(existingVerificationCode.ExpiredDate);
+
+                if (difference.TotalSeconds < 0 && Math.Abs(difference.TotalSeconds) < allowedVerificationInterval * 60)
+                {
+                    throw new CashSchedulerException(
+                        $"We already sent you a code. You can request it again in: {Math.Abs(difference.Minutes)}:{Math.Abs(difference.Seconds)}",
+                        new[] { nameof(email) }
+                    );
+                }
+            }
+
+            var verificationCode = await verificationCodeRepository.Update(
+                new UserEmailVerificationCode(email.Code(Configuration),
+                DateTime.UtcNow.AddMinutes(allowedVerificationInterval), user)
             );
 
             var notificationDelegator = new NotificationDelegator();
@@ -162,7 +187,7 @@ namespace CashSchedulerWebServer.Authentication
                 throw new CashSchedulerException("We haven't sent you a code yet", new[] { nameof(email) });
             }
 
-            if (verificationCode.ExpiredDate < DateTime.Now)
+            if (verificationCode.ExpiredDate < DateTime.UtcNow)
             {
                 throw new CashSchedulerException("This code has been expired", new[] { nameof(code) });
             }
@@ -193,8 +218,10 @@ namespace CashSchedulerWebServer.Authentication
             }
 
             var user = await ContextProvider.GetRepository<IUserRepository>().UpdatePassword(email, password);
-            var verificationCode = ContextProvider.GetRepository<IUserEmailVerificationCodeRepository>().GetByUserId(user.Id);
-            await ContextProvider.GetRepository<IUserEmailVerificationCodeRepository>().Delete(verificationCode.Id);
+
+            var verificationCodeRepository = ContextProvider.GetRepository<IUserEmailVerificationCodeRepository>();
+            var verificationCode = verificationCodeRepository.GetByUserId(user.Id);
+            await verificationCodeRepository.Delete(verificationCode.Id);
             return user;
         }
     }

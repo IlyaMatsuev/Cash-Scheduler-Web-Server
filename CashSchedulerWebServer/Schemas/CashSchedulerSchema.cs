@@ -1,10 +1,11 @@
 ﻿using CashSchedulerWebServer.Mutations;
 using CashSchedulerWebServer.Queries;
 using GraphQL;
+using GraphQL.Types;
 
 namespace CashSchedulerWebServer.Schemas
 {
-    public class CashSchedulerSchema : GraphQL.Types.Schema
+    public class CashSchedulerSchema : Schema
     {
         public CashSchedulerSchema(IDependencyResolver resolver) : base(resolver)
         {

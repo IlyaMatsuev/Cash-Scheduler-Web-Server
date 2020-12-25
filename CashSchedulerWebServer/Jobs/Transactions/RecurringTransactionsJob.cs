@@ -1,4 +1,5 @@
 ﻿using CashSchedulerWebServer.Db;
+using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using Microsoft.EntityFrameworkCore;
 using Quartz;
@@ -43,10 +44,11 @@ namespace CashSchedulerWebServer.Jobs.Transactions
                 }));
                 recurringTransactionsToBeUpdated.AddRange(t.Select(rt =>
                 {
+                    rt.Date = DateTime.Today;
                     rt.NextTransactionDate = GetNextDateByInterval(rt);
                     return rt;
                 }));
-                user.Balance += t.Sum(rt => rt.TransactionCategory.Type.Name == "Income" ? rt.Amount : -rt.Amount);
+                user.Balance += t.Sum(rt => rt.TransactionCategory.Type.Name == TransactionType.Options.Income.ToString() ? rt.Amount : -rt.Amount);
                 return user;
             }).ToList();
 
@@ -78,15 +80,22 @@ namespace CashSchedulerWebServer.Jobs.Transactions
 
         private DateTime GetNextDateByInterval(RegularTransaction transaction)
         {
-            // TODO: we don't want to use names like that. Probably move to enum or constants
-            return transaction.Interval switch
+            var intervals = new Dictionary<string, Func<DateTime, DateTime>>
             {
-                "day" => transaction.NextTransactionDate.AddDays(1),
-                "week" => transaction.NextTransactionDate.AddDays(7),
-                "month" => transaction.NextTransactionDate.AddMonths(1),
-                "year" => transaction.NextTransactionDate.AddYears(1),
-                _ => transaction.NextTransactionDate,
+                {RegularTransaction.IntervalOptions.Day.ToString().ToLower(), (date) => date.AddDays(1) },
+                {RegularTransaction.IntervalOptions.Week.ToString().ToLower(), (date) => date.AddDays(7) },
+                {RegularTransaction.IntervalOptions.Month.ToString().ToLower(), (date) => date.AddMonths(1) },
+                {RegularTransaction.IntervalOptions.Year.ToString().ToLower(), (date) => date.AddYears(1) }
             };
+
+            if (intervals.ContainsKey(transaction.Interval))
+            {
+                return intervals[transaction.Interval](transaction.NextTransactionDate);
+            }
+            else
+            {
+                throw new CashSchedulerException($"There is no such value for interval: {transaction.Interval}");
+            }
         }
     }
 }

@@ -34,5 +34,13 @@ namespace CashSchedulerWebServer.Models
         {
             Date = DateTime.UtcNow;
         }
+
+        public enum IntervalOptions
+        {
+            Day,
+            Week,
+            Month,
+            Year
+        }
     }
 }

@@ -32,7 +32,7 @@ namespace CashSchedulerWebServer.Jobs.Transactions
             List<User> usersToUpdateBalance = transactions.GroupBy(t => t.CreatedBy).Select(t =>
             {
                 User user = t.Key;
-                user.Balance += t.Sum(transaction => transaction.TransactionCategory.Type.Name == "Income" ? transaction.Amount : -transaction.Amount);
+                user.Balance += t.Sum(transaction => transaction.TransactionCategory.Type.Name == TransactionType.Options.Income.ToString() ? transaction.Amount : -transaction.Amount);
                 return user;
             }).ToList();
 

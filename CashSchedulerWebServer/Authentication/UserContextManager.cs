@@ -10,8 +10,6 @@ namespace CashSchedulerWebServer.Authentication
 {
     public class UserContextManager
     {
-        private const string TYPE_TOKEN_SEPARATOR = " ";
-
         private HttpContext HttpContext { get; set; }
         private IContextProvider ContextProvider { get; set; }
         private IConfiguration Configuration { get; set; }
@@ -58,7 +56,7 @@ namespace CashSchedulerWebServer.Authentication
 
             if (!string.IsNullOrEmpty(authHeader))
             {
-                var authParams = authHeader.Split(TYPE_TOKEN_SEPARATOR);
+                var authParams = authHeader.Split(AuthOptions.TYPE_TOKEN_SEPARATOR);
 
                 if (authParams[0] == AuthOptions.AUTHENTICATION_TYPE && authParams.Length > 1)
                 {
@@ -83,7 +81,9 @@ namespace CashSchedulerWebServer.Authentication
         {
             return new List<Claim>
             {
-                new Claim("ExpirationDateTime", DateTime.UtcNow.Add(TimeSpan.FromMinutes(AuthOptions.GetTokenLifetime(AuthOptions.TokenType.ACCESS))).ToString()),
+                new Claim("ExpirationDateTime", DateTime.UtcNow.Add(
+                    TimeSpan.FromMinutes(AuthOptions.GetTokenLifetime(AuthOptions.TokenType.ACCESS, Configuration))
+                ).ToString()),
                 new Claim("Id", "1")
             };
         }

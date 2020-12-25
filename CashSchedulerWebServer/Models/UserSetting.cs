@@ -12,5 +12,20 @@ namespace CashSchedulerWebServer.Models
         [Required(ErrorMessage = "Setting must contain a unit name")]
         public string UnitName { get; set; }
         public User SettingFor { get; set; }
+
+
+        public enum SettingOptions
+        {
+            ShowBalance,
+            TurnNotificationsOn,
+            DuplicateToEmail,
+            TurnNotificationsSoundOn
+        }
+
+        public enum UnitOptions
+        {
+            General,
+            Notifications
+        }
     }
 }

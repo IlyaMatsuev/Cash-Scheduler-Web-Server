@@ -1,8 +1,6 @@
 using CashSchedulerWebServer.Db;
 using CashSchedulerWebServer.Db.Contracts;
-using CashSchedulerWebServer.Queries;
 using CashSchedulerWebServer.Schemas;
-using CashSchedulerWebServer.Types;
 using GraphiQl;
 using GraphQL;
 using GraphQL.Types;
@@ -17,8 +15,6 @@ using Newtonsoft.Json;
 using Microsoft.AspNetCore.Http;
 using GraphQL.Authorization;
 using CashSchedulerWebServer.Authentication;
-using CashSchedulerWebServer.Mutations;
-using CashSchedulerWebServer.Types.Inputs;
 using CashSchedulerWebServer.Authentication.Contracts;
 using CashSchedulerWebServer.Notifications.Contracts;
 using CashSchedulerWebServer.Notifications;
@@ -30,6 +26,7 @@ using CashSchedulerWebServer.Jobs;
 using System.Collections.Generic;
 using CashSchedulerWebServer.Jobs.Reporting;
 using GraphQL.Server;
+using CashSchedulerWebServer.Db.Repositories;
 
 namespace CashSchedulerWebServer
 {
@@ -76,8 +73,17 @@ namespace CashSchedulerWebServer
             #endregion
 
             #region Database
-            services.AddTransient<IContextProvider, ContextProvider>();
             services.AddDbContext<CashSchedulerContext>(options => options.UseSqlServer(GetConnectionString(Configuration)));
+            services.AddTransient<IContextProvider, ContextProvider>();
+            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IUserEmailVerificationCodeRepository, UserEmailVerificationCodeRepository>();
+            services.AddTransient<IUserRefreshTokenRepository, UserRefreshTokenRepository>();
+            services.AddTransient<IUserNotificationRepository, UserNotificationRepository>();
+            services.AddTransient<IUserSettingRepository, UserSettingRepository>();
+            services.AddTransient<ITransactionTypeRepository, TransactionTypeRepository>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<ITransactionRepository, TransactionRepository>();
+            services.AddTransient<IRegularTransactionRepository, RegularTransactionRepository>();
             #endregion
 
             #region Utils configurations
@@ -101,31 +107,9 @@ namespace CashSchedulerWebServer
 
             #region GraphQL
             services.AddTransient<IDependencyResolver>(resolver => new FuncDependencyResolver(resolver.GetRequiredService));
-            services.AddTransient<CashSchedulerQuery>();
-            services.AddTransient<CashSchedulerMutation>();
-            services.AddTransient<UserType>();
-            services.AddTransient<AuthTokensType>();
-            services.AddTransient<UserSettingType>();
-            services.AddTransient<UserNotificationType>();
-            services.AddTransient<CategoryType>();
-            services.AddTransient<TransactionTypeType>();
-            services.AddTransient<TransactionType>();
-            services.AddTransient<RegularTransactionType>();
-
-            services.AddTransient<NewUserInputType>();
-            services.AddTransient<UpdateUserInputType>();
-            services.AddTransient<NewCategoryInputType>();
-            services.AddTransient<UpdateCategoryInputType>();
-            services.AddTransient<NewTransactionInputType>();
-            services.AddTransient<UpdateTransactionInputType>();
-            services.AddTransient<NewRegularTransactionInputType>();
-            services.AddTransient<UpdateRegularTransactionInputType>();
-            services.AddTransient<UpdateUserSettingInputType>();
-
             services.AddTransient<IDocumentExecuter, DocumentExecuter>();
             services.AddTransient<ISchema, CashSchedulerSchema>();
-
-            services.AddGraphQL().AddWebSockets();
+            services.AddGraphQL().AddGraphTypes(ServiceLifetime.Transient).AddWebSockets();
             #endregion
         }
 

@@ -1,53 +1,41 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using CashSchedulerWebServer.Exceptions;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Text;
 
 namespace CashSchedulerWebServer.Authentication
 {
     public class AuthOptions
     {
+        public const string TYPE_TOKEN_SEPARATOR = " ";
         public const string AUTHENTICATION_TYPE = "Bearer";
         public const string ISSUER = "CashSchedulerServer";
         public const string AUDIENCE = "CashSchedulerClient";
 
-        // TODO: move these parameters to secret file
-        public const int ACCESS_TOKEN_LIFETIME = 60;
-        public const int REFRESH_TOKEN_LIFETIME = 10080;
-        public const int EMAIL_VERIFICATION_CODE_LIFETIME = 5;
-
-        private const string ACCESS_TOKEN_SECRET = "sexdfcghjbkmllmknbhvgcftxdrzswsrxdcfvghbjklokpjihuigyftrxcfvg";
-        private const string REFRESH_TOKEN_SECRET = "iwbjqwdqhbwdbqhwdbqwiqojfowejiuwejfoiwqjdlqndkanslfjpjoiqruih3ru";
-
         public const string EMAIL_REGEX = @"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*@((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))\z";
         public const string PASSWORD_REGEX = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,15}$";
 
-        public static SymmetricSecurityKey GetSecretKey(TokenType tokenType)
+        public static SymmetricSecurityKey GetSecretKey(TokenType tokenType, IConfiguration configuration)
         {
-            SymmetricSecurityKey symmetricKey = null;
-            switch (tokenType)
+            string secret = tokenType switch
             {
-                case TokenType.ACCESS:
-                    symmetricKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(ACCESS_TOKEN_SECRET));
-                    break;
-                case TokenType.REFRESH:
-                    symmetricKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(REFRESH_TOKEN_SECRET));
-                    break;
-            }
-            return symmetricKey;
+                TokenType.ACCESS => configuration["App:Auth:AccessTokenSecret"],
+                TokenType.REFRESH => configuration["App:Auth:RefreshTokenSecret"],
+                _ => throw new CashSchedulerException("There is no such token type"),
+            };
+            return new SymmetricSecurityKey(Encoding.ASCII.GetBytes(secret));
         }
 
-        public static int GetTokenLifetime(TokenType tokenType)
+        public static int GetTokenLifetime(TokenType tokenType, IConfiguration configuration)
         {
-            int lifetime = 0;
-            switch(tokenType)
+            string lifetime = tokenType switch
             {
-                case TokenType.ACCESS:
-                    lifetime = ACCESS_TOKEN_LIFETIME;
-                    break;
-                case TokenType.REFRESH:
-                    lifetime = REFRESH_TOKEN_LIFETIME;
-                    break;
-            }
-            return lifetime;
+                TokenType.ACCESS => configuration["App:Auth:AccessTokenLifetime"],
+                TokenType.REFRESH => configuration["App:Auth:RefreshTokenLifetime"],
+                _ => throw new CashSchedulerException("There is no such token type"),
+            };
+            return Convert.ToInt32(lifetime);
         }
 
 

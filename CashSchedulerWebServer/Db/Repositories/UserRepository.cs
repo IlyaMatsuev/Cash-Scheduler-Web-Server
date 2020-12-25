@@ -3,6 +3,7 @@ using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Utils;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,13 +15,15 @@ namespace CashSchedulerWebServer.Db.Repositories
     public class UserRepository : IUserRepository
     {
         private CashSchedulerContext Context { get; set; }
+        private IConfiguration Configuration { get; set; }
         private ClaimsPrincipal User { get; set; }
         private int? UserId => Convert.ToInt32(User?.Claims.FirstOrDefault(claim => claim.Type == "Id")?.Value ?? "-1");
 
-        public UserRepository(CashSchedulerContext context, IHttpContextAccessor httpAccessor)
+        public UserRepository(CashSchedulerContext context, IHttpContextAccessor httpAccessor, IConfiguration configuration)
         {
             Context = context;
             User = httpAccessor.HttpContext.User;
+            Configuration = configuration;
         }
 
 
@@ -63,7 +66,7 @@ namespace CashSchedulerWebServer.Db.Repositories
         {
             ModelValidator.ValidateModelAttributes(user);
 
-            user.Password = user.Password.Hash();
+            user.Password = user.Password.Hash(Configuration);
             Context.Users.Add(user);
             await Context.SaveChangesAsync();
             return GetUserByEmail(user.Email);
@@ -79,7 +82,7 @@ namespace CashSchedulerWebServer.Db.Repositories
 
             ModelValidator.ValidateModelAttributes(user);
 
-            user.Password = password.Hash();
+            user.Password = password.Hash(Configuration);
 
             Context.Users.Update(user);
             await Context.SaveChangesAsync();
@@ -111,11 +114,10 @@ namespace CashSchedulerWebServer.Db.Repositories
 
         public async Task<User> UpdateBalance(Transaction transaction, Transaction oldTransaction, bool isCreate = false, bool isUpdate = false, bool isDelete = false)
         {
-            // TODO: we don't want to use exact names from db records
             int delta = 1;
             User user = transaction.CreatedBy;
 
-            if (transaction.TransactionCategory.Type.Name == "Expense")
+            if (transaction.TransactionCategory.Type.Name == TransactionType.Options.Expense.ToString())
             {
                 delta = -1;
             }

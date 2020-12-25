@@ -1,4 +1,5 @@
 ﻿using CashSchedulerWebServer.Models;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -9,10 +10,10 @@ namespace CashSchedulerWebServer.Authentication
 {
     public static class JwtTokenExtensions
     {
-        public static (string token, DateTime expiresIn) GenerateToken(this User user, AuthOptions.TokenType tokenType)
+        public static (string token, DateTime expiresIn) GenerateToken(this User user, AuthOptions.TokenType tokenType, IConfiguration configuration)
         {
             var now = DateTime.UtcNow;
-            var expiresIn = now.AddMinutes(AuthOptions.GetTokenLifetime(tokenType));
+            var expiresIn = now.AddMinutes(AuthOptions.GetTokenLifetime(tokenType, configuration));
             IEnumerable<Claim> claims = new List<Claim>
             {
                 new Claim("ExpirationDateTime", expiresIn.ToString()),
@@ -25,7 +26,7 @@ namespace CashSchedulerWebServer.Authentication
                 notBefore: now,
                 claims: claims,
                 expires: expiresIn,
-                signingCredentials: new SigningCredentials(AuthOptions.GetSecretKey(tokenType), SecurityAlgorithms.HmacSha256)
+                signingCredentials: new SigningCredentials(AuthOptions.GetSecretKey(tokenType, configuration), SecurityAlgorithms.HmacSha256)
             );
             
             return (new JwtSecurityTokenHandler().WriteToken(token), expiresIn);
