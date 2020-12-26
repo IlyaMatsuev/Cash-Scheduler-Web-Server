@@ -2,10 +2,12 @@
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Types;
 using GraphQL.Resolvers;
+using GraphQL.Subscription;
 using GraphQL.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Linq;
 using System.Threading.Tasks;
 
 namespace CashSchedulerWebServer.Subscriptions
@@ -19,7 +21,7 @@ namespace CashSchedulerWebServer.Subscriptions
                 Name = "notificationAdded",
                 Type = typeof(UserNotificationType),
                 Resolver = new FuncFieldResolver<UserNotification>(context => context.Source as UserNotification),
-                Subscriber = new EventStreamResolver<UserNotification>(context => context.Source as IObservable<UserNotification>)
+                Subscriber = new EventStreamResolver<UserNotification>(context => contextProvider.GetRepository<IUserNotificationRepository>().GetLast())
             });
         }
     }

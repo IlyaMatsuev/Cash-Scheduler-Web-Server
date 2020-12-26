@@ -9,6 +9,8 @@ using GraphQL.Validation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Cors;
+using GraphQL.NewtonsoftJson;
+using GraphQL.Validation.Complexity;
 
 namespace CashSchedulerWebServer.Controllers
 {
@@ -44,8 +46,9 @@ namespace CashSchedulerWebServer.Controllers
                 Schema = Schema,
                 Query = query.Query,
                 Inputs = query.Variables?.ToInputs(),
-                ValidationRules = DocumentValidator.CoreRules().Concat(ValidationRules),
-                UserContext = userContext
+                ValidationRules = DocumentValidator.CoreRules.Concat(ValidationRules),
+                UserContext = userContext,
+                ComplexityConfiguration = new ComplexityConfiguration { MaxDepth = 15 }
             });
             
             IActionResult response;
@@ -64,6 +67,9 @@ namespace CashSchedulerWebServer.Controllers
             }
             else
             {
+                result.Document = null;
+                result.Operation = null;
+                result.Perf = null;
                 response = Ok(result);
             }
 

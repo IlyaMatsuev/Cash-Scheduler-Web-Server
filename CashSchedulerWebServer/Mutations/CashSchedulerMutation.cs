@@ -3,6 +3,7 @@ using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Types;
 using CashSchedulerWebServer.Types.Inputs;
+using GraphQL;
 using GraphQL.Authorization;
 using GraphQL.Types;
 using Microsoft.Extensions.Configuration;

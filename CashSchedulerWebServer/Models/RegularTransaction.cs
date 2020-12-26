@@ -32,7 +32,7 @@ namespace CashSchedulerWebServer.Models
 
         public RegularTransaction()
         {
-            Date = DateTime.UtcNow;
+            Date = DateTime.Today;
         }
 
         public enum IntervalOptions

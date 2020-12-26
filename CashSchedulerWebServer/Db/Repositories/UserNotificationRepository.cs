@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Linq;
+using System.Reactive.Subjects;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -14,6 +16,7 @@ namespace CashSchedulerWebServer.Db.Repositories
 {
     public class UserNotificationRepository : IUserNotificationRepository
     {
+        private ISubject<UserNotification> NotificationStream { get; set; } = new ReplaySubject<UserNotification>(1);
         private CashSchedulerContext Context { get; set; }
         private IContextProvider ContextProvider { get; set; }
         private ClaimsPrincipal User { get; set; }
@@ -26,6 +29,11 @@ namespace CashSchedulerWebServer.Db.Repositories
             User = httpAccessor.HttpContext.User;
         }
 
+
+        public IObservable<UserNotification> GetLast()
+        {
+            return NotificationStream.AsObservable();
+        }
 
         public IEnumerable<UserNotification> GetAll()
         {
@@ -57,6 +65,7 @@ namespace CashSchedulerWebServer.Db.Repositories
 
             Context.UserNotifications.Add(notification);
             await Context.SaveChangesAsync();
+            NotificationStream.OnNext(notification);
 
             return GetById(notification.Id);
         }

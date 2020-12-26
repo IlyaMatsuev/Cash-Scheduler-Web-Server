@@ -1,6 +1,7 @@
 ﻿using CashSchedulerWebServer.Authentication.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Types;
+using GraphQL;
 using GraphQL.Authorization;
 using GraphQL.Types;
 using Microsoft.Extensions.Configuration;
@@ -15,7 +16,6 @@ namespace CashSchedulerWebServer.Queries
             string policy = configuration["App:Auth:UserPolicy"];
 
             #region Users
-            // Users
             Field<UserType>("getUser", resolve: context => contextProvider.GetRepository<IUserRepository>().GetById()).AuthorizeWith(policy);
             Field<StringGraphType>(
                 "checkEmail",
@@ -33,12 +33,10 @@ namespace CashSchedulerWebServer.Queries
             #endregion
 
             #region TransactionTypes
-            // TransactionTypes
             Field<ListGraphType<TransactionTypeType>>("getTransactionTypes", resolve: context => contextProvider.GetRepository<ITransactionTypeRepository>().GetAll());
             #endregion
 
             #region Categories
-            // Categories
             Field<ListGraphType<CategoryType>>(
                 "getAllCategories",
                 arguments: new QueryArguments(new QueryArgument<StringGraphType> { Name = "transactionType" }),
@@ -49,16 +47,13 @@ namespace CashSchedulerWebServer.Queries
             #endregion
 
             #region Transactions
-            // Transactions
             Field<ListGraphType<TransactionType>>(
-                "getAllTransactions",
-                arguments: new QueryArguments(new QueryArgument<IntGraphType> { Name = "size", DefaultValue = 0 }),
-                resolve: context => contextProvider.GetRepository<ITransactionRepository>().GetAll(context.GetArgument<int>("size"))
-            ).AuthorizeWith(policy);
-            Field<ListGraphType<TransactionType>>(
-                "getTransactionsForLastDays",
-                arguments: new QueryArguments(new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "days" }),
-                resolve: context => contextProvider.GetRepository<ITransactionRepository>().GetTransactionsForLastDays(context.GetArgument<int>("days"))
+                "getDashboardTransactions",
+                arguments: new QueryArguments(
+                    new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "month", DefaultValue = DateTime.Today.Month },
+                    new QueryArgument<IntGraphType> { Name = "year", DefaultValue = DateTime.Today.Year }
+                ),
+                resolve: context => contextProvider.GetRepository<ITransactionRepository>().GetDashboardTransactions(context.GetArgument<int>("month"), context.GetArgument<int>("year"))
             ).AuthorizeWith(policy);
             Field<ListGraphType<TransactionType>>(
                 "getTransactionsByMonth",
@@ -71,30 +66,30 @@ namespace CashSchedulerWebServer.Queries
             #endregion
 
             #region RegularTransactions
-            // RegularTransactions
             Field<ListGraphType<RegularTransactionType>>(
-                "getAllRegularTransactions",
+                "getDashboardRegularTransactions",
                 arguments: new QueryArguments(
-                    new QueryArgument<IntGraphType> { Name = "size", DefaultValue = 0 },
                     new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "month", DefaultValue = DateTime.Today.Month },
                     new QueryArgument<IntGraphType> { Name = "year", DefaultValue = DateTime.Today.Year }
                 ),
-                resolve: context => contextProvider.GetRepository<IRegularTransactionRepository>().GetAll(
-                    context.GetArgument<int>("size"), 
-                    context.GetArgument<int>("month"), 
-                    context.GetArgument<int>("year")
-                )
+                resolve: context => contextProvider.GetRepository<IRegularTransactionRepository>().GetDashboardRegularTransactions(context.GetArgument<int>("month"), context.GetArgument<int>("year"))
+            ).AuthorizeWith(policy);
+            Field<ListGraphType<RegularTransactionType>>(
+                "getRegularTransactionsByMonth",
+                arguments: new QueryArguments(
+                    new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "month", DefaultValue = DateTime.Today.Month },
+                    new QueryArgument<IntGraphType> { Name = "year", DefaultValue = DateTime.Today.Year }
+                ),
+                resolve: context => contextProvider.GetRepository<IRegularTransactionRepository>().GetRegularTransactionsByMonth(context.GetArgument<int>("month"), context.GetArgument<int>("year"))
             ).AuthorizeWith(policy);
             #endregion
 
             #region UserNotifications
-            // UserNotifications
             Field<ListGraphType<UserNotificationType>>("getAllNotifications", resolve: context => contextProvider.GetRepository<IUserNotificationRepository>().GetAll()).AuthorizeWith(policy); ;
             Field<ListGraphType<UserNotificationType>>("getUnreadNotifications", resolve: context => contextProvider.GetRepository<IUserNotificationRepository>().GetAllUnread()).AuthorizeWith(policy);
             #endregion
 
             #region UserSettings
-            // UserSettings
             Field<ListGraphType<UserSettingType>>(
                 "getUserSettings",
                 arguments: new QueryArguments(new QueryArgument<StringGraphType> { Name = "unitName" }),

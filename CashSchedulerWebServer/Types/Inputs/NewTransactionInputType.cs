@@ -10,7 +10,7 @@ namespace CashSchedulerWebServer.Types.Inputs
             Field<StringGraphType>("title");
             Field<NonNullGraphType<IntGraphType>>("categoryId");
             Field<NonNullGraphType<FloatGraphType>>("amount");
-            Field<DateTimeGraphType>("date");
+            Field<DateGraphType>("date");
         }
     }
 }

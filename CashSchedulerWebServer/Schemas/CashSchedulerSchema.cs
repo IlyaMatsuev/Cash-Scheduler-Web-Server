@@ -1,16 +1,19 @@
 ﻿using CashSchedulerWebServer.Mutations;
 using CashSchedulerWebServer.Queries;
-using GraphQL;
+using CashSchedulerWebServer.Subscriptions;
 using GraphQL.Types;
+using GraphQL.Utilities;
+using System;
 
 namespace CashSchedulerWebServer.Schemas
 {
     public class CashSchedulerSchema : Schema
     {
-        public CashSchedulerSchema(IDependencyResolver resolver) : base(resolver)
+        public CashSchedulerSchema(IServiceProvider provider) : base(provider)
         {
-            Query = resolver.Resolve<CashSchedulerQuery>();
-            Mutation = resolver.Resolve<CashSchedulerMutation>();
+            Query = provider.GetRequiredService<CashSchedulerQuery>();
+            Mutation = provider.GetRequiredService<CashSchedulerMutation>();
+            Subscription = provider.GetRequiredService<CashSchedulerSubscription>();
         }
     }
 }

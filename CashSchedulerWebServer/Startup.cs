@@ -27,6 +27,7 @@ using System.Collections.Generic;
 using CashSchedulerWebServer.Jobs.Reporting;
 using GraphQL.Server;
 using CashSchedulerWebServer.Db.Repositories;
+using GraphQL.NewtonsoftJson;
 
 namespace CashSchedulerWebServer
 {
@@ -106,10 +107,10 @@ namespace CashSchedulerWebServer
             #endregion
 
             #region GraphQL
-            services.AddTransient<IDependencyResolver>(resolver => new FuncDependencyResolver(resolver.GetRequiredService));
             services.AddTransient<IDocumentExecuter, DocumentExecuter>();
+            services.AddTransient<IDocumentWriter, DocumentWriter>();
             services.AddTransient<ISchema, CashSchedulerSchema>();
-            services.AddGraphQL().AddGraphTypes(ServiceLifetime.Transient).AddWebSockets();
+            services.AddGraphQL().AddGraphTypes(typeof(CashSchedulerSchema), ServiceLifetime.Transient).AddWebSockets();
             #endregion
         }
 
@@ -126,7 +127,7 @@ namespace CashSchedulerWebServer
             }
 
             app.UseWebSockets();
-            app.UseGraphQLWebSockets<CashSchedulerSchema>();
+            app.UseGraphQLWebSockets<ISchema>();
             app.UseGraphiQl();
             app.UseRouting();
             app.UseCors();

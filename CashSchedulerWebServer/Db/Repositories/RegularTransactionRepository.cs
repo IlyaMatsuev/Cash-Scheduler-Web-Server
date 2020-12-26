@@ -27,24 +27,31 @@ namespace CashSchedulerWebServer.Db.Repositories
         }
 
 
-        public IEnumerable<RegularTransaction> GetAll(int size, int month, int year)
+        public IEnumerable<RegularTransaction> GetAll()
         {
-            IEnumerable<RegularTransaction> transactions = Context.RegularTransactions
+            return Context.RegularTransactions.Where(t => t.CreatedBy.Id == UserId)
+                .Include(t => t.CreatedBy)
+                .Include(t => t.TransactionCategory)
+                .Include(t => t.TransactionCategory.Type);
+        }
+
+        public IEnumerable<RegularTransaction> GetDashboardRegularTransactions(int month, int year)
+        {
+            DateTime datePoint = new DateTime(year, month, 1);
+            return Context.RegularTransactions
+                .Where(t => t.NextTransactionDate >= datePoint.AddMonths(-1) && t.NextTransactionDate <= datePoint.AddMonths(2) && t.CreatedBy.Id == UserId)
+                .Include(t => t.CreatedBy)
+                .Include(t => t.TransactionCategory)
+                .Include(t => t.TransactionCategory.Type);
+        }
+
+        public IEnumerable<RegularTransaction> GetRegularTransactionsByMonth(int month, int year)
+        {
+            return Context.RegularTransactions
                 .Where(t => t.NextTransactionDate.Month == month && t.NextTransactionDate.Year == year && t.CreatedBy.Id == UserId)
                 .Include(t => t.CreatedBy)
                 .Include(t => t.TransactionCategory)
                 .Include(t => t.TransactionCategory.Type);
-
-            if (size == 0)
-            {
-                return transactions;
-            }
-            return transactions.Take(size);
-        }
-
-        public IEnumerable<RegularTransaction> GetAll()
-        {
-            return GetAll(0, DateTime.Now.Month, DateTime.Now.Year);
         }
 
         public RegularTransaction GetById(int id)

@@ -27,18 +27,12 @@ namespace CashSchedulerWebServer.Db.Repositories
         }
 
 
-        public IEnumerable<Transaction> GetAll(int size)
+        public IEnumerable<Transaction> GetAll()
         {
-            IEnumerable<Transaction> transactions = Context.Transactions.Where(t => t.CreatedBy.Id == UserId)
+            return Context.Transactions.Where(t => t.CreatedBy.Id == UserId)
                 .Include(t => t.CreatedBy)
                 .Include(t => t.TransactionCategory)
                 .Include(t => t.TransactionCategory.Type);
-
-            if (size == 0)
-            {
-                return transactions;
-            }
-            return transactions.Take(size);
         }
 
         public IEnumerable<Transaction> GetByCategoryId(int categoryId)
@@ -46,10 +40,10 @@ namespace CashSchedulerWebServer.Db.Repositories
             return Context.Transactions.Where(t => t.TransactionCategory.Id == categoryId);
         }
 
-        public IEnumerable<Transaction> GetTransactionsForLastDays(int days)
+        public IEnumerable<Transaction> GetDashboardTransactions(int month, int year)
         {
-            DateTime daysAgo = DateTime.Today.AddDays(-days);
-            return Context.Transactions.Where(t => t.Date >= daysAgo && t.Date <= DateTime.Today && t.CreatedBy.Id == UserId)
+            DateTime datePoint = new DateTime(year, month, 1);
+            return Context.Transactions.Where(t => t.Date >= datePoint.AddMonths(-1) && t.Date <= datePoint.AddMonths(2) && t.CreatedBy.Id == UserId)
                 .Include(t => t.CreatedBy)
                 .Include(t => t.TransactionCategory)
                 .Include(t => t.TransactionCategory.Type);
@@ -61,11 +55,6 @@ namespace CashSchedulerWebServer.Db.Repositories
                 .Include(t => t.CreatedBy)
                 .Include(t => t.TransactionCategory)
                 .Include(t => t.TransactionCategory.Type);
-        }
-
-        public IEnumerable<Transaction> GetAll()
-        {
-            return GetAll(0);
         }
 
         public Transaction GetById(int id)

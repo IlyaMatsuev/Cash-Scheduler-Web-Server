@@ -5,9 +5,8 @@ namespace CashSchedulerWebServer.Db.Contracts
 {
     interface ITransactionRepository : IRepository<Transaction>
     {
-        IEnumerable<Transaction> GetAll(int size);
         IEnumerable<Transaction> GetByCategoryId(int categoryId);
-        IEnumerable<Transaction> GetTransactionsForLastDays(int days);
+        IEnumerable<Transaction> GetDashboardTransactions(int month, int year);
         IEnumerable<Transaction> GetTransactionsByMonth(int month, int year);
     }
 }
