@@ -55,21 +55,14 @@ namespace CashSchedulerWebServer.Controllers
 
             if (result.Errors != null && result.Errors.Any())
             {
-                switch (result.Errors.First().Code)
+                response = result.Errors.First().Code switch
                 {
-                    case "authorization":
-                        response = Unauthorized(result);
-                        break;
-                    default:
-                        response = BadRequest(result);
-                        break;
-                }
+                    "authorization" => Unauthorized(result),
+                    _ => BadRequest(result),
+                };
             }
             else
             {
-                result.Document = null;
-                result.Operation = null;
-                result.Perf = null;
                 response = Ok(result);
             }
 

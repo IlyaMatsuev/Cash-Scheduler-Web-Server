@@ -16,7 +16,7 @@ namespace CashSchedulerWebServer.Db.Repositories
 {
     public class UserNotificationRepository : IUserNotificationRepository
     {
-        private ISubject<UserNotification> NotificationStream { get; set; } = new ReplaySubject<UserNotification>(1);
+        private ISubject<UserNotification> NotificationStream { get; set; }
         private CashSchedulerContext Context { get; set; }
         private IContextProvider ContextProvider { get; set; }
         private ClaimsPrincipal User { get; set; }
@@ -27,6 +27,7 @@ namespace CashSchedulerWebServer.Db.Repositories
             Context = context;
             ContextProvider = contextProvider;
             User = httpAccessor.HttpContext.User;
+            NotificationStream = new ReplaySubject<UserNotification>(1);
         }
 
 
