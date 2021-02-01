@@ -1,72 +1,58 @@
 ﻿using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Utils;
-using GraphQL;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reactive.Linq;
-using System.Reactive.Subjects;
-using System.Security.Claims;
 using System.Threading.Tasks;
+using CashSchedulerWebServer.Auth.Contracts;
+using CashSchedulerWebServer.Exceptions;
 
 namespace CashSchedulerWebServer.Db.Repositories
 {
     public class UserNotificationRepository : IUserNotificationRepository
     {
-        private ISubject<UserNotification> NotificationStream { get; set; }
-        private CashSchedulerContext Context { get; set; }
-        private IContextProvider ContextProvider { get; set; }
-        private ClaimsPrincipal User { get; set; }
-        private int? UserId => Convert.ToInt32(User?.Claims.FirstOrDefault(claim => claim.Type == "Id")?.Value ?? "-1");
+        private CashSchedulerContext Context { get; }
+        private IContextProvider ContextProvider { get; }
+        private int UserId { get; }
 
-        public UserNotificationRepository(CashSchedulerContext context, IHttpContextAccessor httpAccessor, IContextProvider contextProvider)
+        public UserNotificationRepository(
+            CashSchedulerContext context,
+            IUserContext userContext,
+            IContextProvider contextProvider)
         {
             Context = context;
             ContextProvider = contextProvider;
-            User = httpAccessor.HttpContext.User;
-            NotificationStream = new ReplaySubject<UserNotification>(1);
+            UserId = userContext.GetUserId();
         }
-
-
-        public IObservable<UserNotification> GetLast()
-        {
-            return NotificationStream.AsObservable();
-        }
+        
 
         public IEnumerable<UserNotification> GetAll()
         {
-            return Context.UserNotifications.Where(n => n.CreatedFor.Id == UserId)
-                .Include(n => n.CreatedFor);
+            return Context.UserNotifications.Where(n => n.User.Id == UserId).Include(n => n.User);
         }
 
         public IEnumerable<UserNotification> GetAllUnread()
         {
-            return Context.UserNotifications.Where(n => n.CreatedFor.Id == UserId && !n.IsRead)
-                .Include(n => n.CreatedFor);
+            return Context.UserNotifications.Where(n => n.User.Id == UserId && !n.IsRead)
+                .Include(n => n.User);
         }
 
         public UserNotification GetById(int id)
         {
-            return Context.UserNotifications.Where(n => n.Id == id && n.CreatedFor.Id == UserId)
-                   .Include(n => n.CreatedFor)
-                   .FirstOrDefault();
+            return Context.UserNotifications.Where(n => n.Id == id && n.User.Id == UserId)
+                .Include(n => n.User)
+                .FirstOrDefault();
         }
 
         public async Task<UserNotification> Create(UserNotification notification)
         {
-            ModelValidator.ValidateModelAttributes(notification);
+            notification.User ??= ContextProvider.GetRepository<IUserRepository>().GetById(UserId);
 
-            if (notification.CreatedFor == null)
-            {
-                notification.CreatedFor = ContextProvider.GetRepository<IUserRepository>().GetById((int)UserId);
-            }
+            ModelValidator.ValidateModelAttributes(notification);
 
             Context.UserNotifications.Add(notification);
             await Context.SaveChangesAsync();
-            NotificationStream.OnNext(notification);
 
             return GetById(notification.Id);
         }
@@ -76,17 +62,19 @@ namespace CashSchedulerWebServer.Db.Repositories
             var targetNotification = GetById(notification.Id);
             if (targetNotification == null)
             {
-                throw new ExecutionError("There is no such notification");
+                throw new CashSchedulerException("There is no such notification");
             }
 
             if (notification.Title != default)
             {
                 targetNotification.Title = notification.Title;
             }
+
             if (notification.Content != default)
             {
                 targetNotification.Content = notification.Content;
             }
+
             targetNotification.IsRead = notification.IsRead;
 
             ModelValidator.ValidateModelAttributes(targetNotification);
@@ -99,7 +87,7 @@ namespace CashSchedulerWebServer.Db.Repositories
 
         public Task<UserNotification> Read(int id)
         {
-            return Update(new UserNotification 
+            return Update(new UserNotification
             {
                 Id = id,
                 IsRead = true
@@ -120,7 +108,7 @@ namespace CashSchedulerWebServer.Db.Repositories
             var targetNotification = GetById(notificationId);
             if (targetNotification == null)
             {
-                throw new ExecutionError("There is no such notification");
+                throw new CashSchedulerException("There is no such notification");
             }
 
             Context.UserNotifications.Remove(targetNotification);

@@ -9,7 +9,7 @@ namespace CashSchedulerWebServer.Notifications
 {
     public class Notificator : INotificator
     {
-        private readonly IConfiguration Configuration;
+        private IConfiguration Configuration { get; }
 
         public Notificator(IConfiguration configuration)
         {

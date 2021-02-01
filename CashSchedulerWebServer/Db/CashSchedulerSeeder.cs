@@ -67,8 +67,8 @@ namespace CashSchedulerWebServer.Db
                 category.Type = transactionTypes.FirstOrDefault(type => type.Name == category.Type.Name);
                 if (category.IsCustom)
                 {
-                    category.CreatedBy = users.FirstOrDefault(user => user.Id == category.CreatedBy.Id);   
-                    if (category.CreatedBy != null && category.Type != null)
+                    category.User = users.FirstOrDefault(user => user.Id == category.User.Id);   
+                    if (category.User != null && category.Type != null)
                     {
                         context.Categories.Add(category);
                     }
@@ -87,8 +87,8 @@ namespace CashSchedulerWebServer.Db
 
             userSettings.ForEach(setting =>
             {
-                setting.SettingFor = users.FirstOrDefault(user => user.Id == setting.SettingFor.Id);
-                if (setting.SettingFor != null)
+                setting.User = users.FirstOrDefault(user => user.Id == setting.User.Id);
+                if (setting.User != null)
                 {
                     context.UserSettings.Add(setting);
                 }
@@ -98,8 +98,8 @@ namespace CashSchedulerWebServer.Db
 
             userNotifications.ForEach(notification =>
             {
-                notification.CreatedFor = users.FirstOrDefault(user => user.Id == notification.CreatedFor.Id);
-                if (notification.CreatedFor != null)
+                notification.User = users.FirstOrDefault(user => user.Id == notification.User.Id);
+                if (notification.User != null)
                 {
                     context.UserNotifications.Add(notification);
                 }
@@ -109,9 +109,9 @@ namespace CashSchedulerWebServer.Db
 
             transactions.ForEach(transaction =>
             {
-                transaction.CreatedBy = users.FirstOrDefault(user => user.Id == transaction.CreatedBy.Id);
-                transaction.TransactionCategory = categories.FirstOrDefault(category => category.Id == transaction.TransactionCategory.Id);
-                if (transaction.CreatedBy != null && transaction.TransactionCategory != null)
+                transaction.User = users.FirstOrDefault(user => user.Id == transaction.User.Id);
+                transaction.Category = categories.FirstOrDefault(category => category.Id == transaction.Category.Id);
+                if (transaction.User != null && transaction.Category != null)
                 {
                     context.Transactions.Add(transaction);
                 }
@@ -121,9 +121,9 @@ namespace CashSchedulerWebServer.Db
 
             regularTransactions.ForEach(transaction =>
             {
-                transaction.CreatedBy = users.FirstOrDefault(user => user.Id == transaction.CreatedBy.Id);
-                transaction.TransactionCategory = categories.FirstOrDefault(category => category.Id == transaction.TransactionCategory.Id);
-                if (transaction.CreatedBy != null && transaction.TransactionCategory != null)
+                transaction.User = users.FirstOrDefault(user => user.Id == transaction.User.Id);
+                transaction.Category = categories.FirstOrDefault(category => category.Id == transaction.Category.Id);
+                if (transaction.User != null && transaction.Category != null)
                 {
                     context.RegularTransactions.Add(transaction);
                 }
@@ -153,7 +153,7 @@ namespace CashSchedulerWebServer.Db
 
         private static CashSchedulerContext ResetIdentitiesSeed(this CashSchedulerContext context)
         {
-            Console.WriteLine("Resetting table's identities...");
+            Console.WriteLine("Resetting tables' identities...");
             static string ResetTableIdentity(string tableName) => $"DBCC CHECKIDENT ('{tableName}', RESEED, 0);";
 
             context.Database.ExecuteSqlRaw(ResetTableIdentity(nameof(context.Users)));

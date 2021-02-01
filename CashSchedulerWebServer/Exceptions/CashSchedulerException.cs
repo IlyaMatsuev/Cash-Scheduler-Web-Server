@@ -1,10 +1,13 @@
-﻿using GraphQL;
+﻿using System;
 using System.Collections.Generic;
 
 namespace CashSchedulerWebServer.Exceptions
 {
-    public class CashSchedulerException : ExecutionError
+    public class CashSchedulerException : Exception
     {
+        public string Code { get; } = "400";
+        public Dictionary<string, object> Fields { get; } = new Dictionary<string, object>();
+
         public CashSchedulerException(string message) : base(message)
         {
         }
@@ -14,14 +17,9 @@ namespace CashSchedulerWebServer.Exceptions
             Code = code;
         }
 
-        public CashSchedulerException(string message, string[] fields)
-            : base(message, new Dictionary<string, object> { { "fields", fields } })
+        public CashSchedulerException(string message, string[] fields) : base(message)
         {
-        }
-
-        public CashSchedulerException(string message, List<string> fields)
-            : base(message, new Dictionary<string, object> { { "fields", fields } })
-        {
+            Fields = new Dictionary<string, object> {{"fields", fields}};
         }
     }
 }

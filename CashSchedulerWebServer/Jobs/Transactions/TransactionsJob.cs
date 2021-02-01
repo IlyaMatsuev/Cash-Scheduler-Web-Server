@@ -11,11 +11,11 @@ namespace CashSchedulerWebServer.Jobs.Transactions
 {
     public class TransactionsJob : IJob
     {
-        private readonly CashSchedulerContext cashSchedulerContext;
+        private CashSchedulerContext CashSchedulerContext { get; }
 
         public TransactionsJob(CashSchedulerContext cashSchedulerContext)
         {
-            this.cashSchedulerContext = cashSchedulerContext;
+            CashSchedulerContext = cashSchedulerContext;
         }
 
 
@@ -23,39 +23,41 @@ namespace CashSchedulerWebServer.Jobs.Transactions
         {
             var now = DateTime.UtcNow;
             Console.WriteLine($"Running the {context.JobDetail.Description}");
-            var transactions = cashSchedulerContext.Transactions.Where(t => t.Date.Date == now.Date)
-                .Include(t => t.TransactionCategory)
-                .Include(t => t.TransactionCategory.Type)
-                .Include(t => t.CreatedBy)
+            var transactions = CashSchedulerContext.Transactions
+                .Where(t => t.Date.Date == now.Date)
+                .Include(t => t.Category)
+                .Include(t => t.Category.Type)
+                .Include(t => t.User)
                 .ToList();
 
-            List<User> usersToUpdateBalance = transactions.GroupBy(t => t.CreatedBy).Select(t =>
+            var usersToUpdateBalance = transactions.GroupBy(t => t.User).Select(t =>
             {
-                User user = t.Key;
-                user.Balance += t.Sum(transaction => transaction.TransactionCategory.Type.Name == TransactionType.Options.Income.ToString() ? transaction.Amount : -transaction.Amount);
+                var user = t.Key;
+                user.Balance += t.Sum(
+                    transaction => transaction.Category.Type.Name == TransactionType.Options.Income.ToString() 
+                        ? transaction.Amount 
+                        : -transaction.Amount
+                );
                 return user;
             }).ToList();
 
 
-            using (var dmlTransaction = cashSchedulerContext.Database.BeginTransaction())
+            using var dmlTransaction = CashSchedulerContext.Database.BeginTransaction();
+            try
             {
-                try
-                {
-                    cashSchedulerContext.Users.UpdateRange(usersToUpdateBalance);
-                    cashSchedulerContext.SaveChanges();
+                CashSchedulerContext.Users.UpdateRange(usersToUpdateBalance);
+                CashSchedulerContext.SaveChanges();
 
-                    dmlTransaction.Commit();
+                dmlTransaction.Commit();
 
-                    Console.WriteLine($"{usersToUpdateBalance.Count()} users were updated");
-                }
-                catch (Exception error)
-                {
-                    dmlTransaction.Rollback();
-                    Console.WriteLine($"Error while running the {context.JobDetail.Description}: {error.Message}: \n{error.StackTrace}");
-                }
-
+                Console.WriteLine($"{usersToUpdateBalance.Count} users were updated");
             }
-            
+            catch (Exception error)
+            {
+                dmlTransaction.Rollback();
+                Console.WriteLine($"Error while running the {context.JobDetail.Description}: {error.Message}: \n{error.StackTrace}");
+            }
+
             return Task.CompletedTask;
         }
     }

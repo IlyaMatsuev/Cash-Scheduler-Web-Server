@@ -7,20 +7,22 @@ namespace CashSchedulerWebServer.Jobs
 {
     public class JobFactory : IJobFactory
     {
-        private readonly IServiceProvider serviceProvider;
+        private IServiceProvider ServiceProvider { get; }
 
         public JobFactory(IServiceProvider serviceProvider)
         {
-            this.serviceProvider = serviceProvider;
+            ServiceProvider = serviceProvider;
         }
 
 
         public IJob NewJob(TriggerFiredBundle triggerFiredBundle, IScheduler scheduler)
         {
-            var scope = serviceProvider.CreateScope();
+            var scope = ServiceProvider.CreateScope();
             return scope.ServiceProvider.GetRequiredService(triggerFiredBundle.JobDetail.JobType) as IJob;
         }
 
-        public void ReturnJob(IJob job) { }
+        public void ReturnJob(IJob job)
+        {
+        }
     }
 }

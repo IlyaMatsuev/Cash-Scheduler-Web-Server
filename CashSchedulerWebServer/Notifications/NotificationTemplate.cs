@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace CashSchedulerWebServer.Notifications
 {
     public class NotificationTemplate
     {
-        public string Subject { get; private set; }
+        public string Subject { get; }
         public string Body { get; private set; }
 
         public NotificationTemplate(string subject, string body, Dictionary<string, string> parameters)
@@ -16,7 +15,7 @@ namespace CashSchedulerWebServer.Notifications
         }
 
 
-        public void ApplyParams(Dictionary<string, string> parameters)
+        private void ApplyParams(Dictionary<string, string> parameters)
         {
             if (parameters == null)
             {

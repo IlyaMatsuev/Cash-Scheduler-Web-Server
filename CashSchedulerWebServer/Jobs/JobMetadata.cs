@@ -4,10 +4,10 @@ namespace CashSchedulerWebServer.Jobs
 {
     public class JobMetadata
     {
-        public Guid JobId { get; private set; }
-        public Type JobType { get; private set; }
-        public string JobName { get; private set; }
-        public string CronExpression { get; private set; }
+        public Guid JobId { get; }
+        public Type JobType { get; }
+        public string JobName { get; }
+        public string CronExpression { get; }
 
         public JobMetadata(Type jobType, string jobName, string cronExpression)
         {

@@ -10,27 +10,27 @@ namespace CashSchedulerWebServer.Jobs.Transactions
 {
     public class TransactionsHostedService : IHostedService
     {
-        private readonly ISchedulerFactory schedulerFactory;
-        private readonly IJobFactory jobFactory;
-        private readonly List<JobMetadata> jobsMetadata;
+        private ISchedulerFactory SchedulerFactory { get; }
+        private IJobFactory JobFactory { get; }
+        private List<JobMetadata> JobsMetadata { get; }
 
         private IScheduler Scheduler { get; set; }
 
         public TransactionsHostedService(ISchedulerFactory schedulerFactory, IJobFactory jobFactory, List<JobMetadata> jobsMetadata)
         {
-            this.schedulerFactory = schedulerFactory;
-            this.jobFactory = jobFactory;
-            this.jobsMetadata = jobsMetadata;
+            SchedulerFactory = schedulerFactory;
+            JobFactory = jobFactory;
+            JobsMetadata = jobsMetadata;
         }
 
 
         public async Task StartAsync(CancellationToken cancellationToken)
         {
             Console.WriteLine("Scheduling the jobs");
-            Scheduler = await schedulerFactory.GetScheduler();
-            Scheduler.JobFactory = jobFactory;
+            Scheduler = await SchedulerFactory.GetScheduler(cancellationToken);
+            Scheduler.JobFactory = JobFactory;
             
-            foreach (JobMetadata jobMetadata in jobsMetadata)
+            foreach (var jobMetadata in JobsMetadata)
             {
                 await Scheduler.ScheduleJob(CreateJob(jobMetadata), CreateTrigger(jobMetadata), cancellationToken);
                 Console.WriteLine($"{jobMetadata.JobName} has been scheduled");
@@ -42,7 +42,10 @@ namespace CashSchedulerWebServer.Jobs.Transactions
         public async Task StopAsync(CancellationToken cancellationToken)
         {
             Console.WriteLine("Shutting down the jobs");
-            await Scheduler?.Shutdown(cancellationToken);
+            if (Scheduler != null)
+            {
+                await Scheduler.Shutdown(cancellationToken);                
+            }
         }
 
 

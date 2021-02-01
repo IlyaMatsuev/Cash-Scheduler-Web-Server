@@ -26,10 +26,8 @@ namespace CashSchedulerWebServer.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CreatedById")
-                        .HasColumnType("int");
-
                     b.Property<string>("IconUrl")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsCustom")
@@ -40,14 +38,17 @@ namespace CashSchedulerWebServer.Migrations
                         .HasColumnType("nvarchar(30)")
                         .HasMaxLength(30);
 
-                    b.Property<string>("TypeName")
+                    b.Property<string>("TypeName1")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatedById");
+                    b.HasIndex("TypeName1");
 
-                    b.HasIndex("TypeName");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Categories");
                 });
@@ -62,7 +63,7 @@ namespace CashSchedulerWebServer.Migrations
                     b.Property<double>("Amount")
                         .HasColumnType("float");
 
-                    b.Property<int?>("CreatedById")
+                    b.Property<int?>("CategoryId1")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Date")
@@ -79,14 +80,14 @@ namespace CashSchedulerWebServer.Migrations
                         .HasColumnType("nvarchar(30)")
                         .HasMaxLength(30);
 
-                    b.Property<int?>("TransactionCategoryId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatedById");
+                    b.HasIndex("CategoryId1");
 
-                    b.HasIndex("TransactionCategoryId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("RegularTransactions");
                 });
@@ -101,7 +102,7 @@ namespace CashSchedulerWebServer.Migrations
                     b.Property<double>("Amount")
                         .HasColumnType("float");
 
-                    b.Property<int?>("CreatedById")
+                    b.Property<int?>("CategoryId1")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Date")
@@ -111,14 +112,14 @@ namespace CashSchedulerWebServer.Migrations
                         .HasColumnType("nvarchar(30)")
                         .HasMaxLength(30);
 
-                    b.Property<int?>("TransactionCategoryId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatedById");
+                    b.HasIndex("CategoryId1");
 
-                    b.HasIndex("TransactionCategoryId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Transactions");
                 });
@@ -159,7 +160,6 @@ namespace CashSchedulerWebServer.Migrations
                         .HasMaxLength(50);
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -202,9 +202,6 @@ namespace CashSchedulerWebServer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("CreatedForId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("IsRead")
                         .HasColumnType("bit");
 
@@ -213,9 +210,12 @@ namespace CashSchedulerWebServer.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatedForId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("UserNotifications");
                 });
@@ -255,54 +255,54 @@ namespace CashSchedulerWebServer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("SettingForId")
-                        .HasColumnType("int");
-
                     b.Property<string>("UnitName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SettingForId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("UserSettings");
                 });
 
             modelBuilder.Entity("CashSchedulerWebServer.Models.Category", b =>
                 {
-                    b.HasOne("CashSchedulerWebServer.Models.User", "CreatedBy")
-                        .WithMany()
-                        .HasForeignKey("CreatedById");
-
                     b.HasOne("CashSchedulerWebServer.Models.TransactionType", "Type")
                         .WithMany()
-                        .HasForeignKey("TypeName");
+                        .HasForeignKey("TypeName1");
+
+                    b.HasOne("CashSchedulerWebServer.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("CashSchedulerWebServer.Models.RegularTransaction", b =>
                 {
-                    b.HasOne("CashSchedulerWebServer.Models.User", "CreatedBy")
+                    b.HasOne("CashSchedulerWebServer.Models.Category", "Category")
                         .WithMany()
-                        .HasForeignKey("CreatedById");
+                        .HasForeignKey("CategoryId1");
 
-                    b.HasOne("CashSchedulerWebServer.Models.Category", "TransactionCategory")
+                    b.HasOne("CashSchedulerWebServer.Models.User", "User")
                         .WithMany()
-                        .HasForeignKey("TransactionCategoryId");
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("CashSchedulerWebServer.Models.Transaction", b =>
                 {
-                    b.HasOne("CashSchedulerWebServer.Models.User", "CreatedBy")
+                    b.HasOne("CashSchedulerWebServer.Models.Category", "Category")
                         .WithMany()
-                        .HasForeignKey("CreatedById");
+                        .HasForeignKey("CategoryId1");
 
-                    b.HasOne("CashSchedulerWebServer.Models.Category", "TransactionCategory")
+                    b.HasOne("CashSchedulerWebServer.Models.User", "User")
                         .WithMany()
-                        .HasForeignKey("TransactionCategoryId");
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("CashSchedulerWebServer.Models.UserEmailVerificationCode", b =>
@@ -316,9 +316,9 @@ namespace CashSchedulerWebServer.Migrations
 
             modelBuilder.Entity("CashSchedulerWebServer.Models.UserNotification", b =>
                 {
-                    b.HasOne("CashSchedulerWebServer.Models.User", "CreatedFor")
+                    b.HasOne("CashSchedulerWebServer.Models.User", "User")
                         .WithMany()
-                        .HasForeignKey("CreatedForId");
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("CashSchedulerWebServer.Models.UserRefreshToken", b =>
@@ -332,9 +332,9 @@ namespace CashSchedulerWebServer.Migrations
 
             modelBuilder.Entity("CashSchedulerWebServer.Models.UserSetting", b =>
                 {
-                    b.HasOne("CashSchedulerWebServer.Models.User", "SettingFor")
+                    b.HasOne("CashSchedulerWebServer.Models.User", "User")
                         .WithMany()
-                        .HasForeignKey("SettingForId");
+                        .HasForeignKey("UserId");
                 });
 #pragma warning restore 612, 618
         }

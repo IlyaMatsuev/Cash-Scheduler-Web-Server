@@ -3,4800 +3,4800 @@
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 60 }
+    "User": { "Id": 60 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 6 }
+    "User": { "Id": 6 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 182 }
+    "User": { "Id": 182 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 32 }
+    "User": { "Id": 32 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 98 }
+    "User": { "Id": 98 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 142 }
+    "User": { "Id": 142 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 121 }
+    "User": { "Id": 121 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 127 }
+    "User": { "Id": 127 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 2 }
+    "User": { "Id": 2 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 14 }
+    "User": { "Id": 14 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 57 }
+    "User": { "Id": 57 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 177 }
+    "User": { "Id": 177 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 128 }
+    "User": { "Id": 128 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 20 }
+    "User": { "Id": 20 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 132 }
+    "User": { "Id": 132 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 156 }
+    "User": { "Id": 156 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 16 }
+    "User": { "Id": 16 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 58 }
+    "User": { "Id": 58 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 43 }
+    "User": { "Id": 43 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 186 }
+    "User": { "Id": 186 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 34 }
+    "User": { "Id": 34 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 181 }
+    "User": { "Id": 181 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 93 }
+    "User": { "Id": 93 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 188 }
+    "User": { "Id": 188 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 113 }
+    "User": { "Id": 113 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 102 }
+    "User": { "Id": 102 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 108 }
+    "User": { "Id": 108 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 143 }
+    "User": { "Id": 143 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 123 }
+    "User": { "Id": 123 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 150 }
+    "User": { "Id": 150 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 35 }
+    "User": { "Id": 35 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 163 }
+    "User": { "Id": 163 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 47 }
+    "User": { "Id": 47 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 6 }
+    "User": { "Id": 6 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 83 }
+    "User": { "Id": 83 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 193 }
+    "User": { "Id": 193 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 135 }
+    "User": { "Id": 135 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 145 }
+    "User": { "Id": 145 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 45 }
+    "User": { "Id": 45 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 194 }
+    "User": { "Id": 194 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 93 }
+    "User": { "Id": 93 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 7 }
+    "User": { "Id": 7 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 1 }
+    "User": { "Id": 1 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 51 }
+    "User": { "Id": 51 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 161 }
+    "User": { "Id": 161 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 15 }
+    "User": { "Id": 15 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 155 }
+    "User": { "Id": 155 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 101 }
+    "User": { "Id": 101 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 130 }
+    "User": { "Id": 130 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 175 }
+    "User": { "Id": 175 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 156 }
+    "User": { "Id": 156 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 19 }
+    "User": { "Id": 19 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 12 }
+    "User": { "Id": 12 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 33 }
+    "User": { "Id": 33 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 145 }
+    "User": { "Id": 145 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 107 }
+    "User": { "Id": 107 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 84 }
+    "User": { "Id": 84 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 43 }
+    "User": { "Id": 43 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 86 }
+    "User": { "Id": 86 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 85 }
+    "User": { "Id": 85 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 85 }
+    "User": { "Id": 85 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 38 }
+    "User": { "Id": 38 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 161 }
+    "User": { "Id": 161 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 145 }
+    "User": { "Id": 145 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 129 }
+    "User": { "Id": 129 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 46 }
+    "User": { "Id": 46 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 87 }
+    "User": { "Id": 87 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 150 }
+    "User": { "Id": 150 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 70 }
+    "User": { "Id": 70 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 121 }
+    "User": { "Id": 121 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 14 }
+    "User": { "Id": 14 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 11 }
+    "User": { "Id": 11 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 20 }
+    "User": { "Id": 20 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 164 }
+    "User": { "Id": 164 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 113 }
+    "User": { "Id": 113 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 131 }
+    "User": { "Id": 131 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 141 }
+    "User": { "Id": 141 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 63 }
+    "User": { "Id": 63 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 166 }
+    "User": { "Id": 166 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 95 }
+    "User": { "Id": 95 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 17 }
+    "User": { "Id": 17 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 191 }
+    "User": { "Id": 191 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 55 }
+    "User": { "Id": 55 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 142 }
+    "User": { "Id": 142 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 84 }
+    "User": { "Id": 84 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 162 }
+    "User": { "Id": 162 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 186 }
+    "User": { "Id": 186 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 173 }
+    "User": { "Id": 173 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 69 }
+    "User": { "Id": 69 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 69 }
+    "User": { "Id": 69 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 181 }
+    "User": { "Id": 181 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 1 }
+    "User": { "Id": 1 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 69 }
+    "User": { "Id": 69 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 181 }
+    "User": { "Id": 181 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 92 }
+    "User": { "Id": 92 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 25 }
+    "User": { "Id": 25 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 19 }
+    "User": { "Id": 19 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 87 }
+    "User": { "Id": 87 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 138 }
+    "User": { "Id": 138 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 123 }
+    "User": { "Id": 123 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 96 }
+    "User": { "Id": 96 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 48 }
+    "User": { "Id": 48 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 68 }
+    "User": { "Id": 68 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 8 }
+    "User": { "Id": 8 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 182 }
+    "User": { "Id": 182 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 139 }
+    "User": { "Id": 139 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 137 }
+    "User": { "Id": 137 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 56 }
+    "User": { "Id": 56 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 89 }
+    "User": { "Id": 89 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 74 }
+    "User": { "Id": 74 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 68 }
+    "User": { "Id": 68 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 153 }
+    "User": { "Id": 153 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 6 }
+    "User": { "Id": 6 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 141 }
+    "User": { "Id": 141 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 61 }
+    "User": { "Id": 61 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 68 }
+    "User": { "Id": 68 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 51 }
+    "User": { "Id": 51 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 108 }
+    "User": { "Id": 108 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 32 }
+    "User": { "Id": 32 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 111 }
+    "User": { "Id": 111 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 132 }
+    "User": { "Id": 132 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 54 }
+    "User": { "Id": 54 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 192 }
+    "User": { "Id": 192 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 183 }
+    "User": { "Id": 183 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 74 }
+    "User": { "Id": 74 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 87 }
+    "User": { "Id": 87 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 19 }
+    "User": { "Id": 19 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 18 }
+    "User": { "Id": 18 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 172 }
+    "User": { "Id": 172 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 139 }
+    "User": { "Id": 139 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 92 }
+    "User": { "Id": 92 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 89 }
+    "User": { "Id": 89 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 59 }
+    "User": { "Id": 59 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 108 }
+    "User": { "Id": 108 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 119 }
+    "User": { "Id": 119 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 177 }
+    "User": { "Id": 177 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 23 }
+    "User": { "Id": 23 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 73 }
+    "User": { "Id": 73 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 167 }
+    "User": { "Id": 167 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 88 }
+    "User": { "Id": 88 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 103 }
+    "User": { "Id": 103 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 162 }
+    "User": { "Id": 162 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 31 }
+    "User": { "Id": 31 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 90 }
+    "User": { "Id": 90 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 39 }
+    "User": { "Id": 39 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 112 }
+    "User": { "Id": 112 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 80 }
+    "User": { "Id": 80 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 180 }
+    "User": { "Id": 180 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 28 }
+    "User": { "Id": 28 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 130 }
+    "User": { "Id": 130 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 164 }
+    "User": { "Id": 164 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 158 }
+    "User": { "Id": 158 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 147 }
+    "User": { "Id": 147 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 94 }
+    "User": { "Id": 94 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 161 }
+    "User": { "Id": 161 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 99 }
+    "User": { "Id": 99 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 41 }
+    "User": { "Id": 41 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 108 }
+    "User": { "Id": 108 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 131 }
+    "User": { "Id": 131 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 151 }
+    "User": { "Id": 151 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 1 }
+    "User": { "Id": 1 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 103 }
+    "User": { "Id": 103 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 126 }
+    "User": { "Id": 126 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 86 }
+    "User": { "Id": 86 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 29 }
+    "User": { "Id": 29 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 26 }
+    "User": { "Id": 26 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 17 }
+    "User": { "Id": 17 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 37 }
+    "User": { "Id": 37 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 130 }
+    "User": { "Id": 130 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 168 }
+    "User": { "Id": 168 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 195 }
+    "User": { "Id": 195 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 51 }
+    "User": { "Id": 51 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 87 }
+    "User": { "Id": 87 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 128 }
+    "User": { "Id": 128 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 15 }
+    "User": { "Id": 15 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 84 }
+    "User": { "Id": 84 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 153 }
+    "User": { "Id": 153 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 170 }
+    "User": { "Id": 170 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 38 }
+    "User": { "Id": 38 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 108 }
+    "User": { "Id": 108 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 173 }
+    "User": { "Id": 173 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 152 }
+    "User": { "Id": 152 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 102 }
+    "User": { "Id": 102 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 121 }
+    "User": { "Id": 121 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 157 }
+    "User": { "Id": 157 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 74 }
+    "User": { "Id": 74 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 41 }
+    "User": { "Id": 41 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 178 }
+    "User": { "Id": 178 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 117 }
+    "User": { "Id": 117 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 120 }
+    "User": { "Id": 120 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 30 }
+    "User": { "Id": 30 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 65 }
+    "User": { "Id": 65 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 51 }
+    "User": { "Id": 51 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 44 }
+    "User": { "Id": 44 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 112 }
+    "User": { "Id": 112 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 71 }
+    "User": { "Id": 71 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 55 }
+    "User": { "Id": 55 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 60 }
+    "User": { "Id": 60 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 137 }
+    "User": { "Id": 137 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 155 }
+    "User": { "Id": 155 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 157 }
+    "User": { "Id": 157 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 11 }
+    "User": { "Id": 11 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 144 }
+    "User": { "Id": 144 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 74 }
+    "User": { "Id": 74 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 79 }
+    "User": { "Id": 79 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 48 }
+    "User": { "Id": 48 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 148 }
+    "User": { "Id": 148 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 139 }
+    "User": { "Id": 139 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 187 }
+    "User": { "Id": 187 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 79 }
+    "User": { "Id": 79 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 157 }
+    "User": { "Id": 157 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 40 }
+    "User": { "Id": 40 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 107 }
+    "User": { "Id": 107 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 60 }
+    "User": { "Id": 60 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 70 }
+    "User": { "Id": 70 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 25 }
+    "User": { "Id": 25 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 32 }
+    "User": { "Id": 32 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 137 }
+    "User": { "Id": 137 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 98 }
+    "User": { "Id": 98 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 167 }
+    "User": { "Id": 167 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 170 }
+    "User": { "Id": 170 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 189 }
+    "User": { "Id": 189 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 25 }
+    "User": { "Id": 25 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 130 }
+    "User": { "Id": 130 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 16 }
+    "User": { "Id": 16 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 14 }
+    "User": { "Id": 14 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 35 }
+    "User": { "Id": 35 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 93 }
+    "User": { "Id": 93 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 28 }
+    "User": { "Id": 28 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 177 }
+    "User": { "Id": 177 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 65 }
+    "User": { "Id": 65 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 11 }
+    "User": { "Id": 11 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 184 }
+    "User": { "Id": 184 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 136 }
+    "User": { "Id": 136 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 149 }
+    "User": { "Id": 149 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 134 }
+    "User": { "Id": 134 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 35 }
+    "User": { "Id": 35 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 163 }
+    "User": { "Id": 163 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 26 }
+    "User": { "Id": 26 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 51 }
+    "User": { "Id": 51 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 92 }
+    "User": { "Id": 92 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 14 }
+    "User": { "Id": 14 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 82 }
+    "User": { "Id": 82 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 125 }
+    "User": { "Id": 125 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 135 }
+    "User": { "Id": 135 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 15 }
+    "User": { "Id": 15 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 141 }
+    "User": { "Id": 141 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 190 }
+    "User": { "Id": 190 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 15 }
+    "User": { "Id": 15 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 149 }
+    "User": { "Id": 149 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 175 }
+    "User": { "Id": 175 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 38 }
+    "User": { "Id": 38 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 148 }
+    "User": { "Id": 148 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 172 }
+    "User": { "Id": 172 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 154 }
+    "User": { "Id": 154 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 85 }
+    "User": { "Id": 85 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 189 }
+    "User": { "Id": 189 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 85 }
+    "User": { "Id": 85 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 116 }
+    "User": { "Id": 116 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 39 }
+    "User": { "Id": 39 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 200 }
+    "User": { "Id": 200 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 162 }
+    "User": { "Id": 162 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 170 }
+    "User": { "Id": 170 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 120 }
+    "User": { "Id": 120 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 37 }
+    "User": { "Id": 37 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 65 }
+    "User": { "Id": 65 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 13 }
+    "User": { "Id": 13 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 134 }
+    "User": { "Id": 134 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 86 }
+    "User": { "Id": 86 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 100 }
+    "User": { "Id": 100 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 104 }
+    "User": { "Id": 104 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 29 }
+    "User": { "Id": 29 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 13 }
+    "User": { "Id": 13 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 172 }
+    "User": { "Id": 172 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 90 }
+    "User": { "Id": 90 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 68 }
+    "User": { "Id": 68 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 99 }
+    "User": { "Id": 99 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 32 }
+    "User": { "Id": 32 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 76 }
+    "User": { "Id": 76 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 174 }
+    "User": { "Id": 174 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 133 }
+    "User": { "Id": 133 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 97 }
+    "User": { "Id": 97 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 105 }
+    "User": { "Id": 105 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 73 }
+    "User": { "Id": 73 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 133 }
+    "User": { "Id": 133 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 6 }
+    "User": { "Id": 6 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 155 }
+    "User": { "Id": 155 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 61 }
+    "User": { "Id": 61 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 125 }
+    "User": { "Id": 125 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 19 }
+    "User": { "Id": 19 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 156 }
+    "User": { "Id": 156 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 45 }
+    "User": { "Id": 45 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 174 }
+    "User": { "Id": 174 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 154 }
+    "User": { "Id": 154 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 160 }
+    "User": { "Id": 160 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 118 }
+    "User": { "Id": 118 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 182 }
+    "User": { "Id": 182 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 94 }
+    "User": { "Id": 94 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 144 }
+    "User": { "Id": 144 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 155 }
+    "User": { "Id": 155 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 60 }
+    "User": { "Id": 60 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 195 }
+    "User": { "Id": 195 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 31 }
+    "User": { "Id": 31 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 88 }
+    "User": { "Id": 88 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 129 }
+    "User": { "Id": 129 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 197 }
+    "User": { "Id": 197 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 177 }
+    "User": { "Id": 177 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 164 }
+    "User": { "Id": 164 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 71 }
+    "User": { "Id": 71 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 136 }
+    "User": { "Id": 136 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 155 }
+    "User": { "Id": 155 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 20 }
+    "User": { "Id": 20 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 96 }
+    "User": { "Id": 96 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 171 }
+    "User": { "Id": 171 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 189 }
+    "User": { "Id": 189 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 65 }
+    "User": { "Id": 65 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 73 }
+    "User": { "Id": 73 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 87 }
+    "User": { "Id": 87 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 89 }
+    "User": { "Id": 89 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 140 }
+    "User": { "Id": 140 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 140 }
+    "User": { "Id": 140 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 47 }
+    "User": { "Id": 47 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 34 }
+    "User": { "Id": 34 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 69 }
+    "User": { "Id": 69 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 102 }
+    "User": { "Id": 102 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 50 }
+    "User": { "Id": 50 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 62 }
+    "User": { "Id": 62 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 126 }
+    "User": { "Id": 126 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 39 }
+    "User": { "Id": 39 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 20 }
+    "User": { "Id": 20 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 159 }
+    "User": { "Id": 159 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 155 }
+    "User": { "Id": 155 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 94 }
+    "User": { "Id": 94 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 151 }
+    "User": { "Id": 151 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 142 }
+    "User": { "Id": 142 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 159 }
+    "User": { "Id": 159 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 134 }
+    "User": { "Id": 134 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 76 }
+    "User": { "Id": 76 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 69 }
+    "User": { "Id": 69 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 200 }
+    "User": { "Id": 200 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 163 }
+    "User": { "Id": 163 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 180 }
+    "User": { "Id": 180 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 72 }
+    "User": { "Id": 72 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 65 }
+    "User": { "Id": 65 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 151 }
+    "User": { "Id": 151 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 169 }
+    "User": { "Id": 169 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 172 }
+    "User": { "Id": 172 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 163 }
+    "User": { "Id": 163 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 137 }
+    "User": { "Id": 137 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 38 }
+    "User": { "Id": 38 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 197 }
+    "User": { "Id": 197 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 177 }
+    "User": { "Id": 177 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 156 }
+    "User": { "Id": 156 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 45 }
+    "User": { "Id": 45 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 73 }
+    "User": { "Id": 73 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 126 }
+    "User": { "Id": 126 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 66 }
+    "User": { "Id": 66 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 109 }
+    "User": { "Id": 109 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 178 }
+    "User": { "Id": 178 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 194 }
+    "User": { "Id": 194 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 197 }
+    "User": { "Id": 197 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 106 }
+    "User": { "Id": 106 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 22 }
+    "User": { "Id": 22 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 171 }
+    "User": { "Id": 171 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 21 }
+    "User": { "Id": 21 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 79 }
+    "User": { "Id": 79 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 69 }
+    "User": { "Id": 69 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 167 }
+    "User": { "Id": 167 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 104 }
+    "User": { "Id": 104 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 8 }
+    "User": { "Id": 8 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 147 }
+    "User": { "Id": 147 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 196 }
+    "User": { "Id": 196 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 94 }
+    "User": { "Id": 94 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 117 }
+    "User": { "Id": 117 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 86 }
+    "User": { "Id": 86 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 72 }
+    "User": { "Id": 72 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 97 }
+    "User": { "Id": 97 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 154 }
+    "User": { "Id": 154 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 87 }
+    "User": { "Id": 87 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 62 }
+    "User": { "Id": 62 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 102 }
+    "User": { "Id": 102 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 110 }
+    "User": { "Id": 110 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 153 }
+    "User": { "Id": 153 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 105 }
+    "User": { "Id": 105 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 46 }
+    "User": { "Id": 46 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 54 }
+    "User": { "Id": 54 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 124 }
+    "User": { "Id": 124 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 73 }
+    "User": { "Id": 73 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 183 }
+    "User": { "Id": 183 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 11 }
+    "User": { "Id": 11 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 163 }
+    "User": { "Id": 163 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 145 }
+    "User": { "Id": 145 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 188 }
+    "User": { "Id": 188 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 163 }
+    "User": { "Id": 163 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 160 }
+    "User": { "Id": 160 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 62 }
+    "User": { "Id": 62 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 78 }
+    "User": { "Id": 78 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 54 }
+    "User": { "Id": 54 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 122 }
+    "User": { "Id": 122 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 70 }
+    "User": { "Id": 70 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 197 }
+    "User": { "Id": 197 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 105 }
+    "User": { "Id": 105 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 169 }
+    "User": { "Id": 169 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 111 }
+    "User": { "Id": 111 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 54 }
+    "User": { "Id": 54 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 93 }
+    "User": { "Id": 93 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 157 }
+    "User": { "Id": 157 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 137 }
+    "User": { "Id": 137 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 125 }
+    "User": { "Id": 125 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 43 }
+    "User": { "Id": 43 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 20 }
+    "User": { "Id": 20 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 11 }
+    "User": { "Id": 11 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 189 }
+    "User": { "Id": 189 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 127 }
+    "User": { "Id": 127 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 86 }
+    "User": { "Id": 86 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 199 }
+    "User": { "Id": 199 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 49 }
+    "User": { "Id": 49 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 65 }
+    "User": { "Id": 65 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 16 }
+    "User": { "Id": 16 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 118 }
+    "User": { "Id": 118 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 77 }
+    "User": { "Id": 77 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 10 }
+    "User": { "Id": 10 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 199 }
+    "User": { "Id": 199 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 105 }
+    "User": { "Id": 105 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 104 }
+    "User": { "Id": 104 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 88 }
+    "User": { "Id": 88 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 24 }
+    "User": { "Id": 24 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 144 }
+    "User": { "Id": 144 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 80 }
+    "User": { "Id": 80 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 111 }
+    "User": { "Id": 111 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 59 }
+    "User": { "Id": 59 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 75 }
+    "User": { "Id": 75 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 103 }
+    "User": { "Id": 103 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 175 }
+    "User": { "Id": 175 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 193 }
+    "User": { "Id": 193 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 155 }
+    "User": { "Id": 155 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 39 }
+    "User": { "Id": 39 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 50 }
+    "User": { "Id": 50 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 31 }
+    "User": { "Id": 31 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 50 }
+    "User": { "Id": 50 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 195 }
+    "User": { "Id": 195 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 111 }
+    "User": { "Id": 111 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 177 }
+    "User": { "Id": 177 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 73 }
+    "User": { "Id": 73 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 63 }
+    "User": { "Id": 63 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 14 }
+    "User": { "Id": 14 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 120 }
+    "User": { "Id": 120 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 26 }
+    "User": { "Id": 26 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 176 }
+    "User": { "Id": 176 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 103 }
+    "User": { "Id": 103 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 87 }
+    "User": { "Id": 87 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 18 }
+    "User": { "Id": 18 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 100 }
+    "User": { "Id": 100 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 22 }
+    "User": { "Id": 22 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 45 }
+    "User": { "Id": 45 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 143 }
+    "User": { "Id": 143 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 104 }
+    "User": { "Id": 104 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 130 }
+    "User": { "Id": 130 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 142 }
+    "User": { "Id": 142 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 18 }
+    "User": { "Id": 18 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 90 }
+    "User": { "Id": 90 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 196 }
+    "User": { "Id": 196 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 168 }
+    "User": { "Id": 168 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 70 }
+    "User": { "Id": 70 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 57 }
+    "User": { "Id": 57 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 54 }
+    "User": { "Id": 54 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 126 }
+    "User": { "Id": 126 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 55 }
+    "User": { "Id": 55 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 166 }
+    "User": { "Id": 166 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 195 }
+    "User": { "Id": 195 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 14 }
+    "User": { "Id": 14 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 78 }
+    "User": { "Id": 78 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 95 }
+    "User": { "Id": 95 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 191 }
+    "User": { "Id": 191 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 149 }
+    "User": { "Id": 149 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 11 }
+    "User": { "Id": 11 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 121 }
+    "User": { "Id": 121 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 6 }
+    "User": { "Id": 6 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 25 }
+    "User": { "Id": 25 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 15 }
+    "User": { "Id": 15 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 37 }
+    "User": { "Id": 37 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 26 }
+    "User": { "Id": 26 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 123 }
+    "User": { "Id": 123 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 129 }
+    "User": { "Id": 129 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 5 }
+    "User": { "Id": 5 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 189 }
+    "User": { "Id": 189 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 194 }
+    "User": { "Id": 194 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 144 }
+    "User": { "Id": 144 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 95 }
+    "User": { "Id": 95 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 192 }
+    "User": { "Id": 192 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 130 }
+    "User": { "Id": 130 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 43 }
+    "User": { "Id": 43 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 109 }
+    "User": { "Id": 109 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 187 }
+    "User": { "Id": 187 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 141 }
+    "User": { "Id": 141 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 143 }
+    "User": { "Id": 143 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 181 }
+    "User": { "Id": 181 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 37 }
+    "User": { "Id": 37 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 176 }
+    "User": { "Id": 176 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 129 }
+    "User": { "Id": 129 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 140 }
+    "User": { "Id": 140 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 92 }
+    "User": { "Id": 92 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 42 }
+    "User": { "Id": 42 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 28 }
+    "User": { "Id": 28 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 4 }
+    "User": { "Id": 4 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 92 }
+    "User": { "Id": 92 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 188 }
+    "User": { "Id": 188 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 86 }
+    "User": { "Id": 86 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 125 }
+    "User": { "Id": 125 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 55 }
+    "User": { "Id": 55 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 192 }
+    "User": { "Id": 192 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 8 }
+    "User": { "Id": 8 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 181 }
+    "User": { "Id": 181 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 199 }
+    "User": { "Id": 199 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 94 }
+    "User": { "Id": 94 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 1 }
+    "User": { "Id": 1 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 92 }
+    "User": { "Id": 92 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 9 }
+    "User": { "Id": 9 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 107 }
+    "User": { "Id": 107 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 91 }
+    "User": { "Id": 91 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 125 }
+    "User": { "Id": 125 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 21 }
+    "User": { "Id": 21 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 30 }
+    "User": { "Id": 30 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 130 }
+    "User": { "Id": 130 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 88 }
+    "User": { "Id": 88 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 85 }
+    "User": { "Id": 85 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 193 }
+    "User": { "Id": 193 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 134 }
+    "User": { "Id": 134 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 200 }
+    "User": { "Id": 200 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 180 }
+    "User": { "Id": 180 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 64 }
+    "User": { "Id": 64 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 30 }
+    "User": { "Id": 30 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 22 }
+    "User": { "Id": 22 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 47 }
+    "User": { "Id": 47 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 103 }
+    "User": { "Id": 103 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 158 }
+    "User": { "Id": 158 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 159 }
+    "User": { "Id": 159 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 46 }
+    "User": { "Id": 46 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 90 }
+    "User": { "Id": 90 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 88 }
+    "User": { "Id": 88 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 30 }
+    "User": { "Id": 30 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 178 }
+    "User": { "Id": 178 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 97 }
+    "User": { "Id": 97 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 194 }
+    "User": { "Id": 194 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 41 }
+    "User": { "Id": 41 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 93 }
+    "User": { "Id": 93 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 4 }
+    "User": { "Id": 4 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 15 }
+    "User": { "Id": 15 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 137 }
+    "User": { "Id": 137 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 100 }
+    "User": { "Id": 100 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 63 }
+    "User": { "Id": 63 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 6 }
+    "User": { "Id": 6 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 110 }
+    "User": { "Id": 110 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 48 }
+    "User": { "Id": 48 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 107 }
+    "User": { "Id": 107 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 128 }
+    "User": { "Id": 128 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 169 }
+    "User": { "Id": 169 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 40 }
+    "User": { "Id": 40 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 66 }
+    "User": { "Id": 66 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 166 }
+    "User": { "Id": 166 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 112 }
+    "User": { "Id": 112 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 56 }
+    "User": { "Id": 56 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 48 }
+    "User": { "Id": 48 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 62 }
+    "User": { "Id": 62 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 153 }
+    "User": { "Id": 153 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 129 }
+    "User": { "Id": 129 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 168 }
+    "User": { "Id": 168 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 149 }
+    "User": { "Id": 149 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 7 }
+    "User": { "Id": 7 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 55 }
+    "User": { "Id": 55 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 184 }
+    "User": { "Id": 184 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 85 }
+    "User": { "Id": 85 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 187 }
+    "User": { "Id": 187 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 4 }
+    "User": { "Id": 4 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 20 }
+    "User": { "Id": 20 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 41 }
+    "User": { "Id": 41 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 6 }
+    "User": { "Id": 6 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 115 }
+    "User": { "Id": 115 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 91 }
+    "User": { "Id": 91 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 143 }
+    "User": { "Id": 143 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 87 }
+    "User": { "Id": 87 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 79 }
+    "User": { "Id": 79 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 167 }
+    "User": { "Id": 167 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 124 }
+    "User": { "Id": 124 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 25 }
+    "User": { "Id": 25 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 122 }
+    "User": { "Id": 122 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 89 }
+    "User": { "Id": 89 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 171 }
+    "User": { "Id": 171 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 104 }
+    "User": { "Id": 104 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 102 }
+    "User": { "Id": 102 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 130 }
+    "User": { "Id": 130 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 77 }
+    "User": { "Id": 77 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 91 }
+    "User": { "Id": 91 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 47 }
+    "User": { "Id": 47 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 147 }
+    "User": { "Id": 147 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 21 }
+    "User": { "Id": 21 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 147 }
+    "User": { "Id": 147 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 110 }
+    "User": { "Id": 110 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 90 }
+    "User": { "Id": 90 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 109 }
+    "User": { "Id": 109 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 15 }
+    "User": { "Id": 15 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 20 }
+    "User": { "Id": 20 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 37 }
+    "User": { "Id": 37 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 197 }
+    "User": { "Id": 197 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 143 }
+    "User": { "Id": 143 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 176 }
+    "User": { "Id": 176 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 89 }
+    "User": { "Id": 89 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 186 }
+    "User": { "Id": 186 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 82 }
+    "User": { "Id": 82 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 6 }
+    "User": { "Id": 6 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 8 }
+    "User": { "Id": 8 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 92 }
+    "User": { "Id": 92 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 123 }
+    "User": { "Id": 123 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 68 }
+    "User": { "Id": 68 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 28 }
+    "User": { "Id": 28 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 192 }
+    "User": { "Id": 192 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 80 }
+    "User": { "Id": 80 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 129 }
+    "User": { "Id": 129 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 24 }
+    "User": { "Id": 24 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 79 }
+    "User": { "Id": 79 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 175 }
+    "User": { "Id": 175 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 145 }
+    "User": { "Id": 145 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 183 }
+    "User": { "Id": 183 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 85 }
+    "User": { "Id": 85 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 57 }
+    "User": { "Id": 57 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 189 }
+    "User": { "Id": 189 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 190 }
+    "User": { "Id": 190 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 200 }
+    "User": { "Id": 200 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 9 }
+    "User": { "Id": 9 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 103 }
+    "User": { "Id": 103 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 39 }
+    "User": { "Id": 39 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 49 }
+    "User": { "Id": 49 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 127 }
+    "User": { "Id": 127 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 65 }
+    "User": { "Id": 65 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 172 }
+    "User": { "Id": 172 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 193 }
+    "User": { "Id": 193 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 97 }
+    "User": { "Id": 97 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 64 }
+    "User": { "Id": 64 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 104 }
+    "User": { "Id": 104 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 57 }
+    "User": { "Id": 57 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 144 }
+    "User": { "Id": 144 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 156 }
+    "User": { "Id": 156 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 10 }
+    "User": { "Id": 10 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 112 }
+    "User": { "Id": 112 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 168 }
+    "User": { "Id": 168 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 155 }
+    "User": { "Id": 155 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 137 }
+    "User": { "Id": 137 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 164 }
+    "User": { "Id": 164 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 49 }
+    "User": { "Id": 49 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 40 }
+    "User": { "Id": 40 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 139 }
+    "User": { "Id": 139 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 153 }
+    "User": { "Id": 153 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 8 }
+    "User": { "Id": 8 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 86 }
+    "User": { "Id": 86 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 119 }
+    "User": { "Id": 119 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 124 }
+    "User": { "Id": 124 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 196 }
+    "User": { "Id": 196 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 167 }
+    "User": { "Id": 167 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 104 }
+    "User": { "Id": 104 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 10 }
+    "User": { "Id": 10 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 71 }
+    "User": { "Id": 71 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 10 }
+    "User": { "Id": 10 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 98 }
+    "User": { "Id": 98 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 95 }
+    "User": { "Id": 95 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 64 }
+    "User": { "Id": 64 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 94 }
+    "User": { "Id": 94 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 7 }
+    "User": { "Id": 7 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 193 }
+    "User": { "Id": 193 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 50 }
+    "User": { "Id": 50 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 115 }
+    "User": { "Id": 115 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 17 }
+    "User": { "Id": 17 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 58 }
+    "User": { "Id": 58 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 111 }
+    "User": { "Id": 111 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 27 }
+    "User": { "Id": 27 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 75 }
+    "User": { "Id": 75 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 43 }
+    "User": { "Id": 43 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 200 }
+    "User": { "Id": 200 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 43 }
+    "User": { "Id": 43 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 106 }
+    "User": { "Id": 106 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 128 }
+    "User": { "Id": 128 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 15 }
+    "User": { "Id": 15 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 84 }
+    "User": { "Id": 84 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 156 }
+    "User": { "Id": 156 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 100 }
+    "User": { "Id": 100 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 95 }
+    "User": { "Id": 95 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 3 }
+    "User": { "Id": 3 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 145 }
+    "User": { "Id": 145 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 113 }
+    "User": { "Id": 113 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 180 }
+    "User": { "Id": 180 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 134 }
+    "User": { "Id": 134 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 191 }
+    "User": { "Id": 191 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 77 }
+    "User": { "Id": 77 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 162 }
+    "User": { "Id": 162 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 171 }
+    "User": { "Id": 171 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 117 }
+    "User": { "Id": 117 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 91 }
+    "User": { "Id": 91 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 186 }
+    "User": { "Id": 186 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 47 }
+    "User": { "Id": 47 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 163 }
+    "User": { "Id": 163 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 16 }
+    "User": { "Id": 16 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 166 }
+    "User": { "Id": 166 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 180 }
+    "User": { "Id": 180 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 88 }
+    "User": { "Id": 88 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 127 }
+    "User": { "Id": 127 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 3 }
+    "User": { "Id": 3 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 147 }
+    "User": { "Id": 147 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 162 }
+    "User": { "Id": 162 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 107 }
+    "User": { "Id": 107 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 135 }
+    "User": { "Id": 135 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 127 }
+    "User": { "Id": 127 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 135 }
+    "User": { "Id": 135 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 133 }
+    "User": { "Id": 133 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 143 }
+    "User": { "Id": 143 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 178 }
+    "User": { "Id": 178 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 69 }
+    "User": { "Id": 69 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 48 }
+    "User": { "Id": 48 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 171 }
+    "User": { "Id": 171 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 52 }
+    "User": { "Id": 52 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 28 }
+    "User": { "Id": 28 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 162 }
+    "User": { "Id": 162 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 195 }
+    "User": { "Id": 195 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 173 }
+    "User": { "Id": 173 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 23 }
+    "User": { "Id": 23 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 118 }
+    "User": { "Id": 118 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 172 }
+    "User": { "Id": 172 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 141 }
+    "User": { "Id": 141 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 143 }
+    "User": { "Id": 143 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 162 }
+    "User": { "Id": 162 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 86 }
+    "User": { "Id": 86 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 110 }
+    "User": { "Id": 110 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 94 }
+    "User": { "Id": 94 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 33 }
+    "User": { "Id": 33 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 135 }
+    "User": { "Id": 135 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 108 }
+    "User": { "Id": 108 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 23 }
+    "User": { "Id": 23 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 138 }
+    "User": { "Id": 138 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 113 }
+    "User": { "Id": 113 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 27 }
+    "User": { "Id": 27 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 168 }
+    "User": { "Id": 168 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 60 }
+    "User": { "Id": 60 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 150 }
+    "User": { "Id": 150 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 20 }
+    "User": { "Id": 20 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 41 }
+    "User": { "Id": 41 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 161 }
+    "User": { "Id": 161 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 58 }
+    "User": { "Id": 58 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 43 }
+    "User": { "Id": 43 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 17 }
+    "User": { "Id": 17 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 92 }
+    "User": { "Id": 92 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 185 }
+    "User": { "Id": 185 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 45 }
+    "User": { "Id": 45 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 191 }
+    "User": { "Id": 191 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 88 }
+    "User": { "Id": 88 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 134 }
+    "User": { "Id": 134 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 54 }
+    "User": { "Id": 54 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 20 }
+    "User": { "Id": 20 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 190 }
+    "User": { "Id": 190 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 51 }
+    "User": { "Id": 51 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 122 }
+    "User": { "Id": 122 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 49 }
+    "User": { "Id": 49 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 93 }
+    "User": { "Id": 93 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 50 }
+    "User": { "Id": 50 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 80 }
+    "User": { "Id": 80 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 100 }
+    "User": { "Id": 100 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 3 }
+    "User": { "Id": 3 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 128 }
+    "User": { "Id": 128 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "true",
-    "SettingFor": { "Id": 75 }
+    "User": { "Id": 75 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 75 }
+    "User": { "Id": 75 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 60 }
+    "User": { "Id": 60 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 7 }
+    "User": { "Id": 7 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 120 }
+    "User": { "Id": 120 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 44 }
+    "User": { "Id": 44 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 65 }
+    "User": { "Id": 65 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 20 }
+    "User": { "Id": 20 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 87 }
+    "User": { "Id": 87 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "false",
-    "SettingFor": { "Id": 76 }
+    "User": { "Id": 76 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 98 }
+    "User": { "Id": 98 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 195 }
+    "User": { "Id": 195 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsOn",
     "Value": "false",
-    "SettingFor": { "Id": 6 }
+    "User": { "Id": 6 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 184 }
+    "User": { "Id": 184 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 27 }
+    "User": { "Id": 27 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 44 }
+    "User": { "Id": 44 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 107 }
+    "User": { "Id": 107 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 178 }
+    "User": { "Id": 178 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 15 }
+    "User": { "Id": 15 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 6 }
+    "User": { "Id": 6 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 181 }
+    "User": { "Id": 181 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 110 }
+    "User": { "Id": 110 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 59 }
+    "User": { "Id": 59 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 79 }
+    "User": { "Id": 79 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "true",
-    "SettingFor": { "Id": 171 }
+    "User": { "Id": 171 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 24 }
+    "User": { "Id": 24 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 195 }
+    "User": { "Id": 195 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 179 }
+    "User": { "Id": 179 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 56 }
+    "User": { "Id": 56 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 181 }
+    "User": { "Id": 181 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "true",
-    "SettingFor": { "Id": 155 }
+    "User": { "Id": 155 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 155 }
+    "User": { "Id": 155 }
   },
   {
     "UnitName": "Notifications",
     "Name": "DuplicateToEmail",
     "Value": "false",
-    "SettingFor": { "Id": 133 }
+    "User": { "Id": 133 }
   },
   {
     "UnitName": "Notifications",
     "Name": "TurnNotificationsSoundOn",
     "Value": "true",
-    "SettingFor": { "Id": 31 }
+    "User": { "Id": 31 }
   },
   {
     "UnitName": "General",
     "Name": "ShowBalance",
     "Value": "false",
-    "SettingFor": { "Id": 86 }
+    "User": { "Id": 86 }
   }
 ]

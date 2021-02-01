@@ -2,78 +2,76 @@
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Utils;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
+using CashSchedulerWebServer.Auth.Contracts;
 
 namespace CashSchedulerWebServer.Db.Repositories
 {
     public class TransactionRepository : ITransactionRepository
     {
-        private CashSchedulerContext Context { get; set; }
-        private IContextProvider ContextProvider { get; set; }
-        private ClaimsPrincipal User { get; set; }
-        private int? UserId => Convert.ToInt32(User?.Claims.FirstOrDefault(claim => claim.Type == "Id")?.Value ?? "-1");
+        private CashSchedulerContext Context { get; }
+        private IContextProvider ContextProvider { get; }
+        private int UserId { get; }
 
-        public TransactionRepository(CashSchedulerContext context, IHttpContextAccessor httpAccessor, IContextProvider contextProvider)
+        public TransactionRepository(CashSchedulerContext context, IUserContext userContext, IContextProvider contextProvider)
         {
             Context = context;
             ContextProvider = contextProvider;
-            User = httpAccessor.HttpContext.User;
+            UserId = userContext.GetUserId();
         }
 
 
         public IEnumerable<Transaction> GetAll()
         {
-            return Context.Transactions.Where(t => t.CreatedBy.Id == UserId)
-                .Include(t => t.CreatedBy)
-                .Include(t => t.TransactionCategory)
-                .Include(t => t.TransactionCategory.Type);
+            return Context.Transactions.Where(t => t.User.Id == UserId)
+                .Include(t => t.User)
+                .Include(t => t.Category)
+                .Include(t => t.Category.Type);
         }
 
         public IEnumerable<Transaction> GetByCategoryId(int categoryId)
         {
-            return Context.Transactions.Where(t => t.TransactionCategory.Id == categoryId);
+            return Context.Transactions.Where(t => t.Category.Id == categoryId);
         }
 
         public IEnumerable<Transaction> GetDashboardTransactions(int month, int year)
         {
             DateTime datePoint = new DateTime(year, month, 1);
-            return Context.Transactions.Where(t => t.Date >= datePoint.AddMonths(-1) && t.Date <= datePoint.AddMonths(2) && t.CreatedBy.Id == UserId)
-                .Include(t => t.CreatedBy)
-                .Include(t => t.TransactionCategory)
-                .Include(t => t.TransactionCategory.Type);
+            return Context.Transactions.Where(t => t.Date >= datePoint.AddMonths(-1) && t.Date <= datePoint.AddMonths(2) && t.User.Id == UserId)
+                .Include(t => t.User)
+                .Include(t => t.Category)
+                .Include(t => t.Category.Type);
         }
 
         public IEnumerable<Transaction> GetTransactionsByMonth(int month, int year)
         {
-            return Context.Transactions.Where(t => t.Date.Month == month && t.Date.Year == year && t.CreatedBy.Id == UserId)
-                .Include(t => t.CreatedBy)
-                .Include(t => t.TransactionCategory)
-                .Include(t => t.TransactionCategory.Type);
+            return Context.Transactions.Where(t => t.Date.Month == month && t.Date.Year == year && t.User.Id == UserId)
+                .Include(t => t.User)
+                .Include(t => t.Category)
+                .Include(t => t.Category.Type);
         }
 
         public Transaction GetById(int id)
         {
-            return Context.Transactions.Where(t => t.Id == id && t.CreatedBy.Id == UserId)
-                .Include(t => t.CreatedBy)
-                .Include(t => t.TransactionCategory)
-                .Include(t => t.TransactionCategory.Type)
+            return Context.Transactions.Where(t => t.Id == id && t.User.Id == UserId)
+                .Include(t => t.User)
+                .Include(t => t.Category)
+                .Include(t => t.Category.Type)
                 .FirstOrDefault();
         }
 
         public async Task<Transaction> Create(Transaction transaction)
         {
             ModelValidator.ValidateModelAttributes(transaction);
-            transaction.CreatedBy = ContextProvider.GetRepository<IUserRepository>().GetById((int)UserId);
-            transaction.TransactionCategory = ContextProvider.GetRepository<ICategoryRepository>().GetById(transaction.CategoryId);
-            if (transaction.TransactionCategory == null)
+            transaction.User = ContextProvider.GetRepository<IUserRepository>().GetById(UserId);
+            transaction.Category = ContextProvider.GetRepository<ICategoryRepository>().GetById(transaction.CategoryId);
+            if (transaction.Category == null)
             {
-                throw new CashSchedulerException("There is no such category", new string[] { "categoryId" });
+                throw new CashSchedulerException("There is no such category", new[] { "categoryId" });
             }
             Context.Transactions.Add(transaction);
             await Context.SaveChangesAsync();
@@ -95,7 +93,7 @@ namespace CashSchedulerWebServer.Db.Repositories
                 Title = targetTransaction.Title,
                 Amount = targetTransaction.Amount,
                 Date = targetTransaction.Date,
-                TransactionCategory = targetTransaction.TransactionCategory
+                Category = targetTransaction.Category
             };
 
             targetTransaction.Title = transaction.Title;

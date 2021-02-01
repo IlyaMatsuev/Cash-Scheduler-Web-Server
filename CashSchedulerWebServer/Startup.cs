@@ -1,34 +1,45 @@
-using CashSchedulerWebServer.Db;
-using CashSchedulerWebServer.Db.Contracts;
-using CashSchedulerWebServer.Schemas;
-using GraphiQl;
-using GraphQL;
-using GraphQL.Types;
-using GraphQL.Validation;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
-using Microsoft.AspNetCore.Http;
-using GraphQL.Authorization;
-using CashSchedulerWebServer.Authentication;
-using CashSchedulerWebServer.Authentication.Contracts;
-using CashSchedulerWebServer.Notifications.Contracts;
-using CashSchedulerWebServer.Notifications;
-using Quartz.Impl;
-using CashSchedulerWebServer.Jobs.Transactions;
-using Quartz.Spi;
 using Quartz;
-using CashSchedulerWebServer.Jobs;
-using System.Collections.Generic;
-using CashSchedulerWebServer.Jobs.Reporting;
-using GraphQL.Server;
+using Quartz.Impl;
+using Quartz.Spi;
+using GraphiQl;
+using CashSchedulerWebServer.Db;
 using CashSchedulerWebServer.Db.Repositories;
-using GraphQL.NewtonsoftJson;
-using GraphQL.Server.Transports.AspNetCore;
+using CashSchedulerWebServer.Db.Contracts;
+using CashSchedulerWebServer.Jobs;
+using CashSchedulerWebServer.Jobs.Reporting;
+using CashSchedulerWebServer.Jobs.Transactions;
+using CashSchedulerWebServer.Notifications;
+using CashSchedulerWebServer.Notifications.Contracts;
+using CashSchedulerWebServer.Auth;
+using CashSchedulerWebServer.Auth.AuthenticationHandlers;
+using CashSchedulerWebServer.Auth.AuthorizationHandlers;
+using CashSchedulerWebServer.Auth.Contracts;
+using CashSchedulerWebServer.Exceptions;
+using CashSchedulerWebServer.Mutations;
+using CashSchedulerWebServer.Mutations.Categories;
+using CashSchedulerWebServer.Mutations.Notifications;
+using CashSchedulerWebServer.Mutations.RecurringTransactions;
+using CashSchedulerWebServer.Mutations.Settings;
+using CashSchedulerWebServer.Mutations.Transactions;
+using CashSchedulerWebServer.Mutations.Users;
+using CashSchedulerWebServer.Queries;
+using CashSchedulerWebServer.Queries.TransactionTypes;
+using CashSchedulerWebServer.Queries.Categories;
+using CashSchedulerWebServer.Queries.RecurringTransactions;
+using CashSchedulerWebServer.Queries.Transactions;
+using CashSchedulerWebServer.Queries.UserNotifications;
+using CashSchedulerWebServer.Queries.Users;
+using CashSchedulerWebServer.Queries.UserSettings;
 
 namespace CashSchedulerWebServer
 {
@@ -39,43 +50,49 @@ namespace CashSchedulerWebServer
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        private IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
             #region JSON parser settings
+            
             services.AddControllers().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
+            
             #endregion
 
             #region CORS
-            services.AddCors(options =>
+            
+            services.AddCors(options => options.AddDefaultPolicy(builder =>
             {
-                options.AddPolicy(
-                    "ReactClient", 
-                    builder => builder.WithOrigins(GetClientEndpoint(Configuration)).AllowAnyMethod().AllowAnyHeader()
-                );
-            });
+                builder.WithOrigins(GetClientEndpoint(Configuration)).AllowAnyMethod().AllowAnyHeader();
+            }));
+            
             #endregion
 
             #region Authorization & Authentication
-            services.AddTransient<UserContextManager>();
+            
+            services.AddTransient<IUserContext, UserContext>();
             services.AddTransient<IAuthenticator, Authenticator>();
             services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddSingleton<IAuthorizationEvaluator, AuthorizationEvaluator>();
-            services.AddTransient<IValidationRule, AuthorizationValidationRule>();
-            services.AddSingleton(config =>
+
+            services.AddAuthentication("Default")
+                .AddScheme<CashSchedulerAuthenticationOptions, CashSchedulerAuthenticationHandler>("Default", null);
+
+            services.AddSingleton<IAuthorizationHandler, CashSchedulerAuthorizationHandler>();
+            services.AddAuthorization(options =>
             {
-                var authSettings = new AuthorizationSettings();
-                authSettings.AddPolicy(Configuration["App:Auth:UserPolicy"], p =>
-                {
-                    p.RequireClaim("Id");
-                });
-                return authSettings;
+                options.AddPolicy(
+                    AuthOptions.AUTH_POLICY,
+                    policy => policy.Requirements.Add(new CashSchedulerUserRequirement())
+                );
             });
+
             #endregion
 
             #region Database
-            services.AddDbContext<CashSchedulerContext>(options => options.UseSqlServer(GetConnectionString(Configuration)));
+            
+            // TODO: choose the correct lifetime
+            services.AddDbContext<CashSchedulerContext>(options => options.UseSqlServer(GetConnectionString(Configuration))/*, ServiceLifetime.Transient*/);
             services.AddTransient<IContextProvider, ContextProvider>();
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IUserEmailVerificationCodeRepository, UserEmailVerificationCodeRepository>();
@@ -86,13 +103,17 @@ namespace CashSchedulerWebServer
             services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddTransient<ITransactionRepository, TransactionRepository>();
             services.AddTransient<IRegularTransactionRepository, RegularTransactionRepository>();
+            
             #endregion
 
             #region Utils configurations
+            
             services.AddSingleton<INotificator, Notificator>();
+            
             #endregion
 
             #region Scheduling Jobs
+            
             services.AddSingleton<IJobFactory, JobFactory>();
             services.AddSingleton<ISchedulerFactory, StdSchedulerFactory>();
             services.AddTransient<TransactionsJob>();
@@ -105,16 +126,30 @@ namespace CashSchedulerWebServer
                 new JobMetadata(typeof(ReportingJob), Configuration["App:Jobs:Reporting:Name"], Configuration["App:Jobs:Reporting:Cron"])
             });
             services.AddHostedService<TransactionsHostedService>();
+            
             #endregion
 
             #region GraphQL
-            services.AddTransient<IDocumentExecuter, DocumentExecuter>();
-            services.AddTransient<IDocumentWriter, DocumentWriter>();
-            services.AddTransient<ISchema, CashSchedulerSchema>();
-            services.AddGraphQL()
-                .AddSystemTextJson(deserializerSettings => { }, serializerSettings => { })
-                .AddWebSockets()
-                .AddGraphTypes(typeof(CashSchedulerSchema), ServiceLifetime.Transient);
+
+            services.AddGraphQLServer()
+                .AddQueryType<Query>()
+                    .AddTypeExtension<UserQueries>()
+                    .AddTypeExtension<TransactionTypeQueries>()
+                    .AddTypeExtension<CategoryQueries>()
+                    .AddTypeExtension<TransactionQueries>()
+                    .AddTypeExtension<RecurringTransactionQueries>()
+                    .AddTypeExtension<UserNotificationQueries>()
+                    .AddTypeExtension<UserSettingQueries>()
+                .AddMutationType<Mutation>()
+                    .AddTypeExtension<UserMutations>()
+                    .AddTypeExtension<CategoryMutations>()
+                    .AddTypeExtension<TransactionMutations>()
+                    .AddTypeExtension<RecurringTransactionMutations>()
+                    .AddTypeExtension<NotificationMutations>()
+                    .AddTypeExtension<SettingMutations>()
+                .AddAuthorization()
+                .AddErrorFilter<CashSchedulerErrorFilter>();
+
             #endregion
         }
 
@@ -131,16 +166,13 @@ namespace CashSchedulerWebServer
             }
 
             app.UseWebSockets();
-            app.UseGraphQLWebSockets<ISchema>("/graphql");
-            //app.UseGraphQL<ISchema, GraphQLHttpMiddleware<ISchema>>("/graphql");
-            app.UseGraphiQl("/ui/graphql");
-            app.UseGraphQLPlayground();
             app.UseRouting();
             app.UseCors();
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseGraphiQl(Configuration["App:Server:GraphiQLPath"], Configuration["App:Server:GraphQLAPIPath"]);
             app.UseHttpsRedirection();
-            app.UseEndpoints(endpoints => endpoints.MapControllers());
+            app.UseEndpoints(endpoints => endpoints.MapGraphQL(Configuration["App:Server:GraphQLAPIPath"]));
         }
 
 

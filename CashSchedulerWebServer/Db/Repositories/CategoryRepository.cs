@@ -2,82 +2,101 @@
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Utils;
-using GraphQL;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
+using CashSchedulerWebServer.Auth.Contracts;
 
 namespace CashSchedulerWebServer.Db.Repositories
 {
     public class CategoryRepository : ICategoryRepository
     {
-        private CashSchedulerContext Context { get; set; }
-        private IContextProvider ContextProvider { get; set; }
-        private ClaimsPrincipal User { get; set; }
-        private int? UserId => Convert.ToInt32(User?.Claims.FirstOrDefault(claim => claim.Type == "Id")?.Value ?? "-1");
+        private CashSchedulerContext Context { get; }
+        private IContextProvider ContextProvider { get; }
+        private int UserId { get; }
 
-        public CategoryRepository(CashSchedulerContext context, IHttpContextAccessor httpAccessor, IContextProvider contextProvider)
+        public CategoryRepository(CashSchedulerContext context, IUserContext userContext, IContextProvider contextProvider)
         {
             Context = context;
-            User = httpAccessor.HttpContext.User;
             ContextProvider = contextProvider;
+            UserId = userContext.GetUserId();
         }
 
 
         public IEnumerable<Category> GetAll()
         {
-            return Context.Categories.Where(c => (c.CreatedBy != null && c.CreatedBy.Id == UserId && c.IsCustom) || !c.IsCustom)
+            return Context.Categories.Where(c => (c.User != null && c.User.Id == UserId && c.IsCustom) || !c.IsCustom)
                 .Include(c => c.Type)
-                .Include(c => c.CreatedBy);
+                .Include(c => c.User);
         }
 
-        public IEnumerable<Category> GetAll(string type)
+        public IEnumerable<Category> GetAll(string transactionType)
         {
-            if (string.IsNullOrEmpty(type))
+            if (string.IsNullOrEmpty(transactionType))
             {
                 return GetAll();
             }
-            return Context.Categories.Where(c => c.Type.Name == type && ((c.CreatedBy != null && c.CreatedBy.Id == UserId && c.IsCustom) || !c.IsCustom))
+            
+            return Context.Categories
+                .Where(c => c.Type.Name == transactionType 
+                            && ((c.User != null && c.User.Id == UserId && c.IsCustom) || !c.IsCustom))
                 .Include(c => c.Type)
-                .Include(c => c.CreatedBy);
+                .Include(c => c.User);
         }
 
-        public IEnumerable<Category> GetStandardCategories()
+        public IEnumerable<Category> GetStandardCategories(string transactionType)
         {
-            return Context.Categories.Where(c => !c.IsCustom)
+            if (string.IsNullOrEmpty(transactionType))
+            {
+                return Context.Categories.Where(c => !c.IsCustom)
+                    .Include(c => c.Type)
+                    .Include(c => c.User);
+            }
+            
+            return Context.Categories.Where(c => !c.IsCustom && c.Type.Name == transactionType)
                 .Include(c => c.Type)
-                .Include(c => c.CreatedBy);
+                .Include(c => c.User);
         }
 
-        public IEnumerable<Category> GetCustomCategories()
+        public IEnumerable<Category> GetCustomCategories(string transactionType)
         {
-            return Context.Categories.Where(c => c.IsCustom && c.CreatedBy != null && c.CreatedBy.Id == UserId)
+            if (string.IsNullOrEmpty(transactionType))
+            {
+                return Context.Categories
+                    .Where(c => c.IsCustom 
+                                && c.User != null 
+                                && c.User.Id == UserId)
+                    .Include(c => c.Type)
+                    .Include(c => c.User);
+            }
+            
+            return Context.Categories
+                .Where(c => c.IsCustom 
+                            && c.User != null
+                            && c.User.Id == UserId 
+                            && c.Type.Name == transactionType)
                 .Include(c => c.Type)
-                .Include(c => c.CreatedBy);
+                .Include(c => c.User);
         }
 
         public Category GetById(int id)
         {
-            return Context.Categories.Where(c => c.Id == id && ((c.CreatedBy.Id == UserId && c.IsCustom) || !c.IsCustom))
+            return Context.Categories.Where(c => c.Id == id && ((c.User.Id == UserId && c.IsCustom) || !c.IsCustom))
                 .Include(c => c.Type)
-                .Include(c => c.CreatedBy)
+                .Include(c => c.User)
                 .FirstOrDefault();
         }
 
         public async Task<Category> Create(Category category)
         {
             ModelValidator.ValidateModelAttributes(category);
-            category.Type = ContextProvider.GetRepository<ITransactionTypeRepository>().GetByName(category.TransactionTypeName);
+            category.Type = ContextProvider.GetRepository<ITransactionTypeRepository>().GetByName(category.TypeName);
             if (category.Type == null)
             {
-                throw new CashSchedulerException("There is no such transaction type", new string[] { "transactionTypeName" });
+                throw new CashSchedulerException("There is no such transaction type", new[] { "transactionTypeName" });
             }
-            category.CreatedBy = ContextProvider.GetRepository<IUserRepository>().GetById((int)UserId);
+            category.User = ContextProvider.GetRepository<IUserRepository>().GetById(UserId);
 
             Context.Categories.Add(category);
             await Context.SaveChangesAsync();
@@ -102,7 +121,7 @@ namespace CashSchedulerWebServer.Db.Repositories
                 targetCategory.IconUrl = category.IconUrl;
             }
 
-            targetCategory.TransactionTypeName = targetCategory.Type.Name;
+            targetCategory.TypeName = targetCategory.Type.Name;
 
             ModelValidator.ValidateModelAttributes(targetCategory);
 
@@ -121,10 +140,10 @@ namespace CashSchedulerWebServer.Db.Repositories
             }
 
             var relatedTransactions = ContextProvider.GetRepository<ITransactionRepository>().GetByCategoryId(categoryId);
-            var realtedRegularTransactions = ContextProvider.GetRepository<IRegularTransactionRepository>().GetByCategoryId(categoryId);
+            var relatedRegularTransactions = ContextProvider.GetRepository<IRegularTransactionRepository>().GetByCategoryId(categoryId);
 
             Context.Transactions.RemoveRange(relatedTransactions);
-            Context.RegularTransactions.RemoveRange(realtedRegularTransactions);
+            Context.RegularTransactions.RemoveRange(relatedRegularTransactions);
             Context.Categories.Remove(targetCategory);
             await Context.SaveChangesAsync();
 

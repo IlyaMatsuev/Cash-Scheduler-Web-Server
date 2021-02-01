@@ -2,7 +2,6 @@
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Utils;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,7 +10,7 @@ namespace CashSchedulerWebServer.Db.Repositories
 {
     public class UserRefreshTokenRepository : IUserRefreshTokenRepository
     {
-        private CashSchedulerContext Context { get; set; }
+        private CashSchedulerContext Context { get; }
 
         public UserRefreshTokenRepository(CashSchedulerContext context)
         {

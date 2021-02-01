@@ -1,23 +1,23 @@
 ﻿using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Exceptions;
-using GraphQL.Utilities;
 using System;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace CashSchedulerWebServer.Db
 {
     public class ContextProvider : IContextProvider
     {
-        private readonly IServiceProvider Provider;
+        private IServiceProvider ServiceProvider { get; }
 
-        public ContextProvider(IServiceProvider provider)
+        public ContextProvider(IServiceProvider serviceProvider)
         {
-            Provider = provider;
+            ServiceProvider = serviceProvider;
         }
 
 
         public T GetRepository<T>() where T : class
         {
-            var repository = Provider.GetRequiredService<T>();
+            var repository = ServiceProvider.GetRequiredService<T>();
 
             if (repository == null)
             {

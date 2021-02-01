@@ -10,7 +10,7 @@ namespace CashSchedulerWebServer.Db.Repositories
 {
     public class UserEmailVerificationCodeRepository : IUserEmailVerificationCodeRepository
     {
-        private CashSchedulerContext Context { get; set; }
+        private CashSchedulerContext Context { get; }
 
         public UserEmailVerificationCodeRepository(CashSchedulerContext context)
         {

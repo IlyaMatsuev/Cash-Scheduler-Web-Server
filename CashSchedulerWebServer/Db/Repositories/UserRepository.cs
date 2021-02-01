@@ -2,28 +2,26 @@
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Utils;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
+using CashSchedulerWebServer.Auth.Contracts;
 
 namespace CashSchedulerWebServer.Db.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private CashSchedulerContext Context { get; set; }
-        private IConfiguration Configuration { get; set; }
-        private ClaimsPrincipal User { get; set; }
-        private int? UserId => Convert.ToInt32(User?.Claims.FirstOrDefault(claim => claim.Type == "Id")?.Value ?? "-1");
+        private CashSchedulerContext Context { get; }
+        private IConfiguration Configuration { get; }
+        private int UserId { get; }
 
-        public UserRepository(CashSchedulerContext context, IHttpContextAccessor httpAccessor, IConfiguration configuration)
+        public UserRepository(CashSchedulerContext context, IUserContext userContext, IConfiguration configuration)
         {
             Context = context;
-            User = httpAccessor.HttpContext.User;
             Configuration = configuration;
+            UserId = userContext.GetUserId();
         }
 
 
@@ -34,7 +32,7 @@ namespace CashSchedulerWebServer.Db.Repositories
 
         public User GetById()
         {
-            return GetById((int) UserId);
+            return GetById(UserId);
         }
 
         public User GetById(int id)
@@ -92,10 +90,20 @@ namespace CashSchedulerWebServer.Db.Repositories
 
         public async Task<User> Update(User user)
         {
-            User targetUser = GetById(user.Id);
+            var targetUser = GetById(user.Id);
             if (targetUser == null)
             {
                 throw new CashSchedulerException("There is no such user");
+            }
+
+            if (user.FirstName != null)
+            {
+                targetUser.FirstName = user.FirstName;
+            }
+            
+            if (user.LastName != null)
+            {
+                targetUser.LastName = user.LastName;
             }
 
             if (user.Balance != default)
@@ -103,21 +111,19 @@ namespace CashSchedulerWebServer.Db.Repositories
                 targetUser.Balance = user.Balance;
             }
 
-            targetUser.FirstName = user.FirstName;
-            targetUser.LastName = user.LastName;
-
             ModelValidator.ValidateModelAttributes(targetUser);
             Context.Users.Update(targetUser);
             await Context.SaveChangesAsync();
-            return user;
+            
+            return targetUser;
         }
 
         public async Task<User> UpdateBalance(Transaction transaction, Transaction oldTransaction, bool isCreate = false, bool isUpdate = false, bool isDelete = false)
         {
             int delta = 1;
-            User user = transaction.CreatedBy;
+            var user = transaction.User;
 
-            if (transaction.TransactionCategory.Type.Name == TransactionType.Options.Expense.ToString())
+            if (transaction.Category.Type.Name == TransactionType.Options.Expense.ToString())
             {
                 delta = -1;
             }
@@ -155,6 +161,9 @@ namespace CashSchedulerWebServer.Db.Repositories
             return await Update(user);
         }
 
-        public Task<User> Delete(int id) => throw new NotImplementedException();
+        public Task<User> Delete(int id)
+        {
+            throw new CashSchedulerException("It's forbidden to delete users` accounts");
+        }
     }
 }

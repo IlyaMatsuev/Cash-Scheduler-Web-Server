@@ -7,10 +7,14 @@ namespace CashSchedulerWebServer.Models.Validations
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            if ((DateTime)value <= DateTime.Today)
+            if ((DateTime) value <= DateTime.Today)
             {
-                return new ValidationResult(ErrorMessage ?? "Date must be greater than today", memberNames: new string[] { validationContext.MemberName });
+                return new ValidationResult(
+                    ErrorMessage ?? "Date must be greater than today",
+                    new[] {validationContext.MemberName}
+                );
             }
+
             return ValidationResult.Success;
         }
     }

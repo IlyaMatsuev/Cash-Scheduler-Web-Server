@@ -9,7 +9,7 @@ namespace CashSchedulerWebServer.Db.Repositories
 {
     public class TransactionTypeRepository : ITransactionTypeRepository
     {
-        private CashSchedulerContext Context { get; set; }
+        private CashSchedulerContext Context { get; }
 
         public TransactionTypeRepository(CashSchedulerContext context)
         {

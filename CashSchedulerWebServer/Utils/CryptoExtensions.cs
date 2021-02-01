@@ -10,7 +10,7 @@ namespace CashSchedulerWebServer.Utils
     {
         public static string Hash(this string input, IConfiguration configuration)
         {
-            using SHA256 sha = SHA256.Create();
+            using var sha = SHA256.Create();
             return Encoding.ASCII.GetString(sha.ComputeHash(Encoding.ASCII.GetBytes(input + configuration["App:Auth:PasswordSalt"])));
         }
 
@@ -18,7 +18,8 @@ namespace CashSchedulerWebServer.Utils
         {
             var random = new Random();
             return string.Concat(
-                Enumerable.Range(0, Convert.ToInt32(configuration["App:Auth:EmailVerificationCodeLength"])).Select(i => random.Next(0, 9).ToString())
+                Enumerable.Range(0, Convert.ToInt32(configuration["App:Auth:EmailVerificationCodeLength"]))
+                    .Select(i => random.Next(0, 9).ToString())
             );
         }
     }

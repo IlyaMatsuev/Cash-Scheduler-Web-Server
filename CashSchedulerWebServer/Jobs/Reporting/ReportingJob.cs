@@ -13,13 +13,13 @@ namespace CashSchedulerWebServer.Jobs.Reporting
 {
     public class ReportingJob : IJob
     {
-        private readonly CashSchedulerContext cashSchedulerContext;
-        private readonly INotificator notificator;
+        private CashSchedulerContext CashSchedulerContext { get; }
+        private INotificator Notificator { get; }
 
         public ReportingJob(CashSchedulerContext cashSchedulerContext, INotificator notificator)
         {
-            this.cashSchedulerContext = cashSchedulerContext;
-            this.notificator = notificator;
+            CashSchedulerContext = cashSchedulerContext;
+            Notificator = notificator;
         }
 
 
@@ -27,15 +27,16 @@ namespace CashSchedulerWebServer.Jobs.Reporting
         {
             var now = DateTime.UtcNow;
             Console.WriteLine($"Running the {context.JobDetail.Description}");
-            var transactionsByUsers = cashSchedulerContext.Transactions.Where(t => t.Date >= now.AddDays(-7).Date && t.TransactionCategory.Type.Name == TransactionType.Options.Expense.ToString())
-                .Include(t => t.TransactionCategory)
-                .Include(t => t.TransactionCategory.Type)
-                .Include(t => t.CreatedBy).ToList()
-                .GroupBy(t => t.CreatedBy);
+            var transactionsByUsers = CashSchedulerContext.Transactions
+                .Where(t => t.Date >= now.AddDays(-7).Date && t.Category.Type.Name == TransactionType.Options.Expense.ToString())
+                .Include(t => t.Category)
+                .Include(t => t.Category.Type)
+                .Include(t => t.User).ToList()
+                .GroupBy(t => t.User);
 
             var usersByMaxSpentCategory = transactionsByUsers.Select(group =>
             {
-                var maxSpentCategoryForLastWeek = group.GroupBy(t => t.TransactionCategory).OrderBy(c => c.Max(t => c.Sum(tc => tc.Amount)))
+                var maxSpentCategoryForLastWeek = group.GroupBy(t => t.Category).OrderBy(c => c.Max(t => c.Sum(tc => tc.Amount)))
                 .Select(c => new
                 {
                     Category = c.Key,
@@ -50,25 +51,22 @@ namespace CashSchedulerWebServer.Jobs.Reporting
             }).ToList();
 
 
-            using (var dmlTransaction = cashSchedulerContext.Database.BeginTransaction())
+            using var dmlTransaction = CashSchedulerContext.Database.BeginTransaction();
+            try
             {
-                try
-                {
-                    var notifications = NotifyUsers(usersByMaxSpentCategory);
+                var notifications = NotifyUsers(usersByMaxSpentCategory);
 
-                    cashSchedulerContext.UserNotifications.AddRange(notifications);
-                    cashSchedulerContext.SaveChanges();
+                CashSchedulerContext.UserNotifications.AddRange(notifications);
+                CashSchedulerContext.SaveChanges();
 
-                    dmlTransaction.Commit();
+                dmlTransaction.Commit();
 
-                    Console.WriteLine($"{notifications.Count()} users were notified");
-                }
-                catch (Exception error)
-                {
-                    dmlTransaction.Rollback();
-                    Console.WriteLine($"Error while running the {context.JobDetail.Description}: {error.Message}: \n{error.StackTrace}");
-                }
-
+                Console.WriteLine($"{notifications.Count} users were notified");
+            }
+            catch (Exception error)
+            {
+                dmlTransaction.Rollback();
+                Console.WriteLine($"Error while running the {context.JobDetail.Description}: {error.Message}: \n{error.StackTrace}");
             }
 
             return Task.CompletedTask;
@@ -83,11 +81,11 @@ namespace CashSchedulerWebServer.Jobs.Reporting
             usersEntries.ForEach(entry =>
             {
                 var user = entry.User as User;
-                List<UserSetting> settings = settingsByUsers.FirstOrDefault(s => s.Key == user)?.ToList();
+                var settings = settingsByUsers.FirstOrDefault(s => s.Key == user)?.ToList();
                 if (settings != null)
                 {
-                    UserSetting notificationsEnabledSetting = settings.FirstOrDefault(s => s.Name == UserSetting.SettingOptions.TurnNotificationsOn.ToString());
-                    UserSetting duplicateToEmailSetting = settings.FirstOrDefault(s => s.Name == UserSetting.SettingOptions.DuplicateToEmail.ToString());
+                    var notificationsEnabledSetting = settings.FirstOrDefault(s => s.Name == UserSetting.SettingOptions.TurnNotificationsOn.ToString());
+                    var duplicateToEmailSetting = settings.FirstOrDefault(s => s.Name == UserSetting.SettingOptions.DuplicateToEmail.ToString());
 
                     if (notificationsEnabledSetting?.Value == "true")
                     {
@@ -102,12 +100,12 @@ namespace CashSchedulerWebServer.Jobs.Reporting
                             Title = notificationTemplate.Subject,
                             Content = notificationTemplate.Body,
                             IsRead = false,
-                            CreatedFor = user
+                            User = user
                         };
                         notificationsToBeCreated.Add(notification);
                         if (duplicateToEmailSetting?.Value == "true")
                         {
-                            notificator.SendEmail(user.Email, notificationTemplate);
+                            Notificator.SendEmail(user?.Email, notificationTemplate);
                         }
                     }
                 }
@@ -118,9 +116,10 @@ namespace CashSchedulerWebServer.Jobs.Reporting
 
         private List<IGrouping<User, UserSetting>> GetSettingsByUsers(List<int> usersIds)
         {
-            return cashSchedulerContext.UserSettings
-                .Where(s => usersIds.Contains(s.SettingFor.Id) && s.UnitName == UserSetting.UnitOptions.Notifications.ToString()).AsEnumerable()
-                .GroupBy(s => s.SettingFor).ToList();
+            return CashSchedulerContext.UserSettings
+                .Where(s => usersIds.Contains(s.User.Id) && s.UnitName == UserSetting.UnitOptions.Notifications.ToString())
+                .AsEnumerable()
+                .GroupBy(s => s.User).ToList();
         }
     }
 }

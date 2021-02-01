@@ -12,11 +12,11 @@ namespace CashSchedulerWebServer.Jobs.Transactions
 {
     public class RecurringTransactionsJob : IJob
     {
-        private readonly CashSchedulerContext cashSchedulerContext;
+        private CashSchedulerContext CashSchedulerContext { get; }
 
         public RecurringTransactionsJob(CashSchedulerContext cashSchedulerContext)
         {
-            this.cashSchedulerContext = cashSchedulerContext;
+            CashSchedulerContext = cashSchedulerContext;
         }
 
 
@@ -24,22 +24,23 @@ namespace CashSchedulerWebServer.Jobs.Transactions
         {
             var now = DateTime.UtcNow;
             Console.WriteLine($"Running the {context.JobDetail.Description}");
-            var recurringTransactions = cashSchedulerContext.RegularTransactions.Where(t => t.NextTransactionDate.Date == now.Date)
-                .Include(t => t.TransactionCategory)
-                .Include(t => t.TransactionCategory.Type)
-                .Include(t => t.CreatedBy)
+            var recurringTransactions = CashSchedulerContext.RegularTransactions
+                .Where(t => t.NextTransactionDate.Date == now.Date)
+                .Include(t => t.Category)
+                .Include(t => t.Category.Type)
+                .Include(t => t.User)
                 .ToList();
 
             var singleTransactionsToBeCreated = new List<Transaction>();
             var recurringTransactionsToBeUpdated = new List<RegularTransaction>();
-            List<User> usersToUpdateBalance = recurringTransactions.GroupBy(t => t.CreatedBy).Select(t =>
+            var usersToUpdateBalance = recurringTransactions.GroupBy(t => t.User).Select(t =>
             {
-                User user = t.Key;
+                var user = t.Key;
                 singleTransactionsToBeCreated.AddRange(t.Select(rt => new Transaction
                 {
                     Title = rt.Title,
-                    CreatedBy = rt.CreatedBy,
-                    TransactionCategory = rt.TransactionCategory,
+                    User = rt.User,
+                    Category = rt.Category,
                     Amount = rt.Amount
                 }));
                 recurringTransactionsToBeUpdated.AddRange(t.Select(rt =>
@@ -48,31 +49,29 @@ namespace CashSchedulerWebServer.Jobs.Transactions
                     rt.NextTransactionDate = GetNextDateByInterval(rt);
                     return rt;
                 }));
-                user.Balance += t.Sum(rt => rt.TransactionCategory.Type.Name == TransactionType.Options.Income.ToString() ? rt.Amount : -rt.Amount);
+                user.Balance += t.Sum(rt => rt.Category.Type.Name == TransactionType.Options.Income.ToString() ? rt.Amount : -rt.Amount);
                 return user;
             }).ToList();
 
-            using (var dmlTransaction = cashSchedulerContext.Database.BeginTransaction())
+            using var dmlTransaction = CashSchedulerContext.Database.BeginTransaction();
+            try
             {
-                try
-                {
-                    cashSchedulerContext.Transactions.AddRange(singleTransactionsToBeCreated);
-                    cashSchedulerContext.SaveChanges();
-                    cashSchedulerContext.RegularTransactions.UpdateRange(recurringTransactionsToBeUpdated);
-                    cashSchedulerContext.SaveChanges();
-                    cashSchedulerContext.Users.UpdateRange(usersToUpdateBalance);
-                    cashSchedulerContext.SaveChanges();
+                CashSchedulerContext.Transactions.AddRange(singleTransactionsToBeCreated);
+                CashSchedulerContext.SaveChanges();
+                CashSchedulerContext.RegularTransactions.UpdateRange(recurringTransactionsToBeUpdated);
+                CashSchedulerContext.SaveChanges();
+                CashSchedulerContext.Users.UpdateRange(usersToUpdateBalance);
+                CashSchedulerContext.SaveChanges();
 
-                    dmlTransaction.Commit();
+                dmlTransaction.Commit();
 
-                    Console.WriteLine($"{singleTransactionsToBeCreated.Count()} single transactions were created");
-                    Console.WriteLine($"{usersToUpdateBalance.Count()} users were updated");
-                }
-                catch (Exception error)
-                {
-                    dmlTransaction.Rollback();
-                    Console.WriteLine($"Error while running the {context.JobDetail.Description}: {error.Message}: \n{error.StackTrace}");
-                }
+                Console.WriteLine($"{singleTransactionsToBeCreated.Count} single transactions were created");
+                Console.WriteLine($"{usersToUpdateBalance.Count} users were updated");
+            }
+            catch (Exception error)
+            {
+                dmlTransaction.Rollback();
+                Console.WriteLine($"Error while running the {context.JobDetail.Description}: {error.Message}: \n{error.StackTrace}");
             }
 
             return Task.CompletedTask;
@@ -88,14 +87,13 @@ namespace CashSchedulerWebServer.Jobs.Transactions
                 {RegularTransaction.IntervalOptions.Year.ToString().ToLower(), (date) => date.AddYears(1) }
             };
 
-            if (intervals.ContainsKey(transaction.Interval))
+            if (!intervals.ContainsKey(transaction.Interval))
             {
-                return intervals[transaction.Interval](transaction.NextTransactionDate);
+                throw new CashSchedulerException($"There is no such value for interval: {transaction.Interval}");                
             }
-            else
-            {
-                throw new CashSchedulerException($"There is no such value for interval: {transaction.Interval}");
-            }
+
+            return intervals[transaction.Interval](transaction.NextTransactionDate);
+
         }
     }
 }
