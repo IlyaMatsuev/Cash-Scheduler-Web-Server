@@ -11,7 +11,6 @@ using Newtonsoft.Json;
 using Quartz;
 using Quartz.Impl;
 using Quartz.Spi;
-using GraphiQl;
 using CashSchedulerWebServer.Db;
 using CashSchedulerWebServer.Db.Repositories;
 using CashSchedulerWebServer.Db.Contracts;
@@ -40,6 +39,9 @@ using CashSchedulerWebServer.Queries.Transactions;
 using CashSchedulerWebServer.Queries.UserNotifications;
 using CashSchedulerWebServer.Queries.Users;
 using CashSchedulerWebServer.Queries.UserSettings;
+using CashSchedulerWebServer.Subscriptions;
+using CashSchedulerWebServer.Subscriptions.Notifications;
+using HotChocolate.AspNetCore;
 
 namespace CashSchedulerWebServer
 {
@@ -147,7 +149,10 @@ namespace CashSchedulerWebServer
                     .AddTypeExtension<RecurringTransactionMutations>()
                     .AddTypeExtension<NotificationMutations>()
                     .AddTypeExtension<SettingMutations>()
+                .AddSubscriptionType<Subscription>()
+                    .AddTypeExtension<NotificationSubscriptions>()
                 .AddAuthorization()
+                .AddInMemorySubscriptions()
                 .AddErrorFilter<CashSchedulerErrorFilter>();
 
             #endregion
@@ -170,11 +175,10 @@ namespace CashSchedulerWebServer
             app.UseCors();
             app.UseAuthentication();
             app.UseAuthorization();
-            app.UseGraphiQl(Configuration["App:Server:GraphiQLPath"], Configuration["App:Server:GraphQLAPIPath"]);
+            app.UsePlayground(Configuration["App:Server:GraphQLAPIPath"], Configuration["App:Server:GraphQLPlaygroundPath"]);
             app.UseHttpsRedirection();
             app.UseEndpoints(endpoints => endpoints.MapGraphQL(Configuration["App:Server:GraphQLAPIPath"]));
         }
-
 
 
         private string GetClientEndpoint(IConfiguration configuration)

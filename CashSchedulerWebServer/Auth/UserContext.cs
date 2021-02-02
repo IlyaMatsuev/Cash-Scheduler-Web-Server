@@ -31,9 +31,7 @@ namespace CashSchedulerWebServer.Auth
         public int GetUserId()
         {
             var claimsPrincipal = HttpContext.User;
-            string userId = claimsPrincipal?.Claims
-                .FirstOrDefault(claim => claim.Type == ID_CLAIM_TYPE)?.Value 
-                            ?? throw new CashSchedulerException("Unauthorized", "401");
+            string userId = claimsPrincipal?.Claims.FirstOrDefault(claim => claim.Type == ID_CLAIM_TYPE)?.Value ?? "-1";
             return Convert.ToInt32(userId);
         }
 

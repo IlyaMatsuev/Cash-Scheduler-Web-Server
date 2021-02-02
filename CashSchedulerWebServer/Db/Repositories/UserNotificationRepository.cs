@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Exceptions;
+using HotChocolate.Subscriptions;
 
 namespace CashSchedulerWebServer.Db.Repositories
 {
@@ -14,15 +15,18 @@ namespace CashSchedulerWebServer.Db.Repositories
     {
         private CashSchedulerContext Context { get; }
         private IContextProvider ContextProvider { get; }
+        private ITopicEventSender EventSender { get; }
         private int UserId { get; }
 
         public UserNotificationRepository(
             CashSchedulerContext context,
             IUserContext userContext,
-            IContextProvider contextProvider)
+            IContextProvider contextProvider,
+            ITopicEventSender eventSender)
         {
             Context = context;
             ContextProvider = contextProvider;
+            EventSender = eventSender;
             UserId = userContext.GetUserId();
         }
         
@@ -53,6 +57,7 @@ namespace CashSchedulerWebServer.Db.Repositories
 
             Context.UserNotifications.Add(notification);
             await Context.SaveChangesAsync();
+            await EventSender.SendAsync($"OnNotificationForUser_{UserId}", notification);
 
             return GetById(notification.Id);
         }
