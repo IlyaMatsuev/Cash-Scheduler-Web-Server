@@ -19,5 +19,8 @@ namespace CashSchedulerWebServer.Db
         public DbSet<Category> Categories { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<RegularTransaction> RegularTransactions { get; set; }
+        public DbSet<Wallet> Wallets { get; set; }
+        public DbSet<Currency> Currencies { get; set; }
+        public DbSet<CurrencyExchangeRate> CurrencyExchangeRates { get; set; }
     }
 }

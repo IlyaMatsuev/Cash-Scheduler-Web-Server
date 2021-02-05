@@ -1,30 +1,32 @@
-﻿using Microsoft.Extensions.Hosting;
-using Quartz;
-using Quartz.Spi;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using CashSchedulerWebServer.Jobs.Contracts;
+using Quartz;
+using Quartz.Spi;
 
-namespace CashSchedulerWebServer.Jobs.Transactions
+namespace CashSchedulerWebServer.Jobs
 {
-    public class TransactionsHostedService : IHostedService
+    public class JobManager : IJobManager
     {
         private ISchedulerFactory SchedulerFactory { get; }
         private IJobFactory JobFactory { get; }
         private List<JobMetadata> JobsMetadata { get; }
-
         private IScheduler Scheduler { get; set; }
 
-        public TransactionsHostedService(ISchedulerFactory schedulerFactory, IJobFactory jobFactory, List<JobMetadata> jobsMetadata)
+        public JobManager(
+            ISchedulerFactory schedulerFactory,
+            IJobFactory jobFactory,
+            List<JobMetadata> jobsMetadata)
         {
             SchedulerFactory = schedulerFactory;
             JobFactory = jobFactory;
             JobsMetadata = jobsMetadata;
         }
-
-
-        public async Task StartAsync(CancellationToken cancellationToken)
+        
+        
+        public async Task ScheduleJobs(CancellationToken cancellationToken)
         {
             Console.WriteLine("Scheduling the jobs");
             Scheduler = await SchedulerFactory.GetScheduler(cancellationToken);
@@ -39,7 +41,7 @@ namespace CashSchedulerWebServer.Jobs.Transactions
             await Scheduler.Start(cancellationToken);
         }
 
-        public async Task StopAsync(CancellationToken cancellationToken)
+        public async Task UnScheduleJobs(CancellationToken cancellationToken)
         {
             Console.WriteLine("Shutting down the jobs");
             if (Scheduler != null)
@@ -47,8 +49,8 @@ namespace CashSchedulerWebServer.Jobs.Transactions
                 await Scheduler.Shutdown(cancellationToken);                
             }
         }
-
-
+        
+        
         private ITrigger CreateTrigger(JobMetadata jobMetadata)
         {
             return TriggerBuilder.Create()

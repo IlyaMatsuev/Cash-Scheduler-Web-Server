@@ -1,0 +1,857 @@
+[
+  {
+    "Abbreviation": "AED",
+    "Name": "United Arab Emirates Dirham",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "AFN",
+    "Name": "Afghan Afghani",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "ALL",
+    "Name": "Albanian Lek",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "AMD",
+    "Name": "Armenian Dram",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "ANG",
+    "Name": "Netherlands Antillean Guilder",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "AOA",
+    "Name": "Angolan Kwanza",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "ARS",
+    "Name": "Argentine Peso",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "AUD",
+    "Name": "Australian Dollar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "AWG",
+    "Name": "Aruban Florin",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "AZN",
+    "Name": "Azerbaijani Manat",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "BAM",
+    "Name": "Bosnia-Herzegovina Convertible Mark",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "BBD",
+    "Name": "Barbadian Dollar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "BDT",
+    "Name": "Bangladeshi Taka",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "BGN",
+    "Name": "Bulgarian Lev",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "BHD",
+    "Name": "Bahraini Dinar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "BIF",
+    "Name": "Burundian Franc",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "BMD",
+    "Name": "Bermudan Dollar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "BND",
+    "Name": "Brunei Dollar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "BOB",
+    "Name": "Bolivian Boliviano",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "BRL",
+    "Name": "Brazilian Real",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "BSD",
+    "Name": "Bahamian Dollar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "BTC",
+    "Name": "Bitcoin",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "BTN",
+    "Name": "Bhutanese Ngultrum",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "BWP",
+    "Name": "Botswanan Pula",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "BYN",
+    "Name": "Belarusian Ruble",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "BZD",
+    "Name": "Belize Dollar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "CAD",
+    "Name": "Canadian Dollar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "CDF",
+    "Name": "Congolese Franc",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "CHF",
+    "Name": "Swiss Franc",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "CLF",
+    "Name": "Chilean Unit of Account (UF)",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "CLP",
+    "Name": "Chilean Peso",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "CNH",
+    "Name": "Chinese Yuan (Offshore)",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "CNY",
+    "Name": "Chinese Yuan",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "COP",
+    "Name": "Colombian Peso",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "CRC",
+    "Name": "Costa Rican Colón",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "CUC",
+    "Name": "Cuban Convertible Peso",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "CUP",
+    "Name": "Cuban Peso",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "CVE",
+    "Name": "Cape Verdean Escudo",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "CZK",
+    "Name": "Czech Republic Koruna",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "DJF",
+    "Name": "Djiboutian Franc",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "DKK",
+    "Name": "Danish Krone",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "DOP",
+    "Name": "Dominican Peso",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "DZD",
+    "Name": "Algerian Dinar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "EGP",
+    "Name": "Egyptian Pound",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "ERN",
+    "Name": "Eritrean Nakfa",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "ETB",
+    "Name": "Ethiopian Birr",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "EUR",
+    "Name": "Euro",
+    "IconUrl": "/static/icons/currencies/euro.png"
+  },
+  {
+    "Abbreviation": "FJD",
+    "Name": "Fijian Dollar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "FKP",
+    "Name": "Falkland Islands Pound",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "GBP",
+    "Name": "British Pound Sterling",
+    "IconUrl": "/static/icons/currencies/british-pound.png"
+  },
+  {
+    "Abbreviation": "GEL",
+    "Name": "Georgian Lari",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "GGP",
+    "Name": "Guernsey Pound",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "GHS",
+    "Name": "Ghanaian Cedi",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "GIP",
+    "Name": "Gibraltar Pound",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "GMD",
+    "Name": "Gambian Dalasi",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "GNF",
+    "Name": "Guinean Franc",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "GTQ",
+    "Name": "Guatemalan Quetzal",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "GYD",
+    "Name": "Guyanaese Dollar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "HKD",
+    "Name": "Hong Kong Dollar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "HNL",
+    "Name": "Honduran Lempira",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "HRK",
+    "Name": "Croatian Kuna",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "HTG",
+    "Name": "Haitian Gourde",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "HUF",
+    "Name": "Hungarian Forint",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "IDR",
+    "Name": "Indonesian Rupiah",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "ILS",
+    "Name": "Israeli New Sheqel",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "IMP",
+    "Name": "Manx pound",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "INR",
+    "Name": "Indian Rupee",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "IQD",
+    "Name": "Iraqi Dinar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "IRR",
+    "Name": "Iranian Rial",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "ISK",
+    "Name": "Icelandic Króna",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "JEP",
+    "Name": "Jersey Pound",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "JMD",
+    "Name": "Jamaican Dollar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "JOD",
+    "Name": "Jordanian Dinar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "JPY",
+    "Name": "Japanese Yen",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "KES",
+    "Name": "Kenyan Shilling",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "KGS",
+    "Name": "Kyrgystani Som",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "KHR",
+    "Name": "Cambodian Riel",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "KMF",
+    "Name": "Comorian Franc",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "KPW",
+    "Name": "North Korean Won",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "KRW",
+    "Name": "South Korean Won",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "KWD",
+    "Name": "Kuwaiti Dinar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "KYD",
+    "Name": "Cayman Islands Dollar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "KZT",
+    "Name": "Kazakhstani Tenge",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "LAK",
+    "Name": "Laotian Kip",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "LBP",
+    "Name": "Lebanese Pound",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "LKR",
+    "Name": "Sri Lankan Rupee",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "LRD",
+    "Name": "Liberian Dollar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "LSL",
+    "Name": "Lesotho Loti",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "LYD",
+    "Name": "Libyan Dinar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "MAD",
+    "Name": "Moroccan Dirham",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "MDL",
+    "Name": "Moldovan Leu",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "MGA",
+    "Name": "Malagasy Ariary",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "MKD",
+    "Name": "Macedonian Denar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "MMK",
+    "Name": "Myanma Kyat",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "MNT",
+    "Name": "Mongolian Tugrik",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "MOP",
+    "Name": "Macanese Pataca",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "MRO",
+    "Name": "Mauritanian Ouguiya (pre-2018)",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "MRU",
+    "Name": "Mauritanian Ouguiya",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "MUR",
+    "Name": "Mauritian Rupee",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "MVR",
+    "Name": "Maldivian Rufiyaa",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "MWK",
+    "Name": "Malawian Kwacha",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "MXN",
+    "Name": "Mexican Peso",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "MYR",
+    "Name": "Malaysian Ringgit",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "MZN",
+    "Name": "Mozambican Metical",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "NAD",
+    "Name": "Namibian Dollar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "NGN",
+    "Name": "Nigerian Naira",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "NIO",
+    "Name": "Nicaraguan Córdoba",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "NOK",
+    "Name": "Norwegian Krone",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "NPR",
+    "Name": "Nepalese Rupee",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "NZD",
+    "Name": "New Zealand Dollar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "OMR",
+    "Name": "Omani Rial",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "PAB",
+    "Name": "Panamanian Balboa",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "PEN",
+    "Name": "Peruvian Nuevo Sol",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "PGK",
+    "Name": "Papua New Guinean Kina",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "PHP",
+    "Name": "Philippine Peso",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "PKR",
+    "Name": "Pakistani Rupee",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "PLN",
+    "Name": "Polish Zloty",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "PYG",
+    "Name": "Paraguayan Guarani",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "QAR",
+    "Name": "Qatari Rial",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "RON",
+    "Name": "Romanian Leu",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "RSD",
+    "Name": "Serbian Dinar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "RUB",
+    "Name": "Russian Ruble",
+    "IconUrl": "/static/icons/currencies/ruble.png"
+  },
+  {
+    "Abbreviation": "RWF",
+    "Name": "Rwandan Franc",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "SAR",
+    "Name": "Saudi Riyal",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "SBD",
+    "Name": "Solomon Islands Dollar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "SCR",
+    "Name": "Seychellois Rupee",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "SDG",
+    "Name": "Sudanese Pound",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "SEK",
+    "Name": "Swedish Krona",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "SGD",
+    "Name": "Singapore Dollar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "SHP",
+    "Name": "Saint Helena Pound",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "SLL",
+    "Name": "Sierra Leonean Leone",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "SOS",
+    "Name": "Somali Shilling",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "SRD",
+    "Name": "Surinamese Dollar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "SSP",
+    "Name": "South Sudanese Pound",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "STD",
+    "Name": "São Tomé and Príncipe Dobra (pre-2018)",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "STN",
+    "Name": "São Tomé and Príncipe Dobra",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "SVC",
+    "Name": "Salvadoran Colón",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "SYP",
+    "Name": "Syrian Pound",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "SZL",
+    "Name": "Swazi Lilangeni",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "THB",
+    "Name": "Thai Baht",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "TJS",
+    "Name": "Tajikistani Somoni",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "TMT",
+    "Name": "Turkmenistani Manat",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "TND",
+    "Name": "Tunisian Dinar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "TOP",
+    "Name": "Tongan Pa'anga",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "TRY",
+    "Name": "Turkish Lira",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "TTD",
+    "Name": "Trinidad and Tobago Dollar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "TWD",
+    "Name": "New Taiwan Dollar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "TZS",
+    "Name": "Tanzanian Shilling",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "UAH",
+    "Name": "Ukrainian Hryvnia",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "UGX",
+    "Name": "Ugandan Shilling",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "USD",
+    "Name": "United States Dollar",
+    "IconUrl": "/static/icons/currencies/us-dollar.png"
+  },
+  {
+    "Abbreviation": "UYU",
+    "Name": "Uruguayan Peso",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "UZS",
+    "Name": "Uzbekistan Som",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "VEF",
+    "Name": "Venezuelan Bolívar Fuerte (Old)",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "VES",
+    "Name": "Venezuelan Bolívar Soberano",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "VND",
+    "Name": "Vietnamese Dong",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "VUV",
+    "Name": "Vanuatu Vatu",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "WST",
+    "Name": "Samoan Tala",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "XAF",
+    "Name": "CFA Franc BEAC",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "XAG",
+    "Name": "Silver Ounce",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "XAU",
+    "Name": "Gold Ounce",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "XCD",
+    "Name": "East Caribbean Dollar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "XDR",
+    "Name": "Special Drawing Rights",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "XOF",
+    "Name": "CFA Franc BCEAO",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "XPD",
+    "Name": "Palladium Ounce",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "XPF",
+    "Name": "CFP Franc",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "XPT",
+    "Name": "Platinum Ounce",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "YER",
+    "Name": "Yemeni Rial",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "ZAR",
+    "Name": "South African Rand",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "ZMW",
+    "Name": "Zambian Kwacha",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "ZWL",
+    "Name": "Zimbabwean Dollar",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  }
+]

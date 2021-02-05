@@ -23,6 +23,7 @@ namespace CashSchedulerWebServer.Models
         [GraphQLIgnore]
         public string Password { get; set; }
         
+        // TODO: remove this field and use only that is in Wallet
         [DefaultValue(0)]
         public double Balance { get; set; }
     }

@@ -2,8 +2,8 @@
 
 namespace CashSchedulerWebServer.Db.Contracts
 {
-    interface ITransactionTypeRepository : IRepository<TransactionType>
+    public interface ITransactionTypeRepository : IRepository<string, TransactionType>
     {
-        TransactionType GetByName(string name);
+
     }
 }

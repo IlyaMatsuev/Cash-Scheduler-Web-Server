@@ -6,6 +6,7 @@ namespace CashSchedulerWebServer.Models
     {
         [Key]
         public string Name { get; set; }
+        
         public string IconUrl { get; set; }
 
         public enum Options

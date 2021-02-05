@@ -26,7 +26,8 @@ namespace CashSchedulerWebServer.Db.Repositories
 
         public IEnumerable<Category> GetAll()
         {
-            return Context.Categories.Where(c => (c.User != null && c.User.Id == UserId && c.IsCustom) || !c.IsCustom)
+            return Context.Categories
+                .Where(c => (c.User != null && c.User.Id == UserId && c.IsCustom) || !c.IsCustom)
                 .Include(c => c.Type)
                 .Include(c => c.User);
         }
@@ -82,7 +83,8 @@ namespace CashSchedulerWebServer.Db.Repositories
 
         public Category GetById(int id)
         {
-            return Context.Categories.Where(c => c.Id == id && ((c.User.Id == UserId && c.IsCustom) || !c.IsCustom))
+            return Context.Categories.
+                Where(c => c.Id == id && ((c.User.Id == UserId && c.IsCustom) || !c.IsCustom))
                 .Include(c => c.Type)
                 .Include(c => c.User)
                 .FirstOrDefault();
@@ -91,7 +93,7 @@ namespace CashSchedulerWebServer.Db.Repositories
         public async Task<Category> Create(Category category)
         {
             ModelValidator.ValidateModelAttributes(category);
-            category.Type = ContextProvider.GetRepository<ITransactionTypeRepository>().GetByName(category.TypeName);
+            category.Type = ContextProvider.GetRepository<ITransactionTypeRepository>().GetById(category.TypeName);
             if (category.Type == null)
             {
                 throw new CashSchedulerException("There is no such transaction type", new[] { "transactionTypeName" });
@@ -137,6 +139,11 @@ namespace CashSchedulerWebServer.Db.Repositories
             if (targetCategory == null)
             {
                 throw new CashSchedulerException("There is no such category");
+            }
+            
+            if (!targetCategory.IsCustom)
+            {
+                throw new CashSchedulerException("You cannot delete one of the standard categories");
             }
 
             var relatedTransactions = ContextProvider.GetRepository<ITransactionRepository>().GetByCategoryId(categoryId);

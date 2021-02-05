@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CashSchedulerWebServer.Db.Contracts
 {
-    interface ICategoryRepository : IRepository<Category>
+    public interface ICategoryRepository : IRepository<int, Category>
     {
         public IEnumerable<Category> GetAll(string transactionType);
         public IEnumerable<Category> GetStandardCategories(string transactionType);

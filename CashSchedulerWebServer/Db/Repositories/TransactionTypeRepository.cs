@@ -22,12 +22,7 @@ namespace CashSchedulerWebServer.Db.Repositories
             return Context.TransactionTypes;
         }
 
-        public TransactionType GetById(int id)
-        {
-            throw new CashSchedulerException("Transaction Types don't have an Id field, use GetByName() instead");
-        }
-
-        public TransactionType GetByName(string name)
+        public TransactionType GetById(string name)
         {
             return Context.TransactionTypes.FirstOrDefault(t => t.Name == name);
         }
@@ -37,7 +32,7 @@ namespace CashSchedulerWebServer.Db.Repositories
             Context.TransactionTypes.Add(transactionType);
             await Context.SaveChangesAsync();
 
-            return GetByName(transactionType.Name);
+            return GetById(transactionType.Name);
         }
 
         public Task<TransactionType> Update(TransactionType transactionType)
@@ -45,9 +40,9 @@ namespace CashSchedulerWebServer.Db.Repositories
             throw new CashSchedulerException("It's forbidden to update the existing transaction types");
         }
 
-        public Task<TransactionType> Delete(int transactionTypeId)
+        public Task<TransactionType> Delete(string name)
         {
-            throw new CashSchedulerException("It's forbidden to delete existing transaction types");
+            throw new CashSchedulerException("It's forbidden to delete the existing transaction types");
         }
     }
 }

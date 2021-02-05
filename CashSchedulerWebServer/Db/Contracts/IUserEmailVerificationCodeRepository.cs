@@ -2,7 +2,7 @@
 
 namespace CashSchedulerWebServer.Db.Contracts
 {
-    interface IUserEmailVerificationCodeRepository : IRepository<UserEmailVerificationCode>
+    public interface IUserEmailVerificationCodeRepository : IRepository<int, UserEmailVerificationCode>
     {
         UserEmailVerificationCode GetByUserId(int id);
     }

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace CashSchedulerWebServer.Db.Contracts
+﻿namespace CashSchedulerWebServer.Db.Contracts
 {
     public interface IContextProvider
     {

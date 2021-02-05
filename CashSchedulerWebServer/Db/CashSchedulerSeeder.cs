@@ -34,6 +34,41 @@ namespace CashSchedulerWebServer.Db
                 context.PreventTransaction(error);
             }
         }
+        
+        private static CashSchedulerContext EmptyDb(this CashSchedulerContext context)
+        {
+            Console.WriteLine("Deleting all records...");
+            context.RegularTransactions.RemoveRange(context.RegularTransactions);
+            context.Transactions.RemoveRange(context.Transactions);
+            context.Categories.RemoveRange(context.Categories);
+            context.TransactionTypes.RemoveRange(context.TransactionTypes);
+            context.UserSettings.RemoveRange(context.UserSettings);
+            context.UserNotifications.RemoveRange(context.UserNotifications);
+            context.UserRefreshTokens.RemoveRange(context.UserRefreshTokens);
+            context.Users.RemoveRange(context.Users);
+
+            context.SaveChanges();
+
+            return context;
+        }
+        
+        private static CashSchedulerContext ResetIdentitiesSeed(this CashSchedulerContext context)
+        {
+            Console.WriteLine("Resetting tables' identities...");
+            static string ResetTableIdentity(string tableName) => $"DBCC CHECKIDENT ('{tableName}', RESEED, 0);";
+
+            context.Database.ExecuteSqlRaw(ResetTableIdentity(nameof(context.Users)));
+            context.Database.ExecuteSqlRaw(ResetTableIdentity(nameof(context.UserRefreshTokens)));
+            context.Database.ExecuteSqlRaw(ResetTableIdentity(nameof(context.UserSettings)));
+            context.Database.ExecuteSqlRaw(ResetTableIdentity(nameof(context.UserNotifications)));
+            context.Database.ExecuteSqlRaw(ResetTableIdentity(nameof(context.Categories)));
+            context.Database.ExecuteSqlRaw(ResetTableIdentity(nameof(context.Transactions)));
+            context.Database.ExecuteSqlRaw(ResetTableIdentity(nameof(context.RegularTransactions)));
+
+            context.SaveChanges();
+
+            return context;
+        }
 
         private static CashSchedulerContext SeedDb(this CashSchedulerContext context, IConfiguration configuration)
         {
@@ -48,6 +83,7 @@ namespace CashSchedulerWebServer.Db
             string categoriesJson = File.ReadAllText(mockDataFolderPath + @"Categories.json");
             string transactionsJson = File.ReadAllText(mockDataFolderPath + @"Transactions.json");
             string regularTransactionsJson = File.ReadAllText(mockDataFolderPath + @"RegularTransactions.json");
+            string currenciesJson = File.ReadAllText(mockDataFolderPath + @"Currencies.json");
 
             var users = JsonConvert.DeserializeObject<List<User>>(usersJson);
             var transactionTypes = JsonConvert.DeserializeObject<List<TransactionType>>(transactionTypesJson);
@@ -56,10 +92,12 @@ namespace CashSchedulerWebServer.Db
             var categories = JsonConvert.DeserializeObject<List<Category>>(categoriesJson);
             var transactions = JsonConvert.DeserializeObject<List<Transaction>>(transactionsJson);
             var regularTransactions = JsonConvert.DeserializeObject<List<RegularTransaction>>(regularTransactionsJson);
+            var currencies = JsonConvert.DeserializeObject<List<Currency>>(currenciesJson);
 
             context.Users.AddRange(users);
             context.SaveChanges();
             context.TransactionTypes.AddRange(transactionTypes);
+            context.Currencies.AddRange(currencies);
             context.SaveChanges();
 
             categories.ForEach(category =>
@@ -128,41 +166,6 @@ namespace CashSchedulerWebServer.Db
                     context.RegularTransactions.Add(transaction);
                 }
             });
-
-            context.SaveChanges();
-
-            return context;
-        }
-
-        private static CashSchedulerContext EmptyDb(this CashSchedulerContext context)
-        {
-            Console.WriteLine("Deleting all records...");
-            context.RegularTransactions.RemoveRange(context.RegularTransactions);
-            context.Transactions.RemoveRange(context.Transactions);
-            context.Categories.RemoveRange(context.Categories);
-            context.TransactionTypes.RemoveRange(context.TransactionTypes);
-            context.UserSettings.RemoveRange(context.UserSettings);
-            context.UserNotifications.RemoveRange(context.UserNotifications);
-            context.UserRefreshTokens.RemoveRange(context.UserRefreshTokens);
-            context.Users.RemoveRange(context.Users);
-
-            context.SaveChanges();
-
-            return context;
-        }
-
-        private static CashSchedulerContext ResetIdentitiesSeed(this CashSchedulerContext context)
-        {
-            Console.WriteLine("Resetting tables' identities...");
-            static string ResetTableIdentity(string tableName) => $"DBCC CHECKIDENT ('{tableName}', RESEED, 0);";
-
-            context.Database.ExecuteSqlRaw(ResetTableIdentity(nameof(context.Users)));
-            context.Database.ExecuteSqlRaw(ResetTableIdentity(nameof(context.UserRefreshTokens)));
-            context.Database.ExecuteSqlRaw(ResetTableIdentity(nameof(context.UserSettings)));
-            context.Database.ExecuteSqlRaw(ResetTableIdentity(nameof(context.UserNotifications)));
-            context.Database.ExecuteSqlRaw(ResetTableIdentity(nameof(context.Categories)));
-            context.Database.ExecuteSqlRaw(ResetTableIdentity(nameof(context.Transactions)));
-            context.Database.ExecuteSqlRaw(ResetTableIdentity(nameof(context.RegularTransactions)));
 
             context.SaveChanges();
 

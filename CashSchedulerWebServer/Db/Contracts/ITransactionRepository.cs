@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CashSchedulerWebServer.Db.Contracts
 {
-    interface ITransactionRepository : IRepository<Transaction>
+    public interface ITransactionRepository : IRepository<int, Transaction>
     {
         IEnumerable<Transaction> GetByCategoryId(int categoryId);
         IEnumerable<Transaction> GetDashboardTransactions(int month, int year);

@@ -3,12 +3,12 @@ using System.Threading.Tasks;
 
 namespace CashSchedulerWebServer.Db.Contracts
 {
-    interface IRepository<T>
+    public interface IRepository<in TKey, TModel>
     {
-        IEnumerable<T> GetAll();
-        T GetById(int id);
-        Task<T> Create(T entity);
-        Task<T> Update(T entity);
-        Task<T> Delete(int entityId);
+        IEnumerable<TModel> GetAll();
+        TModel GetById(TKey id);
+        Task<TModel> Create(TModel entity);
+        Task<TModel> Update(TModel entity);
+        Task<TModel> Delete(TKey entityId);
     }
 }

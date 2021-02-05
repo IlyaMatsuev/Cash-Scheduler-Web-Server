@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace CashSchedulerWebServer.Db.Contracts
 {
-    interface IUserRepository : IRepository<User>
+    public interface IUserRepository : IRepository<int, User>
     {
         User GetById();
         User GetUserByEmail(string email);

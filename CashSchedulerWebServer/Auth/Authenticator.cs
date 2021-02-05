@@ -4,6 +4,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
+using CashSchedulerWebServer.Events;
+using CashSchedulerWebServer.Events.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Mutations.Users;
@@ -19,11 +21,17 @@ namespace CashSchedulerWebServer.Auth
         private IContextProvider ContextProvider { get; }
         private INotificator Notificator { get; }
         private IConfiguration Configuration { get; }
+        public IEventManager EventManager { get; }
 
-        public Authenticator(IContextProvider contextProvider, INotificator notificator, IConfiguration configuration)
+        public Authenticator(
+            IContextProvider contextProvider,
+            INotificator notificator,
+            IEventManager eventManager,
+            IConfiguration configuration)
         {
             ContextProvider = contextProvider;
             Notificator = notificator;
+            EventManager = eventManager;
             Configuration = configuration;
         }
 
@@ -105,7 +113,11 @@ namespace CashSchedulerWebServer.Auth
                 );
             }
 
-            return await userRepository.Create(newUser);
+            var user = await userRepository.Create(newUser);
+
+            EventManager.FireEvent(EventAction.UserRegistered, user);
+
+            return user;
         }
 
         public async Task<AuthTokens> Token(string email, string refreshToken)

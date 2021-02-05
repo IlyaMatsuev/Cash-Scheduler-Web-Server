@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace CashSchedulerWebServer.Db.Contracts
 {
-    interface IUserSettingRepository : IRepository<UserSetting>
+    public interface IUserSettingRepository : IRepository<int, UserSetting>
     {
         IEnumerable<UserSetting> GetAllByUnitName(string unitName);
         UserSetting GetByName(string name);

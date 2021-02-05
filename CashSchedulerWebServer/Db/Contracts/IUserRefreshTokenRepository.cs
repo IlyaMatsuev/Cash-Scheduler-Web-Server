@@ -2,7 +2,7 @@
 
 namespace CashSchedulerWebServer.Db.Contracts
 {
-    interface IUserRefreshTokenRepository : IRepository<UserRefreshToken>
+    public interface IUserRefreshTokenRepository : IRepository<int, UserRefreshToken>
     {
         UserRefreshToken GetByUserId(int id);
     }

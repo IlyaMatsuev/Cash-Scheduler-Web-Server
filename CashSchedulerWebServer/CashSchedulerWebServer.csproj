@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>1e17a33f-93c0-495c-9610-a1dd469a0bd5</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="HotChocolate.AspNetCore" Version="11.0.9" />
@@ -24,5 +25,9 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="Quartz" Version="3.2.3" />
+    <PackageReference Include="Tiny.RestClient" Version="1.7.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\Static" />
   </ItemGroup>
 </Project>

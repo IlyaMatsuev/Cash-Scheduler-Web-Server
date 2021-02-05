@@ -53,6 +53,61 @@ namespace CashSchedulerWebServer.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("CashSchedulerWebServer.Models.Currency", b =>
+                {
+                    b.Property<string>("Abbreviation")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("IconUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Abbreviation");
+
+                    b.ToTable("Currencies");
+                });
+
+            modelBuilder.Entity("CashSchedulerWebServer.Models.CurrencyExchangeRate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<float>("ExchangeRate")
+                        .HasColumnType("real");
+
+                    b.Property<bool>("IsCustom")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SourceCurrencyId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("TargetCurrencyId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ValidFrom")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ValidTo")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SourceCurrencyId");
+
+                    b.HasIndex("TargetCurrencyId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("CurrencyExchangeRates");
+                });
+
             modelBuilder.Entity("CashSchedulerWebServer.Models.RegularTransaction", b =>
                 {
                     b.Property<int>("Id")
@@ -272,11 +327,62 @@ namespace CashSchedulerWebServer.Migrations
                     b.ToTable("UserSettings");
                 });
 
+            modelBuilder.Entity("CashSchedulerWebServer.Models.Wallet", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<double>("Balance")
+                        .HasColumnType("float");
+
+                    b.Property<string>("CurrencyAbbreviation1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("IsCustom")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDefault")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CurrencyAbbreviation1");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Wallets");
+                });
+
             modelBuilder.Entity("CashSchedulerWebServer.Models.Category", b =>
                 {
                     b.HasOne("CashSchedulerWebServer.Models.TransactionType", "Type")
                         .WithMany()
                         .HasForeignKey("TypeName1");
+
+                    b.HasOne("CashSchedulerWebServer.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("CashSchedulerWebServer.Models.CurrencyExchangeRate", b =>
+                {
+                    b.HasOne("CashSchedulerWebServer.Models.Currency", "SourceCurrency")
+                        .WithMany()
+                        .HasForeignKey("SourceCurrencyId");
+
+                    b.HasOne("CashSchedulerWebServer.Models.Currency", "TargetCurrency")
+                        .WithMany()
+                        .HasForeignKey("TargetCurrencyId");
 
                     b.HasOne("CashSchedulerWebServer.Models.User", "User")
                         .WithMany()
@@ -335,6 +441,21 @@ namespace CashSchedulerWebServer.Migrations
                     b.HasOne("CashSchedulerWebServer.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("CashSchedulerWebServer.Models.Wallet", b =>
+                {
+                    b.HasOne("CashSchedulerWebServer.Models.Currency", "Currency")
+                        .WithMany()
+                        .HasForeignKey("CurrencyAbbreviation1")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CashSchedulerWebServer.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -7,7 +8,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Newtonsoft.Json;
 using Quartz;
 using Quartz.Impl;
 using Quartz.Spi;
@@ -23,45 +23,54 @@ using CashSchedulerWebServer.Auth;
 using CashSchedulerWebServer.Auth.AuthenticationHandlers;
 using CashSchedulerWebServer.Auth.AuthorizationHandlers;
 using CashSchedulerWebServer.Auth.Contracts;
+using CashSchedulerWebServer.Events;
+using CashSchedulerWebServer.Events.Contracts;
+using CashSchedulerWebServer.Events.UserEvents;
 using CashSchedulerWebServer.Exceptions;
+using CashSchedulerWebServer.Jobs.Contracts;
+using CashSchedulerWebServer.Jobs.ExchangeRates;
 using CashSchedulerWebServer.Mutations;
 using CashSchedulerWebServer.Mutations.Categories;
+using CashSchedulerWebServer.Mutations.CurrencyExchangeRates;
 using CashSchedulerWebServer.Mutations.Notifications;
 using CashSchedulerWebServer.Mutations.RecurringTransactions;
 using CashSchedulerWebServer.Mutations.Settings;
 using CashSchedulerWebServer.Mutations.Transactions;
 using CashSchedulerWebServer.Mutations.Users;
+using CashSchedulerWebServer.Mutations.Wallets;
 using CashSchedulerWebServer.Queries;
 using CashSchedulerWebServer.Queries.TransactionTypes;
 using CashSchedulerWebServer.Queries.Categories;
+using CashSchedulerWebServer.Queries.Currencies;
+using CashSchedulerWebServer.Queries.CurrencyExchangeRates;
 using CashSchedulerWebServer.Queries.RecurringTransactions;
 using CashSchedulerWebServer.Queries.Transactions;
 using CashSchedulerWebServer.Queries.UserNotifications;
 using CashSchedulerWebServer.Queries.Users;
 using CashSchedulerWebServer.Queries.UserSettings;
+using CashSchedulerWebServer.Queries.Wallets;
+using CashSchedulerWebServer.Services;
 using CashSchedulerWebServer.Subscriptions;
 using CashSchedulerWebServer.Subscriptions.Notifications;
+using CashSchedulerWebServer.WebServices.Contracts;
+using CashSchedulerWebServer.WebServices.ExchangeRates;
 using HotChocolate.AspNetCore;
+using Microsoft.Extensions.FileProviders;
 
 namespace CashSchedulerWebServer
 {
     public class Startup
     {
+        private IConfiguration Configuration { get; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        private IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
-            #region JSON parser settings
-            
-            services.AddControllers().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
-            
-            #endregion
-
             #region CORS
             
             services.AddCors(options => options.AddDefaultPolicy(builder =>
@@ -93,9 +102,8 @@ namespace CashSchedulerWebServer
 
             #region Database
             
-            // TODO: choose the correct lifetime
-            services.AddDbContext<CashSchedulerContext>(options => options.UseSqlServer(GetConnectionString(Configuration))/*, ServiceLifetime.Transient*/);
-            services.AddTransient<IContextProvider, ContextProvider>();
+            services.AddDbContext<CashSchedulerContext>(options => options.UseSqlServer(GetConnectionString(Configuration)), ServiceLifetime.Singleton);
+            services.AddSingleton<IContextProvider, ContextProvider>();
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IUserEmailVerificationCodeRepository, UserEmailVerificationCodeRepository>();
             services.AddTransient<IUserRefreshTokenRepository, UserRefreshTokenRepository>();
@@ -105,7 +113,23 @@ namespace CashSchedulerWebServer
             services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddTransient<ITransactionRepository, TransactionRepository>();
             services.AddTransient<IRegularTransactionRepository, RegularTransactionRepository>();
-            
+            services.AddTransient<ICurrencyRepository, CurrencyRepository>();
+            services.AddTransient<ICurrencyExchangeRateRepository, CurrencyExchangeRateRepository>();
+            services.AddTransient<IWalletRepository, WalletRepository>();
+
+            #endregion
+
+            #region Events
+
+            services.AddSingleton<IEventManager, EventManager>();
+            services.AddSingleton<IEventListener, CreateDefaultWalletListener>();
+
+            #endregion
+
+            #region WebServices
+
+            services.AddTransient<IExchangeRateService, ExchangeRateService>();
+
             #endregion
 
             #region Utils configurations
@@ -115,19 +139,16 @@ namespace CashSchedulerWebServer
             #endregion
 
             #region Scheduling Jobs
-            
+
+            services.AddSingleton<IJobManager, JobManager>();
             services.AddSingleton<IJobFactory, JobFactory>();
             services.AddSingleton<ISchedulerFactory, StdSchedulerFactory>();
             services.AddTransient<TransactionsJob>();
             services.AddTransient<RecurringTransactionsJob>();
-            services.AddTransient<RecurringTransactionsJob>();
-            services.AddSingleton(new List<JobMetadata>
-            {
-                new JobMetadata(typeof(TransactionsJob), Configuration["App:Jobs:Transactions:Name"], Configuration["App:Jobs:Transactions:Cron"]),
-                new JobMetadata(typeof(RecurringTransactionsJob), Configuration["App:Jobs:RecurringTransactions:Name"], Configuration["App:Jobs:RecurringTransactions:Cron"]),
-                new JobMetadata(typeof(ReportingJob), Configuration["App:Jobs:Reporting:Name"], Configuration["App:Jobs:Reporting:Cron"])
-            });
-            services.AddHostedService<TransactionsHostedService>();
+            services.AddTransient<ReportingJob>();
+            services.AddTransient<ExchangeRateJob>();
+            services.AddSingleton(GetJobsList(Configuration));
+            services.AddHostedService<CashSchedulerHostedService>();
             
             #endregion
 
@@ -142,6 +163,9 @@ namespace CashSchedulerWebServer
                     .AddTypeExtension<RecurringTransactionQueries>()
                     .AddTypeExtension<UserNotificationQueries>()
                     .AddTypeExtension<UserSettingQueries>()
+                    .AddTypeExtension<WalletQueries>()
+                    .AddTypeExtension<CurrencyQueries>()
+                    .AddTypeExtension<CurrencyExchangeRateQueries>()
                 .AddMutationType<Mutation>()
                     .AddTypeExtension<UserMutations>()
                     .AddTypeExtension<CategoryMutations>()
@@ -149,6 +173,8 @@ namespace CashSchedulerWebServer
                     .AddTypeExtension<RecurringTransactionMutations>()
                     .AddTypeExtension<NotificationMutations>()
                     .AddTypeExtension<SettingMutations>()
+                    .AddTypeExtension<WalletMutations>()
+                    .AddTypeExtension<CurrencyExchangeRateMutations>()
                 .AddSubscriptionType<Subscription>()
                     .AddTypeExtension<NotificationSubscriptions>()
                 .AddAuthorization()
@@ -170,6 +196,7 @@ namespace CashSchedulerWebServer
                 CashSchedulerSeeder.InitializeDb(app, Configuration);
             }
 
+            app.UseStaticFiles(GetStaticFileOptions(Configuration, env.ContentRootPath));
             app.UseWebSockets();
             app.UseRouting();
             app.UseCors();
@@ -203,6 +230,39 @@ namespace CashSchedulerWebServer
             return string.IsNullOrEmpty(connectionFromSecrets)
                 ? $"Server={host},{port};Initial Catalog={database};User ID = {username};Password={password}"
                 : connectionFromSecrets;
+        }
+
+        private List<JobMetadata> GetJobsList(IConfiguration configuration)
+        {
+            return new()
+            {
+                new JobMetadata(
+                    typeof(TransactionsJob),
+                    configuration["App:Jobs:Transactions:Name"],
+                    configuration["App:Jobs:Transactions:Cron"]),
+                new JobMetadata(
+                    typeof(RecurringTransactionsJob),
+                    configuration["App:Jobs:RecurringTransactions:Name"],
+                    configuration["App:Jobs:RecurringTransactions:Cron"]),
+                new JobMetadata(
+                    typeof(ReportingJob),
+                    configuration["App:Jobs:Reporting:Name"],
+                    configuration["App:Jobs:Reporting:Cron"]),
+                new JobMetadata(
+                    typeof(ExchangeRateJob),
+                    configuration["App:Jobs:ExchangeRates:Name"],
+                    configuration["App:Jobs:ExchangeRates:Cron"])
+            };
+        }
+
+        private StaticFileOptions GetStaticFileOptions(IConfiguration configuration, string projectFolderPath)
+        {
+            return new()
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(projectFolderPath, configuration["App:Content:RootPath"])),
+                RequestPath = configuration["App:Content:RequestPath"]
+            };
         }
     }
 }
