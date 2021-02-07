@@ -66,6 +66,14 @@ namespace CashSchedulerWebServer.Db.Repositories
             return GetById(setting.Id);
         }
 
+        public async Task<IEnumerable<UserSetting>> Create(List<UserSetting> settings)
+        {
+            await Context.UserSettings.AddRangeAsync(settings);
+            await Context.SaveChangesAsync();
+
+            return settings;
+        }
+
         public async Task<UserSetting> Update(UserSetting setting)
         {
             var targetSetting = GetByName(setting.Name);

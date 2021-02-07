@@ -1,68 +1,58 @@
-﻿using CashSchedulerWebServer.Db.Contracts;
+﻿using System;
+using System.Threading.Tasks;
+using CashSchedulerWebServer.Auth.Contracts;
+using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Utils;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CashSchedulerWebServer.Auth.Contracts;
 
-namespace CashSchedulerWebServer.Db.Repositories
+namespace CashSchedulerWebServer.Services.Users
 {
-    public class UserRepository : IUserRepository
+    public class UserService
     {
-        private CashSchedulerContext Context { get; }
         private IConfiguration Configuration { get; }
+        private IContextProvider ContextProvider { get; }
         private int UserId { get; }
 
-        public UserRepository(CashSchedulerContext context, IUserContext userContext, IConfiguration configuration)
+        public UserService(IConfiguration configuration, IContextProvider contextProvider, IUserContext userContext)
         {
-            Context = context;
             Configuration = configuration;
+            ContextProvider = contextProvider;
             UserId = userContext.GetUserId();
         }
-
-
-        public IEnumerable<User> GetAll()
-        {
-            return Context.Users;
-        }
-
+        
+        
         public User GetById()
         {
-            return GetById(UserId);
+            return ContextProvider.GetRepository<IUserRepository>().GetById(UserId);
         }
 
-        public User GetById(int id)
+        public User GetByEmail(string email)
         {
-            return Context.Users.FirstOrDefault(user => user.Id == id);
+            return ContextProvider.GetRepository<IUserRepository>().GetUserByEmail(email);
         }
 
-        public User GetUserByEmail(string email)
+        public bool HasWithEmail(string email)
         {
-            return Context.Users.FirstOrDefault(user => user.Email == email);
+            return ContextProvider.GetRepository<IUserRepository>().HasUserWithEmail(email);
         }
 
-        public bool HasUserWithEmail(string email)
+        public Task<User> Create(User user)
         {
-            return Context.Users.Any(user => user.Email == email);
-        }
+            ModelValidator.ValidateModelAttributes(user);
 
-        public async Task<User> Create(User user)
-        {
-            //ModelValidator.ValidateModelAttributes(user);
+            // TODO: try to create a new NotMapped field in the model and move validation to the repository
+            user.Password = user.Password.Hash(Configuration);
             
-            Context.Users.Add(user);
-            await Context.SaveChangesAsync();
-            
-            return GetUserByEmail(user.Email);
+            return ContextProvider.GetRepository<IUserRepository>().Create(user);
         }
 
-        public async Task<User> UpdatePassword(string email, string password)
+        public Task<User> UpdatePassword(string email, string password)
         {
-            var user = GetUserByEmail(email);
+            var userRepository = ContextProvider.GetRepository<IUserRepository>();
+            
+            var user = userRepository.GetUserByEmail(email);
             if (user == null)
             {
                 throw new CashSchedulerException("There is no such user", new[] { nameof(email) });
@@ -70,17 +60,17 @@ namespace CashSchedulerWebServer.Db.Repositories
 
             ModelValidator.ValidateModelAttributes(user);
 
+            // TODO: try to create a new NotMapped field in the model and move validation to the repository
             user.Password = password.Hash(Configuration);
 
-            Context.Users.Update(user);
-            await Context.SaveChangesAsync();
-
-            return user;
+            return userRepository.UpdatePassword(email, password);
         }
 
-        public async Task<User> Update(User user)
+        public Task<User> Update(User user)
         {
-            var targetUser = GetById(user.Id);
+            var userRepository = ContextProvider.GetRepository<IUserRepository>();
+            
+            var targetUser = userRepository.GetById(user.Id);
             if (targetUser == null)
             {
                 throw new CashSchedulerException("There is no such user");
@@ -102,13 +92,16 @@ namespace CashSchedulerWebServer.Db.Repositories
             }
 
             ModelValidator.ValidateModelAttributes(targetUser);
-            Context.Users.Update(targetUser);
-            await Context.SaveChangesAsync();
             
-            return targetUser;
+            return userRepository.Update(targetUser);
         }
 
-        public async Task<User> UpdateBalance(Transaction transaction, Transaction oldTransaction, bool isCreate = false, bool isUpdate = false, bool isDelete = false)
+        public Task<User> UpdateBalance(
+            Transaction transaction,
+            Transaction oldTransaction,
+            bool isCreate = false,
+            bool isUpdate = false,
+            bool isDelete = false)
         {
             int delta = 1;
             var user = transaction.User;
@@ -148,12 +141,7 @@ namespace CashSchedulerWebServer.Db.Repositories
                 }
             }
 
-            return await Update(user);
-        }
-
-        public Task<User> Delete(int id)
-        {
-            throw new CashSchedulerException("It's forbidden to delete users` accounts");
+            return ContextProvider.GetRepository<IUserRepository>().Update(user);
         }
     }
 }

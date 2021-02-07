@@ -46,7 +46,7 @@ namespace CashSchedulerWebServer.Db.Repositories
                 .Include(c => c.User);
         }
 
-        public IEnumerable<Category> GetStandardCategories(string transactionType)
+        public IEnumerable<Category> GetStandardCategories(string transactionType = null)
         {
             if (string.IsNullOrEmpty(transactionType))
             {
@@ -60,7 +60,7 @@ namespace CashSchedulerWebServer.Db.Repositories
                 .Include(c => c.User);
         }
 
-        public IEnumerable<Category> GetCustomCategories(string transactionType)
+        public IEnumerable<Category> GetCustomCategories(string transactionType = null)
         {
             if (string.IsNullOrEmpty(transactionType))
             {

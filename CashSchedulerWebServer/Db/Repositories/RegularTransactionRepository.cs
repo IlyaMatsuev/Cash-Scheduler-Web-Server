@@ -103,9 +103,9 @@ namespace CashSchedulerWebServer.Db.Repositories
             return targetTransaction;
         }
 
-        public async Task<RegularTransaction> Delete(int transactionId)
+        public async Task<RegularTransaction> Delete(int id)
         {
-            var targetTransaction = GetById(transactionId);
+            var targetTransaction = GetById(id);
             if (targetTransaction == null)
             {
                 throw new CashSchedulerException("There is no such transaction");
