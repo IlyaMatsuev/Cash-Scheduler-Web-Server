@@ -14,12 +14,12 @@ namespace CashSchedulerWebServer.Jobs.ExchangeRates
     public class ExchangeRateJob : IJob
     {
         private CashSchedulerContext Context { get; }
-        private IExchangeRateService ExchangeRateService { get; }
+        private IExchangeRateWebService ExchangeRateWebService { get; }
 
-        public ExchangeRateJob(CashSchedulerContext context, IExchangeRateService exchangeRateService)
+        public ExchangeRateJob(CashSchedulerContext context, IExchangeRateWebService exchangeRateWebService)
         {
             Context = context;
-            ExchangeRateService = exchangeRateService;
+            ExchangeRateWebService = exchangeRateWebService;
         }
         
         
@@ -33,7 +33,7 @@ namespace CashSchedulerWebServer.Jobs.ExchangeRates
                 int freshExchangeRatesCount = 0;
                 foreach (string sourceCurrency in GetGlobalCurrencies())
                 {
-                    var exchangeRates = await ExchangeRateService.GetLatestExchangeRates(sourceCurrency);
+                    var exchangeRates = await ExchangeRateWebService.GetLatestExchangeRates(sourceCurrency);
 
                     if (exchangeRates.Success)
                     {

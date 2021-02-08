@@ -2,14 +2,15 @@
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
+using CashSchedulerWebServer.Services.Contracts;
 
 namespace CashSchedulerWebServer.Services.Users
 {
-    public class RefreshTokenService
+    public class UserRefreshTokenService : IUserRefreshTokenService
     {
         private IContextProvider ContextProvider { get; }
 
-        public RefreshTokenService(IContextProvider contextProvider)
+        public UserRefreshTokenService(IContextProvider contextProvider)
         {
             ContextProvider = contextProvider;
         }

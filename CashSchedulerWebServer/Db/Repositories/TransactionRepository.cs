@@ -1,5 +1,4 @@
 ﻿using CashSchedulerWebServer.Db.Contracts;
-using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Utils;
 using Microsoft.EntityFrameworkCore;
@@ -14,28 +13,30 @@ namespace CashSchedulerWebServer.Db.Repositories
     public class TransactionRepository : ITransactionRepository
     {
         private CashSchedulerContext Context { get; }
-        private IContextProvider ContextProvider { get; }
         private int UserId { get; }
 
-        public TransactionRepository(CashSchedulerContext context, IUserContext userContext, IContextProvider contextProvider)
+        public TransactionRepository(CashSchedulerContext context, IUserContext userContext)
         {
             Context = context;
-            ContextProvider = contextProvider;
             UserId = userContext.GetUserId();
         }
 
 
+        public Transaction GetById(int id)
+        {
+            return Context.Transactions.Where(t => t.Id == id && t.User.Id == UserId)
+                .Include(t => t.User)
+                .Include(t => t.Category)
+                .Include(t => t.Category.Type)
+                .FirstOrDefault();
+        }
+        
         public IEnumerable<Transaction> GetAll()
         {
             return Context.Transactions.Where(t => t.User.Id == UserId)
                 .Include(t => t.User)
                 .Include(t => t.Category)
                 .Include(t => t.Category.Type);
-        }
-
-        public IEnumerable<Transaction> GetByCategoryId(int categoryId)
-        {
-            return Context.Transactions.Where(t => t.Category.Id == categoryId);
         }
 
         public IEnumerable<Transaction> GetDashboardTransactions(int month, int year)
@@ -55,80 +56,34 @@ namespace CashSchedulerWebServer.Db.Repositories
                 .Include(t => t.Category.Type);
         }
 
-        public Transaction GetById(int id)
-        {
-            return Context.Transactions.Where(t => t.Id == id && t.User.Id == UserId)
-                .Include(t => t.User)
-                .Include(t => t.Category)
-                .Include(t => t.Category.Type)
-                .FirstOrDefault();
-        }
-
         public async Task<Transaction> Create(Transaction transaction)
         {
             ModelValidator.ValidateModelAttributes(transaction);
-            transaction.User = ContextProvider.GetRepository<IUserRepository>().GetById(UserId);
-            transaction.Category = ContextProvider.GetRepository<ICategoryRepository>().GetById(transaction.CategoryId);
-            if (transaction.Category == null)
-            {
-                throw new CashSchedulerException("There is no such category", new[] { "categoryId" });
-            }
-            Context.Transactions.Add(transaction);
+            
+            await Context.Transactions.AddAsync(transaction);
             await Context.SaveChangesAsync();
-            await ContextProvider.GetRepository<IUserRepository>().UpdateBalance(transaction, null, isCreate: true);
 
             return GetById(transaction.Id);
         }
 
         public async Task<Transaction> Update(Transaction transaction)
         {
-            var targetTransaction = GetById(transaction.Id);
-            if (targetTransaction == null)
-            {
-                throw new CashSchedulerException("There is no such transaction");
-            }
+            ModelValidator.ValidateModelAttributes(transaction);
 
-            var oldTransaction = new Transaction
-            {
-                Title = targetTransaction.Title,
-                Amount = targetTransaction.Amount,
-                Date = targetTransaction.Date,
-                Category = targetTransaction.Category
-            };
-
-            targetTransaction.Title = transaction.Title;
-
-            if (transaction.Amount != default)
-            {
-                targetTransaction.Amount = transaction.Amount;
-            }
-            if (transaction.Date != default)
-            {
-                targetTransaction.Date = transaction.Date;
-            }
-
-            ModelValidator.ValidateModelAttributes(targetTransaction);
-
-            Context.Transactions.Update(targetTransaction);
+            Context.Transactions.Update(transaction);
             await Context.SaveChangesAsync();
-            await ContextProvider.GetRepository<IUserRepository>().UpdateBalance(targetTransaction, oldTransaction, isUpdate: true);
 
-            return targetTransaction;
+            return GetById(transaction.Id);
         }
 
-        public async Task<Transaction> Delete(int transactionId)
+        public async Task<Transaction> Delete(int id)
         {
-            var targetTransaction = GetById(transactionId);
-            if (targetTransaction == null)
-            {
-                throw new CashSchedulerException("There is no such transaction");
-            }
+            var transaction = GetById(id);
 
-            Context.Transactions.Remove(targetTransaction);
+            Context.Transactions.Remove(transaction);
             await Context.SaveChangesAsync();
-            await ContextProvider.GetRepository<IUserRepository>().UpdateBalance(targetTransaction, targetTransaction, isDelete: true);
 
-            return targetTransaction;
+            return transaction;
         }
     }
 }

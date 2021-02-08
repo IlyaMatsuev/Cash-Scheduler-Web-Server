@@ -27,12 +27,9 @@ namespace CashSchedulerWebServer.Db.Repositories
             return Context.TransactionTypes.FirstOrDefault(t => t.Name == name);
         }
 
-        public async Task<TransactionType> Create(TransactionType transactionType)
+        public Task<TransactionType> Create(TransactionType transactionType)
         {
-            Context.TransactionTypes.Add(transactionType);
-            await Context.SaveChangesAsync();
-
-            return GetById(transactionType.Name);
+            throw new CashSchedulerException("It's forbidden to create new transaction types");
         }
 
         public Task<TransactionType> Update(TransactionType transactionType)

@@ -6,11 +6,11 @@ using Tiny.RestClient;
 
 namespace CashSchedulerWebServer.WebServices.ExchangeRates
 {
-    public class ExchangeRateService : IExchangeRateService
+    public class ExchangeRateWebService : IExchangeRateWebService
     {
         private TinyRestClient Client { get; }
 
-        public ExchangeRateService(IConfiguration configuration)
+        public ExchangeRateWebService(IConfiguration configuration)
         {
             Client = new TinyRestClient(new HttpClient(), configuration["WebServices:CurrencyExchangeRates:Endpoint"]);
         }

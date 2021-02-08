@@ -5,11 +5,12 @@ using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
+using CashSchedulerWebServer.Services.Contracts;
 using CashSchedulerWebServer.Utils;
 
 namespace CashSchedulerWebServer.Services.Settings
 {
-    public class UserSettingService
+    public class UserSettingService : IUserSettingService
     {
         private IContextProvider ContextProvider { get; }
         private int UserId { get; }
@@ -21,23 +22,18 @@ namespace CashSchedulerWebServer.Services.Settings
         }
         
 
-        public IEnumerable<UserSetting> GetAllByUnitName(string unitName = null)
+        public IEnumerable<UserSetting> GetByUnitName(string unitName = null)
         {
             var settingRepository = ContextProvider.GetRepository<IUserSettingRepository>();
             
-            if (string.IsNullOrEmpty(unitName))
-            {
-                return settingRepository.GetAll();
-            }
-            
-            return settingRepository.GetAllByUnitName(unitName);
+            return string.IsNullOrEmpty(unitName) 
+                ? settingRepository.GetAll() 
+                : settingRepository.GetByUnitName(unitName);
         }
 
         public Task<UserSetting> Create(UserSetting setting)
         {
             setting.User = ContextProvider.GetRepository<IUserRepository>().GetById(UserId);
-
-            ModelValidator.ValidateModelAttributes(setting);
 
             return ContextProvider.GetRepository<IUserSettingRepository>().Create(setting);
         }

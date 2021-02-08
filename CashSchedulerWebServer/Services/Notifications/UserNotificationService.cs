@@ -4,17 +4,18 @@ using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
+using CashSchedulerWebServer.Services.Contracts;
 using HotChocolate.Subscriptions;
 
 namespace CashSchedulerWebServer.Services.Notifications
 {
-    public class NotificationService
+    public class UserNotificationService : IUserNotificationService
     {
         private IContextProvider ContextProvider { get; }
         private ITopicEventSender EventSender { get; }
         private int UserId { get; }
 
-        public NotificationService(
+        public UserNotificationService(
             IUserContext userContext,
             IContextProvider contextProvider,
             ITopicEventSender eventSender)
@@ -28,11 +29,6 @@ namespace CashSchedulerWebServer.Services.Notifications
         public IEnumerable<UserNotification> GetAll()
         {
             return ContextProvider.GetRepository<IUserNotificationRepository>().GetAll();
-        }
-
-        public IEnumerable<UserNotification> GetAllUnread()
-        {
-            return ContextProvider.GetRepository<IUserNotificationRepository>().GetAllUnread();
         }
 
         public async Task<UserNotification> Create(UserNotification notification)

@@ -13,17 +13,16 @@ namespace CashSchedulerWebServer.Mutations.Notifications
     {
         [GraphQLNonNullType]
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public Task<UserNotification> ReadNotification([Service] IContextProvider contextProvider, [GraphQLNonNullType] int id)
+        public Task<UserNotification> ToggleReadNotification(
+            [Service] IContextProvider contextProvider,
+            [GraphQLNonNullType] int id,
+            [GraphQLNonNullType] bool read)
         {
-            return contextProvider.GetRepository<IUserNotificationRepository>().Read(id);
-        }
-        
-        // TODO: can be implemented as a single method
-        [GraphQLNonNullType]
-        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public Task<UserNotification> UnreadNotification([Service] IContextProvider contextProvider, [GraphQLNonNullType] int id)
-        {
-            return contextProvider.GetRepository<IUserNotificationRepository>().Unread(id);
+            return contextProvider.GetRepository<IUserNotificationRepository>().Update(new UserNotification
+            {
+                Id = id,
+                IsRead = read
+            });
         }
     }
 }

@@ -17,6 +17,11 @@ namespace CashSchedulerWebServer.Db.Repositories
         }
 
 
+        public Currency GetById(string abbreviation)
+        {
+            return Context.Currencies.FirstOrDefault(c => c.Abbreviation == abbreviation);
+        }
+        
         public Currency GetDefaultCurrency()
         {
             return Context.Currencies.FirstOrDefault(c => c.Abbreviation == Currency.DEFAULT_CURRENCY_ABBREVIATION_USD);
@@ -27,22 +32,9 @@ namespace CashSchedulerWebServer.Db.Repositories
             return Context.Currencies;
         }
 
-        public Currency GetById(string abbreviation)
+        public Task<Currency> Create(Currency currency)
         {
-            return Context.Currencies.FirstOrDefault(c => c.Abbreviation == abbreviation);
-        }
-
-        public IEnumerable<CurrencyExchangeRate> GetExchangeRates()
-        {
-            return Context.CurrencyExchangeRates;
-        }
-
-        public async Task<Currency> Create(Currency currency)
-        {
-            Context.Currencies.Add(currency);
-            await Context.SaveChangesAsync();
-
-            return GetById(currency.Name);
+            throw new CashSchedulerException("It's forbidden to create new currencies");
         }
 
         public Task<Currency> Update(Currency currency)

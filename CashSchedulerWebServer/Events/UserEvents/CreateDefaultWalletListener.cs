@@ -26,7 +26,8 @@ namespace CashSchedulerWebServer.Events.UserEvents
                 throw new CashSchedulerException("Entity should have the type of User", "500");
             }
             
-            return ContextProvider.GetRepository<IWalletRepository>().CreateDefault(user);
+            //return ContextProvider.GetRepository<IWalletRepository>().CreateDefault(user);
+            return null;
         }
     }
 }

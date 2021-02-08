@@ -29,7 +29,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Static" />
-    <Folder Include="Services\Currencies" />
-    <Folder Include="Services\Wallets" />
   </ItemGroup>
 </Project>

@@ -4,11 +4,12 @@ using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
+using CashSchedulerWebServer.Services.Contracts;
 using CashSchedulerWebServer.Utils;
 
 namespace CashSchedulerWebServer.Services.Transactions
 {
-    public class RecurringTransactionService
+    public class RecurringTransactionService : IRecurringTransactionService
     {
         private IContextProvider ContextProvider { get; }
         private int UserId { get; }

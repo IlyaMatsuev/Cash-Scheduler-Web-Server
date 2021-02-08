@@ -4,11 +4,12 @@ using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
+using CashSchedulerWebServer.Services.Contracts;
 using CashSchedulerWebServer.Utils;
 
 namespace CashSchedulerWebServer.Services.Transactions
 {
-    public class TransactionService
+    public class TransactionService : ITransactionService
     {
         private IContextProvider ContextProvider { get; }
         private int UserId { get; }
@@ -42,10 +43,9 @@ namespace CashSchedulerWebServer.Services.Transactions
                 throw new CashSchedulerException("There is no such category", new[] { "categoryId" });
             }
 
-            ModelValidator.ValidateModelAttributes(transaction);
             transaction = await transactionRepository.Create(transaction);
             
-            await ContextProvider.GetRepository<IUserRepository>().UpdateBalance(transaction, null, true);
+            //await ContextProvider.GetRepository<IUserRepository>().UpdateBalance(transaction, null, true);
 
             return transaction;
         }
@@ -80,11 +80,9 @@ namespace CashSchedulerWebServer.Services.Transactions
                 targetTransaction.Date = transaction.Date;
             }
 
-            ModelValidator.ValidateModelAttributes(targetTransaction);
-
             targetTransaction = await transactionRepository.Update(targetTransaction);
             
-            await ContextProvider.GetRepository<IUserRepository>().UpdateBalance(targetTransaction, oldTransaction, isUpdate: true);
+            //await ContextProvider.GetRepository<IUserRepository>().UpdateBalance(targetTransaction, oldTransaction, isUpdate: true);
 
             return targetTransaction;
         }
@@ -101,7 +99,7 @@ namespace CashSchedulerWebServer.Services.Transactions
 
             targetTransaction = await transactionRepository.Delete(transactionId);
             
-            await ContextProvider.GetRepository<IUserRepository>().UpdateBalance(targetTransaction, targetTransaction, isDelete: true);
+            //await ContextProvider.GetRepository<IUserRepository>().UpdateBalance(targetTransaction, targetTransaction, isDelete: true);
 
             return targetTransaction;
         }

@@ -1,9 +1,7 @@
 ﻿using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
-using CashSchedulerWebServer.Utils;
 using Microsoft.Extensions.Configuration;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,13 +12,11 @@ namespace CashSchedulerWebServer.Db.Repositories
     public class UserRepository : IUserRepository
     {
         private CashSchedulerContext Context { get; }
-        private IConfiguration Configuration { get; }
         private int UserId { get; }
 
-        public UserRepository(CashSchedulerContext context, IUserContext userContext, IConfiguration configuration)
+        public UserRepository(CashSchedulerContext context, IUserContext userContext)
         {
             Context = context;
-            Configuration = configuration;
             UserId = userContext.GetUserId();
         }
 
@@ -54,106 +50,25 @@ namespace CashSchedulerWebServer.Db.Repositories
         {
             //ModelValidator.ValidateModelAttributes(user);
             
-            Context.Users.Add(user);
+            await Context.Users.AddAsync(user);
             await Context.SaveChangesAsync();
             
             return GetUserByEmail(user.Email);
         }
 
-        public async Task<User> UpdatePassword(string email, string password)
-        {
-            var user = GetUserByEmail(email);
-            if (user == null)
-            {
-                throw new CashSchedulerException("There is no such user", new[] { nameof(email) });
-            }
-
-            ModelValidator.ValidateModelAttributes(user);
-
-            user.Password = password.Hash(Configuration);
-
-            Context.Users.Update(user);
-            await Context.SaveChangesAsync();
-
-            return user;
-        }
-
         public async Task<User> Update(User user)
         {
-            var targetUser = GetById(user.Id);
-            if (targetUser == null)
-            {
-                throw new CashSchedulerException("There is no such user");
-            }
-
-            if (user.FirstName != null)
-            {
-                targetUser.FirstName = user.FirstName;
-            }
+            //ModelValidator.ValidateModelAttributes(user);
             
-            if (user.LastName != null)
-            {
-                targetUser.LastName = user.LastName;
-            }
-
-            if (user.Balance != default)
-            {
-                targetUser.Balance = user.Balance;
-            }
-
-            ModelValidator.ValidateModelAttributes(targetUser);
-            Context.Users.Update(targetUser);
+            Context.Users.Update(user);
             await Context.SaveChangesAsync();
             
-            return targetUser;
-        }
-
-        public async Task<User> UpdateBalance(Transaction transaction, Transaction oldTransaction, bool isCreate = false, bool isUpdate = false, bool isDelete = false)
-        {
-            int delta = 1;
-            var user = transaction.User;
-
-            if (transaction.Category.Type.Name == TransactionType.Options.Expense.ToString())
-            {
-                delta = -1;
-            }
-
-            if (isCreate)
-            {
-                if (transaction.Date <= DateTime.Today)
-                {
-                    user.Balance += transaction.Amount * delta;
-                }
-            }
-            else if (isUpdate)
-            {
-                if (transaction.Date <= DateTime.Today && oldTransaction.Date <= DateTime.Today)
-                {
-                    user.Balance += (transaction.Amount - oldTransaction.Amount) * delta;
-                }
-                else if (transaction.Date <= DateTime.Today && oldTransaction.Date > DateTime.Today)
-                {
-                    user.Balance += transaction.Amount * delta;
-                }
-                else if (transaction.Date > DateTime.Today && oldTransaction.Date <= DateTime.Today)
-                {
-                    user.Balance -= oldTransaction.Amount * delta;
-                }
-            }
-            else if (isDelete)
-            {
-                if (oldTransaction.Date <= DateTime.Today)
-                {
-                    user.Balance -= oldTransaction.Amount * delta;
-                }
-            }
-
-            return await Update(user);
+            return user;
         }
 
         public Task<User> Delete(int id)
         {
-            throw new CashSchedulerException("It's forbidden to delete users` accounts");
+            throw new CashSchedulerException("It's forbidden to delete users");
         }
     }
 }

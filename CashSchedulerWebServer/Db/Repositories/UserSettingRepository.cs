@@ -1,5 +1,4 @@
 ﻿using CashSchedulerWebServer.Db.Contracts;
-using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Utils;
 using Microsoft.EntityFrameworkCore;
@@ -13,38 +12,34 @@ namespace CashSchedulerWebServer.Db.Repositories
     public class UserSettingRepository : IUserSettingRepository
     {
         private CashSchedulerContext Context { get; }
-        private IContextProvider ContextProvider { get; }
         private int UserId { get; }
 
-        public UserSettingRepository(CashSchedulerContext context, IUserContext userContext, IContextProvider contextProvider)
+        public UserSettingRepository(CashSchedulerContext context, IUserContext userContext)
         {
             Context = context;
-            ContextProvider = contextProvider;
             UserId = userContext.GetUserId();
         }
 
 
-        public IEnumerable<UserSetting> GetAll()
-        {
-            return Context.UserSettings.Where(s => s.User.Id == UserId)
-                .Include(s => s.User);
-        }
-
-        public IEnumerable<UserSetting> GetAllByUnitName(string unitName)
-        {
-            if (string.IsNullOrEmpty(unitName))
-            {
-                return GetAll();
-            }
-            return Context.UserSettings.Where(s => s.UnitName == unitName && s.User.Id == UserId)
-                .Include(s => s.User);
-        }
-
         public UserSetting GetById(int id)
         {
-            return Context.UserSettings.Where(s => s.Id == id && s.User.Id == UserId)
+            return Context.UserSettings
+                .Where(s => s.Id == id && s.User.Id == UserId)
                 .Include(s => s.User)
                 .FirstOrDefault();
+        }
+        
+        public IEnumerable<UserSetting> GetAll()
+        {
+            return Context.UserSettings
+                .Where(s => s.User.Id == UserId).Include(s => s.User);
+        }
+
+        public IEnumerable<UserSetting> GetByUnitName(string unitName)
+        {
+            return Context.UserSettings
+                .Where(s => s.UnitName == unitName && s.User.Id == UserId)
+                .Include(s => s.User);
         }
 
         public UserSetting GetByName(string name)
@@ -58,9 +53,7 @@ namespace CashSchedulerWebServer.Db.Repositories
         {
             ModelValidator.ValidateModelAttributes(setting);
 
-            setting.User = ContextProvider.GetRepository<IUserRepository>().GetById(UserId);
-
-            Context.UserSettings.Add(setting);
+            await Context.UserSettings.AddAsync(setting);
             await Context.SaveChangesAsync();
 
             return GetById(setting.Id);
@@ -76,61 +69,25 @@ namespace CashSchedulerWebServer.Db.Repositories
 
         public async Task<UserSetting> Update(UserSetting setting)
         {
-            var targetSetting = GetByName(setting.Name);
-            if (targetSetting == null)
-            {
-                return await Create(setting);
-            }
+            ModelValidator.ValidateModelAttributes(setting);
 
-            if (setting.Value != default)
-            {
-                targetSetting.Value = setting.Value;
-            }
-
-            ModelValidator.ValidateModelAttributes(targetSetting);
-
-            Context.UserSettings.Update(targetSetting);
+            Context.UserSettings.Update(setting);
             await Context.SaveChangesAsync();
 
-            return targetSetting;
+            return setting;
         }
 
         public async Task<IEnumerable<UserSetting>> Update(List<UserSetting> settings)
         {
-            var newSettings = new List<UserSetting>();
-            var updateSettings = new List<UserSetting>();
-
-            settings.ForEach(setting =>
-            {
-                var targetSetting = Context.UserSettings.FirstOrDefault(s => s.Name == setting.Name && s.User.Id == UserId);
-                if (targetSetting == null)
-                {
-                    ModelValidator.ValidateModelAttributes(setting);
-                    setting.User = ContextProvider.GetRepository<IUserRepository>().GetById(UserId);
-                    newSettings.Add(setting);
-                }
-                else
-                {
-                    targetSetting.Value = setting.Value;
-                    updateSettings.Add(targetSetting);
-                }
-            });
-
-            Context.UserSettings.AddRange(newSettings);
-            Context.UserSettings.UpdateRange(updateSettings);
-
+            Context.UserSettings.UpdateRange(settings);
             await Context.SaveChangesAsync();
 
-            return newSettings.Concat(updateSettings);
+            return settings;
         }
 
-        public async Task<UserSetting> Delete(int settingId)
+        public async Task<UserSetting> Delete(int id)
         {
-            var setting = GetById(settingId);
-            if (setting == null)
-            {
-                throw new CashSchedulerException("There is no such setting");
-            }
+            var setting = GetById(id);
 
             Context.UserSettings.Remove(setting);
             await Context.SaveChangesAsync();

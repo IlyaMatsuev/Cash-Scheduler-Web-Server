@@ -1,17 +1,16 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
-using CashSchedulerWebServer.Utils;
+using CashSchedulerWebServer.Services.Contracts;
 
 namespace CashSchedulerWebServer.Services.Users
 {
-    public class EmailVerificationCodeService
+    public class UserEmailVerificationCodeService : IUserEmailVerificationCodeService
     {
         private IContextProvider ContextProvider { get; }
 
-        public EmailVerificationCodeService(IContextProvider contextProvider)
+        public UserEmailVerificationCodeService(IContextProvider contextProvider)
         {
             ContextProvider = contextProvider;
         }

@@ -16,7 +16,7 @@ namespace CashSchedulerWebServer.Queries.UserSettings
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
         public IEnumerable<UserSetting>? Settings([Service] IContextProvider contextProvider, string? unitName)
         {
-            return contextProvider.GetRepository<IUserSettingRepository>().GetAllByUnitName(unitName);
+            return contextProvider.GetRepository<IUserSettingRepository>().GetByUnitName(unitName);
         }
     }
 }

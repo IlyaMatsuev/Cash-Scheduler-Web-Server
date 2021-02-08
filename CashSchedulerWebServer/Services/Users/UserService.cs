@@ -4,12 +4,13 @@ using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
+using CashSchedulerWebServer.Services.Contracts;
 using CashSchedulerWebServer.Utils;
 using Microsoft.Extensions.Configuration;
 
 namespace CashSchedulerWebServer.Services.Users
 {
-    public class UserService
+    public class UserService : IUserService
     {
         private IConfiguration Configuration { get; }
         private IContextProvider ContextProvider { get; }
@@ -63,7 +64,7 @@ namespace CashSchedulerWebServer.Services.Users
             // TODO: try to create a new NotMapped field in the model and move validation to the repository
             user.Password = password.Hash(Configuration);
 
-            return userRepository.UpdatePassword(email, password);
+            return userRepository.Update(user);
         }
 
         public Task<User> Update(User user)
@@ -142,6 +143,11 @@ namespace CashSchedulerWebServer.Services.Users
             }
 
             return ContextProvider.GetRepository<IUserRepository>().Update(user);
+        }
+        
+        public Task<User> Delete(int id)
+        {
+            return ContextProvider.GetRepository<IUserRepository>().Delete(id);
         }
     }
 }

@@ -247,14 +247,15 @@ namespace CashSchedulerWebServer.Auth
                 );
             }
 
-            var user = await ContextProvider.GetRepository<IUserRepository>().UpdatePassword(email, password);
+            /*var user = await ContextProvider.GetRepository<IUserRepository>().UpdatePassword(email, password);
 
             var verificationCodeRepository = ContextProvider.GetRepository<IUserEmailVerificationCodeRepository>();
             var verificationCode = verificationCodeRepository.GetByUserId(user.Id);
             
             await verificationCodeRepository.Delete(verificationCode.Id);
             
-            return user;
+            return user;*/
+            return null;
         }
     }
 }

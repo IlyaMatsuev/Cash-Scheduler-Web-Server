@@ -50,6 +50,15 @@ using CashSchedulerWebServer.Queries.Users;
 using CashSchedulerWebServer.Queries.UserSettings;
 using CashSchedulerWebServer.Queries.Wallets;
 using CashSchedulerWebServer.Services;
+using CashSchedulerWebServer.Services.Categories;
+using CashSchedulerWebServer.Services.Contracts;
+using CashSchedulerWebServer.Services.Currencies;
+using CashSchedulerWebServer.Services.Notifications;
+using CashSchedulerWebServer.Services.Settings;
+using CashSchedulerWebServer.Services.Transactions;
+using CashSchedulerWebServer.Services.TransactionTypes;
+using CashSchedulerWebServer.Services.Users;
+using CashSchedulerWebServer.Services.Wallets;
 using CashSchedulerWebServer.Subscriptions;
 using CashSchedulerWebServer.Subscriptions.Notifications;
 using CashSchedulerWebServer.WebServices.Contracts;
@@ -102,8 +111,10 @@ namespace CashSchedulerWebServer
 
             #region Database
             
-            services.AddDbContext<CashSchedulerContext>(options => options.UseSqlServer(GetConnectionString(Configuration)), ServiceLifetime.Singleton);
-            services.AddSingleton<IContextProvider, ContextProvider>();
+            // TODO: I have to do something with my repositories because while executing a single mutation
+            // I can instantiate several repositories which also have DbContext passed in 
+            services.AddDbContext<CashSchedulerContext>(options => options.UseSqlServer(GetConnectionString(Configuration)), ServiceLifetime.Transient);
+            services.AddTransient<IContextProvider, ContextProvider>();
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IUserEmailVerificationCodeRepository, UserEmailVerificationCodeRepository>();
             services.AddTransient<IUserRefreshTokenRepository, UserRefreshTokenRepository>();
@@ -119,6 +130,23 @@ namespace CashSchedulerWebServer
 
             #endregion
 
+            #region Services
+
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IUserSettingService, UserSettingService>();
+            services.AddTransient<IUserNotificationService, UserNotificationService>();
+            services.AddTransient<IUserEmailVerificationCodeService, UserEmailVerificationCodeService>();
+            services.AddTransient<IUserRefreshTokenService, UserRefreshTokenService>();
+            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<ITransactionTypeService, TransactionTypeService>();
+            services.AddTransient<ITransactionService, TransactionService>();
+            services.AddTransient<IRecurringTransactionService, RecurringTransactionService>();
+            services.AddTransient<IWalletService, WalletService>();
+            services.AddTransient<ICurrencyService, CurrencyService>();
+            services.AddTransient<ICurrencyExchangeRateService, CurrencyExchangeRateService>();
+
+            #endregion
+
             #region Events
 
             services.AddSingleton<IEventManager, EventManager>();
@@ -128,7 +156,7 @@ namespace CashSchedulerWebServer
 
             #region WebServices
 
-            services.AddTransient<IExchangeRateService, ExchangeRateService>();
+            services.AddTransient<IExchangeRateWebService, ExchangeRateWebService>();
 
             #endregion
 

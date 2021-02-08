@@ -18,12 +18,5 @@ namespace CashSchedulerWebServer.Queries.UserNotifications
         {
             return contextProvider.GetRepository<IUserNotificationRepository>().GetAll();
         }
-        
-        // TODO: probably the method is not needed
-        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public IEnumerable<UserNotification>? UnreadNotifications([Service] IContextProvider contextProvider)
-        {
-            return contextProvider.GetRepository<IUserNotificationRepository>().GetAllUnread();
-        }
     }
 }

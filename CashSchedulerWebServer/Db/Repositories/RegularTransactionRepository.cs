@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
-using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Utils;
 using Microsoft.EntityFrameworkCore;
@@ -14,13 +13,11 @@ namespace CashSchedulerWebServer.Db.Repositories
     public class RegularTransactionRepository : IRegularTransactionRepository
     {
         private CashSchedulerContext Context { get; }
-        private IContextProvider ContextProvider { get; }
         private int UserId { get; }
 
-        public RegularTransactionRepository(CashSchedulerContext context, IUserContext userContext, IContextProvider contextProvider)
+        public RegularTransactionRepository(CashSchedulerContext context, IUserContext userContext)
         {
             Context = context;
-            ContextProvider = contextProvider;
             UserId = userContext.GetUserId();
         }
 
@@ -60,22 +57,12 @@ namespace CashSchedulerWebServer.Db.Repositories
                 .Include(t => t.Category.Type)
                 .FirstOrDefault();
         }
-
-        public IEnumerable<RegularTransaction> GetByCategoryId(int categoryId)
-        {
-            return Context.RegularTransactions.Where(t => t.Category.Id == categoryId);
-        }
-
+        
         public async Task<RegularTransaction> Create(RegularTransaction transaction)
         {
             ModelValidator.ValidateModelAttributes(transaction);
-            transaction.User = ContextProvider.GetRepository<IUserRepository>().GetById(UserId);
-            transaction.Category = ContextProvider.GetRepository<ICategoryRepository>().GetById(transaction.CategoryId);
-            if (transaction.Category == null)
-            {
-                throw new CashSchedulerException("There is no such category", new[] { "categoryId" });
-            }
-            Context.RegularTransactions.Add(transaction);
+            
+            await Context.RegularTransactions.AddAsync(transaction);
             await Context.SaveChangesAsync();
 
             return GetById(transaction.Id);
@@ -83,38 +70,22 @@ namespace CashSchedulerWebServer.Db.Repositories
 
         public async Task<RegularTransaction> Update(RegularTransaction transaction)
         {
-            var targetTransaction = GetById(transaction.Id);
-            if (targetTransaction == null)
-            {
-                throw new CashSchedulerException("There is no such transaction");
-            }
+            ModelValidator.ValidateModelAttributes(transaction);
 
-            targetTransaction.Title = transaction.Title;
-            if (transaction.Amount != default)
-            {
-                targetTransaction.Amount = transaction.Amount;
-            }
-
-            ModelValidator.ValidateModelAttributes(targetTransaction);
-
-            Context.RegularTransactions.Update(targetTransaction);
+            Context.RegularTransactions.Update(transaction);
             await Context.SaveChangesAsync();
 
-            return targetTransaction;
+            return transaction;
         }
 
         public async Task<RegularTransaction> Delete(int id)
         {
-            var targetTransaction = GetById(id);
-            if (targetTransaction == null)
-            {
-                throw new CashSchedulerException("There is no such transaction");
-            }
-
-            Context.RegularTransactions.Remove(targetTransaction);
+            var transaction = GetById(id);
+            
+            Context.RegularTransactions.Remove(transaction);
             await Context.SaveChangesAsync();
 
-            return targetTransaction;
+            return transaction;
         }
     }
 }

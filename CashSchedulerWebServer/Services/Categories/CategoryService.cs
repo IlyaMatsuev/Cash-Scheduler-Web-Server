@@ -4,11 +4,12 @@ using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
+using CashSchedulerWebServer.Services.Contracts;
 using CashSchedulerWebServer.Utils;
 
 namespace CashSchedulerWebServer.Services.Categories
 {
-    public class CategoryService
+    public class CategoryService : ICategoryService
     {
         private IContextProvider ContextProvider { get; }
         private int UserId { get; }
@@ -20,7 +21,7 @@ namespace CashSchedulerWebServer.Services.Categories
         }
         
 
-        public IEnumerable<Category> GetAll(string transactionType)
+        public IEnumerable<Category> GetAll(string transactionType = null)
         {
             var categoryRepository = ContextProvider.GetRepository<ICategoryRepository>();
             
@@ -57,8 +58,6 @@ namespace CashSchedulerWebServer.Services.Categories
             }
             
             category.User = ContextProvider.GetRepository<IUserRepository>().GetById(UserId);
-           
-            ModelValidator.ValidateModelAttributes(category);
 
             return ContextProvider.GetRepository<ICategoryRepository>().Create(category);
         }
@@ -84,8 +83,6 @@ namespace CashSchedulerWebServer.Services.Categories
             }
 
             targetCategory.TypeName = targetCategory.Type.Name;
-
-            ModelValidator.ValidateModelAttributes(targetCategory);
 
             return categoryRepository.Update(targetCategory);
         }
