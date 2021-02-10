@@ -3,6 +3,7 @@ using CashSchedulerWebServer.Models;
 using HotChocolate;
 using HotChocolate.Types;
 using System.Collections.Generic;
+using CashSchedulerWebServer.Services.Contracts;
 
 #nullable enable
 
@@ -13,7 +14,7 @@ namespace CashSchedulerWebServer.Queries.TransactionTypes
     {
         public IEnumerable<TransactionType> TransactionTypes([Service] IContextProvider contextProvider)
         {
-            return contextProvider.GetRepository<ITransactionTypeRepository>().GetAll();
+            return contextProvider.GetService<ITransactionTypeService>().GetAll();
         }
     }
 }

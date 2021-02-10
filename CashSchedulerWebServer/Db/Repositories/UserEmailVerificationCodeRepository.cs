@@ -18,7 +18,7 @@ namespace CashSchedulerWebServer.Db.Repositories
         }
 
 
-        public UserEmailVerificationCode GetById(int id)
+        public UserEmailVerificationCode GetByKey(int id)
         {
             return Context.UserEmailVerificationCodes.FirstOrDefault(t => t.Id == id);
         }
@@ -55,7 +55,7 @@ namespace CashSchedulerWebServer.Db.Repositories
         
         public async Task<UserEmailVerificationCode> Delete(int emailVerificationCodeId)
         {
-            var emailVerificationCode = GetById(emailVerificationCodeId);
+            var emailVerificationCode = GetByKey(emailVerificationCodeId);
             
             Context.UserEmailVerificationCodes.Remove(emailVerificationCode);
             await Context.SaveChangesAsync();

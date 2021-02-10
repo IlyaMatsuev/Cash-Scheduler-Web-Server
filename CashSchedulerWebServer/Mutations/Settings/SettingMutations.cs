@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using CashSchedulerWebServer.Auth;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Models;
+using CashSchedulerWebServer.Services.Contracts;
 using HotChocolate;
 using HotChocolate.AspNetCore.Authorization;
 using HotChocolate.Types;
@@ -19,7 +20,7 @@ namespace CashSchedulerWebServer.Mutations.Settings
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
         public Task<UserSetting> UpdateUserSetting([Service] IContextProvider contextProvider, [GraphQLNonNullType] UpdateUserSettingInput setting)
         {
-            return contextProvider.GetRepository<IUserSettingRepository>().Update(new UserSetting
+            return contextProvider.GetService<IUserSettingService>().Update(new UserSetting
             {
                 Name = setting.Name,
                 Value = setting.Value,
@@ -32,7 +33,7 @@ namespace CashSchedulerWebServer.Mutations.Settings
             [Service] IContextProvider contextProvider,
             [GraphQLNonNullType] IEnumerable<UpdateUserSettingInput> settings)
         {
-            return contextProvider.GetRepository<IUserSettingRepository>().Update(settings.Select(setting => new UserSetting
+            return contextProvider.GetService<IUserSettingService>().Update(settings.Select(setting => new UserSetting
             {
                 Name = setting.Name,
                 Value = setting.Value,

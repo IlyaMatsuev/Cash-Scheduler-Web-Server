@@ -19,7 +19,7 @@ namespace CashSchedulerWebServer.Db.Repositories
         }
 
 
-        public UserRefreshToken GetById(int id)
+        public UserRefreshToken GetByKey(int id)
         {
             return Context.UserRefreshTokens.FirstOrDefault(t => t.Id == id);
         }
@@ -59,7 +59,7 @@ namespace CashSchedulerWebServer.Db.Repositories
 
         public async Task<UserRefreshToken> Delete(int id)
         {
-            var token = GetById(id);
+            var token = GetByKey(id);
             
             Context.UserRefreshTokens.Remove(token);
             await Context.SaveChangesAsync();

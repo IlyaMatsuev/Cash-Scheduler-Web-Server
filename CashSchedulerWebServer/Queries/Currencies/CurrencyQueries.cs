@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Models;
+using CashSchedulerWebServer.Services.Contracts;
 using HotChocolate;
 using HotChocolate.Types;
 
@@ -13,7 +14,7 @@ namespace CashSchedulerWebServer.Queries.Currencies
     {
         public IEnumerable<Currency> Currencies([Service] IContextProvider contextProvider)
         {
-            return contextProvider.GetRepository<ICurrencyRepository>().GetAll();
+            return contextProvider.GetService<ICurrencyService>().GetAll();
         }
     }
 }

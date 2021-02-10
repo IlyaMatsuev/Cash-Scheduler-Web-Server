@@ -4,6 +4,7 @@ using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Events.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
+using CashSchedulerWebServer.Services.Contracts;
 
 namespace CashSchedulerWebServer.Events.UserEvents
 {
@@ -26,8 +27,7 @@ namespace CashSchedulerWebServer.Events.UserEvents
                 throw new CashSchedulerException("Entity should have the type of User", "500");
             }
             
-            //return ContextProvider.GetRepository<IWalletRepository>().CreateDefault(user);
-            return null;
+            return ContextProvider.GetService<IWalletService>().CreateDefault(user);
         }
     }
 }

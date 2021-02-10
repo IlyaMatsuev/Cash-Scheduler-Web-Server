@@ -28,7 +28,7 @@ namespace CashSchedulerWebServer.Db.Repositories
                 .Include(w => w.Currency);
         }
 
-        public Wallet GetById(int id)
+        public Wallet GetByKey(int id)
         {
             return Context.Wallets.Where(w => w.Id == id && w.User.Id == UserId)
                 .Include(w => w.User)
@@ -43,7 +43,7 @@ namespace CashSchedulerWebServer.Db.Repositories
             await Context.Wallets.AddAsync(wallet);
             await Context.SaveChangesAsync();
 
-            return GetById(wallet.Id);
+            return GetByKey(wallet.Id);
         }
 
         public async Task<Wallet> Update(Wallet wallet)
@@ -58,7 +58,7 @@ namespace CashSchedulerWebServer.Db.Repositories
 
         public async Task<Wallet> Delete(int id)
         {
-            var wallet = GetById(id);
+            var wallet = GetByKey(id);
 
             Context.Wallets.Remove(wallet);
             await Context.SaveChangesAsync();

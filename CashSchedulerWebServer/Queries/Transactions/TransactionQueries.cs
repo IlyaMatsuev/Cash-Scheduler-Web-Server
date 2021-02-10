@@ -2,6 +2,7 @@
 using CashSchedulerWebServer.Auth;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Models;
+using CashSchedulerWebServer.Services.Contracts;
 using HotChocolate;
 using HotChocolate.AspNetCore.Authorization;
 using HotChocolate.Types;
@@ -16,13 +17,13 @@ namespace CashSchedulerWebServer.Queries.Transactions
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
         public IEnumerable<Transaction>? DashboardTransactions([Service] IContextProvider contextProvider, int month, int year)
         {
-            return contextProvider.GetRepository<ITransactionRepository>().GetDashboardTransactions(month, year);
+            return contextProvider.GetService<ITransactionService>().GetDashboardTransactions(month, year);
         }
         
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
         public IEnumerable<Transaction>? TransactionsByMonth([Service] IContextProvider contextProvider, int month, int year)
         {
-            return contextProvider.GetRepository<ITransactionRepository>().GetTransactionsByMonth(month, year);
+            return contextProvider.GetService<ITransactionService>().GetTransactionsByMonth(month, year);
         }
     }
 }

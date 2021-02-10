@@ -2,6 +2,7 @@
 using CashSchedulerWebServer.Auth;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Models;
+using CashSchedulerWebServer.Services.Contracts;
 using HotChocolate;
 using HotChocolate.AspNetCore.Authorization;
 using HotChocolate.Types;
@@ -16,7 +17,7 @@ namespace CashSchedulerWebServer.Queries.UserNotifications
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
         public IEnumerable<UserNotification>? AllNotifications([Service] IContextProvider contextProvider)
         {
-            return contextProvider.GetRepository<IUserNotificationRepository>().GetAll();
+            return contextProvider.GetService<IUserNotificationService>().GetAll();
         }
     }
 }

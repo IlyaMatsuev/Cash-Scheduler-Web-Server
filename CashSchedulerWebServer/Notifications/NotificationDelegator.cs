@@ -7,15 +7,14 @@ namespace CashSchedulerWebServer.Notifications
     {
         private string NotificationTemplatesFolder { get; } = Directory.GetCurrentDirectory() + "/Content/EmailTemplates";
 
-        private Dictionary<NotificationTemplateType, (string, string)> TemplatesMap { get; } =
-            new Dictionary<NotificationTemplateType, (string, string)>
+        private Dictionary<NotificationTemplateType, (string, string)> TemplatesMap { get; } = new()
+        {
+            {NotificationTemplateType.VerificationCode, ("Verify It's You", "VerificationCode.html")},
             {
-                {NotificationTemplateType.VerificationCode, ("Verify It's You", "VerificationCode.html")},
-                {
-                    NotificationTemplateType.MostSpentCategoryForWeek,
-                    ("Your most expensive category for the last week", "WeeklyCategoryReport.html")
-                },
-            };
+                NotificationTemplateType.MostSpentCategoryForWeek,
+                ("Your most expensive category for the last week", "WeeklyCategoryReport.html")
+            },
+        };
 
 
         public NotificationTemplate GetTemplate(NotificationTemplateType templateType, Dictionary<string, string> parameters)

@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Services.Contracts;
@@ -7,32 +8,37 @@ namespace CashSchedulerWebServer.Services.Currencies
 {
     public class CurrencyService : ICurrencyService
     {
-        private IContextProvider ContextProvider { get; }
+        private ICurrencyRepository CurrencyRepository { get; }
         
         public CurrencyService(IContextProvider contextProvider)
         {
-            ContextProvider = contextProvider;
+            CurrencyRepository = contextProvider.GetRepository<ICurrencyRepository>();
         }
-        
+
+
+        public IEnumerable<Currency> GetAll()
+        {
+            return CurrencyRepository.GetAll();
+        }
         
         public Currency GetDefaultCurrency()
         {
-            return ContextProvider.GetRepository<ICurrencyRepository>().GetDefaultCurrency();
+            return CurrencyRepository.GetDefaultCurrency();
         }
         
         public Task<Currency> Create(Currency currency)
         {
-            return ContextProvider.GetRepository<ICurrencyRepository>().Create(currency);
+            return CurrencyRepository.Create(currency);
         }
 
         public Task<Currency> Update(Currency currency)
         {
-            return ContextProvider.GetRepository<ICurrencyRepository>().Update(currency);
+            return CurrencyRepository.Update(currency);
         }
 
         public Task<Currency> Delete(string abbreviation)
         {
-            return ContextProvider.GetRepository<ICurrencyRepository>().Delete(abbreviation);
+            return CurrencyRepository.Delete(abbreviation);
         }
     }
 }

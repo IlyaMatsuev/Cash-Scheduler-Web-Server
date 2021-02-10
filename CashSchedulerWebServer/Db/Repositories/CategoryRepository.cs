@@ -74,7 +74,7 @@ namespace CashSchedulerWebServer.Db.Repositories
                 .Include(c => c.User);
         }
 
-        public Category GetById(int id)
+        public Category GetByKey(int id)
         {
             return Context.Categories.
                 Where(c => c.Id == id && ((c.User.Id == UserId && c.IsCustom) || !c.IsCustom))
@@ -105,7 +105,7 @@ namespace CashSchedulerWebServer.Db.Repositories
 
         public async Task<Category> Delete(int id)
         {
-            var category = GetById(id);
+            var category = GetByKey(id);
             
             var relatedTransactions = Context.Transactions.Where(t => t.Category.Id == id);
             var relatedRegularTransactions = Context.RegularTransactions.Where(t => t.Category.Id == id);

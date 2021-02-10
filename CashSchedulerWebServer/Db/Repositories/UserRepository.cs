@@ -1,11 +1,11 @@
 ﻿using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
-using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CashSchedulerWebServer.Auth.Contracts;
+using CashSchedulerWebServer.Utils;
 
 namespace CashSchedulerWebServer.Db.Repositories
 {
@@ -28,10 +28,10 @@ namespace CashSchedulerWebServer.Db.Repositories
 
         public User GetById()
         {
-            return GetById(UserId);
+            return GetByKey(UserId);
         }
 
-        public User GetById(int id)
+        public User GetByKey(int id)
         {
             return Context.Users.FirstOrDefault(user => user.Id == id);
         }
@@ -48,7 +48,7 @@ namespace CashSchedulerWebServer.Db.Repositories
 
         public async Task<User> Create(User user)
         {
-            //ModelValidator.ValidateModelAttributes(user);
+            ModelValidator.ValidateModelAttributes(user);
             
             await Context.Users.AddAsync(user);
             await Context.SaveChangesAsync();
@@ -58,7 +58,7 @@ namespace CashSchedulerWebServer.Db.Repositories
 
         public async Task<User> Update(User user)
         {
-            //ModelValidator.ValidateModelAttributes(user);
+            ModelValidator.ValidateModelAttributes(user);
             
             Context.Users.Update(user);
             await Context.SaveChangesAsync();

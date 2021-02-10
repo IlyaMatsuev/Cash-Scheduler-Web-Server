@@ -45,6 +45,10 @@ namespace CashSchedulerWebServer.Db
             context.UserSettings.RemoveRange(context.UserSettings);
             context.UserNotifications.RemoveRange(context.UserNotifications);
             context.UserRefreshTokens.RemoveRange(context.UserRefreshTokens);
+            context.UserEmailVerificationCodes.RemoveRange(context.UserEmailVerificationCodes);
+            context.CurrencyExchangeRates.RemoveRange(context.CurrencyExchangeRates);
+            context.Wallets.RemoveRange(context.Wallets);
+            context.Currencies.RemoveRange(context.Currencies);
             context.Users.RemoveRange(context.Users);
 
             context.SaveChanges();
@@ -64,6 +68,8 @@ namespace CashSchedulerWebServer.Db
             context.Database.ExecuteSqlRaw(ResetTableIdentity(nameof(context.Categories)));
             context.Database.ExecuteSqlRaw(ResetTableIdentity(nameof(context.Transactions)));
             context.Database.ExecuteSqlRaw(ResetTableIdentity(nameof(context.RegularTransactions)));
+            context.Database.ExecuteSqlRaw(ResetTableIdentity(nameof(context.CurrencyExchangeRates)));
+            context.Database.ExecuteSqlRaw(ResetTableIdentity(nameof(context.Wallets)));
 
             context.SaveChanges();
 
@@ -84,6 +90,7 @@ namespace CashSchedulerWebServer.Db
             string transactionsJson = File.ReadAllText(mockDataFolderPath + @"Transactions.json");
             string regularTransactionsJson = File.ReadAllText(mockDataFolderPath + @"RegularTransactions.json");
             string currenciesJson = File.ReadAllText(mockDataFolderPath + @"Currencies.json");
+            string walletsJson = File.ReadAllText(mockDataFolderPath + @"Wallets.json");
 
             var users = JsonConvert.DeserializeObject<List<User>>(usersJson);
             var transactionTypes = JsonConvert.DeserializeObject<List<TransactionType>>(transactionTypesJson);
@@ -93,11 +100,23 @@ namespace CashSchedulerWebServer.Db
             var transactions = JsonConvert.DeserializeObject<List<Transaction>>(transactionsJson);
             var regularTransactions = JsonConvert.DeserializeObject<List<RegularTransaction>>(regularTransactionsJson);
             var currencies = JsonConvert.DeserializeObject<List<Currency>>(currenciesJson);
+            var wallets = JsonConvert.DeserializeObject<List<Wallet>>(walletsJson);
 
             context.Users.AddRange(users);
             context.SaveChanges();
             context.TransactionTypes.AddRange(transactionTypes);
             context.Currencies.AddRange(currencies);
+            context.SaveChanges();
+            
+            wallets.ForEach(wallet =>
+            {
+                wallet.User = users.FirstOrDefault(user => user.Id == wallet.User.Id);
+                wallet.Currency = currencies.FirstOrDefault(c => c.Abbreviation == wallet.Currency.Abbreviation);
+                if (wallet.User != null && wallet.Currency != null)
+                {
+                    context.Wallets.Add(wallet);
+                }
+            });
             context.SaveChanges();
 
             categories.ForEach(category =>

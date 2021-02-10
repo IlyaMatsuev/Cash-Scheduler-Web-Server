@@ -22,7 +22,7 @@ namespace CashSchedulerWebServer.Db.Repositories
         }
 
 
-        public Transaction GetById(int id)
+        public Transaction GetByKey(int id)
         {
             return Context.Transactions.Where(t => t.Id == id && t.User.Id == UserId)
                 .Include(t => t.User)
@@ -63,7 +63,7 @@ namespace CashSchedulerWebServer.Db.Repositories
             await Context.Transactions.AddAsync(transaction);
             await Context.SaveChangesAsync();
 
-            return GetById(transaction.Id);
+            return GetByKey(transaction.Id);
         }
 
         public async Task<Transaction> Update(Transaction transaction)
@@ -73,12 +73,12 @@ namespace CashSchedulerWebServer.Db.Repositories
             Context.Transactions.Update(transaction);
             await Context.SaveChangesAsync();
 
-            return GetById(transaction.Id);
+            return GetByKey(transaction.Id);
         }
 
         public async Task<Transaction> Delete(int id)
         {
-            var transaction = GetById(id);
+            var transaction = GetByKey(id);
 
             Context.Transactions.Remove(transaction);
             await Context.SaveChangesAsync();

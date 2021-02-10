@@ -17,13 +17,13 @@ namespace CashSchedulerWebServer.Auth
             var expiresIn = now.AddMinutes(AuthOptions.GetTokenLifetime(tokenType, configuration));
             var claims = new List<Claim>
             {
-                new Claim(UserContext.EXP_DATE_CLAIM_TYPE, expiresIn.ToString(CultureInfo.InvariantCulture)),
-                new Claim(UserContext.ID_CLAIM_TYPE, user.Id.ToString())
+                new (UserContextManager.EXP_DATE_CLAIM_TYPE, expiresIn.ToString(CultureInfo.InvariantCulture)),
+                new (UserContextManager.ID_CLAIM_TYPE, user.Id.ToString())
             };
 
             var token = new JwtSecurityToken(
-                issuer: AuthOptions.ISSUER,
-                audience: AuthOptions.AUDIENCE,
+                AuthOptions.ISSUER,
+                AuthOptions.AUDIENCE,
                 notBefore: now,
                 claims: claims,
                 expires: expiresIn,

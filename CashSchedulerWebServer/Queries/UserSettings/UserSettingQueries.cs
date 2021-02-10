@@ -2,6 +2,7 @@
 using CashSchedulerWebServer.Auth;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Models;
+using CashSchedulerWebServer.Services.Contracts;
 using HotChocolate;
 using HotChocolate.AspNetCore.Authorization;
 using HotChocolate.Types;
@@ -16,7 +17,7 @@ namespace CashSchedulerWebServer.Queries.UserSettings
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
         public IEnumerable<UserSetting>? Settings([Service] IContextProvider contextProvider, string? unitName)
         {
-            return contextProvider.GetRepository<IUserSettingRepository>().GetByUnitName(unitName);
+            return contextProvider.GetService<IUserSettingService>().GetByUnitName(unitName);
         }
     }
 }

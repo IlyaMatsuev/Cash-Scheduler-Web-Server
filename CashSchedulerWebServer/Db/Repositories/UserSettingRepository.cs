@@ -21,7 +21,7 @@ namespace CashSchedulerWebServer.Db.Repositories
         }
 
 
-        public UserSetting GetById(int id)
+        public UserSetting GetByKey(int id)
         {
             return Context.UserSettings
                 .Where(s => s.Id == id && s.User.Id == UserId)
@@ -56,7 +56,7 @@ namespace CashSchedulerWebServer.Db.Repositories
             await Context.UserSettings.AddAsync(setting);
             await Context.SaveChangesAsync();
 
-            return GetById(setting.Id);
+            return GetByKey(setting.Id);
         }
 
         public async Task<IEnumerable<UserSetting>> Create(List<UserSetting> settings)
@@ -74,7 +74,7 @@ namespace CashSchedulerWebServer.Db.Repositories
             Context.UserSettings.Update(setting);
             await Context.SaveChangesAsync();
 
-            return setting;
+            return GetByKey(setting.Id);
         }
 
         public async Task<IEnumerable<UserSetting>> Update(List<UserSetting> settings)
@@ -87,7 +87,7 @@ namespace CashSchedulerWebServer.Db.Repositories
 
         public async Task<UserSetting> Delete(int id)
         {
-            var setting = GetById(id);
+            var setting = GetByKey(id);
 
             Context.UserSettings.Remove(setting);
             await Context.SaveChangesAsync();

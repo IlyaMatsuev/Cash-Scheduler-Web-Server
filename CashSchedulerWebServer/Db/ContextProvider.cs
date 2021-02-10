@@ -1,49 +1,112 @@
 ﻿using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using System;
-using Microsoft.Extensions.DependencyInjection;
+using System.Collections.Generic;
+using System.Linq;
+using CashSchedulerWebServer.Db.Repositories;
+using CashSchedulerWebServer.Services.Categories;
+using CashSchedulerWebServer.Services.Contracts;
+using CashSchedulerWebServer.Services.Currencies;
+using CashSchedulerWebServer.Services.Notifications;
+using CashSchedulerWebServer.Services.Settings;
+using CashSchedulerWebServer.Services.Transactions;
+using CashSchedulerWebServer.Services.TransactionTypes;
+using CashSchedulerWebServer.Services.Users;
+using CashSchedulerWebServer.Services.Wallets;
 
 namespace CashSchedulerWebServer.Db
 {
     public class ContextProvider : IContextProvider
     {
-        // ContextProvider should be TRANSIENT service
-        // DbContext should be TRANSIENT service
-        // Old ContextProvider - https://github.com/IlyaMatsuev/Cash-Scheduler-Web-Server/blob/master/CashSchedulerWebServer/Db/ContextProvider.cs
-        
-        /*
-         * 1. Return instances of repositories NOT FROM ASP.NET DI but created myself
-         * 2. Pass particular arguments to repositories
-         * 3. For Services try to pass as IContextProvider THIS instance
-         */
         private IServiceProvider ServiceProvider { get; }
+        private CashSchedulerContext Context { get; }
 
-        public ContextProvider(IServiceProvider serviceProvider)
+        private Dictionary<Type, Type> RepositoryTypesMap { get; } = new()
+        {
+            {typeof(IUserRepository), typeof(UserRepository)},
+            {typeof(IUserNotificationRepository), typeof(UserNotificationRepository)},
+            {typeof(IUserSettingRepository), typeof(UserSettingRepository)},
+            {typeof(IUserRefreshTokenRepository), typeof(UserRefreshTokenRepository)},
+            {typeof(IUserEmailVerificationCodeRepository), typeof(UserEmailVerificationCodeRepository)},
+            {typeof(ITransactionTypeRepository), typeof(TransactionTypeRepository)},
+            {typeof(ICategoryRepository), typeof(CategoryRepository)},
+            {typeof(ITransactionRepository), typeof(TransactionRepository)},
+            {typeof(IRegularTransactionRepository), typeof(RegularTransactionRepository)},
+            {typeof(ICurrencyRepository), typeof(CurrencyRepository)},
+            {typeof(ICurrencyExchangeRateRepository), typeof(CurrencyExchangeRateRepository)},
+            {typeof(IWalletRepository), typeof(WalletRepository)}
+        };
+        
+        private Dictionary<Type, Type> ServiceTypesMap { get; } = new()
+        {
+            {typeof(IUserService), typeof(UserService)},
+            {typeof(IUserSettingService), typeof(UserSettingService)},
+            {typeof(IUserNotificationService), typeof(UserNotificationService)},
+            {typeof(IUserEmailVerificationCodeService), typeof(UserEmailVerificationCodeService)},
+            {typeof(IUserRefreshTokenService), typeof(UserRefreshTokenService)},
+            {typeof(ICategoryService), typeof(CategoryService)},
+            {typeof(ITransactionTypeService), typeof(TransactionTypeService)},
+            {typeof(ITransactionService), typeof(TransactionService)},
+            {typeof(IRecurringTransactionService), typeof(RecurringTransactionService)},
+            {typeof(ICurrencyService), typeof(CurrencyService)},
+            {typeof(ICurrencyExchangeRateService), typeof(CurrencyExchangeRateService)},
+            {typeof(IWalletService), typeof(WalletService)}
+        };
+
+        public ContextProvider(IServiceProvider serviceProvider, CashSchedulerContext context)
         {
             ServiceProvider = serviceProvider;
+            Context = context;
         }
 
 
-        public T GetRepository<T>() where T : class
-        {
-            var repository = ServiceProvider.GetRequiredService<T>();
+        public T GetRepository<T>() where T : class => GetService<T>(RepositoryTypesMap);
 
-            if (repository == null)
+        public T GetService<T>() where T : class => GetService<T>(ServiceTypesMap);
+
+
+        private T GetService<T>(Dictionary<Type, Type> typesMap) where T : class
+        {
+            if (!typesMap.ContainsKey(typeof(T)))
             {
-                throw new CashSchedulerException($"No repositories were registered for the type {typeof(T)}");
+                throw new CashSchedulerException($"No services were registered for the type {typeof(T)}", "500");
             }
-            return repository;
+            
+            var serviceType = typesMap[typeof(T)];
+
+            var service = (T) Activator.CreateInstance(serviceType, GetServiceParams(serviceType));
+
+            if (service == null)
+            {
+                throw new CashSchedulerException($"Couldn't create an instance for the type {typeof(T)}", "500");
+            }
+
+            return service;
         }
 
-        public T GetService<T>()
+        private object[] GetServiceParams(Type repositoryType)
         {
-            var repository = ServiceProvider.GetService<T>();
+            return repositoryType.GetConstructors()
+                .First(c => c.GetParameters().Length == repositoryType.GetConstructors().Max(t => t.GetParameters().Length))
+                .GetParameters().Select(p =>
+                {
+                    object param;
 
-            if (repository == null)
-            {
-                throw new CashSchedulerException($"No repositories were registered for the type {typeof(T)}");
-            }
-            return repository;
+                    if (p.ParameterType == typeof(CashSchedulerContext))
+                    {
+                        param = Context;
+                    }
+                    else if (p.ParameterType == typeof(IContextProvider))
+                    {
+                        param = this;
+                    }
+                    else
+                    {
+                        param = ServiceProvider.GetService(p.ParameterType);
+                    }
+
+                    return param;
+                }).ToArray();
         }
     }
 }

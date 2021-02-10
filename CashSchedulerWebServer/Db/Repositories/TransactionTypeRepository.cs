@@ -22,7 +22,7 @@ namespace CashSchedulerWebServer.Db.Repositories
             return Context.TransactionTypes;
         }
 
-        public TransactionType GetById(string name)
+        public TransactionType GetByKey(string name)
         {
             return Context.TransactionTypes.FirstOrDefault(t => t.Name == name);
         }

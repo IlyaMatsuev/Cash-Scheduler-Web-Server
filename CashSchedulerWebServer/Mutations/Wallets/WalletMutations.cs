@@ -2,6 +2,7 @@
 using CashSchedulerWebServer.Auth;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Models;
+using CashSchedulerWebServer.Services.Contracts;
 using HotChocolate;
 using HotChocolate.AspNetCore.Authorization;
 using HotChocolate.Types;
@@ -15,7 +16,7 @@ namespace CashSchedulerWebServer.Mutations.Wallets
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
         public Task<Wallet> CreateWallet([Service] IContextProvider contextProvider, [GraphQLNonNullType] NewWalletInput wallet)
         {
-            return contextProvider.GetRepository<IWalletRepository>().Create(new Wallet
+            return contextProvider.GetService<IWalletService>().Create(new Wallet
             {
                 Name = wallet.Name,
                 Balance = wallet.Balance,
@@ -28,7 +29,7 @@ namespace CashSchedulerWebServer.Mutations.Wallets
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
         public Task<Wallet> UpdateWallet([Service] IContextProvider contextProvider, [GraphQLNonNullType] UpdateWalletInput wallet)
         {
-            return contextProvider.GetRepository<IWalletRepository>().Update(new Wallet
+            return contextProvider.GetService<IWalletService>().Update(new Wallet
             {
                 Id = wallet.Id,
                 Name = wallet.Name,
@@ -41,7 +42,7 @@ namespace CashSchedulerWebServer.Mutations.Wallets
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
         public Task<Wallet> DeleteWallet([Service] IContextProvider contextProvider, [GraphQLNonNullType] int id)
         {
-            return contextProvider.GetRepository<IWalletRepository>().Delete(id);
+            return contextProvider.GetService<IWalletService>().Delete(id);
         }
     }
 }

@@ -8,51 +8,47 @@ namespace CashSchedulerWebServer.Services.Users
 {
     public class UserEmailVerificationCodeService : IUserEmailVerificationCodeService
     {
-        private IContextProvider ContextProvider { get; }
+        private IUserEmailVerificationCodeRepository EmailVerificationCodeRepository { get; }
 
         public UserEmailVerificationCodeService(IContextProvider contextProvider)
         {
-            ContextProvider = contextProvider;
+            EmailVerificationCodeRepository = contextProvider.GetRepository<IUserEmailVerificationCodeRepository>();
         }
         
 
         public UserEmailVerificationCode GetByUserId(int id)
         {
-            return ContextProvider.GetRepository<IUserEmailVerificationCodeRepository>().GetByUserId(id);
+            return EmailVerificationCodeRepository.GetByUserId(id);
         }
 
         public Task<UserEmailVerificationCode> Create(UserEmailVerificationCode emailVerificationCode)
         {
-            return ContextProvider.GetRepository<IUserEmailVerificationCodeRepository>().Create(emailVerificationCode);
+            return EmailVerificationCodeRepository.Create(emailVerificationCode);
         }
 
         public Task<UserEmailVerificationCode> Update(UserEmailVerificationCode emailVerificationCode)
         {
-            var verificationCodeRepository = ContextProvider.GetRepository<IUserEmailVerificationCodeRepository>();
-            
             var verificationCode = GetByUserId(emailVerificationCode.User.Id);
             if (verificationCode == null)
             {
-                return verificationCodeRepository.Create(emailVerificationCode);
+                return EmailVerificationCodeRepository.Create(emailVerificationCode);
             }
 
             verificationCode.Code = emailVerificationCode.Code;
             verificationCode.ExpiredDate = emailVerificationCode.ExpiredDate;
 
-            return verificationCodeRepository.Update(verificationCode);
+            return EmailVerificationCodeRepository.Update(verificationCode);
         }
         
         public Task<UserEmailVerificationCode> Delete(int id)
         {
-            var verificationCodeRepository = ContextProvider.GetRepository<IUserEmailVerificationCodeRepository>();
-
-            var emailVerificationCode = verificationCodeRepository.GetById(id);
+            var emailVerificationCode = EmailVerificationCodeRepository.GetByKey(id);
             if (emailVerificationCode == null)
             {
                 throw new CashSchedulerException("There is no such verification code");
             }
             
-            return verificationCodeRepository.Delete(id);
+            return EmailVerificationCodeRepository.Delete(id);
         }
     }
 }

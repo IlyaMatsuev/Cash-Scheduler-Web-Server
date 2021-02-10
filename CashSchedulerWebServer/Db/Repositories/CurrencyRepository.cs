@@ -17,7 +17,7 @@ namespace CashSchedulerWebServer.Db.Repositories
         }
 
 
-        public Currency GetById(string abbreviation)
+        public Currency GetByKey(string abbreviation)
         {
             return Context.Currencies.FirstOrDefault(c => c.Abbreviation == abbreviation);
         }

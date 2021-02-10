@@ -30,7 +30,7 @@ namespace CashSchedulerWebServer.Db.Repositories
                 .Include(r => r.User);
         }
 
-        public CurrencyExchangeRate GetById(int id)
+        public CurrencyExchangeRate GetByKey(int id)
         {
             return Context.CurrencyExchangeRates.
                 Where(r => r.Id == id && ((r.User != null && r.User.Id == UserId && r.IsCustom) || !r.IsCustom))
@@ -47,7 +47,7 @@ namespace CashSchedulerWebServer.Db.Repositories
             await Context.CurrencyExchangeRates.AddAsync(exchangeRate);
             await Context.SaveChangesAsync();
             
-            return GetById(exchangeRate.Id);
+            return GetByKey(exchangeRate.Id);
         }
 
         public async Task<CurrencyExchangeRate> Update(CurrencyExchangeRate exchangeRate)
@@ -57,12 +57,12 @@ namespace CashSchedulerWebServer.Db.Repositories
             Context.CurrencyExchangeRates.Update(exchangeRate);
             await Context.SaveChangesAsync();
 
-            return GetById(exchangeRate.Id);
+            return GetByKey(exchangeRate.Id);
         }
 
         public async Task<CurrencyExchangeRate> Delete(int id)
         {
-            var exchangeRate = GetById(id);
+            var exchangeRate = GetByKey(id);
             
             Context.CurrencyExchangeRates.Remove(exchangeRate);
             await Context.SaveChangesAsync();

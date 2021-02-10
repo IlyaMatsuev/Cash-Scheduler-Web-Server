@@ -12,46 +12,45 @@ namespace CashSchedulerWebServer.Services.Users
 {
     public class UserService : IUserService
     {
+        private IUserRepository UserRepository { get; }
         private IConfiguration Configuration { get; }
-        private IContextProvider ContextProvider { get; }
         private int UserId { get; }
 
-        public UserService(IConfiguration configuration, IContextProvider contextProvider, IUserContext userContext)
+        public UserService(IContextProvider contextProvider, IConfiguration configuration, IUserContext userContext)
         {
+            UserRepository = contextProvider.GetRepository<IUserRepository>();
             Configuration = configuration;
-            ContextProvider = contextProvider;
             UserId = userContext.GetUserId();
         }
         
         
         public User GetById()
         {
-            return ContextProvider.GetRepository<IUserRepository>().GetById(UserId);
+            return UserRepository.GetByKey(UserId);
         }
 
         public User GetByEmail(string email)
         {
-            return ContextProvider.GetRepository<IUserRepository>().GetUserByEmail(email);
+            return UserRepository.GetUserByEmail(email);
         }
 
         public bool HasWithEmail(string email)
         {
-            return ContextProvider.GetRepository<IUserRepository>().HasUserWithEmail(email);
+            return UserRepository.HasUserWithEmail(email);
         }
 
         public Task<User> Create(User user)
         {
             ModelValidator.ValidateModelAttributes(user);
 
-            // TODO: try to create a new NotMapped field in the model and move validation to the repository
             user.Password = user.Password.Hash(Configuration);
             
-            return ContextProvider.GetRepository<IUserRepository>().Create(user);
+            return UserRepository.Create(user);
         }
 
         public Task<User> UpdatePassword(string email, string password)
         {
-            var userRepository = ContextProvider.GetRepository<IUserRepository>();
+            var userRepository = UserRepository;
             
             var user = userRepository.GetUserByEmail(email);
             if (user == null)
@@ -59,9 +58,6 @@ namespace CashSchedulerWebServer.Services.Users
                 throw new CashSchedulerException("There is no such user", new[] { nameof(email) });
             }
 
-            ModelValidator.ValidateModelAttributes(user);
-
-            // TODO: try to create a new NotMapped field in the model and move validation to the repository
             user.Password = password.Hash(Configuration);
 
             return userRepository.Update(user);
@@ -69,9 +65,7 @@ namespace CashSchedulerWebServer.Services.Users
 
         public Task<User> Update(User user)
         {
-            var userRepository = ContextProvider.GetRepository<IUserRepository>();
-            
-            var targetUser = userRepository.GetById(user.Id);
+            var targetUser = UserRepository.GetByKey(user.Id);
             if (targetUser == null)
             {
                 throw new CashSchedulerException("There is no such user");
@@ -92,9 +86,7 @@ namespace CashSchedulerWebServer.Services.Users
                 targetUser.Balance = user.Balance;
             }
 
-            ModelValidator.ValidateModelAttributes(targetUser);
-            
-            return userRepository.Update(targetUser);
+            return UserRepository.Update(targetUser);
         }
 
         public Task<User> UpdateBalance(
@@ -142,12 +134,12 @@ namespace CashSchedulerWebServer.Services.Users
                 }
             }
 
-            return ContextProvider.GetRepository<IUserRepository>().Update(user);
+            return UserRepository.Update(user);
         }
         
         public Task<User> Delete(int id)
         {
-            return ContextProvider.GetRepository<IUserRepository>().Delete(id);
+            return UserRepository.Delete(id);
         }
     }
 }

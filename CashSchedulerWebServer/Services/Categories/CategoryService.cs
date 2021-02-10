@@ -50,14 +50,14 @@ namespace CashSchedulerWebServer.Services.Categories
 
         public Task<Category> Create(Category category)
         {
-            category.Type = ContextProvider.GetRepository<ITransactionTypeRepository>().GetById(category.TypeName);
+            category.Type = ContextProvider.GetRepository<ITransactionTypeRepository>().GetByKey(category.TypeName);
             
             if (category.Type == null)
             {
                 throw new CashSchedulerException("There is no such transaction type", new[] { "transactionTypeName" });
             }
             
-            category.User = ContextProvider.GetRepository<IUserRepository>().GetById(UserId);
+            category.User = ContextProvider.GetRepository<IUserRepository>().GetByKey(UserId);
 
             return ContextProvider.GetRepository<ICategoryRepository>().Create(category);
         }
@@ -66,7 +66,7 @@ namespace CashSchedulerWebServer.Services.Categories
         {
             var categoryRepository = ContextProvider.GetRepository<ICategoryRepository>();
             
-            var targetCategory = categoryRepository.GetById(category.Id);
+            var targetCategory = categoryRepository.GetByKey(category.Id);
             if (targetCategory == null)
             {
                 throw new CashSchedulerException("There is no such category");
@@ -91,7 +91,7 @@ namespace CashSchedulerWebServer.Services.Categories
         {
             var categoryRepository = ContextProvider.GetRepository<ICategoryRepository>();
 
-            var category = categoryRepository.GetById(id);
+            var category = categoryRepository.GetByKey(id);
             if (category == null)
             {
                 throw new CashSchedulerException("There is no such category");

@@ -30,8 +30,8 @@ namespace CashSchedulerWebServer.Services.Currencies
         {
             var currencyRepository = ContextProvider.GetRepository<ICurrencyRepository>();
 
-            exchangeRate.SourceCurrency ??= currencyRepository.GetById(exchangeRate.SourceCurrencyAbbreviation);
-            exchangeRate.TargetCurrency ??= currencyRepository.GetById(exchangeRate.TargetCurrencyAbbreviation);
+            exchangeRate.SourceCurrency ??= currencyRepository.GetByKey(exchangeRate.SourceCurrencyAbbreviation);
+            exchangeRate.TargetCurrency ??= currencyRepository.GetByKey(exchangeRate.TargetCurrencyAbbreviation);
 
             if (exchangeRate.SourceCurrency == null)
             {
@@ -45,7 +45,7 @@ namespace CashSchedulerWebServer.Services.Currencies
 
             if (exchangeRate.IsCustom && exchangeRate.User == null)
             {
-                exchangeRate.User = ContextProvider.GetRepository<IUserRepository>().GetById(UserId);                
+                exchangeRate.User = ContextProvider.GetRepository<IUserRepository>().GetByKey(UserId);                
             }
             
             return ContextProvider.GetRepository<ICurrencyExchangeRateRepository>().Create(exchangeRate);
@@ -55,7 +55,7 @@ namespace CashSchedulerWebServer.Services.Currencies
         {
             var exchangeRateRepository = ContextProvider.GetRepository<ICurrencyExchangeRateRepository>();
             
-            var targetExchangeRate = exchangeRateRepository.GetById(exchangeRate.Id);
+            var targetExchangeRate = exchangeRateRepository.GetByKey(exchangeRate.Id);
             if (targetExchangeRate == null)
             {
                 throw new CashSchedulerException("There is no such exchange rate");
@@ -65,7 +65,7 @@ namespace CashSchedulerWebServer.Services.Currencies
 
             if (!string.IsNullOrEmpty(exchangeRate.SourceCurrencyAbbreviation))
             {
-                targetExchangeRate.SourceCurrency = currencyRepository.GetById(exchangeRate.SourceCurrencyAbbreviation);
+                targetExchangeRate.SourceCurrency = currencyRepository.GetByKey(exchangeRate.SourceCurrencyAbbreviation);
                 
                 if (targetExchangeRate.SourceCurrency == null)
                 {
@@ -75,7 +75,7 @@ namespace CashSchedulerWebServer.Services.Currencies
             
             if (!string.IsNullOrEmpty(exchangeRate.TargetCurrencyAbbreviation))
             {
-                targetExchangeRate.TargetCurrency = currencyRepository.GetById(exchangeRate.TargetCurrencyAbbreviation);
+                targetExchangeRate.TargetCurrency = currencyRepository.GetByKey(exchangeRate.TargetCurrencyAbbreviation);
                 
                 if (targetExchangeRate.TargetCurrency == null)
                 {
@@ -105,7 +105,7 @@ namespace CashSchedulerWebServer.Services.Currencies
         {
             var exchangeRateRepository = ContextProvider.GetRepository<ICurrencyExchangeRateRepository>();
 
-            var exchangeRate = exchangeRateRepository.GetById(id);
+            var exchangeRate = exchangeRateRepository.GetByKey(id);
             if (exchangeRate == null)
             {
                 throw new CashSchedulerException("There is no exchange rate with such id");

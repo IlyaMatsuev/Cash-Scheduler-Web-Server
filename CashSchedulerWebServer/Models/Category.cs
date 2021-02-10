@@ -26,7 +26,6 @@ namespace CashSchedulerWebServer.Models
         [Required(ErrorMessage = "Transaction type name cannot be empty")]
         public string TypeName { get; set; }
         
-        [GraphQLNonNullType]
         public User User { get; set; }
 
         [DefaultValue(true)]

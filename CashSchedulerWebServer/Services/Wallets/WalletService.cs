@@ -48,10 +48,10 @@ namespace CashSchedulerWebServer.Services.Wallets
 
         public Task<Wallet> Create(Wallet wallet)
         {
-            wallet.User ??= ContextProvider.GetRepository<IUserRepository>().GetById(UserId);
+            wallet.User ??= ContextProvider.GetRepository<IUserRepository>().GetByKey(UserId);
             
             wallet.Currency ??= ContextProvider.GetRepository<ICurrencyRepository>()
-                .GetById(wallet.CurrencyAbbreviation);
+                .GetByKey(wallet.CurrencyAbbreviation);
 
             if (wallet.Currency == null)
             {
@@ -65,7 +65,7 @@ namespace CashSchedulerWebServer.Services.Wallets
         {
             var walletRepository = ContextProvider.GetRepository<IWalletRepository>();
             
-            var targetWallet = walletRepository.GetById(wallet.Id);
+            var targetWallet = walletRepository.GetByKey(wallet.Id);
 
             if (!string.IsNullOrEmpty(wallet.Name))
             {
@@ -86,7 +86,7 @@ namespace CashSchedulerWebServer.Services.Wallets
                 }
 
                 targetWallet.Currency = ContextProvider.GetRepository<ICurrencyRepository>()
-                    .GetById(wallet.CurrencyAbbreviation);
+                    .GetByKey(wallet.CurrencyAbbreviation);
                 
                 if (targetWallet.Currency == null)
                 {
@@ -106,7 +106,7 @@ namespace CashSchedulerWebServer.Services.Wallets
         {
             var walletRepository = ContextProvider.GetRepository<IWalletRepository>();
             
-            var wallet = walletRepository.GetById(id);
+            var wallet = walletRepository.GetByKey(id);
             if (wallet == null)
             {
                 throw new CashSchedulerException("There is no such wallet");

@@ -33,7 +33,7 @@ namespace CashSchedulerWebServer.Services.Settings
 
         public Task<UserSetting> Create(UserSetting setting)
         {
-            setting.User = ContextProvider.GetRepository<IUserRepository>().GetById(UserId);
+            setting.User = ContextProvider.GetRepository<IUserRepository>().GetByKey(UserId);
 
             return ContextProvider.GetRepository<IUserSettingRepository>().Create(setting);
         }
@@ -53,14 +53,13 @@ namespace CashSchedulerWebServer.Services.Settings
                 targetSetting.Value = setting.Value;
             }
 
-            ModelValidator.ValidateModelAttributes(targetSetting);
-
-            return settingRepository.Update(setting);
+            return settingRepository.Update(targetSetting);
         }
 
         public async Task<IEnumerable<UserSetting>> Update(List<UserSetting> settings)
         {
             var settingRepository = ContextProvider.GetRepository<IUserSettingRepository>();
+            var userRepository = ContextProvider.GetRepository<IUserRepository>();
             var newSettings = new List<UserSetting>();
             var updateSettings = new List<UserSetting>();
 
@@ -70,7 +69,7 @@ namespace CashSchedulerWebServer.Services.Settings
                 if (targetSetting == null)
                 {
                     ModelValidator.ValidateModelAttributes(setting);
-                    setting.User = ContextProvider.GetRepository<IUserRepository>().GetById(UserId);
+                    setting.User = userRepository.GetByKey(UserId);
                     newSettings.Add(setting);
                 }
                 else
@@ -88,7 +87,7 @@ namespace CashSchedulerWebServer.Services.Settings
         {
             var settingRepository = ContextProvider.GetRepository<IUserSettingRepository>();
             
-            var setting = settingRepository.GetById(id);
+            var setting = settingRepository.GetByKey(id);
             if (setting == null)
             {
                 throw new CashSchedulerException("There is no such setting");

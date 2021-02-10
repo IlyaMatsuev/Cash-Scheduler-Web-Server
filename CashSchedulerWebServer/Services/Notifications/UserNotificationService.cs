@@ -16,8 +16,8 @@ namespace CashSchedulerWebServer.Services.Notifications
         private int UserId { get; }
 
         public UserNotificationService(
-            IUserContext userContext,
             IContextProvider contextProvider,
+            IUserContext userContext,
             ITopicEventSender eventSender)
         {
             ContextProvider = contextProvider;
@@ -33,7 +33,7 @@ namespace CashSchedulerWebServer.Services.Notifications
 
         public async Task<UserNotification> Create(UserNotification notification)
         {
-            notification.User ??= ContextProvider.GetRepository<IUserRepository>().GetById(UserId);
+            notification.User ??= ContextProvider.GetRepository<IUserRepository>().GetByKey(UserId);
 
             await EventSender.SendAsync($"OnNotificationForUser_{UserId}", notification);
             
@@ -44,7 +44,7 @@ namespace CashSchedulerWebServer.Services.Notifications
         {
             var notificationRepository = ContextProvider.GetRepository<IUserNotificationRepository>();
             
-            var targetNotification = notificationRepository.GetById(notification.Id);
+            var targetNotification = notificationRepository.GetByKey(notification.Id);
             if (targetNotification == null)
             {
                 throw new CashSchedulerException("There is no such notification");
@@ -78,7 +78,7 @@ namespace CashSchedulerWebServer.Services.Notifications
         {
             var notificationRepository = ContextProvider.GetRepository<IUserNotificationRepository>();
             
-            var targetNotification = notificationRepository.GetById(id);
+            var targetNotification = notificationRepository.GetByKey(id);
             if (targetNotification == null)
             {
                 throw new CashSchedulerException("There is no such notification");

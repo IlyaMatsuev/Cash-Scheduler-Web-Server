@@ -3,6 +3,7 @@ using CashSchedulerWebServer.Auth;
 using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Models;
+using CashSchedulerWebServer.Services.Contracts;
 using HotChocolate;
 using HotChocolate.AspNetCore.Authorization;
 using HotChocolate.Types;
@@ -58,7 +59,7 @@ namespace CashSchedulerWebServer.Mutations.Users
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
         public Task<User> UpdateUser([Service] IContextProvider contextProvider, [GraphQLNonNullType] UpdateUserInput user)
         {
-            return contextProvider.GetRepository<IUserRepository>().Update(new User
+            return contextProvider.GetService<IUserService>().Update(new User
             {
                 Id = user.Id,
                 FirstName = user.FirstName,

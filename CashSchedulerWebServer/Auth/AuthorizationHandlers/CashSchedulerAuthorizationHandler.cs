@@ -14,7 +14,7 @@ namespace CashSchedulerWebServer.Auth.AuthorizationHandlers
             IResolverContext resource)
         {
             string userId = context.User.Claims
-                .FirstOrDefault(claim => claim.Type == UserContext.ID_CLAIM_TYPE)?.Value ?? string.Empty;
+                .FirstOrDefault(claim => claim.Type == UserContextManager.ID_CLAIM_TYPE)?.Value ?? string.Empty;
 
             if (!string.IsNullOrEmpty(userId))
             {

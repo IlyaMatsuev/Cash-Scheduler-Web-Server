@@ -49,7 +49,7 @@ namespace CashSchedulerWebServer.Db.Repositories
                 .Include(t => t.Category.Type);
         }
 
-        public RegularTransaction GetById(int id)
+        public RegularTransaction GetByKey(int id)
         {
             return Context.RegularTransactions.Where(t => t.Id == id && t.User.Id == UserId)
                 .Include(t => t.User)
@@ -65,7 +65,7 @@ namespace CashSchedulerWebServer.Db.Repositories
             await Context.RegularTransactions.AddAsync(transaction);
             await Context.SaveChangesAsync();
 
-            return GetById(transaction.Id);
+            return GetByKey(transaction.Id);
         }
 
         public async Task<RegularTransaction> Update(RegularTransaction transaction)
@@ -80,7 +80,7 @@ namespace CashSchedulerWebServer.Db.Repositories
 
         public async Task<RegularTransaction> Delete(int id)
         {
-            var transaction = GetById(id);
+            var transaction = GetByKey(id);
             
             Context.RegularTransactions.Remove(transaction);
             await Context.SaveChangesAsync();

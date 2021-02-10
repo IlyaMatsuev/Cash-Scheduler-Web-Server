@@ -8,51 +8,47 @@ namespace CashSchedulerWebServer.Services.Users
 {
     public class UserRefreshTokenService : IUserRefreshTokenService
     {
-        private IContextProvider ContextProvider { get; }
+        private IUserRefreshTokenRepository RefreshTokenRepository { get; }
 
         public UserRefreshTokenService(IContextProvider contextProvider)
         {
-            ContextProvider = contextProvider;
+            RefreshTokenRepository = contextProvider.GetRepository<IUserRefreshTokenRepository>();
         }
         
 
         public UserRefreshToken GetByUserId(int id)
         {
-            return ContextProvider.GetRepository<IUserRefreshTokenRepository>().GetByUserId(id);
+            return RefreshTokenRepository.GetByUserId(id);
         }
 
         public Task<UserRefreshToken> Create(UserRefreshToken refreshToken)
         {
-            return ContextProvider.GetRepository<IUserRefreshTokenRepository>().Create(refreshToken);
+            return RefreshTokenRepository.Create(refreshToken);
         }
 
         public Task<UserRefreshToken> Update(UserRefreshToken refreshToken)
         {
-            var tokenRepository = ContextProvider.GetRepository<IUserRefreshTokenRepository>();
-            
             var token = GetByUserId(refreshToken.User.Id);
             if (token == null)
             {
-                return tokenRepository.Create(refreshToken);
+                return RefreshTokenRepository.Create(refreshToken);
             }
 
             token.Token = refreshToken.Token;
             token.ExpiredDate = refreshToken.ExpiredDate;
 
-            return tokenRepository.Update(token);
+            return RefreshTokenRepository.Update(token);
         }
 
         public Task<UserRefreshToken> Delete(int id)
         {
-            var tokenRepository = ContextProvider.GetRepository<IUserRefreshTokenRepository>();
-            
-            var token = tokenRepository.GetById(id);
+            var token = RefreshTokenRepository.GetByKey(id);
             if (token == null)
             {
                 throw new CashSchedulerException("There is no such refresh token");
             }
             
-            return tokenRepository.Delete(id);
+            return RefreshTokenRepository.Delete(id);
         }
     }
 }

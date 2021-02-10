@@ -5,7 +5,6 @@ using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Services.Contracts;
-using CashSchedulerWebServer.Utils;
 
 namespace CashSchedulerWebServer.Services.Transactions
 {
@@ -33,15 +32,13 @@ namespace CashSchedulerWebServer.Services.Transactions
 
         public Task<RegularTransaction> Create(RegularTransaction transaction)
         {
-            transaction.User = ContextProvider.GetRepository<IUserRepository>().GetById(UserId);
+            transaction.User = ContextProvider.GetRepository<IUserRepository>().GetByKey(UserId);
             
-            transaction.Category = ContextProvider.GetRepository<ICategoryRepository>().GetById(transaction.CategoryId);
+            transaction.Category = ContextProvider.GetRepository<ICategoryRepository>().GetByKey(transaction.CategoryId);
             if (transaction.Category == null)
             {
                 throw new CashSchedulerException("There is no such category", new[] { "categoryId" });
             }
-
-            ModelValidator.ValidateModelAttributes(transaction);
 
             return ContextProvider.GetRepository<IRegularTransactionRepository>().Create(transaction);
         }
@@ -50,7 +47,7 @@ namespace CashSchedulerWebServer.Services.Transactions
         {
             var transactionRepository = ContextProvider.GetRepository<IRegularTransactionRepository>();
             
-            var targetTransaction = transactionRepository.GetById(transaction.Id);
+            var targetTransaction = transactionRepository.GetByKey(transaction.Id);
             if (targetTransaction == null)
             {
                 throw new CashSchedulerException("There is no such transaction");
@@ -63,16 +60,14 @@ namespace CashSchedulerWebServer.Services.Transactions
                 targetTransaction.Amount = transaction.Amount;
             }
 
-            ModelValidator.ValidateModelAttributes(targetTransaction);
-
-            return transactionRepository.Update(transaction);
+            return transactionRepository.Update(targetTransaction);
         }
 
         public Task<RegularTransaction> Delete(int id)
         {
             var transactionRepository = ContextProvider.GetRepository<IRegularTransactionRepository>();
 
-            var targetTransaction = transactionRepository.GetById(id);
+            var targetTransaction = transactionRepository.GetByKey(id);
             if (targetTransaction == null)
             {
                 throw new CashSchedulerException("There is no such transaction");

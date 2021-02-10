@@ -8,37 +8,37 @@ namespace CashSchedulerWebServer.Services.TransactionTypes
 {
     public class TransactionTypeService : ITransactionTypeService
     {
-        private IContextProvider ContextProvider { get; }
+        private ITransactionTypeRepository TransactionTypeRepository { get; }
         
         public TransactionTypeService(IContextProvider contextProvider)
         {
-            ContextProvider = contextProvider;
+            TransactionTypeRepository = contextProvider.GetRepository<ITransactionTypeRepository>();
         }
         
         
         public IEnumerable<TransactionType> GetAll()
         {
-            return ContextProvider.GetRepository<ITransactionTypeRepository>().GetAll();
+            return TransactionTypeRepository.GetAll();
         }
 
-        public TransactionType GetByKey(string key)
+        public TransactionType GetByKey(string name)
         {
-            return ContextProvider.GetRepository<ITransactionTypeRepository>().GetById(key);
+            return TransactionTypeRepository.GetByKey(name);
         }
 
         public Task<TransactionType> Create(TransactionType transactionType)
         {
-            return ContextProvider.GetRepository<ITransactionTypeRepository>().Create(transactionType);
+            return TransactionTypeRepository.Create(transactionType);
         }
 
         public Task<TransactionType> Update(TransactionType transactionType)
         {
-            return ContextProvider.GetRepository<ITransactionTypeRepository>().Update(transactionType);
+            return TransactionTypeRepository.Update(transactionType);
         }
 
-        public Task<TransactionType> Delete(string id)
+        public Task<TransactionType> Delete(string name)
         {
-            return ContextProvider.GetRepository<ITransactionTypeRepository>().Delete(id);
+            return TransactionTypeRepository.Delete(name);
         }
     }
 }

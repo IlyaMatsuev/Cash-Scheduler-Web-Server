@@ -21,7 +21,7 @@ namespace CashSchedulerWebServer.Db.Repositories
         }
         
 
-        public UserNotification GetById(int id)
+        public UserNotification GetByKey(int id)
         {
             return Context.UserNotifications
                 .Where(n => n.Id == id && n.User.Id == UserId)
@@ -41,7 +41,7 @@ namespace CashSchedulerWebServer.Db.Repositories
             await Context.UserNotifications.AddAsync(notification);
             await Context.SaveChangesAsync();
 
-            return GetById(notification.Id);
+            return GetByKey(notification.Id);
         }
 
         public async Task<UserNotification> Update(UserNotification notification)
@@ -51,12 +51,12 @@ namespace CashSchedulerWebServer.Db.Repositories
             Context.UserNotifications.Update(notification);
             await Context.SaveChangesAsync();
 
-            return GetById(notification.Id);
+            return GetByKey(notification.Id);
         }
 
         public async Task<UserNotification> Delete(int id)
         {
-            var notification = GetById(id);
+            var notification = GetByKey(id);
             
             Context.UserNotifications.Remove(notification);
             await Context.SaveChangesAsync();

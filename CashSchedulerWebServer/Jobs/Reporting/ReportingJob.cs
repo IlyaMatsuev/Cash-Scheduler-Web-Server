@@ -36,7 +36,7 @@ namespace CashSchedulerWebServer.Jobs.Reporting
 
             var usersByMaxSpentCategory = transactionsByUsers.Select(group =>
             {
-                var maxSpentCategoryForLastWeek = group.GroupBy(t => t.Category).OrderBy(c => c.Max(t => c.Sum(tc => tc.Amount)))
+                var maxSpentCategoryForLastWeek = group.GroupBy(t => t.Category).OrderBy(c => c.Max(_ => c.Sum(tc => tc.Amount)))
                 .Select(c => new
                 {
                     Category = c.Key,

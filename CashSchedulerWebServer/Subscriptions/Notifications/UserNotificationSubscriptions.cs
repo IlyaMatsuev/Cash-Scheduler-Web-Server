@@ -11,7 +11,7 @@ using HotChocolate.Types;
 namespace CashSchedulerWebServer.Subscriptions.Notifications
 {
     [ExtendObjectType(Name = "Subscription")]
-    public class NotificationSubscriptions
+    public class UserNotificationSubscriptions
     {
         [SubscribeAndResolve]
         public async ValueTask<ISourceStream<UserNotification>> OnNotificationCreated(

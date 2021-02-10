@@ -1,8 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using CashSchedulerWebServer.Auth;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Models;
+using CashSchedulerWebServer.Services.Contracts;
 using HotChocolate;
 using HotChocolate.AspNetCore.Authorization;
 using HotChocolate.Types;
@@ -18,7 +18,7 @@ namespace CashSchedulerWebServer.Mutations.CurrencyExchangeRates
             [Service] IContextProvider contextProvider,
             [GraphQLNonNullType] NewExchangeRateInput exchangeRate)
         {
-            return contextProvider.GetRepository<ICurrencyExchangeRateRepository>().Create(new CurrencyExchangeRate
+            return contextProvider.GetService<ICurrencyExchangeRateService>().Create(new CurrencyExchangeRate
             {
                 SourceCurrencyAbbreviation = exchangeRate.SourceCurrencyAbbreviation,
                 TargetCurrencyAbbreviation = exchangeRate.TargetCurrencyAbbreviation,
@@ -35,7 +35,7 @@ namespace CashSchedulerWebServer.Mutations.CurrencyExchangeRates
             [Service] IContextProvider contextProvider,
             [GraphQLNonNullType] UpdateExchangeRateInput exchangeRate)
         {
-            return contextProvider.GetRepository<ICurrencyExchangeRateRepository>().Update(new CurrencyExchangeRate
+            return contextProvider.GetService<ICurrencyExchangeRateService>().Update(new CurrencyExchangeRate
             {
                 Id = exchangeRate.Id,
                 SourceCurrencyAbbreviation = exchangeRate.SourceCurrencyAbbreviation,
@@ -50,7 +50,7 @@ namespace CashSchedulerWebServer.Mutations.CurrencyExchangeRates
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
         public Task<CurrencyExchangeRate> DeleteExchangeRate([Service] IContextProvider contextProvider, [GraphQLNonNullType] int id)
         {
-            return contextProvider.GetRepository<ICurrencyExchangeRateRepository>().Delete(id);
+            return contextProvider.GetService<ICurrencyExchangeRateService>().Delete(id);
         }
     }
 }

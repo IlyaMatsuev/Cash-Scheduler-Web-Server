@@ -3,6 +3,7 @@ using CashSchedulerWebServer.Auth;
 using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Models;
+using CashSchedulerWebServer.Services.Contracts;
 using HotChocolate;
 using HotChocolate.AspNetCore.Authorization;
 using HotChocolate.Types;
@@ -15,7 +16,7 @@ namespace CashSchedulerWebServer.Queries.Users
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
         public User User([Service] IContextProvider contextProvider)
         {
-            return contextProvider.GetRepository<IUserRepository>().GetById();
+            return contextProvider.GetService<IUserService>().GetById();
         }
         
         public Task<string> CheckEmail([Service] IAuthenticator authenticator, [GraphQLNonNullType] string email)

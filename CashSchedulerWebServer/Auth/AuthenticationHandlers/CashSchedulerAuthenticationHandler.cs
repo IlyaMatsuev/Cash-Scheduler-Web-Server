@@ -9,23 +9,23 @@ namespace CashSchedulerWebServer.Auth.AuthenticationHandlers
 {
     public class CashSchedulerAuthenticationHandler : AuthenticationHandler<CashSchedulerAuthenticationOptions>
     {
-        private IUserContext UserContext { get; }
+        private IUserContextManager UserContextManager { get; }
         
         public CashSchedulerAuthenticationHandler(
-            IUserContext userContext,
+            IUserContextManager userContextManager,
             IOptionsMonitor<CashSchedulerAuthenticationOptions> options,
             ILoggerFactory logger,
             UrlEncoder encoder,
             ISystemClock clock
             ) : base(options, logger, encoder, clock)
         {
-            UserContext = userContext;
+            UserContextManager = userContextManager;
         }
 
         
         protected override Task<AuthenticateResult> HandleAuthenticateAsync()
         {
-            var userPrincipal = UserContext.GetUserPrincipal();
+            var userPrincipal = UserContextManager.GetUserPrincipal();
             var ticket = new AuthenticationTicket(userPrincipal, Scheme.Name);
             return Task.FromResult(AuthenticateResult.Success(ticket));
         }
