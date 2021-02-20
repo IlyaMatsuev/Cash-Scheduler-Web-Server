@@ -1,0 +1,67 @@
+[
+  {
+    "Title": "viverra dapibus nulla",
+    "Amount": 215433.8,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 7
+    },
+    "Date": "10/27/2020",
+    "NexTransactionDate": "12/8/2020",
+    "Interval": "day"
+  },
+  {
+    "Title": "sed vestibulum sit",
+    "Amount": 665498.0,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 2
+    },
+    "Date": "9/17/2020",
+    "NexTransactionDate": "8/27/2020",
+    "Interval": "day"
+  },
+  {
+    "Title": "ridiculus mus",
+    "Amount": 761132.2,
+    "User": {
+      "Id": 2
+    },
+    "Category": {
+      "Id": 4
+    },
+    "Date": "9/19/2020",
+    "NexTransactionDate": "9/21/2020",
+    "Interval": "month"
+  },
+  {
+    "Title": "eget nunc donec",
+    "Amount": 676029.2,
+    "User": {
+      "Id": 2
+    },
+    "Category": {
+      "Id": 9
+    },
+    "Date": "8/12/2020",
+    "NexTransactionDate": "12/28/2020",
+    "Interval": "day"
+  },
+  {
+    "Title": "pulvinar",
+    "Amount": 505348.1,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 3
+    },
+    "Date": "11/2/2020",
+    "NexTransactionDate": "11/21/2020",
+    "Interval": "week"
+  }
+]

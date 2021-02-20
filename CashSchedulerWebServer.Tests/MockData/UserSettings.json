@@ -1,0 +1,42 @@
+[
+  {
+    "UnitName": "General",
+    "Name": "ShowBalance",
+    "Value": "true",
+    "User": {
+      "Id": 1
+    }
+  },
+  {
+    "UnitName": "Notifications",
+    "Name": "DuplicateToEmail",
+    "Value": "true",
+    "User": {
+      "Id": 1
+    }
+  },
+  {
+    "UnitName": "Notifications",
+    "Name": "TurnNotificationsSoundOn",
+    "Value": "true",
+    "User": {
+      "Id": 1
+    }
+  },
+  {
+    "UnitName": "General",
+    "Name": "ShowBalance",
+    "Value": "true",
+    "User": {
+      "Id": 2
+    }
+  },
+  {
+    "UnitName": "Notifications",
+    "Name": "TurnNotificationsSoundOn",
+    "Value": "true",
+    "User": {
+      "Id": 2
+    }
+  }
+]

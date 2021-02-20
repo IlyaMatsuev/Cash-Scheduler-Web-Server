@@ -1,0 +1,10 @@
+[
+  {
+    "Name": "Income",
+    "IconUrl": "/static/icons/transactiontypes/income.png"
+  },
+  {
+    "Name": "Expense",
+    "IconUrl": "/static/icons/transactiontypes/expense.png"
+  }
+]

@@ -28,9 +28,9 @@ namespace CashSchedulerWebServer.Models
         [Required(ErrorMessage = "Exchange rate is a required field")]
         public float ExchangeRate { get; set; }
 
-        public DateTime ValidFrom { get; set; }
+        public DateTime ValidFrom { get; set; } = DateTime.Today;
 
-        public DateTime ValidTo { get; set; }
+        public DateTime ValidTo { get; set; } = DateTime.Today;
         
         public User User { get; set; }
         

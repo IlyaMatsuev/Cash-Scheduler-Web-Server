@@ -1,0 +1,24 @@
+[
+  {
+    "Id": 1,
+    "FirstName": "Sheri",
+    "LastName": "Mc Gee",
+    "Email": "smcgee0@hibu.com",
+    "Password": "P@$$w0rd",
+    "Balance": 93970.5
+  },
+  {
+    "Id": 2,
+    "FirstName": "Ilya",
+    "LastName": "Matsuev",
+    "Email": "mirotvorec542546@gmail.com",
+    "Balance": 93970.5
+  },
+  {
+    "Id": 3,
+    "FirstName": "Michelle",
+    "LastName": "Slucock",
+    "Email": "mslucock1@digg.com",
+    "Balance": 52315.3
+  }
+]

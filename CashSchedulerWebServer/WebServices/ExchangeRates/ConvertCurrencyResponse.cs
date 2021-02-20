@@ -14,7 +14,7 @@ namespace CashSchedulerWebServer.WebServices.ExchangeRates
         
         public DateTime Date { get; set; }
         
-        public float Result { get; set; }
+        public double Result { get; set; }
 
 
         public class ConvertCurrencyQuery

@@ -49,7 +49,7 @@ namespace CashSchedulerWebServer.Auth
                 throw new CashSchedulerException("Password is a required field for sign in", new[] {nameof(password)});
             }
 
-            var user = ContextProvider.GetService<IUserService>().GetByEmail(email);
+            var user = ContextProvider.GetRepository<IUserRepository>().GetByEmail(email);
             if (user == null || user.Password != password.Hash(Configuration))
             {
                 throw new CashSchedulerException("Invalid email or password", new[] {nameof(email), nameof(password)});
@@ -123,7 +123,7 @@ namespace CashSchedulerWebServer.Auth
 
         public async Task<AuthTokens> Token(string email, string refreshToken)
         {
-            var user = ContextProvider.GetService<IUserService>().GetByEmail(email);
+            var user = ContextProvider.GetRepository<IUserRepository>().GetByEmail(email);
             if (user == null)
             {
                 throw new CashSchedulerException("There is no such user", new[] {nameof(email)});
@@ -152,7 +152,7 @@ namespace CashSchedulerWebServer.Auth
 
         public async Task<string> CheckEmail(string email)
         {
-            var user = ContextProvider.GetService<IUserService>().GetByEmail(email);
+            var user = ContextProvider.GetRepository<IUserRepository>().GetByEmail(email);
             if (user == null)
             {
                 throw new CashSchedulerException("There is no such user", new[] {nameof(email)});
@@ -203,7 +203,7 @@ namespace CashSchedulerWebServer.Auth
 
         public async Task<string> CheckCode(string email, string code)
         {
-            var user = ContextProvider.GetService<IUserService>().GetByEmail(email);
+            var user = ContextProvider.GetRepository<IUserRepository>().GetByEmail(email);
             if (user == null)
             {
                 throw new CashSchedulerException("There is no such user", new[] {nameof(email)});

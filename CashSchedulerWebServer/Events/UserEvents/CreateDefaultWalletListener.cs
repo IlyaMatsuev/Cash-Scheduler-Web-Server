@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Events.Contracts;
 using CashSchedulerWebServer.Exceptions;
@@ -21,7 +20,6 @@ namespace CashSchedulerWebServer.Events.UserEvents
 
         public Task Handle(object entity)
         {
-            Console.WriteLine("Hello from listener");
             if (entity is not User user)
             {
                 throw new CashSchedulerException("Entity should have the type of User", "500");

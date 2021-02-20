@@ -40,7 +40,7 @@ namespace CashSchedulerWebServer.Models
         
         public Transaction()
         {
-            Date = DateTime.UtcNow;
+            Date = DateTime.Today;
         }
     }
 }

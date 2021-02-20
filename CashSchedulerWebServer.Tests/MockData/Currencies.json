@@ -1,0 +1,22 @@
+[
+  {
+    "Abbreviation": "USD",
+    "Name": "United States Dollar",
+    "IconUrl": "/static/icons/currencies/us-dollar.png"
+  },
+  {
+    "Abbreviation": "EUR",
+    "Name": "Euro",
+    "IconUrl": "/static/icons/currencies/euro.png"
+  },
+  {
+    "Abbreviation": "BYN",
+    "Name": "Belarusian Ruble",
+    "IconUrl": "/static/icons/currencies/unknown.png"
+  },
+  {
+    "Abbreviation": "RUB",
+    "Name": "Russian Ruble",
+    "IconUrl": "/static/icons/currencies/ruble.png"
+  }
+]

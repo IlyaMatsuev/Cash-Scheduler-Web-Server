@@ -1,0 +1,50 @@
+[
+  {
+    "Name": "Default Wallet",
+    "Balance": 4183.61,
+    "Currency": {
+      "Abbreviation": "USD"
+    },
+    "User": {
+      "id": 1
+    },
+    "IsCustom": false,
+    "IsDefault": true
+  },
+  {
+    "Name": "Youtags",
+    "Balance": 2781.41,
+    "Currency": {
+      "Abbreviation": "XAF"
+    },
+    "User": {
+      "id": 1
+    },
+    "IsCustom": true,
+    "IsDefault": false
+  },
+  {
+    "Name": "Default Wallet",
+    "Balance": 1241.87,
+    "Currency": {
+      "Abbreviation": "RUB"
+    },
+    "User": {
+      "id": 2
+    },
+    "IsCustom": false,
+    "IsDefault": true
+  },
+  {
+    "Name": "Topiclounge",
+    "Balance": 627.86,
+    "Currency": {
+      "Abbreviation": "MXN"
+    },
+    "User": {
+      "id": 2
+    },
+    "IsCustom": true,
+    "IsDefault": false
+  }
+]

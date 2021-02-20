@@ -47,7 +47,7 @@ namespace CashSchedulerWebServer.Services.Currencies
             {
                 exchangeRate.User = ContextProvider.GetRepository<IUserRepository>().GetByKey(UserId);                
             }
-            
+
             return ContextProvider.GetRepository<ICurrencyExchangeRateRepository>().Create(exchangeRate);
         }
 

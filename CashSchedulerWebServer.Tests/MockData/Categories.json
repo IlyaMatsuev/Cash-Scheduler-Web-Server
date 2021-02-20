@@ -1,0 +1,116 @@
+[
+  {
+    "Id": 1,
+    "Name": "Pets",
+    "Type": {
+      "Name": "Expense"
+    },
+    "IsCustom": "false",
+    "IconUrl": "http://dummyimage.com/164x249.jpg/cc0000/ffffff"
+  },
+  {
+    "Id": 2,
+    "Name": "Salary",
+    "Type": {
+      "Name": "Income"
+    },
+    "IsCustom": "false",
+    "IconUrl": "http://dummyimage.com/156x174.jpg/ff4444/ffffff"
+  },
+  {
+    "Id": 3,
+    "Name": "Gift",
+    "Type": {
+      "Name": "Income"
+    },
+    "IsCustom": "false",
+    "IconUrl": "http://dummyimage.com/226x219.jpg/5fa2dd/ffffff"
+  },
+  {
+    "Id": 4,
+    "Name": "Transport",
+    "Type": {
+      "Name": "Expense"
+    },
+    "IsCustom": "false",
+    "IconUrl": "http://dummyimage.com/123x205.jpg/dddddd/000000"
+  },
+  {
+    "Id": 5,
+    "Name": "Sport",
+    "Type": {
+      "Name": "Expense"
+    },
+    "IsCustom": "false",
+    "IconUrl": "http://dummyimage.com/247x125.bmp/cc0000/ffffff"
+  },
+  {
+    "Id": 6,
+    "Name": "Luck",
+    "Type": {
+      "Name": "Income"
+    },
+    "IsCustom": "false",
+    "IconUrl": "http://dummyimage.com/112x150.bmp/cc0000/ffffff"
+  },
+  {
+    "Id": 7,
+    "Name": "Tools",
+    "Type": {
+      "Name": "Expense"
+    },
+    "User": {
+      "Id": 1
+    },
+    "IsCustom": "true",
+    "IconUrl": "http://dummyimage.com/209x223.jpg/5fa2dd/ffffff"
+  },
+  {
+    "Id": 8,
+    "Name": "Grocery",
+    "Type": {
+      "Name": "Income"
+    },
+    "User": {
+      "Id": 2
+    },
+    "IsCustom": "true",
+    "IconUrl": "http://dummyimage.com/222x225.jpg/ff4444/ffffff"
+  },
+  {
+    "Id": 9,
+    "Name": "Movies",
+    "Type": {
+      "Name": "Expense"
+    },
+    "User": {
+      "Id": 2
+    },
+    "IsCustom": "true",
+    "IconUrl": "http://dummyimage.com/239x244.jpg/ff4444/ffffff"
+  },
+  {
+    "Id": 10,
+    "Name": "Industrial",
+    "Type": {
+      "Name": "Income"
+    },
+    "User": {
+      "Id": 1
+    },
+    "IsCustom": "true",
+    "IconUrl": "http://dummyimage.com/113x131.jpg/dddddd/000000"
+  },
+  {
+    "Id": 11,
+    "Name": "Clothing",
+    "Type": {
+      "Name": "Income"
+    },
+    "User": {
+      "Id": 3
+    },
+    "IsCustom": "true",
+    "IconUrl": "http://dummyimage.com/210x179.bmp/5fa2dd/ffffff"
+  }
+]

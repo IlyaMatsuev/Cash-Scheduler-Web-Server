@@ -26,7 +26,7 @@ namespace CashSchedulerWebServer.Services.Categories
             var categoryRepository = ContextProvider.GetRepository<ICategoryRepository>();
             
             return string.IsNullOrEmpty(transactionType) 
-                ? categoryRepository.GetAll() 
+                ? categoryRepository.GetAll()
                 : categoryRepository.GetAll(transactionType);
         }
 

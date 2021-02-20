@@ -1,0 +1,57 @@
+[
+  {
+    "Title": "sapien cum",
+    "Amount": 172200.4,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 7
+    },
+    "Date": "11/7/2020"
+  },
+  {
+    "Title": "nulla ac",
+    "Amount": 894943.5,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 2
+    },
+    "Date": "8/3/2020"
+  },
+  {
+    "Title": "curae donec pharetra",
+    "Amount": 85233.7,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 3
+    },
+    "Date": "12/27/2020"
+  },
+  {
+    "Title": "risus semper porta",
+    "Amount": 78843.1,
+    "User": {
+      "Id": 2
+    },
+    "Category": {
+      "Id": 4
+    },
+    "Date": "12/7/2020"
+  },
+  {
+    "Title": "sed interdum venenatis",
+    "Amount": 4623.5,
+    "User": {
+      "Id": 2
+    },
+    "Category": {
+      "Id": 9
+    },
+    "Date": "8/24/2020"
+  }
+]

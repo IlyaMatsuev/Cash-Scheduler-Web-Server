@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using CashSchedulerWebServer.Db.Contracts;
+using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Services.Contracts;
 
@@ -28,17 +29,17 @@ namespace CashSchedulerWebServer.Services.TransactionTypes
 
         public Task<TransactionType> Create(TransactionType transactionType)
         {
-            return TransactionTypeRepository.Create(transactionType);
+            throw new CashSchedulerException("It's forbidden to create new transaction types");
         }
 
         public Task<TransactionType> Update(TransactionType transactionType)
         {
-            return TransactionTypeRepository.Update(transactionType);
+            throw new CashSchedulerException("It's forbidden to update the existing transaction types");
         }
 
         public Task<TransactionType> Delete(string name)
         {
-            return TransactionTypeRepository.Delete(name);
+            throw new CashSchedulerException("It's forbidden to delete the existing transaction types");
         }
     }
 }

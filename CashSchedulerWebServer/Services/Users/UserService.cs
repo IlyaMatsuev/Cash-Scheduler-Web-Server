@@ -31,12 +31,12 @@ namespace CashSchedulerWebServer.Services.Users
 
         public User GetByEmail(string email)
         {
-            return UserRepository.GetUserByEmail(email);
+            return UserRepository.GetByEmail(email);
         }
 
         public bool HasWithEmail(string email)
         {
-            return UserRepository.HasUserWithEmail(email);
+            return UserRepository.HasWithEmail(email);
         }
 
         public Task<User> Create(User user)
@@ -50,9 +50,7 @@ namespace CashSchedulerWebServer.Services.Users
 
         public Task<User> UpdatePassword(string email, string password)
         {
-            var userRepository = UserRepository;
-            
-            var user = userRepository.GetUserByEmail(email);
+            var user = UserRepository.GetByEmail(email);
             if (user == null)
             {
                 throw new CashSchedulerException("There is no such user", new[] { nameof(email) });
@@ -60,7 +58,7 @@ namespace CashSchedulerWebServer.Services.Users
 
             user.Password = password.Hash(Configuration);
 
-            return userRepository.Update(user);
+            return UserRepository.Update(user);
         }
 
         public Task<User> Update(User user)

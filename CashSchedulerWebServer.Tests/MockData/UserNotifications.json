@@ -1,0 +1,29 @@
+[
+  {
+    "Id": 1,
+    "Title": "primis",
+    "Content": "Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio.",
+    "User": {
+      "Id": 1
+    },
+    "IsRead": false
+  },
+  {
+    "Id": 2,
+    "Title": "lacus at",
+    "Content": "Aenean lectus.",
+    "User": {
+      "Id": 2
+    },
+    "IsRead": true
+  },
+  {
+    "Id": 3,
+    "Title": "viverra",
+    "Content": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.",
+    "User": {
+      "Id": 1
+    },
+    "IsRead": false
+  }
+]

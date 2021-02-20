@@ -4,7 +4,6 @@ using CashSchedulerWebServer.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Utils;
 
 namespace CashSchedulerWebServer.Db.Repositories
@@ -12,12 +11,10 @@ namespace CashSchedulerWebServer.Db.Repositories
     public class UserRepository : IUserRepository
     {
         private CashSchedulerContext Context { get; }
-        private int UserId { get; }
 
-        public UserRepository(CashSchedulerContext context, IUserContext userContext)
+        public UserRepository(CashSchedulerContext context)
         {
             Context = context;
-            UserId = userContext.GetUserId();
         }
 
 
@@ -26,22 +23,17 @@ namespace CashSchedulerWebServer.Db.Repositories
             return Context.Users;
         }
 
-        public User GetById()
-        {
-            return GetByKey(UserId);
-        }
-
         public User GetByKey(int id)
         {
             return Context.Users.FirstOrDefault(user => user.Id == id);
         }
 
-        public User GetUserByEmail(string email)
+        public User GetByEmail(string email)
         {
             return Context.Users.FirstOrDefault(user => user.Email == email);
         }
 
-        public bool HasUserWithEmail(string email)
+        public bool HasWithEmail(string email)
         {
             return Context.Users.Any(user => user.Email == email);
         }
@@ -53,7 +45,7 @@ namespace CashSchedulerWebServer.Db.Repositories
             await Context.Users.AddAsync(user);
             await Context.SaveChangesAsync();
             
-            return GetUserByEmail(user.Email);
+            return GetByEmail(user.Email);
         }
 
         public async Task<User> Update(User user)
