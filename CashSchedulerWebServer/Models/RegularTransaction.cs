@@ -3,6 +3,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using HotChocolate;
+using HotChocolate.Types;
 
 namespace CashSchedulerWebServer.Models
 {
@@ -35,10 +36,12 @@ namespace CashSchedulerWebServer.Models
         [Range(MIN_AMOUNT_VALUE, MAX_AMOUNT_VALUE, ErrorMessage = "You can specify amount in range from 0.01 to 100000000000")]
         public double Amount { get; set; }
         
+        [GraphQLType(typeof(DateType))]
         [Required(ErrorMessage = "Transaction date cannot be empty")]
         public DateTime Date { get; set; }
         
         [GraphQLNonNullType]
+        [GraphQLType(typeof(DateType))]
         [GreaterThanToday(ErrorMessage = "Next transaction date must be greater than today")]
         public DateTime NextTransactionDate { get; set; }
         

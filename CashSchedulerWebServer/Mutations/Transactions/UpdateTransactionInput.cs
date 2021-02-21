@@ -1,4 +1,6 @@
 ﻿using System;
+using HotChocolate;
+using HotChocolate.Types;
 
 namespace CashSchedulerWebServer.Mutations.Transactions
 {
@@ -10,6 +12,7 @@ namespace CashSchedulerWebServer.Mutations.Transactions
         
         public double? Amount { get; set; }
         
+        [GraphQLType(typeof(DateType))]
         public DateTime? Date { get; set; }
     }
 }

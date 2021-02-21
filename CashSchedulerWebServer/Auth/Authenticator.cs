@@ -116,7 +116,7 @@ namespace CashSchedulerWebServer.Auth
 
             var user = await userService.Create(newUser);
 
-            EventManager.FireEvent(EventAction.UserRegistered, user);
+            await EventManager.FireEvent(EventAction.UserRegistered, user);
 
             return user;
         }

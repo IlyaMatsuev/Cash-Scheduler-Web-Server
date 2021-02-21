@@ -1,5 +1,6 @@
 ﻿using System;
 using HotChocolate;
+using HotChocolate.Types;
 
 namespace CashSchedulerWebServer.Mutations.RecurringTransactions
 {
@@ -11,6 +12,7 @@ namespace CashSchedulerWebServer.Mutations.RecurringTransactions
         
         public double Amount { get; set; }
         
+        [GraphQLType(typeof(DateType))]
         public DateTime NextTransactionDate { get; set; }
         
         [GraphQLNonNullType]

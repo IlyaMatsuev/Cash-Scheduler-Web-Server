@@ -12,7 +12,6 @@ using Quartz;
 using Quartz.Impl;
 using Quartz.Spi;
 using CashSchedulerWebServer.Db;
-using CashSchedulerWebServer.Db.Repositories;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Jobs;
 using CashSchedulerWebServer.Jobs.Reporting;
@@ -50,15 +49,6 @@ using CashSchedulerWebServer.Queries.Users;
 using CashSchedulerWebServer.Queries.UserSettings;
 using CashSchedulerWebServer.Queries.Wallets;
 using CashSchedulerWebServer.Services;
-using CashSchedulerWebServer.Services.Categories;
-using CashSchedulerWebServer.Services.Contracts;
-using CashSchedulerWebServer.Services.Currencies;
-using CashSchedulerWebServer.Services.Notifications;
-using CashSchedulerWebServer.Services.Settings;
-using CashSchedulerWebServer.Services.Transactions;
-using CashSchedulerWebServer.Services.TransactionTypes;
-using CashSchedulerWebServer.Services.Users;
-using CashSchedulerWebServer.Services.Wallets;
 using CashSchedulerWebServer.Subscriptions;
 using CashSchedulerWebServer.Subscriptions.Notifications;
 using CashSchedulerWebServer.WebServices.Contracts;
@@ -222,12 +212,13 @@ namespace CashSchedulerWebServer
             string database = configuration["App:Db:Name"];
             string username = configuration["App:Db:Username"];
             string password = configuration["App:Db:Password"];
+            string additionalOptions = "MultipleActiveResultSets=True";
 
             string connectionFromSecrets = configuration.GetConnectionString("Default");
 
             return string.IsNullOrEmpty(connectionFromSecrets)
-                ? $"Server={host},{port};Initial Catalog={database};User ID = {username};Password={password}"
-                : connectionFromSecrets;
+                ? $"Server={host},{port};Initial Catalog={database};User ID={username};Password={password};{additionalOptions}"
+                : $"{connectionFromSecrets};{additionalOptions}";
         }
 
         private List<JobMetadata> GetJobsList(IConfiguration configuration)

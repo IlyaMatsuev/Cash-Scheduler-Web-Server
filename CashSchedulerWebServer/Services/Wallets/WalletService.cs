@@ -33,6 +33,8 @@ namespace CashSchedulerWebServer.Services.Wallets
 
         public Task<Wallet> CreateDefault(User user)
         {
+            var targetUser = ContextProvider.GetRepository<IUserRepository>().GetByKey(user.Id);
+            
             var defaultCurrency = ContextProvider.GetRepository<ICurrencyRepository>().GetDefaultCurrency();
 
             return ContextProvider.GetRepository<IWalletRepository>().Create(new Wallet
@@ -40,7 +42,7 @@ namespace CashSchedulerWebServer.Services.Wallets
                 Name = "Default Wallet",
                 Balance = user.Balance,
                 Currency = defaultCurrency,
-                User = user,
+                User = targetUser,
                 IsDefault = true,
                 IsCustom = false
             });

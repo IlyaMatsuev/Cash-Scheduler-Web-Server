@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using CashSchedulerWebServer.Events.Contracts;
 
 namespace CashSchedulerWebServer.Events
@@ -13,7 +14,7 @@ namespace CashSchedulerWebServer.Events
             Listeners = listeners;
         }
 
-        public async void FireEvent(EventAction action, object entity)
+        public async Task FireEvent(EventAction action, object entity)
         {
             foreach (var listener in Listeners.Where(l => l.Action == action))
             {
