@@ -20,20 +20,42 @@ namespace CashSchedulerWebServer.Services.Settings
             ContextProvider = contextProvider;
             UserId = userContext.GetUserId();
         }
-        
+
 
         public IEnumerable<UserSetting> GetByUnitName(string unitName = null)
         {
             var settingRepository = ContextProvider.GetRepository<IUserSettingRepository>();
-            
-            return string.IsNullOrEmpty(unitName) 
-                ? settingRepository.GetAll() 
+
+            return string.IsNullOrEmpty(unitName)
+                ? settingRepository.GetAll()
                 : settingRepository.GetByUnitName(unitName);
+        }
+        
+        public UserSetting GetByName(string name)
+        {
+            return ContextProvider.GetRepository<IUserSettingRepository>().GetByName(name);
+        }
+
+        public Task<IEnumerable<UserSetting>> CreateDefaultSettings(User user)
+        {
+            var targetUser = ContextProvider.GetRepository<IUserRepository>().GetByKey(user.Id);
+
+            var allSettings = ContextProvider.GetRepository<ISettingRepository>().GetAll();
+
+            return ContextProvider.GetRepository<IUserSettingRepository>()
+                .Create(allSettings.Select(setting => new UserSetting
+                {
+                    User = targetUser,
+                    Setting = setting,
+                    Value = true.ToString().ToLower()
+                }).ToList());
         }
 
         public Task<UserSetting> Create(UserSetting setting)
         {
             setting.User = ContextProvider.GetRepository<IUserRepository>().GetByKey(UserId);
+
+            setting.Setting = ContextProvider.GetRepository<ISettingRepository>().GetByKey(setting.Name);
 
             return ContextProvider.GetRepository<IUserSettingRepository>().Create(setting);
         }
@@ -58,35 +80,40 @@ namespace CashSchedulerWebServer.Services.Settings
 
         public async Task<IEnumerable<UserSetting>> Update(List<UserSetting> settings)
         {
-            var settingRepository = ContextProvider.GetRepository<IUserSettingRepository>();
+            var settingRepository = ContextProvider.GetRepository<ISettingRepository>();
+            var userSettingRepository = ContextProvider.GetRepository<IUserSettingRepository>();
             var userRepository = ContextProvider.GetRepository<IUserRepository>();
             var newSettings = new List<UserSetting>();
             var updateSettings = new List<UserSetting>();
 
             settings.ForEach(setting =>
             {
-                var targetSetting = settingRepository.GetByName(setting.Name);
+                var targetSetting = userSettingRepository.GetByName(setting.Name);
                 if (targetSetting == null)
                 {
-                    ModelValidator.ValidateModelAttributes(setting);
                     setting.User = userRepository.GetByKey(UserId);
+                    setting.Setting = settingRepository.GetByKey(setting.Name);
+                    ModelValidator.ValidateModelAttributes(setting);
                     newSettings.Add(setting);
                 }
                 else
                 {
-                    targetSetting.Value = setting.Value;
+                    if (setting.Value != default)
+                    {
+                        targetSetting.Value = setting.Value;                        
+                    }
                     updateSettings.Add(targetSetting);
                 }
             });
 
-            return (await settingRepository.Create(newSettings))
-                .Concat(await settingRepository.Update(updateSettings));
+            return (await userSettingRepository.Create(newSettings))
+                .Concat(await userSettingRepository.Update(updateSettings));
         }
 
         public Task<UserSetting> Delete(int id)
         {
             var settingRepository = ContextProvider.GetRepository<IUserSettingRepository>();
-            
+
             var setting = settingRepository.GetByKey(id);
             if (setting == null)
             {

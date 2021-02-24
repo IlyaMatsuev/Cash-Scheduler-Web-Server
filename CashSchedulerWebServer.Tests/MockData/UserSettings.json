@@ -1,39 +1,49 @@
 [
   {
-    "UnitName": "General",
-    "Name": "ShowBalance",
+    "Setting": {
+      "Name": "ShowBalance",
+      "UnitName": "General"
+    },
     "Value": "true",
     "User": {
       "Id": 1
     }
   },
   {
-    "UnitName": "Notifications",
-    "Name": "DuplicateToEmail",
+    "Setting": {
+      "Name": "DuplicateToEmail",
+      "UnitName": "Notifications"
+    },
     "Value": "true",
     "User": {
       "Id": 1
     }
   },
   {
-    "UnitName": "Notifications",
-    "Name": "TurnNotificationsSoundOn",
+    "Setting": {
+      "Name": "TurnNotificationsSoundOn",
+      "UnitName": "Notifications"
+    },
     "Value": "true",
     "User": {
       "Id": 1
     }
   },
   {
-    "UnitName": "General",
-    "Name": "ShowBalance",
+    "Setting": {
+      "Name": "ShowBalance",
+      "UnitName": "General"
+    },
     "Value": "true",
     "User": {
       "Id": 2
     }
   },
   {
-    "UnitName": "Notifications",
-    "Name": "TurnNotificationsSoundOn",
+    "Setting": {
+      "Name": "TurnNotificationsSoundOn",
+      "UnitName": "Notifications"
+    },
     "Value": "true",
     "User": {
       "Id": 2

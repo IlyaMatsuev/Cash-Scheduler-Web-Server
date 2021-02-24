@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using HotChocolate;
 
 namespace CashSchedulerWebServer.Models
 {
@@ -6,30 +8,20 @@ namespace CashSchedulerWebServer.Models
     {
         [Key]
         public int Id { get; set; }
-        
-        [Required(ErrorMessage = "Setting must contain a name")]
+
+        [NotMapped]
+        [GraphQLIgnore]
         public string Name { get; set; }
-        
+
+        [GraphQLNonNullType]
         public string Value { get; set; }
-        
-        [Required(ErrorMessage = "Setting must contain a unit name")]
-        public string UnitName { get; set; }
-        
+
+        [GraphQLNonNullType]
+        [Required(ErrorMessage = "User is not linked")]
         public User User { get; set; }
-
-
-        public enum SettingOptions
-        {
-            ShowBalance,
-            TurnNotificationsOn,
-            DuplicateToEmail,
-            TurnNotificationsSoundOn
-        }
-
-        public enum UnitOptions
-        {
-            General,
-            Notifications
-        }
+        
+        [GraphQLNonNullType]
+        [Required(ErrorMessage = "Setting is not linked")]
+        public Setting Setting { get; set; }
     }
 }

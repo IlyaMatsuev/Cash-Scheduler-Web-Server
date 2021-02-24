@@ -1,0 +1,34 @@
+﻿[
+  {
+    "Label": "Always show balance in the header",
+    "Name": "ShowBalance",
+    "UnitName": "General",
+    "SectionName": "Balance",
+    "ValueType": "Checkbox",
+    "Description": "You'll be able to see your actual balance all the time at the right top corner of the website"
+  },
+  {
+    "Label": "Turn notification on",
+    "Name": "TurnNotificationsOn",
+    "UnitName": "Notifications",
+    "SectionName": "Management",
+    "ValueType": "Checkbox",
+    "Description": "You'll receive a lot of messages from us notifying you about your transactions tendencies and where you spend money more. And many other things"
+  },
+  {
+    "Label": "Duplicate to email",
+    "Name": "DuplicateToEmail",
+    "UnitName": "Notifications",
+    "SectionName": "Management",
+    "ValueType": "Checkbox",
+    "Description": "Duplicate all notifications to your email"
+  },
+  {
+    "Label": "Turn notification sound on",
+    "Name": "TurnNotificationsSoundOn",
+    "UnitName": "Notifications",
+    "SectionName": "Sound",
+    "ValueType": "Checkbox",
+    "Description": "Play sound when a new notification arrives"
+  }
+]

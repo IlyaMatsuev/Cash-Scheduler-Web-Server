@@ -23,8 +23,7 @@ namespace CashSchedulerWebServer.Mutations.Settings
             return contextProvider.GetService<IUserSettingService>().Update(new UserSetting
             {
                 Name = setting.Name,
-                Value = setting.Value,
-                UnitName = setting.UnitName
+                Value = setting.Value
             });
         }
         
@@ -36,8 +35,7 @@ namespace CashSchedulerWebServer.Mutations.Settings
             return contextProvider.GetService<IUserSettingService>().Update(settings.Select(setting => new UserSetting
             {
                 Name = setting.Name,
-                Value = setting.Value,
-                UnitName = setting.UnitName
+                Value = setting.Value
             }).ToList());
         }
     }

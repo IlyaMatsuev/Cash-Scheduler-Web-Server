@@ -58,8 +58,12 @@ namespace CashSchedulerWebServer.Auth
             var accessToken = user.GenerateToken(AuthOptions.TokenType.Access, Configuration);
             var refreshToken = user.GenerateToken(AuthOptions.TokenType.Refresh, Configuration);
 
-            await ContextProvider.GetService<IUserRefreshTokenService>()
-                .Update(new UserRefreshToken(refreshToken.token, refreshToken.expiresIn, user));
+            await ContextProvider.GetService<IUserRefreshTokenService>().Update(new UserRefreshToken
+            {
+                User = user,
+                Token = refreshToken.token,
+                ExpiredDate = refreshToken.expiresIn
+            });
 
             return new AuthTokens
             {
@@ -211,7 +215,7 @@ namespace CashSchedulerWebServer.Auth
 
             var verificationCode = ContextProvider
                 .GetService<IUserEmailVerificationCodeService>().GetByUserId(user.Id);
-            
+
             if (verificationCode == null)
             {
                 throw new CashSchedulerException("We haven't sent you a code yet", new[] {nameof(email)});
@@ -252,9 +256,9 @@ namespace CashSchedulerWebServer.Auth
 
             var verificationCodeService = ContextProvider.GetService<IUserEmailVerificationCodeService>();
             var verificationCode = verificationCodeService.GetByUserId(user.Id);
-            
+
             await verificationCodeService.Delete(verificationCode.Id);
-            
+
             return user;
         }
     }

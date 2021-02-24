@@ -67,11 +67,13 @@ namespace CashSchedulerWebServer.Services.Notifications
 
         public Task<UserNotification> ToggleRead(int id, bool read)
         {
-            return ContextProvider.GetRepository<IUserNotificationRepository>().Update(new UserNotification
-            {
-                Id = id,
-                IsRead = read
-            });
+            var notificationRepository = ContextProvider.GetRepository<IUserNotificationRepository>();
+
+            var notification = notificationRepository.GetByKey(id);
+
+            notification.IsRead = read;
+            
+            return notificationRepository.Update(notification);
         }
 
         public Task<UserNotification> Delete(int id)

@@ -28,7 +28,7 @@ namespace CashSchedulerWebServer.Services.Users
 
         public Task<UserRefreshToken> Update(UserRefreshToken refreshToken)
         {
-            var token = GetByUserId(refreshToken.User.Id);
+            var token = RefreshTokenRepository.GetByUserId(refreshToken.User.Id);
             if (token == null)
             {
                 return RefreshTokenRepository.Create(refreshToken);

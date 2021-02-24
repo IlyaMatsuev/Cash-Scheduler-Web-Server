@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace CashSchedulerWebServer.Jobs.Reporting
 {
+    [Obsolete]
     public class ReportingJob : IJob
     {
         private CashSchedulerContext CashSchedulerContext { get; }
@@ -84,8 +85,8 @@ namespace CashSchedulerWebServer.Jobs.Reporting
                 var settings = settingsByUsers.FirstOrDefault(s => s.Key == user)?.ToList();
                 if (settings != null)
                 {
-                    var notificationsEnabledSetting = settings.FirstOrDefault(s => s.Name == UserSetting.SettingOptions.TurnNotificationsOn.ToString());
-                    var duplicateToEmailSetting = settings.FirstOrDefault(s => s.Name == UserSetting.SettingOptions.DuplicateToEmail.ToString());
+                    var notificationsEnabledSetting = settings.FirstOrDefault(s => s.Name == Setting.SettingOptions.TurnNotificationsOn.ToString());
+                    var duplicateToEmailSetting = settings.FirstOrDefault(s => s.Name == Setting.SettingOptions.DuplicateToEmail.ToString());
 
                     if (notificationsEnabledSetting?.Value == "true")
                     {
@@ -117,7 +118,7 @@ namespace CashSchedulerWebServer.Jobs.Reporting
         private List<IGrouping<User, UserSetting>> GetSettingsByUsers(List<int> usersIds)
         {
             return CashSchedulerContext.UserSettings
-                .Where(s => usersIds.Contains(s.User.Id) && s.UnitName == UserSetting.UnitOptions.Notifications.ToString())
+                .Where(s => usersIds.Contains(s.User.Id) && s.Setting.UnitName == Setting.UnitOptions.Notifications.ToString())
                 .AsEnumerable()
                 .GroupBy(s => s.User).ToList();
         }

@@ -32,20 +32,24 @@ namespace CashSchedulerWebServer.Db.Repositories
         public IEnumerable<UserSetting> GetAll()
         {
             return Context.UserSettings
-                .Where(s => s.User.Id == UserId).Include(s => s.User);
+                .Where(s => s.User.Id == UserId)
+                .Include(s => s.User)
+                .Include(s => s.Setting);
         }
 
         public IEnumerable<UserSetting> GetByUnitName(string unitName)
         {
             return Context.UserSettings
-                .Where(s => s.UnitName == unitName && s.User.Id == UserId)
-                .Include(s => s.User);
+                .Where(s => s.Setting.UnitName == unitName && s.User.Id == UserId)
+                .Include(s => s.User)
+                .Include(s => s.Setting);
         }
 
         public UserSetting GetByName(string name)
         {
-            return Context.UserSettings.Where(s => s.Name == name && s.User.Id == UserId)
+            return Context.UserSettings.Where(s => s.Setting.Name == name && s.User.Id == UserId)
                 .Include(s => s.User)
+                .Include(s => s.Setting)
                 .FirstOrDefault();
         }
 

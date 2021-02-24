@@ -19,6 +19,7 @@ namespace CashSchedulerWebServer.Tests.Services
         
         private IUserSettingService UserSettingService { get; }
         private Mock<IUserSettingRepository> UserSettingRepository { get; }
+        private Mock<ISettingRepository> SettingRepository { get; }
         private Mock<IUserRepository> UserRepository { get; }
         private Mock<IContextProvider> ContextProvider { get; }
         private Mock<IUserContext> UserContext { get; }
@@ -27,6 +28,7 @@ namespace CashSchedulerWebServer.Tests.Services
         {
             ContextProvider = new Mock<IContextProvider>();
             UserSettingRepository = new Mock<IUserSettingRepository>();
+            SettingRepository = new Mock<ISettingRepository>();
             UserRepository = new Mock<IUserRepository>();
             UserContext = new Mock<IUserContext>();
 
@@ -35,6 +37,10 @@ namespace CashSchedulerWebServer.Tests.Services
             ContextProvider
                 .Setup(c => c.GetRepository<IUserSettingRepository>())
                 .Returns(UserSettingRepository.Object);
+            
+            ContextProvider
+                .Setup(c => c.GetRepository<ISettingRepository>())
+                .Returns(SettingRepository.Object);
             
             ContextProvider
                 .Setup(c => c.GetRepository<IUserRepository>())
@@ -66,17 +72,17 @@ namespace CashSchedulerWebServer.Tests.Services
             string userSettingJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"UserSettings.json");
             var userSettings = JsonConvert.DeserializeObject<List<UserSetting>>(userSettingJson).Where(u => u.User.Id == TESTING_USER_ID);
 
-            string testingUnitName = UserSetting.UnitOptions.General.ToString();
+            string testingUnitName = Setting.UnitOptions.General.ToString();
             
             UserSettingRepository.Setup(s => s.GetAll()).Returns(userSettings);
             
             UserSettingRepository
-                .Setup(s => s.GetByUnitName(UserSetting.UnitOptions.General.ToString()))
-                .Returns(userSettings.Where(s => s.UnitName == UserSetting.UnitOptions.General.ToString()));
+                .Setup(s => s.GetByUnitName(Setting.UnitOptions.General.ToString()))
+                .Returns(userSettings.Where(s => s.Setting.UnitName == Setting.UnitOptions.General.ToString()));
             
             UserSettingRepository
-                .Setup(s => s.GetByUnitName(UserSetting.UnitOptions.Notifications.ToString()))
-                .Returns(userSettings.Where(s => s.UnitName == UserSetting.UnitOptions.Notifications.ToString()));
+                .Setup(s => s.GetByUnitName(Setting.UnitOptions.Notifications.ToString()))
+                .Returns(userSettings.Where(s => s.Setting.UnitName == Setting.UnitOptions.Notifications.ToString()));
 
 
             var resultUserSettings = UserSettingService.GetByUnitName(testingUnitName);
@@ -84,7 +90,7 @@ namespace CashSchedulerWebServer.Tests.Services
             
             Assert.NotNull(resultUserSettings);
             Assert.Equal(
-                userSettings.Count(s => s.UnitName == UserSetting.UnitOptions.General.ToString()),
+                userSettings.Count(s => s.Setting.UnitName == Setting.UnitOptions.General.ToString()),
                 resultUserSettings.Count()
             );
         }
@@ -92,21 +98,24 @@ namespace CashSchedulerWebServer.Tests.Services
         [Fact]
         public async Task Create_ReturnsNewSettings()
         {
+            string settingsJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Settings.json");
+            var settings = JsonConvert.DeserializeObject<List<Setting>>(settingsJson);
+            
             string usersJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Users.json");
             var user = JsonConvert.DeserializeObject<List<User>>(usersJson).First(u => u.Id == TESTING_USER_ID);
             
-            string settingName = UserSetting.SettingOptions.ShowBalance.ToString();
-            string settingUnitName = UserSetting.UnitOptions.General.ToString();
+            string settingName = Setting.SettingOptions.ShowBalance.ToString();
             string settingValue = false.ToString().ToLower();
 
             var newUserSetting = new UserSetting
             {
                 Name = settingName,
-                UnitName = settingUnitName,
                 Value = settingValue
             };
 
             UserRepository.Setup(u => u.GetByKey(TESTING_USER_ID)).Returns(user);
+
+            SettingRepository.Setup(s => s.GetByKey(settingName)).Returns(settings.First(c => c.Name == settingName));
             
             UserSettingRepository.Setup(s => s.Create(newUserSetting)).ReturnsAsync(newUserSetting);
             
@@ -116,29 +125,33 @@ namespace CashSchedulerWebServer.Tests.Services
             
             Assert.NotNull(resultUserSetting);
             Assert.NotNull(resultUserSetting.User);
-            Assert.Equal(settingName, resultUserSetting.Name);
-            Assert.Equal(settingUnitName, resultUserSetting.UnitName);
+            Assert.NotNull(resultUserSetting.Setting);
+            Assert.Equal(TESTING_USER_ID, resultUserSetting.User.Id);
+            Assert.Equal(settingName, resultUserSetting.Setting.Name);
             Assert.Equal(settingValue, resultUserSetting.Value);
         }
         
         [Fact]
         public async Task Update_ReturnsNewSettings()
         {
+            string settingsJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Settings.json");
+            var settings = JsonConvert.DeserializeObject<List<Setting>>(settingsJson);
+
             string usersJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Users.json");
             var user = JsonConvert.DeserializeObject<List<User>>(usersJson).First(s => s.Id == TESTING_USER_ID);
             
-            string settingName = UserSetting.SettingOptions.ShowBalance.ToString();
-            string settingUnitName = UserSetting.UnitOptions.General.ToString();
+            string settingName = Setting.SettingOptions.ShowBalance.ToString();
             string settingValue = true.ToString().ToLower();
 
             var newUserSetting = new UserSetting
             {
                 Name = settingName,
-                UnitName = settingUnitName,
                 Value = settingValue
             };
 
             UserRepository.Setup(u => u.GetByKey(TESTING_USER_ID)).Returns(user);
+            
+            SettingRepository.Setup(s => s.GetByKey(settingName)).Returns(settings.First(c => c.Name == settingName));
             
             UserSettingRepository.Setup(s => s.GetByName(newUserSetting.Name)).Returns((UserSetting) null);
             
@@ -149,26 +162,29 @@ namespace CashSchedulerWebServer.Tests.Services
             
             
             Assert.NotNull(resultUserSetting);
-            Assert.Equal(settingName, resultUserSetting.Name);
-            Assert.Equal(settingUnitName, resultUserSetting.UnitName);
+            Assert.NotNull(resultUserSetting.User);
+            Assert.NotNull(resultUserSetting.Setting);
+            Assert.Equal(TESTING_USER_ID, resultUserSetting.User.Id);
+            Assert.Equal(settingName, resultUserSetting.Setting.Name);
             Assert.Equal(settingValue, resultUserSetting.Value);
         }
         
         [Fact]
         public async Task Update_ReturnsUpdatedSettings()
         {
+            string settingsJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Settings.json");
+            var settings = JsonConvert.DeserializeObject<List<Setting>>(settingsJson);
+
             string userSettingsJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"UserSettings.json");
             var userSetting = JsonConvert.DeserializeObject<List<UserSetting>>(userSettingsJson).First(s => s.User.Id == TESTING_USER_ID);
             
-            string settingName = UserSetting.SettingOptions.ShowBalance.ToString();
-            string settingUnitName = UserSetting.UnitOptions.General.ToString();
+            string settingName = Setting.SettingOptions.ShowBalance.ToString();
             string settingValue = false.ToString().ToLower();
 
             var newUserSetting = new UserSetting
             {
                 Id = userSetting.Id,
                 Name = userSetting.Name,
-                UnitName = userSetting.UnitName,
                 Value = settingValue
             };
 
@@ -176,34 +192,40 @@ namespace CashSchedulerWebServer.Tests.Services
             
             UserSettingRepository.Setup(s => s.Update(userSetting)).ReturnsAsync(userSetting);
             
+            SettingRepository.Setup(s => s.GetByKey(settingName)).Returns(settings.First(c => c.Name == settingName));
+            
             
             var resultUserSetting = await UserSettingService.Update(newUserSetting);
             
             
             Assert.NotNull(resultUserSetting);
-            Assert.Equal(settingName, resultUserSetting.Name);
-            Assert.Equal(settingUnitName, resultUserSetting.UnitName);
+            Assert.NotNull(resultUserSetting.User);
+            Assert.NotNull(resultUserSetting.Setting);
+            Assert.Equal(TESTING_USER_ID, resultUserSetting.User.Id);
+            Assert.Equal(settingName, resultUserSetting.Setting.Name);
             Assert.Equal(settingValue, resultUserSetting.Value);
         }
 
         [Fact]
         public async Task Update_ReturnsUpdatedAndCreatedSettings()
         {
+            string settingsJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Settings.json");
+            var settings = JsonConvert.DeserializeObject<List<Setting>>(settingsJson);
+
             string usersJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Users.json");
             var user = JsonConvert.DeserializeObject<List<User>>(usersJson).First(s => s.Id == TESTING_USER_ID);
             
             string userSettingsJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"UserSettings.json");
             var userSetting = JsonConvert.DeserializeObject<List<UserSetting>>(userSettingsJson).First(s => s.User.Id == TESTING_USER_ID);
             
-            string settingName = UserSetting.SettingOptions.TurnNotificationsSoundOn.ToString();
-            string settingUnitName = UserSetting.UnitOptions.Notifications.ToString();
+            string settingName = Setting.SettingOptions.TurnNotificationsSoundOn.ToString();
+            string settingUnitName = Setting.UnitOptions.Notifications.ToString();
             string settingValue = true.ToString().ToLower();
 
             var updatingUserSetting = new UserSetting
             {
                 Id = userSetting.Id,
                 Name = userSetting.Name,
-                UnitName = userSetting.UnitName,
                 Value = settingValue,
                 User = userSetting.User
             };
@@ -211,7 +233,6 @@ namespace CashSchedulerWebServer.Tests.Services
             var newUserSetting = new UserSetting
             {
                 Name = settingName,
-                UnitName = settingUnitName,
                 Value = settingValue
             };
             
@@ -229,6 +250,8 @@ namespace CashSchedulerWebServer.Tests.Services
                 .Setup(s => s.Update(new List<UserSetting> {updatingUserSetting}))
                 .ReturnsAsync(new List<UserSetting> {updatingUserSetting});
             
+            SettingRepository.Setup(s => s.GetByKey(settingName)).Returns(settings.First(c => c.Name == settingName));
+            
             
             var resultUserSettings = await UserSettingService.Update(new List<UserSetting>
             {
@@ -241,14 +264,14 @@ namespace CashSchedulerWebServer.Tests.Services
             // I can't assert this because inside service it creates a new list so I can't mock repository methods results
             //Assert.Equal(2, resultUserSettings.Count());
             Assert.NotNull(newUserSetting.User);
+            Assert.NotNull(newUserSetting.Setting);
             Assert.Equal(TESTING_USER_ID, newUserSetting.User.Id);
-            Assert.Equal(settingName, newUserSetting.Name);
-            Assert.Equal(settingUnitName, newUserSetting.UnitName);
+            Assert.Equal(settingName, newUserSetting.Setting.Name);
+            Assert.Equal(settingUnitName, newUserSetting.Setting.UnitName);
             Assert.Equal(settingValue, newUserSetting.Value);
             Assert.NotNull(userSetting.User);
+            Assert.NotNull(userSetting.Setting);
             Assert.Equal(TESTING_USER_ID, userSetting.User.Id);
-            Assert.Equal(updatingUserSetting.Name, userSetting.Name);
-            Assert.Equal(updatingUserSetting.UnitName, userSetting.UnitName);
             Assert.Equal(updatingUserSetting.Value, userSetting.Value);
         }
 
@@ -268,7 +291,6 @@ namespace CashSchedulerWebServer.Tests.Services
             
             Assert.NotNull(resultUserSetting);
             Assert.Equal(userSetting.Name, resultUserSetting.Name);
-            Assert.Equal(userSetting.UnitName, resultUserSetting.UnitName);
             Assert.Equal(userSetting.Value, resultUserSetting.Value);
         }
     }

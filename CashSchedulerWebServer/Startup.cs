@@ -7,14 +7,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Quartz;
 using Quartz.Impl;
 using Quartz.Spi;
 using CashSchedulerWebServer.Db;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Jobs;
-using CashSchedulerWebServer.Jobs.Reporting;
 using CashSchedulerWebServer.Jobs.Transactions;
 using CashSchedulerWebServer.Notifications;
 using CashSchedulerWebServer.Notifications.Contracts;
@@ -111,6 +109,7 @@ namespace CashSchedulerWebServer
 
             services.AddScoped<IEventManager, EventManager>();
             services.AddScoped<IEventListener, CreateDefaultWalletListener>();
+            services.AddScoped<IEventListener, CreateDefaultSettingsListener>();
 
             #endregion
 
@@ -133,7 +132,6 @@ namespace CashSchedulerWebServer
             services.AddSingleton<ISchedulerFactory, StdSchedulerFactory>();
             services.AddTransient<TransactionsJob>();
             services.AddTransient<RecurringTransactionsJob>();
-            services.AddTransient<ReportingJob>();
             services.AddTransient<ExchangeRateJob>();
             services.AddSingleton(GetJobsList(Configuration));
             services.AddHostedService<CashSchedulerHostedService>();
@@ -174,11 +172,6 @@ namespace CashSchedulerWebServer
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
             if (bool.Parse(Configuration["App:Db:Refresh"]))
             {
                 CashSchedulerSeeder.InitializeDb(app, Configuration);
@@ -233,10 +226,6 @@ namespace CashSchedulerWebServer
                     typeof(RecurringTransactionsJob),
                     configuration["App:Jobs:RecurringTransactions:Name"],
                     configuration["App:Jobs:RecurringTransactions:Cron"]),
-                new JobMetadata(
-                    typeof(ReportingJob),
-                    configuration["App:Jobs:Reporting:Name"],
-                    configuration["App:Jobs:Reporting:Cron"]),
                 new JobMetadata(
                     typeof(ExchangeRateJob),
                     configuration["App:Jobs:ExchangeRates:Name"],

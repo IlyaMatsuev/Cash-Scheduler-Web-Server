@@ -42,6 +42,7 @@ namespace CashSchedulerWebServer.Db
             context.Transactions.RemoveRange(context.Transactions);
             context.Categories.RemoveRange(context.Categories);
             context.TransactionTypes.RemoveRange(context.TransactionTypes);
+            context.Settings.RemoveRange(context.Settings);
             context.UserSettings.RemoveRange(context.UserSettings);
             context.UserNotifications.RemoveRange(context.UserNotifications);
             context.UserRefreshTokens.RemoveRange(context.UserRefreshTokens);
@@ -84,6 +85,7 @@ namespace CashSchedulerWebServer.Db
 
             string usersJson = File.ReadAllText(mockDataFolderPath + @"Users.json");
             string transactionTypesJson = File.ReadAllText(mockDataFolderPath + @"TransactionTypes.json");
+            string settingsJson = File.ReadAllText(mockDataFolderPath + @"Settings.json");
             string userSettingsJson = File.ReadAllText(mockDataFolderPath + @"UserSettings.json");
             string userNotificationsJson = File.ReadAllText(mockDataFolderPath + @"UserNotifications.json");
             string categoriesJson = File.ReadAllText(mockDataFolderPath + @"Categories.json");
@@ -94,6 +96,7 @@ namespace CashSchedulerWebServer.Db
 
             var users = JsonConvert.DeserializeObject<List<User>>(usersJson);
             var transactionTypes = JsonConvert.DeserializeObject<List<TransactionType>>(transactionTypesJson);
+            var settings = JsonConvert.DeserializeObject<List<Setting>>(settingsJson);
             var userSettings = JsonConvert.DeserializeObject<List<UserSetting>>(userSettingsJson);
             var userNotifications = JsonConvert.DeserializeObject<List<UserNotification>>(userNotificationsJson);
             var categories = JsonConvert.DeserializeObject<List<Category>>(categoriesJson);
@@ -105,6 +108,7 @@ namespace CashSchedulerWebServer.Db
             context.Users.AddRange(users);
             context.SaveChanges();
             context.TransactionTypes.AddRange(transactionTypes);
+            context.Settings.AddRange(settings);
             context.Currencies.AddRange(currencies);
             context.SaveChanges();
             
@@ -145,7 +149,8 @@ namespace CashSchedulerWebServer.Db
             userSettings.ForEach(setting =>
             {
                 setting.User = users.FirstOrDefault(user => user.Id == setting.User.Id);
-                if (setting.User != null)
+                setting.Setting = settings.FirstOrDefault(s => s.Name == setting.Setting.Name);
+                if (setting.User != null && setting.Setting != null)
                 {
                     context.UserSettings.Add(setting);
                 }

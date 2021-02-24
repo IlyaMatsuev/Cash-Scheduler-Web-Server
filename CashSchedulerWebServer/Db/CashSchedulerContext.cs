@@ -15,6 +15,7 @@ namespace CashSchedulerWebServer.Db
         public DbSet<UserEmailVerificationCode> UserEmailVerificationCodes { get; set; }
         public DbSet<UserNotification> UserNotifications { get; set; }
         public DbSet<UserSetting> UserSettings { get; set; }
+        public DbSet<Setting> Settings { get; set; }
         public DbSet<TransactionType> TransactionTypes { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
