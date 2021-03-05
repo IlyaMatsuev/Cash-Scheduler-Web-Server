@@ -1,27 +1,22 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Services.Contracts;
-using CashSchedulerWebServer.WebServices.Contracts;
 
 namespace CashSchedulerWebServer.Services.Wallets
 {
     public class WalletService : IWalletService
     { 
         private IContextProvider ContextProvider { get; }
-        private IExchangeRateWebService ExchangeRateWebService { get; }
         private int UserId { get; }
 
-        public WalletService(
-            IContextProvider contextProvider,
-            IExchangeRateWebService exchangeRateWebService,
-            IUserContext userContext)
+        public WalletService(IContextProvider contextProvider, IUserContext userContext)
         {
             ContextProvider = contextProvider;
-            ExchangeRateWebService = exchangeRateWebService;
             UserId = userContext.GetUserId();
         }
         
@@ -43,15 +38,14 @@ namespace CashSchedulerWebServer.Services.Wallets
                 Balance = user.Balance,
                 Currency = defaultCurrency,
                 User = targetUser,
-                IsDefault = true,
-                IsCustom = false
+                IsDefault = true
             });
         }
 
-        public Task<Wallet> Create(Wallet wallet)
+        public async Task<Wallet> Create(Wallet wallet)
         {
             wallet.User ??= ContextProvider.GetRepository<IUserRepository>().GetByKey(UserId);
-            
+
             wallet.Currency ??= ContextProvider.GetRepository<ICurrencyRepository>()
                 .GetByKey(wallet.CurrencyAbbreviation);
 
@@ -60,13 +54,20 @@ namespace CashSchedulerWebServer.Services.Wallets
                 throw new CashSchedulerException("There is no such currency", new[] { "currencyAbbreviation" });
             }
 
-            return ContextProvider.GetRepository<IWalletRepository>().Create(wallet);
+            var newWallet = await ContextProvider.GetRepository<IWalletRepository>().Create(wallet);
+
+            if (wallet.IsDefault)
+            {
+                await ResetDefault(wallet);
+            }
+
+            return newWallet;
         }
 
-        public async Task<Wallet> Update(Wallet wallet)
+        public async Task<Wallet> Update(Wallet wallet, bool convertBalance, float? exchangeRate = null)
         {
             var walletRepository = ContextProvider.GetRepository<IWalletRepository>();
-            
+
             var targetWallet = walletRepository.GetByKey(wallet.Id);
 
             if (!string.IsNullOrEmpty(wallet.Name))
@@ -74,17 +75,12 @@ namespace CashSchedulerWebServer.Services.Wallets
                 targetWallet.Name = wallet.Name;
             }
 
-            if (!string.IsNullOrEmpty(wallet.CurrencyAbbreviation) && targetWallet.Currency.Abbreviation != wallet.CurrencyAbbreviation)
+            if (!string.IsNullOrEmpty(wallet.CurrencyAbbreviation)
+                && targetWallet.Currency.Abbreviation != wallet.CurrencyAbbreviation)
             {
-                var convertCurrencyResponse = await ExchangeRateWebService.ConvertCurrency(
-                    targetWallet.Currency.Abbreviation,
-                    wallet.CurrencyAbbreviation,
-                    targetWallet.Balance
-                );
-                
-                if (convertCurrencyResponse.Success)
+                if (convertBalance && exchangeRate != null)
                 {
-                    targetWallet.Balance = convertCurrencyResponse.Result;
+                    targetWallet.Balance *= (double) exchangeRate;
                 }
 
                 targetWallet.Currency = ContextProvider.GetRepository<ICurrencyRepository>()
@@ -96,12 +92,105 @@ namespace CashSchedulerWebServer.Services.Wallets
                 }
             }
             
+            if (!convertBalance && wallet.Balance != default)
+            {
+                targetWallet.Balance = wallet.Balance;
+            }
+
+            var updatedWallet = await walletRepository.Update(targetWallet);
+
+            if (wallet.IsDefault)
+            {
+                await ResetDefault(targetWallet);
+            }
+
+            return updatedWallet;
+        }
+
+        public async Task<Wallet> Update(Wallet wallet)
+        {
+            var walletRepository = ContextProvider.GetRepository<IWalletRepository>();
+
+            var targetWallet = walletRepository.GetByKey(wallet.Id);
+
+            if (!string.IsNullOrEmpty(wallet.Name))
+            {
+                targetWallet.Name = wallet.Name;
+            }
+
+            if (!string.IsNullOrEmpty(wallet.CurrencyAbbreviation)
+                && targetWallet.Currency.Abbreviation != wallet.CurrencyAbbreviation)
+            {
+                targetWallet.Currency = ContextProvider.GetRepository<ICurrencyRepository>()
+                    .GetByKey(wallet.CurrencyAbbreviation);
+                
+                if (targetWallet.Currency == null)
+                {
+                    throw new CashSchedulerException("There is no such currency", new[] { "currencyAbbreviation" });
+                }
+            }
+
             if (wallet.Balance != default)
             {
                 targetWallet.Balance = wallet.Balance;
             }
-            
-            return await walletRepository.Update(targetWallet);
+
+            var updatedWallet = await walletRepository.Update(targetWallet);
+
+            if (wallet.IsDefault)
+            {
+                await ResetDefault(targetWallet);
+            }
+
+            return updatedWallet;
+        }
+
+        public Task<Wallet> UpdateBalance(
+            Transaction transaction,
+            Transaction oldTransaction,
+            bool isCreate = false,
+            bool isUpdate = false,
+            bool isDelete = false)
+        {
+            int delta = 1;
+            var wallet = transaction.Wallet;
+
+            if (transaction.Category.Type.Name == TransactionType.Options.Expense.ToString())
+            {
+                delta = -1;
+            }
+
+            if (isCreate)
+            {
+                if (transaction.Date <= DateTime.Today)
+                {
+                    wallet.Balance += transaction.Amount * delta;
+                }
+            }
+            else if (isUpdate)
+            {
+                if (transaction.Date <= DateTime.Today && oldTransaction.Date <= DateTime.Today)
+                {
+                    wallet.Balance += (transaction.Amount - oldTransaction.Amount) * delta;
+                }
+                else if (transaction.Date <= DateTime.Today && oldTransaction.Date > DateTime.Today)
+                {
+                    wallet.Balance += transaction.Amount * delta;
+                }
+                else if (transaction.Date > DateTime.Today && oldTransaction.Date <= DateTime.Today)
+                {
+                    wallet.Balance -= oldTransaction.Amount * delta;
+                }
+            }
+            else if (isDelete)
+            {
+                if (oldTransaction.Date <= DateTime.Today)
+                {
+                    wallet.Balance -= oldTransaction.Amount * delta;
+                }
+            }
+
+            return ContextProvider.GetRepository<IWalletRepository>().Update(wallet);
         }
 
         public Task<Wallet> Delete(int id)
@@ -120,6 +209,16 @@ namespace CashSchedulerWebServer.Services.Wallets
             }
             
             return walletRepository.Delete(id);
+        }
+
+
+        private Task<Wallet> ResetDefault(Wallet newDefault)
+        {
+            var walletRepository = ContextProvider.GetRepository<IWalletRepository>();
+            var defaultWallet = walletRepository.GetDefault();
+            defaultWallet.IsDefault = false;
+            newDefault.IsDefault = true;
+            return walletRepository.Update(defaultWallet);
         }
     }
 }

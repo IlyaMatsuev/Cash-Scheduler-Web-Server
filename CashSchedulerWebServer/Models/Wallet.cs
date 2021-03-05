@@ -7,13 +7,20 @@ namespace CashSchedulerWebServer.Models
 {
     public class Wallet
     {
+        [NotMapped]
+        private const double MAX_AMOUNT_VALUE = 100000000000;
+        [NotMapped]
+        private const double MIN_AMOUNT_VALUE = 0.01;
+
+
         [Key]
         public int Id { get; set; }
         
         [Required(ErrorMessage = "Wallet must have a name")]
         public string Name { get; set; }
         
-        [DefaultValue(0)]
+        [Required(ErrorMessage = "Balance cannot be empty")]
+        [Range(MIN_AMOUNT_VALUE, MAX_AMOUNT_VALUE, ErrorMessage = "You can specify balance in range from 0.01 to 100000000000")]
         public double Balance { get; set; }
         
         [Required(ErrorMessage = "Wallet must be related to a currency")]
@@ -25,10 +32,7 @@ namespace CashSchedulerWebServer.Models
 
         [Required(ErrorMessage = "Wallet must be related to a user")]
         public User User { get; set; }
-        
-        [DefaultValue(true)]
-        public bool IsCustom { get; set; }
-        
+
         [DefaultValue(false)]
         public bool IsDefault { get; set; }
     }

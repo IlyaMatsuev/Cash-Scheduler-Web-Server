@@ -19,5 +19,12 @@ namespace CashSchedulerWebServer.Queries.Wallets
         {
             return contextProvider.GetService<IWalletService>().GetAll();
         }
+        
+        [GraphQLNonNullType]
+        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
+        public double Balance([Service] IContextProvider contextProvider)
+        {
+            return contextProvider.GetRepository<IWalletRepository>().GetDefault().Balance;
+        }
     }
 }

@@ -11,5 +11,7 @@ namespace CashSchedulerWebServer.Mutations.Wallets
         
         [GraphQLNonNullType]
         public string CurrencyAbbreviation { get; set; }
+
+        public bool IsDefault { get; set; }
     }
 }

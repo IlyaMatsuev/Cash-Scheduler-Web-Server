@@ -19,7 +19,7 @@ namespace CashSchedulerWebServer.Tests.Services
 {
     public class UserServiceTest
     {
-        private const int TESTING_USER_ID = 1;
+        /*private const int TESTING_USER_ID = 1;
         private const string HASH_SALT = "12345";
 
         private IUserService UserService { get; }
@@ -256,6 +256,6 @@ namespace CashSchedulerWebServer.Tests.Services
             {
                 Assert.Equal(initBalance + transaction.Amount, resultUser.Balance);
             }
-        }
+        }*/
     }
 }

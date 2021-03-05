@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Exceptions;
@@ -12,12 +11,14 @@ namespace CashSchedulerWebServer.Services.Users
 {
     public class UserService : IUserService
     {
+        private IContextProvider ContextProvider { get; }
         private IUserRepository UserRepository { get; }
         private IConfiguration Configuration { get; }
         private int UserId { get; }
 
         public UserService(IContextProvider contextProvider, IConfiguration configuration, IUserContext userContext)
         {
+            ContextProvider = contextProvider;
             UserRepository = contextProvider.GetRepository<IUserRepository>();
             Configuration = configuration;
             UserId = userContext.GetUserId();
@@ -61,7 +62,7 @@ namespace CashSchedulerWebServer.Services.Users
             return UserRepository.Update(user);
         }
 
-        public Task<User> Update(User user)
+        public async Task<User> Update(User user)
         {
             var targetUser = UserRepository.GetByKey(user.Id);
             if (targetUser == null)
@@ -81,60 +82,14 @@ namespace CashSchedulerWebServer.Services.Users
 
             if (user.Balance != default)
             {
-                targetUser.Balance = user.Balance;
+                var defaultWallet = ContextProvider.GetRepository<IWalletRepository>().GetDefault();
+                defaultWallet.Balance = user.Balance;
+                await ContextProvider.GetService<IWalletService>().Update(defaultWallet);
             }
 
-            return UserRepository.Update(targetUser);
+            return await UserRepository.Update(targetUser);
         }
 
-        public Task<User> UpdateBalance(
-            Transaction transaction,
-            Transaction oldTransaction,
-            bool isCreate = false,
-            bool isUpdate = false,
-            bool isDelete = false)
-        {
-            int delta = 1;
-            var user = transaction.User;
-
-            if (transaction.Category.Type.Name == TransactionType.Options.Expense.ToString())
-            {
-                delta = -1;
-            }
-
-            if (isCreate)
-            {
-                if (transaction.Date <= DateTime.Today)
-                {
-                    user.Balance += transaction.Amount * delta;
-                }
-            }
-            else if (isUpdate)
-            {
-                if (transaction.Date <= DateTime.Today && oldTransaction.Date <= DateTime.Today)
-                {
-                    user.Balance += (transaction.Amount - oldTransaction.Amount) * delta;
-                }
-                else if (transaction.Date <= DateTime.Today && oldTransaction.Date > DateTime.Today)
-                {
-                    user.Balance += transaction.Amount * delta;
-                }
-                else if (transaction.Date > DateTime.Today && oldTransaction.Date <= DateTime.Today)
-                {
-                    user.Balance -= oldTransaction.Amount * delta;
-                }
-            }
-            else if (isDelete)
-            {
-                if (oldTransaction.Date <= DateTime.Today)
-                {
-                    user.Balance -= oldTransaction.Amount * delta;
-                }
-            }
-
-            return UserRepository.Update(user);
-        }
-        
         public Task<User> Delete(int id)
         {
             return UserRepository.Delete(id);

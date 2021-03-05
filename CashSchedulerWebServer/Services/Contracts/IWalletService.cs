@@ -8,5 +8,12 @@ namespace CashSchedulerWebServer.Services.Contracts
     {
         IEnumerable<Wallet> GetAll();
         Task<Wallet> CreateDefault(User user);
+        Task<Wallet> Update(Wallet wallet, bool convertBalance, float? exchangeRate = null);
+        Task<Wallet> UpdateBalance(
+            Transaction transaction,
+            Transaction oldTransaction,
+            bool isCreate = false,
+            bool isUpdate = false,
+            bool isDelete = false);
     }
 }

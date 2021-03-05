@@ -4,14 +4,16 @@ using CashSchedulerWebServer.Db;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CashSchedulerWebServer.Migrations
 {
     [DbContext(typeof(CashSchedulerContext))]
-    partial class CashSchedulerContextModelSnapshot : ModelSnapshot
+    [Migration("20210302230524_RemoveWalletsField")]
+    partial class RemoveWalletsField
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -138,16 +140,11 @@ namespace CashSchedulerWebServer.Migrations
                     b.Property<int?>("UserId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("WalletId1")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId1");
 
                     b.HasIndex("UserId");
-
-                    b.HasIndex("WalletId1");
 
                     b.ToTable("RegularTransactions");
                 });
@@ -204,16 +201,11 @@ namespace CashSchedulerWebServer.Migrations
                     b.Property<int?>("UserId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("WalletId1")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId1");
 
                     b.HasIndex("UserId");
-
-                    b.HasIndex("WalletId1");
 
                     b.ToTable("Transactions");
                 });
@@ -237,6 +229,9 @@ namespace CashSchedulerWebServer.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<double>("Balance")
+                        .HasColumnType("float");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -429,10 +424,6 @@ namespace CashSchedulerWebServer.Migrations
                     b.HasOne("CashSchedulerWebServer.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
-
-                    b.HasOne("CashSchedulerWebServer.Models.Wallet", "Wallet")
-                        .WithMany()
-                        .HasForeignKey("WalletId1");
                 });
 
             modelBuilder.Entity("CashSchedulerWebServer.Models.Transaction", b =>
@@ -444,10 +435,6 @@ namespace CashSchedulerWebServer.Migrations
                     b.HasOne("CashSchedulerWebServer.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
-
-                    b.HasOne("CashSchedulerWebServer.Models.Wallet", "Wallet")
-                        .WithMany()
-                        .HasForeignKey("WalletId1");
                 });
 
             modelBuilder.Entity("CashSchedulerWebServer.Models.UserEmailVerificationCode", b =>

@@ -26,7 +26,8 @@ namespace CashSchedulerWebServer.Mutations.RecurringTransactions
                 Amount = transaction.Amount,
                 Date = DateTime.Today,
                 NextTransactionDate = transaction.NextTransactionDate,
-                Interval = transaction.Interval
+                Interval = transaction.Interval,
+                WalletId = transaction.WalletId ?? default
             });
         }
         

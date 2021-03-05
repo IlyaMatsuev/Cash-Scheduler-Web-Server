@@ -39,6 +39,15 @@ namespace CashSchedulerWebServer.Services.Transactions
             {
                 throw new CashSchedulerException("There is no such category", new[] { "categoryId" });
             }
+            
+            transaction.Wallet = transaction.WalletId == default
+                ? ContextProvider.GetRepository<IWalletRepository>().GetDefault()
+                : ContextProvider.GetRepository<IWalletRepository>().GetByKey(transaction.WalletId);
+            
+            if (transaction.Wallet == null)
+            {
+                throw new CashSchedulerException("There is no such wallet", new[] { "walletId" });
+            }
 
             return ContextProvider.GetRepository<IRegularTransactionRepository>().Create(transaction);
         }

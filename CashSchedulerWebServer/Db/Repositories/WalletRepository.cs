@@ -24,8 +24,17 @@ namespace CashSchedulerWebServer.Db.Repositories
         public IEnumerable<Wallet> GetAll()
         {
             return Context.Wallets.Where(w => w.User.Id == UserId)
+                .OrderBy(w => !w.IsDefault)
                 .Include(w => w.User)
                 .Include(w => w.Currency);
+        }
+        
+        public Wallet GetDefault()
+        {
+            return Context.Wallets.Where(w => w.User.Id == UserId && w.IsDefault)
+                .Include(w => w.User)
+                .Include(w => w.Currency)
+                .FirstOrDefault();
         }
 
         public Wallet GetByKey(int id)

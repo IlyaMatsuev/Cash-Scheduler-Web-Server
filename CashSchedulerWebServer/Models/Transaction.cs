@@ -26,6 +26,14 @@ namespace CashSchedulerWebServer.Models
         [GraphQLNonNullType]
         public Category Category { get; set; }
         
+        [GraphQLNonNullType]
+        public Wallet Wallet { get; set; }
+        
+        [NotMapped]
+        [GraphQLIgnore]
+        [Required(ErrorMessage = "Transaction must be linked to a wallet")]
+        public int WalletId { get; set; }
+        
         [NotMapped]
         [GraphQLIgnore]
         [Required(ErrorMessage = "You need to choose any category for the transaction")]

@@ -23,7 +23,7 @@ namespace CashSchedulerWebServer.Tests.Auth
 {
     public class AuthenticatorTest
     {
-        private const int TESTING_USER_ID = 1;
+        /*private const int TESTING_USER_ID = 1;
         
         private Dictionary<string, string> Configurations { get; } = new()
         {
@@ -420,6 +420,6 @@ namespace CashSchedulerWebServer.Tests.Auth
             {
                 await Authenticator.ResetPassword(user.Email, emailVerificationCode.Code, weekPassword);
             });
-        }
+        }*/
     }
 }

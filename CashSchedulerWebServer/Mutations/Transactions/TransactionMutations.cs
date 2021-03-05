@@ -22,7 +22,8 @@ namespace CashSchedulerWebServer.Mutations.Transactions
                 Title = transaction.Title,
                 CategoryId = transaction.CategoryId,
                 Amount = transaction.Amount,
-                Date = transaction.Date ?? DateTime.Today
+                Date = transaction.Date ?? DateTime.Today,
+                WalletId = transaction.WalletId ?? default
             });
         }
         

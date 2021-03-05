@@ -173,7 +173,8 @@ namespace CashSchedulerWebServer.Db
             {
                 transaction.User = users.FirstOrDefault(user => user.Id == transaction.User.Id);
                 transaction.Category = categories.FirstOrDefault(category => category.Id == transaction.Category.Id);
-                if (transaction.User != null && transaction.Category != null)
+                transaction.Wallet = wallets.FirstOrDefault(wallet => wallet.Id == transaction.Wallet.Id);
+                if (transaction.User != null && transaction.Category != null && transaction.Wallet != null)
                 {
                     context.Transactions.Add(transaction);
                 }
@@ -185,7 +186,8 @@ namespace CashSchedulerWebServer.Db
             {
                 transaction.User = users.FirstOrDefault(user => user.Id == transaction.User.Id);
                 transaction.Category = categories.FirstOrDefault(category => category.Id == transaction.Category.Id);
-                if (transaction.User != null && transaction.Category != null)
+                transaction.Wallet = wallets.FirstOrDefault(wallet => wallet.Id == transaction.Wallet.Id);
+                if (transaction.User != null && transaction.Category != null && transaction.Wallet != null)
                 {
                     context.RegularTransactions.Add(transaction);
                 }

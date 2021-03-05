@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using CashSchedulerWebServer.Auth;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Models;
@@ -15,9 +16,16 @@ namespace CashSchedulerWebServer.Queries.CurrencyExchangeRates
     public class CurrencyExchangeRateQueries
     {
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public IEnumerable<CurrencyExchangeRate>? ExchangeRates([Service] IContextProvider contextProvider)
+        public Task<IEnumerable<CurrencyExchangeRate>>? ExchangeRates(
+            [Service] IContextProvider contextProvider,
+            [GraphQLNonNullType] string sourceCurrencyAbbreviation,
+            [GraphQLNonNullType] string targetCurrencyAbbreviation
+        )
         {
-            return contextProvider.GetService<ICurrencyExchangeRateService>().GetAll();
+            return contextProvider.GetService<ICurrencyExchangeRateService>().GetBySourceAndTarget(
+                sourceCurrencyAbbreviation,
+                targetCurrencyAbbreviation
+            );
         }
     }
 }

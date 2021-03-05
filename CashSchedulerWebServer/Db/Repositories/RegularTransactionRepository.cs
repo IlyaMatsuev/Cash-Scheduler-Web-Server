@@ -27,7 +27,9 @@ namespace CashSchedulerWebServer.Db.Repositories
             return Context.RegularTransactions.Where(t => t.User.Id == UserId)
                 .Include(t => t.User)
                 .Include(t => t.Category)
-                .Include(t => t.Category.Type);
+                .Include(t => t.Category.Type)
+                .Include(t => t.Wallet)
+                .Include(t => t.Wallet.Currency);
         }
 
         public IEnumerable<RegularTransaction> GetDashboardRegularTransactions(int month, int year)
@@ -37,7 +39,9 @@ namespace CashSchedulerWebServer.Db.Repositories
                 .Where(t => t.NextTransactionDate >= datePoint.AddMonths(-1) && t.NextTransactionDate <= datePoint.AddMonths(2) && t.User.Id == UserId)
                 .Include(t => t.User)
                 .Include(t => t.Category)
-                .Include(t => t.Category.Type);
+                .Include(t => t.Category.Type)
+                .Include(t => t.Wallet)
+                .Include(t => t.Wallet.Currency);
         }
 
         public IEnumerable<RegularTransaction> GetRegularTransactionsByMonth(int month, int year)
@@ -46,7 +50,9 @@ namespace CashSchedulerWebServer.Db.Repositories
                 .Where(t => t.NextTransactionDate.Month == month && t.NextTransactionDate.Year == year && t.User.Id == UserId)
                 .Include(t => t.User)
                 .Include(t => t.Category)
-                .Include(t => t.Category.Type);
+                .Include(t => t.Category.Type)
+                .Include(t => t.Wallet)
+                .Include(t => t.Wallet.Currency);
         }
 
         public RegularTransaction GetByKey(int id)
@@ -55,6 +61,8 @@ namespace CashSchedulerWebServer.Db.Repositories
                 .Include(t => t.User)
                 .Include(t => t.Category)
                 .Include(t => t.Category.Type)
+                .Include(t => t.Wallet)
+                .Include(t => t.Wallet.Currency)
                 .FirstOrDefault();
         }
         

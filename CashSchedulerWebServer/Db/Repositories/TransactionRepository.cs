@@ -28,6 +28,8 @@ namespace CashSchedulerWebServer.Db.Repositories
                 .Include(t => t.User)
                 .Include(t => t.Category)
                 .Include(t => t.Category.Type)
+                .Include(t => t.Wallet)
+                .Include(t => t.Wallet.Currency)
                 .FirstOrDefault();
         }
         
@@ -36,7 +38,9 @@ namespace CashSchedulerWebServer.Db.Repositories
             return Context.Transactions.Where(t => t.User.Id == UserId)
                 .Include(t => t.User)
                 .Include(t => t.Category)
-                .Include(t => t.Category.Type);
+                .Include(t => t.Category.Type)
+                .Include(t => t.Wallet)
+                .Include(t => t.Wallet.Currency);
         }
 
         public IEnumerable<Transaction> GetDashboardTransactions(int month, int year)
@@ -45,7 +49,9 @@ namespace CashSchedulerWebServer.Db.Repositories
             return Context.Transactions.Where(t => t.Date >= datePoint.AddMonths(-1) && t.Date <= datePoint.AddMonths(2) && t.User.Id == UserId)
                 .Include(t => t.User)
                 .Include(t => t.Category)
-                .Include(t => t.Category.Type);
+                .Include(t => t.Category.Type)
+                .Include(t => t.Wallet)
+                .Include(t => t.Wallet.Currency);
         }
 
         public IEnumerable<Transaction> GetTransactionsByMonth(int month, int year)
@@ -53,7 +59,9 @@ namespace CashSchedulerWebServer.Db.Repositories
             return Context.Transactions.Where(t => t.Date.Month == month && t.Date.Year == year && t.User.Id == UserId)
                 .Include(t => t.User)
                 .Include(t => t.Category)
-                .Include(t => t.Category.Type);
+                .Include(t => t.Category.Type)
+                .Include(t => t.Wallet)
+                .Include(t => t.Wallet.Currency);
         }
 
         public async Task<Transaction> Create(Transaction transaction)

@@ -1,4 +1,6 @@
-﻿using System.Net.Http;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using CashSchedulerWebServer.WebServices.Contracts;
 using Microsoft.Extensions.Configuration;
@@ -20,6 +22,15 @@ namespace CashSchedulerWebServer.WebServices.ExchangeRates
         {
             return Client.GetRequest("latest")
                 .AddQueryParameter("base", sourceCurrency)
+                .ExecuteAsync<ExchangeRatesResponse>();
+        }
+        
+        public Task<ExchangeRatesResponse> GetLatestExchangeRates(string sourceCurrency, IEnumerable<string> targetCurrencies)
+        {
+            return Client.GetRequest("latest")
+                .AddQueryParameter("base", sourceCurrency)
+                .AddQueryParameter("symbols", string.Join(',', targetCurrencies))
+                .AddQueryParameter("places", 2)
                 .ExecuteAsync<ExchangeRatesResponse>();
         }
 

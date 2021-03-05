@@ -47,7 +47,7 @@ namespace CashSchedulerWebServer.Tests.Services
                 .Setup(c => c.GetRepository<IUserRepository>())
                 .Returns(UserRepository.Object);
 
-            CurrencyExchangeRateService = new CurrencyExchangeRateService(ContextProvider.Object, UserContext.Object);
+            //CurrencyExchangeRateService = new CurrencyExchangeRateService(ContextProvider.Object, UserContext.Object);
         }
 
 

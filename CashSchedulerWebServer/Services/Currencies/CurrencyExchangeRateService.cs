@@ -1,23 +1,31 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Services.Contracts;
+using CashSchedulerWebServer.WebServices.Contracts;
 
 namespace CashSchedulerWebServer.Services.Currencies
 {
     public class CurrencyExchangeRateService : ICurrencyExchangeRateService
     {
         private IContextProvider ContextProvider { get; }
+        private IExchangeRateWebService ExchangeRateWebService { get; }
         
         private int UserId { get; }
 
-        public CurrencyExchangeRateService(IContextProvider contextProvider, IUserContext userContext)
+        public CurrencyExchangeRateService(
+            IContextProvider contextProvider,
+            IUserContext userContext,
+            IExchangeRateWebService exchangeRateWebService
+        )
         {
             ContextProvider = contextProvider;
             UserId = userContext.GetUserId();
+            ExchangeRateWebService = exchangeRateWebService;
         }
         
         
@@ -25,7 +33,40 @@ namespace CashSchedulerWebServer.Services.Currencies
         {
             return ContextProvider.GetRepository<ICurrencyExchangeRateRepository>().GetAll();
         }
-        
+
+        public async Task<IEnumerable<CurrencyExchangeRate>> GetBySourceAndTarget(
+            string sourceCurrencyAbbreviation,
+            string targetCurrencyAbbreviation
+        )
+        {
+            var rates = new List<CurrencyExchangeRate>();
+            var exchangeRatesResponse = await ExchangeRateWebService.GetLatestExchangeRates(
+                sourceCurrencyAbbreviation,
+                new[] {targetCurrencyAbbreviation}
+            );
+
+            if (exchangeRatesResponse.Success)
+            {
+                var currencyRepository = ContextProvider.GetRepository<ICurrencyRepository>();
+                rates.Add(new CurrencyExchangeRate
+                {
+                    ExchangeRate = exchangeRatesResponse.Rates[targetCurrencyAbbreviation],
+                    IsCustom = false,
+                    SourceCurrency = currencyRepository.GetByKey(sourceCurrencyAbbreviation),
+                    TargetCurrency = currencyRepository.GetByKey(targetCurrencyAbbreviation),
+                    ValidFrom = exchangeRatesResponse.Date,
+                    ValidTo = exchangeRatesResponse.Date
+                });
+            }
+
+            rates.AddRange(
+                ContextProvider.GetRepository<ICurrencyExchangeRateRepository>()
+                    .GetBySourceAndTarget(sourceCurrencyAbbreviation, targetCurrencyAbbreviation)
+            );
+
+            return rates;
+        }
+
         public Task<CurrencyExchangeRate> Create(CurrencyExchangeRate exchangeRate)
         {
             var currencyRepository = ContextProvider.GetRepository<ICurrencyRepository>();

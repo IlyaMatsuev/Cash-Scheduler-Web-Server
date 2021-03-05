@@ -21,7 +21,7 @@ namespace CashSchedulerWebServer.Mutations.Wallets
                 Name = wallet.Name,
                 Balance = wallet.Balance,
                 CurrencyAbbreviation = wallet.CurrencyAbbreviation,
-                IsCustom = true
+                IsDefault = wallet.IsDefault
             });
         }
 
@@ -34,8 +34,9 @@ namespace CashSchedulerWebServer.Mutations.Wallets
                 Id = wallet.Id,
                 Name = wallet.Name,
                 Balance = wallet.Balance ?? default,
-                CurrencyAbbreviation = wallet.CurrencyAbbreviation
-            });
+                CurrencyAbbreviation = wallet.CurrencyAbbreviation,
+                IsDefault = wallet.IsDefault
+            }, wallet.ConvertBalance, wallet.ExchangeRate);
         }
 
         [GraphQLNonNullType]

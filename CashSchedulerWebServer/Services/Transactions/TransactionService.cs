@@ -42,9 +42,18 @@ namespace CashSchedulerWebServer.Services.Transactions
                 throw new CashSchedulerException("There is no such category", new[] { "categoryId" });
             }
 
+            transaction.Wallet = transaction.WalletId == default
+                ? ContextProvider.GetRepository<IWalletRepository>().GetDefault()
+                : ContextProvider.GetRepository<IWalletRepository>().GetByKey(transaction.WalletId);
+
+            if (transaction.Wallet == null)
+            {
+                throw new CashSchedulerException("There is no such wallet", new[] { "walletId" });
+            }
+
             transaction = await transactionRepository.Create(transaction);
 
-            await ContextProvider.GetService<IUserService>().UpdateBalance(transaction, null, true);
+            await ContextProvider.GetService<IWalletService>().UpdateBalance(transaction, null, true);
 
             return transaction;
         }
@@ -81,7 +90,7 @@ namespace CashSchedulerWebServer.Services.Transactions
 
             targetTransaction = await transactionRepository.Update(targetTransaction);
             
-            await ContextProvider.GetService<IUserService>().UpdateBalance(targetTransaction, oldTransaction, isUpdate: true);
+            await ContextProvider.GetService<IWalletService>().UpdateBalance(targetTransaction, oldTransaction, isUpdate: true);
 
             return targetTransaction;
         }
@@ -98,7 +107,7 @@ namespace CashSchedulerWebServer.Services.Transactions
 
             transaction = await transactionRepository.Delete(id);
             
-            await ContextProvider.GetService<IUserService>().UpdateBalance(transaction, transaction, isDelete: true);
+            await ContextProvider.GetService<IWalletService>().UpdateBalance(transaction, transaction, isDelete: true);
 
             return transaction;
         }

@@ -22,7 +22,7 @@ namespace CashSchedulerWebServer.Jobs.Transactions
 
         public Task Execute(IJobExecutionContext context)
         {
-            var now = DateTime.UtcNow;
+            /*var now = DateTime.UtcNow;
             Console.WriteLine($"Running the {context.JobDetail.Description}");
             var recurringTransactions = CashSchedulerContext.RegularTransactions
                 .Where(t => t.NextTransactionDate.Date == now.Date)
@@ -72,7 +72,7 @@ namespace CashSchedulerWebServer.Jobs.Transactions
             {
                 dmlTransaction.Rollback();
                 Console.WriteLine($"Error while running the {context.JobDetail.Description}: {error.Message}: \n{error.StackTrace}");
-            }
+            }*/
 
             return Task.CompletedTask;
         }

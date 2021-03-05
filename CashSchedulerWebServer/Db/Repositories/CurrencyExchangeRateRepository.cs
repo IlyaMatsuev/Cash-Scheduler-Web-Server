@@ -30,6 +30,20 @@ namespace CashSchedulerWebServer.Db.Repositories
                 .Include(r => r.User);
         }
 
+        public IEnumerable<CurrencyExchangeRate> GetBySourceAndTarget(
+            string sourceCurrencyAbbreviation,
+            string targetCurrencyAbbreviation
+        )
+        {
+            return Context.CurrencyExchangeRates
+                .Where(r => (r.User != null && r.User.Id == UserId && r.IsCustom) || !r.IsCustom)
+                .Where(r => r.SourceCurrency.Abbreviation == sourceCurrencyAbbreviation)
+                .Where(r => r.TargetCurrency.Abbreviation == targetCurrencyAbbreviation)
+                .Include(r => r.SourceCurrency)
+                .Include(r => r.TargetCurrency)
+                .Include(r => r.User);
+        }
+
         public CurrencyExchangeRate GetByKey(int id)
         {
             return Context.CurrencyExchangeRates.

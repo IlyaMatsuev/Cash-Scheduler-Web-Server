@@ -10,6 +10,8 @@ namespace CashSchedulerWebServer.Mutations.RecurringTransactions
         
         public int CategoryId { get; set; }
         
+        public int? WalletId { get; set; }
+        
         public double Amount { get; set; }
         
         [GraphQLType(typeof(DateType))]
