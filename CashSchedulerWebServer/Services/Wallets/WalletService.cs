@@ -6,6 +6,7 @@ using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Services.Contracts;
+using CashSchedulerWebServer.Utils;
 
 namespace CashSchedulerWebServer.Services.Wallets
 {
@@ -19,8 +20,8 @@ namespace CashSchedulerWebServer.Services.Wallets
             ContextProvider = contextProvider;
             UserId = userContext.GetUserId();
         }
-        
-        
+
+
         public IEnumerable<Wallet> GetAll()
         {
             return ContextProvider.GetRepository<IWalletRepository>().GetAll();
@@ -209,6 +210,39 @@ namespace CashSchedulerWebServer.Services.Wallets
             }
             
             return walletRepository.Delete(id);
+        }
+
+        public async Task<Transfer> CreateTransfer(Transfer transfer)
+        {
+            var walletRepository = ContextProvider.GetRepository<IWalletRepository>();
+
+            transfer.SourceWallet = walletRepository.GetByKey(transfer.SourceWalletId);
+            if (transfer.SourceWallet == null)
+            {
+                throw new CashSchedulerException("There is no such wallet", new[] {"sourceWalletId"});
+            }
+
+            transfer.TargetWallet = walletRepository.GetByKey(transfer.TargetWalletId);
+            if (transfer.TargetWallet == null)
+            {
+                throw new CashSchedulerException("There is no such wallet", new[] {"targetWalletId"});
+            }
+
+            ModelValidator.ValidateModelAttributes(transfer);
+
+            transfer.SourceWallet.Balance -= transfer.Amount;
+
+            if (transfer.SourceWallet.Balance < 0)
+            {
+                throw new CashSchedulerException("There is not enough money on the wallet", new[] {"amount"});
+            }
+
+            await walletRepository.Update(transfer.SourceWallet);
+
+            transfer.TargetWallet.Balance += transfer.ExchangeRate * transfer.Amount;
+            await walletRepository.Update(transfer.TargetWallet);
+
+            return transfer;
         }
 
 

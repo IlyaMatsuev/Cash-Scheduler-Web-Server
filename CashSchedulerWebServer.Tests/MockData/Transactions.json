@@ -1,12 +1,15 @@
 [
   {
     "Title": "sapien cum",
-    "Amount": 172200.4,
+    "Amount": 172200,
     "User": {
       "Id": 1
     },
     "Category": {
       "Id": 7
+    },
+    "Wallet": {
+      "Id": 1
     },
     "Date": "11/7/2020"
   },
@@ -17,6 +20,9 @@
       "Id": 1
     },
     "Category": {
+      "Id": 2
+    },
+    "Wallet": {
       "Id": 2
     },
     "Date": "8/3/2020"
@@ -30,6 +36,9 @@
     "Category": {
       "Id": 3
     },
+    "Wallet": {
+      "Id": 1
+    },
     "Date": "12/27/2020"
   },
   {
@@ -41,6 +50,9 @@
     "Category": {
       "Id": 4
     },
+    "Wallet": {
+      "Id": 3
+    },
     "Date": "12/7/2020"
   },
   {
@@ -51,6 +63,9 @@
     },
     "Category": {
       "Id": 9
+    },
+    "Wallet": {
+      "Id": 4
     },
     "Date": "8/24/2020"
   }

@@ -45,5 +45,18 @@ namespace CashSchedulerWebServer.Mutations.Wallets
         {
             return contextProvider.GetService<IWalletService>().Delete(id);
         }
+        
+        [GraphQLNonNullType]
+        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
+        public Task<Transfer> CreateTransfer([Service] IContextProvider contextProvider, [GraphQLNonNullType] NewTransferInput transfer)
+        {
+            return contextProvider.GetService<IWalletService>().CreateTransfer(new Transfer
+            {
+                SourceWalletId = transfer.SourceWalletId,
+                TargetWalletId = transfer.TargetWalletId,
+                Amount = transfer.Amount,
+                ExchangeRate = transfer.ExchangeRate
+            });
+        }
     }
 }

@@ -22,35 +22,43 @@ namespace CashSchedulerWebServer.Jobs.Transactions
 
         public Task Execute(IJobExecutionContext context)
         {
-            /*var now = DateTime.UtcNow;
+            var now = DateTime.UtcNow;
             Console.WriteLine($"Running the {context.JobDetail.Description}");
             var recurringTransactions = CashSchedulerContext.RegularTransactions
                 .Where(t => t.NextTransactionDate.Date == now.Date)
                 .Include(t => t.Category)
                 .Include(t => t.Category.Type)
                 .Include(t => t.User)
+                .Include(t => t.Wallet)
                 .ToList();
 
             var singleTransactionsToBeCreated = new List<Transaction>();
             var recurringTransactionsToBeUpdated = new List<RegularTransaction>();
-            var usersToUpdateBalance = recurringTransactions.GroupBy(t => t.User).Select(t =>
+            var walletsToUpdateBalance = recurringTransactions.GroupBy(t => t.Wallet).Select(t =>
             {
-                var user = t.Key;
+                var wallet = t.Key;
                 singleTransactionsToBeCreated.AddRange(t.Select(rt => new Transaction
                 {
                     Title = rt.Title,
                     User = rt.User,
+                    Wallet = rt.Wallet,
                     Category = rt.Category,
                     Amount = rt.Amount
                 }));
+
                 recurringTransactionsToBeUpdated.AddRange(t.Select(rt =>
                 {
                     rt.Date = DateTime.Today;
                     rt.NextTransactionDate = GetNextDateByInterval(rt);
                     return rt;
                 }));
-                user.Balance += t.Sum(rt => rt.Category.Type.Name == TransactionType.Options.Income.ToString() ? rt.Amount : -rt.Amount);
-                return user;
+
+                wallet.Balance += t.Sum(
+                    rt => rt.Category.Type.Name == TransactionType.Options.Income.ToString()
+                        ? rt.Amount
+                        : -rt.Amount
+                );
+                return wallet;
             }).ToList();
 
             using var dmlTransaction = CashSchedulerContext.Database.BeginTransaction();
@@ -60,19 +68,19 @@ namespace CashSchedulerWebServer.Jobs.Transactions
                 CashSchedulerContext.SaveChanges();
                 CashSchedulerContext.RegularTransactions.UpdateRange(recurringTransactionsToBeUpdated);
                 CashSchedulerContext.SaveChanges();
-                CashSchedulerContext.Users.UpdateRange(usersToUpdateBalance);
+                CashSchedulerContext.Wallets.UpdateRange(walletsToUpdateBalance);
                 CashSchedulerContext.SaveChanges();
 
                 dmlTransaction.Commit();
 
                 Console.WriteLine($"{singleTransactionsToBeCreated.Count} single transactions were created");
-                Console.WriteLine($"{usersToUpdateBalance.Count} users were updated");
+                Console.WriteLine($"{walletsToUpdateBalance.Count} wallets were updated");
             }
             catch (Exception error)
             {
                 dmlTransaction.Rollback();
                 Console.WriteLine($"Error while running the {context.JobDetail.Description}: {error.Message}: \n{error.StackTrace}");
-            }*/
+            }
 
             return Task.CompletedTask;
         }
@@ -93,7 +101,6 @@ namespace CashSchedulerWebServer.Jobs.Transactions
             }
 
             return intervals[transaction.Interval](transaction.NextTransactionDate);
-
         }
     }
 }

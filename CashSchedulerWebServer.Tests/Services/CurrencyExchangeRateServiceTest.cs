@@ -9,6 +9,8 @@ using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Services.Contracts;
 using CashSchedulerWebServer.Services.Currencies;
+using CashSchedulerWebServer.WebServices.Contracts;
+using CashSchedulerWebServer.WebServices.ExchangeRates;
 using Moq;
 using Newtonsoft.Json;
 using Xunit;
@@ -24,6 +26,7 @@ namespace CashSchedulerWebServer.Tests.Services
         private Mock<IUserRepository> UserRepository { get; }
         private Mock<IContextProvider> ContextProvider { get; }
         private Mock<IUserContext> UserContext { get; }
+        private Mock<IExchangeRateWebService> ExchangeRateWebService { get; }
         
         public CurrencyExchangeRateServiceTest()
         {
@@ -32,6 +35,7 @@ namespace CashSchedulerWebServer.Tests.Services
             CurrencyRepository = new Mock<ICurrencyRepository>();
             UserRepository = new Mock<IUserRepository>();
             UserContext = new Mock<IUserContext>();
+            ExchangeRateWebService = new Mock<IExchangeRateWebService>();
 
             UserContext.Setup(c => c.GetUserId()).Returns(TESTING_USER_ID);
 
@@ -47,16 +51,75 @@ namespace CashSchedulerWebServer.Tests.Services
                 .Setup(c => c.GetRepository<IUserRepository>())
                 .Returns(UserRepository.Object);
 
-            //CurrencyExchangeRateService = new CurrencyExchangeRateService(ContextProvider.Object, UserContext.Object);
+            CurrencyExchangeRateService = new CurrencyExchangeRateService(
+                ContextProvider.Object,
+                UserContext.Object,
+                ExchangeRateWebService.Object
+            );
         }
 
+
+        [Fact]
+        public async Task GetBySourceAndTarget()
+        {
+            string currenciesJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Currencies.json");
+            var currencies = JsonConvert.DeserializeObject<List<Currency>>(currenciesJson);
+
+
+            const string sourceCurrencyAbbreviation = "USD";
+            const string targetCurrencyAbbreviation = "BYN";
+            const float exchangeRate = 2.61f;
+
+            ExchangeRateWebService
+                .Setup(e => e.GetLatestExchangeRates(sourceCurrencyAbbreviation, new[] {targetCurrencyAbbreviation}))
+                .ReturnsAsync(new ExchangeRatesResponse
+                {
+                    Base = sourceCurrencyAbbreviation,
+                    Date = DateTime.Today,
+                    Success = true,
+                    Rates = new Dictionary<string, float>
+                    {
+                        {targetCurrencyAbbreviation, exchangeRate}
+                    }
+                });
+
+            CurrencyRepository
+                .Setup(c => c.GetByKey(sourceCurrencyAbbreviation))
+                .Returns(currencies.First(cur => cur.Abbreviation == sourceCurrencyAbbreviation));
+
+            CurrencyRepository
+                .Setup(c => c.GetByKey(targetCurrencyAbbreviation))
+                .Returns(currencies.First(cur => cur.Abbreviation == targetCurrencyAbbreviation));
+
+            CurrencyExchangeRateRepository
+                .Setup(c => c.GetBySourceAndTarget(sourceCurrencyAbbreviation, targetCurrencyAbbreviation))
+                .Returns(new List<CurrencyExchangeRate>());
+
+
+            var resultExchangeRates = await CurrencyExchangeRateService.GetBySourceAndTarget(
+                sourceCurrencyAbbreviation, targetCurrencyAbbreviation
+            );
+
+
+            Assert.NotNull(resultExchangeRates);
+            Assert.Single(resultExchangeRates);
+            Assert.NotNull(resultExchangeRates.First().SourceCurrency);
+            Assert.NotNull(resultExchangeRates.First().TargetCurrency);
+            Assert.Equal(sourceCurrencyAbbreviation, resultExchangeRates.First().SourceCurrency.Abbreviation);
+            Assert.Equal(targetCurrencyAbbreviation, resultExchangeRates.First().TargetCurrency.Abbreviation);
+            Assert.Equal(exchangeRate, resultExchangeRates.First().ExchangeRate);
+            Assert.False(resultExchangeRates.First().IsCustom);
+            Assert.Equal(DateTime.Today, resultExchangeRates.First().ValidFrom);
+            Assert.Equal(DateTime.Today, resultExchangeRates.First().ValidTo);
+
+        }
 
         [Fact]
         public async Task Create_ReturnsNewExchangeRate()
         {
             string usersJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Users.json");
             var user = JsonConvert.DeserializeObject<List<User>>(usersJson).First(u => u.Id == TESTING_USER_ID);
-            
+
             string currenciesJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Currencies.json");
             var currencies = JsonConvert.DeserializeObject<List<Currency>>(currenciesJson);
 

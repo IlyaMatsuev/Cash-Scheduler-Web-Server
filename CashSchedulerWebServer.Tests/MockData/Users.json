@@ -4,21 +4,18 @@
     "FirstName": "Sheri",
     "LastName": "Mc Gee",
     "Email": "smcgee0@hibu.com",
-    "Password": "P@$$w0rd",
-    "Balance": 93970.5
+    "Password": "P@$$w0rd"
   },
   {
     "Id": 2,
     "FirstName": "Ilya",
     "LastName": "Matsuev",
-    "Email": "mirotvorec542546@gmail.com",
-    "Balance": 93970.5
+    "Email": "mirotvorec542546@gmail.com"
   },
   {
     "Id": 3,
     "FirstName": "Michelle",
     "LastName": "Slucock",
-    "Email": "mslucock1@digg.com",
-    "Balance": 52315.3
+    "Email": "mslucock1@digg.com"
   }
 ]

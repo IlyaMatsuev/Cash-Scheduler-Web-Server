@@ -8,6 +8,9 @@
     "Category": {
       "Id": 7
     },
+    "Wallet": {
+      "Id": 1
+    },
     "Date": "10/27/2020",
     "NexTransactionDate": "12/8/2020",
     "Interval": "day"
@@ -20,6 +23,9 @@
     },
     "Category": {
       "Id": 2
+    },
+    "Wallet": {
+      "Id": 1
     },
     "Date": "9/17/2020",
     "NexTransactionDate": "8/27/2020",
@@ -34,6 +40,9 @@
     "Category": {
       "Id": 4
     },
+    "Wallet": {
+      "Id": 3
+    },
     "Date": "9/19/2020",
     "NexTransactionDate": "9/21/2020",
     "Interval": "month"
@@ -47,6 +56,9 @@
     "Category": {
       "Id": 9
     },
+    "Wallet": {
+      "Id": 3
+    },
     "Date": "8/12/2020",
     "NexTransactionDate": "12/28/2020",
     "Interval": "day"
@@ -59,6 +71,9 @@
     },
     "Category": {
       "Id": 3
+    },
+    "Wallet": {
+      "Id": 4
     },
     "Date": "11/2/2020",
     "NexTransactionDate": "11/21/2020",

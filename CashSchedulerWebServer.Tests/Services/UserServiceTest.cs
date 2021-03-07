@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -19,7 +18,7 @@ namespace CashSchedulerWebServer.Tests.Services
 {
     public class UserServiceTest
     {
-        /*private const int TESTING_USER_ID = 1;
+        private const int TESTING_USER_ID = 1;
         private const string HASH_SALT = "12345";
 
         private IUserService UserService { get; }
@@ -57,14 +56,12 @@ namespace CashSchedulerWebServer.Tests.Services
 
             const string newFirstName = "Test First Name";
             const string newLastName = "Test Last Name";
-            const double newBalance = 10002;
 
             var newUser = new User
             {
                 Id = user.Id,
                 FirstName = newFirstName,
                 LastName = newLastName,
-                Balance = newBalance,
                 Email = user.Email,
                 Password = user.Password
             };
@@ -80,7 +77,6 @@ namespace CashSchedulerWebServer.Tests.Services
             Assert.NotNull(resultUser);
             Assert.Equal(newFirstName, resultUser.FirstName);
             Assert.Equal(newLastName, resultUser.LastName);
-            Assert.Equal(newBalance, resultUser.Balance);
             Assert.Equal(user.Email, resultUser.Email);
             Assert.Equal(user.Password, resultUser.Password);
         }
@@ -112,150 +108,8 @@ namespace CashSchedulerWebServer.Tests.Services
             Assert.NotNull(resultUser);
             Assert.Equal(user.FirstName, resultUser.FirstName);
             Assert.Equal(user.LastName, resultUser.LastName);
-            Assert.Equal(user.Balance, resultUser.Balance);
             Assert.Equal(user.Email, resultUser.Email);
             Assert.Equal(newHashedPassword, resultUser.Password);
         }
-
-        [Fact]
-        public async Task UpdateBalance_ReturnsUpdatedUserForNewTransaction()
-        {
-            string usersJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Users.json");
-            var user = JsonConvert.DeserializeObject<List<User>>(usersJson).First(u => u.Id == TESTING_USER_ID);
-            
-            string categoriesJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Categories.json");
-            var category = JsonConvert.DeserializeObject<List<Category>>(categoriesJson)
-                .First(c => c.IsCustom && c.User.Id == TESTING_USER_ID);
-
-            double initBalance = user.Balance;
-            const string newTitle = "Test title";
-            const double newAmount = 1002;
-            DateTime newDate = DateTime.Today.AddDays(-1);
-
-            var newTransaction = new Transaction
-            {
-                User = user,
-                Category = category,
-                Amount = newAmount,
-                Title = newTitle,
-                Date = newDate
-            };
-
-            UserRepository.Setup(u => u.Update(user)).ReturnsAsync(user);
-
-
-            var resultUser = await UserService.UpdateBalance(newTransaction, null, true);
-
-
-            Assert.NotNull(resultUser);
-            Assert.Equal(user.FirstName, resultUser.FirstName);
-            Assert.Equal(user.LastName, resultUser.LastName);
-            Assert.Equal(user.Balance, resultUser.Balance);
-            Assert.Equal(user.Email, resultUser.Email);
-            
-            if (category.Type.Name == TransactionType.Options.Income.ToString())
-            {
-                Assert.Equal(initBalance + newTransaction.Amount, resultUser.Balance);
-            }
-            else if (category.Type.Name == TransactionType.Options.Expense.ToString())
-            {
-                Assert.Equal(initBalance - newTransaction.Amount, resultUser.Balance);
-            }
-        }
-        
-        [Fact]
-        public async Task UpdateBalance_ReturnsUpdatedUserForExistingTransaction()
-        {
-            string usersJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Users.json");
-            var user = JsonConvert.DeserializeObject<List<User>>(usersJson).First(u => u.Id == TESTING_USER_ID);
-            
-            string categoriesJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Categories.json");
-            var category = JsonConvert.DeserializeObject<List<Category>>(categoriesJson)
-                .First(c => c.IsCustom && c.User.Id == TESTING_USER_ID);
-            
-            string transactionsJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Transactions.json");
-            var transaction = JsonConvert.DeserializeObject<List<Transaction>>(transactionsJson)
-                .First(t => t.User.Id == TESTING_USER_ID && t.Category.Id == category.Id);
-
-            transaction.User = user;
-            transaction.Category = category;
-
-            double initBalance = user.Balance;
-            const string newTitle = "Test title";
-            const double newAmount = 1002;
-            DateTime newDate = DateTime.Today.AddDays(-1);
-
-            var newTransaction = new Transaction
-            {
-                Id = transaction.Id,
-                User = user,
-                Category = category,
-                Amount = newAmount,
-                Title = newTitle,
-                Date = newDate
-            };
-
-            UserRepository.Setup(u => u.Update(user)).ReturnsAsync(user);
-
-
-            var resultUser = await UserService.UpdateBalance(newTransaction, transaction, isUpdate: true);
-
-
-            Assert.NotNull(resultUser);
-            Assert.Equal(user.FirstName, resultUser.FirstName);
-            Assert.Equal(user.LastName, resultUser.LastName);
-            Assert.Equal(user.Balance, resultUser.Balance);
-            Assert.Equal(user.Email, resultUser.Email);
-            
-            if (category.Type.Name == TransactionType.Options.Income.ToString())
-            {
-                Assert.Equal(initBalance + (newTransaction.Amount - transaction.Amount), resultUser.Balance);
-            }
-            else if (category.Type.Name == TransactionType.Options.Expense.ToString())
-            {
-                Assert.Equal(initBalance - (newTransaction.Amount - transaction.Amount), resultUser.Balance);
-            }
-        }
-        
-        [Fact]
-        public async Task UpdateBalance_ReturnsUpdatedUserForDeletedTransaction()
-        {
-            string usersJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Users.json");
-            var user = JsonConvert.DeserializeObject<List<User>>(usersJson).First(u => u.Id == TESTING_USER_ID);
-            
-            string categoriesJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Categories.json");
-            var category = JsonConvert.DeserializeObject<List<Category>>(categoriesJson)
-                .First(c => c.IsCustom && c.User.Id == TESTING_USER_ID);
-            
-            string transactionsJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Transactions.json");
-            var transaction = JsonConvert.DeserializeObject<List<Transaction>>(transactionsJson)
-                .First(t => t.User.Id == TESTING_USER_ID && t.Category.Id == category.Id);
-
-            transaction.User = user;
-            transaction.Category = category;
-
-            double initBalance = user.Balance;
-
-            UserRepository.Setup(u => u.Update(user)).ReturnsAsync(user);
-
-
-            var resultUser = await UserService.UpdateBalance(transaction, transaction, isDelete: true);
-
-
-            Assert.NotNull(resultUser);
-            Assert.Equal(user.FirstName, resultUser.FirstName);
-            Assert.Equal(user.LastName, resultUser.LastName);
-            Assert.Equal(user.Balance, resultUser.Balance);
-            Assert.Equal(user.Email, resultUser.Email);
-            
-            if (category.Type.Name == TransactionType.Options.Income.ToString())
-            {
-                Assert.Equal(initBalance - transaction.Amount, resultUser.Balance);
-            }
-            else if (category.Type.Name == TransactionType.Options.Expense.ToString())
-            {
-                Assert.Equal(initBalance + transaction.Amount, resultUser.Balance);
-            }
-        }*/
     }
 }
