@@ -6,7 +6,8 @@
     "User": {
       "Id": 1
     },
-    "IsRead": false
+    "IsRead": false,
+    "CreatedDate": "2/15/2021"
   },
   {
     "Id": 2,
@@ -15,7 +16,8 @@
     "User": {
       "Id": 2
     },
-    "IsRead": true
+    "IsRead": true,
+    "CreatedDate": "2/22/2021"
   },
   {
     "Id": 3,
@@ -24,6 +26,7 @@
     "User": {
       "Id": 1
     },
-    "IsRead": false
+    "IsRead": false,
+    "CreatedDate": "1/16/2021"
   }
 ]

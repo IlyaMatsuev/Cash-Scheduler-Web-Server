@@ -30,11 +30,6 @@ namespace CashSchedulerWebServer.Services.Settings
                 ? settingRepository.GetAll()
                 : settingRepository.GetByUnitName(unitName);
         }
-        
-        public UserSetting GetByName(string name)
-        {
-            return ContextProvider.GetRepository<IUserSettingRepository>().GetByName(name);
-        }
 
         public Task<IEnumerable<UserSetting>> CreateDefaultSettings(User user)
         {

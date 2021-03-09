@@ -1,7 +1,5 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using CashSchedulerWebServer.Auth.Contracts;
-using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using HotChocolate;
 using HotChocolate.Execution;
@@ -16,15 +14,14 @@ namespace CashSchedulerWebServer.Subscriptions.Notifications
         [SubscribeAndResolve]
         public async ValueTask<ISourceStream<UserNotification>> OnNotificationCreated(
             [Service] ITopicEventReceiver eventReceiver,
-            [Service] IUserContext userContext,
+            int userId,
             CancellationToken cancellationToken)
         {
-            int userId = userContext.GetUserId();
-            if (userId == -1)
-            {
-                throw new CashSchedulerException("Unauthorized", "401");
-            }
-            return await eventReceiver.SubscribeAsync<string, UserNotification>($"OnNotificationForUser_{userId}", cancellationToken);
+            // The only way I found to make this a bit more secured is:
+            // 1. Generate the token on the client side with the user id encrypted
+            // 2. Send this token as a variable in a subscription
+            // 3. Parse the token on the server side and subscribe to user notifications by its id
+            return await eventReceiver.SubscribeAsync<string, UserNotification>($"OnUserNotification_{userId}", cancellationToken);
         }
     }
 }

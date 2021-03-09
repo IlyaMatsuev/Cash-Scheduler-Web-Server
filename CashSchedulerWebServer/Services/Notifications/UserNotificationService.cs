@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
@@ -24,26 +25,33 @@ namespace CashSchedulerWebServer.Services.Notifications
             EventSender = eventSender;
             UserId = userContext.GetUserId();
         }
-        
+
 
         public IEnumerable<UserNotification> GetAll()
         {
             return ContextProvider.GetRepository<IUserNotificationRepository>().GetAll();
         }
 
+        public int GetUnreadCount()
+        {
+            return ContextProvider.GetRepository<IUserNotificationRepository>().GetUnread().Count();
+        }
+
         public async Task<UserNotification> Create(UserNotification notification)
         {
             notification.User ??= ContextProvider.GetRepository<IUserRepository>().GetByKey(UserId);
 
-            await EventSender.SendAsync($"OnNotificationForUser_{UserId}", notification);
-            
-            return await ContextProvider.GetRepository<IUserNotificationRepository>().Create(notification);
+            var createdNotification = await ContextProvider.GetRepository<IUserNotificationRepository>().Create(notification);
+
+            await EventSender.SendAsync($"OnUserNotification_{UserId}", createdNotification);
+
+            return createdNotification;
         }
 
         public Task<UserNotification> Update(UserNotification notification)
         {
             var notificationRepository = ContextProvider.GetRepository<IUserNotificationRepository>();
-            
+
             var targetNotification = notificationRepository.GetByKey(notification.Id);
             if (targetNotification == null)
             {
@@ -62,7 +70,7 @@ namespace CashSchedulerWebServer.Services.Notifications
 
             targetNotification.IsRead = notification.IsRead;
 
-            return notificationRepository.Update(notification);
+            return notificationRepository.Update(targetNotification);
         }
 
         public Task<UserNotification> ToggleRead(int id, bool read)
@@ -72,14 +80,14 @@ namespace CashSchedulerWebServer.Services.Notifications
             var notification = notificationRepository.GetByKey(id);
 
             notification.IsRead = read;
-            
+
             return notificationRepository.Update(notification);
         }
 
         public Task<UserNotification> Delete(int id)
         {
             var notificationRepository = ContextProvider.GetRepository<IUserNotificationRepository>();
-            
+
             var targetNotification = notificationRepository.GetByKey(id);
             if (targetNotification == null)
             {

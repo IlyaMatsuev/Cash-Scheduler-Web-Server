@@ -19,7 +19,7 @@ namespace CashSchedulerWebServer.Db.Repositories
             Context = context;
             UserId = userContext.GetUserId();
         }
-        
+
 
         public UserNotification GetByKey(int id)
         {
@@ -28,12 +28,21 @@ namespace CashSchedulerWebServer.Db.Repositories
                 .Include(n => n.User)
                 .FirstOrDefault();
         }
-        
+
         public IEnumerable<UserNotification> GetAll()
         {
-            return Context.UserNotifications.Where(n => n.User.Id == UserId).Include(n => n.User);
+            return Context.UserNotifications.Where(n => n.User.Id == UserId)
+                .OrderByDescending(n => n.Id)
+                .Include(n => n.User);
         }
-        
+
+        public IEnumerable<UserNotification> GetUnread()
+        {
+            return Context.UserNotifications.Where(n => n.User.Id == UserId && !n.IsRead)
+                .OrderByDescending(n => n.Id)
+                .Include(n => n.User);
+        }
+
         public async Task<UserNotification> Create(UserNotification notification)
         {
             ModelValidator.ValidateModelAttributes(notification);
@@ -57,7 +66,7 @@ namespace CashSchedulerWebServer.Db.Repositories
         public async Task<UserNotification> Delete(int id)
         {
             var notification = GetByKey(id);
-            
+
             Context.UserNotifications.Remove(notification);
             await Context.SaveChangesAsync();
 

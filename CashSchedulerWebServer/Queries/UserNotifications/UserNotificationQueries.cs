@@ -15,9 +15,16 @@ namespace CashSchedulerWebServer.Queries.UserNotifications
     public class UserNotificationQueries
     {
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public IEnumerable<UserNotification>? AllNotifications([Service] IContextProvider contextProvider)
+        public IEnumerable<UserNotification>? Notifications([Service] IContextProvider contextProvider)
         {
             return contextProvider.GetService<IUserNotificationService>().GetAll();
+        }
+
+        [GraphQLNonNullType]
+        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
+        public int UnreadNotificationsCount([Service] IContextProvider contextProvider)
+        {
+            return contextProvider.GetService<IUserNotificationService>().GetUnreadCount();
         }
     }
 }

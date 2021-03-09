@@ -20,26 +20,19 @@ namespace CashSchedulerWebServer.Queries.UserSettings
         {
             return Enum.GetNames(typeof(Setting.SettingOptions));
         }
-        
+
         [GraphQLNonNullType]
         public IEnumerable<string> SettingUnits()
         {
             return Enum.GetNames(typeof(Setting.UnitOptions));
         }
-        
+
         [GraphQLNonNullType]
         public IEnumerable<string> SettingSections()
         {
             return Enum.GetNames(typeof(Setting.SectionOptions));
         }
-        
-        [GraphQLNonNullType]
-        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public UserSetting Setting([Service] IContextProvider contextProvider, [GraphQLNonNullType] string name)
-        {
-            return contextProvider.GetService<IUserSettingService>().GetByName(name);
-        }
-        
+
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
         public IEnumerable<UserSetting>? Settings([Service] IContextProvider contextProvider, string? unitName)
         {

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -50,6 +51,21 @@ namespace CashSchedulerWebServer.Tests.Services
             );
         }
 
+        [Fact]
+        public void GetUnreadCount_ReturnsCount()
+        {
+            string userNotificationsJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"UserNotifications.json");
+            var notifications = JsonConvert.DeserializeObject<List<UserNotification>>(userNotificationsJson)
+                .Where(n => n.User.Id == TESTING_USER_ID && !n.IsRead);
+
+            UserNotificationRepository.Setup(n => n.GetUnread()).Returns(notifications);
+
+
+            int unreadNotificationsCount = UserNotificationService.GetUnreadCount();
+
+
+            Assert.Equal(notifications.Count(), unreadNotificationsCount);
+        }
 
         [Fact]
         public async Task Create_ReturnsNewNotification()
@@ -60,7 +76,7 @@ namespace CashSchedulerWebServer.Tests.Services
             const string title = "Test title";
             const string content = "Test content";
 
-            var newUserNotification = new UserNotification
+            var userNotification = new UserNotification
             {
                 Title = title,
                 Content = content,
@@ -69,16 +85,17 @@ namespace CashSchedulerWebServer.Tests.Services
 
             UserRepository.Setup(u => u.GetByKey(TESTING_USER_ID)).Returns(user);
 
-            UserNotificationRepository.Setup(n => n.Create(newUserNotification)).ReturnsAsync(newUserNotification);
+            UserNotificationRepository.Setup(n => n.Create(userNotification)).ReturnsAsync(userNotification);
 
             
-            var resultUserNotification = await UserNotificationService.Create(newUserNotification);
+            var resultUserNotification = await UserNotificationService.Create(userNotification);
 
 
             Assert.NotNull(resultUserNotification);
             Assert.NotNull(resultUserNotification.User);
             Assert.Equal(title, resultUserNotification.Title);
             Assert.Equal(content, resultUserNotification.Content);
+            Assert.Equal(DateTime.Today, resultUserNotification.CreatedDate);
             Assert.False(resultUserNotification.IsRead);
         }
         
@@ -99,17 +116,18 @@ namespace CashSchedulerWebServer.Tests.Services
                 IsRead = true
             };
 
-            UserNotificationRepository.Setup(u => u.GetByKey(notification.Id)).Returns(notification);
+            UserNotificationRepository.Setup(u => u.GetByKey(userNotification.Id)).Returns(notification);
 
-            UserNotificationRepository.Setup(n => n.Update(userNotification)).ReturnsAsync(notification);
+            UserNotificationRepository.Setup(n => n.Update(notification)).ReturnsAsync(notification);
 
-            
+
             var resultUserNotification = await UserNotificationService.Update(userNotification);
 
 
             Assert.NotNull(resultUserNotification);
             Assert.Equal(newTitle, resultUserNotification.Title);
             Assert.Equal(newContent, resultUserNotification.Content);
+            Assert.Equal(notification.CreatedDate, resultUserNotification.CreatedDate);
             Assert.True(resultUserNotification.IsRead);
         }
         
@@ -123,7 +141,7 @@ namespace CashSchedulerWebServer.Tests.Services
 
             UserNotificationRepository.Setup(n => n.Delete(notification.Id)).ReturnsAsync(notification);
 
-            
+
             var resultUserNotification = await UserNotificationService.Delete(notification.Id);
 
 
@@ -131,6 +149,7 @@ namespace CashSchedulerWebServer.Tests.Services
             Assert.Equal(notification.Title, resultUserNotification.Title);
             Assert.Equal(notification.Content, resultUserNotification.Content);
             Assert.Equal(notification.IsRead, resultUserNotification.IsRead);
+            Assert.Equal(notification.CreatedDate, resultUserNotification.CreatedDate);
         }
     }
 }
