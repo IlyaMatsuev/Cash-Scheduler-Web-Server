@@ -32,11 +32,17 @@ namespace CashSchedulerWebServer.Jobs.Transactions
             var walletsToUpdateBalance = transactions.GroupBy(t => t.Wallet).Select(t =>
             {
                 var wallet = t.Key;
+                double initBalance = wallet.Balance;
                 wallet.Balance += t.Sum(
                     transaction => transaction.Category.Type.Name == TransactionType.Options.Income.ToString() 
                         ? transaction.Amount 
                         : -transaction.Amount
                 );
+                if (wallet.Balance < 0)
+                {
+                    wallet.Balance = initBalance;
+                    // TODO: send email notifying that we cannot create transaction for future since the balance will become less than 0
+                }
                 return wallet;
             }).ToList();
 

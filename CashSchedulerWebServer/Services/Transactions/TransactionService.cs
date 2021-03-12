@@ -33,9 +33,9 @@ namespace CashSchedulerWebServer.Services.Transactions
         public async Task<Transaction> Create(Transaction transaction)
         {
             var transactionRepository = ContextProvider.GetRepository<ITransactionRepository>();
-            
+
             transaction.User = ContextProvider.GetRepository<IUserRepository>().GetByKey(UserId);
-            
+
             transaction.Category = ContextProvider.GetRepository<ICategoryRepository>().GetByKey(transaction.CategoryId);
             if (transaction.Category == null)
             {
@@ -49,6 +49,12 @@ namespace CashSchedulerWebServer.Services.Transactions
             if (transaction.Wallet == null)
             {
                 throw new CashSchedulerException("There is no such wallet", new[] { "walletId" });
+            }
+
+            if (transaction.Category.Type.Name == TransactionType.Options.Expense.ToString()
+                && transaction.Wallet.Balance < transaction.Amount)
+            {
+                throw new CashSchedulerException("Amount cannot be greater than the balance", new[] { "amount" });
             }
 
             transaction = await transactionRepository.Create(transaction);
@@ -73,7 +79,8 @@ namespace CashSchedulerWebServer.Services.Transactions
                 Title = targetTransaction.Title,
                 Amount = targetTransaction.Amount,
                 Date = targetTransaction.Date,
-                Category = targetTransaction.Category
+                Category = targetTransaction.Category,
+                Wallet = targetTransaction.Wallet
             };
 
             targetTransaction.Title = transaction.Title;
@@ -82,14 +89,21 @@ namespace CashSchedulerWebServer.Services.Transactions
             {
                 targetTransaction.Amount = transaction.Amount;
             }
-            
+
             if (transaction.Date != default)
             {
                 targetTransaction.Date = transaction.Date;
             }
 
+            if (oldTransaction.Category.Type.Name == TransactionType.Options.Expense.ToString()
+                && transaction.Amount - oldTransaction.Amount > 0
+                && oldTransaction.Wallet.Balance < transaction.Amount - oldTransaction.Amount)
+            {
+                throw new CashSchedulerException("Amount cannot be greater than the balance", new[] { "amount" });
+            }
+
             targetTransaction = await transactionRepository.Update(targetTransaction);
-            
+
             await ContextProvider.GetService<IWalletService>().UpdateBalance(targetTransaction, oldTransaction, isUpdate: true);
 
             return targetTransaction;

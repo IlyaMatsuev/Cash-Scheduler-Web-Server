@@ -10,7 +10,7 @@ namespace CashSchedulerWebServer.Models
         [NotMapped]
         private const double MAX_AMOUNT_VALUE = 100000000000;
         [NotMapped]
-        private const double MIN_AMOUNT_VALUE = 0.01;
+        private const double MIN_AMOUNT_VALUE = 0;
 
 
         [Key]
@@ -20,7 +20,7 @@ namespace CashSchedulerWebServer.Models
         public string Name { get; set; }
         
         [Required(ErrorMessage = "Balance cannot be empty")]
-        [Range(MIN_AMOUNT_VALUE, MAX_AMOUNT_VALUE, ErrorMessage = "You can specify balance in range from 0.01 to 100000000000")]
+        [Range(MIN_AMOUNT_VALUE, MAX_AMOUNT_VALUE, ErrorMessage = "You can specify balance in range from 0 to 100000000000")]
         public double Balance { get; set; }
         
         [Required(ErrorMessage = "Wallet must be related to a currency")]

@@ -37,27 +37,37 @@ namespace CashSchedulerWebServer.Jobs.Transactions
             var walletsToUpdateBalance = recurringTransactions.GroupBy(t => t.Wallet).Select(t =>
             {
                 var wallet = t.Key;
-                singleTransactionsToBeCreated.AddRange(t.Select(rt => new Transaction
-                {
-                    Title = rt.Title,
-                    User = rt.User,
-                    Wallet = rt.Wallet,
-                    Category = rt.Category,
-                    Amount = rt.Amount
-                }));
-
-                recurringTransactionsToBeUpdated.AddRange(t.Select(rt =>
-                {
-                    rt.Date = DateTime.Today;
-                    rt.NextTransactionDate = GetNextDateByInterval(rt);
-                    return rt;
-                }));
+                double initBalance = wallet.Balance;
 
                 wallet.Balance += t.Sum(
                     rt => rt.Category.Type.Name == TransactionType.Options.Income.ToString()
                         ? rt.Amount
                         : -rt.Amount
                 );
+                if (wallet.Balance < 0)
+                {
+                    wallet.Balance = initBalance;
+                    // TODO: send email notifying that we cannot create transaction for future since the balance will become less than 0
+                }
+                else
+                {
+                    singleTransactionsToBeCreated.AddRange(t.Select(rt => new Transaction
+                    {
+                        Title = rt.Title,
+                        User = rt.User,
+                        Wallet = rt.Wallet,
+                        Category = rt.Category,
+                        Amount = rt.Amount
+                    }));
+
+                    recurringTransactionsToBeUpdated.AddRange(t.Select(rt =>
+                    {
+                        rt.Date = DateTime.Today;
+                        rt.NextTransactionDate = GetNextDateByInterval(rt);
+                        return rt;
+                    }));
+                }
+
                 return wallet;
             }).ToList();
 

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
+using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Services.Contracts;
 using CashSchedulerWebServer.Services.Transactions;
@@ -80,7 +81,7 @@ namespace CashSchedulerWebServer.Tests.Services
             const string newTitle = "Test title";
             const double newAmount = 101;
 
-            var newTransaction = new Transaction
+            var transaction = new Transaction
             {
                 Title = newTitle,
                 Amount = newAmount,
@@ -96,14 +97,14 @@ namespace CashSchedulerWebServer.Tests.Services
 
             CategoryRepository.Setup(c => c.GetByKey(category.Id)).Returns(category);
 
-            TransactionRepository.Setup(t => t.Create(newTransaction)).ReturnsAsync(newTransaction);
+            TransactionRepository.Setup(t => t.Create(transaction)).ReturnsAsync(transaction);
 
             ContextProvider
                 .Setup(c => c.GetService<IWalletService>())
                 .Returns(WalletService);
 
 
-            var resultTransaction = await TransactionService.Create(newTransaction);
+            var resultTransaction = await TransactionService.Create(transaction);
 
 
             Assert.NotNull(resultTransaction);
@@ -125,6 +126,46 @@ namespace CashSchedulerWebServer.Tests.Services
             {
                 Assert.Equal(initBalance - newAmount, resultTransaction.Wallet.Balance);
             }
+        }
+        
+        [Fact]
+        public async Task Create_ThrowsExceptionAboutBalance()
+        {
+            string usersJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Users.json");
+            var user = JsonConvert.DeserializeObject<List<User>>(usersJson).First(u => u.Id == TESTING_USER_ID);
+
+            string categoriesJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Categories.json");
+            var category = JsonConvert.DeserializeObject<List<Category>>(categoriesJson)
+                .First(c => !c.IsCustom || c.User.Id == TESTING_USER_ID);
+
+            string walletsJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Wallets.json");
+            var wallet = JsonConvert.DeserializeObject<List<Wallet>>(walletsJson)
+                .First(w => !w.IsDefault && w.User.Id == TESTING_USER_ID);
+
+            const string newTitle = "Test title";
+            double amount = 101 + wallet.Balance;
+
+            var transaction = new Transaction
+            {
+                Title = newTitle,
+                Amount = amount,
+                CategoryId = category.Id,
+                WalletId = wallet.Id
+            };
+
+            UserRepository.Setup(u => u.GetByKey(TESTING_USER_ID)).Returns(user);
+
+            UserRepository.Setup(u => u.Update(user)).ReturnsAsync(user);
+
+            WalletRepository.Setup(w => w.GetByKey(wallet.Id)).Returns(wallet);
+
+            CategoryRepository.Setup(c => c.GetByKey(category.Id)).Returns(category);
+
+
+            await Assert.ThrowsAsync<CashSchedulerException>(async () =>
+            {
+                await TransactionService.Create(transaction);
+            });
         }
 
         [Fact]
@@ -150,19 +191,19 @@ namespace CashSchedulerWebServer.Tests.Services
             const string newTitle = "Test title";
             const double newAmount = 101;
             // Taking future time
-            DateTime newDate = DateTime.Today.AddDays(2);
+            DateTime date = DateTime.Today.AddDays(2);
 
             // Just because "user", "wallet" and "category" variables contain more relationships
             transaction.User = user;
             transaction.Category = category;
             transaction.Wallet = wallet;
 
-            var newTransaction = new Transaction
+            var updateTransaction = new Transaction
             {
                 Id = transaction.Id,
                 Title = newTitle,
                 Amount = newAmount,
-                Date = newDate,
+                Date = date,
                 User = transaction.User,
                 Category = transaction.Category,
                 Wallet = transaction.Wallet
@@ -170,7 +211,7 @@ namespace CashSchedulerWebServer.Tests.Services
 
             WalletRepository.Setup(w => w.Update(wallet)).ReturnsAsync(wallet);
 
-            TransactionRepository.Setup(t => t.GetByKey(newTransaction.Id)).Returns(transaction);
+            TransactionRepository.Setup(t => t.GetByKey(updateTransaction.Id)).Returns(transaction);
 
             TransactionRepository.Setup(t => t.Update(transaction)).ReturnsAsync(transaction);
 
@@ -179,7 +220,7 @@ namespace CashSchedulerWebServer.Tests.Services
                 .Returns(WalletService);
 
 
-            var resultTransaction = await TransactionService.Update(newTransaction);
+            var resultTransaction = await TransactionService.Update(updateTransaction);
 
 
             Assert.NotNull(resultTransaction);
@@ -191,7 +232,7 @@ namespace CashSchedulerWebServer.Tests.Services
             Assert.Equal(wallet.Id, resultTransaction.Wallet.Id);
             Assert.Equal(newTitle, resultTransaction.Title);
             Assert.Equal(newAmount, resultTransaction.Amount);
-            Assert.Equal(newDate, resultTransaction.Date);
+            Assert.Equal(date, resultTransaction.Date);
 
             if (category.Type.Name == TransactionType.Options.Income.ToString())
             {
@@ -201,6 +242,56 @@ namespace CashSchedulerWebServer.Tests.Services
             {
                 Assert.Equal(initBalance + initTransactionAmount, resultTransaction.Wallet.Balance);
             }
+        }
+        
+        [Fact]
+        public async Task Update_ThrowsExceptionAboutBalance()
+        {
+            string usersJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Users.json");
+            var user = JsonConvert.DeserializeObject<List<User>>(usersJson).First(u => u.Id == TESTING_USER_ID);
+
+            string categoriesJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Categories.json");
+            var category = JsonConvert.DeserializeObject<List<Category>>(categoriesJson)
+                .First(c => c.IsCustom && c.User.Id == TESTING_USER_ID && c.Type.Name == TransactionType.Options.Expense.ToString());
+
+            string walletsJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Wallets.json");
+            var wallet = JsonConvert.DeserializeObject<List<Wallet>>(walletsJson)
+                .First(w => w.IsDefault);
+
+            string transactionsJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Transactions.json");
+            var transaction = JsonConvert.DeserializeObject<List<Transaction>>(transactionsJson)
+                .First(u => u.User.Id == TESTING_USER_ID && u.Category.Id == category.Id);
+
+            const string newTitle = "Test title";
+            double amount = 101 + transaction.Amount + wallet.Balance;
+            // Taking future time
+            DateTime date = DateTime.Today.AddDays(2);
+
+            // Just because "user", "wallet" and "category" variables contain more relationships
+            transaction.User = user;
+            transaction.Category = category;
+            transaction.Wallet = wallet;
+
+            var updateTransaction = new Transaction
+            {
+                Id = transaction.Id,
+                Title = newTitle,
+                Amount = amount,
+                Date = date,
+                User = transaction.User,
+                Category = transaction.Category,
+                Wallet = transaction.Wallet
+            };
+
+            WalletRepository.Setup(w => w.Update(wallet)).ReturnsAsync(wallet);
+
+            TransactionRepository.Setup(t => t.GetByKey(updateTransaction.Id)).Returns(transaction);
+
+
+            await Assert.ThrowsAsync<CashSchedulerException>(async () =>
+            {
+                await TransactionService.Update(updateTransaction);
+            });
         }
         
         [Fact]
