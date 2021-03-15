@@ -58,10 +58,10 @@ namespace CashSchedulerWebServer.Auth
             var accessToken = user.GenerateToken(AuthOptions.TokenType.Access, Configuration);
             var refreshToken = user.GenerateToken(AuthOptions.TokenType.Refresh, Configuration);
 
-            await ContextProvider.GetService<IUserRefreshTokenService>().Update(new UserRefreshToken
+            await ContextProvider.GetService<IUserRefreshTokenService>().Create(new UserRefreshToken
             {
                 User = user,
-                Token = refreshToken.token,
+                Token = refreshToken.token.Hash(Configuration),
                 ExpiredDate = refreshToken.expiresIn
             });
 
@@ -80,23 +80,16 @@ namespace CashSchedulerWebServer.Auth
                 throw new CashSchedulerException("Unauthorized", "401");
             }
 
-            var refreshTokenService = ContextProvider.GetService<IUserRefreshTokenService>();
-            var refreshToken = refreshTokenService.GetByUserId(user.Id);
-            if (refreshToken == null)
-            {
-                throw new CashSchedulerException("You are already logged out");
-            }
-
-            await refreshTokenService.Delete(refreshToken.Id);
+            await ContextProvider.GetService<IUserRefreshTokenService>().DeleteAllUserTokens(user.Id);
 
             return user;
         }
 
-        public async Task<User> Register(User newUser)
+        public async Task<User> Register(User user)
         {
             var userService = ContextProvider.GetService<IUserService>();
 
-            if (userService.HasWithEmail(newUser.Email))
+            if (userService.HasWithEmail(user.Email))
             {
                 throw new CashSchedulerException(
                     "User with the same email has been already registered",
@@ -104,12 +97,12 @@ namespace CashSchedulerWebServer.Auth
                 );
             }
 
-            if (string.IsNullOrEmpty(newUser.Password))
+            if (string.IsNullOrEmpty(user.Password))
             {
                 throw new CashSchedulerException("Password is a required field", new[] {"password"});
             }
 
-            if (!Regex.IsMatch(newUser.Password, AuthOptions.PASSWORD_REGEX))
+            if (!Regex.IsMatch(user.Password, AuthOptions.PASSWORD_REGEX))
             {
                 throw new CashSchedulerException(
                     "Your password is too week. Consider to choose something with upper and lower case, " +
@@ -118,11 +111,11 @@ namespace CashSchedulerWebServer.Auth
                 );
             }
 
-            var user = await userService.Create(newUser);
+            var registeredUser = await userService.Create(user);
 
-            await EventManager.FireEvent(EventAction.UserRegistered, user);
+            await EventManager.FireEvent(EventAction.UserRegistered, registeredUser);
 
-            return user;
+            return registeredUser;
         }
 
         public async Task<AuthTokens> Token(string email, string refreshToken)
@@ -133,9 +126,10 @@ namespace CashSchedulerWebServer.Auth
                 throw new CashSchedulerException("There is no such user", new[] {nameof(email)});
             }
 
-            var refreshTokenService = ContextProvider.GetService<IUserRefreshTokenService>();
-            var userRefreshToken = refreshTokenService.GetByUserId(user.Id);
-            if (userRefreshToken == null || userRefreshToken.Token != refreshToken)
+            var refreshTokenRepository = ContextProvider.GetRepository<IUserRefreshTokenRepository>();
+
+            var userRefreshToken = refreshTokenRepository.GetByUserAndToken(user.Id, refreshToken.Hash(Configuration));
+            if (userRefreshToken == null)
             {
                 throw new CashSchedulerException("Invalid refresh token", new[] {nameof(refreshToken)});
             }
@@ -143,9 +137,9 @@ namespace CashSchedulerWebServer.Auth
             var newAccessToken = user.GenerateToken(AuthOptions.TokenType.Access, Configuration);
             var newRefreshToken = user.GenerateToken(AuthOptions.TokenType.Refresh, Configuration);
 
-            userRefreshToken.Token = newRefreshToken.token;
+            userRefreshToken.Token = newRefreshToken.token.Hash(Configuration);
 
-            await refreshTokenService.Update(userRefreshToken);
+            await ContextProvider.GetService<IUserRefreshTokenService>().Update(userRefreshToken);
 
             return new AuthTokens
             {

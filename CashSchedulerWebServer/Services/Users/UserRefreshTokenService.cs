@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
@@ -14,12 +15,7 @@ namespace CashSchedulerWebServer.Services.Users
         {
             RefreshTokenRepository = contextProvider.GetRepository<IUserRefreshTokenRepository>();
         }
-        
 
-        public UserRefreshToken GetByUserId(int id)
-        {
-            return RefreshTokenRepository.GetByUserId(id);
-        }
 
         public Task<UserRefreshToken> Create(UserRefreshToken refreshToken)
         {
@@ -28,10 +24,10 @@ namespace CashSchedulerWebServer.Services.Users
 
         public Task<UserRefreshToken> Update(UserRefreshToken refreshToken)
         {
-            var token = RefreshTokenRepository.GetByUserId(refreshToken.User.Id);
+            var token = RefreshTokenRepository.GetByKey(refreshToken.Id);
             if (token == null)
             {
-                return RefreshTokenRepository.Create(refreshToken);
+                throw new CashSchedulerException("There is no such refresh token");
             }
 
             token.Token = refreshToken.Token;
@@ -47,8 +43,13 @@ namespace CashSchedulerWebServer.Services.Users
             {
                 throw new CashSchedulerException("There is no such refresh token");
             }
-            
+
             return RefreshTokenRepository.Delete(id);
+        }
+
+        public Task<IEnumerable<UserRefreshToken>> DeleteAllUserTokens(int userId)
+        {
+            return RefreshTokenRepository.Delete(RefreshTokenRepository.GetByUserId(userId));
         }
     }
 }

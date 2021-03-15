@@ -24,14 +24,21 @@ namespace CashSchedulerWebServer.Db.Repositories
             return Context.UserRefreshTokens.FirstOrDefault(t => t.Id == id);
         }
 
-        public UserRefreshToken GetByUserId(int id)
+        public IEnumerable<UserRefreshToken> GetByUserId(int id)
         {
             return Context.UserRefreshTokens
                 .Where(t => t.User.Id == id)
+                .Include(t => t.User);
+        }
+
+        public UserRefreshToken GetByUserAndToken(int userId, string token)
+        {
+            return Context.UserRefreshTokens
+                .Where(t => t.User.Id == userId && t.Token == token)
                 .Include(t => t.User)
                 .FirstOrDefault();
         }
-        
+
         public IEnumerable<UserRefreshToken> GetAll()
         {
             throw new CashSchedulerException("It's forbidden to fetch all the refresh tokens");
@@ -40,31 +47,39 @@ namespace CashSchedulerWebServer.Db.Repositories
         public async Task<UserRefreshToken> Create(UserRefreshToken refreshToken)
         {
             ModelValidator.ValidateModelAttributes(refreshToken);
-            
+
             await Context.UserRefreshTokens.AddAsync(refreshToken);
             await Context.SaveChangesAsync();
-            
+
             return refreshToken;
         }
 
         public async Task<UserRefreshToken> Update(UserRefreshToken refreshToken)
         {
             ModelValidator.ValidateModelAttributes(refreshToken);
-            
+
             Context.UserRefreshTokens.Update(refreshToken);
             await Context.SaveChangesAsync();
-            
+
             return refreshToken;
         }
 
         public async Task<UserRefreshToken> Delete(int id)
         {
             var token = GetByKey(id);
-            
+
             Context.UserRefreshTokens.Remove(token);
             await Context.SaveChangesAsync();
-            
+
             return token;
+        }
+
+        public async Task<IEnumerable<UserRefreshToken>> Delete(IEnumerable<UserRefreshToken> tokens)
+        {
+            Context.UserRefreshTokens.RemoveRange(tokens);
+            await Context.SaveChangesAsync();
+
+            return tokens;
         }
     }
 }

@@ -24,7 +24,7 @@ namespace CashSchedulerWebServer.Tests.Auth
     public class AuthenticatorTest
     {
         private const int TESTING_USER_ID = 1;
-        
+
         private Dictionary<string, string> Configurations { get; } = new()
         {
             {"App:Auth:SkipAuth", "false"},
@@ -35,7 +35,7 @@ namespace CashSchedulerWebServer.Tests.Auth
             {"App:Auth:RefreshTokenLifetime", "10080"},
             {"App:Auth:EmailVerificationTokenLifetime", "3"}
         };
-        
+
         private IAuthenticator Authenticator { get; }
         private Mock<IContextProvider> ContextProvider { get; }
         private Mock<INotificator> Notificator { get; }
@@ -43,8 +43,9 @@ namespace CashSchedulerWebServer.Tests.Auth
         private Mock<IUserRepository> UserRepository { get; }
         private Mock<IUserService> UserService { get; }
         private Mock<IUserRefreshTokenService> UserRefreshTokenService { get; }
+        private Mock<IUserRefreshTokenRepository> UserRefreshTokenRepository { get; }
         private Mock<IUserEmailVerificationCodeService> UserEmailVerificationCodeService { get; }
-        
+
         public AuthenticatorTest()
         {
             ContextProvider = new Mock<IContextProvider>();
@@ -53,20 +54,25 @@ namespace CashSchedulerWebServer.Tests.Auth
             UserRepository = new Mock<IUserRepository>();
             UserService = new Mock<IUserService>();
             UserRefreshTokenService = new Mock<IUserRefreshTokenService>();
+            UserRefreshTokenRepository = new Mock<IUserRefreshTokenRepository>();
             UserEmailVerificationCodeService = new Mock<IUserEmailVerificationCodeService>();
 
             ContextProvider
                 .Setup(u => u.GetRepository<IUserRepository>())
                 .Returns(UserRepository.Object);
-            
+
+            ContextProvider
+                .Setup(u => u.GetRepository<IUserRefreshTokenRepository>())
+                .Returns(UserRefreshTokenRepository.Object);
+
             ContextProvider
                 .Setup(c => c.GetService<IUserService>())
                 .Returns(UserService.Object);
-            
+
             ContextProvider
                 .Setup(c => c.GetService<IUserRefreshTokenService>())
                 .Returns(UserRefreshTokenService.Object);
-            
+
             ContextProvider
                 .Setup(c => c.GetService<IUserEmailVerificationCodeService>())
                 .Returns(UserEmailVerificationCodeService.Object);
@@ -96,18 +102,18 @@ namespace CashSchedulerWebServer.Tests.Auth
                     sha.ComputeHash(Encoding.ASCII.GetBytes(truePassword + Configurations["App:Auth:PasswordSalt"]))
                 );
             }
-            
+
             UserRepository.Setup(u => u.GetByEmail(user.Email)).Returns(user);
 
 
             var tokens = await Authenticator.Login(user.Email, truePassword);
-            
-            
+
+
             Assert.NotNull(tokens);
             Assert.NotNull(tokens.AccessToken);
             Assert.NotNull(tokens.RefreshToken);
         }
-        
+
         [Fact]
         public async Task Login_ThrowsExceptionAboutCredentials()
         {
@@ -148,33 +154,23 @@ namespace CashSchedulerWebServer.Tests.Auth
 
             UserService.Setup(u => u.GetById()).Returns(user);
 
-            UserRefreshTokenService.Setup(u => u.GetByUserId(user.Id)).Returns(refreshToken);
-            
+            UserRefreshTokenService
+                .Setup(u => u.DeleteAllUserTokens(user.Id))
+                .ReturnsAsync(new List<UserRefreshToken>{refreshToken});
+
             UserRefreshTokenService.Setup(u => u.Delete(refreshToken.Id)).ReturnsAsync(refreshToken);
 
 
             var resultUser = await Authenticator.Logout();
-            
+
+
             Assert.NotNull(resultUser);
         }
-        
+
         [Fact]
         public async Task Logout_ThrowsExceptionAboutAuthorization()
         {
-            string usersJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Users.json");
-            var user = JsonConvert.DeserializeObject<List<User>>(usersJson).First(u => u.Id == TESTING_USER_ID);
-
-
-            await Assert.ThrowsAsync<CashSchedulerException>(async () =>
-            {
-                await Authenticator.Logout();
-            });
-
-            await Assert.ThrowsAsync<CashSchedulerException>(async () =>
-            {
-                UserService.Setup(u => u.GetById()).Returns(user);
-                await Authenticator.Logout();
-            });
+            await Assert.ThrowsAsync<CashSchedulerException>(async () => await Authenticator.Logout());
         }
 
         [Fact]
@@ -209,7 +205,7 @@ namespace CashSchedulerWebServer.Tests.Auth
             Assert.Equal(newEmail, resultUser.Email);
             Assert.Equal(newBalance, resultUser.Balance);
         }
-        
+
         [Fact]
         public async Task Register_ThrowsExceptionAboutCredentials()
         {
@@ -224,13 +220,13 @@ namespace CashSchedulerWebServer.Tests.Auth
                 Password = newPassword
             };
 
-            
+
             await Assert.ThrowsAsync<CashSchedulerException>(async () =>
             {
                 UserService.Setup(u => u.HasWithEmail(newEmail)).Returns(true);
                 await Authenticator.Register(newUser);
             });
-            
+
             await Assert.ThrowsAsync<CashSchedulerException>(async () =>
             {
                 UserService.Setup(u => u.HasWithEmail(newEmail)).Returns(false);
@@ -251,26 +247,37 @@ namespace CashSchedulerWebServer.Tests.Auth
                 Token = "1234567890123456789012345678901234567890",
                 User = user
             };
-            
+
+            string hashedRefreshToken;
+
+            using (var sha = SHA256.Create())
+            {
+                hashedRefreshToken = Encoding.ASCII.GetString(
+                    sha.ComputeHash(Encoding.ASCII.GetBytes(refreshToken.Token + Configurations["App:Auth:PasswordSalt"]))
+                );
+            }
+
             UserRepository.Setup(u => u.GetByEmail(user.Email)).Returns(user);
 
-            UserRefreshTokenService.Setup(u => u.GetByUserId(user.Id)).Returns(refreshToken);
+            UserRefreshTokenRepository
+                .Setup(u => u.GetByUserAndToken(user.Id, hashedRefreshToken))
+                .Returns(refreshToken);
 
 
             var tokens = await Authenticator.Token(user.Email, refreshToken.Token);
-            
-            
+
+
             Assert.NotNull(tokens);
             Assert.NotNull(tokens.AccessToken);
             Assert.NotNull(tokens.RefreshToken);
         }
-        
+
         [Fact]
         public async Task Token_ThrowsExceptionAboutRefreshToken()
         {
             string usersJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Users.json");
             var user = JsonConvert.DeserializeObject<List<User>>(usersJson).First(u => u.Id == TESTING_USER_ID);
-            
+
             var refreshToken = new UserRefreshToken
             {
                 Id = 101,
@@ -278,15 +285,28 @@ namespace CashSchedulerWebServer.Tests.Auth
                 Token = "1234567890123456789012345678901234567890",
                 User = user
             };
-            
+
+
             await Assert.ThrowsAsync<CashSchedulerException>(async () =>
             {
                 await Authenticator.Token(user.Email, refreshToken.Token);
             });
-            
+
+
+            string hashedRefreshToken;
+
+            using (var sha = SHA256.Create())
+            {
+                hashedRefreshToken = Encoding.ASCII.GetString(
+                    sha.ComputeHash(Encoding.ASCII.GetBytes(refreshToken.Token + Configurations["App:Auth:PasswordSalt"]))
+                );
+            }
+
             UserRepository.Setup(u => u.GetByEmail(user.Email)).Returns(user);
-            
-            UserRefreshTokenService.Setup(u => u.GetByUserId(user.Id)).Returns(refreshToken);
+
+            UserRefreshTokenRepository
+                .Setup(u => u.GetByUserAndToken(user.Id, hashedRefreshToken))
+                .Returns(refreshToken);
 
             await Assert.ThrowsAsync<CashSchedulerException>(async () =>
             {
@@ -307,7 +327,7 @@ namespace CashSchedulerWebServer.Tests.Auth
                 User = user,
                 Code = "123467"
             };
-            
+
             UserRepository.Setup(u => u.GetByEmail(user.Email)).Returns(user);
 
             UserEmailVerificationCodeService
@@ -334,7 +354,7 @@ namespace CashSchedulerWebServer.Tests.Auth
                 User = user,
                 Code = "123467"
             };
-            
+
             UserRepository.Setup(u => u.GetByEmail(user.Email)).Returns(user);
 
             await Assert.ThrowsAsync<CashSchedulerException>(async () =>
@@ -345,12 +365,12 @@ namespace CashSchedulerWebServer.Tests.Auth
             UserEmailVerificationCodeService
                 .Setup(u => u.GetByUserId(user.Id))
                 .Returns(emailVerificationCode);
-            
+
             await Assert.ThrowsAsync<CashSchedulerException>(async () =>
             {
                 await Authenticator.CheckCode(user.Email, emailVerificationCode.Code);
             });
-            
+
             await Assert.ThrowsAsync<CashSchedulerException>(async () =>
             {
                 emailVerificationCode.ExpiredDate = emailVerificationCode.ExpiredDate.AddMinutes(3);
@@ -365,7 +385,7 @@ namespace CashSchedulerWebServer.Tests.Auth
             var user = JsonConvert.DeserializeObject<List<User>>(usersJson).First(u => u.Id == TESTING_USER_ID);
 
             const string newPassword = "P@$$w0rd";
-            
+
             var emailVerificationCode = new UserEmailVerificationCode
             {
                 Id = 131,
@@ -373,26 +393,26 @@ namespace CashSchedulerWebServer.Tests.Auth
                 User = user,
                 Code = "123467"
             };
-            
+
             UserRepository.Setup(u => u.GetByEmail(user.Email)).Returns(user);
 
             UserService.Setup(u => u.UpdatePassword(user.Email, newPassword)).ReturnsAsync(user);
-            
+
             UserEmailVerificationCodeService
                 .Setup(u => u.GetByUserId(user.Id))
                 .Returns(emailVerificationCode);
 
 
             var resultUser = await Authenticator.ResetPassword(user.Email, emailVerificationCode.Code, newPassword);
-            
-            
+
+
             Assert.NotNull(resultUser);
             Assert.Equal(user.FirstName, resultUser.FirstName);
             Assert.Equal(user.LastName, resultUser.LastName);
             Assert.Equal(user.Email, resultUser.Email);
             Assert.Equal(user.Balance, resultUser.Balance);
         }
-        
+
         [Fact]
         public async Task ResetPassword_ThrowsExceptionAboutCredentials()
         {
@@ -400,7 +420,7 @@ namespace CashSchedulerWebServer.Tests.Auth
             var user = JsonConvert.DeserializeObject<List<User>>(usersJson).First(u => u.Id == TESTING_USER_ID);
 
             const string weekPassword = "password";
-            
+
             var emailVerificationCode = new UserEmailVerificationCode
             {
                 Id = 131,
@@ -408,7 +428,7 @@ namespace CashSchedulerWebServer.Tests.Auth
                 User = user,
                 Code = "123467"
             };
-            
+
             UserRepository.Setup(u => u.GetByEmail(user.Email)).Returns(user);
 
             UserEmailVerificationCodeService

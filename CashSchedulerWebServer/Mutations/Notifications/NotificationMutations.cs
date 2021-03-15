@@ -21,17 +21,5 @@ namespace CashSchedulerWebServer.Mutations.Notifications
         {
             return contextProvider.GetService<IUserNotificationService>().ToggleRead(id, read);
         }
-
-        [GraphQLNonNullType]
-        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public Task<UserNotification> CreateNotification([Service] IContextProvider contextProvider)
-        {
-            return contextProvider.GetService<IUserNotificationService>().Create(new UserNotification
-            {
-                Title = "test title",
-                Content = "test",
-                IsRead = false
-            });
-        }
     }
 }

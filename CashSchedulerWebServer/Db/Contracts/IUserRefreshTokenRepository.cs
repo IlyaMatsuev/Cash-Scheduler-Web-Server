@@ -1,9 +1,15 @@
-﻿using CashSchedulerWebServer.Models;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using CashSchedulerWebServer.Models;
 
 namespace CashSchedulerWebServer.Db.Contracts
 {
     public interface IUserRefreshTokenRepository : IRepository<int, UserRefreshToken>
     {
-        UserRefreshToken GetByUserId(int id);
+        IEnumerable<UserRefreshToken> GetByUserId(int userId);
+
+        UserRefreshToken GetByUserAndToken(int userId, string token);
+
+        Task<IEnumerable<UserRefreshToken>> Delete(IEnumerable<UserRefreshToken> tokens);
     }
 }
