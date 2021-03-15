@@ -46,7 +46,7 @@ namespace CashSchedulerWebServer.Db.Repositories
                     .Include(c => c.Type)
                     .Include(c => c.User);
             }
-            
+
             return Context.Categories
                 .Where(c => !c.IsCustom && c.Type.Name == transactionType)
                 .Include(c => c.Type)
@@ -64,7 +64,7 @@ namespace CashSchedulerWebServer.Db.Repositories
                     .Include(c => c.Type)
                     .Include(c => c.User);
             }
-            
+
             return Context.Categories
                 .Where(c => c.IsCustom 
                             && c.User != null
@@ -86,7 +86,7 @@ namespace CashSchedulerWebServer.Db.Repositories
         public async Task<Category> Create(Category category)
         {
             ModelValidator.ValidateModelAttributes(category);
-            
+
             await Context.Categories.AddAsync(category);
             await Context.SaveChangesAsync();
 
@@ -106,12 +106,7 @@ namespace CashSchedulerWebServer.Db.Repositories
         public async Task<Category> Delete(int id)
         {
             var category = GetByKey(id);
-            
-            var relatedTransactions = Context.Transactions.Where(t => t.Category.Id == id);
-            var relatedRegularTransactions = Context.RegularTransactions.Where(t => t.Category.Id == id);
 
-            Context.Transactions.RemoveRange(relatedTransactions);
-            Context.RegularTransactions.RemoveRange(relatedRegularTransactions);
             Context.Categories.Remove(category);
             await Context.SaveChangesAsync();
 

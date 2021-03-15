@@ -5,7 +5,6 @@ using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Services.Contracts;
-using CashSchedulerWebServer.Utils;
 
 namespace CashSchedulerWebServer.Services.Categories
 {
@@ -87,7 +86,7 @@ namespace CashSchedulerWebServer.Services.Categories
             return categoryRepository.Update(targetCategory);
         }
 
-        public Task<Category> Delete(int id)
+        public async Task<Category> Delete(int id)
         {
             var categoryRepository = ContextProvider.GetRepository<ICategoryRepository>();
 
@@ -96,13 +95,22 @@ namespace CashSchedulerWebServer.Services.Categories
             {
                 throw new CashSchedulerException("There is no such category");
             }
-            
+
             if (!category.IsCustom)
             {
                 throw new CashSchedulerException("You cannot delete one of the standard categories");
             }
 
-            return categoryRepository.Delete(id);
+            var relatedTransactions = await ContextProvider.GetRepository<ITransactionRepository>().DeleteByCategoryId(id);
+            await ContextProvider.GetRepository<IRegularTransactionRepository>().DeleteByCategoryId(id);
+
+            await ContextProvider.GetService<IWalletService>().UpdateBalance(
+                relatedTransactions,
+                relatedTransactions,
+                isDelete: true
+            );
+
+            return await categoryRepository.Delete(id);
         }
     }
 }

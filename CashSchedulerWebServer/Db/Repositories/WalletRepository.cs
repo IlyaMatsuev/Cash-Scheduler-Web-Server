@@ -65,10 +65,23 @@ namespace CashSchedulerWebServer.Db.Repositories
             return wallet;
         }
 
+        public async Task<IEnumerable<Wallet>> Update(IEnumerable<Wallet> wallets)
+        {
+            Context.Wallets.UpdateRange(wallets);
+            await Context.SaveChangesAsync();
+
+            return wallets;
+        }
+
         public async Task<Wallet> Delete(int id)
         {
             var wallet = GetByKey(id);
 
+            var relatedTransactions = Context.Transactions.Where(t => t.Wallet.Id == id);
+            var relatedRegularTransactions = Context.RegularTransactions.Where(t => t.Wallet.Id == id);
+
+            Context.Transactions.RemoveRange(relatedTransactions);
+            Context.RegularTransactions.RemoveRange(relatedRegularTransactions);
             Context.Wallets.Remove(wallet);
             await Context.SaveChangesAsync();
 

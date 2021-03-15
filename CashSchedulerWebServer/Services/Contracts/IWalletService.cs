@@ -19,6 +19,13 @@ namespace CashSchedulerWebServer.Services.Contracts
             bool isUpdate = false,
             bool isDelete = false);
 
+        Task<IEnumerable<Wallet>> UpdateBalance(
+            IEnumerable<Transaction> transactions,
+            IEnumerable<Transaction> oldTransactions,
+            bool isCreate = false,
+            bool isUpdate = false,
+            bool isDelete = false);
+
         Task<Transfer> CreateTransfer(Transfer transfer);
     }
 }

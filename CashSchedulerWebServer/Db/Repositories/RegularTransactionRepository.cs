@@ -65,7 +65,7 @@ namespace CashSchedulerWebServer.Db.Repositories
                 .Include(t => t.Wallet.Currency)
                 .FirstOrDefault();
         }
-        
+
         public async Task<RegularTransaction> Create(RegularTransaction transaction)
         {
             ModelValidator.ValidateModelAttributes(transaction);
@@ -89,11 +89,20 @@ namespace CashSchedulerWebServer.Db.Repositories
         public async Task<RegularTransaction> Delete(int id)
         {
             var transaction = GetByKey(id);
-            
+
             Context.RegularTransactions.Remove(transaction);
             await Context.SaveChangesAsync();
 
             return transaction;
+        }
+
+        public async Task<IEnumerable<RegularTransaction>> DeleteByCategoryId(int categoryId)
+        {
+            var transactions = Context.RegularTransactions
+                .Where(t => t.Category.Id == categoryId && t.User.Id == UserId);
+            Context.RegularTransactions.RemoveRange(transactions);
+            await Context.SaveChangesAsync();
+            return transactions;
         }
     }
 }
