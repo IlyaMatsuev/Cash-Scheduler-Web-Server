@@ -98,8 +98,14 @@ namespace CashSchedulerWebServer.Db.Repositories
 
         public async Task<IEnumerable<RegularTransaction>> DeleteByCategoryId(int categoryId)
         {
-            var transactions = Context.RegularTransactions
-                .Where(t => t.Category.Id == categoryId && t.User.Id == UserId);
+            var transactions = Context.RegularTransactions.Where(t => t.Category.Id == categoryId && t.User.Id == UserId)
+                .Include(t => t.User)
+                .Include(t => t.Category)
+                .Include(t => t.Category.Type)
+                .Include(t => t.Wallet)
+                .Include(t => t.Wallet.Currency)
+                .ToList();
+
             Context.RegularTransactions.RemoveRange(transactions);
             await Context.SaveChangesAsync();
             return transactions;

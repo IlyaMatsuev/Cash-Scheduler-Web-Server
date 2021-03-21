@@ -39,7 +39,7 @@ namespace CashSchedulerWebServer.Db.Repositories
 
         public Wallet GetByKey(int id)
         {
-            return Context.Wallets.Where(w => w.Id == id && w.User.Id == UserId)
+            return Context.Wallets.Where(w => w.Id == id)
                 .Include(w => w.User)
                 .Include(w => w.Currency)
                 .FirstOrDefault();

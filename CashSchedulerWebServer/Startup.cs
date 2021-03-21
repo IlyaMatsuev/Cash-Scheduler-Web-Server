@@ -22,10 +22,10 @@ using CashSchedulerWebServer.Auth.AuthorizationHandlers;
 using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Events;
 using CashSchedulerWebServer.Events.Contracts;
+using CashSchedulerWebServer.Events.Salesforce;
 using CashSchedulerWebServer.Events.UserEvents;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Jobs.Contracts;
-using CashSchedulerWebServer.Jobs.ExchangeRates;
 using CashSchedulerWebServer.Mutations;
 using CashSchedulerWebServer.Mutations.Categories;
 using CashSchedulerWebServer.Mutations.CurrencyExchangeRates;
@@ -51,6 +51,7 @@ using CashSchedulerWebServer.Subscriptions;
 using CashSchedulerWebServer.Subscriptions.Notifications;
 using CashSchedulerWebServer.WebServices.Contracts;
 using CashSchedulerWebServer.WebServices.ExchangeRates;
+using CashSchedulerWebServer.WebServices.Salesforce;
 using HotChocolate.AspNetCore;
 using Microsoft.Extensions.FileProviders;
 
@@ -110,12 +111,16 @@ namespace CashSchedulerWebServer
             services.AddScoped<IEventManager, EventManager>();
             services.AddScoped<IEventListener, CreateDefaultWalletListener>();
             services.AddScoped<IEventListener, CreateDefaultSettingsListener>();
+            services.AddScoped<IEventListener, CreateSfContactListener>();
+            services.AddScoped<IEventListener, UpsertSfRecordListener>();
+            services.AddScoped<IEventListener, DeleteSfRecordListener>();
 
             #endregion
 
             #region WebServices
 
             services.AddTransient<IExchangeRateWebService, ExchangeRateWebService>();
+            services.AddTransient<ISalesforceApiWebService, SalesforceApiWebService>();
 
             #endregion
 
@@ -132,7 +137,6 @@ namespace CashSchedulerWebServer
             services.AddSingleton<ISchedulerFactory, StdSchedulerFactory>();
             services.AddTransient<TransactionsJob>();
             services.AddTransient<RecurringTransactionsJob>();
-            services.AddTransient<ExchangeRateJob>();
             services.AddSingleton(GetJobsList(Configuration));
             services.AddHostedService<CashSchedulerHostedService>();
             
@@ -225,11 +229,7 @@ namespace CashSchedulerWebServer
                 new JobMetadata(
                     typeof(RecurringTransactionsJob),
                     configuration["App:Jobs:RecurringTransactions:Name"],
-                    configuration["App:Jobs:RecurringTransactions:Cron"]),
-                new JobMetadata(
-                    typeof(ExchangeRateJob),
-                    configuration["App:Jobs:ExchangeRates:Name"],
-                    configuration["App:Jobs:ExchangeRates:Cron"])
+                    configuration["App:Jobs:RecurringTransactions:Cron"])
             };
         }
 

@@ -11,6 +11,7 @@ using Quartz;
 
 namespace CashSchedulerWebServer.Jobs.ExchangeRates
 {
+    [Obsolete]
     public class ExchangeRateJob : IJob
     {
         private CashSchedulerContext Context { get; }

@@ -2,6 +2,8 @@
 {
     public enum EventAction
     {
-        UserRegistered
+        UserRegistered,
+        RecordUpserted,
+        RecordDeleted
     }
 }

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
+using CashSchedulerWebServer.Events.Contracts;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Services.Contracts;
 using CashSchedulerWebServer.Services.Users;
@@ -24,11 +25,13 @@ namespace CashSchedulerWebServer.Tests.Services
         private IUserService UserService { get; }
         private Mock<IUserRepository> UserRepository { get; }
         private Mock<IContextProvider> ContextProvider { get; }
+        private Mock<IEventManager> EventManager { get; }
         private Mock<IUserContext> UserContext { get; }
 
         public UserServiceTest()
         {
             ContextProvider = new Mock<IContextProvider>();
+            EventManager = new Mock<IEventManager>();
             UserRepository = new Mock<IUserRepository>();
             UserContext = new Mock<IUserContext>();
 
@@ -43,7 +46,8 @@ namespace CashSchedulerWebServer.Tests.Services
                     {
                         {"App:Auth:PasswordSalt", HASH_SALT}
                     }).Build(),
-                UserContext.Object
+                UserContext.Object,
+                EventManager.Object
             );
         }
 

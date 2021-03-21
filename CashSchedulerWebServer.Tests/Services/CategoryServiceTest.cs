@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
+using CashSchedulerWebServer.Events.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Services.Categories;
@@ -18,6 +19,7 @@ namespace CashSchedulerWebServer.Tests.Services
     {
         private ICategoryService CategoryService { get; }
         private Mock<IWalletService> WalletService { get; }
+        private Mock<IEventManager> EventManager { get; }
         private Mock<ITransactionTypeRepository> TransactionTypeRepository { get; }
         private Mock<ICategoryRepository> CategoryRepository { get; }
         private Mock<ITransactionRepository> TransactionRepository { get; }
@@ -29,6 +31,7 @@ namespace CashSchedulerWebServer.Tests.Services
         public CategoryServiceTest()
         {
             ContextProvider = new Mock<IContextProvider>();
+            EventManager = new Mock<IEventManager>();
             TransactionTypeRepository = new Mock<ITransactionTypeRepository>();
             CategoryRepository = new Mock<ICategoryRepository>();
             TransactionRepository = new Mock<ITransactionRepository>();
@@ -62,7 +65,7 @@ namespace CashSchedulerWebServer.Tests.Services
                 .Setup(c => c.GetService<IWalletService>())
                 .Returns(WalletService.Object);
 
-            CategoryService = new CategoryService(ContextProvider.Object, UserContext.Object);
+            CategoryService = new CategoryService(ContextProvider.Object, UserContext.Object, EventManager.Object);
         }
 
 
@@ -224,7 +227,7 @@ namespace CashSchedulerWebServer.Tests.Services
                 .Setup(c => c.Create(category))
                 .ReturnsAsync(category);
 
-            var categoryService = new CategoryService(ContextProvider.Object, UserContext.Object);
+            var categoryService = new CategoryService(ContextProvider.Object, UserContext.Object, EventManager.Object);
 
 
             var resultCategory = await categoryService.Create(category);

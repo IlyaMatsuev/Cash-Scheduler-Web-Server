@@ -1,6 +1,8 @@
 ﻿using System.Threading.Tasks;
 using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
+using CashSchedulerWebServer.Events;
+using CashSchedulerWebServer.Events.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Services.Contracts;
@@ -12,19 +14,25 @@ namespace CashSchedulerWebServer.Services.Users
     public class UserService : IUserService
     {
         private IContextProvider ContextProvider { get; }
+        private IEventManager EventManager { get; }
         private IUserRepository UserRepository { get; }
         private IConfiguration Configuration { get; }
         private int UserId { get; }
 
-        public UserService(IContextProvider contextProvider, IConfiguration configuration, IUserContext userContext)
+        public UserService(
+            IContextProvider contextProvider,
+            IConfiguration configuration,
+            IUserContext userContext,
+            IEventManager eventManager)
         {
             ContextProvider = contextProvider;
+            EventManager = eventManager;
             UserRepository = contextProvider.GetRepository<IUserRepository>();
             Configuration = configuration;
             UserId = userContext.GetUserId();
         }
-        
-        
+
+
         public User GetById()
         {
             return UserRepository.GetByKey(UserId);
@@ -45,7 +53,7 @@ namespace CashSchedulerWebServer.Services.Users
             ModelValidator.ValidateModelAttributes(user);
 
             user.Password = user.Password.Hash(Configuration);
-            
+
             return UserRepository.Create(user);
         }
 
@@ -54,7 +62,7 @@ namespace CashSchedulerWebServer.Services.Users
             var user = UserRepository.GetByEmail(email);
             if (user == null)
             {
-                throw new CashSchedulerException("There is no such user", new[] { nameof(email) });
+                throw new CashSchedulerException("There is no such user", new[] {nameof(email)});
             }
 
             user.Password = password.Hash(Configuration);
@@ -74,7 +82,7 @@ namespace CashSchedulerWebServer.Services.Users
             {
                 targetUser.FirstName = user.FirstName;
             }
-            
+
             if (user.LastName != null)
             {
                 targetUser.LastName = user.LastName;
@@ -87,7 +95,11 @@ namespace CashSchedulerWebServer.Services.Users
                 await ContextProvider.GetService<IWalletService>().Update(defaultWallet);
             }
 
-            return await UserRepository.Update(targetUser);
+            var createdUser = await UserRepository.Update(targetUser);
+
+            await EventManager.FireEvent(EventAction.RecordUpserted, createdUser);
+
+            return createdUser;
         }
 
         public Task<User> Delete(int id)

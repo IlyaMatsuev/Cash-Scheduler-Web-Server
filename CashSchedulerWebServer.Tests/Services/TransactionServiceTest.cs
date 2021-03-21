@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
+using CashSchedulerWebServer.Events.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Services.Contracts;
@@ -22,6 +23,7 @@ namespace CashSchedulerWebServer.Tests.Services
 
         private ITransactionService TransactionService { get; }
         private IWalletService WalletService { get; }
+        private Mock<IEventManager> EventManager { get; }
         private Mock<IUserRepository> UserRepository { get; }
         private Mock<IWalletRepository> WalletRepository { get; }
         private Mock<ITransactionRepository> TransactionRepository { get; }
@@ -32,6 +34,7 @@ namespace CashSchedulerWebServer.Tests.Services
         public TransactionServiceTest()
         {
             ContextProvider = new Mock<IContextProvider>();
+            EventManager = new Mock<IEventManager>();
             TransactionRepository = new Mock<ITransactionRepository>();
             CategoryRepository = new Mock<ICategoryRepository>();
             UserRepository = new Mock<IUserRepository>();
@@ -57,9 +60,17 @@ namespace CashSchedulerWebServer.Tests.Services
                 .Returns(UserRepository.Object);
 
 
-            TransactionService = new TransactionService(ContextProvider.Object, UserContext.Object);
+            TransactionService = new TransactionService(
+                ContextProvider.Object,
+                UserContext.Object,
+                EventManager.Object
+            );
 
-            WalletService = new WalletService(ContextProvider.Object, UserContext.Object);
+            WalletService = new WalletService(
+                ContextProvider.Object,
+                UserContext.Object,
+                EventManager.Object
+            );
         }
 
 

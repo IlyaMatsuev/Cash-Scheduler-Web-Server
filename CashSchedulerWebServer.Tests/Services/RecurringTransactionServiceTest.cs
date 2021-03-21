@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
+using CashSchedulerWebServer.Events.Contracts;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Services.Contracts;
 using CashSchedulerWebServer.Services.Transactions;
@@ -20,6 +21,7 @@ namespace CashSchedulerWebServer.Tests.Services
         
         private IRecurringTransactionService RecurringTransactionService { get; }
         private Mock<IUserRepository> UserRepository { get; }
+        private Mock<IEventManager> EventManager { get; }
         private Mock<IRegularTransactionRepository> RecurringTransactionRepository { get; }
         private Mock<ICategoryRepository> CategoryRepository { get; }
         private Mock<IWalletRepository> WalletRepository { get; }
@@ -30,6 +32,7 @@ namespace CashSchedulerWebServer.Tests.Services
         public RecurringTransactionServiceTest()
         {
             ContextProvider = new Mock<IContextProvider>();
+            EventManager = new Mock<IEventManager>();
             RecurringTransactionRepository = new Mock<IRegularTransactionRepository>();
             CategoryRepository = new Mock<ICategoryRepository>();
             WalletRepository = new Mock<IWalletRepository>();
@@ -55,7 +58,11 @@ namespace CashSchedulerWebServer.Tests.Services
                 .Returns(UserRepository.Object);
 
 
-            RecurringTransactionService = new RecurringTransactionService(ContextProvider.Object, UserContext.Object);
+            RecurringTransactionService = new RecurringTransactionService(
+                ContextProvider.Object,
+                UserContext.Object,
+                EventManager.Object
+            );
         }
 
 

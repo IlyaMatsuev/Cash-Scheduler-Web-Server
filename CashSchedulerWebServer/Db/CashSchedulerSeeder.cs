@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using CashSchedulerWebServer.WebServices.Contracts;
+using CashSchedulerWebServer.WebServices.Salesforce.SObjects;
 
 namespace CashSchedulerWebServer.Db
 {
@@ -17,6 +19,7 @@ namespace CashSchedulerWebServer.Db
         {
             using var serviceScope = app.ApplicationServices.CreateScope();
             var context = serviceScope.ServiceProvider.GetService<CashSchedulerContext>();
+            var salesforceService = serviceScope.ServiceProvider.GetService<ISalesforceApiWebService>();
 
             context.Database.Migrate();
 
@@ -24,9 +27,11 @@ namespace CashSchedulerWebServer.Db
             try
             {
                 context
+                    .EmptySfDb(salesforceService)
                     .EmptyDb()
                     .ResetIdentitiesSeed()
                     .SeedDb(configuration)
+                    .SeedSfDb(salesforceService)
                     .CompleteTransaction();
             }
             catch (Exception error)
@@ -34,7 +39,30 @@ namespace CashSchedulerWebServer.Db
                 context.PreventTransaction(error);
             }
         }
-        
+
+        private static CashSchedulerContext EmptySfDb(
+            this CashSchedulerContext context,
+            ISalesforceApiWebService salesforceService)
+        {
+            Console.WriteLine("Deleting all salesforce records...");
+            salesforceService.DeleteSObjects(
+                context.Categories.Select(t => new SfCategory(t.Id)).Cast<SfObject>().ToList()
+            ).GetAwaiter().GetResult();
+
+            salesforceService.DeleteSObjects(
+                context.Transactions.Select(t => new SfTransaction(t.Id)).Cast<SfObject>().ToList()
+            ).GetAwaiter().GetResult();
+
+            salesforceService.DeleteSObjects(
+                context.RegularTransactions.Select(t => new SfRecurringTransaction(t.Id)).Cast<SfObject>().ToList()
+            ).GetAwaiter().GetResult();
+
+            salesforceService.DeleteSObjects(
+                context.Users.Select(u => new SfContact(u.Id)).Cast<SfObject>().ToList()
+            ).GetAwaiter().GetResult();
+            return context;
+        }
+
         private static CashSchedulerContext EmptyDb(this CashSchedulerContext context)
         {
             Console.WriteLine("Deleting all records...");
@@ -56,7 +84,7 @@ namespace CashSchedulerWebServer.Db
 
             return context;
         }
-        
+
         private static CashSchedulerContext ResetIdentitiesSeed(this CashSchedulerContext context)
         {
             Console.WriteLine("Resetting tables' identities...");
@@ -111,7 +139,7 @@ namespace CashSchedulerWebServer.Db
             context.Settings.AddRange(settings);
             context.Currencies.AddRange(currencies);
             context.SaveChanges();
-            
+
             wallets.ForEach(wallet =>
             {
                 wallet.User = users.FirstOrDefault(user => user.Id == wallet.User.Id);
@@ -128,7 +156,7 @@ namespace CashSchedulerWebServer.Db
                 category.Type = transactionTypes.FirstOrDefault(type => type.Name == category.Type.Name);
                 if (category.IsCustom)
                 {
-                    category.User = users.FirstOrDefault(user => user.Id == category.User.Id);   
+                    category.User = users.FirstOrDefault(user => user.Id == category.User.Id);
                     if (category.User != null && category.Type != null)
                     {
                         context.Categories.Add(category);
@@ -194,6 +222,44 @@ namespace CashSchedulerWebServer.Db
             });
 
             context.SaveChanges();
+
+            return context;
+        }
+
+        private static CashSchedulerContext SeedSfDb(
+            this CashSchedulerContext context,
+            ISalesforceApiWebService salesforceService)
+        {
+            Console.WriteLine("Loading salesforce data...");
+            var users = context.Users;
+            var wallets = context.Wallets
+                .Include(w => w.User).ToList();
+            var categories = context.Categories
+                .Include(c => c.User)
+                .Include(c => c.Type).ToList();
+            var transactions = context.Transactions
+                .Include(t => t.User)
+                .Include(t => t.Category)
+                .Include(t => t.Wallet).ToList();
+            var recurringTransactions = context.RegularTransactions
+                .Include(t => t.User)
+                .Include(t => t.Category)
+                .Include(t => t.Wallet).ToList();
+
+            salesforceService.UpsertSObjects(users.Select(u => new SfContact(u, u.Id)).Cast<SfObject>().ToList())
+                .GetAwaiter().GetResult();
+
+            salesforceService.UpsertSObjects(wallets.Select(w => new SfWallet(w, w.Id)).Cast<SfObject>().ToList())
+                .GetAwaiter().GetResult();
+
+            salesforceService.UpsertSObjects(categories.Select(c => new SfCategory(c, c.Id)).Cast<SfObject>().ToList())
+                .GetAwaiter().GetResult();
+
+            salesforceService.UpsertSObjects(transactions.Select(t => new SfTransaction(t, t.Id)).Cast<SfObject>().ToList())
+                .GetAwaiter().GetResult();
+
+            salesforceService.UpsertSObjects(recurringTransactions.Select(t => new SfRecurringTransaction(t, t.Id)).Cast<SfObject>().ToList())
+                .GetAwaiter().GetResult();
 
             return context;
         }

@@ -2,6 +2,8 @@
 using System.Threading.Tasks;
 using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
+using CashSchedulerWebServer.Events;
+using CashSchedulerWebServer.Events.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Services.Contracts;
@@ -11,14 +13,17 @@ namespace CashSchedulerWebServer.Services.Transactions
     public class TransactionService : ITransactionService
     {
         private IContextProvider ContextProvider { get; }
+        private IEventManager EventManager { get; }
         private int UserId { get; }
 
-        public TransactionService(IContextProvider contextProvider, IUserContext userContext)
+        public TransactionService(IContextProvider contextProvider, IUserContext userContext,
+            IEventManager eventManager)
         {
             ContextProvider = contextProvider;
+            EventManager = eventManager;
             UserId = userContext.GetUserId();
         }
-        
+
 
         public IEnumerable<Transaction> GetDashboardTransactions(int month, int year)
         {
@@ -36,10 +41,11 @@ namespace CashSchedulerWebServer.Services.Transactions
 
             transaction.User = ContextProvider.GetRepository<IUserRepository>().GetByKey(UserId);
 
-            transaction.Category = ContextProvider.GetRepository<ICategoryRepository>().GetByKey(transaction.CategoryId);
+            transaction.Category =
+                ContextProvider.GetRepository<ICategoryRepository>().GetByKey(transaction.CategoryId);
             if (transaction.Category == null)
             {
-                throw new CashSchedulerException("There is no such category", new[] { "categoryId" });
+                throw new CashSchedulerException("There is no such category", new[] {"categoryId"});
             }
 
             transaction.Wallet = transaction.WalletId == default
@@ -48,18 +54,20 @@ namespace CashSchedulerWebServer.Services.Transactions
 
             if (transaction.Wallet == null)
             {
-                throw new CashSchedulerException("There is no such wallet", new[] { "walletId" });
+                throw new CashSchedulerException("There is no such wallet", new[] {"walletId"});
             }
 
             if (transaction.Category.Type.Name == TransactionType.Options.Expense.ToString()
                 && transaction.Wallet.Balance < transaction.Amount)
             {
-                throw new CashSchedulerException("Amount cannot be greater than the balance", new[] { "amount" });
+                throw new CashSchedulerException("Amount cannot be greater than the balance", new[] {"amount"});
             }
 
             transaction = await transactionRepository.Create(transaction);
 
             await ContextProvider.GetService<IWalletService>().UpdateBalance(transaction, null, true);
+
+            await EventManager.FireEvent(EventAction.RecordUpserted, transaction);
 
             return transaction;
         }
@@ -99,12 +107,15 @@ namespace CashSchedulerWebServer.Services.Transactions
                 && transaction.Amount - oldTransaction.Amount > 0
                 && oldTransaction.Wallet.Balance < transaction.Amount - oldTransaction.Amount)
             {
-                throw new CashSchedulerException("Amount cannot be greater than the balance", new[] { "amount" });
+                throw new CashSchedulerException("Amount cannot be greater than the balance", new[] {"amount"});
             }
 
             targetTransaction = await transactionRepository.Update(targetTransaction);
 
-            await ContextProvider.GetService<IWalletService>().UpdateBalance(targetTransaction, oldTransaction, isUpdate: true);
+            await ContextProvider.GetService<IWalletService>()
+                .UpdateBalance(targetTransaction, oldTransaction, isUpdate: true);
+
+            await EventManager.FireEvent(EventAction.RecordUpserted, targetTransaction);
 
             return targetTransaction;
         }
@@ -120,8 +131,10 @@ namespace CashSchedulerWebServer.Services.Transactions
             }
 
             transaction = await transactionRepository.Delete(id);
-            
+
             await ContextProvider.GetService<IWalletService>().UpdateBalance(transaction, transaction, isDelete: true);
+
+            await EventManager.FireEvent(EventAction.RecordDeleted, transaction);
 
             return transaction;
         }
