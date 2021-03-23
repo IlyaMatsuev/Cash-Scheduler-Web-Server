@@ -65,6 +65,8 @@ namespace CashSchedulerWebServer.Auth
                 ExpiredDate = refreshToken.expiresIn
             });
 
+            await EventManager.FireEvent(EventAction.UserLogin, user);
+
             return new AuthTokens
             {
                 AccessToken = accessToken.token,
@@ -140,6 +142,8 @@ namespace CashSchedulerWebServer.Auth
             userRefreshToken.Token = newRefreshToken.token.Hash(Configuration);
 
             await ContextProvider.GetService<IUserRefreshTokenService>().Update(userRefreshToken);
+
+            await EventManager.FireEvent(EventAction.UserLogin, user);
 
             return new AuthTokens
             {

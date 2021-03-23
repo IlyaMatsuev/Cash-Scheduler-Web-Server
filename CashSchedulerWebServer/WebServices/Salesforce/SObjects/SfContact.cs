@@ -1,4 +1,5 @@
-﻿using CashSchedulerWebServer.Models;
+﻿using System;
+using CashSchedulerWebServer.Models;
 
 namespace CashSchedulerWebServer.WebServices.Salesforce.SObjects
 {
@@ -11,6 +12,8 @@ namespace CashSchedulerWebServer.WebServices.Salesforce.SObjects
         public string LastName { get; }
 
         public string Email { get; }
+        
+        public DateTime? LastLoginDate__c { get; }
 
         public SfContact(int id) : base(id) {}
 
@@ -20,6 +23,7 @@ namespace CashSchedulerWebServer.WebServices.Salesforce.SObjects
             FirstName = user.FirstName;
             LastName = user.LastName ?? user.Email;
             Email = user.Email;
+            LastLoginDate__c = user.LastLoginDate;
         }
 
         public SfContact(User user, int id) : base(id)
@@ -27,6 +31,7 @@ namespace CashSchedulerWebServer.WebServices.Salesforce.SObjects
             FirstName = user.FirstName;
             LastName = user.LastName ?? user.Email;
             Email = user.Email;
+            LastLoginDate__c = user.LastLoginDate;
         }
     }
 }

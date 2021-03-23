@@ -2,6 +2,7 @@
 {
     public enum EventAction
     {
+        UserLogin,
         UserRegistered,
         RecordUpserted,
         RecordDeleted

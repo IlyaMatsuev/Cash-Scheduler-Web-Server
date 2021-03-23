@@ -114,6 +114,7 @@ namespace CashSchedulerWebServer
             services.AddScoped<IEventListener, CreateSfContactListener>();
             services.AddScoped<IEventListener, UpsertSfRecordListener>();
             services.AddScoped<IEventListener, DeleteSfRecordListener>();
+            services.AddScoped<IEventListener, LogUserLoginListener>();
 
             #endregion
 
