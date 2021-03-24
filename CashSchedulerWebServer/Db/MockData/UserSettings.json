@@ -6,7 +6,7 @@
     "Setting": {
       "Name": "ShowBalance"
     },
-    "Value": "true"
+    "Value": "false"
   },
   {
     "User": {
@@ -33,7 +33,7 @@
     "Setting": {
       "Name": "TurnNotificationsSoundOn"
     },
-    "Value": "false"
+    "Value": "true"
   },
   {
     "User": {
@@ -51,7 +51,7 @@
     "Setting": {
       "Name": "TurnNotificationsOn"
     },
-    "Value": "true"
+    "Value": "false"
   },
   {
     "User": {
@@ -87,7 +87,7 @@
     "Setting": {
       "Name": "TurnNotificationsOn"
     },
-    "Value": "false"
+    "Value": "true"
   },
   {
     "User": {
@@ -96,7 +96,7 @@
     "Setting": {
       "Name": "DuplicateToEmail"
     },
-    "Value": "true"
+    "Value": "false"
   },
   {
     "User": {
@@ -132,123 +132,6 @@
     "Setting": {
       "Name": "DuplicateToEmail"
     },
-    "Value": "true"
-  },
-  {
-    "User": {
-      "Id": 4
-    },
-    "Setting": {
-      "Name": "TurnNotificationsSoundOn"
-    },
-    "Value": "false"
-  },
-  {
-    "User": {
-      "Id": 1
-    },
-    "Setting": {
-      "Name": "ShowBalance"
-    },
-    "Value": "false"
-  },
-  {
-    "User": {
-      "Id": 1
-    },
-    "Setting": {
-      "Name": "TurnNotificationsOn"
-    },
-    "Value": "true"
-  },
-  {
-    "User": {
-      "Id": 1
-    },
-    "Setting": {
-      "Name": "DuplicateToEmail"
-    },
-    "Value": "false"
-  },
-  {
-    "User": {
-      "Id": 1
-    },
-    "Setting": {
-      "Name": "TurnNotificationsSoundOn"
-    },
-    "Value": "false"
-  },
-  {
-    "User": {
-      "Id": 2
-    },
-    "Setting": {
-      "Name": "ShowBalance"
-    },
-    "Value": "true"
-  },
-  {
-    "User": {
-      "Id": 2
-    },
-    "Setting": {
-      "Name": "TurnNotificationsOn"
-    },
-    "Value": "true"
-  },
-  {
-    "User": {
-      "Id": 2
-    },
-    "Setting": {
-      "Name": "DuplicateToEmail"
-    },
-    "Value": "false"
-  },
-  {
-    "User": {
-      "Id": 2
-    },
-    "Setting": {
-      "Name": "TurnNotificationsSoundOn"
-    },
-    "Value": "true"
-  },
-  {
-    "User": {
-      "Id": 3
-    },
-    "Setting": {
-      "Name": "ShowBalance"
-    },
-    "Value": "true"
-  },
-  {
-    "User": {
-      "Id": 3
-    },
-    "Setting": {
-      "Name": "TurnNotificationsOn"
-    },
-    "Value": "true"
-  },
-  {
-    "User": {
-      "Id": 3
-    },
-    "Setting": {
-      "Name": "DuplicateToEmail"
-    },
-    "Value": "true"
-  },
-  {
-    "User": {
-      "Id": 3
-    },
-    "Setting": {
-      "Name": "TurnNotificationsSoundOn"
-    },
     "Value": "false"
   },
   {
@@ -256,13 +139,22 @@
       "Id": 4
     },
     "Setting": {
-      "Name": "ShowBalance"
+      "Name": "TurnNotificationsSoundOn"
     },
     "Value": "false"
   },
   {
     "User": {
-      "Id": 4
+      "Id": 5
+    },
+    "Setting": {
+      "Name": "ShowBalance"
+    },
+    "Value": "true"
+  },
+  {
+    "User": {
+      "Id": 5
     },
     "Setting": {
       "Name": "TurnNotificationsOn"
@@ -271,7 +163,7 @@
   },
   {
     "User": {
-      "Id": 4
+      "Id": 5
     },
     "Setting": {
       "Name": "DuplicateToEmail"
@@ -280,7 +172,43 @@
   },
   {
     "User": {
-      "Id": 4
+      "Id": 5
+    },
+    "Setting": {
+      "Name": "TurnNotificationsSoundOn"
+    },
+    "Value": "true"
+  },
+  {
+    "User": {
+      "Id": 6
+    },
+    "Setting": {
+      "Name": "ShowBalance"
+    },
+    "Value": "false"
+  },
+  {
+    "User": {
+      "Id": 6
+    },
+    "Setting": {
+      "Name": "TurnNotificationsOn"
+    },
+    "Value": "true"
+  },
+  {
+    "User": {
+      "Id": 6
+    },
+    "Setting": {
+      "Name": "DuplicateToEmail"
+    },
+    "Value": "false"
+  },
+  {
+    "User": {
+      "Id": 6
     },
     "Setting": {
       "Name": "TurnNotificationsSoundOn"
@@ -289,7 +217,7 @@
   },
   {
     "User": {
-      "Id": 1
+      "Id": 7
     },
     "Setting": {
       "Name": "ShowBalance"
@@ -298,7 +226,7 @@
   },
   {
     "User": {
-      "Id": 1
+      "Id": 7
     },
     "Setting": {
       "Name": "TurnNotificationsOn"
@@ -307,7 +235,7 @@
   },
   {
     "User": {
-      "Id": 1
+      "Id": 7
     },
     "Setting": {
       "Name": "DuplicateToEmail"
@@ -316,7 +244,43 @@
   },
   {
     "User": {
-      "Id": 1
+      "Id": 7
+    },
+    "Setting": {
+      "Name": "TurnNotificationsSoundOn"
+    },
+    "Value": "true"
+  },
+  {
+    "User": {
+      "Id": 8
+    },
+    "Setting": {
+      "Name": "ShowBalance"
+    },
+    "Value": "true"
+  },
+  {
+    "User": {
+      "Id": 8
+    },
+    "Setting": {
+      "Name": "TurnNotificationsOn"
+    },
+    "Value": "true"
+  },
+  {
+    "User": {
+      "Id": 8
+    },
+    "Setting": {
+      "Name": "DuplicateToEmail"
+    },
+    "Value": "true"
+  },
+  {
+    "User": {
+      "Id": 8
     },
     "Setting": {
       "Name": "TurnNotificationsSoundOn"
@@ -325,7 +289,7 @@
   },
   {
     "User": {
-      "Id": 2
+      "Id": 9
     },
     "Setting": {
       "Name": "ShowBalance"
@@ -334,7 +298,7 @@
   },
   {
     "User": {
-      "Id": 2
+      "Id": 9
     },
     "Setting": {
       "Name": "TurnNotificationsOn"
@@ -343,7 +307,43 @@
   },
   {
     "User": {
-      "Id": 2
+      "Id": 9
+    },
+    "Setting": {
+      "Name": "DuplicateToEmail"
+    },
+    "Value": "false"
+  },
+  {
+    "User": {
+      "Id": 9
+    },
+    "Setting": {
+      "Name": "TurnNotificationsSoundOn"
+    },
+    "Value": "true"
+  },
+  {
+    "User": {
+      "Id": 10
+    },
+    "Setting": {
+      "Name": "ShowBalance"
+    },
+    "Value": "false"
+  },
+  {
+    "User": {
+      "Id": 10
+    },
+    "Setting": {
+      "Name": "TurnNotificationsOn"
+    },
+    "Value": "true"
+  },
+  {
+    "User": {
+      "Id": 10
     },
     "Setting": {
       "Name": "DuplicateToEmail"
@@ -352,7 +352,7 @@
   },
   {
     "User": {
-      "Id": 2
+      "Id": 10
     },
     "Setting": {
       "Name": "TurnNotificationsSoundOn"
