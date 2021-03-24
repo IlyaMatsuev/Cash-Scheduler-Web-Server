@@ -31,6 +31,7 @@ using CashSchedulerWebServer.Mutations.Categories;
 using CashSchedulerWebServer.Mutations.CurrencyExchangeRates;
 using CashSchedulerWebServer.Mutations.Notifications;
 using CashSchedulerWebServer.Mutations.RecurringTransactions;
+using CashSchedulerWebServer.Mutations.Salesforce;
 using CashSchedulerWebServer.Mutations.Settings;
 using CashSchedulerWebServer.Mutations.Transactions;
 using CashSchedulerWebServer.Mutations.Users;
@@ -41,6 +42,7 @@ using CashSchedulerWebServer.Queries.Categories;
 using CashSchedulerWebServer.Queries.Currencies;
 using CashSchedulerWebServer.Queries.CurrencyExchangeRates;
 using CashSchedulerWebServer.Queries.RecurringTransactions;
+using CashSchedulerWebServer.Queries.Salesforce;
 using CashSchedulerWebServer.Queries.Transactions;
 using CashSchedulerWebServer.Queries.UserNotifications;
 using CashSchedulerWebServer.Queries.Users;
@@ -157,6 +159,7 @@ namespace CashSchedulerWebServer
                     .AddTypeExtension<WalletQueries>()
                     .AddTypeExtension<CurrencyQueries>()
                     .AddTypeExtension<CurrencyExchangeRateQueries>()
+                    .AddTypeExtension<SalesforceQueries>()
                 .AddMutationType<Mutation>()
                     .AddTypeExtension<UserMutations>()
                     .AddTypeExtension<CategoryMutations>()
@@ -166,6 +169,7 @@ namespace CashSchedulerWebServer
                     .AddTypeExtension<SettingMutations>()
                     .AddTypeExtension<WalletMutations>()
                     .AddTypeExtension<CurrencyExchangeRateMutations>()
+                    .AddTypeExtension<SalesforceMutations>()
                 .AddSubscriptionType<Subscription>()
                     .AddTypeExtension<UserNotificationSubscriptions>()
                 .AddAuthorization()

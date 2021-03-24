@@ -8,7 +8,8 @@ namespace CashSchedulerWebServer.Models
 {
     public class User
     {
-        [Key] public int Id { get; set; }
+        [Key]
+        public int Id { get; set; }
 
         [MaxLength(50, ErrorMessage = "First name cannot contain more than 50 characters")]
         public string FirstName { get; set; }

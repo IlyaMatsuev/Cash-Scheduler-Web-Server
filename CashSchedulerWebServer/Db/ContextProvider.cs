@@ -8,6 +8,7 @@ using CashSchedulerWebServer.Services.Categories;
 using CashSchedulerWebServer.Services.Contracts;
 using CashSchedulerWebServer.Services.Currencies;
 using CashSchedulerWebServer.Services.Notifications;
+using CashSchedulerWebServer.Services.Salesforce;
 using CashSchedulerWebServer.Services.Settings;
 using CashSchedulerWebServer.Services.Transactions;
 using CashSchedulerWebServer.Services.TransactionTypes;
@@ -51,7 +52,8 @@ namespace CashSchedulerWebServer.Db
             {typeof(IRecurringTransactionService), typeof(RecurringTransactionService)},
             {typeof(ICurrencyService), typeof(CurrencyService)},
             {typeof(ICurrencyExchangeRateService), typeof(CurrencyExchangeRateService)},
-            {typeof(IWalletService), typeof(WalletService)}
+            {typeof(IWalletService), typeof(WalletService)},
+            {typeof(ISalesforceService), typeof(SalesforceService)}
         };
 
         public ContextProvider(IServiceProvider serviceProvider, CashSchedulerContext context)

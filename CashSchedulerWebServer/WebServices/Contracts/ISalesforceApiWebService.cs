@@ -26,5 +26,7 @@ namespace CashSchedulerWebServer.WebServices.Contracts
         Task DeleteSObjects(List<SfObject> sObjects);
 
         void RunWithDelay(SfObject sObject, int delay, Action<ISalesforceApiWebService, SfObject> action);
+
+        Task CreateCase(SfCase sObject);
     }
 }

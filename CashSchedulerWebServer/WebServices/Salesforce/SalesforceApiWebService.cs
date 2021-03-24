@@ -20,6 +20,7 @@ namespace CashSchedulerWebServer.WebServices.Salesforce
         private string SObjectsEndpoint => $"services/data/{ApiVersion}/sobjects";
         private string SObjectsCompositeEndpoint => $"services/data/{ApiVersion}/composite/sobjects";
         private string SObjectsCustomWebServiceEndpoint => "services/apexrest/CashSchedulerWebService";
+        private string WebToCaseEndpoint => "servlet/servlet.WebToCase";
 
         private TinyRestClient Client { get; }
 
@@ -36,11 +37,11 @@ namespace CashSchedulerWebServer.WebServices.Salesforce
         public Task<string> Login()
         {
             return Login(
-                Configuration["WebServices:SalesforceApi:clientId"],
-                Configuration["WebServices:SalesforceApi:clientSecret"],
-                Configuration["WebServices:SalesforceApi:username"],
-                Configuration["WebServices:SalesforceApi:password"],
-                Configuration["WebServices:SalesforceApi:securityToken"]
+                Configuration["WebServices:SalesforceApi:ClientId"],
+                Configuration["WebServices:SalesforceApi:ClientSecret"],
+                Configuration["WebServices:SalesforceApi:Username"],
+                Configuration["WebServices:SalesforceApi:Password"],
+                Configuration["WebServices:SalesforceApi:SecurityToken"]
             );
         }
 
@@ -112,6 +113,22 @@ namespace CashSchedulerWebServer.WebServices.Salesforce
         public void RunWithDelay(SfObject sObject, int delay, Action<ISalesforceApiWebService, SfObject> action)
         {
             Task.Delay(delay * 1000).ContinueWith(_ => action(this, sObject));
+        }
+
+        public Task CreateCase(SfCase sObject)
+        {
+            return Client.PostRequest(WebToCaseEndpoint)
+                .AddFormParameters(new KeyValuePair<string, string>[]
+                {
+                    new ("encoding", "UTF-8"),
+                    new ("orgid", Configuration["WebServices:SalesforceApi:OrgId"]),
+                    new ("name", sObject.ContactName),
+                    new ("email", sObject.Email),
+                    new ("phone", sObject.Phone),
+                    new ("subject", sObject.Subject),
+                    new ("description", sObject.Description)
+                })
+                .ExecuteAsync();
         }
 
 

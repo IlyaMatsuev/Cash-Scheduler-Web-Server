@@ -43,7 +43,7 @@ namespace CashSchedulerWebServer.Services.Notifications
 
             var createdNotification = await ContextProvider.GetRepository<IUserNotificationRepository>().Create(notification);
 
-            await EventSender.SendAsync($"OnUserNotification_{UserId}", createdNotification);
+            await EventSender.SendAsync($"OnUserNotification_{notification.User.Id}", createdNotification);
 
             return createdNotification;
         }

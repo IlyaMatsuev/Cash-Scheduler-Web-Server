@@ -24,7 +24,7 @@ namespace CashSchedulerWebServer.Db.Repositories
         public UserNotification GetByKey(int id)
         {
             return Context.UserNotifications
-                .Where(n => n.Id == id && n.User.Id == UserId)
+                .Where(n => n.Id == id)
                 .Include(n => n.User)
                 .FirstOrDefault();
         }
