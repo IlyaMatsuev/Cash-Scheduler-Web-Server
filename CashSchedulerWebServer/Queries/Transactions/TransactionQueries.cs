@@ -15,13 +15,19 @@ namespace CashSchedulerWebServer.Queries.Transactions
     public class TransactionQueries
     {
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public IEnumerable<Transaction>? DashboardTransactions([Service] IContextProvider contextProvider, int month, int year)
+        public IEnumerable<Transaction>? DashboardTransactions(
+            [Service] IContextProvider contextProvider,
+            int month,
+            int year)
         {
             return contextProvider.GetService<ITransactionService>().GetDashboardTransactions(month, year);
         }
-        
+
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public IEnumerable<Transaction>? TransactionsByMonth([Service] IContextProvider contextProvider, int month, int year)
+        public IEnumerable<Transaction>? TransactionsByMonth(
+            [Service] IContextProvider contextProvider,
+            int month,
+            int year)
         {
             return contextProvider.GetService<ITransactionService>().GetTransactionsByMonth(month, year);
         }

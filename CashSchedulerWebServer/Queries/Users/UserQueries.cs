@@ -18,15 +18,18 @@ namespace CashSchedulerWebServer.Queries.Users
         {
             return contextProvider.GetService<IUserService>().GetById();
         }
-        
-        public Task<string> CheckEmail([Service] IAuthenticator authenticator, [GraphQLNonNullType] string email)
+
+        public Task<string> CheckEmail([Service] IAuthService authService, [GraphQLNonNullType] string email)
         {
-            return authenticator.CheckEmail(email);
+            return authService.CheckEmail(email);
         }
-        
-        public Task<string> CheckCode([Service] IAuthenticator authenticator, [GraphQLNonNullType] string email, [GraphQLNonNullType] string code)
+
+        public Task<string> CheckCode(
+            [Service] IAuthService authService,
+            [GraphQLNonNullType] string email,
+            [GraphQLNonNullType] string code)
         {
-            return authenticator.CheckCode(email, code);
+            return authService.CheckCode(email, code);
         }
     }
 }

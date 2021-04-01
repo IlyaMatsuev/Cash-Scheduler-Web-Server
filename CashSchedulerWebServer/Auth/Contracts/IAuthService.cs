@@ -4,7 +4,7 @@ using CashSchedulerWebServer.Mutations.Users;
 
 namespace CashSchedulerWebServer.Auth.Contracts
 {
-    public interface IAuthenticator
+    public interface IAuthService
     {
         Task<AuthTokens> Login(string email, string password);
         Task<User> Logout();

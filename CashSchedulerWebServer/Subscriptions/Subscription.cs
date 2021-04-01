@@ -1,7 +1,4 @@
 ﻿namespace CashSchedulerWebServer.Subscriptions
 {
-    public class Subscription
-    {
-        
-    }
+    public class Subscription {}
 }

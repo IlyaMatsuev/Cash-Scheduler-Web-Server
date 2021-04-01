@@ -84,7 +84,7 @@ namespace CashSchedulerWebServer
             
             services.AddTransient<IUserContext, UserContext>();
             services.AddTransient<IUserContextManager, UserContextManager>();
-            services.AddTransient<IAuthenticator, Authenticator>();
+            services.AddTransient<IAuthService, AuthService>();
             services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddAuthentication("Default")

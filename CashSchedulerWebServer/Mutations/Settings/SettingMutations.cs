@@ -17,8 +17,10 @@ namespace CashSchedulerWebServer.Mutations.Settings
     public class SettingMutations
     {
         [GraphQLNonNullType]
-        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public Task<UserSetting> UpdateUserSetting([Service] IContextProvider contextProvider, [GraphQLNonNullType] UpdateUserSettingInput setting)
+        [Authorize(Policy = AuthOptions.AUTH_POLICY, Roles = new[] {AuthOptions.USER_ROLE})]
+        public Task<UserSetting> UpdateUserSetting(
+            [Service] IContextProvider contextProvider,
+            [GraphQLNonNullType] UpdateUserSettingInput setting)
         {
             return contextProvider.GetService<IUserSettingService>().Update(new UserSetting
             {
@@ -26,8 +28,8 @@ namespace CashSchedulerWebServer.Mutations.Settings
                 Value = setting.Value
             });
         }
-        
-        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
+
+        [Authorize(Policy = AuthOptions.AUTH_POLICY, Roles = new[] {AuthOptions.USER_ROLE})]
         public Task<IEnumerable<UserSetting>?> UpdateUserSettings(
             [Service] IContextProvider contextProvider,
             [GraphQLNonNullType] IEnumerable<UpdateUserSettingInput> settings)

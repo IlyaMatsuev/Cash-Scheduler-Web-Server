@@ -15,7 +15,7 @@ namespace CashSchedulerWebServer.Queries.CurrencyExchangeRates
     [ExtendObjectType(Name = "Query")]
     public class CurrencyExchangeRateQueries
     {
-        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
+        [Authorize(Policy = AuthOptions.AUTH_POLICY, Roles = new[] {AuthOptions.USER_ROLE})]
         public Task<IEnumerable<CurrencyExchangeRate>>? ExchangeRates(
             [Service] IContextProvider contextProvider,
             [GraphQLNonNullType] string sourceCurrencyAbbreviation,

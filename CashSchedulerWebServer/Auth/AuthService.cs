@@ -17,14 +17,14 @@ using Microsoft.Extensions.Configuration;
 
 namespace CashSchedulerWebServer.Auth
 {
-    public class Authenticator : IAuthenticator
+    public class AuthService : IAuthService
     {
         private IContextProvider ContextProvider { get; }
         private INotificator Notificator { get; }
         private IConfiguration Configuration { get; }
         private IEventManager EventManager { get; }
 
-        public Authenticator(
+        public AuthService(
             IContextProvider contextProvider,
             INotificator notificator,
             IEventManager eventManager,

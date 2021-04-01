@@ -14,14 +14,14 @@ namespace CashSchedulerWebServer.Queries.UserNotifications
     [ExtendObjectType(Name = "Query")]
     public class UserNotificationQueries
     {
-        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
+        [Authorize(Policy = AuthOptions.AUTH_POLICY, Roles = new[] {AuthOptions.USER_ROLE})]
         public IEnumerable<UserNotification>? Notifications([Service] IContextProvider contextProvider)
         {
             return contextProvider.GetService<IUserNotificationService>().GetAll();
         }
 
         [GraphQLNonNullType]
-        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
+        [Authorize(Policy = AuthOptions.AUTH_POLICY, Roles = new[] {AuthOptions.USER_ROLE})]
         public int UnreadNotificationsCount([Service] IContextProvider contextProvider)
         {
             return contextProvider.GetService<IUserNotificationService>().GetUnreadCount();

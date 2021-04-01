@@ -1,7 +1,4 @@
 ﻿namespace CashSchedulerWebServer.Mutations
 {
-    public class Mutation
-    {
-        
-    }
+    public class Mutation {}
 }

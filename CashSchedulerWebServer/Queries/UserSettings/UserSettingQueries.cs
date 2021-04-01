@@ -33,7 +33,7 @@ namespace CashSchedulerWebServer.Queries.UserSettings
             return Enum.GetNames(typeof(Setting.SectionOptions));
         }
 
-        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
+        [Authorize(Policy = AuthOptions.AUTH_POLICY, Roles = new[] {AuthOptions.USER_ROLE})]
         public IEnumerable<UserSetting>? Settings([Service] IContextProvider contextProvider, string? unitName)
         {
             return contextProvider.GetService<IUserSettingService>().GetByUnitName(unitName);

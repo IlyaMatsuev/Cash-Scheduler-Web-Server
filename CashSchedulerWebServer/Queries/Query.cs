@@ -1,6 +1,4 @@
 ﻿namespace CashSchedulerWebServer.Queries
 {
-    public class Query
-    {
-    }
+    public class Query {}
 }

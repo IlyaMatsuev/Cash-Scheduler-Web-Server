@@ -7,10 +7,10 @@ namespace CashSchedulerWebServer.Mutations.CurrencyExchangeRates
     {
         [GraphQLNonNullType]
         public string SourceCurrencyAbbreviation { get; set; }
-        
+
         [GraphQLNonNullType]
         public string TargetCurrencyAbbreviation { get; set; }
-        
+
         public float ExchangeRate { get; set; }
 
         public DateTime ValidFrom { get; set; }

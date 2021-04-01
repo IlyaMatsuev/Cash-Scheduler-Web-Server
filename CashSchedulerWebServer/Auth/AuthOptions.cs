@@ -9,9 +9,10 @@ namespace CashSchedulerWebServer.Auth
     public static class AuthOptions
     {
         public const string AUTH_POLICY = "UserPolicy";
+        public const string USER_ROLE = "User";
+        public const string APP_ROLE = "App";
 
         public const string TYPE_TOKEN_SEPARATOR = " ";
-        public const string AUTHENTICATION_TYPE = "Bearer";
         public const string ISSUER = "CashSchedulerServer";
         public const string AUDIENCE = "CashSchedulerClient";
 
@@ -24,7 +25,9 @@ namespace CashSchedulerWebServer.Auth
             string secret = tokenType switch
             {
                 TokenType.Access => configuration["App:Auth:AccessTokenSecret"],
+                //TokenType.AppAccess => configuration["App:Auth:AccessTokenSecret"],
                 TokenType.Refresh => configuration["App:Auth:RefreshTokenSecret"],
+                //TokenType.AppRefresh => configuration["App:Auth:RefreshTokenSecret"],
                 _ => throw new CashSchedulerException("There is no such token type"),
             };
             return new SymmetricSecurityKey(Encoding.ASCII.GetBytes(secret));
@@ -35,7 +38,9 @@ namespace CashSchedulerWebServer.Auth
             string lifetime = tokenType switch
             {
                 TokenType.Access => configuration["App:Auth:AccessTokenLifetime"],
+                TokenType.AppAccess => configuration["App:Auth:AccessTokenLifetime"],
                 TokenType.Refresh => configuration["App:Auth:RefreshTokenLifetime"],
+                TokenType.AppRefresh => configuration["App:Auth:RefreshTokenLifetime"],
                 _ => throw new CashSchedulerException("There is no such token type"),
             };
             return Convert.ToInt32(lifetime);
@@ -45,7 +50,9 @@ namespace CashSchedulerWebServer.Auth
         public enum TokenType
         {
             Access,
-            Refresh
+            Refresh,
+            AppAccess,
+            AppRefresh
         }
     }
 }

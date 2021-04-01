@@ -15,7 +15,9 @@ namespace CashSchedulerWebServer.Mutations.Transactions
     {
         [GraphQLNonNullType]
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public Task<Transaction> CreateTransaction([Service] IContextProvider contextProvider, [GraphQLNonNullType] NewTransactionInput transaction)
+        public Task<Transaction> CreateTransaction(
+            [Service] IContextProvider contextProvider,
+            [GraphQLNonNullType] NewTransactionInput transaction)
         {
             return contextProvider.GetService<ITransactionService>().Create(new Transaction
             {
@@ -26,10 +28,12 @@ namespace CashSchedulerWebServer.Mutations.Transactions
                 WalletId = transaction.WalletId ?? default
             });
         }
-        
+
         [GraphQLNonNullType]
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public Task<Transaction> UpdateTransaction([Service] IContextProvider contextProvider, [GraphQLNonNullType] UpdateTransactionInput transaction)
+        public Task<Transaction> UpdateTransaction(
+            [Service] IContextProvider contextProvider,
+            [GraphQLNonNullType] UpdateTransactionInput transaction)
         {
             return contextProvider.GetService<ITransactionService>().Update(new Transaction
             {
@@ -39,10 +43,12 @@ namespace CashSchedulerWebServer.Mutations.Transactions
                 Date = transaction.Date ?? DateTime.Today
             });
         }
-        
+
         [GraphQLNonNullType]
-        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public Task<Transaction> DeleteTransaction([Service] IContextProvider contextProvider, [GraphQLNonNullType] int id)
+        [Authorize(Policy = AuthOptions.AUTH_POLICY, Roles = new[] {AuthOptions.USER_ROLE})]
+        public Task<Transaction> DeleteTransaction(
+            [Service] IContextProvider contextProvider,
+            [GraphQLNonNullType] int id)
         {
             return contextProvider.GetService<ITransactionService>().Delete(id);
         }

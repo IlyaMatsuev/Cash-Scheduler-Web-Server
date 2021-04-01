@@ -14,7 +14,9 @@ namespace CashSchedulerWebServer.Mutations.Wallets
     {
         [GraphQLNonNullType]
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public Task<Wallet> CreateWallet([Service] IContextProvider contextProvider, [GraphQLNonNullType] NewWalletInput wallet)
+        public Task<Wallet> CreateWallet(
+            [Service] IContextProvider contextProvider,
+            [GraphQLNonNullType] NewWalletInput wallet)
         {
             return contextProvider.GetService<IWalletService>().Create(new Wallet
             {
@@ -27,7 +29,9 @@ namespace CashSchedulerWebServer.Mutations.Wallets
 
         [GraphQLNonNullType]
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public Task<Wallet> UpdateWallet([Service] IContextProvider contextProvider, [GraphQLNonNullType] UpdateWalletInput wallet)
+        public Task<Wallet> UpdateWallet(
+            [Service] IContextProvider contextProvider,
+            [GraphQLNonNullType] UpdateWalletInput wallet)
         {
             return contextProvider.GetService<IWalletService>().Update(new Wallet
             {
@@ -40,15 +44,17 @@ namespace CashSchedulerWebServer.Mutations.Wallets
         }
 
         [GraphQLNonNullType]
-        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
+        [Authorize(Policy = AuthOptions.AUTH_POLICY, Roles = new[] {AuthOptions.USER_ROLE})]
         public Task<Wallet> DeleteWallet([Service] IContextProvider contextProvider, [GraphQLNonNullType] int id)
         {
             return contextProvider.GetService<IWalletService>().Delete(id);
         }
-        
+
         [GraphQLNonNullType]
-        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public Task<Transfer> CreateTransfer([Service] IContextProvider contextProvider, [GraphQLNonNullType] NewTransferInput transfer)
+        [Authorize(Policy = AuthOptions.AUTH_POLICY, Roles = new[] {AuthOptions.USER_ROLE})]
+        public Task<Transfer> CreateTransfer(
+            [Service] IContextProvider contextProvider,
+            [GraphQLNonNullType] NewTransferInput transfer)
         {
             return contextProvider.GetService<IWalletService>().CreateTransfer(new Transfer
             {

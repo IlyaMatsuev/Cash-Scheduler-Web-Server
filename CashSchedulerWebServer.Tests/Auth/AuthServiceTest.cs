@@ -21,7 +21,7 @@ using Xunit;
 
 namespace CashSchedulerWebServer.Tests.Auth
 {
-    public class AuthenticatorTest
+    public class AuthServiceTest
     {
         private const int TESTING_USER_ID = 1;
 
@@ -36,7 +36,7 @@ namespace CashSchedulerWebServer.Tests.Auth
             {"App:Auth:EmailVerificationTokenLifetime", "3"}
         };
 
-        private IAuthenticator Authenticator { get; }
+        private IAuthService AuthService { get; }
         private Mock<IContextProvider> ContextProvider { get; }
         private Mock<INotificator> Notificator { get; }
         private Mock<IEventManager> EventManager { get; }
@@ -46,7 +46,7 @@ namespace CashSchedulerWebServer.Tests.Auth
         private Mock<IUserRefreshTokenRepository> UserRefreshTokenRepository { get; }
         private Mock<IUserEmailVerificationCodeService> UserEmailVerificationCodeService { get; }
 
-        public AuthenticatorTest()
+        public AuthServiceTest()
         {
             ContextProvider = new Mock<IContextProvider>();
             Notificator = new Mock<INotificator>();
@@ -77,7 +77,7 @@ namespace CashSchedulerWebServer.Tests.Auth
                 .Setup(c => c.GetService<IUserEmailVerificationCodeService>())
                 .Returns(UserEmailVerificationCodeService.Object);
 
-            Authenticator = new Authenticator(
+            AuthService = new AuthService(
                 ContextProvider.Object,
                 Notificator.Object,
                 EventManager.Object,
@@ -106,7 +106,7 @@ namespace CashSchedulerWebServer.Tests.Auth
             UserRepository.Setup(u => u.GetByEmail(user.Email)).Returns(user);
 
 
-            var tokens = await Authenticator.Login(user.Email, truePassword);
+            var tokens = await AuthService.Login(user.Email, truePassword);
 
 
             Assert.NotNull(tokens);
@@ -126,15 +126,15 @@ namespace CashSchedulerWebServer.Tests.Auth
 
             await Assert.ThrowsAsync<CashSchedulerException>(async () =>
             {
-                await Authenticator.Login(fakeEmail, fakePassword);
+                await AuthService.Login(fakeEmail, fakePassword);
             });
             await Assert.ThrowsAsync<CashSchedulerException>(async () =>
             {
-                await Authenticator.Login(user.Email, fakePassword);
+                await AuthService.Login(user.Email, fakePassword);
             });
             await Assert.ThrowsAsync<CashSchedulerException>(async () =>
             {
-                await Authenticator.Login(user.Email, user.Password);
+                await AuthService.Login(user.Email, user.Password);
             });
         }
 
@@ -161,7 +161,7 @@ namespace CashSchedulerWebServer.Tests.Auth
             UserRefreshTokenService.Setup(u => u.Delete(refreshToken.Id)).ReturnsAsync(refreshToken);
 
 
-            var resultUser = await Authenticator.Logout();
+            var resultUser = await AuthService.Logout();
 
 
             Assert.NotNull(resultUser);
@@ -170,7 +170,7 @@ namespace CashSchedulerWebServer.Tests.Auth
         [Fact]
         public async Task Logout_ThrowsExceptionAboutAuthorization()
         {
-            await Assert.ThrowsAsync<CashSchedulerException>(async () => await Authenticator.Logout());
+            await Assert.ThrowsAsync<CashSchedulerException>(async () => await AuthService.Logout());
         }
 
         [Fact]
@@ -196,7 +196,7 @@ namespace CashSchedulerWebServer.Tests.Auth
             UserService.Setup(u => u.Create(newUser)).ReturnsAsync(newUser);
 
 
-            var resultUser = await Authenticator.Register(newUser);
+            var resultUser = await AuthService.Register(newUser);
 
 
             Assert.NotNull(resultUser);
@@ -224,13 +224,13 @@ namespace CashSchedulerWebServer.Tests.Auth
             await Assert.ThrowsAsync<CashSchedulerException>(async () =>
             {
                 UserService.Setup(u => u.HasWithEmail(newEmail)).Returns(true);
-                await Authenticator.Register(newUser);
+                await AuthService.Register(newUser);
             });
 
             await Assert.ThrowsAsync<CashSchedulerException>(async () =>
             {
                 UserService.Setup(u => u.HasWithEmail(newEmail)).Returns(false);
-                await Authenticator.Register(newUser);
+                await AuthService.Register(newUser);
             });
         }
 
@@ -264,7 +264,7 @@ namespace CashSchedulerWebServer.Tests.Auth
                 .Returns(refreshToken);
 
 
-            var tokens = await Authenticator.Token(user.Email, refreshToken.Token);
+            var tokens = await AuthService.Token(user.Email, refreshToken.Token);
 
 
             Assert.NotNull(tokens);
@@ -289,7 +289,7 @@ namespace CashSchedulerWebServer.Tests.Auth
 
             await Assert.ThrowsAsync<CashSchedulerException>(async () =>
             {
-                await Authenticator.Token(user.Email, refreshToken.Token);
+                await AuthService.Token(user.Email, refreshToken.Token);
             });
 
 
@@ -310,7 +310,7 @@ namespace CashSchedulerWebServer.Tests.Auth
 
             await Assert.ThrowsAsync<CashSchedulerException>(async () =>
             {
-                await Authenticator.Token(user.Email, refreshToken.Token + "1");
+                await AuthService.Token(user.Email, refreshToken.Token + "1");
             });
         }
 
@@ -337,7 +337,7 @@ namespace CashSchedulerWebServer.Tests.Auth
 
             await Assert.ThrowsAsync<CashSchedulerException>(async () =>
             {
-                await Authenticator.CheckEmail(user.Email);
+                await AuthService.CheckEmail(user.Email);
             });
         }
 
@@ -359,7 +359,7 @@ namespace CashSchedulerWebServer.Tests.Auth
 
             await Assert.ThrowsAsync<CashSchedulerException>(async () =>
             {
-                await Authenticator.CheckCode(user.Email, emailVerificationCode.Code);
+                await AuthService.CheckCode(user.Email, emailVerificationCode.Code);
             });
 
             UserEmailVerificationCodeService
@@ -368,13 +368,13 @@ namespace CashSchedulerWebServer.Tests.Auth
 
             await Assert.ThrowsAsync<CashSchedulerException>(async () =>
             {
-                await Authenticator.CheckCode(user.Email, emailVerificationCode.Code);
+                await AuthService.CheckCode(user.Email, emailVerificationCode.Code);
             });
 
             await Assert.ThrowsAsync<CashSchedulerException>(async () =>
             {
                 emailVerificationCode.ExpiredDate = emailVerificationCode.ExpiredDate.AddMinutes(3);
-                await Authenticator.CheckCode(user.Email, "7654321");
+                await AuthService.CheckCode(user.Email, "7654321");
             });
         }
 
@@ -403,7 +403,7 @@ namespace CashSchedulerWebServer.Tests.Auth
                 .Returns(emailVerificationCode);
 
 
-            var resultUser = await Authenticator.ResetPassword(user.Email, emailVerificationCode.Code, newPassword);
+            var resultUser = await AuthService.ResetPassword(user.Email, emailVerificationCode.Code, newPassword);
 
 
             Assert.NotNull(resultUser);
@@ -438,7 +438,7 @@ namespace CashSchedulerWebServer.Tests.Auth
 
             await Assert.ThrowsAsync<CashSchedulerException>(async () =>
             {
-                await Authenticator.ResetPassword(user.Email, emailVerificationCode.Code, weekPassword);
+                await AuthService.ResetPassword(user.Email, emailVerificationCode.Code, weekPassword);
             });
         }
     }

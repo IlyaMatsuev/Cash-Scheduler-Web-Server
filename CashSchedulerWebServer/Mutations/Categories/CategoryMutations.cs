@@ -14,7 +14,9 @@ namespace CashSchedulerWebServer.Mutations.Categories
     {
         [GraphQLNonNullType]
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public Task<Category> CreateCategory([Service] IContextProvider contextProvider, [GraphQLNonNullType] NewCategoryInput category)
+        public Task<Category> CreateCategory(
+            [Service] IContextProvider contextProvider,
+            [GraphQLNonNullType] NewCategoryInput category)
         {
             return contextProvider.GetService<ICategoryService>().Create(new Category
             {
@@ -24,10 +26,12 @@ namespace CashSchedulerWebServer.Mutations.Categories
                 IsCustom = true
             });
         }
-        
+
         [GraphQLNonNullType]
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public Task<Category> UpdateCategory([Service] IContextProvider contextProvider, [GraphQLNonNullType] UpdateCategoryInput category)
+        public Task<Category> UpdateCategory(
+            [Service] IContextProvider contextProvider,
+            [GraphQLNonNullType] UpdateCategoryInput category)
         {
             return contextProvider.GetService<ICategoryService>().Update(new Category
             {
@@ -36,9 +40,9 @@ namespace CashSchedulerWebServer.Mutations.Categories
                 IconUrl = category.IconUrl
             });
         }
-        
+
         [GraphQLNonNullType]
-        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
+        [Authorize(Policy = AuthOptions.AUTH_POLICY, Roles = new[] {AuthOptions.USER_ROLE})]
         public Task<Category> DeleteCategory([Service] IContextProvider contextProvider, [GraphQLNonNullType] int id)
         {
             return contextProvider.GetService<ICategoryService>().Delete(id);

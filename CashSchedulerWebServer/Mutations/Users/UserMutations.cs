@@ -14,9 +14,9 @@ namespace CashSchedulerWebServer.Mutations.Users
     public class UserMutations
     {
         [GraphQLNonNullType]
-        public Task<User> Register([Service] IAuthenticator authenticator, [GraphQLNonNullType] NewUserInput user)
+        public Task<User> Register([Service] IAuthService authService, [GraphQLNonNullType] NewUserInput user)
         {
-            return authenticator.Register(new User
+            return authService.Register(new User
             {
                 FirstName = user.FirstName,
                 LastName = user.LastName,
@@ -27,37 +27,45 @@ namespace CashSchedulerWebServer.Mutations.Users
         }
 
         [GraphQLNonNullType]
-        public Task<AuthTokens> Login([Service] IAuthenticator authenticator, [GraphQLNonNullType] string email, [GraphQLNonNullType] string password)
-        {
-            return authenticator.Login(email, password);
-        }
-        
-        [GraphQLNonNullType]
-        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public Task<User> Logout([Service] IAuthenticator authenticator)
-        {
-            return authenticator.Logout();
-        }
-        
-        [GraphQLNonNullType]
-        public Task<AuthTokens> Token([Service] IAuthenticator authenticator, [GraphQLNonNullType] string email, [GraphQLNonNullType] string refreshToken)
-        {
-            return authenticator.Token(email, refreshToken);
-        }
-        
-        [GraphQLNonNullType]
-        public Task<User> ResetPassword(
-            [Service] IAuthenticator authenticator,
+        public Task<AuthTokens> Login(
+            [Service] IAuthService authService,
             [GraphQLNonNullType] string email,
-            [GraphQLNonNullType] string code,
             [GraphQLNonNullType] string password)
         {
-            return authenticator.ResetPassword(email, code, password);
+            return authService.Login(email, password);
         }
 
         [GraphQLNonNullType]
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public Task<User> UpdateUser([Service] IContextProvider contextProvider, [GraphQLNonNullType] UpdateUserInput user)
+        public Task<User> Logout([Service] IAuthService authService)
+        {
+            return authService.Logout();
+        }
+
+        [GraphQLNonNullType]
+        public Task<AuthTokens> Token(
+            [Service] IAuthService authService,
+            [GraphQLNonNullType] string email,
+            [GraphQLNonNullType] string refreshToken)
+        {
+            return authService.Token(email, refreshToken);
+        }
+
+        [GraphQLNonNullType]
+        public Task<User> ResetPassword(
+            [Service] IAuthService authService,
+            [GraphQLNonNullType] string email,
+            [GraphQLNonNullType] string code,
+            [GraphQLNonNullType] string password)
+        {
+            return authService.ResetPassword(email, code, password);
+        }
+
+        [GraphQLNonNullType]
+        [Authorize(Policy = AuthOptions.AUTH_POLICY, Roles = new[] {AuthOptions.USER_ROLE})]
+        public Task<User> UpdateUser(
+            [Service] IContextProvider contextProvider,
+            [GraphQLNonNullType] UpdateUserInput user)
         {
             return contextProvider.GetService<IUserService>().Update(new User
             {

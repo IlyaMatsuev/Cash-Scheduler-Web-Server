@@ -68,9 +68,14 @@ namespace CashSchedulerWebServer.WebServices.Salesforce
         public async Task UpsertSObject(SfObject sObject)
         {
             string accessToken = await Login();
-            await Client.PatchRequest($"{SObjectsEndpoint}/{sObject.SObjectTypeName}/{IdField}/{sObject.Id}", sObject)
+            var response = await Client.PatchRequest($"{SObjectsEndpoint}/{sObject.SObjectTypeName}/{IdField}/{sObject.Id}", sObject)
                 .WithOAuthBearer(accessToken)
-                .ExecuteAsync();
+                .ExecuteAsHttpResponseMessageAsync();
+
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Error during upserting an object: " + await response.Content.ReadAsStringAsync());
+            }
         }
 
         public async Task UpsertSObjects(List<SfObject> sObjects)
@@ -83,31 +88,46 @@ namespace CashSchedulerWebServer.WebServices.Salesforce
 
             foreach (var chunk in chunks)
             {
-                await Client.PatchRequest(
+                var response = await Client.PatchRequest(
                         $"{SObjectsCompositeEndpoint}/{sObjects.First().SObjectTypeName}/{IdField}",
                         new SfUpsertRecordListRequest<SfObject>(chunk)
                     )
                     .WithOAuthBearer(accessToken)
                     .ExecuteAsHttpResponseMessageAsync();
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine("Error during upserting an object: " + await response.Content.ReadAsStringAsync());
+                }
             }
         }
 
         public async Task DeleteSObject(SfObject sObject)
         {
             string accessToken = await Login();
-            await Client.DeleteRequest($"{SObjectsEndpoint}/{sObject.SObjectTypeName}/{IdField}/{sObject.Id}")
+            var response = await Client.DeleteRequest($"{SObjectsEndpoint}/{sObject.SObjectTypeName}/{IdField}/{sObject.Id}")
                 .WithOAuthBearer(accessToken)
-                .ExecuteAsync();
+                .ExecuteAsHttpResponseMessageAsync();
+
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Error during upserting an object: " + await response.Content.ReadAsStringAsync());
+            }
         }
 
         public async Task DeleteSObjects(List<SfObject> sObjects)
         {
             string accessToken = await Login();
-            await Client.DeleteRequest($"{SObjectsCustomWebServiceEndpoint}")
+            var response = await Client.DeleteRequest($"{SObjectsCustomWebServiceEndpoint}")
                 .AddQueryParameter("sobjecttypename", sObjects.First().SObjectTypeName)
                 .AddQueryParameter("ids", string.Join(',', sObjects.Select(o => o.CashSchedulerId__c).ToList()))
                 .WithOAuthBearer(accessToken)
-                .ExecuteAsync();
+                .ExecuteAsHttpResponseMessageAsync();
+
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Error during upserting an object: " + await response.Content.ReadAsStringAsync());
+            }
         }
 
         public void RunWithDelay(SfObject sObject, int delay, Action<ISalesforceApiWebService, SfObject> action)

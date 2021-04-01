@@ -1,8 +1,10 @@
 ﻿using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using CashSchedulerWebServer.Exceptions;
 using HotChocolate.Resolvers;
 using Microsoft.AspNetCore.Authorization;
+using AuthorizeAttribute = HotChocolate.AspNetCore.Authorization.AuthorizeAttribute;
 
 namespace CashSchedulerWebServer.Auth.AuthorizationHandlers
 {
@@ -13,10 +15,7 @@ namespace CashSchedulerWebServer.Auth.AuthorizationHandlers
             CashSchedulerUserRequirement requirement, 
             IResolverContext resource)
         {
-            string userId = context.User.Claims
-                .FirstOrDefault(claim => claim.Type == UserContextManager.ID_CLAIM_TYPE)?.Value ?? string.Empty;
-
-            if (!string.IsNullOrEmpty(userId))
+            if (HasUser(context) && RoleIsAllowed(context, resource))
             {
                 context.Succeed(requirement);
             }
@@ -26,6 +25,23 @@ namespace CashSchedulerWebServer.Auth.AuthorizationHandlers
             }
 
             return Task.CompletedTask;
+        }
+
+
+        private bool HasUser(AuthorizationHandlerContext authorizationContext)
+        {
+            string userId = authorizationContext.User.Claims
+                .FirstOrDefault(claim => claim.Type == UserContextManager.ID_CLAIM_TYPE)?.Value ?? string.Empty;
+
+            return !string.IsNullOrEmpty(userId);
+        }
+
+        private bool RoleIsAllowed(AuthorizationHandlerContext authorizationContext, IResolverContext resolverContext)
+        {
+            var allowedRoles = resolverContext.Field.Member?
+                .GetCustomAttribute<AuthorizeAttribute>()?.Roles;
+
+            return allowedRoles == null || allowedRoles.Any(r => authorizationContext.User.IsInRole(r));
         }
     }
 }

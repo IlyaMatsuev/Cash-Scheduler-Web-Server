@@ -13,7 +13,7 @@ namespace CashSchedulerWebServer.Mutations.Notifications
     public class NotificationMutations
     {
         [GraphQLNonNullType]
-        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
+        [Authorize(Policy = AuthOptions.AUTH_POLICY, Roles = new[] {AuthOptions.USER_ROLE})]
         public Task<UserNotification> ToggleReadNotification(
             [Service] IContextProvider contextProvider,
             [GraphQLNonNullType] int id,
@@ -21,5 +21,7 @@ namespace CashSchedulerWebServer.Mutations.Notifications
         {
             return contextProvider.GetService<IUserNotificationService>().ToggleRead(id, read);
         }
+
+        // TODO: add method for creating notification for App role only
     }
 }

@@ -15,15 +15,23 @@ namespace CashSchedulerWebServer.Queries.RecurringTransactions
     public class RecurringTransactionQueries
     {
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public IEnumerable<RegularTransaction>? DashboardRecurringTransactions([Service] IContextProvider contextProvider, int month, int year)
+        public IEnumerable<RegularTransaction>? DashboardRecurringTransactions(
+            [Service] IContextProvider contextProvider,
+            int month,
+            int year)
         {
-            return contextProvider.GetService<IRecurringTransactionService>().GetDashboardRegularTransactions(month, year);
+            return contextProvider.GetService<IRecurringTransactionService>()
+                .GetDashboardRegularTransactions(month, year);
         }
-        
+
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public IEnumerable<RegularTransaction>? RecurringTransactionsByMonth([Service] IContextProvider contextProvider, int month, int year)
+        public IEnumerable<RegularTransaction>? RecurringTransactionsByMonth(
+            [Service] IContextProvider contextProvider,
+            int month,
+            int year)
         {
-            return contextProvider.GetService<IRecurringTransactionService>().GetRegularTransactionsByMonth(month, year);
+            return contextProvider.GetService<IRecurringTransactionService>()
+                .GetRegularTransactionsByMonth(month, year);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace CashSchedulerWebServer.Mutations.CurrencyExchangeRates
     public class CurrencyExchangeRateMutations
     {
         [GraphQLNonNullType]
-        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
+        [Authorize(Policy = AuthOptions.AUTH_POLICY, Roles = new[] {AuthOptions.USER_ROLE})]
         public Task<CurrencyExchangeRate> CreateExchangeRate(
             [Service] IContextProvider contextProvider,
             [GraphQLNonNullType] NewExchangeRateInput exchangeRate)
@@ -28,9 +28,9 @@ namespace CashSchedulerWebServer.Mutations.CurrencyExchangeRates
                 IsCustom = true
             });
         }
-        
+
         [GraphQLNonNullType]
-        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
+        [Authorize(Policy = AuthOptions.AUTH_POLICY, Roles = new[] {AuthOptions.USER_ROLE})]
         public Task<CurrencyExchangeRate> UpdateExchangeRate(
             [Service] IContextProvider contextProvider,
             [GraphQLNonNullType] UpdateExchangeRateInput exchangeRate)
@@ -45,10 +45,12 @@ namespace CashSchedulerWebServer.Mutations.CurrencyExchangeRates
                 ValidTo = exchangeRate.ValidTo ?? default
             });
         }
-        
+
         [GraphQLNonNullType]
-        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public Task<CurrencyExchangeRate> DeleteExchangeRate([Service] IContextProvider contextProvider, [GraphQLNonNullType] int id)
+        [Authorize(Policy = AuthOptions.AUTH_POLICY, Roles = new[] {AuthOptions.USER_ROLE})]
+        public Task<CurrencyExchangeRate> DeleteExchangeRate(
+            [Service] IContextProvider contextProvider,
+            [GraphQLNonNullType] int id)
         {
             return contextProvider.GetService<ICurrencyExchangeRateService>().Delete(id);
         }

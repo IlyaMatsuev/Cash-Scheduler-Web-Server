@@ -30,7 +30,7 @@ namespace CashSchedulerWebServer.Mutations.RecurringTransactions
                 WalletId = transaction.WalletId ?? default
             });
         }
-        
+
         [GraphQLNonNullType]
         [Authorize(Policy = AuthOptions.AUTH_POLICY)]
         public Task<RegularTransaction> UpdateRegularTransaction(
@@ -44,10 +44,12 @@ namespace CashSchedulerWebServer.Mutations.RecurringTransactions
                 Amount = transaction.Amount ?? default
             });
         }
-        
+
         [GraphQLNonNullType]
-        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
-        public Task<RegularTransaction> DeleteRegularTransaction([Service] IContextProvider contextProvider, [GraphQLNonNullType] int id)
+        [Authorize(Policy = AuthOptions.AUTH_POLICY, Roles = new[] {AuthOptions.USER_ROLE})]
+        public Task<RegularTransaction> DeleteRegularTransaction(
+            [Service] IContextProvider contextProvider,
+            [GraphQLNonNullType] int id)
         {
             return contextProvider.GetService<IRecurringTransactionService>().Delete(id);
         }

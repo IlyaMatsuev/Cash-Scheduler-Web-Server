@@ -6,9 +6,9 @@ namespace CashSchedulerWebServer.Mutations.Wallets
     {
         [GraphQLNonNullType]
         public string Name { get; set; }
-        
+
         public double Balance { get; set; }
-        
+
         [GraphQLNonNullType]
         public string CurrencyAbbreviation { get; set; }
 

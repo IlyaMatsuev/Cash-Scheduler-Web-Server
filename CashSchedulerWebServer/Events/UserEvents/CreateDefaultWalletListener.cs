@@ -30,7 +30,7 @@ namespace CashSchedulerWebServer.Events.UserEvents
             }
 
             var wallet = await ContextProvider.GetService<IWalletService>().CreateDefault(user);
-            SalesforceService.RunWithDelay(new SfWallet(wallet), 5, (s, o) => s.UpsertSObject(o));
+            SalesforceService.RunWithDelay(new SfWallet(wallet), 10, (s, o) => s.UpsertSObject(o));
         }
     }
 }

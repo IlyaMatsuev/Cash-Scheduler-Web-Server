@@ -17,8 +17,9 @@ namespace CashSchedulerWebServer.Auth
             var expiresIn = now.AddMinutes(AuthOptions.GetTokenLifetime(tokenType, configuration));
             var claims = new List<Claim>
             {
+                new (UserContextManager.ID_CLAIM_TYPE, user.Id.ToString()),
                 new (UserContextManager.EXP_DATE_CLAIM_TYPE, expiresIn.ToString(CultureInfo.InvariantCulture)),
-                new (UserContextManager.ID_CLAIM_TYPE, user.Id.ToString())
+                new (UserContextManager.ROLE_CLAIM_TYPE, GetRole(tokenType))
             };
 
             var token = new JwtSecurityToken(
@@ -47,6 +48,15 @@ namespace CashSchedulerWebServer.Auth
                 catch { }
             }
             return claims;
+        }
+
+
+        private static string GetRole(AuthOptions.TokenType tokenType)
+        {
+            return 
+                tokenType == AuthOptions.TokenType.AppAccess || tokenType == AuthOptions.TokenType.AppRefresh 
+                    ? AuthOptions.APP_ROLE
+                    : AuthOptions.USER_ROLE;
         }
     }
 }
