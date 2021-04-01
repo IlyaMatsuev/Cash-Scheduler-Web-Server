@@ -30,13 +30,16 @@ namespace CashSchedulerWebServer.Tests.Auth
             {"App:Auth:SkipAuth", "false"},
             {"App:Auth:PasswordSalt", "12345"},
             {"App:Auth:AccessTokenSecret", "12345123451234512345123451234512345123451234512345"},
+            {"App:Auth:AppAccessTokenSecret", "12345123451234512345123451234512345123451234512345"},
             {"App:Auth:RefreshTokenSecret", "54321543215432154321543215432154321543215432154321"},
+            {"App:Auth:AppRefreshTokenSecret", "54321543215432154321543215432154321543215432154321"},
             {"App:Auth:AccessTokenLifetime", "60"},
             {"App:Auth:RefreshTokenLifetime", "10080"},
             {"App:Auth:EmailVerificationTokenLifetime", "3"}
         };
 
         private IAuthService AuthService { get; }
+        private IConfiguration Configuration { get; }
         private Mock<IContextProvider> ContextProvider { get; }
         private Mock<INotificator> Notificator { get; }
         private Mock<IEventManager> EventManager { get; }
@@ -77,11 +80,13 @@ namespace CashSchedulerWebServer.Tests.Auth
                 .Setup(c => c.GetService<IUserEmailVerificationCodeService>())
                 .Returns(UserEmailVerificationCodeService.Object);
 
+            Configuration = new ConfigurationBuilder().AddInMemoryCollection(Configurations).Build();
+
             AuthService = new AuthService(
                 ContextProvider.Object,
                 Notificator.Object,
                 EventManager.Object,
-                new ConfigurationBuilder().AddInMemoryCollection(Configurations).Build()
+                Configuration
             );
 
             IdentityModelEventSource.ShowPII = true;
@@ -112,6 +117,63 @@ namespace CashSchedulerWebServer.Tests.Auth
             Assert.NotNull(tokens);
             Assert.NotNull(tokens.AccessToken);
             Assert.NotNull(tokens.RefreshToken);
+
+            var accessTokenClaims = tokens.AccessToken.EvaluateToken();
+            var refreshTokenClaims = tokens.RefreshToken.EvaluateToken();
+
+            var claimTypes = new[]
+            {
+                UserContextManager.ID_CLAIM_TYPE,
+                UserContextManager.EXP_DATE_CLAIM_TYPE,
+                UserContextManager.ROLE_CLAIM_TYPE
+            };
+
+            const int standardClaimsCount = 4;
+
+            Assert.Equal(claimTypes.Length + standardClaimsCount, accessTokenClaims.Count());
+            Assert.Equal(claimTypes.Length + standardClaimsCount, refreshTokenClaims.Count());
+            Assert.Equal(TESTING_USER_ID, Convert.ToInt32(accessTokenClaims.GetUserId()));
+            Assert.Equal(TESTING_USER_ID, Convert.ToInt32(refreshTokenClaims.GetUserId()));
+            Assert.Equal(AuthOptions.USER_ROLE, accessTokenClaims.GetRole());
+            Assert.Equal(AuthOptions.USER_ROLE, refreshTokenClaims.GetRole());
+        }
+
+        [Fact]
+        public async Task AppLogin_ReturnsTokens()
+        {
+            string usersJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Users.json");
+            var user = JsonConvert.DeserializeObject<List<User>>(usersJson).First(u => u.Id == TESTING_USER_ID);
+
+            var appToken = user.GenerateToken(AuthOptions.TokenType.AppAccess, Configuration);
+
+            UserRepository.Setup(u => u.GetByKey(user.Id)).Returns(user);
+
+
+            var tokens = await AuthService.AppLogin(appToken.token);
+
+
+            Assert.NotNull(tokens);
+            Assert.NotNull(tokens.AccessToken);
+            Assert.NotNull(tokens.RefreshToken);
+
+            var accessTokenClaims = tokens.AccessToken.EvaluateToken();
+            var refreshTokenClaims = tokens.RefreshToken.EvaluateToken();
+
+            var claimTypes = new[]
+            {
+                UserContextManager.ID_CLAIM_TYPE,
+                UserContextManager.EXP_DATE_CLAIM_TYPE,
+                UserContextManager.ROLE_CLAIM_TYPE
+            };
+
+            const int standardClaimsCount = 4;
+
+            Assert.Equal(claimTypes.Length + standardClaimsCount, accessTokenClaims.Count());
+            Assert.Equal(claimTypes.Length + standardClaimsCount, refreshTokenClaims.Count());
+            Assert.Equal(TESTING_USER_ID, Convert.ToInt32(accessTokenClaims.GetUserId()));
+            Assert.Equal(TESTING_USER_ID, Convert.ToInt32(refreshTokenClaims.GetUserId()));
+            Assert.Equal(AuthOptions.APP_ROLE, accessTokenClaims.GetRole());
+            Assert.Equal(AuthOptions.APP_ROLE, refreshTokenClaims.GetRole());
         }
 
         [Fact]
@@ -139,6 +201,33 @@ namespace CashSchedulerWebServer.Tests.Auth
         }
 
         [Fact]
+        public async Task AppLogin_ThrowsExceptionAboutToken()
+        {
+            string usersJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Users.json");
+            var user = JsonConvert.DeserializeObject<List<User>>(usersJson).First(u => u.Id == TESTING_USER_ID);
+
+            const string fakeAppToken = "quwgqiwdiqwdoqjwdpqjwodqwlm";
+
+            var appTokenWithInvalidRole = user.GenerateToken(AuthOptions.TokenType.Access, Configuration);
+
+            user.Id = -TESTING_USER_ID;
+
+            var appTokenWithInvalidUser = user.GenerateToken(AuthOptions.TokenType.AppAccess, Configuration);
+
+
+            await Assert.ThrowsAsync<CashSchedulerException>(async () => { await AuthService.AppLogin(null); });
+            await Assert.ThrowsAsync<CashSchedulerException>(async () => { await AuthService.AppLogin(fakeAppToken); });
+            await Assert.ThrowsAsync<CashSchedulerException>(async () =>
+            {
+                await AuthService.AppLogin(appTokenWithInvalidRole.token);
+            });
+            await Assert.ThrowsAsync<CashSchedulerException>(async () =>
+            {
+                await AuthService.AppLogin(appTokenWithInvalidUser.token);
+            });
+        }
+
+        [Fact]
         public async Task Logout_ReturnsLoggedOutUser()
         {
             string usersJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Users.json");
@@ -149,6 +238,7 @@ namespace CashSchedulerWebServer.Tests.Auth
                 Id = 101,
                 ExpiredDate = DateTime.Now.AddMinutes(5),
                 Token = "1234567890123456789012345678901234567890",
+                Type = (int) AuthOptions.TokenType.Refresh,
                 User = user
             };
 
@@ -156,7 +246,7 @@ namespace CashSchedulerWebServer.Tests.Auth
 
             UserRefreshTokenService
                 .Setup(u => u.DeleteAllUserTokens(user.Id))
-                .ReturnsAsync(new List<UserRefreshToken>{refreshToken});
+                .ReturnsAsync(new List<UserRefreshToken> {refreshToken});
 
             UserRefreshTokenService.Setup(u => u.Delete(refreshToken.Id)).ReturnsAsync(refreshToken);
 
@@ -168,9 +258,42 @@ namespace CashSchedulerWebServer.Tests.Auth
         }
 
         [Fact]
+        public async Task LogoutConnectedApps_ReturnsLoggedOutUser()
+        {
+            string usersJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Users.json");
+            var user = JsonConvert.DeserializeObject<List<User>>(usersJson).First(u => u.Id == TESTING_USER_ID);
+
+            var refreshToken = new UserRefreshToken
+            {
+                Id = 101,
+                ExpiredDate = DateTime.Now.AddMinutes(5),
+                Token = "1234567890123456789012345678901234567890",
+                Type = (int) AuthOptions.TokenType.AppRefresh,
+                User = user
+            };
+
+            UserService.Setup(u => u.GetById()).Returns(user);
+
+            UserRefreshTokenService
+                .Setup(u => u.DeleteAllAppTokens(user.Id))
+                .ReturnsAsync(new List<UserRefreshToken> {refreshToken});
+
+            var resultUser = await AuthService.Logout();
+
+
+            Assert.NotNull(resultUser);
+        }
+
+        [Fact]
         public async Task Logout_ThrowsExceptionAboutAuthorization()
         {
             await Assert.ThrowsAsync<CashSchedulerException>(async () => await AuthService.Logout());
+        }
+
+        [Fact]
+        public async Task LogoutConnectedApps_ThrowsExceptionAboutAuthorization()
+        {
+            await Assert.ThrowsAsync<CashSchedulerException>(async () => await AuthService.LogoutConnectedApps());
         }
 
         [Fact]
@@ -235,7 +358,7 @@ namespace CashSchedulerWebServer.Tests.Auth
         }
 
         [Fact]
-        public async Task Token_ReturnsNewTokens()
+        public async Task Token_ReturnsNewUserTokens()
         {
             string usersJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Users.json");
             var user = JsonConvert.DeserializeObject<List<User>>(usersJson).First(u => u.Id == TESTING_USER_ID);
@@ -245,6 +368,7 @@ namespace CashSchedulerWebServer.Tests.Auth
                 Id = 101,
                 ExpiredDate = DateTime.Now.AddMinutes(5),
                 Token = "1234567890123456789012345678901234567890",
+                Type = (int) AuthOptions.TokenType.Refresh,
                 User = user
             };
 
@@ -253,7 +377,8 @@ namespace CashSchedulerWebServer.Tests.Auth
             using (var sha = SHA256.Create())
             {
                 hashedRefreshToken = Encoding.ASCII.GetString(
-                    sha.ComputeHash(Encoding.ASCII.GetBytes(refreshToken.Token + Configurations["App:Auth:PasswordSalt"]))
+                    sha.ComputeHash(
+                        Encoding.ASCII.GetBytes(refreshToken.Token + Configurations["App:Auth:PasswordSalt"]))
                 );
             }
 
@@ -270,6 +395,84 @@ namespace CashSchedulerWebServer.Tests.Auth
             Assert.NotNull(tokens);
             Assert.NotNull(tokens.AccessToken);
             Assert.NotNull(tokens.RefreshToken);
+
+            var accessTokenClaims = tokens.AccessToken.EvaluateToken();
+            var refreshTokenClaims = tokens.RefreshToken.EvaluateToken();
+
+            var claimTypes = new[]
+            {
+                UserContextManager.ID_CLAIM_TYPE,
+                UserContextManager.EXP_DATE_CLAIM_TYPE,
+                UserContextManager.ROLE_CLAIM_TYPE
+            };
+
+            const int standardClaimsCount = 4;
+
+            Assert.Equal(claimTypes.Length + standardClaimsCount, accessTokenClaims.Count());
+            Assert.Equal(claimTypes.Length + standardClaimsCount, refreshTokenClaims.Count());
+            Assert.Equal(TESTING_USER_ID, Convert.ToInt32(accessTokenClaims.GetUserId()));
+            Assert.Equal(TESTING_USER_ID, Convert.ToInt32(refreshTokenClaims.GetUserId()));
+            Assert.Equal(AuthOptions.USER_ROLE, accessTokenClaims.GetRole());
+            Assert.Equal(AuthOptions.USER_ROLE, refreshTokenClaims.GetRole());
+        }
+
+        [Fact]
+        public async Task Token_ReturnsNewAppTokens()
+        {
+            string usersJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Users.json");
+            var user = JsonConvert.DeserializeObject<List<User>>(usersJson).First(u => u.Id == TESTING_USER_ID);
+
+            var refreshToken = new UserRefreshToken
+            {
+                Id = 101,
+                ExpiredDate = DateTime.Now.AddMinutes(5),
+                Token = "1234567890123456789012345678901234567890",
+                Type = (int) AuthOptions.TokenType.AppRefresh,
+                User = user
+            };
+
+            string hashedRefreshToken;
+
+            using (var sha = SHA256.Create())
+            {
+                hashedRefreshToken = Encoding.ASCII.GetString(
+                    sha.ComputeHash(
+                        Encoding.ASCII.GetBytes(refreshToken.Token + Configurations["App:Auth:PasswordSalt"]))
+                );
+            }
+
+            UserRepository.Setup(u => u.GetByEmail(user.Email)).Returns(user);
+
+            UserRefreshTokenRepository
+                .Setup(u => u.GetByUserAndToken(user.Id, hashedRefreshToken))
+                .Returns(refreshToken);
+
+
+            var tokens = await AuthService.Token(user.Email, refreshToken.Token);
+
+
+            Assert.NotNull(tokens);
+            Assert.NotNull(tokens.AccessToken);
+            Assert.NotNull(tokens.RefreshToken);
+
+            var accessTokenClaims = tokens.AccessToken.EvaluateToken();
+            var refreshTokenClaims = tokens.RefreshToken.EvaluateToken();
+
+            var claimTypes = new[]
+            {
+                UserContextManager.ID_CLAIM_TYPE,
+                UserContextManager.EXP_DATE_CLAIM_TYPE,
+                UserContextManager.ROLE_CLAIM_TYPE
+            };
+
+            const int standardClaimsCount = 4;
+
+            Assert.Equal(claimTypes.Length + standardClaimsCount, accessTokenClaims.Count());
+            Assert.Equal(claimTypes.Length + standardClaimsCount, refreshTokenClaims.Count());
+            Assert.Equal(TESTING_USER_ID, Convert.ToInt32(accessTokenClaims.GetUserId()));
+            Assert.Equal(TESTING_USER_ID, Convert.ToInt32(refreshTokenClaims.GetUserId()));
+            Assert.Equal(AuthOptions.APP_ROLE, accessTokenClaims.GetRole());
+            Assert.Equal(AuthOptions.APP_ROLE, refreshTokenClaims.GetRole());
         }
 
         [Fact]
@@ -283,6 +486,7 @@ namespace CashSchedulerWebServer.Tests.Auth
                 Id = 101,
                 ExpiredDate = DateTime.Now.AddMinutes(5),
                 Token = "1234567890123456789012345678901234567890",
+                Type = (int) AuthOptions.TokenType.Refresh,
                 User = user
             };
 
@@ -298,7 +502,8 @@ namespace CashSchedulerWebServer.Tests.Auth
             using (var sha = SHA256.Create())
             {
                 hashedRefreshToken = Encoding.ASCII.GetString(
-                    sha.ComputeHash(Encoding.ASCII.GetBytes(refreshToken.Token + Configurations["App:Auth:PasswordSalt"]))
+                    sha.ComputeHash(
+                        Encoding.ASCII.GetBytes(refreshToken.Token + Configurations["App:Auth:PasswordSalt"]))
                 );
             }
 
@@ -312,6 +517,42 @@ namespace CashSchedulerWebServer.Tests.Auth
             {
                 await AuthService.Token(user.Email, refreshToken.Token + "1");
             });
+        }
+
+        [Fact]
+        public async Task GenerateAppToken_ReturnsToken()
+        {
+            string usersJson = File.ReadAllText(TestConfiguration.MockDataFolderPath + @"Users.json");
+            var user = JsonConvert.DeserializeObject<List<User>>(usersJson).First(u => u.Id == TESTING_USER_ID);
+
+            UserService.Setup(u => u.GetById()).Returns(user);
+
+
+            var appToken = await AuthService.GenerateAppToken();
+
+
+            Assert.NotNull(appToken);
+
+            var appTokenClaims = appToken.EvaluateToken();
+
+            var claimTypes = new[]
+            {
+                UserContextManager.ID_CLAIM_TYPE,
+                UserContextManager.EXP_DATE_CLAIM_TYPE,
+                UserContextManager.ROLE_CLAIM_TYPE
+            };
+
+            const int standardClaimsCount = 4;
+
+            Assert.Equal(claimTypes.Length + standardClaimsCount, appTokenClaims.Count());
+            Assert.Equal(TESTING_USER_ID, Convert.ToInt32(appTokenClaims.GetUserId()));
+            Assert.Equal(AuthOptions.APP_ROLE, appTokenClaims.GetRole());
+        }
+
+        [Fact]
+        public async Task GenerateAppToken_ThrowsExceptionAboutAuthorization()
+        {
+            await Assert.ThrowsAsync<CashSchedulerException>(async () => await AuthService.GenerateAppToken());
         }
 
         [Fact]
@@ -335,10 +576,7 @@ namespace CashSchedulerWebServer.Tests.Auth
                 .Returns(emailVerificationCode);
 
 
-            await Assert.ThrowsAsync<CashSchedulerException>(async () =>
-            {
-                await AuthService.CheckEmail(user.Email);
-            });
+            await Assert.ThrowsAsync<CashSchedulerException>(async () => { await AuthService.CheckEmail(user.Email); });
         }
 
         [Fact]

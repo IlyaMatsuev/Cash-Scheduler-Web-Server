@@ -5,6 +5,7 @@ using CashSchedulerWebServer.Utils;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CashSchedulerWebServer.Auth;
 using Microsoft.EntityFrameworkCore;
 
 namespace CashSchedulerWebServer.Db.Repositories
@@ -27,7 +28,14 @@ namespace CashSchedulerWebServer.Db.Repositories
         public IEnumerable<UserRefreshToken> GetByUserId(int id)
         {
             return Context.UserRefreshTokens
-                .Where(t => t.User.Id == id)
+                .Where(t => t.User.Id == id && t.Type == (int) AuthOptions.TokenType.Refresh)
+                .Include(t => t.User);
+        }
+
+        public IEnumerable<UserRefreshToken> GetAppTokensByUserId(int id)
+        {
+            return Context.UserRefreshTokens
+                .Where(t => t.User.Id == id && t.Type == (int) AuthOptions.TokenType.AppRefresh)
                 .Include(t => t.User);
         }
 

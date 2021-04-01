@@ -25,9 +25,9 @@ namespace CashSchedulerWebServer.Auth
             string secret = tokenType switch
             {
                 TokenType.Access => configuration["App:Auth:AccessTokenSecret"],
-                //TokenType.AppAccess => configuration["App:Auth:AccessTokenSecret"],
+                TokenType.AppAccess => configuration["App:Auth:AppAccessTokenSecret"],
                 TokenType.Refresh => configuration["App:Auth:RefreshTokenSecret"],
-                //TokenType.AppRefresh => configuration["App:Auth:RefreshTokenSecret"],
+                TokenType.AppRefresh => configuration["App:Auth:AppRefreshTokenSecret"],
                 _ => throw new CashSchedulerException("There is no such token type"),
             };
             return new SymmetricSecurityKey(Encoding.ASCII.GetBytes(secret));

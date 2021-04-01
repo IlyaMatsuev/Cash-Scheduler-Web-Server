@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using CashSchedulerWebServer.Models;
 using Microsoft.Extensions.Configuration;
@@ -48,6 +49,38 @@ namespace CashSchedulerWebServer.Auth
                 catch { }
             }
             return claims;
+        }
+
+        public static bool IsTokenValid(this IEnumerable<Claim> claims)
+        {
+            string id = claims.GetUserId();
+            string expirationDateTime = claims.GetExpirationDate();
+
+            return !string.IsNullOrEmpty(expirationDateTime)
+                   && !string.IsNullOrEmpty(id)
+                   && DateTime.Parse(expirationDateTime) > DateTime.UtcNow;
+        }
+
+        public static string GetUserId(this IEnumerable<Claim> claims)
+        {
+            return claims.GetClaim(UserContextManager.ID_CLAIM_TYPE);
+        }
+        
+        public static string GetExpirationDate(this IEnumerable<Claim> claims)
+        {
+            return claims.GetClaim(UserContextManager.EXP_DATE_CLAIM_TYPE);
+        }
+
+        public static string GetRole(this IEnumerable<Claim> claims)
+        {
+            return claims.GetClaim(UserContextManager.ROLE_CLAIM_TYPE);
+        }
+        
+        private static string GetClaim(this IEnumerable<Claim> claims, string type)
+        {
+            return claims
+                .FirstOrDefault(claim => claim.Type == type)?
+                .Value ?? string.Empty;
         }
 
 

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Security.Claims;
 using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
@@ -37,7 +36,7 @@ namespace CashSchedulerWebServer.Auth
             string accessToken = GetTokenFromRequest();
 
             var tokenClaims = accessToken.EvaluateToken();
-            if (IsTokenValid(tokenClaims))
+            if (tokenClaims.IsTokenValid() && UserExists(tokenClaims))
             {
                 claims.AddRange(tokenClaims);
             }
@@ -75,15 +74,10 @@ namespace CashSchedulerWebServer.Auth
             return token;
         }
 
-        private bool IsTokenValid(IEnumerable<Claim> claims)
+        private bool UserExists(IEnumerable<Claim> claims)
         {
-            string id = claims.FirstOrDefault(claim => claim.Type == ID_CLAIM_TYPE)?.Value ?? string.Empty;
-            string expirationDateTime = claims.FirstOrDefault(claim => claim.Type == EXP_DATE_CLAIM_TYPE)?.Value ?? string.Empty;
-
-            return !string.IsNullOrEmpty(expirationDateTime)
-                   && !string.IsNullOrEmpty(id)
-                   && DateTime.Parse(expirationDateTime) > DateTime.UtcNow
-                   && ContextProvider.GetRepository<IUserRepository>().GetByKey(Convert.ToInt32(id)) != null;
+            return ContextProvider.GetRepository<IUserRepository>()
+                .GetByKey(Convert.ToInt32(claims.GetUserId())) != null;
         }
 
         private IEnumerable<Claim> GetDevUserClaims()

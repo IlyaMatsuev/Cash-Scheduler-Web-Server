@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using CashSchedulerWebServer.Auth.Contracts;
 using Microsoft.AspNetCore.Http;
 
@@ -17,10 +16,7 @@ namespace CashSchedulerWebServer.Auth
 
         public int GetUserId()
         {
-            string userId = HttpContext.User?.Claims
-                .FirstOrDefault(claim => claim.Type == UserContextManager.ID_CLAIM_TYPE)?.Value ?? "-1";
-
-            return Convert.ToInt32(userId);
+            return Convert.ToInt32(HttpContext.User?.Claims.GetUserId() ?? "-1");
         }
     }
 }

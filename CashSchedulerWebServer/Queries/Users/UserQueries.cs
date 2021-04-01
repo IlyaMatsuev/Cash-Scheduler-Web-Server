@@ -19,6 +19,12 @@ namespace CashSchedulerWebServer.Queries.Users
             return contextProvider.GetService<IUserService>().GetById();
         }
 
+        [Authorize(Policy = AuthOptions.AUTH_POLICY, Roles = new []{AuthOptions.USER_ROLE})]
+        public Task<string> AppToken([Service] IAuthService authService)
+        {
+            return authService.GenerateAppToken();
+        }
+
         public Task<string> CheckEmail([Service] IAuthService authService, [GraphQLNonNullType] string email)
         {
             return authService.CheckEmail(email);

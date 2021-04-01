@@ -8,6 +8,8 @@ namespace CashSchedulerWebServer.Db.Contracts
     {
         IEnumerable<UserRefreshToken> GetByUserId(int userId);
 
+        IEnumerable<UserRefreshToken> GetAppTokensByUserId(int userId);
+
         UserRefreshToken GetByUserAndToken(int userId, string token);
 
         Task<IEnumerable<UserRefreshToken>> Delete(IEnumerable<UserRefreshToken> tokens);

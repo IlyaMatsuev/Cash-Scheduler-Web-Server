@@ -51,5 +51,10 @@ namespace CashSchedulerWebServer.Services.Users
         {
             return RefreshTokenRepository.Delete(RefreshTokenRepository.GetByUserId(userId));
         }
+
+        public Task<IEnumerable<UserRefreshToken>> DeleteAllAppTokens(int userId)
+        {
+            return RefreshTokenRepository.Delete(RefreshTokenRepository.GetAppTokensByUserId(userId));
+        }
     }
 }

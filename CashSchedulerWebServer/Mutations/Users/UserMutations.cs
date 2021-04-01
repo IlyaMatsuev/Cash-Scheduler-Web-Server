@@ -36,10 +36,23 @@ namespace CashSchedulerWebServer.Mutations.Users
         }
 
         [GraphQLNonNullType]
-        [Authorize(Policy = AuthOptions.AUTH_POLICY)]
+        public Task<AuthTokens> AppLogin([Service] IAuthService authService, [GraphQLNonNullType] string appToken)
+        {
+            return authService.AppLogin(appToken);
+        }
+
+        [GraphQLNonNullType]
+        [Authorize(Policy = AuthOptions.AUTH_POLICY, Roles = new[] {AuthOptions.USER_ROLE})]
         public Task<User> Logout([Service] IAuthService authService)
         {
             return authService.Logout();
+        }
+
+        [GraphQLNonNullType]
+        [Authorize(Policy = AuthOptions.AUTH_POLICY, Roles = new[] {AuthOptions.USER_ROLE})]
+        public Task<User> LogoutConnectedApps([Service] IAuthService authService)
+        {
+            return authService.LogoutConnectedApps();
         }
 
         [GraphQLNonNullType]
