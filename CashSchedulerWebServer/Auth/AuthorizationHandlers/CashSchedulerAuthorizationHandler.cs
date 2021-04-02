@@ -30,10 +30,7 @@ namespace CashSchedulerWebServer.Auth.AuthorizationHandlers
 
         private bool HasUser(AuthorizationHandlerContext authorizationContext)
         {
-            string userId = authorizationContext.User.Claims
-                .FirstOrDefault(claim => claim.Type == UserContextManager.ID_CLAIM_TYPE)?.Value ?? string.Empty;
-
-            return !string.IsNullOrEmpty(userId);
+            return !string.IsNullOrEmpty(authorizationContext.User.Claims.GetUserId());
         }
 
         private bool RoleIsAllowed(AuthorizationHandlerContext authorizationContext, IResolverContext resolverContext)

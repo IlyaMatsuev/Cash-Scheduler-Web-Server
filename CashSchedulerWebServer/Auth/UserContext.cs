@@ -16,7 +16,12 @@ namespace CashSchedulerWebServer.Auth
 
         public int GetUserId()
         {
-            return Convert.ToInt32(HttpContext.User?.Claims.GetUserId() ?? "-1");
+            string userIdFromClaims = HttpContext.User?.Claims.GetUserId();
+            string userId = string.IsNullOrEmpty(userIdFromClaims)
+                ? "-1"
+                : userIdFromClaims;
+            
+            return Convert.ToInt32(userId);
         }
     }
 }

@@ -22,6 +22,19 @@ namespace CashSchedulerWebServer.Mutations.Notifications
             return contextProvider.GetService<IUserNotificationService>().ToggleRead(id, read);
         }
 
-        // TODO: add method for creating notification for App role only
+        [GraphQLNonNullType]
+        [Authorize(Roles = new[] {AuthOptions.SALESFORCE_ROLE})]
+        public Task<UserNotification> CreateNotification(
+            [Service] IContextProvider contextProvider,
+            [GraphQLNonNullType] NewNotificationInput notification)
+        {
+            return contextProvider.GetService<IUserNotificationService>().Create(new UserNotification
+            {
+                Title = notification.Title,
+                Content = notification.Content,
+                IsRead = false,
+                User = contextProvider.GetRepository<IUserRepository>().GetByKey(notification.UserId)
+            });
+        }
     }
 }

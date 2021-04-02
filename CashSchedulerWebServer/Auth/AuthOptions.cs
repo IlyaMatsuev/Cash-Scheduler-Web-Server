@@ -11,6 +11,7 @@ namespace CashSchedulerWebServer.Auth
         public const string AUTH_POLICY = "UserPolicy";
         public const string USER_ROLE = "User";
         public const string APP_ROLE = "App";
+        public const string SALESFORCE_ROLE = "Salesforce";
 
         public const string TYPE_TOKEN_SEPARATOR = " ";
         public const string ISSUER = "CashSchedulerServer";

@@ -33,9 +33,7 @@ namespace CashSchedulerWebServer.Auth
         public ClaimsPrincipal GetUserPrincipal()
         {
             var claims = new List<Claim>();
-            string accessToken = GetTokenFromRequest();
-
-            var tokenClaims = accessToken.EvaluateToken();
+            var tokenClaims = GetTokenFromRequest().EvaluateToken();
             if (tokenClaims.IsTokenValid() && UserExists(tokenClaims))
             {
                 claims.AddRange(tokenClaims);
@@ -43,6 +41,11 @@ namespace CashSchedulerWebServer.Auth
             else if (bool.Parse(Configuration["App:Auth:SkipAuth"]))
             {
                 claims.AddRange(GetDevUserClaims());
+            }
+
+            if (IsSalesforceRequest())
+            {
+                claims.AddRange(GetSfClaims());
             }
 
             var identity = new ClaimsIdentity(
@@ -78,6 +81,21 @@ namespace CashSchedulerWebServer.Auth
         {
             return ContextProvider.GetRepository<IUserRepository>()
                 .GetByKey(Convert.ToInt32(claims.GetUserId())) != null;
+        }
+
+        private bool IsSalesforceRequest()
+        {
+            return HttpContext.Request.Headers.ContainsKey("SfOrigin")
+                   && HttpContext.Request.Headers["SfOrigin"] == Configuration["WebServices:SalesforceApi:OrgId"]
+                   && HttpContext.Request.Headers["SecurityToken"] == Configuration["WebServices:SalesforceApi:SecurityToken"];
+        }
+
+        private IEnumerable<Claim> GetSfClaims()
+        {
+            return new List<Claim>
+            {
+                new(ROLE_CLAIM_TYPE, AuthOptions.SALESFORCE_ROLE)
+            };
         }
 
         private IEnumerable<Claim> GetDevUserClaims()
