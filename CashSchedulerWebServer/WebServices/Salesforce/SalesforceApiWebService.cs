@@ -111,7 +111,7 @@ namespace CashSchedulerWebServer.WebServices.Salesforce
 
             if (!response.IsSuccessStatusCode)
             {
-                Console.WriteLine("Error during upserting an object: " + await response.Content.ReadAsStringAsync());
+                Console.WriteLine("Error during deleting an object: " + await response.Content.ReadAsStringAsync());
             }
         }
 
@@ -126,7 +126,7 @@ namespace CashSchedulerWebServer.WebServices.Salesforce
 
             if (!response.IsSuccessStatusCode)
             {
-                Console.WriteLine("Error during upserting an object: " + await response.Content.ReadAsStringAsync());
+                Console.WriteLine("Error during deleting an object: " + await response.Content.ReadAsStringAsync());
             }
         }
 

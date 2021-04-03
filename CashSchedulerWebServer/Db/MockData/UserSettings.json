@@ -6,15 +6,6 @@
     "Setting": {
       "Name": "ShowBalance"
     },
-    "Value": "false"
-  },
-  {
-    "User": {
-      "Id": 1
-    },
-    "Setting": {
-      "Name": "TurnNotificationsOn"
-    },
     "Value": "true"
   },
   {
@@ -22,6 +13,15 @@
       "Id": 1
     },
     "Setting": {
+      "Name": "TurnNotificationsOn"
+    },
+    "Value": "true"
+  },
+  {
+    "User": {
+      "Id": 1
+    },
+    "Setting": {
       "Name": "DuplicateToEmail"
     },
     "Value": "false"
@@ -37,10 +37,10 @@
   },
   {
     "User": {
-      "Id": 2
+      "Id": 1
     },
     "Setting": {
-      "Name": "ShowBalance"
+      "Name": "ConnectedAppsToken"
     },
     "Value": "true"
   },
@@ -49,9 +49,18 @@
       "Id": 2
     },
     "Setting": {
-      "Name": "TurnNotificationsOn"
+      "Name": "ShowBalance"
     },
     "Value": "false"
+  },
+  {
+    "User": {
+      "Id": 2
+    },
+    "Setting": {
+      "Name": "TurnNotificationsOn"
+    },
+    "Value": "true"
   },
   {
     "User": {
@@ -69,14 +78,14 @@
     "Setting": {
       "Name": "TurnNotificationsSoundOn"
     },
-    "Value": "true"
+    "Value": "false"
   },
   {
     "User": {
-      "Id": 3
+      "Id": 2
     },
     "Setting": {
-      "Name": "ShowBalance"
+      "Name": "ConnectedAppsToken"
     },
     "Value": "false"
   },
@@ -85,9 +94,18 @@
       "Id": 3
     },
     "Setting": {
-      "Name": "TurnNotificationsOn"
+      "Name": "ShowBalance"
     },
     "Value": "true"
+  },
+  {
+    "User": {
+      "Id": 3
+    },
+    "Setting": {
+      "Name": "TurnNotificationsOn"
+    },
+    "Value": "false"
   },
   {
     "User": {
@@ -109,10 +127,10 @@
   },
   {
     "User": {
-      "Id": 4
+      "Id": 3
     },
     "Setting": {
-      "Name": "ShowBalance"
+      "Name": "ConnectedAppsToken"
     },
     "Value": "false"
   },
@@ -121,9 +139,18 @@
       "Id": 4
     },
     "Setting": {
+      "Name": "ShowBalance"
+    },
+    "Value": "true"
+  },
+  {
+    "User": {
+      "Id": 4
+    },
+    "Setting": {
       "Name": "TurnNotificationsOn"
     },
-    "Value": "false"
+    "Value": "true"
   },
   {
     "User": {
@@ -140,6 +167,15 @@
     },
     "Setting": {
       "Name": "TurnNotificationsSoundOn"
+    },
+    "Value": "false"
+  },
+  {
+    "User": {
+      "Id": 4
+    },
+    "Setting": {
+      "Name": "ConnectedAppsToken"
     },
     "Value": "false"
   },
@@ -181,12 +217,21 @@
   },
   {
     "User": {
+      "Id": 5
+    },
+    "Setting": {
+      "Name": "ConnectedAppsToken"
+    },
+    "Value": "false"
+  },
+  {
+    "User": {
       "Id": 6
     },
     "Setting": {
       "Name": "ShowBalance"
     },
-    "Value": "false"
+    "Value": "true"
   },
   {
     "User": {
@@ -217,6 +262,15 @@
   },
   {
     "User": {
+      "Id": 6
+    },
+    "Setting": {
+      "Name": "ConnectedAppsToken"
+    },
+    "Value": "true"
+  },
+  {
+    "User": {
       "Id": 7
     },
     "Setting": {
@@ -231,7 +285,7 @@
     "Setting": {
       "Name": "TurnNotificationsOn"
     },
-    "Value": "false"
+    "Value": "true"
   },
   {
     "User": {
@@ -249,6 +303,15 @@
     "Setting": {
       "Name": "TurnNotificationsSoundOn"
     },
+    "Value": "false"
+  },
+  {
+    "User": {
+      "Id": 7
+    },
+    "Setting": {
+      "Name": "ConnectedAppsToken"
+    },
     "Value": "true"
   },
   {
@@ -258,7 +321,7 @@
     "Setting": {
       "Name": "ShowBalance"
     },
-    "Value": "true"
+    "Value": "false"
   },
   {
     "User": {
@@ -285,6 +348,15 @@
     "Setting": {
       "Name": "TurnNotificationsSoundOn"
     },
+    "Value": "true"
+  },
+  {
+    "User": {
+      "Id": 8
+    },
+    "Setting": {
+      "Name": "ConnectedAppsToken"
+    },
     "Value": "false"
   },
   {
@@ -294,7 +366,7 @@
     "Setting": {
       "Name": "ShowBalance"
     },
-    "Value": "false"
+    "Value": "true"
   },
   {
     "User": {
@@ -312,7 +384,7 @@
     "Setting": {
       "Name": "DuplicateToEmail"
     },
-    "Value": "false"
+    "Value": "true"
   },
   {
     "User": {
@@ -321,7 +393,16 @@
     "Setting": {
       "Name": "TurnNotificationsSoundOn"
     },
-    "Value": "true"
+    "Value": "false"
+  },
+  {
+    "User": {
+      "Id": 9
+    },
+    "Setting": {
+      "Name": "ConnectedAppsToken"
+    },
+    "Value": "false"
   },
   {
     "User": {
@@ -348,7 +429,7 @@
     "Setting": {
       "Name": "DuplicateToEmail"
     },
-    "Value": "true"
+    "Value": "false"
   },
   {
     "User": {
@@ -356,6 +437,15 @@
     },
     "Setting": {
       "Name": "TurnNotificationsSoundOn"
+    },
+    "Value": "true"
+  },
+  {
+    "User": {
+      "Id": 10
+    },
+    "Setting": {
+      "Name": "ConnectedAppsToken"
     },
     "Value": "true"
   }

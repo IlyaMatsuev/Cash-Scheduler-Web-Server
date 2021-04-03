@@ -30,5 +30,13 @@
     "SectionName": "Sound",
     "ValueType": "Checkbox",
     "Description": "Play sound when a new notification arrives"
+  },
+  {
+    "Label": "App token",
+    "Name": "ConnectedAppsToken",
+    "UnitName": "Integrations",
+    "SectionName": "AppToken",
+    "ValueType": "Custom",
+    "Description": "Token that can be used for providing access to your account for other apps in order to get them ability to log transactions for you!"
   }
 ]
