@@ -186,7 +186,7 @@ namespace CashSchedulerWebServer
                 CashSchedulerSeeder.InitializeDb(app, Configuration);
             }
 
-            app.UseStaticFiles(GetStaticFileOptions(Configuration, env.ContentRootPath));
+            app.UseStaticFiles(GetStaticFileOptions(Configuration));
             app.UseWebSockets();
             app.UseRouting();
             app.UseCors();
@@ -204,7 +204,14 @@ namespace CashSchedulerWebServer
             string host = configuration["App:Client:Host"];
             string port = configuration["App:Client:Port"];
 
-            return $"{protocol}://{host}:{port}";
+            string endpoint = $"{protocol}://{host}";
+
+            if (!string.IsNullOrEmpty(port))
+            {
+                endpoint += $":{port}";
+            }
+
+            return endpoint;
         }
 
         private string GetConnectionString(IConfiguration configuration)
@@ -238,12 +245,14 @@ namespace CashSchedulerWebServer
             };
         }
 
-        private StaticFileOptions GetStaticFileOptions(IConfiguration configuration, string projectFolderPath)
+        private StaticFileOptions GetStaticFileOptions(IConfiguration configuration)
         {
             return new()
             {
                 FileProvider = new PhysicalFileProvider(
-                    Path.Combine(projectFolderPath, configuration["App:Content:RootPath"])),
+                    Path.Combine(Directory.GetCurrentDirectory(),
+                    configuration["App:Content:RootPath"])
+                ),
                 RequestPath = configuration["App:Content:RequestPath"]
             };
         }

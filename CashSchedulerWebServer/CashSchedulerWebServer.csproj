@@ -28,6 +28,6 @@
     <PackageReference Include="Tiny.RestClient" Version="1.7.1" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\Static" />
+    <Content Include="Content\**" CopyToPublishDirectory="PreserveNewest"/>
   </ItemGroup>
 </Project>

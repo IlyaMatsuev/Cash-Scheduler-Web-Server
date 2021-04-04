@@ -16,7 +16,7 @@ services:
     stdin_open: true
     ports:
       - "3000:3000"
-      
+
   cash-scheduler-server:
     image: ilyamatsuev/cash-scheduler-server
     build:
@@ -34,20 +34,24 @@ services:
       App__Db__Name: "cash_scheduler"
       App__Db__Username: "SA"
       App__Db__Password: "admin11@"
-      App__Db__Refresh: "true"
-      App__Db__MockDataRelativeFolderPath: "Db/MockData/"
       App__Client__Protocol: "http"
       App__Client__Host: "localhost"
       App__Client__Port: "3000"
-      App__Email__SMTP__Host: "smtp.gmail.com"
-      App__Email__SMTP__Port: "587"
       App__Email__Name: ""
       App__Email__Address: ""
       App__Email__Password: ""
       App__Auth__PasswordSalt: ""
       App__Auth__AccessTokenSecret: ""
+      App__Auth__AppAccessTokenSecret: ""
       App__Auth__RefreshTokenSecret: ""
-      ASPNETCORE_ENVIRONMENT: "Development"
+      App__Auth__AppRefreshTokenSecret: ""
+      WebServices__SalesforceApi__OrgId: ""
+      WebServices__SalesforceApi__ClientId: ""
+      WebServices__SalesforceApi__ClientSecret: ""
+      WebServices__SalesforceApi__Username: ""
+      WebServices__SalesforceApi__Password: ""
+      WebServices__SalesforceApi__SecurityToken: ""
+      ASPNETCORE_ENVIRONMENT: "Production"
       ASPNETCORE_URLS: "https://+;http://+"
       ASPNETCORE_HTTPS_PORT: "8001"
       ASPNETCORE_Kestrel__Certificates__Default__Path: /https/CashSchedulerWebServer.pfx

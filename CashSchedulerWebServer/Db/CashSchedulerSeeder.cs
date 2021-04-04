@@ -45,21 +45,33 @@ namespace CashSchedulerWebServer.Db
             ISalesforceApiWebService salesforceService)
         {
             Console.WriteLine("Deleting all salesforce records...");
-            salesforceService.DeleteSObjects(
-                context.Categories.Select(t => new SfCategory(t.Id)).Cast<SfObject>().ToList()
-            ).GetAwaiter().GetResult();
+            if (context.Categories.Any())
+            {
+                salesforceService.DeleteSObjects(
+                    context.Categories.Select(t => new SfCategory(t.Id)).Cast<SfObject>().ToList()
+                ).GetAwaiter().GetResult();
+            }
 
-            salesforceService.DeleteSObjects(
-                context.Transactions.Select(t => new SfTransaction(t.Id)).Cast<SfObject>().ToList()
-            ).GetAwaiter().GetResult();
+            if (context.Transactions.Any())
+            {
+                salesforceService.DeleteSObjects(
+                    context.Transactions.Select(t => new SfTransaction(t.Id)).Cast<SfObject>().ToList()
+                ).GetAwaiter().GetResult();
+            }
 
-            salesforceService.DeleteSObjects(
-                context.RegularTransactions.Select(t => new SfRecurringTransaction(t.Id)).Cast<SfObject>().ToList()
-            ).GetAwaiter().GetResult();
+            if (context.RegularTransactions.Any())
+            {
+                salesforceService.DeleteSObjects(
+                    context.RegularTransactions.Select(t => new SfRecurringTransaction(t.Id)).Cast<SfObject>().ToList()
+                ).GetAwaiter().GetResult();
+            }
 
-            salesforceService.DeleteSObjects(
-                context.Users.Select(u => new SfContact(u.Id)).Cast<SfObject>().ToList()
-            ).GetAwaiter().GetResult();
+            if (context.Users.Any())
+            {
+                salesforceService.DeleteSObjects(
+                    context.Users.Select(u => new SfContact(u.Id)).Cast<SfObject>().ToList()
+                ).GetAwaiter().GetResult();
+            }
             return context;
         }
 
@@ -287,7 +299,7 @@ namespace CashSchedulerWebServer.Db
 
         private static string GetMockDataFolderPath(IConfiguration configuration)
         {
-            return AppDomain.CurrentDomain.BaseDirectory + configuration["App:Db:MockDataRelativeFolderPath"];
+            return Directory.GetCurrentDirectory() + configuration["App:Db:MockDataPath"];
         }
     }
 }
