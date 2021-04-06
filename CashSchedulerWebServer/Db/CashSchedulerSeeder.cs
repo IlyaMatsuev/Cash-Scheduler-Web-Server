@@ -19,10 +19,15 @@ namespace CashSchedulerWebServer.Db
         {
             using var serviceScope = app.ApplicationServices.CreateScope();
             var context = serviceScope.ServiceProvider.GetService<CashSchedulerContext>();
-            var salesforceService = serviceScope.ServiceProvider.GetService<ISalesforceApiWebService>();
 
             context.Database.Migrate();
 
+            if (!bool.Parse(configuration["App:Db:Refresh"]))
+            {
+                return;
+            }
+
+            var salesforceService = serviceScope.ServiceProvider.GetService<ISalesforceApiWebService>();
             using var dmlTransaction = context.Database.BeginTransaction();
             try
             {
@@ -31,7 +36,7 @@ namespace CashSchedulerWebServer.Db
                     .EmptyDb()
                     .ResetIdentitiesSeed()
                     .SeedDb(configuration)
-                    .SeedSfDb(salesforceService)
+                    .SeedSfDb(salesforceService, configuration)
                     .CompleteTransaction();
             }
             catch (Exception error)
@@ -121,35 +126,57 @@ namespace CashSchedulerWebServer.Db
         {
             Console.WriteLine("Loading data...");
 
-            string mockDataFolderPath = GetMockDataFolderPath(configuration);
+            string standardDataFolderPath = GetStandardDataFolderPath(configuration);
 
-            string usersJson = File.ReadAllText(mockDataFolderPath + @"Users.json");
-            string transactionTypesJson = File.ReadAllText(mockDataFolderPath + @"TransactionTypes.json");
-            string settingsJson = File.ReadAllText(mockDataFolderPath + @"Settings.json");
-            string userSettingsJson = File.ReadAllText(mockDataFolderPath + @"UserSettings.json");
-            string userNotificationsJson = File.ReadAllText(mockDataFolderPath + @"UserNotifications.json");
-            string categoriesJson = File.ReadAllText(mockDataFolderPath + @"Categories.json");
-            string transactionsJson = File.ReadAllText(mockDataFolderPath + @"Transactions.json");
-            string regularTransactionsJson = File.ReadAllText(mockDataFolderPath + @"RegularTransactions.json");
-            string currenciesJson = File.ReadAllText(mockDataFolderPath + @"Currencies.json");
-            string walletsJson = File.ReadAllText(mockDataFolderPath + @"Wallets.json");
+            string transactionTypesJson = File.ReadAllText(standardDataFolderPath + @"TransactionTypes.json");
+            string settingsJson = File.ReadAllText(standardDataFolderPath + @"Settings.json");
+            string standardCategoriesJson = File.ReadAllText(standardDataFolderPath + @"Categories.json");
+            string currenciesJson = File.ReadAllText(standardDataFolderPath + @"Currencies.json");
 
-            var users = JsonConvert.DeserializeObject<List<User>>(usersJson);
             var transactionTypes = JsonConvert.DeserializeObject<List<TransactionType>>(transactionTypesJson);
             var settings = JsonConvert.DeserializeObject<List<Setting>>(settingsJson);
-            var userSettings = JsonConvert.DeserializeObject<List<UserSetting>>(userSettingsJson);
-            var userNotifications = JsonConvert.DeserializeObject<List<UserNotification>>(userNotificationsJson);
-            var categories = JsonConvert.DeserializeObject<List<Category>>(categoriesJson);
-            var transactions = JsonConvert.DeserializeObject<List<Transaction>>(transactionsJson);
-            var regularTransactions = JsonConvert.DeserializeObject<List<RegularTransaction>>(regularTransactionsJson);
+            var standardCategories = JsonConvert.DeserializeObject<List<Category>>(standardCategoriesJson);
             var currencies = JsonConvert.DeserializeObject<List<Currency>>(currenciesJson);
-            var wallets = JsonConvert.DeserializeObject<List<Wallet>>(walletsJson);
 
-            context.Users.AddRange(users);
-            context.SaveChanges();
             context.TransactionTypes.AddRange(transactionTypes);
             context.Settings.AddRange(settings);
             context.Currencies.AddRange(currencies);
+            context.SaveChanges();
+            standardCategories.ForEach(category =>
+            {
+                category.Type = transactionTypes.FirstOrDefault(type => type.Name == category.Type.Name);
+                if (category.Type != null)
+                {
+                    context.Categories.Add(category);
+                }
+            });
+            context.Categories.AddRange(standardCategories);
+            context.SaveChanges();
+
+            if (!bool.Parse(configuration["App:Db:WithMockData"]))
+            {
+                return context;
+            }
+
+            string mockDataFolderPath = GetMockDataFolderPath(configuration);
+
+            string usersJson = File.ReadAllText(mockDataFolderPath + @"Users.json");
+            string userSettingsJson = File.ReadAllText(mockDataFolderPath + @"UserSettings.json");
+            string userNotificationsJson = File.ReadAllText(mockDataFolderPath + @"UserNotifications.json");
+            string customCategoriesJson = File.ReadAllText(mockDataFolderPath + @"Categories.json");
+            string transactionsJson = File.ReadAllText(mockDataFolderPath + @"Transactions.json");
+            string regularTransactionsJson = File.ReadAllText(mockDataFolderPath + @"RegularTransactions.json");
+            string walletsJson = File.ReadAllText(mockDataFolderPath + @"Wallets.json");
+
+            var users = JsonConvert.DeserializeObject<List<User>>(usersJson);
+            var userSettings = JsonConvert.DeserializeObject<List<UserSetting>>(userSettingsJson);
+            var userNotifications = JsonConvert.DeserializeObject<List<UserNotification>>(userNotificationsJson);
+            var customCategories = JsonConvert.DeserializeObject<List<Category>>(customCategoriesJson);
+            var transactions = JsonConvert.DeserializeObject<List<Transaction>>(transactionsJson);
+            var regularTransactions = JsonConvert.DeserializeObject<List<RegularTransaction>>(regularTransactionsJson);
+            var wallets = JsonConvert.DeserializeObject<List<Wallet>>(walletsJson);
+
+            context.Users.AddRange(users);
             context.SaveChanges();
 
             wallets.ForEach(wallet =>
@@ -163,28 +190,17 @@ namespace CashSchedulerWebServer.Db
             });
             context.SaveChanges();
 
-            categories.ForEach(category =>
+            customCategories.ForEach(category =>
             {
                 category.Type = transactionTypes.FirstOrDefault(type => type.Name == category.Type.Name);
-                if (category.IsCustom)
+                category.User = users.FirstOrDefault(user => user.Id == category.User.Id);
+                if (category.User != null && category.Type != null)
                 {
-                    category.User = users.FirstOrDefault(user => user.Id == category.User.Id);
-                    if (category.User != null && category.Type != null)
-                    {
-                        context.Categories.Add(category);
-                    }
-                }
-                else
-                {
-                    if (category.Type != null)
-                    {
-                        context.Categories.Add(category);
-                    }
+                    context.Categories.Add(category);
                 }
             });
 
             context.SaveChanges();
-
 
             userSettings.ForEach(setting =>
             {
@@ -212,7 +228,9 @@ namespace CashSchedulerWebServer.Db
             transactions.ForEach(transaction =>
             {
                 transaction.User = users.FirstOrDefault(user => user.Id == transaction.User.Id);
-                transaction.Category = categories.FirstOrDefault(category => category.Id == transaction.Category.Id);
+                transaction.Category = 
+                    standardCategories.FirstOrDefault(category => category.Id == transaction.Category.Id)
+                    ?? customCategories.FirstOrDefault(category => category.Id == transaction.Category.Id);
                 transaction.Wallet = wallets.FirstOrDefault(wallet => wallet.Id == transaction.Wallet.Id);
                 if (transaction.User != null && transaction.Category != null && transaction.Wallet != null)
                 {
@@ -225,7 +243,9 @@ namespace CashSchedulerWebServer.Db
             regularTransactions.ForEach(transaction =>
             {
                 transaction.User = users.FirstOrDefault(user => user.Id == transaction.User.Id);
-                transaction.Category = categories.FirstOrDefault(category => category.Id == transaction.Category.Id);
+                transaction.Category = 
+                    standardCategories.FirstOrDefault(category => category.Id == transaction.Category.Id)
+                    ?? customCategories.FirstOrDefault(category => category.Id == transaction.Category.Id);
                 transaction.Wallet = wallets.FirstOrDefault(wallet => wallet.Id == transaction.Wallet.Id);
                 if (transaction.User != null && transaction.Category != null && transaction.Wallet != null)
                 {
@@ -240,13 +260,27 @@ namespace CashSchedulerWebServer.Db
 
         private static CashSchedulerContext SeedSfDb(
             this CashSchedulerContext context,
-            ISalesforceApiWebService salesforceService)
+            ISalesforceApiWebService salesforceService,
+            IConfiguration configuration)
         {
             Console.WriteLine("Loading salesforce data...");
+            
+            var standardCategories = context.Categories.Where(c => !c.IsCustom)
+                .Include(c => c.User)
+                .Include(c => c.Type).ToList();
+
+            salesforceService.UpsertSObjects(standardCategories.Select(c => new SfCategory(c, c.Id)).Cast<SfObject>().ToList())
+                .GetAwaiter().GetResult();
+
+            if (!bool.Parse(configuration["App:Db:WithMockData"]))
+            {
+                return context;
+            }
+
             var users = context.Users;
             var wallets = context.Wallets
                 .Include(w => w.User).ToList();
-            var categories = context.Categories
+            var customCategories = context.Categories.Where(c => c.IsCustom)
                 .Include(c => c.User)
                 .Include(c => c.Type).ToList();
             var transactions = context.Transactions
@@ -264,7 +298,7 @@ namespace CashSchedulerWebServer.Db
             salesforceService.UpsertSObjects(wallets.Select(w => new SfWallet(w, w.Id)).Cast<SfObject>().ToList())
                 .GetAwaiter().GetResult();
 
-            salesforceService.UpsertSObjects(categories.Select(c => new SfCategory(c, c.Id)).Cast<SfObject>().ToList())
+            salesforceService.UpsertSObjects(customCategories.Select(c => new SfCategory(c, c.Id)).Cast<SfObject>().ToList())
                 .GetAwaiter().GetResult();
 
             salesforceService.UpsertSObjects(transactions.Select(t => new SfTransaction(t, t.Id)).Cast<SfObject>().ToList())
@@ -300,6 +334,11 @@ namespace CashSchedulerWebServer.Db
         private static string GetMockDataFolderPath(IConfiguration configuration)
         {
             return Directory.GetCurrentDirectory() + configuration["App:Db:MockDataPath"];
+        }
+
+        private static string GetStandardDataFolderPath(IConfiguration configuration)
+        {
+            return Directory.GetCurrentDirectory() + configuration["App:Db:StandardDataPath"];
         }
     }
 }

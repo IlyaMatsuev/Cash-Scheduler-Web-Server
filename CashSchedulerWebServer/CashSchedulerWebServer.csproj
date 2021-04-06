@@ -28,6 +28,18 @@
     <PackageReference Include="Tiny.RestClient" Version="1.7.1" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\**" CopyToPublishDirectory="PreserveNewest"/>
+    <Content Include="Content\**" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Db\MockData\Categories.json" />
+    <_ContentIncludedByDefault Remove="Db\MockData\Currencies.json" />
+    <_ContentIncludedByDefault Remove="Db\MockData\RegularTransactions.json" />
+    <_ContentIncludedByDefault Remove="Db\MockData\Settings.json" />
+    <_ContentIncludedByDefault Remove="Db\MockData\Transactions.json" />
+    <_ContentIncludedByDefault Remove="Db\MockData\TransactionTypes.json" />
+    <_ContentIncludedByDefault Remove="Db\MockData\UserNotifications.json" />
+    <_ContentIncludedByDefault Remove="Db\MockData\Users.json" />
+    <_ContentIncludedByDefault Remove="Db\MockData\UserSettings.json" />
+    <_ContentIncludedByDefault Remove="Db\MockData\Wallets.json" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,162 @@
+[
+  {
+    "Name": "Citalopram",
+    "Type": {
+      "Name": "Income"
+    },
+    "IsCustom": false,
+    "IconUrl": "http://dummyimage.com/241x112.jpg/5fa2dd/ffffff"
+  },
+  {
+    "Name": "risperidone",
+    "Type": {
+      "Name": "Expense"
+    },
+    "IsCustom": false,
+    "IconUrl": "http://dummyimage.com/244x209.bmp/5fa2dd/ffffff"
+  },
+  {
+    "Name": "Warfarin Sodium",
+    "Type": {
+      "Name": "Expense"
+    },
+    "IsCustom": false,
+    "IconUrl": "http://dummyimage.com/106x201.png/cc0000/ffffff"
+  },
+  {
+    "Name": "Soulus Rp",
+    "Type": {
+      "Name": "Expense"
+    },
+    "IsCustom": false,
+    "IconUrl": "http://dummyimage.com/110x157.bmp/5fa2dd/ffffff"
+  },
+  {
+    "Name": "Losartan Potassium",
+    "Type": {
+      "Name": "Income"
+    },
+    "IsCustom": false,
+    "IconUrl": "http://dummyimage.com/132x162.jpg/cc0000/ffffff"
+  },
+  {
+    "Name": "Nifedipine",
+    "Type": {
+      "Name": "Expense"
+    },
+    "IsCustom": false,
+    "IconUrl": "http://dummyimage.com/152x201.jpg/ff4444/ffffff"
+  },
+  {
+    "Name": "Food - Plant Source",
+    "Type": {
+      "Name": "Income"
+    },
+    "IsCustom": false,
+    "IconUrl": "http://dummyimage.com/113x184.jpg/dddddd/000000"
+  },
+  {
+    "Name": "Methocarbamol",
+    "Type": {
+      "Name": "Income"
+    },
+    "IsCustom": false,
+    "IconUrl": "http://dummyimage.com/244x205.png/dddddd/000000"
+  },
+  {
+    "Name": "Perrigo Peroxide",
+    "Type": {
+      "Name": "Income"
+    },
+    "IsCustom": false,
+    "IconUrl": "http://dummyimage.com/109x188.bmp/cc0000/ffffff"
+  },
+  {
+    "Name": "RECKEWEG R29 Theridon",
+    "Type": {
+      "Name": "Expense"
+    },
+    "IsCustom": false,
+    "IconUrl": "http://dummyimage.com/146x169.bmp/5fa2dd/ffffff"
+  },
+  {
+    "Name": "daytime cough",
+    "Type": {
+      "Name": "Expense"
+    },
+    "IsCustom": false,
+    "IconUrl": "http://dummyimage.com/135x168.png/ff4444/ffffff"
+  },
+  {
+    "Name": "CD DIOR PRESTIGE White",
+    "Type": {
+      "Name": "Income"
+    },
+    "IsCustom": false,
+    "IconUrl": "http://dummyimage.com/189x155.jpg/5fa2dd/ffffff"
+  },
+  {
+    "Name": "Levofloxacin",
+    "Type": {
+      "Name": "Expense"
+    },
+    "IsCustom": false,
+    "IconUrl": "http://dummyimage.com/174x224.jpg/cc0000/ffffff"
+  },
+  {
+    "Name": "stomach relief",
+    "Type": {
+      "Name": "Income"
+    },
+    "IsCustom": false,
+    "IconUrl": "http://dummyimage.com/226x109.bmp/5fa2dd/ffffff"
+  },
+  {
+    "Name": "Acetaminophen",
+    "Type": {
+      "Name": "Income"
+    },
+    "IsCustom": false,
+    "IconUrl": "http://dummyimage.com/129x248.jpg/cc0000/ffffff"
+  },
+  {
+    "Name": "Pollens - Trees",
+    "Type": {
+      "Name": "Income"
+    },
+    "IsCustom": false,
+    "IconUrl": "http://dummyimage.com/240x205.bmp/dddddd/000000"
+  },
+  {
+    "Name": "Hemorrhoidal",
+    "Type": {
+      "Name": "Income"
+    },
+    "IsCustom": false,
+    "IconUrl": "http://dummyimage.com/194x208.png/ff4444/ffffff"
+  },
+  {
+    "Name": "Colgate Optic White",
+    "Type": {
+      "Name": "Expense"
+    },
+    "IsCustom": false,
+    "IconUrl": "http://dummyimage.com/105x141.png/ff4444/ffffff"
+  },
+  {
+    "Name": "BLACK OAK POLLEN",
+    "Type": {
+      "Name": "Expense"
+    },
+    "IsCustom": false,
+    "IconUrl": "http://dummyimage.com/110x243.bmp/5fa2dd/ffffff"
+  },
+  {
+    "Name": "Nitrous Oxide",
+    "Type": {
+      "Name": "Expense"
+    },
+    "IsCustom": false,
+    "IconUrl": "http://dummyimage.com/220x246.bmp/5fa2dd/ffffff"
+  }
+]

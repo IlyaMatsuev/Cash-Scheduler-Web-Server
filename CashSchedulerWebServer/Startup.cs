@@ -181,11 +181,7 @@ namespace CashSchedulerWebServer
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (bool.Parse(Configuration["App:Db:Refresh"]))
-            {
-                CashSchedulerSeeder.InitializeDb(app, Configuration);
-            }
-
+            CashSchedulerSeeder.InitializeDb(app, Configuration);
             app.UseStaticFiles(GetStaticFileOptions(Configuration));
             app.UseWebSockets();
             app.UseRouting();

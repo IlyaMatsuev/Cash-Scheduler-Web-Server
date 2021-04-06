@@ -34,6 +34,8 @@ services:
       App__Db__Name: "cash_scheduler"
       App__Db__Username: "SA"
       App__Db__Password: "admin11@"
+      App__Db__Refresh: "true"
+      App__Db__WithMockData: "true"
       App__Client__Protocol: "http"
       App__Client__Host: "localhost"
       App__Client__Port: "3000"
