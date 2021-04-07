@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using CashSchedulerWebServer.Auth.Contracts;
 using CashSchedulerWebServer.Db.Contracts;
@@ -6,6 +7,7 @@ using CashSchedulerWebServer.Events;
 using CashSchedulerWebServer.Events.Contracts;
 using CashSchedulerWebServer.Exceptions;
 using CashSchedulerWebServer.Models;
+using CashSchedulerWebServer.Queries.Transactions;
 using CashSchedulerWebServer.Services.Contracts;
 
 namespace CashSchedulerWebServer.Services.Transactions
@@ -37,6 +39,25 @@ namespace CashSchedulerWebServer.Services.Transactions
         {
             return ContextProvider.GetRepository<IRegularTransactionRepository>()
                 .GetRegularTransactionsByMonth(month, year);
+        }
+
+        public IEnumerable<TransactionDelta> GetRegularTransactionsDelta(int year)
+        {
+            var transactionsByYear = ContextProvider.GetRepository<IRegularTransactionRepository>()
+                .GetRegularTransactionsByYear(year);
+
+            var groupedByMonth = transactionsByYear.GroupBy(t => t.NextTransactionDate.Month);
+
+            static bool IsIncome(RegularTransaction transaction) =>
+                transaction.Category.Type.Name == TransactionType.Options.Income.ToString();
+
+            return groupedByMonth.Select(transactions =>
+            {
+                return new TransactionDelta(
+                    transactions.Key,
+                    transactions.Sum(t => IsIncome(t) ? t.Amount : -t.Amount)
+                );
+            });
         }
 
         public async Task<RegularTransaction> Create(RegularTransaction transaction)

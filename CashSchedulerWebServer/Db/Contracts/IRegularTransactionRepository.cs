@@ -10,6 +10,8 @@ namespace CashSchedulerWebServer.Db.Contracts
 
         IEnumerable<RegularTransaction> GetRegularTransactionsByMonth(int month, int year);
 
+        IEnumerable<RegularTransaction> GetRegularTransactionsByYear(int year);
+
         Task<IEnumerable<RegularTransaction>> DeleteByCategoryId(int categoryId);
     }
 }

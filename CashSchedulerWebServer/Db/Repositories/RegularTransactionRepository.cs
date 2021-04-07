@@ -55,6 +55,15 @@ namespace CashSchedulerWebServer.Db.Repositories
                 .Include(t => t.Wallet.Currency);
         }
 
+        public IEnumerable<RegularTransaction> GetRegularTransactionsByYear(int year)
+        {
+            return Context.RegularTransactions
+                .Where(t => t.User.Id == UserId)
+                .Where(t => t.NextTransactionDate > DateTime.Today && t.NextTransactionDate.Year == year)
+                .Include(t => t.Category)
+                .Include(t => t.Category.Type);
+        }
+
         public RegularTransaction GetByKey(int id)
         {
             return Context.RegularTransactions.Where(t => t.Id == id && t.User.Id == UserId)

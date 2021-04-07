@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using CashSchedulerWebServer.Auth;
 using CashSchedulerWebServer.Db.Contracts;
 using CashSchedulerWebServer.Models;
@@ -30,6 +31,29 @@ namespace CashSchedulerWebServer.Queries.Transactions
             int year)
         {
             return contextProvider.GetService<ITransactionService>().GetTransactionsByMonth(month, year);
+        }
+
+        [Authorize(Policy = AuthOptions.AUTH_POLICY, Roles = new[] {AuthOptions.USER_ROLE})]
+        public IEnumerable<TransactionDelta>? TransactionsDelta([Service] IContextProvider contextProvider, int year, bool isRecurring = false)
+        {
+            if (year == default)
+            {
+                year = DateTime.Today.Year;
+            }
+
+            IEnumerable<TransactionDelta> transactionsDelta;
+            if (isRecurring)
+            {
+                transactionsDelta = contextProvider.GetService<IRecurringTransactionService>()
+                    .GetRegularTransactionsDelta(year);
+            }
+            else
+            {
+                transactionsDelta = contextProvider.GetService<ITransactionService>()
+                    .GetTransactionsDelta(year);
+            }
+
+            return transactionsDelta;
         }
     }
 }
