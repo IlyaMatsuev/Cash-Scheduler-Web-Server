@@ -34,7 +34,8 @@ namespace CashSchedulerWebServer.Models
             Balance,
             Management,
             Sound,
-            AppToken
+            AppToken,
+            Appearance
         }
 
         public enum SettingOptions
@@ -43,7 +44,8 @@ namespace CashSchedulerWebServer.Models
             TurnNotificationsOn,
             DuplicateToEmail,
             TurnNotificationsSoundOn,
-            ConnectedAppsToken
+            ConnectedAppsToken,
+            DarkTheme
         }
 
         public enum ValueTypes

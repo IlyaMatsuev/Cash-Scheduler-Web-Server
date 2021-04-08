@@ -38,5 +38,13 @@
     "SectionName": "AppToken",
     "ValueType": "Custom",
     "Description": "Token that can be used for providing access to your account for other apps in order to get them ability to log transactions for you!"
+  },
+  {
+    "Label": "Dark Theme",
+    "Name": "DarkTheme",
+    "UnitName": "General",
+    "SectionName": "Appearance",
+    "ValueType": "Checkbox",
+    "Description": "Dark theme is more convenient for your eyes. And it looks stylish!"
   }
 ]

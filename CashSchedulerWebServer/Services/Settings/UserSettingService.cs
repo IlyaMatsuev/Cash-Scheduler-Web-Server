@@ -37,12 +37,14 @@ namespace CashSchedulerWebServer.Services.Settings
 
             var allSettings = ContextProvider.GetRepository<ISettingRepository>().GetAll();
 
+            static bool getValue(Setting setting) => setting.Name != Setting.SettingOptions.DarkTheme.ToString();
+
             return ContextProvider.GetRepository<IUserSettingRepository>()
                 .Create(allSettings.Select(setting => new UserSetting
                 {
                     User = targetUser,
                     Setting = setting,
-                    Value = true.ToString().ToLower()
+                    Value = getValue(setting).ToString().ToLower()
                 }).ToList());
         }
 
