@@ -31,20 +31,36 @@ namespace CashSchedulerWebServer.Services.Settings
                 : settingRepository.GetByUnitName(unitName);
         }
 
+        public IEnumerable<Language> GetLanguages()
+        {
+            return ContextProvider.GetRepository<ILanguageRepository>().GetAll();
+        }
+
         public Task<IEnumerable<UserSetting>> CreateDefaultSettings(User user)
         {
             var targetUser = ContextProvider.GetRepository<IUserRepository>().GetByKey(user.Id);
 
             var allSettings = ContextProvider.GetRepository<ISettingRepository>().GetAll();
 
-            static bool getValue(Setting setting) => setting.Name != Setting.SettingOptions.DarkTheme.ToString();
+            static string getValue(Setting setting)
+            {
+                if (setting.Name == Setting.SettingOptions.Language.ToString())
+                {
+                    return Language.DEFAULT_LANGUAGE_ABBREVIATION;
+                }
+                if (setting.Name == Setting.SettingOptions.DarkTheme.ToString())
+                {
+                    return false.ToString().ToLower();
+                }
+                return true.ToString().ToLower();
+            }
 
             return ContextProvider.GetRepository<IUserSettingRepository>()
                 .Create(allSettings.Select(setting => new UserSetting
                 {
                     User = targetUser,
                     Setting = setting,
-                    Value = getValue(setting).ToString().ToLower()
+                    Value = getValue(setting)
                 }).ToList());
         }
 

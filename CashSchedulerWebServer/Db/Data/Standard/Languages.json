@@ -1,0 +1,22 @@
+﻿[
+  {
+    "Abbreviation": "en",
+    "Name": "English",
+    "IconUrl": "/static/icons/languages/en.png"
+  },
+  {
+    "Abbreviation": "ru",
+    "Name": "Russian",
+    "IconUrl": "/static/icons/languages/ru.png"
+  },
+  {
+    "Abbreviation": "fr",
+    "Name": "French",
+    "IconUrl": "/static/icons/languages/fr.png"
+  },
+  {
+    "Abbreviation": "ua",
+    "Name": "Ukrainian",
+    "IconUrl": "/static/icons/languages/ua.png"
+  }
+]

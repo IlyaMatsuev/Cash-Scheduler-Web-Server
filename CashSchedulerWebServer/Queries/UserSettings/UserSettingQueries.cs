@@ -38,5 +38,10 @@ namespace CashSchedulerWebServer.Queries.UserSettings
         {
             return contextProvider.GetService<IUserSettingService>().GetByUnitName(unitName);
         }
+
+        public IEnumerable<Language>? Languages([Service] IContextProvider contextProvider)
+        {
+            return contextProvider.GetService<IUserSettingService>().GetLanguages();
+        }
     }
 }

@@ -8,6 +8,22 @@
     "Description": "You'll be able to see your actual balance all the time at the right top corner of the website"
   },
   {
+    "Label": "Dark Theme",
+    "Name": "DarkTheme",
+    "UnitName": "General",
+    "SectionName": "Appearance",
+    "ValueType": "Checkbox",
+    "Description": "Dark theme is more convenient for your eyes. And it looks stylish!"
+  },
+  {
+    "Label": "Language",
+    "Name": "Language",
+    "UnitName": "General",
+    "SectionName": "Appearance",
+    "ValueType": "Custom",
+    "Description": "Pick the language of the whole application interface"
+  },
+  {
     "Label": "Turn notification on",
     "Name": "TurnNotificationsOn",
     "UnitName": "Notifications",
@@ -38,13 +54,5 @@
     "SectionName": "AppToken",
     "ValueType": "Custom",
     "Description": "Token that can be used for providing access to your account for other apps in order to get them ability to log transactions for you!"
-  },
-  {
-    "Label": "Dark Theme",
-    "Name": "DarkTheme",
-    "UnitName": "General",
-    "SectionName": "Appearance",
-    "ValueType": "Checkbox",
-    "Description": "Dark theme is more convenient for your eyes. And it looks stylish!"
   }
 ]

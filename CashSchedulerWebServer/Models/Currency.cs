@@ -8,17 +8,17 @@ namespace CashSchedulerWebServer.Models
     {
         [NotMapped]
         public const string DEFAULT_CURRENCY_ABBREVIATION_USD = "USD";
-        
+
         [NotMapped]
         public const string DEFAULT_CURRENCY_ABBREVIATION_EUR = "EUR";
-        
+
         [NotMapped]
         private const string DEFAULT_ICON_URL = "/static/icons/currencies/unknown.png";
-        
-        
+
+
         [Key]
         public string Abbreviation { get; set; }
-        
+
         [GraphQLNonNullType]
         public string Name { get; set; }
 

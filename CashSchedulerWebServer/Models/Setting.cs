@@ -32,20 +32,21 @@ namespace CashSchedulerWebServer.Models
         public enum SectionOptions
         {
             Balance,
+            Appearance,
             Management,
             Sound,
-            AppToken,
-            Appearance
+            AppToken
         }
 
         public enum SettingOptions
         {
             ShowBalance,
-            TurnNotificationsOn,
+            DarkTheme,
+            Language,
             DuplicateToEmail,
+            TurnNotificationsOn,
             TurnNotificationsSoundOn,
-            ConnectedAppsToken,
-            DarkTheme
+            ConnectedAppsToken
         }
 
         public enum ValueTypes

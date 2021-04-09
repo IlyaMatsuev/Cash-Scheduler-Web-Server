@@ -15,9 +15,12 @@ namespace CashSchedulerWebServer.Exceptions
             }
             else
             {
-                Console.WriteLine(error.Exception?.Message);
-                Console.WriteLine(error.Exception?.Source);
-                Console.WriteLine(error.Exception?.StackTrace);
+                if (error.Exception != null)
+                {
+                    Console.WriteLine(error.Exception.Message);
+                    Console.WriteLine(error.Exception.Source);
+                    Console.WriteLine(error.Exception.StackTrace);
+                }
                 finalError = error.WithCode("500");
             }
 

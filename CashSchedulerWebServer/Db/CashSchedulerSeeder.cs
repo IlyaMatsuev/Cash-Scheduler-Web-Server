@@ -88,6 +88,7 @@ namespace CashSchedulerWebServer.Db
             context.Categories.RemoveRange(context.Categories);
             context.TransactionTypes.RemoveRange(context.TransactionTypes);
             context.Settings.RemoveRange(context.Settings);
+            context.Languages.RemoveRange(context.Languages);
             context.UserSettings.RemoveRange(context.UserSettings);
             context.UserNotifications.RemoveRange(context.UserNotifications);
             context.UserRefreshTokens.RemoveRange(context.UserRefreshTokens);
@@ -130,16 +131,19 @@ namespace CashSchedulerWebServer.Db
 
             string transactionTypesJson = File.ReadAllText(standardDataFolderPath + @"TransactionTypes.json");
             string settingsJson = File.ReadAllText(standardDataFolderPath + @"Settings.json");
+            string languagesJson = File.ReadAllText(standardDataFolderPath + @"Languages.json");
             string standardCategoriesJson = File.ReadAllText(standardDataFolderPath + @"Categories.json");
             string currenciesJson = File.ReadAllText(standardDataFolderPath + @"Currencies.json");
 
             var transactionTypes = JsonConvert.DeserializeObject<List<TransactionType>>(transactionTypesJson);
             var settings = JsonConvert.DeserializeObject<List<Setting>>(settingsJson);
+            var languages = JsonConvert.DeserializeObject<List<Language>>(languagesJson);
             var standardCategories = JsonConvert.DeserializeObject<List<Category>>(standardCategoriesJson);
             var currencies = JsonConvert.DeserializeObject<List<Currency>>(currenciesJson);
 
             context.TransactionTypes.AddRange(transactionTypes);
             context.Settings.AddRange(settings);
+            context.Languages.AddRange(languages);
             context.Currencies.AddRange(currencies);
             context.SaveChanges();
             standardCategories.ForEach(category =>

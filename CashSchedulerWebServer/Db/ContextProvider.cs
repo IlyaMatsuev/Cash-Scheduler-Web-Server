@@ -30,6 +30,7 @@ namespace CashSchedulerWebServer.Db
             {typeof(IUserRefreshTokenRepository), typeof(UserRefreshTokenRepository)},
             {typeof(IUserEmailVerificationCodeRepository), typeof(UserEmailVerificationCodeRepository)},
             {typeof(ISettingRepository), typeof(SettingRepository)},
+            {typeof(ILanguageRepository), typeof(LanguageRepository)},
             {typeof(ITransactionTypeRepository), typeof(TransactionTypeRepository)},
             {typeof(ICategoryRepository), typeof(CategoryRepository)},
             {typeof(ITransactionRepository), typeof(TransactionRepository)},
