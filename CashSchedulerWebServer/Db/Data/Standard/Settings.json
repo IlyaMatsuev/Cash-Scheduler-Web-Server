@@ -24,6 +24,14 @@
     "Description": "Pick the language of the whole application interface"
   },
   {
+    "Label": "Delete Account",
+    "Name": "DeleteAccount",
+    "UnitName": "General",
+    "SectionName": "Dangerous",
+    "ValueType": "Custom",
+    "Description": "If you don't want to use CashScheduler anymore you can delete account to be sure all your personal data is removed"
+  },
+  {
     "Label": "Turn notification on",
     "Name": "TurnNotificationsOn",
     "UnitName": "Notifications",

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using CashSchedulerWebServer.Models;
 
 namespace CashSchedulerWebServer.Db.Contracts
@@ -9,5 +10,7 @@ namespace CashSchedulerWebServer.Db.Contracts
             string sourceCurrencyAbbreviation,
             string targetCurrencyAbbreviation
         );
+
+        IEnumerable<CurrencyExchangeRate> DeleteByUserId(int userId);
     }
 }

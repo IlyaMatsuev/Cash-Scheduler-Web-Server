@@ -87,5 +87,15 @@ namespace CashSchedulerWebServer.Db.Repositories
 
             return wallet;
         }
+
+        public IEnumerable<Wallet> DeleteByUserId(int userId)
+        {
+            var wallets = Context.Wallets.Where(c => c.User.Id == userId);
+
+            Context.Wallets.RemoveRange(wallets);
+            Context.SaveChanges();
+
+            return wallets;
+        }
     }
 }

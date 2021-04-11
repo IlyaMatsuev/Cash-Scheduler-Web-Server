@@ -112,5 +112,15 @@ namespace CashSchedulerWebServer.Db.Repositories
 
             return category;
         }
+
+        public IEnumerable<Category> DeleteByUserId(int userId)
+        {
+            var categories = Context.Categories.Where(c => c.IsCustom && c.User.Id == userId);
+
+            Context.Categories.RemoveRange(categories);
+            Context.SaveChanges();
+
+            return categories;
+        }
     }
 }

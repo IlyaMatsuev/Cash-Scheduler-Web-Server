@@ -16,7 +16,7 @@ namespace CashSchedulerWebServer.Auth
 
         public int GetUserId()
         {
-            string userIdFromClaims = HttpContext.User?.Claims.GetUserId();
+            string userIdFromClaims = HttpContext?.User?.Claims.GetUserId();
             string userId = string.IsNullOrEmpty(userIdFromClaims)
                 ? "-1"
                 : userIdFromClaims;

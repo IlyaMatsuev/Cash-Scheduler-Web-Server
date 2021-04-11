@@ -88,5 +88,14 @@ namespace CashSchedulerWebServer.Mutations.Users
                 Balance = user.Balance ?? default
             });
         }
+
+        [GraphQLNonNullType]
+        [Authorize(Policy = AuthOptions.AUTH_POLICY, Roles = new[] {AuthOptions.USER_ROLE})]
+        public Task<User> DeleteUser(
+            [Service] IContextProvider contextProvider,
+            [GraphQLNonNullType] string password)
+        {
+            return contextProvider.GetService<IUserService>().Delete(password);
+        }
     }
 }

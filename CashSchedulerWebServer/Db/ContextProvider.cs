@@ -3,6 +3,7 @@ using CashSchedulerWebServer.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using CashSchedulerWebServer.Db.Repositories;
 using CashSchedulerWebServer.Services.Categories;
 using CashSchedulerWebServer.Services.Contracts;
@@ -14,6 +15,7 @@ using CashSchedulerWebServer.Services.Transactions;
 using CashSchedulerWebServer.Services.TransactionTypes;
 using CashSchedulerWebServer.Services.Users;
 using CashSchedulerWebServer.Services.Wallets;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace CashSchedulerWebServer.Db
 {
@@ -67,6 +69,21 @@ namespace CashSchedulerWebServer.Db
         public T GetRepository<T>() where T : class => GetService<T>(RepositoryTypesMap);
 
         public T GetService<T>() where T : class => GetService<T>(ServiceTypesMap);
+
+        public Task<IDbContextTransaction> BeginTransaction()
+        {
+            return Context.Database.BeginTransactionAsync();
+        }
+
+        public Task PreventTransaction(IDbContextTransaction transaction)
+        {
+            return transaction.RollbackAsync();
+        }
+
+        public Task EndTransaction(IDbContextTransaction transaction)
+        {
+            return transaction.CommitAsync();
+        }
 
 
         private T GetService<T>(Dictionary<Type, Type> typesMap) where T : class

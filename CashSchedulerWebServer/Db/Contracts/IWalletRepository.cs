@@ -9,5 +9,7 @@ namespace CashSchedulerWebServer.Db.Contracts
         Wallet GetDefault();
 
         Task<IEnumerable<Wallet>> Update(IEnumerable<Wallet> wallets);
+
+        IEnumerable<Wallet> DeleteByUserId(int userId);
     }
 }

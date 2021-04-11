@@ -11,6 +11,7 @@ using CashSchedulerWebServer.Models;
 using CashSchedulerWebServer.Services.Contracts;
 using CashSchedulerWebServer.Services.Users;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using Newtonsoft.Json;
 using Xunit;
@@ -27,6 +28,7 @@ namespace CashSchedulerWebServer.Tests.Services
         private Mock<IContextProvider> ContextProvider { get; }
         private Mock<IEventManager> EventManager { get; }
         private Mock<IUserContext> UserContext { get; }
+        private Mock<IServiceScopeFactory> ServiceScopeFactory { get; }
 
         public UserServiceTest()
         {
@@ -34,6 +36,7 @@ namespace CashSchedulerWebServer.Tests.Services
             EventManager = new Mock<IEventManager>();
             UserRepository = new Mock<IUserRepository>();
             UserContext = new Mock<IUserContext>();
+            ServiceScopeFactory = new Mock<IServiceScopeFactory>();
 
             UserContext.Setup(u => u.GetUserId()).Returns(TESTING_USER_ID);
 
@@ -47,7 +50,8 @@ namespace CashSchedulerWebServer.Tests.Services
                         {"App:Auth:PasswordSalt", HASH_SALT}
                     }).Build(),
                 UserContext.Object,
-                EventManager.Object
+                EventManager.Object,
+                ServiceScopeFactory.Object
             );
         }
 

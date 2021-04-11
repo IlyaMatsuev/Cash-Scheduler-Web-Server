@@ -13,5 +13,7 @@ namespace CashSchedulerWebServer.Db.Contracts
         UserRefreshToken GetByUserAndToken(int userId, string token);
 
         Task<IEnumerable<UserRefreshToken>> Delete(IEnumerable<UserRefreshToken> tokens);
+
+        IEnumerable<UserRefreshToken> DeleteByUserId(int userId);
     }
 }

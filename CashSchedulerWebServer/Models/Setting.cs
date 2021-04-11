@@ -33,6 +33,7 @@ namespace CashSchedulerWebServer.Models
         {
             Balance,
             Appearance,
+            Dangerous,
             Management,
             Sound,
             AppToken
@@ -43,6 +44,7 @@ namespace CashSchedulerWebServer.Models
             ShowBalance,
             DarkTheme,
             Language,
+            DeleteAccount,
             DuplicateToEmail,
             TurnNotificationsOn,
             TurnNotificationsSoundOn,

@@ -89,5 +89,15 @@ namespace CashSchedulerWebServer.Db.Repositories
 
             return tokens;
         }
+
+        public IEnumerable<UserRefreshToken> DeleteByUserId(int userId)
+        {
+            var tokens = Context.UserRefreshTokens.Where(c => c.User.Id == userId);
+
+            Context.UserRefreshTokens.RemoveRange(tokens);
+            Context.SaveChanges();
+
+            return tokens;
+        }
     }
 }

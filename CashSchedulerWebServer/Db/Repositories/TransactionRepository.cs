@@ -118,5 +118,15 @@ namespace CashSchedulerWebServer.Db.Repositories
             await Context.SaveChangesAsync();
             return transactions;
         }
+
+        public IEnumerable<Transaction> DeleteByUserId(int userId)
+        {
+            var transactions = Context.Transactions.Where(c => c.User.Id == userId);
+
+            Context.Transactions.RemoveRange(transactions);
+            Context.SaveChanges();
+
+            return transactions;
+        }
     }
 }

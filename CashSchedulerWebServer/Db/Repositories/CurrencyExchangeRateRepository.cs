@@ -83,5 +83,15 @@ namespace CashSchedulerWebServer.Db.Repositories
 
             return exchangeRate;
         }
+
+        public IEnumerable<CurrencyExchangeRate> DeleteByUserId(int userId)
+        {
+            var exchangeRates = Context.CurrencyExchangeRates.Where(c => c.IsCustom && c.User.Id == userId);
+
+            Context.CurrencyExchangeRates.RemoveRange(exchangeRates);
+            Context.SaveChanges();
+
+            return exchangeRates;
+        }
     }
 }

@@ -4,6 +4,7 @@
     {
         UserLogin,
         UserRegistered,
+        UserDeleted,
         RecordUpserted,
         RecordDeleted
     }

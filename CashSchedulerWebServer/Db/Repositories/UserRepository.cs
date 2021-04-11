@@ -58,9 +58,14 @@ namespace CashSchedulerWebServer.Db.Repositories
             return user;
         }
 
-        public Task<User> Delete(int id)
+        public async Task<User> Delete(int id)
         {
-            throw new CashSchedulerException("It's forbidden to delete users");
+            var user = GetByKey(id);
+
+            Context.Users.Remove(user);
+            await Context.SaveChangesAsync();
+
+            return user;
         }
     }
 }

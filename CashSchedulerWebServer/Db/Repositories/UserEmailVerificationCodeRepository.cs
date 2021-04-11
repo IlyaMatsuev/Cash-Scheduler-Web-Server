@@ -62,5 +62,15 @@ namespace CashSchedulerWebServer.Db.Repositories
             
             return emailVerificationCode;
         }
+
+        public IEnumerable<UserEmailVerificationCode> DeleteByUserId(int userId)
+        {
+            var codes = Context.UserEmailVerificationCodes.Where(c => c.User.Id == userId);
+
+            Context.UserEmailVerificationCodes.RemoveRange(codes);
+            Context.SaveChanges();
+
+            return codes;
+        }
     }
 }
