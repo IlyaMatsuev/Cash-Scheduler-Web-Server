@@ -8,7 +8,7 @@ services:
       SA_PASSWORD: "admin11@"
       MSSQL_PID: "Express"
     ports:
-      - "1434:1433"
+      - "1433:1433"
 
   cash-scheduler-client:
     image: ilyamatsuev/cash-scheduler-client
@@ -59,4 +59,4 @@ services:
       ASPNETCORE_Kestrel__Certificates__Default__Path: /https/CashSchedulerWebServer.pfx
       ASPNETCORE_Kestrel__Certificates__Default__Password: "password"
     volumes:
-      - C:/Users/ASUS/.aspnet/https:/https/
+      - C:/Users/matsu/.aspnet/https:/https/
