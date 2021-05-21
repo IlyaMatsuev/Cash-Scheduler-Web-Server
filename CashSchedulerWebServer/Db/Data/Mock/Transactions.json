@@ -1,527 +1,751 @@
 [
   {
-    "Title": "integer a",
-    "Amount": 9441.35,
-    "User": {
-      "Id": 6
-    },
-    "Category": {
-      "Id": 45
-    },
-    "Wallet": {
-      "Id": 2
-    },
-    "Date": "7/31/2020"
-  },
-  {
-    "Title": "vulputate elementum",
-    "Amount": 2437.16,
-    "User": {
-      "Id": 9
-    },
-    "Category": {
-      "Id": 16
-    },
-    "Wallet": {
-      "Id": 11
-    },
-    "Date": "7/10/2020"
-  },
-  {
-    "Title": null,
-    "Amount": 3344.93,
-    "User": {
-      "Id": 10
-    },
-    "Category": {
-      "Id": 34
-    },
-    "Wallet": {
-      "Id": 11
-    },
-    "Date": "4/19/2021"
-  },
-  {
-    "Title": null,
-    "Amount": 6142.38,
-    "User": {
-      "Id": 7
-    },
-    "Category": {
-      "Id": 50
-    },
-    "Wallet": {
-      "Id": 35
-    },
-    "Date": "6/19/2021"
-  },
-  {
-    "Title": null,
-    "Amount": 4706.13,
-    "User": {
-      "Id": 6
-    },
-    "Category": {
-      "Id": 25
-    },
-    "Wallet": {
-      "Id": 7
-    },
-    "Date": "8/27/2020"
-  },
-  {
-    "Title": null,
-    "Amount": 1077.82,
-    "User": {
-      "Id": 7
-    },
-    "Category": {
-      "Id": 50
-    },
-    "Wallet": {
-      "Id": 24
-    },
-    "Date": "8/4/2020"
-  },
-  {
-    "Title": null,
-    "Amount": 4352.46,
-    "User": {
-      "Id": 3
-    },
-    "Category": {
-      "Id": 46
-    },
-    "Wallet": {
-      "Id": 28
-    },
-    "Date": "2/6/2021"
-  },
-  {
-    "Title": "rhoncus vestibulum",
-    "Amount": 6478.06,
-    "User": {
-      "Id": 2
-    },
-    "Category": {
-      "Id": 6
-    },
-    "Wallet": {
-      "Id": 22
-    },
-    "Date": "5/23/2021"
-  },
-  {
-    "Title": "vel dapibus",
-    "Amount": 3883.37,
-    "User": {
-      "Id": 7
-    },
-    "Category": {
-      "Id": 19
-    },
-    "Wallet": {
-      "Id": 18
-    },
-    "Date": "3/23/2021"
-  },
-  {
-    "Title": null,
-    "Amount": 4913.83,
-    "User": {
-      "Id": 8
-    },
-    "Category": {
-      "Id": 14
-    },
-    "Wallet": {
-      "Id": 14
-    },
-    "Date": "6/7/2021"
-  },
-  {
-    "Title": null,
-    "Amount": 7837.44,
-    "User": {
-      "Id": 8
-    },
-    "Category": {
-      "Id": 39
-    },
-    "Wallet": {
-      "Id": 26
-    },
-    "Date": "3/20/2021"
-  },
-  {
-    "Title": "dis parturient",
-    "Amount": 9172.12,
-    "User": {
-      "Id": 2
-    },
-    "Category": {
-      "Id": 1
-    },
-    "Wallet": {
-      "Id": 27
-    },
-    "Date": "3/31/2020"
-  },
-  {
-    "Title": "justo",
-    "Amount": 8228.47,
+    "Title": "urna ut",
+    "Amount": 2177.93,
     "User": {
       "Id": 1
     },
     "Category": {
-      "Id": 9
+      "Id": 6
     },
     "Wallet": {
+      "Id": 1
+    },
+    "Date": "6/5/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 8325.16,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
       "Id": 23
     },
-    "Date": "3/14/2021"
-  },
-  {
-    "Title": null,
-    "Amount": 9986.36,
-    "User": {
-      "Id": 4
-    },
-    "Category": {
-      "Id": 39
-    },
     "Wallet": {
-      "Id": 8
+      "Id": 2
     },
-    "Date": "5/18/2020"
+    "Date": "4/16/2021"
   },
   {
-    "Title": "malesuada in",
-    "Amount": 1007.3,
+    "Title": "vel",
+    "Amount": 9723.96,
     "User": {
       "Id": 1
-    },
-    "Category": {
-      "Id": 8
-    },
-    "Wallet": {
-      "Id": 27
-    },
-    "Date": "1/5/2021"
-  },
-  {
-    "Title": "venenatis lacinia",
-    "Amount": 2538.7,
-    "User": {
-      "Id": 2
     },
     "Category": {
       "Id": 15
     },
     "Wallet": {
-      "Id": 29
+      "Id": 3
     },
-    "Date": "12/11/2020"
+    "Date": "4/6/2021"
   },
   {
-    "Title": "ac nulla sed",
-    "Amount": 8988.15,
+    "Title": null,
+    "Amount": 3877.82,
     "User": {
       "Id": 1
     },
     "Category": {
-      "Id": 20
-    },
-    "Wallet": {
-      "Id": 20
-    },
-    "Date": "7/27/2020"
-  },
-  {
-    "Title": null,
-    "Amount": 9771.17,
-    "User": {
-      "Id": 7
-    },
-    "Category": {
-      "Id": 22
-    },
-    "Wallet": {
-      "Id": 26
-    },
-    "Date": "1/15/2021"
-  },
-  {
-    "Title": "amet lobortis",
-    "Amount": 8893.79,
-    "User": {
       "Id": 9
-    },
-    "Category": {
-      "Id": 9
-    },
-    "Wallet": {
-      "Id": 30
-    },
-    "Date": "9/12/2020"
-  },
-  {
-    "Title": null,
-    "Amount": 1871.91,
-    "User": {
-      "Id": 3
-    },
-    "Category": {
-      "Id": 36
     },
     "Wallet": {
       "Id": 3
     },
-    "Date": "6/12/2021"
-  },
-  {
-    "Title": "in",
-    "Amount": 4523.24,
-    "User": {
-      "Id": 7
-    },
-    "Category": {
-      "Id": 49
-    },
-    "Wallet": {
-      "Id": 18
-    },
-    "Date": "8/6/2020"
+    "Date": "6/6/2021"
   },
   {
     "Title": null,
-    "Amount": 6135.68,
+    "Amount": 4810.23,
     "User": {
-      "Id": 10
+      "Id": 1
     },
     "Category": {
-      "Id": 21
+      "Id": 13
     },
     "Wallet": {
-      "Id": 28
+      "Id": 3
     },
-    "Date": "7/19/2020"
+    "Date": "5/26/2021"
   },
   {
     "Title": null,
-    "Amount": 1951.57,
+    "Amount": 8723.59,
     "User": {
-      "Id": 7
+      "Id": 1
     },
     "Category": {
-      "Id": 48
+      "Id": 13
     },
     "Wallet": {
-      "Id": 9
+      "Id": 4
     },
-    "Date": "5/4/2021"
+    "Date": "3/7/2021"
   },
   {
-    "Title": "duis faucibus",
-    "Amount": 4081.28,
+    "Title": null,
+    "Amount": 4854.14,
     "User": {
-      "Id": 7
+      "Id": 1
     },
     "Category": {
-      "Id": 32
+      "Id": 2
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "3/22/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 9100.58,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 23
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "4/28/2021"
+  },
+  {
+    "Title": "ante",
+    "Amount": 9033.69,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 15
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "3/18/2021"
+  },
+  {
+    "Title": "aliquet",
+    "Amount": 9297.05,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 3
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "2/20/2021"
+  },
+  {
+    "Title": "amet",
+    "Amount": 9832.93,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 7
     },
     "Wallet": {
       "Id": 1
     },
-    "Date": "3/13/2020"
+    "Date": "2/18/2021"
   },
   {
-    "Title": null,
-    "Amount": 1502.38,
+    "Title": "in sagittis dui",
+    "Amount": 3048.12,
     "User": {
-      "Id": 5
+      "Id": 1
     },
     "Category": {
-      "Id": 6
+      "Id": 2
     },
     "Wallet": {
       "Id": 3
     },
-    "Date": "3/24/2021"
+    "Date": "4/18/2021"
   },
   {
     "Title": null,
-    "Amount": 3303.7,
+    "Amount": 2783.96,
     "User": {
-      "Id": 6
+      "Id": 1
     },
     "Category": {
-      "Id": 35
-    },
-    "Wallet": {
-      "Id": 35
-    },
-    "Date": "5/24/2021"
-  },
-  {
-    "Title": "neque",
-    "Amount": 2213.22,
-    "User": {
-      "Id": 2
-    },
-    "Category": {
-      "Id": 17
-    },
-    "Wallet": {
-      "Id": 12
-    },
-    "Date": "11/2/2020"
-  },
-  {
-    "Title": "ut",
-    "Amount": 5507.32,
-    "User": {
-      "Id": 4
-    },
-    "Category": {
-      "Id": 46
-    },
-    "Wallet": {
-      "Id": 4
-    },
-    "Date": "8/31/2020"
-  },
-  {
-    "Title": null,
-    "Amount": 3611.51,
-    "User": {
-      "Id": 2
-    },
-    "Category": {
-      "Id": 41
-    },
-    "Wallet": {
       "Id": 27
     },
-    "Date": "9/6/2020"
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "2/6/2021"
   },
   {
-    "Title": "sapien placerat",
-    "Amount": 2854.36,
+    "Title": "fringilla rhoncus",
+    "Amount": 9497.04,
     "User": {
-      "Id": 8
+      "Id": 1
     },
     "Category": {
-      "Id": 37
+      "Id": 20
     },
     "Wallet": {
-      "Id": 24
+      "Id": 1
     },
-    "Date": "3/13/2021"
-  },
-  {
-    "Title": "mauris",
-    "Amount": 3934.04,
-    "User": {
-      "Id": 10
-    },
-    "Category": {
-      "Id": 28
-    },
-    "Wallet": {
-      "Id": 6
-    },
-    "Date": "10/5/2020"
-  },
-  {
-    "Title": "sapien",
-    "Amount": 3444.86,
-    "User": {
-      "Id": 3
-    },
-    "Category": {
-      "Id": 33
-    },
-    "Wallet": {
-      "Id": 7
-    },
-    "Date": "9/2/2020"
+    "Date": "2/19/2021"
   },
   {
     "Title": null,
-    "Amount": 9358.74,
+    "Amount": 2774.27,
     "User": {
-      "Id": 9
+      "Id": 1
     },
     "Category": {
-      "Id": 33
+      "Id": 14
     },
     "Wallet": {
-      "Id": 10
+      "Id": 2
+    },
+    "Date": "3/28/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 6168.22,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 3
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "5/9/2021"
+  },
+  {
+    "Title": "lobortis ligula",
+    "Amount": 9858.53,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 23
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "2/27/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 8054.37,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 24
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "3/16/2021"
+  },
+  {
+    "Title": "amet",
+    "Amount": 3327.51,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 30
+    },
+    "Wallet": {
+      "Id": 1
     },
     "Date": "6/18/2021"
   },
   {
     "Title": null,
-    "Amount": 4554.11,
-    "User": {
-      "Id": 9
-    },
-    "Category": {
-      "Id": 32
-    },
-    "Wallet": {
-      "Id": 37
-    },
-    "Date": "6/28/2021"
-  },
-  {
-    "Title": "ut mauris eget",
-    "Amount": 1289.26,
+    "Amount": 4431.59,
     "User": {
       "Id": 1
-    },
-    "Category": {
-      "Id": 45
-    },
-    "Wallet": {
-      "Id": 19
-    },
-    "Date": "5/7/2021"
-  },
-  {
-    "Title": "rutrum neque aenean",
-    "Amount": 6698.57,
-    "User": {
-      "Id": 3
     },
     "Category": {
       "Id": 18
     },
     "Wallet": {
-      "Id": 16
+      "Id": 1
     },
-    "Date": "3/19/2020"
+    "Date": "2/15/2021"
   },
   {
-    "Title": null,
-    "Amount": 7375.53,
+    "Title": "fermentum",
+    "Amount": 7957.81,
     "User": {
-      "Id": 7
+      "Id": 1
+    },
+    "Category": {
+      "Id": 1
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "3/7/2021"
+  },
+  {
+    "Title": "nulla",
+    "Amount": 9541.42,
+    "User": {
+      "Id": 1
     },
     "Category": {
       "Id": 12
     },
     "Wallet": {
-      "Id": 12
+      "Id": 4
     },
-    "Date": "9/21/2020"
+    "Date": "3/11/2021"
   },
   {
     "Title": null,
-    "Amount": 8688.53,
+    "Amount": 2963.27,
     "User": {
-      "Id": 6
+      "Id": 1
+    },
+    "Category": {
+      "Id": 17
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "6/24/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 9597.49,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 22
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "4/10/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 2749.69,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 3
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "5/5/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 7959.07,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 12
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "4/14/2021"
+  },
+  {
+    "Title": "enim",
+    "Amount": 2851.37,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 12
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "6/18/2021"
+  },
+  {
+    "Title": "at turpis",
+    "Amount": 1233.08,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 4
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "2/21/2021"
+  },
+  {
+    "Title": "fringilla rhoncus mauris",
+    "Amount": 9133.87,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 1
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "2/5/2021"
+  },
+  {
+    "Title": "libero",
+    "Amount": 3264.16,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 1
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "2/16/2021"
+  },
+  {
+    "Title": "aliquam sit amet",
+    "Amount": 4517.56,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 25
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "5/19/2021"
+  },
+  {
+    "Title": "amet",
+    "Amount": 3542.05,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 11
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "4/18/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 3694.35,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 27
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "5/13/2021"
+  },
+  {
+    "Title": "aliquet ultrices",
+    "Amount": 1389.63,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 10
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "5/7/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 8845.98,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 7
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "6/13/2021"
+  },
+  {
+    "Title": "ullamcorper",
+    "Amount": 1841.58,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 20
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "4/1/2021"
+  },
+  {
+    "Title": "venenatis tristique fusce",
+    "Amount": 8383.96,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 11
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "6/18/2021"
+  },
+  {
+    "Title": "platea dictumst",
+    "Amount": 7921.46,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 23
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "5/5/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 8117.24,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 4
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "5/28/2021"
+  },
+  {
+    "Title": "rutrum nulla nunc",
+    "Amount": 6524.98,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 10
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "3/31/2021"
+  },
+  {
+    "Title": "maecenas pulvinar lobortis",
+    "Amount": 9289.25,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 5
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "3/18/2021"
+  },
+  {
+    "Title": "vestibulum",
+    "Amount": 3791.44,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 28
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "6/24/2021"
+  },
+  {
+    "Title": "sit",
+    "Amount": 5258.05,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 3
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "3/9/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 5517.46,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 13
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "3/24/2021"
+  },
+  {
+    "Title": "libero",
+    "Amount": 3939.35,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 21
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "3/19/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 1501.39,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 23
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "6/7/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 1217.51,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 21
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "6/25/2021"
+  },
+  {
+    "Title": "rutrum nulla nunc",
+    "Amount": 2067.55,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 10
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "2/3/2021"
+  },
+  {
+    "Title": "vestibulum proin eu",
+    "Amount": 4185.02,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 16
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "3/5/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 2116.82,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 19
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "4/20/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 8739.46,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 21
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "4/22/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 6135.43,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 8
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "4/29/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 6963.3,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 10
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "2/9/2021"
+  },
+  {
+    "Title": "ligula in lacus",
+    "Amount": 4461.4,
+    "User": {
+      "Id": 1
     },
     "Category": {
       "Id": 23
@@ -529,174 +753,650 @@
     "Wallet": {
       "Id": 2
     },
-    "Date": "1/30/2021"
-  },
-  {
-    "Title": "ac neque duis",
-    "Amount": 9645.16,
-    "User": {
-      "Id": 5
-    },
-    "Category": {
-      "Id": 28
-    },
-    "Wallet": {
-      "Id": 19
-    },
-    "Date": "10/29/2020"
-  },
-  {
-    "Title": "sagittis nam",
-    "Amount": 3391.83,
-    "User": {
-      "Id": 7
-    },
-    "Category": {
-      "Id": 2
-    },
-    "Wallet": {
-      "Id": 15
-    },
-    "Date": "5/18/2021"
+    "Date": "6/26/2021"
   },
   {
     "Title": null,
-    "Amount": 1094.54,
-    "User": {
-      "Id": 6
-    },
-    "Category": {
-      "Id": 2
-    },
-    "Wallet": {
-      "Id": 39
-    },
-    "Date": "6/8/2020"
-  },
-  {
-    "Title": "nonummy maecenas",
-    "Amount": 3317.92,
+    "Amount": 4716.73,
     "User": {
       "Id": 1
     },
     "Category": {
-      "Id": 20
+      "Id": 4
     },
     "Wallet": {
-      "Id": 28
+      "Id": 1
     },
-    "Date": "4/23/2020"
+    "Date": "4/27/2021"
   },
   {
     "Title": null,
-    "Amount": 5279.92,
+    "Amount": 2480.39,
     "User": {
-      "Id": 9
+      "Id": 1
     },
     "Category": {
-      "Id": 15
+      "Id": 26
     },
     "Wallet": {
+      "Id": 1
+    },
+    "Date": "4/27/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 3876.44,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 21
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "2/18/2021"
+  },
+  {
+    "Title": "libero convallis",
+    "Amount": 5446.56,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 11
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "6/7/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 1023.82,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
       "Id": 25
     },
-    "Date": "1/6/2021"
-  },
-  {
-    "Title": "velit",
-    "Amount": 6209.19,
-    "User": {
-      "Id": 7
-    },
-    "Category": {
-      "Id": 12
-    },
     "Wallet": {
-      "Id": 13
+      "Id": 1
     },
-    "Date": "11/24/2020"
+    "Date": "2/22/2021"
   },
   {
-    "Title": "a feugiat",
-    "Amount": 4587.99,
+    "Title": null,
+    "Amount": 4582.34,
     "User": {
-      "Id": 4
-    },
-    "Category": {
-      "Id": 37
-    },
-    "Wallet": {
-      "Id": 32
-    },
-    "Date": "9/3/2020"
-  },
-  {
-    "Title": "velit nec",
-    "Amount": 2467.55,
-    "User": {
-      "Id": 9
+      "Id": 1
     },
     "Category": {
       "Id": 29
     },
     "Wallet": {
-      "Id": 26
-    },
-    "Date": "5/13/2020"
-  },
-  {
-    "Title": "suscipit",
-    "Amount": 8882.58,
-    "User": {
-      "Id": 5
-    },
-    "Category": {
-      "Id": 39
-    },
-    "Wallet": {
-      "Id": 20
-    },
-    "Date": "6/7/2020"
-  },
-  {
-    "Title": "purus sit",
-    "Amount": 7245.44,
-    "User": {
       "Id": 4
     },
+    "Date": "3/25/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 7954.41,
+    "User": {
+      "Id": 1
+    },
     "Category": {
-      "Id": 36
+      "Id": 23
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "3/10/2021"
+  },
+  {
+    "Title": "sem praesent id",
+    "Amount": 5846.26,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 17
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "5/4/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 6077.26,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 28
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "5/29/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 6111.22,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 22
     },
     "Wallet": {
       "Id": 3
     },
-    "Date": "6/12/2020"
+    "Date": "4/22/2021"
+  },
+  {
+    "Title": "ipsum primis in",
+    "Amount": 9697.37,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 28
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "2/24/2021"
+  },
+  {
+    "Title": "nulla nunc",
+    "Amount": 6778.15,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 13
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "4/13/2021"
   },
   {
     "Title": null,
-    "Amount": 4744.16,
+    "Amount": 3557.49,
     "User": {
-      "Id": 10
+      "Id": 1
+    },
+    "Category": {
+      "Id": 23
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "4/1/2021"
+  },
+  {
+    "Title": "sapien sapien",
+    "Amount": 7542.15,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 22
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "3/15/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 2732.26,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 6
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "6/10/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 7223.75,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 14
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "4/7/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 5149.07,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 1
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "6/3/2021"
+  },
+  {
+    "Title": "ultrices",
+    "Amount": 4532.81,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 7
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "6/19/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 9295.66,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 16
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "2/12/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 7581.6,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 22
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "6/16/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 7068.62,
+    "User": {
+      "Id": 1
     },
     "Category": {
       "Id": 27
     },
     "Wallet": {
-      "Id": 12
+      "Id": 2
     },
-    "Date": "9/26/2020"
+    "Date": "3/4/2021"
   },
   {
-    "Title": "interdum mauris non",
-    "Amount": 3487.82,
+    "Title": "arcu libero",
+    "Amount": 7784.86,
     "User": {
-      "Id": 4
+      "Id": 1
     },
     "Category": {
-      "Id": 44
+      "Id": 10
     },
     "Wallet": {
-      "Id": 6
+      "Id": 1
     },
-    "Date": "5/22/2021"
+    "Date": "6/14/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 9921.85,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 3
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "2/17/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 7572.51,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 26
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "6/1/2021"
+  },
+  {
+    "Title": "aenean sit",
+    "Amount": 8455.43,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 11
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "2/5/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 1790.69,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 24
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "2/27/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 3409.12,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 15
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "4/26/2021"
+  },
+  {
+    "Title": "lectus",
+    "Amount": 2430.61,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 3
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "2/15/2021"
+  },
+  {
+    "Title": "nunc proin",
+    "Amount": 8933.99,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 21
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "5/4/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 5272.31,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 12
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "5/18/2021"
+  },
+  {
+    "Title": "libero nam",
+    "Amount": 8190.42,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 9
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "3/23/2021"
+  },
+  {
+    "Title": "ipsum primis",
+    "Amount": 4802.13,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 28
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "6/5/2021"
+  },
+  {
+    "Title": "nec nisi vulputate",
+    "Amount": 3397.12,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 3
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "1/31/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 9807.56,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 24
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "2/22/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 3372.39,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 18
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "5/18/2021"
+  },
+  {
+    "Title": "nam nulla",
+    "Amount": 1629.03,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 15
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "2/20/2021"
+  },
+  {
+    "Title": "nullam molestie nibh",
+    "Amount": 6344.74,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 12
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "4/17/2021"
+  },
+  {
+    "Title": "orci luctus",
+    "Amount": 7851.58,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 18
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "2/26/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 7874.15,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 15
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "2/1/2021"
+  },
+  {
+    "Title": "eget nunc donec",
+    "Amount": 3747.39,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 17
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "3/23/2021"
+  },
+  {
+    "Title": "convallis morbi odio",
+    "Amount": 7689.88,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 5
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "5/7/2021"
+  },
+  {
+    "Title": "eget",
+    "Amount": 3402.47,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 3
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "5/6/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 5525.62,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 24
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "3/6/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 2401.26,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 15
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "4/4/2021"
+  },
+  {
+    "Title": "lacinia aenean sit",
+    "Amount": 5142.83,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 8
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "5/7/2021"
+  },
+  {
+    "Title": null,
+    "Amount": 1966.8,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 24
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "5/4/2021"
   }
 ]

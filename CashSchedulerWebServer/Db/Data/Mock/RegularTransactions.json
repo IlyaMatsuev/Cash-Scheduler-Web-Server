@@ -1,551 +1,919 @@
 [
   {
-    "Title": null,
-    "Amount": 6793.6,
+    "Title": "neque",
+    "Amount": 2364.35,
     "User": {
-      "Id": 2
+      "Id": 1
     },
     "Category": {
-      "Id": 42
+      "Id": 20
     },
     "Wallet": {
-      "Id": 30
+      "Id": 2
     },
-    "Date": "10/3/2020",
-    "NextTransactionDate": "10/11/2020",
+    "Date": "4/23/2021",
+    "NextTransactionDate": "4/30/2021",
     "Interval": "Day"
   },
   {
-    "Title": null,
-    "Amount": 2588.36,
+    "Title": "id ornare",
+    "Amount": 9287.02,
     "User": {
-      "Id": 10
+      "Id": 1
     },
     "Category": {
-      "Id": 6
+      "Id": 18
     },
     "Wallet": {
-      "Id": 20
+      "Id": 2
     },
-    "Date": "11/3/2020",
-    "NextTransactionDate": "5/24/2021",
-    "Interval": "Month"
+    "Date": "4/17/2021",
+    "NextTransactionDate": "4/29/2021",
+    "Interval": "Year"
   },
   {
-    "Title": null,
-    "Amount": 1674.78,
+    "Title": "ut rhoncus aliquet",
+    "Amount": 1873.57,
     "User": {
-      "Id": 8
+      "Id": 1
     },
     "Category": {
-      "Id": 10
+      "Id": 16
     },
     "Wallet": {
-      "Id": 9
+      "Id": 3
     },
-    "Date": "5/27/2020",
-    "NextTransactionDate": "12/18/2020",
+    "Date": "5/21/2021",
+    "NextTransactionDate": "5/14/2021",
     "Interval": "Week"
   },
   {
     "Title": null,
-    "Amount": 9234.29,
+    "Amount": 7744.93,
     "User": {
-      "Id": 6
+      "Id": 1
     },
     "Category": {
       "Id": 21
     },
     "Wallet": {
-      "Id": 4
+      "Id": 2
     },
-    "Date": "3/11/2020",
-    "NextTransactionDate": "7/6/2020",
-    "Interval": "Day"
+    "Date": "4/27/2021",
+    "NextTransactionDate": "5/13/2021",
+    "Interval": "Week"
   },
   {
-    "Title": "velit",
-    "Amount": 2712.98,
+    "Title": null,
+    "Amount": 1415.35,
     "User": {
+      "Id": 1
+    },
+    "Category": {
       "Id": 10
     },
-    "Category": {
-      "Id": 47
-    },
     "Wallet": {
-      "Id": 37
-    },
-    "Date": "6/28/2021",
-    "NextTransactionDate": "5/18/2020",
-    "Interval": "Month"
-  },
-  {
-    "Title": "interdum",
-    "Amount": 7976.47,
-    "User": {
-      "Id": 8
-    },
-    "Category": {
-      "Id": 14
-    },
-    "Wallet": {
-      "Id": 37
-    },
-    "Date": "3/8/2020",
-    "NextTransactionDate": "1/1/2021",
-    "Interval": "Year"
-  },
-  {
-    "Title": "venenatis",
-    "Amount": 3789.34,
-    "User": {
-      "Id": 5
-    },
-    "Category": {
-      "Id": 27
-    },
-    "Wallet": {
-      "Id": 40
-    },
-    "Date": "10/27/2020",
-    "NextTransactionDate": "12/11/2020",
-    "Interval": "Month"
-  },
-  {
-    "Title": null,
-    "Amount": 8165.33,
-    "User": {
       "Id": 4
     },
-    "Category": {
-      "Id": 7
-    },
-    "Wallet": {
-      "Id": 8
-    },
-    "Date": "3/10/2020",
-    "NextTransactionDate": "11/13/2020",
-    "Interval": "Year"
-  },
-  {
-    "Title": "duis bibendum",
-    "Amount": 3550.09,
-    "User": {
-      "Id": 6
-    },
-    "Category": {
-      "Id": 39
-    },
-    "Wallet": {
-      "Id": 7
-    },
-    "Date": "6/23/2020",
-    "NextTransactionDate": "10/22/2020",
+    "Date": "5/9/2021",
+    "NextTransactionDate": "3/31/2021",
     "Interval": "Day"
   },
   {
-    "Title": "blandit non",
-    "Amount": 1043.29,
+    "Title": null,
+    "Amount": 6707.0,
     "User": {
-      "Id": 5
+      "Id": 1
     },
     "Category": {
-      "Id": 29
+      "Id": 28
     },
     "Wallet": {
-      "Id": 12
+      "Id": 3
     },
-    "Date": "3/13/2020",
-    "NextTransactionDate": "6/24/2020",
-    "Interval": "Month"
+    "Date": "3/13/2021",
+    "NextTransactionDate": "3/19/2021",
+    "Interval": "Week"
   },
   {
     "Title": null,
-    "Amount": 2164.26,
+    "Amount": 1985.12,
     "User": {
-      "Id": 5
+      "Id": 1
+    },
+    "Category": {
+      "Id": 26
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "5/13/2021",
+    "NextTransactionDate": "4/16/2021",
+    "Interval": "Week"
+  },
+  {
+    "Title": "integer non velit",
+    "Amount": 6027.56,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 24
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "5/21/2021",
+    "NextTransactionDate": "5/16/2021",
+    "Interval": "Week"
+  },
+  {
+    "Title": "tincidunt",
+    "Amount": 9968.76,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 19
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "5/4/2021",
+    "NextTransactionDate": "4/7/2021",
+    "Interval": "Year"
+  },
+  {
+    "Title": null,
+    "Amount": 8271.11,
+    "User": {
+      "Id": 1
     },
     "Category": {
       "Id": 23
     },
     "Wallet": {
-      "Id": 21
+      "Id": 1
     },
-    "Date": "8/17/2020",
-    "NextTransactionDate": "4/20/2021",
-    "Interval": "Year"
-  },
-  {
-    "Title": null,
-    "Amount": 3350.7,
-    "User": {
-      "Id": 2
-    },
-    "Category": {
-      "Id": 20
-    },
-    "Wallet": {
-      "Id": 6
-    },
-    "Date": "5/12/2021",
-    "NextTransactionDate": "12/30/2020",
+    "Date": "4/22/2021",
+    "NextTransactionDate": "3/31/2021",
     "Interval": "Day"
   },
   {
     "Title": null,
-    "Amount": 7596.02,
+    "Amount": 7268.81,
     "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 27
+    },
+    "Wallet": {
       "Id": 3
+    },
+    "Date": "4/25/2021",
+    "NextTransactionDate": "3/26/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": "pharetra magna",
+    "Amount": 3342.66,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 15
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "4/9/2021",
+    "NextTransactionDate": "5/10/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": "sapien",
+    "Amount": 5365.05,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 28
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "5/11/2021",
+    "NextTransactionDate": "4/6/2021",
+    "Interval": "Month"
+  },
+  {
+    "Title": "vulputate",
+    "Amount": 4354.8,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 21
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "3/13/2021",
+    "NextTransactionDate": "5/22/2021",
+    "Interval": "Year"
+  },
+  {
+    "Title": "mauris",
+    "Amount": 3175.64,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 19
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "5/11/2021",
+    "NextTransactionDate": "5/15/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": null,
+    "Amount": 6774.81,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 19
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "4/2/2021",
+    "NextTransactionDate": "5/1/2021",
+    "Interval": "Year"
+  },
+  {
+    "Title": "duis ac",
+    "Amount": 4208.78,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 27
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "3/24/2021",
+    "NextTransactionDate": "5/15/2021",
+    "Interval": "Month"
+  },
+  {
+    "Title": "purus",
+    "Amount": 3453.99,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 16
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "4/19/2021",
+    "NextTransactionDate": "3/21/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": "vestibulum quam sapien",
+    "Amount": 6527.03,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 15
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "3/12/2021",
+    "NextTransactionDate": "3/24/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": "neque vestibulum eget",
+    "Amount": 3798.41,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 17
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "4/5/2021",
+    "NextTransactionDate": "3/24/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": null,
+    "Amount": 6829.46,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 22
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "4/13/2021",
+    "NextTransactionDate": "4/23/2021",
+    "Interval": "Month"
+  },
+  {
+    "Title": "habitasse platea",
+    "Amount": 6547.45,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 12
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "4/18/2021",
+    "NextTransactionDate": "3/18/2021",
+    "Interval": "Year"
+  },
+  {
+    "Title": "habitasse platea dictumst",
+    "Amount": 8829.92,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 12
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "4/28/2021",
+    "NextTransactionDate": "5/10/2021",
+    "Interval": "Week"
+  },
+  {
+    "Title": null,
+    "Amount": 3515.17,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 21
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "4/6/2021",
+    "NextTransactionDate": "5/13/2021",
+    "Interval": "Year"
+  },
+  {
+    "Title": null,
+    "Amount": 9770.08,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 13
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "5/10/2021",
+    "NextTransactionDate": "3/20/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": "tortor risus dapibus",
+    "Amount": 6159.52,
+    "User": {
+      "Id": 1
     },
     "Category": {
       "Id": 14
     },
     "Wallet": {
-      "Id": 5
-    },
-    "Date": "3/5/2021",
-    "NextTransactionDate": "8/29/2020",
-    "Interval": "Month"
-  },
-  {
-    "Title": null,
-    "Amount": 6633.32,
-    "User": {
-      "Id": 3
-    },
-    "Category": {
-      "Id": 29
-    },
-    "Wallet": {
-      "Id": 39
-    },
-    "Date": "12/13/2020",
-    "NextTransactionDate": "10/29/2020",
-    "Interval": "Week"
-  },
-  {
-    "Title": null,
-    "Amount": 8151.21,
-    "User": {
-      "Id": 1
-    },
-    "Category": {
-      "Id": 42
-    },
-    "Wallet": {
-      "Id": 29
-    },
-    "Date": "3/14/2021",
-    "NextTransactionDate": "8/18/2020",
-    "Interval": "Month"
-  },
-  {
-    "Title": null,
-    "Amount": 6357.24,
-    "User": {
-      "Id": 6
-    },
-    "Category": {
-      "Id": 29
-    },
-    "Wallet": {
-      "Id": 34
-    },
-    "Date": "6/3/2021",
-    "NextTransactionDate": "11/15/2020",
-    "Interval": "Year"
-  },
-  {
-    "Title": null,
-    "Amount": 6200.51,
-    "User": {
-      "Id": 7
-    },
-    "Category": {
-      "Id": 2
-    },
-    "Wallet": {
-      "Id": 33
-    },
-    "Date": "5/11/2020",
-    "NextTransactionDate": "5/8/2021",
-    "Interval": "Week"
-  },
-  {
-    "Title": null,
-    "Amount": 5186.86,
-    "User": {
       "Id": 4
     },
-    "Category": {
-      "Id": 25
-    },
-    "Wallet": {
-      "Id": 5
-    },
-    "Date": "7/18/2020",
-    "NextTransactionDate": "4/8/2020",
-    "Interval": "Month"
-  },
-  {
-    "Title": null,
-    "Amount": 5266.44,
-    "User": {
-      "Id": 1
-    },
-    "Category": {
-      "Id": 9
-    },
-    "Wallet": {
-      "Id": 40
-    },
-    "Date": "10/17/2020",
-    "NextTransactionDate": "12/20/2020",
+    "Date": "3/12/2021",
+    "NextTransactionDate": "4/13/2021",
     "Interval": "Day"
   },
   {
-    "Title": "magnis dis parturient",
-    "Amount": 1743.02,
-    "User": {
-      "Id": 8
-    },
-    "Category": {
-      "Id": 10
-    },
-    "Wallet": {
-      "Id": 40
-    },
-    "Date": "10/5/2020",
-    "NextTransactionDate": "2/22/2021",
-    "Interval": "Year"
-  },
-  {
-    "Title": "cubilia curae",
-    "Amount": 9665.69,
-    "User": {
-      "Id": 8
-    },
-    "Category": {
-      "Id": 2
-    },
-    "Wallet": {
-      "Id": 39
-    },
-    "Date": "6/1/2020",
-    "NextTransactionDate": "12/5/2020",
-    "Interval": "Month"
-  },
-  {
     "Title": null,
-    "Amount": 3863.91,
+    "Amount": 4891.42,
     "User": {
-      "Id": 2
+      "Id": 1
     },
     "Category": {
-      "Id": 33
-    },
-    "Wallet": {
-      "Id": 20
-    },
-    "Date": "5/17/2021",
-    "NextTransactionDate": "1/7/2021",
-    "Interval": "Year"
-  },
-  {
-    "Title": "morbi",
-    "Amount": 6352.71,
-    "User": {
-      "Id": 6
-    },
-    "Category": {
-      "Id": 45
-    },
-    "Wallet": {
-      "Id": 13
-    },
-    "Date": "11/22/2020",
-    "NextTransactionDate": "3/8/2021",
-    "Interval": "Year"
-  },
-  {
-    "Title": "ac enim in",
-    "Amount": 2774.96,
-    "User": {
-      "Id": 10
-    },
-    "Category": {
-      "Id": 30
-    },
-    "Wallet": {
-      "Id": 21
-    },
-    "Date": "10/18/2020",
-    "NextTransactionDate": "9/14/2020",
-    "Interval": "Month"
-  },
-  {
-    "Title": null,
-    "Amount": 5907.26,
-    "User": {
-      "Id": 5
-    },
-    "Category": {
-      "Id": 4
-    },
-    "Wallet": {
-      "Id": 4
-    },
-    "Date": "8/13/2020",
-    "NextTransactionDate": "4/26/2021",
-    "Interval": "Month"
-  },
-  {
-    "Title": null,
-    "Amount": 3328.07,
-    "User": {
-      "Id": 10
-    },
-    "Category": {
-      "Id": 38
-    },
-    "Wallet": {
-      "Id": 27
-    },
-    "Date": "5/3/2020",
-    "NextTransactionDate": "8/30/2020",
-    "Interval": "Year"
-  },
-  {
-    "Title": null,
-    "Amount": 1084.49,
-    "User": {
-      "Id": 7
-    },
-    "Category": {
-      "Id": 34
-    },
-    "Wallet": {
-      "Id": 2
-    },
-    "Date": "8/5/2020",
-    "NextTransactionDate": "6/14/2021",
-    "Interval": "Year"
-  },
-  {
-    "Title": null,
-    "Amount": 1420.73,
-    "User": {
-      "Id": 2
-    },
-    "Category": {
-      "Id": 46
-    },
-    "Wallet": {
       "Id": 17
     },
-    "Date": "12/13/2020",
-    "NextTransactionDate": "5/25/2020",
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "5/15/2021",
+    "NextTransactionDate": "3/23/2021",
     "Interval": "Month"
   },
   {
-    "Title": "pede",
-    "Amount": 8170.2,
-    "User": {
-      "Id": 10
-    },
-    "Category": {
-      "Id": 9
-    },
-    "Wallet": {
-      "Id": 9
-    },
-    "Date": "12/22/2020",
-    "NextTransactionDate": "1/21/2021",
-    "Interval": "Year"
-  },
-  {
     "Title": null,
-    "Amount": 9703.65,
+    "Amount": 6451.66,
     "User": {
-      "Id": 9
+      "Id": 1
     },
     "Category": {
-      "Id": 13
+      "Id": 17
     },
     "Wallet": {
-      "Id": 39
-    },
-    "Date": "11/3/2020",
-    "NextTransactionDate": "3/8/2021",
-    "Interval": "Year"
-  },
-  {
-    "Title": "at",
-    "Amount": 2711.3,
-    "User": {
       "Id": 4
     },
-    "Category": {
-      "Id": 10
-    },
-    "Wallet": {
-      "Id": 32
-    },
-    "Date": "3/11/2021",
-    "NextTransactionDate": "11/16/2020",
+    "Date": "4/14/2021",
+    "NextTransactionDate": "3/21/2021",
     "Interval": "Month"
   },
   {
     "Title": null,
-    "Amount": 3955.96,
+    "Amount": 9409.05,
     "User": {
-      "Id": 10
+      "Id": 1
     },
     "Category": {
-      "Id": 44
+      "Id": 14
     },
     "Wallet": {
-      "Id": 33
+      "Id": 2
     },
-    "Date": "1/2/2021",
-    "NextTransactionDate": "1/28/2021",
+    "Date": "4/15/2021",
+    "NextTransactionDate": "5/1/2021",
+    "Interval": "Month"
+  },
+  {
+    "Title": null,
+    "Amount": 2877.04,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 16
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "4/10/2021",
+    "NextTransactionDate": "4/2/2021",
     "Interval": "Week"
   },
   {
-    "Title": "pede libero quis",
-    "Amount": 5709.33,
+    "Title": null,
+    "Amount": 7238.51,
     "User": {
-      "Id": 5
+      "Id": 1
+    },
+    "Category": {
+      "Id": 20
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "4/7/2021",
+    "NextTransactionDate": "5/12/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": "ligula",
+    "Amount": 5972.18,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 28
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "3/23/2021",
+    "NextTransactionDate": "3/24/2021",
+    "Interval": "Year"
+  },
+  {
+    "Title": null,
+    "Amount": 2871.5,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 29
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "4/19/2021",
+    "NextTransactionDate": "5/7/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": null,
+    "Amount": 1613.96,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 29
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "5/8/2021",
+    "NextTransactionDate": "3/25/2021",
+    "Interval": "Month"
+  },
+  {
+    "Title": "a feugiat et",
+    "Amount": 8649.63,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 12
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "4/7/2021",
+    "NextTransactionDate": "4/25/2021",
+    "Interval": "Year"
+  },
+  {
+    "Title": null,
+    "Amount": 3406.6,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 24
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "3/17/2021",
+    "NextTransactionDate": "5/13/2021",
+    "Interval": "Week"
+  },
+  {
+    "Title": null,
+    "Amount": 5081.61,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 18
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "4/7/2021",
+    "NextTransactionDate": "4/12/2021",
+    "Interval": "Month"
+  },
+  {
+    "Title": null,
+    "Amount": 1619.13,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 28
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "3/13/2021",
+    "NextTransactionDate": "3/22/2021",
+    "Interval": "Month"
+  },
+  {
+    "Title": "nunc rhoncus dui",
+    "Amount": 9962.05,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 22
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "3/29/2021",
+    "NextTransactionDate": "5/22/2021",
+    "Interval": "Week"
+  },
+  {
+    "Title": null,
+    "Amount": 2763.19,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 15
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "4/3/2021",
+    "NextTransactionDate": "3/22/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": "tincidunt eu felis",
+    "Amount": 9269.09,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 19
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "3/20/2021",
+    "NextTransactionDate": "4/9/2021",
+    "Interval": "Month"
+  },
+  {
+    "Title": null,
+    "Amount": 3730.42,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 19
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "4/21/2021",
+    "NextTransactionDate": "4/7/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": "enim lorem ipsum",
+    "Amount": 1129.36,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 15
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "3/12/2021",
+    "NextTransactionDate": "3/26/2021",
+    "Interval": "Year"
+  },
+  {
+    "Title": "etiam",
+    "Amount": 7373.93,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 17
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "4/16/2021",
+    "NextTransactionDate": "4/7/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": "ultrices",
+    "Amount": 2311.5,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 29
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "5/1/2021",
+    "NextTransactionDate": "4/5/2021",
+    "Interval": "Year"
+  },
+  {
+    "Title": null,
+    "Amount": 5000.96,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 16
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "4/19/2021",
+    "NextTransactionDate": "5/14/2021",
+    "Interval": "Year"
+  },
+  {
+    "Title": null,
+    "Amount": 1267.78,
+    "User": {
+      "Id": 1
     },
     "Category": {
       "Id": 11
     },
     "Wallet": {
-      "Id": 8
+      "Id": 2
     },
-    "Date": "6/4/2021",
-    "NextTransactionDate": "2/26/2021",
+    "Date": "5/9/2021",
+    "NextTransactionDate": "5/11/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": "eu sapien",
+    "Amount": 5860.56,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 25
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "3/23/2021",
+    "NextTransactionDate": "3/18/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": "risus auctor",
+    "Amount": 5579.93,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 26
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "4/20/2021",
+    "NextTransactionDate": "4/20/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": "ipsum primis",
+    "Amount": 5208.0,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 12
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "5/4/2021",
+    "NextTransactionDate": "5/8/2021",
+    "Interval": "Week"
+  },
+  {
+    "Title": "gravida sem",
+    "Amount": 8357.42,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 10
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "5/11/2021",
+    "NextTransactionDate": "5/5/2021",
+    "Interval": "Year"
+  },
+  {
+    "Title": "porttitor id consequat",
+    "Amount": 5305.59,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 20
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "5/16/2021",
+    "NextTransactionDate": "5/4/2021",
     "Interval": "Week"
   },
   {
     "Title": null,
-    "Amount": 9211.27,
+    "Amount": 2330.37,
     "User": {
-      "Id": 7
+      "Id": 1
     },
     "Category": {
-      "Id": 44
+      "Id": 27
     },
     "Wallet": {
-      "Id": 6
+      "Id": 4
     },
-    "Date": "5/5/2021",
-    "NextTransactionDate": "10/13/2020",
-    "Interval": "Year"
+    "Date": "4/24/2021",
+    "NextTransactionDate": "4/16/2021",
+    "Interval": "Day"
   },
   {
-    "Title": "in imperdiet et",
-    "Amount": 5868.65,
+    "Title": null,
+    "Amount": 5213.33,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 15
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "5/2/2021",
+    "NextTransactionDate": "5/4/2021",
+    "Interval": "Month"
+  },
+  {
+    "Title": "dictumst",
+    "Amount": 9036.6,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 12
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "4/18/2021",
+    "NextTransactionDate": "4/14/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": null,
+    "Amount": 8587.87,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 26
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "4/3/2021",
+    "NextTransactionDate": "5/11/2021",
+    "Interval": "Week"
+  },
+  {
+    "Title": null,
+    "Amount": 9956.99,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 26
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "4/26/2021",
+    "NextTransactionDate": "5/2/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": null,
+    "Amount": 6760.02,
     "User": {
       "Id": 1
     },
@@ -553,127 +921,495 @@
       "Id": 28
     },
     "Wallet": {
-      "Id": 10
+      "Id": 3
     },
-    "Date": "12/4/2020",
-    "NextTransactionDate": "8/9/2020",
-    "Interval": "Year"
+    "Date": "5/20/2021",
+    "NextTransactionDate": "5/20/2021",
+    "Interval": "Month"
   },
   {
-    "Title": "id nisl venenatis",
-    "Amount": 3477.57,
+    "Title": null,
+    "Amount": 2426.73,
     "User": {
-      "Id": 2
+      "Id": 1
     },
     "Category": {
-      "Id": 33
-    },
-    "Wallet": {
       "Id": 14
     },
-    "Date": "12/19/2020",
-    "NextTransactionDate": "4/19/2021",
-    "Interval": "Week"
-  },
-  {
-    "Title": "luctus",
-    "Amount": 3986.8,
-    "User": {
-      "Id": 8
-    },
-    "Category": {
-      "Id": 41
-    },
     "Wallet": {
-      "Id": 30
+      "Id": 3
     },
-    "Date": "6/15/2021",
-    "NextTransactionDate": "12/3/2020",
+    "Date": "3/26/2021",
+    "NextTransactionDate": "4/20/2021",
     "Interval": "Month"
   },
   {
-    "Title": "sapien",
-    "Amount": 5484.9,
-    "User": {
-      "Id": 7
-    },
-    "Category": {
-      "Id": 22
-    },
-    "Wallet": {
-      "Id": 6
-    },
-    "Date": "4/5/2021",
-    "NextTransactionDate": "7/6/2020",
-    "Interval": "Month"
-  },
-  {
-    "Title": null,
-    "Amount": 1314.32,
+    "Title": "cum",
+    "Amount": 3307.57,
     "User": {
       "Id": 1
-    },
-    "Category": {
-      "Id": 1
-    },
-    "Wallet": {
-      "Id": 7
-    },
-    "Date": "4/17/2020",
-    "NextTransactionDate": "12/14/2020",
-    "Interval": "Day"
-  },
-  {
-    "Title": null,
-    "Amount": 3547.82,
-    "User": {
-      "Id": 10
     },
     "Category": {
       "Id": 17
     },
     "Wallet": {
+      "Id": 3
+    },
+    "Date": "5/6/2021",
+    "NextTransactionDate": "4/20/2021",
+    "Interval": "Week"
+  },
+  {
+    "Title": "rhoncus dui",
+    "Amount": 8272.34,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
       "Id": 28
     },
-    "Date": "6/4/2020",
-    "NextTransactionDate": "12/30/2020",
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "3/31/2021",
+    "NextTransactionDate": "5/9/2021",
+    "Interval": "Year"
+  },
+  {
+    "Title": "in",
+    "Amount": 4402.76,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 25
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "5/19/2021",
+    "NextTransactionDate": "4/2/2021",
+    "Interval": "Year"
+  },
+  {
+    "Title": "aliquet at feugiat",
+    "Amount": 7508.78,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 13
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "5/8/2021",
+    "NextTransactionDate": "5/8/2021",
+    "Interval": "Year"
+  },
+  {
+    "Title": "duis",
+    "Amount": 2659.79,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 18
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "3/27/2021",
+    "NextTransactionDate": "4/6/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": null,
+    "Amount": 6653.15,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 18
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "5/22/2021",
+    "NextTransactionDate": "4/21/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": null,
+    "Amount": 6543.86,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 14
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "3/21/2021",
+    "NextTransactionDate": "4/2/2021",
+    "Interval": "Week"
+  },
+  {
+    "Title": "nec",
+    "Amount": 5035.75,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 30
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "4/26/2021",
+    "NextTransactionDate": "4/20/2021",
     "Interval": "Month"
   },
   {
     "Title": null,
-    "Amount": 6389.05,
+    "Amount": 6028.46,
     "User": {
-      "Id": 9
+      "Id": 1
     },
     "Category": {
-      "Id": 44
+      "Id": 15
     },
     "Wallet": {
-      "Id": 34
+      "Id": 4
     },
-    "Date": "6/2/2021",
-    "NextTransactionDate": "7/14/2020",
-    "Interval": "Year"
-  },
-  {
-    "Title": "massa id nisl",
-    "Amount": 5787.23,
-    "User": {
-      "Id": 10
-    },
-    "Category": {
-      "Id": 43
-    },
-    "Wallet": {
-      "Id": 28
-    },
-    "Date": "4/8/2020",
-    "NextTransactionDate": "6/12/2021",
+    "Date": "4/3/2021",
+    "NextTransactionDate": "3/17/2021",
     "Interval": "Year"
   },
   {
     "Title": null,
-    "Amount": 5834.08,
+    "Amount": 1484.95,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 24
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "3/14/2021",
+    "NextTransactionDate": "4/13/2021",
+    "Interval": "Week"
+  },
+  {
+    "Title": null,
+    "Amount": 4422.36,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 16
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "3/31/2021",
+    "NextTransactionDate": "5/16/2021",
+    "Interval": "Month"
+  },
+  {
+    "Title": "pharetra",
+    "Amount": 4836.37,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 21
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "4/12/2021",
+    "NextTransactionDate": "3/25/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": "sed",
+    "Amount": 8948.99,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 29
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "4/6/2021",
+    "NextTransactionDate": "3/28/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": null,
+    "Amount": 2973.94,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 16
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "5/2/2021",
+    "NextTransactionDate": "3/27/2021",
+    "Interval": "Month"
+  },
+  {
+    "Title": "sem sed sagittis",
+    "Amount": 9124.1,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 21
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "5/14/2021",
+    "NextTransactionDate": "4/23/2021",
+    "Interval": "Year"
+  },
+  {
+    "Title": "nam ultrices",
+    "Amount": 6912.45,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 30
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "4/5/2021",
+    "NextTransactionDate": "3/19/2021",
+    "Interval": "Month"
+  },
+  {
+    "Title": "placerat praesent blandit",
+    "Amount": 9183.26,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 20
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "4/4/2021",
+    "NextTransactionDate": "4/21/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": null,
+    "Amount": 2474.83,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 25
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "3/20/2021",
+    "NextTransactionDate": "5/7/2021",
+    "Interval": "Year"
+  },
+  {
+    "Title": null,
+    "Amount": 4898.92,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 18
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "4/10/2021",
+    "NextTransactionDate": "5/20/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": "risus",
+    "Amount": 6883.9,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 17
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "3/12/2021",
+    "NextTransactionDate": "5/5/2021",
+    "Interval": "Month"
+  },
+  {
+    "Title": null,
+    "Amount": 4695.8,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 26
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "4/19/2021",
+    "NextTransactionDate": "3/23/2021",
+    "Interval": "Month"
+  },
+  {
+    "Title": null,
+    "Amount": 4833.26,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 22
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "3/31/2021",
+    "NextTransactionDate": "4/26/2021",
+    "Interval": "Year"
+  },
+  {
+    "Title": "odio",
+    "Amount": 6929.93,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 10
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "5/18/2021",
+    "NextTransactionDate": "4/4/2021",
+    "Interval": "Year"
+  },
+  {
+    "Title": null,
+    "Amount": 1008.36,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 29
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "4/13/2021",
+    "NextTransactionDate": "4/18/2021",
+    "Interval": "Year"
+  },
+  {
+    "Title": null,
+    "Amount": 8440.36,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 16
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "3/30/2021",
+    "NextTransactionDate": "3/29/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": "sed sagittis",
+    "Amount": 7010.56,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 25
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "3/25/2021",
+    "NextTransactionDate": "4/20/2021",
+    "Interval": "Month"
+  },
+  {
+    "Title": null,
+    "Amount": 1678.93,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 15
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "3/19/2021",
+    "NextTransactionDate": "5/9/2021",
+    "Interval": "Week"
+  },
+  {
+    "Title": "quam sapien",
+    "Amount": 2351.18,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 21
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "3/29/2021",
+    "NextTransactionDate": "3/31/2021",
+    "Interval": "Week"
+  },
+  {
+    "Title": "odio curabitur convallis",
+    "Amount": 3130.01,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 19
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "4/26/2021",
+    "NextTransactionDate": "5/1/2021",
+    "Interval": "Week"
+  },
+  {
+    "Title": "dolor morbi",
+    "Amount": 2895.53,
     "User": {
       "Id": 1
     },
@@ -681,122 +1417,186 @@
       "Id": 27
     },
     "Wallet": {
-      "Id": 7
+      "Id": 1
     },
-    "Date": "4/6/2020",
-    "NextTransactionDate": "5/12/2020",
+    "Date": "4/17/2021",
+    "NextTransactionDate": "5/3/2021",
+    "Interval": "Month"
+  },
+  {
+    "Title": "accumsan tortor quis",
+    "Amount": 5436.23,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 11
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "4/18/2021",
+    "NextTransactionDate": "3/18/2021",
+    "Interval": "Week"
+  },
+  {
+    "Title": "ultrices vel",
+    "Amount": 7318.58,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 28
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "4/6/2021",
+    "NextTransactionDate": "5/11/2021",
     "Interval": "Year"
   },
   {
-    "Title": "donec",
-    "Amount": 3792.56,
+    "Title": null,
+    "Amount": 5666.07,
     "User": {
-      "Id": 8
+      "Id": 1
     },
     "Category": {
-      "Id": 12
+      "Id": 11
     },
     "Wallet": {
-      "Id": 24
+      "Id": 3
     },
-    "Date": "5/19/2021",
-    "NextTransactionDate": "8/8/2020",
+    "Date": "3/13/2021",
+    "NextTransactionDate": "4/18/2021",
+    "Interval": "Year"
+  },
+  {
+    "Title": null,
+    "Amount": 1406.22,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 17
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "4/27/2021",
+    "NextTransactionDate": "3/27/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": null,
+    "Amount": 8474.1,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 18
+    },
+    "Wallet": {
+      "Id": 2
+    },
+    "Date": "5/11/2021",
+    "NextTransactionDate": "4/24/2021",
+    "Interval": "Year"
+  },
+  {
+    "Title": null,
+    "Amount": 6108.14,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 15
+    },
+    "Wallet": {
+      "Id": 3
+    },
+    "Date": "5/10/2021",
+    "NextTransactionDate": "5/12/2021",
+    "Interval": "Day"
+  },
+  {
+    "Title": "non",
+    "Amount": 6766.78,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 10
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "4/30/2021",
+    "NextTransactionDate": "3/22/2021",
     "Interval": "Week"
   },
   {
     "Title": null,
-    "Amount": 6879.94,
+    "Amount": 2569.8,
     "User": {
-      "Id": 10
+      "Id": 1
     },
     "Category": {
-      "Id": 48
+      "Id": 24
     },
     "Wallet": {
-      "Id": 9
+      "Id": 4
     },
-    "Date": "6/9/2020",
-    "NextTransactionDate": "1/16/2021",
-    "Interval": "Day"
-  },
-  {
-    "Title": "aliquet maecenas",
-    "Amount": 5300.61,
-    "User": {
-      "Id": 5
-    },
-    "Category": {
-      "Id": 27
-    },
-    "Wallet": {
-      "Id": 12
-    },
-    "Date": "8/22/2020",
-    "NextTransactionDate": "5/13/2021",
-    "Interval": "Day"
-  },
-  {
-    "Title": "mauris",
-    "Amount": 7390.42,
-    "User": {
-      "Id": 5
-    },
-    "Category": {
-      "Id": 7
-    },
-    "Wallet": {
-      "Id": 25
-    },
-    "Date": "8/1/2020",
-    "NextTransactionDate": "4/19/2021",
-    "Interval": "Year"
-  },
-  {
-    "Title": "integer non",
-    "Amount": 9510.89,
-    "User": {
-      "Id": 3
-    },
-    "Category": {
-      "Id": 2
-    },
-    "Wallet": {
-      "Id": 23
-    },
-    "Date": "3/4/2021",
-    "NextTransactionDate": "11/3/2020",
+    "Date": "5/19/2021",
+    "NextTransactionDate": "3/15/2021",
     "Interval": "Week"
   },
   {
-    "Title": "quisque ut",
-    "Amount": 5856.68,
+    "Title": "a libero",
+    "Amount": 1256.13,
     "User": {
-      "Id": 5
+      "Id": 1
+    },
+    "Category": {
+      "Id": 22
+    },
+    "Wallet": {
+      "Id": 4
+    },
+    "Date": "5/1/2021",
+    "NextTransactionDate": "5/1/2021",
+    "Interval": "Month"
+  },
+  {
+    "Title": null,
+    "Amount": 2387.57,
+    "User": {
+      "Id": 1
+    },
+    "Category": {
+      "Id": 10
+    },
+    "Wallet": {
+      "Id": 1
+    },
+    "Date": "4/10/2021",
+    "NextTransactionDate": "4/19/2021",
+    "Interval": "Month"
+  },
+  {
+    "Title": "a ipsum",
+    "Amount": 9893.1,
+    "User": {
+      "Id": 1
     },
     "Category": {
       "Id": 30
     },
     "Wallet": {
-      "Id": 22
+      "Id": 4
     },
-    "Date": "2/10/2021",
-    "NextTransactionDate": "5/21/2020",
-    "Interval": "Month"
-  },
-  {
-    "Title": "convallis tortor",
-    "Amount": 2761.62,
-    "User": {
-      "Id": 7
-    },
-    "Category": {
-      "Id": 49
-    },
-    "Wallet": {
-      "Id": 23
-    },
-    "Date": "4/22/2021",
-    "NextTransactionDate": "1/20/2021",
-    "Interval": "Month"
+    "Date": "4/6/2021",
+    "NextTransactionDate": "4/24/2021",
+    "Interval": "Week"
   }
 ]

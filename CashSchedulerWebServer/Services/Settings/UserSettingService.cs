@@ -42,7 +42,7 @@ namespace CashSchedulerWebServer.Services.Settings
 
             var allSettings = ContextProvider.GetRepository<ISettingRepository>().GetAll();
 
-            static string getValue(Setting setting)
+            static string GetValue(Setting setting)
             {
                 if (setting.Name == Setting.SettingOptions.Language.ToString())
                 {
@@ -60,7 +60,7 @@ namespace CashSchedulerWebServer.Services.Settings
                 {
                     User = targetUser,
                     Setting = setting,
-                    Value = getValue(setting)
+                    Value = GetValue(setting)
                 }).ToList());
         }
 

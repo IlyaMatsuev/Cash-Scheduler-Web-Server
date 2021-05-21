@@ -1,332 +1,112 @@
 [
   {
-    "Name": "Garlic",
+    "Name": "Desipramine Hydrochloride",
     "Type": {
       "Name": "Expense"
     },
     "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/210x130.png/dddddd/000000",
-    "User": {
-      "Id": 3
-    }
-  },
-  {
-    "Name": "Amitriptyline",
-    "Type": {
-      "Name": "Expense"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/108x232.bmp/ff4444/ffffff",
-    "User": {
-      "Id": 4
-    }
-  },
-  {
-    "Name": "Governing Vessel",
-    "Type": {
-      "Name": "Income"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/239x220.jpg/5fa2dd/ffffff",
-    "User": {
-      "Id": 8
-    }
-  },
-  {
-    "Name": "Clearasil Ultra",
-    "Type": {
-      "Name": "Expense"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/243x210.jpg/dddddd/000000",
-    "User": {
-      "Id": 7
-    }
-  },
-  {
-    "Name": "Abundant Milk 2",
-    "Type": {
-      "Name": "Expense"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/199x119.bmp/cc0000/ffffff",
-    "User": {
-      "Id": 9
-    }
-  },
-  {
-    "Name": "Health Mart",
-    "Type": {
-      "Name": "Expense"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/205x234.png/5fa2dd/ffffff",
-    "User": {
-      "Id": 3
-    }
-  },
-  {
-    "Name": "Sucralfate",
-    "Type": {
-      "Name": "Expense"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/200x127.png/dddddd/000000",
-    "User": {
-      "Id": 10
-    }
-  },
-  {
-    "Name": "gas relief",
-    "Type": {
-      "Name": "Income"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/101x160.png/5fa2dd/ffffff",
-    "User": {
-      "Id": 3
-    }
-  },
-  {
-    "Name": "Budesonide",
-    "Type": {
-      "Name": "Income"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/197x190.png/dddddd/000000",
+    "IconUrl": "http://dummyimage.com/228x166.png/5fa2dd/ffffff",
     "User": {
       "Id": 1
     }
   },
   {
-    "Name": "Lorazepam",
-    "Type": {
-      "Name": "Expense"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/193x226.bmp/cc0000/ffffff",
-    "User": {
-      "Id": 5
-    }
-  },
-  {
-    "Name": "OXYGEN",
-    "Type": {
-      "Name": "Expense"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/198x123.bmp/5fa2dd/ffffff",
-    "User": {
-      "Id": 10
-    }
-  },
-  {
-    "Name": "demeclocycline",
+    "Name": "Mederma PM",
     "Type": {
       "Name": "Income"
     },
     "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/110x229.png/dddddd/000000",
-    "User": {
-      "Id": 2
-    }
-  },
-  {
-    "Name": "White Mulberry",
-    "Type": {
-      "Name": "Expense"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/114x125.png/dddddd/000000",
-    "User": {
-      "Id": 4
-    }
-  },
-  {
-    "Name": "Rabbitbush",
-    "Type": {
-      "Name": "Expense"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/139x120.png/dddddd/000000",
-    "User": {
-      "Id": 5
-    }
-  },
-  {
-    "Name": "dg health anti itch",
-    "Type": {
-      "Name": "Expense"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/155x227.jpg/cc0000/ffffff",
-    "User": {
-      "Id": 4
-    }
-  },
-  {
-    "Name": "Red Maple",
-    "Type": {
-      "Name": "Income"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/218x241.png/ff4444/ffffff",
+    "IconUrl": "http://dummyimage.com/179x198.jpg/ff4444/ffffff",
     "User": {
       "Id": 1
     }
   },
   {
-    "Name": "Cough",
+    "Name": "Box Elder Maple Pollen",
     "Type": {
-      "Name": "Income"
+      "Name": "Expense"
     },
     "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/182x106.bmp/dddddd/000000",
+    "IconUrl": "http://dummyimage.com/101x213.png/ff4444/ffffff",
     "User": {
       "Id": 1
     }
   },
   {
-    "Name": "CPDA-1",
+    "Name": "Mango Blossom",
     "Type": {
       "Name": "Expense"
     },
     "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/131x186.png/ff4444/ffffff",
-    "User": {
-      "Id": 10
-    }
-  },
-  {
-    "Name": "Alcohol",
-    "Type": {
-      "Name": "Income"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/101x157.jpg/ff4444/ffffff",
-    "User": {
-      "Id": 8
-    }
-  },
-  {
-    "Name": "EQUUS CABALLUS SKIN",
-    "Type": {
-      "Name": "Expense"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/148x234.png/cc0000/ffffff",
-    "User": {
-      "Id": 6
-    }
-  },
-  {
-    "Name": "Coppertone Tanning Dry",
-    "Type": {
-      "Name": "Expense"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/196x204.bmp/ff4444/ffffff",
-    "User": {
-      "Id": 10
-    }
-  },
-  {
-    "Name": "Nexiclon XR",
-    "Type": {
-      "Name": "Income"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/131x214.png/ff4444/ffffff",
-    "User": {
-      "Id": 6
-    }
-  },
-  {
-    "Name": "GENTAMICIN SULFATE",
-    "Type": {
-      "Name": "Income"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/216x217.png/dddddd/000000",
-    "User": {
-      "Id": 9
-    }
-  },
-  {
-    "Name": "Amethia Lo",
-    "Type": {
-      "Name": "Income"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/163x237.jpg/ff4444/ffffff",
-    "User": {
-      "Id": 8
-    }
-  },
-  {
-    "Name": "mark. Help Wanted",
-    "Type": {
-      "Name": "Expense"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/122x224.png/ff4444/ffffff",
+    "IconUrl": "http://dummyimage.com/233x184.png/cc0000/ffffff",
     "User": {
       "Id": 1
     }
   },
   {
-    "Name": "BENICAR HCT",
-    "Type": {
-      "Name": "Expense"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/100x246.jpg/ff4444/ffffff",
-    "User": {
-      "Id": 2
-    }
-  },
-  {
-    "Name": "Lansoprazole",
+    "Name": "Risperidone",
     "Type": {
       "Name": "Income"
     },
     "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/249x119.png/cc0000/ffffff",
-    "User": {
-      "Id": 10
-    }
-  },
-  {
-    "Name": "Amar Petroleum",
-    "Type": {
-      "Name": "Expense"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/172x108.bmp/5fa2dd/ffffff",
-    "User": {
-      "Id": 2
-    }
-  },
-  {
-    "Name": "Hemorrhoidal",
-    "Type": {
-      "Name": "Expense"
-    },
-    "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/167x206.bmp/cc0000/ffffff",
+    "IconUrl": "http://dummyimage.com/221x171.jpg/dddddd/000000",
     "User": {
       "Id": 1
     }
   },
   {
-    "Name": "Peptic Relief",
+    "Name": "Nadolol",
+    "Type": {
+      "Name": "Expense"
+    },
+    "IsCustom": true,
+    "IconUrl": "http://dummyimage.com/232x241.png/ff4444/ffffff",
+    "User": {
+      "Id": 1
+    }
+  },
+  {
+    "Name": "Streptomyces",
+    "Type": {
+      "Name": "Expense"
+    },
+    "IsCustom": true,
+    "IconUrl": "http://dummyimage.com/213x227.png/5fa2dd/ffffff",
+    "User": {
+      "Id": 1
+    }
+  },
+  {
+    "Name": "Pain Reliever",
+    "Type": {
+      "Name": "Expense"
+    },
+    "IsCustom": true,
+    "IconUrl": "http://dummyimage.com/143x145.bmp/cc0000/ffffff",
+    "User": {
+      "Id": 1
+    }
+  },
+  {
+    "Name": "Medrox",
     "Type": {
       "Name": "Income"
     },
     "IsCustom": true,
-    "IconUrl": "http://dummyimage.com/193x225.bmp/cc0000/ffffff",
+    "IconUrl": "http://dummyimage.com/134x141.jpg/5fa2dd/ffffff",
     "User": {
-      "Id": 2
+      "Id": 1
+    }
+  },
+  {
+    "Name": "Kinesys",
+    "Type": {
+      "Name": "Income"
+    },
+    "IsCustom": true,
+    "IconUrl": "http://dummyimage.com/222x250.bmp/dddddd/000000",
+    "User": {
+      "Id": 1
     }
   }
 ]
