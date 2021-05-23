@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CashSchedulerWebServer.Db.CashSchedulerContext">
+    <Position X="20.5" Y="8.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>QACAACAwAAAAEACCAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\CashSchedulerContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CashSchedulerWebServer.Db.ContextProvider" BaseTypeListCollapsed="true">
+    <Position X="23.75" Y="9" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAAAhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\ContextProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CashSchedulerWebServer.Db.Repositories.CategoryRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAAAAAgAAAAAAABAAAAgCAAEAAEAAAgAACAAAAIA=</HashCode>
+      <FileName>Db\Repositories\CategoryRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CashSchedulerWebServer.Db.Repositories.RegularTransactionRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAAAAAgAAAAAAAABAAAgCAAEAAEAAAgAAAAAAAIA=</HashCode>
+      <FileName>Db\Repositories\RegularTransactionRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CashSchedulerWebServer.Db.Repositories.TransactionRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQBAAAgAgAAAAAAAABAAAgCAAEAAEAAAgAAAAAAAIA=</HashCode>
+      <FileName>Db\Repositories\TransactionRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CashSchedulerWebServer.Db.Repositories.TransactionTypeRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="28.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAgAAAAAAAAAAAAAAAAEAAEAAAgAAAAAAAIg=</HashCode>
+      <FileName>Db\Repositories\TransactionTypeRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CashSchedulerWebServer.Db.Repositories.UserEmailVerificationCodeRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="32.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAAAAAgAAAAAAAAAAAAAAAAEAAEAAAgAAAAAAAIA=</HashCode>
+      <FileName>Db\Repositories\UserEmailVerificationCodeRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CashSchedulerWebServer.Db.Repositories.UserNotificationRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAAAAAkAAAAAAAAAAAAgiAAEAAEAAAgAAAAAAAIA=</HashCode>
+      <FileName>Db\Repositories\UserNotificationRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CashSchedulerWebServer.Db.Repositories.UserRefreshTokenRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAAAAAgAAAAAAAAAAAAAAAAEAAEAAAgAAAAAAAIA=</HashCode>
+      <FileName>Db\Repositories\UserRefreshTokenRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CashSchedulerWebServer.Db.Repositories.UserRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBEAAAEgAAAAAAiAAAAAgAAAEAAEAAAgAAAAIAAIA=</HashCode>
+      <FileName>Db\Repositories\UserRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CashSchedulerWebServer.Db.Repositories.UserSettingRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="30.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAAAAAgAACAAAAAAAAAgCAAEAAEAAAgAAAAAAAIg=</HashCode>
+      <FileName>Db\Repositories\UserSettingRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="CashSchedulerWebServer.Db.Contracts.ICategoryRepository">
+    <Position X="26" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAgAACAAAAAA=</HashCode>
+      <FileName>Db\Contracts\ICategoryRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CashSchedulerWebServer.Db.Contracts.IContextProvider">
+    <Position X="23.75" Y="7.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\Contracts\IContextProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CashSchedulerWebServer.Db.Contracts.IRegularTransactionRepository">
+    <Position X="14.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Db\Contracts\IRegularTransactionRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CashSchedulerWebServer.Db.Contracts.IRepository&lt;T&gt;">
+    <Position X="23.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAEAAEAAAgAAAAAAAIA=</HashCode>
+      <FileName>Db\Contracts\IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CashSchedulerWebServer.Db.Contracts.ITransactionRepository">
+    <Position X="21.25" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAgAAAAAAAAAABAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Db\Contracts\ITransactionRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CashSchedulerWebServer.Db.Contracts.ITransactionTypeRepository">
+    <Position X="28.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Db\Contracts\ITransactionTypeRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CashSchedulerWebServer.Db.Contracts.IUserEmailVerificationCodeRepository">
+    <Position X="32.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\Contracts\IUserEmailVerificationCodeRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CashSchedulerWebServer.Db.Contracts.IUserNotificationRepository">
+    <Position X="17" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\Contracts\IUserNotificationRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CashSchedulerWebServer.Db.Contracts.IUserRefreshTokenRepository">
+    <Position X="19.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Db\Contracts\IUserRefreshTokenRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CashSchedulerWebServer.Db.Contracts.IUserRepository">
+    <Position X="23.5" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAEAAAAAAAiAAAAAAAAAAAAAAAAAAAAAIAAIA=</HashCode>
+      <FileName>Db\Contracts\IUserRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CashSchedulerWebServer.Db.Contracts.IUserSettingRepository">
+    <Position X="30.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Db\Contracts\IUserSettingRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
