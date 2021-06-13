@@ -58,7 +58,7 @@ namespace CashSchedulerWebServer.Auth
 
             return !string.IsNullOrEmpty(expirationDateTime)
                    && !string.IsNullOrEmpty(id)
-                   && DateTime.Parse(expirationDateTime) > DateTime.UtcNow;
+                   && DateTime.Parse(expirationDateTime, CultureInfo.InvariantCulture) > DateTime.UtcNow;
         }
 
         public static string GetUserId(this IEnumerable<Claim> claims)
